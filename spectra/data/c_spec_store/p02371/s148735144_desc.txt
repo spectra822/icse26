@@ -1,0 +1,31 @@
+```
+// Global variables
+int q[1000000], C[100010];
+int ta[100010], nt[200010], fr[200010], to[200010], co[200010];
+int f[100010];
+
+// Given two integers `a` and `b`, return the larger of the two.
+int MAX(int a, int b)
+
+// Perform a depth-first search (DFS) on a graph to find the maximum distance from a starting node `s`.
+// Parameters include vertex count `v`, edge count `e`, starting node `s`, and initial distance `d`.
+// Returns the maximum distance found.
+int dfs(int v, int e, int s, int d)
+    Calls dfs(...)
+
+// Perform a breadth-first search (BFS) on a graph to find the maximum distance from a starting node `s`.
+// Parameters include vertex count `v`, edge count `e`, starting node `s`, and a pointer to an integer `g`.
+// Returns the maximum distance found.
+int bfs(int v, int e, int s, int *g)
+
+// Calculate the diameter of a tree (longest path between any two nodes).
+// Parameters include vertex count `v`, edge count `e`, arrays `a`, `b`, and `c` representing edges and their weights.
+// Returns the diameter of the tree.
+int tyokkei(int v, int e, int *a, int *b, int *c)
+    Calls dfs(...)
+
+// Main function to read input, construct the graph, and print the diameter of the tree.
+// Reads number of nodes `n` and the edges with their weights, then calls `tyokkei` to compute the diameter.
+int main()
+    Calls tyokkei(...)
+```

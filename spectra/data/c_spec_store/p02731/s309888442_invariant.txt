@@ -1,0 +1,7 @@
+```c
+int main ()
+    // Input format: A single integer `l` on a line by itself.
+    // Output format: A single floating-point number `x` with 12 decimal places, followed by a newline.
+    // Precondition: `l` is a non-negative integer.
+    // Postcondition: The program calculates `y` as `l / 3.0`, then `x` as `y * y * y`, and prints `x` with 12 decimal places.
+```

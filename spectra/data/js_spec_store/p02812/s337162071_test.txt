@@ -1,0 +1,6 @@
+Input:
+11
+ABABCABCABC
+
+Output:
+3

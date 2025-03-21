@@ -1,0 +1,15 @@
+```c
+// Global variables
+int N, W;
+int w[128], v[128];
+int ayaneru[MEW];
+
+// This function takes input for the number of items `N` and the maximum weight `W`.
+// It then takes `N` pairs of integers representing the weight and value of each item.
+// It initializes the `ayaneru` array with `W + 1` to represent a large weight.
+// It then uses dynamic programming to compute the maximum value that can be achieved with a weight limit `W`.
+// The function prints the maximum value that can be achieved without exceeding the weight limit `W`.
+// If no valid solution is found, it prints "error!".
+int main(void)
+    Calls None
+```

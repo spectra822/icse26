@@ -1,0 +1,10 @@
+Input:
+3 5 7
+4 10 12
+5 17 20
+0 0 0
+
+Output:
+LRL
+RLLL
+LRRRR

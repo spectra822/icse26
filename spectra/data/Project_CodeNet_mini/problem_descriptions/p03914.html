@@ -1,0 +1,74 @@
+<span class="lang-en">
+<p>Score : <var>1000</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> towns in Takahashi Kingdom. They are conveniently numbered <var>1</var> through <var>N</var>.</p>
+<p>Takahashi the king is planning to go on a tour of inspection for <var>M</var> days. He will determine a sequence of towns <var>c</var>, and visit town <var>c_i</var> on the <var>i</var>-th day. That is, on the <var>i</var>-th day, he will travel from his current location to town <var>c_i</var>. If he is already at town <var>c_i</var>, he will stay at that town. His location just before the beginning of the tour is town <var>1</var>, the capital. The tour ends at town <var>c_M</var>, without getting back to the capital. </p>
+<p>The problem is that there is no paved road in this kingdom. He decided to resolve this issue by paving the road himself while traveling. When he travels from town <var>a</var> to town <var>b</var>, there will be a newly paved one-way road from town <var>a</var> to town <var>b</var>.</p>
+<p>Since he cares for his people, he wants the following condition to be satisfied after his tour is over: "it is possible to travel from any town to any other town by traversing roads paved by him". How many sequences of towns <var>c</var> satisfy this condition?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2≦N≦300</var></li>
+<li><var>1≦M≦300</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of sequences of towns satisfying the condition, modulo <var>1000000007 (=10^9+7)</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>As shown below, the condition is satisfied only when <var>c = (2,3,1)</var> or <var>c = (3,2,1)</var>. Sequences such as <var>c = (2,3,2)</var>, <var>c = (2,1,3)</var>, <var>c = (1,2,2)</var> do not satisfy the condition.</p>
+<p><img alt="" src="https://atcoder.jp/img/code-festival-2016-final/199a3fd8d2aed75750901a206c8b7e76.png"/></p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>150 300
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>734286322
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>300 150
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>0
+</pre></section>
+</div>
+</span>

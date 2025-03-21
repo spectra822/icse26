@@ -1,0 +1,5 @@
+Input:
+abacabad
+
+Output:
+1

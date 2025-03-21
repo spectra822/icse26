@@ -1,0 +1,27 @@
+// Segment 1: Import and define main function
+// Precondition: The Node.js 'fs' module is available and 'stdin' contains input data.
+// Postcondition: The main function is defined, which processes the input data.
+const main = stdin => {
+
+    // Segment 2: Process input data
+    // Precondition: 'stdin' contains input data in the format: a single integer N on the first line.
+    // Postcondition: 'input' is an array of strings split by newline, 'N' is the first element of 'input'.
+    const input = stdin.trim().split('\n')
+    const N = input[0]
+
+    // Segment 3: Check if 'N' contains the digit '9'
+    // Precondition: 'N' is a string representing an integer.
+    // Postcondition: Outputs 'Yes' if 'N' contains the digit '9', otherwise outputs 'No'.
+    // Input format: A single integer N (1 <= N <= 99)
+    // Output format: Either 'Yes' or 'No'
+    if (N[0] === '9' || N[1] === '9') {
+        console.log('Yes')
+    } else {
+        console.log('No')
+    }
+}
+
+// Segment 4: Execute main function with input from standard input
+// Precondition: The '/dev/stdin' file contains input data.
+// Postcondition: The main function processes the input data and produces the appropriate output.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

@@ -1,0 +1,78 @@
+// Segment 1: Configuration and Input Reading
+// Precondition: The script is executed in an environment where '/dev/stdin' is available and contains input.
+// Postcondition: `line` is an array containing the first two lines of the input read from '/dev/stdin'.
+// Input format: The input consists of two lines. The first line is a string T, and the second line is a string P.
+
+config = {
+    input: '/dev/stdin',
+    newline: '\n'
+};  
+
+line = require('fs').readFileSync(config.input, 'ascii')
+    .split(config.newline, 2);
+
+// Segment 2: Variable Initialization
+// Precondition: `line` contains exactly two elements: T and P.
+// Postcondition: `T` and `P` are initialized as strings, `P2` is initialized as the concatenation of `P` with itself, and `cor` is an integer value representing the maximum prefix length where `P` can be found in `P2`.
+
+T = line[0];
+P = line[1];
+line = null;
+P2 = P + P;
+for (cor = 0; cor < P.length && P2.indexOf(P, cor) === cor; cor++);
+cor--;
+
+// Segment 3: Function Call Decision
+// Precondition: `cor` is an integer representing the maximum prefix length where `P` can be found in `P2`.
+// Postcondition: Either `normal_search` or `search_with_correlation_check` is called based on the value of `cor`.
+
+if (cor < 10) normal_search();
+else search_with_correlation_check();
+
+// Segment 4: Normal Search Function
+// Precondition: The function is invoked when `cor` is less than 10. `T` and `P` are strings.
+// Postcondition: The function prints the starting indices of all occurrences of `P` in `T`.
+// Output format: The output is a series of integers, each on a new line, representing the starting indices of `P` in `T`.
+
+function normal_search() {
+    var res, idx, j;
+    res = new Array(T.length);
+    idx = 0;
+    j = 0;
+    while ((idx = T.indexOf(P, idx) | 0) !== -1) {
+        res[j] = idx;
+        idx = (idx + 1) | 0;
+        j = (j + 1) | 0;
+    }
+
+    res.length = j;
+    if (res.length !== 0) console.log(res.join('\n'));
+}
+
+// Segment 5: Search with Correlation Check Function
+// Precondition: The function is invoked when `cor` is 10 or greater. `T`, `P`, and `P2` are strings, and `cor` is an integer.
+// Postcondition: The function prints the starting indices of all occurrences of `P` in `T`, considering correlated patterns.
+// Output format: The output is a series of integers, each on a new line, representing the starting indices of `P` in `T`.
+
+function search_with_correlation_check() {
+    var res, idx, j, k;
+    res = new Array(T.length);
+    idx = 0;
+    j = 0;
+    while ((idx = T.indexOf(P, idx) | 0) !== -1) {
+        if (T.indexOf(P2, idx) === idx) {
+            for (k = 0; k <= cor; k = (k + 1) | 0) {
+                res[j] = idx;
+                idx = (idx + 1) | 0;
+                j = (j + 1) | 0;
+            }
+        } else {
+            res[j] = idx;
+            idx = (idx + 1) | 0;
+            j = (j + 1) | 0;
+        }
+    }
+
+    res.length = j;
+    if (res.length !== 0) console.log(res.join('\n'));
+}

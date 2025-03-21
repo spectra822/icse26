@@ -1,0 +1,21 @@
+```c
+// Global variables
+int map[6][2] = {
+    {X, Y},
+    {NA, Z},
+    {X, NA},
+    {W, B},
+    {B, Y},
+    {Y, X}
+};
+
+// This program simulates traversing a state machine with a given input path.
+// The state machine has 6 states (A, X, Y, Z, W, B) and a transition map `map`.
+// It reads paths from the input and determines if they end in state B.
+//
+// The program reads input paths until a path starting with '#' is encountered.
+// For each path, it simulates the state transitions according to the `map`,
+// and prints "Yes" if the path ends in state B, otherwise prints "No".
+int main(void)
+    // No calls to other functions
+```

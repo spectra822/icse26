@@ -1,0 +1,20 @@
+```c
+int get_str(char *str, int size)
+    // Precondition: `str` is a pointer to a character array with at least `size` elements.
+    // Postcondition: `str` contains a string read from stdin, truncated to fit within `size` elements including the null terminator.
+    // If the read operation fails, the function returns -1, otherwise it returns 0.
+
+int get_int(void)
+    // Precondition: None
+    // Postcondition: An integer value read from stdin is returned. If the read operation fails, 0 is returned.
+
+int get_int2(int *a1, int *a2)
+    // Precondition: `a1` and `a2` are pointers to integers.
+    // Postcondition: The integers pointed to by `a1` and `a2` are updated with two integer values read from stdin. If the read operation fails, the function returns -1, otherwise it returns 0.
+
+int main(void)
+    // Input format: The first line contains two integers `n` and `k`, separated by a space.
+    // Output format: Multiple lines, each containing a number followed by a colon and a space-separated list of integers.
+    // Precondition: None
+    // Postcondition: For each combination of `k` bits set in an `n`-bit number, the number and the positions of the set bits are printed.
+```

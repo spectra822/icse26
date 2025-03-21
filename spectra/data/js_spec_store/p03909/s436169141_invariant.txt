@@ -1,0 +1,50 @@
+'use strict'
+
+// Segment 1: Main Function Definition
+// Precondition: INPUT is provided as a string with multiple lines, where the first line contains two integers separated by a space, and the subsequent lines contain strings separated by spaces.
+// Postcondition: The main function is defined and ready to be executed with the provided input.
+const main = (INPUT) => {
+
+    // Segment 2: Input Parsing
+    // Precondition: INPUT is a string with multiple lines.
+    // Postcondition: `input` is an array of strings where each element is a line from the INPUT.
+    const input = INPUT.split('\n')
+
+    // Segment 3: Alphabet String Definition
+    // Precondition: None
+    // Postcondition: `abc` is a string containing the uppercase English alphabet.
+    const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    // Segment 4: Outer Loop to Traverse Rows
+    // Precondition: `input` is an array of strings, and `abc` is a string of uppercase alphabets.
+    // Postcondition: The function will iterate over each row (starting from the second row) in the `input` array.
+    for (let i = 1; i < input.length; i++) {
+        
+        // Segment 5: Split Row into Words
+        // Precondition: `input[i]` is a string of words separated by spaces.
+        // Postcondition: `S` is an array of words from the current row.
+        const S = input[i].split(' ')
+
+        // Segment 6: Inner Loop to Traverse Columns
+        // Precondition: `S` is an array of words from the current row.
+        // Postcondition: The function will iterate over each word in the `S` array.
+        for (let j = 0; j < S.length; j++) {
+
+            // Segment 7: Check for 'snuke'
+            // Precondition: `S[j]` is the current word in the row.
+            // Postcondition: If `S[j]` is 'snuke', the function will output the corresponding column letter and row number, then terminate.
+            if (S[j] == 'snuke') {
+
+                // Input: None
+                // Output: A single string in the format "LetterNumber" where Letter is the column letter from 'A' to 'Z', and Number is the row number (e.g., "H6").
+                console.log(abc[j] + i)
+                return
+            }
+        }
+    }
+}
+
+// Segment 8: Read Input and Execute Main Function
+// Precondition: The script is being executed in an environment where the 'fs' module can read from '/dev/stdin'.
+// Postcondition: The main function is executed with the content read from '/dev/stdin'.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'))

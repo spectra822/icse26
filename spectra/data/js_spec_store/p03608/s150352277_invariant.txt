@@ -1,0 +1,143 @@
+// Segment 1: Variable Declarations and Initializations
+// Precondition: The input is provided through the standard input (stdin) in the required format.
+// Postcondition: The input is read and split into lines, and an object 'obj' is created to manage the input lines.
+var input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+var obj = {
+    "list": input,
+    "index": 0,
+    "max": input.length,
+    "next": function() {
+        if (!this.hasNext()) {
+            throw "NoSuchElementException:次に要素は無いよ";
+        }
+        var returnObj = this.list[this.index];
+        this.index++;
+        return returnObj;
+    },
+    "hasNext": function() {
+        return (this.index < this.max);
+    }
+};
+
+// Segment 2: Helper Functions
+// Precondition: The 'obj' object is initialized with the input data.
+// Postcondition: Three helper functions 'next', 'hasNext', 'myout', 'myerr', and 'myconv' are defined for input management and output formatting.
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+function myout(t) {
+    console.log(t);
+}
+
+function myerr(t) {
+    console.error(t);
+}
+
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(" ");
+            case 4:
+                return i.split(" ").map((a) => Number(a));
+            case 6:
+                return i.split("");
+            case 7:
+                return i.split("").map((a) => Number(a));
+            case 8:
+                return i.join(" ");
+            case 9:
+                return i.join("\n");
+            case 0:
+                return i.join("");
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Segment 3: Main Function and Variable Declarations
+// Precondition: The helper functions are defined and available for use.
+// Postcondition: The input is processed, and the primary variables and data structures are initialized.
+// Input format: The input is read from stdin, with the first line containing three integers N, M, R, followed by R integers and M lines of three integers each.
+function Main() {
+    var one = myconv(next(), 4);
+    var N = one[0];
+    var M = one[1];
+    var R = one[2];
+    var max = Math.pow(10, 12);
+    var kyori = new Array(N);
+    for (var i = 0; i < N; i++) {
+        kyori[i] = new Array(N);
+    }
+
+    var travel = myconv(next(), 4);
+    for (var i = 0; i < R; i++) {
+        travel[i]--;
+    }
+
+    for (var i = 0; i < M; i++) {
+        var tmp = myconv(next(), 4);
+        kyori[tmp[0] - 1][tmp[1] - 1] = tmp[2];
+        kyori[tmp[1] - 1][tmp[0] - 1] = tmp[2];
+    }
+
+    // Segment 4: Initialize Distance Matrix
+    // Precondition: The 'kyori' matrix is partially filled with distances from the input.
+    // Postcondition: The 'kyori' matrix is fully initialized with distances, setting non-existent paths to 'max'.
+    for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+            if (kyori[i][j] == null) {
+                kyori[i][j] = max;
+            }
+        }
+    }
+
+    // Segment 5: Floyd-Warshall Algorithm
+    // Precondition: The 'kyori' matrix is initialized with distances and 'max' for non-existent paths.
+    // Postcondition: The 'kyori' matrix is updated with the shortest path distances between all pairs of nodes.
+    for (var k = 0; k < N; k++) {
+        for (var i = 0; i < N; i++) {
+            for (var j = 0; j < N; j++) {
+                if (kyori[i][j] > kyori[i][k] + kyori[k][j]) {
+                    kyori[i][j] = kyori[i][k] + kyori[k][j];
+                }
+            }
+        }
+    }
+
+    var output = max;
+
+    // Segment 6: Depth-First Search (DFS) to Find Minimum Distance
+    // Precondition: The 'kyori' matrix contains the shortest path distances between all pairs of nodes.
+    // Postcondition: The minimum distance to visit all required nodes is computed and printed.
+    for (var i = 0; i < R; i++) {
+        dfs(travel[i], new Set(travel), 0);
+    }
+    myout(output);
+
+    function dfs(parent, set, moved) {
+        var tmpSet = new Set(set);
+        tmpSet.delete(parent);
+        if (tmpSet.size == 0) {
+            output = Math.min(output, moved);
+            return;
+        }
+        var nextTravel = Array.from(tmpSet);
+        for (var i = 0; i < nextTravel.length; i++) {
+            if (nextTravel[i] == parent) {
+                continue;
+            }
+            dfs(nextTravel[i], tmpSet, (moved + kyori[parent][nextTravel[i]]));
+        }
+    }
+}

@@ -1,0 +1,66 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> people living on a number line.</p>
+<p>The <var>i</var>-th person lives at coordinate <var>X_i</var>.</p>
+<p>You are going to hold a meeting that all <var>N</var> people have to attend.</p>
+<p>The meeting can be held at any <strong>integer coordinate</strong>. If you choose to hold the meeting at coordinate <var>P</var>, the <var>i</var>-th person will spend <var>(X_i - P)^2</var> points of stamina to attend the meeting.</p>
+<p>Find the minimum total points of stamina the <var>N</var> people have to spend.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 100</var></li>
+<li><var>1 \leq X_i \leq 100</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>X_1</var> <var>X_2</var> <var>...</var> <var>X_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum total stamina the <var>N</var> people have to spend.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+1 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>5
+</pre>
+<p>Assume the meeting is held at coordinate <var>2</var>. In this case, the first person will spend <var>(1 - 2)^2</var> points of stamina, and the second person will spend <var>(4 - 2)^2 = 4</var> points of stamina, for a total of <var>5</var> points of stamina. This is the minimum total stamina that the <var>2</var> people have to spend.</p>
+<p>Note that you can hold the meeting only at an integer coordinate.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>7
+14 14 2 13 56 2 37
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2354
+</pre></section>
+</div>
+</span>

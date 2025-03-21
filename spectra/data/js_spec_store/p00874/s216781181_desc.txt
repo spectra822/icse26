@@ -1,0 +1,38 @@
+// Import the 'fs' module to read input from the standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input by new lines and trim any extra whitespace
+var arr = input.trim().split("\n");
+
+// Loop to process multiple test cases
+while (true) {
+    // Read the first line of the test case to get the dimensions
+    var wd = arr.shift();
+    
+    // Break the loop if the input is "0 0"
+    if (wd == "0 0") break;
+    
+    // Read the weights array
+    var W = arr.shift().split(" ").map(Number);
+    
+    // Read the desired weights array
+    var D = arr.shift().split(" ").map(Number);
+    
+    // Calculate the sum of the weights array
+    var sum = W.reduce(function(a, b) {
+        return a + b;
+    });
+    
+    // Update the sum based on the desired weights array
+    D.forEach(function(v) {
+        var index = W.indexOf(v);
+        
+        // If the weight is found in the weights array, replace it with an empty string
+        if (index != -1) W[index] = "";
+        // If the weight is not found, add it to the sum
+        else sum += v;
+    });
+    
+    // Output the final sum for the current test case
+    console.log(sum);
+}

@@ -1,0 +1,13 @@
+```
+ll getlong()
+    // Precondition: The global pointer `p` points to a valid null-terminated string containing digits.
+    // Postcondition: The function returns a long long integer parsed from the string pointed to by `p`.
+    // The pointer `p` is advanced to the next non-digit character after the parsed number.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The second line contains `n` integers separated by spaces.
+    // Output format: A single long long integer.
+    // Precondition: The global buffer `buf` and pointer `p` have been declared.
+    // Postcondition: The minimum cost to merge the given sequence of integers is printed.
+```

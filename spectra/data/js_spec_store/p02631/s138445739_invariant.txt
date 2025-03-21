@@ -1,0 +1,48 @@
+// Segment 1: Utility Functions
+// Precondition: None
+// Postcondition: The utility functions readLines, println, readInt, readIntList, and naturalOrder are defined.
+
+const readLines = (input) => input.split('\n')
+const println = (value) => console.log(value)
+const readInt = (input) => parseInt(input, 10)
+const readIntList = (input) => input.split(' ').map(n => parseInt(n, 10))
+const naturalOrder = (a, b) => {
+    if (b == a) return 0
+    return (a < b) ? -1 : 1
+}
+
+// Segment 2: Main Function Definition
+// Precondition: The utility functions readLines, println, readInt, and readIntList must be defined.
+// Postcondition: The main function is defined and ready to be executed.
+
+function main(input) {
+    // Segment 3: Reading and Parsing Input
+    // Precondition: The input string is provided in the format: 
+    // First line: integer n
+    // Second line: n space-separated integers
+    // Postcondition: The lines array contains the input lines, n is an integer, and aArray is an array of n integers.
+    
+    const lines = readLines(input)
+    const n = readInt(lines[0])
+    const aArray = readIntList(lines[1])
+    
+    // Segment 4: Calculating XOR and Transforming the Array
+    // Precondition: aArray is an array of n integers.
+    // Postcondition: ans is a string of n space-separated integers, each transformed by XOR with allXor.
+    
+    const allXor = aArray.reduce((acc, a) => acc ^ a)
+    const ans = aArray.map((a, i) => a ^ allXor).join(' ')
+    
+    // Segment 5: Output the Result
+    // Precondition: ans is a string of n space-separated integers.
+    // Postcondition: The result is printed to the console.
+    // Output format: A single line of n space-separated integers.
+    
+    println(ans)
+}
+
+// Segment 6: Reading Input and Executing Main Function
+// Precondition: The main function is defined.
+// Postcondition: The main function is executed with the input read from /dev/stdin.
+// Input format: A string with the format specified in Segment 3.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

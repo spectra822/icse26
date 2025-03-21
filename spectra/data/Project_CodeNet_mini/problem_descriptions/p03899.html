@@ -1,0 +1,87 @@
+<span class="lang-en">
+<p>Score : <var>700</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> panels arranged in a row in Takahashi's house, numbered <var>1</var> through <var>N</var>. The <var>i</var>-th panel has a number <var>A_i</var> written on it. Takahashi is playing by throwing balls at these panels.</p>
+<p>Takahashi threw a ball <var>K</var> times. Let the panel hit by a boll in the <var>i</var>-th throw be panel <var>p_i</var>. He set the score for the <var>i</var>-th throw as <var>i \times A_{p_i}</var>.</p>
+<p>He was about to calculate the total score for his throws, when he realized that he forgot the panels hit by balls, <var>p_1,p_2,...,p_K</var>. The only fact he remembers is that for every <var>i</var> <var>(1 ≦ i ≦ K-1)</var>, <var>1 ≦ p_{i+1}-p_i ≦ M</var> holds. Based on this fact, find the maximum possible total score for his throws.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≦ M ≦ N ≦ 100,000</var></li>
+<li><var>1 ≦ K ≦ min(300,N)</var></li>
+<li><var>1 ≦ A_i ≦ 10^{9}</var></li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Partial Scores</h3><ul>
+<li>In the test set worth <var>100</var> points, <var>M = N</var>.</li>
+<li>In the test set worth another <var>200</var> points, <var>N ≦ 300</var> and <var>K ≦ 30</var>.</li>
+<li>In the test set worth another <var>300</var> points, <var>K ≦ 30</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var> <var>K</var>
+<var>A_1</var> <var>A_2</var> … <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible total score for Takahashi's throws.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2 3
+10 2 8 10 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>56
+</pre>
+<p>The total score is maximized when panels <var>1,3</var> and <var>4</var> are hit, in this order.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5 5 2
+5 2 10 5 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>28
+</pre>
+<p>This case satisfies the additional constraint <var>M = N</var> for a partial score.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 3 5
+3 7 2 6 9 4 8 5 1 1000000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>5000000078
+</pre></section>
+</div>
+</span>

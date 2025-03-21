@@ -1,0 +1,19 @@
+```c
+// Global variables
+// None
+
+// Main function to determine if all elements can be matched within constraints.
+// It takes `n`, `m`, and `q` as input, representing the number of elements, the maximum element value, and the number of operations respectively.
+// It reads `q` operations and processes them to check if all elements can be matched.
+// The function prints "Yes" if all elements can be matched, otherwise "No".
+int main(void)
+    // Calls min(...)
+```
+```c
+// Main function to determine if all elements can be matched within constraints.
+// It takes `n`, `m`, and `q` as input, representing the number of elements, the maximum element value, and the number of operations respectively.
+// It reads `q` operations and processes them to check if all elements can be matched.
+// The function prints "Yes" if all elements can be matched, otherwise "No".
+int main(void)
+    // Calls min(...)
+```

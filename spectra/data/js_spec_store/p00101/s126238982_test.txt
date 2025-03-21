@@ -1,0 +1,10 @@
+Input:
+3
+Hello Hoshino
+Hoshino is here
+No Hoshino in this line
+
+Output:
+Hello Hoshina
+Hoshina is here
+No Hoshina in this line

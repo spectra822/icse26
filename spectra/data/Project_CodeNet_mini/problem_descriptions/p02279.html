@@ -1,0 +1,200 @@
+<H1>Rooted Trees</H1>
+
+
+
+<p>
+A graph <i>G</i> = (<i>V</i>, <i>E</i>) is a data structure where <i>V</i> is a finite set of vertices and <i>E</i> is a binary relation on <i>V</i> represented by a set of edges. Fig. 1 illustrates an example of a graph (or graphs).
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_ALDS1_7_A_1"><br>
+<b>Fig. 1</b>
+</center>
+
+<p>
+A free tree is a connnected, acyclic, undirected graph. A rooted tree is a free tree in which one of the vertices is distinguished from the others. A vertex of a rooted tree is called "node."
+</p>
+
+
+<p>
+Your task is to write a program which reports the following information for each node <i>u</i> of a given rooted tree <i>T</i>:
+</p>
+
+<ul>
+<li>node ID of <i>u</i></li>
+<li>parent of <i>u</i></li>
+<li>depth of <i>u</i></li>
+<li>node type (root, internal node or leaf)</li>
+<li>a list of chidlren of <i>u</i></li>
+</ul>
+
+
+<p>
+If the last edge on the path from the root <i>r</i> of a tree <i>T</i> to a node <i>x</i> is (<i>p</i>, <i>x</i>), then <i>p</i> is the <b>parent</b> of <i>x</i>, and <i>x</i> is a <b>child</b> of <i>p</i>. The root is the only node in <i>T</i> with no parent.
+</p>
+
+<!--
+<p>
+If two nodes have the same parent, they are <b>siblings</b>.
+</p>
+-->
+
+<p>
+A node with no children is an <b>external node</b> or <b>leaf</b>. A nonleaf node is an <b>internal node</b>
+</p>
+
+<p>
+The number of children of a node <i>x</i> in a rooted tree <i>T</i> is called the <b>degree</b> of <i>x</i>.
+</p>
+
+<p>
+The length of the path from the root <i>r</i> to a node <i>x</i> is the <b>depth</b> of <i>x</i> in <i>T</i>.
+</p>
+
+
+
+<p>
+Here, the given tree consists of <i>n</i> nodes and evey node has a unique ID from 0 to <i>n</i>-1.
+</p>
+
+<p>
+Fig. 2 shows an example of rooted trees where ID of each node is indicated by a number in a circle (node). The example corresponds to the first sample input.
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_ALDS1_7_A_2"><br>
+<b>Fig. 2</b>
+</center>
+
+
+
+<H2>Input</H2>
+
+<p>
+The first line of the input includes an integer <i>n</i>, the number of nodes of the tree.
+</p>
+<p>
+In the next <i>n</i> lines, the information of each node <i>u</i> is given in the following format:
+</p>
+
+<p>
+<i>id</i> <i>k</i> <i>c</i><sub>1</sub> <i>c</i><sub>2</sub> ... <i>c<sub>k</sub></i>
+</p>
+
+<p>
+where <i>id</i> is the node ID of <i>u</i>, <i>k</i> is the degree of <i>u</i>, <i>c</i><sub>1</sub> ... <i>c<sub>k</sub></i> are node IDs of 1st, ... <i>k</i>th child of <i>u</i>. If the node does not have a child, the <i>k</i> is 0.
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+Print the information of each node in the following format ordered by IDs:
+</p>
+
+<p>
+<span>node</span> <i>id</i><span>: </span><span>parent = </span><i>p</i><span>, depth = </span><i>d</i><span>, <i>type</i><span>, [</span><i>c</i><sub>1</sub>...<i>c<sub>k</sub></i><span>]</span>
+</p>
+
+<p>
+<i>p</i> is ID of its parent. If the node does not have a parent, print <spna>-1</span>.
+</p>
+<p>
+<i>d</i> is depth of the node.
+</p>
+
+<p>
+<i>type</i> is a type of nodes represented by a string (<span>root</span>, <span>internal node</span> or <span>leaf</span>). If the root can be considered as a leaf or an internal node, print <span>root</span>.
+</p>
+
+<p>
+<i>c</i><sub>1</sub>...<i>c<sub>k</sub></i> is the list of children as a ordered tree.
+</p>
+
+
+<p>
+Please follow the format presented in a sample output below.
+</p>
+
+
+<H2>Constraints</H2>
+
+<ul>
+<li>1 &le; <i>n</i> &le; 100000</li>
+</ul>
+
+<H2>Sample Input 1</H2>
+<pre>
+13
+0 3 1 4 10
+1 2 2 3
+2 0
+3 0
+4 3 5 6 7
+5 0
+6 0
+7 2 8 9
+8 0
+9 0
+10 2 11 12
+11 0
+12 0
+</pre>
+<H2>Sample Output 1</H2>
+<pre>
+node 0: parent = -1, depth = 0, root, [1, 4, 10]
+node 1: parent = 0, depth = 1, internal node, [2, 3]
+node 2: parent = 1, depth = 2, leaf, []
+node 3: parent = 1, depth = 2, leaf, []
+node 4: parent = 0, depth = 1, internal node, [5, 6, 7]
+node 5: parent = 4, depth = 2, leaf, []
+node 6: parent = 4, depth = 2, leaf, []
+node 7: parent = 4, depth = 2, internal node, [8, 9]
+node 8: parent = 7, depth = 3, leaf, []
+node 9: parent = 7, depth = 3, leaf, []
+node 10: parent = 0, depth = 1, internal node, [11, 12]
+node 11: parent = 10, depth = 2, leaf, []
+node 12: parent = 10, depth = 2, leaf, []
+</pre>
+
+
+<H2>Sample Input 2</H2>
+<pre>
+4
+1 3 3 2 0
+0 0
+3 0
+2 0
+</pre>
+<H2>Sample Output 2</H2>
+<pre>
+node 0: parent = 1, depth = 1, leaf, []
+node 1: parent = -1, depth = 0, root, [3, 2, 0]
+node 2: parent = 1, depth = 1, leaf, []
+node 3: parent = 1, depth = 1, leaf, []
+</pre>
+
+<h2>Note</h2>
+<p>
+You can use a <b>left-child, right-sibling representation</b> to implement a tree which has the following data:
+</p>
+
+<ul>
+<li>the parent of <i>u</i></li>
+<li>the leftmost child of <i>u</i></li>
+<li>the immediate right sibling of <i>u</i></li>
+</ul>
+
+<!--
+<p>
+<a href="template/ALDS1_7_A_template.c">Template in C</a>
+</p>
+-->
+
+<H2>Reference</H2>
+
+<p>
+Introduction to Algorithms, Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. The MIT Press.
+</p>
+
+

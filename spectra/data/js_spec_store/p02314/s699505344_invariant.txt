@@ -1,0 +1,45 @@
+// Segment 1: Variable Declarations and Input Parsing
+// Precondition: The input is provided via standard input in the specified format.
+// Input format: The first line contains two integers n and m separated by a space. 
+//               The second line contains m integers separated by spaces.
+// Postcondition: The variables n, m, and C are correctly initialized with the parsed input values.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var nm = Arr[0].split(" ").map(Number);
+var n = nm[0];
+var m = nm[1];
+var C = Arr[1].split(" ").map(Number);
+
+// Segment 2: Function Definition
+// Precondition: The variables n, m, and C are correctly initialized.
+// Postcondition: The function `gerTheNumberOfCoin` is defined and can be called to calculate the minimum number of coins required.
+
+// Function to calculate the minimum number of coins required to make amount n
+function gerTheNumberOfCoin() {
+    var T = [];
+    // Initialize an array T with size n+1 and set all values to positive infinity
+    for (var i = 0; i <= n; i++) {
+        T[i] = Number.POSITIVE_INFINITY;
+    }
+    T[0] = 0; // Base case: 0 coins are needed to make amount 0
+
+    // Iterate over each coin in the array C
+    for (var i = 0; i < m; i++) {
+        // Update the array T for each value from C[i] to n
+        for (var j = C[i]; j <= n; j++) {
+            T[j] = Math.min(T[j], T[j - C[i]] + 1);
+        }
+    }
+
+    // Return the minimum number of coins needed to make amount n
+    return T[n];
+}
+
+// Segment 3: Function Call and Output
+// Precondition: The function `gerTheNumberOfCoin` is defined and can be called.
+// Postcondition: The minimum number of coins required to make amount n is printed to the console.
+// Output format: A single integer representing the minimum number of coins required.
+
+var min = gerTheNumberOfCoin();
+console.log(min);

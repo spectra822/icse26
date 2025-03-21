@@ -1,0 +1,41 @@
+// Segment 1: Function Definition and Input Handling
+// Precondition: The Main function is called with a string input representing the test case.
+// Postcondition: The input string is split into an array of strings based on newline characters.
+function Main(input) {
+    input = input.split("\n");
+
+    // Segment 2: Variable Initialization
+    // Precondition: The input array has at least two elements, where the first element is the count of numbers, and the second element is a space-separated string of numbers.
+    // Postcondition: Variables sum and now are initialized. The second element of the input array is split into an array of numbers (arr), and a "#" is appended to it.
+    var sum = 0;
+    var now = 1;
+    var arr = input[1].split(" ");
+    arr.push("#");
+
+    // Segment 3: Loop through the Array
+    // Precondition: arr is an array of strings where the last element is "#".
+    // Postcondition: The sum is calculated based on the number of consecutive identical elements in the array.
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] == arr[i - 1]) {
+            now++;
+        } else {
+            sum += Math.ceil((now - 1) / 2);
+            now = 1;
+        }
+    }
+
+    // Segment 4: Output the Result
+    // Precondition: The sum variable holds the calculated result.
+    // Postcondition: The sum is printed to the console.
+    console.log(sum)
+}
+
+// Input: A string from standard input, where the first line is an integer n, and the second line contains n space-separated integers.
+// Example Input:
+// 5
+// 1 1 2 2 2
+
+// Output: A single integer representing the calculated sum.
+// Example Output:
+// 2
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

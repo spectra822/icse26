@@ -1,0 +1,34 @@
+// Segment 1: Reading input and initial processing
+// Precondition: The input is provided as a single string, where the first line contains an integer N, 
+// and the second line contains N integers separated by spaces.
+// Postcondition: The input string is split into an array of strings, where tmp[0] is the integer N, 
+// and tmp[1] is a space-separated string of integers.
+const Main = (input) => {
+    const tmp = input.trim().split('\n')
+
+    // Segment 2: Parsing the input
+    // Precondition: tmp[0] is a string representing an integer N, and tmp[1] is a string of space-separated integers.
+    // Postcondition: N is an integer, and aArr is an array of integers.
+    const N = parseInt(tmp[0])
+    const aArr = tmp[1].split(' ').map(Number)
+
+    // Segment 3: Calculating the result
+    // Precondition: N is an integer, and aArr is an array of integers.
+    // Postcondition: result is the sum of all elements in aArr minus N.
+    var result = aArr.reduce((a, x) => a += x, 0) - N
+
+    // Segment 4: Outputting the result
+    // Precondition: result is an integer.
+    // Postcondition: The result is printed to the console.
+    // Input format: The function reads from standard input, which contains two lines.
+    //               The first line contains an integer N.
+    //               The second line contains N integers separated by spaces.
+    // Output format: The function outputs a single integer.
+    console.log(result)
+    return result
+}
+
+// Segment 5: Reading from standard input and invoking the Main function
+// Precondition: The file '/dev/stdin' contains the input in the specified format.
+// Postcondition: The Main function is invoked with the input read from the file.
+Main(require('fs').readFileSync('/dev/stdin', 'utf8'))

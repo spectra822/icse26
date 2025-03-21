@@ -1,0 +1,12 @@
+```c
+int cmp(int *a, int *b)
+    // Precondition: Pointers `a` and `b` point to valid integers.
+    // Postcondition: Returns 1 if the integer pointed to by `a` is greater than the integer pointed to by `b`, otherwise returns 0.
+
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The next `N` lines each contain an integer.
+    // Output format: A single number.
+    // Precondition: The global variables `N`, `A`, and `R` have been declared.
+    // Postcondition: The smallest 3rd concatenated number of any two different elements in the array `A` is printed.
+```

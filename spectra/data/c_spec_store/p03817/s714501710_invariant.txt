@@ -1,0 +1,31 @@
+```
+ll gcd(ll a, ll b)
+    // Precondition: `a` and `b` are non-negative integers.
+    // Postcondition: The function returns the greatest common divisor (GCD) of `a` and `b`.
+
+ll lcm(ll a, ll b)
+    // Precondition: `a` and `b` are non-negative integers.
+    // Postcondition: The function returns the least common multiple (LCM) of `a` and `b`.
+
+ll max(ll a, ll b)
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: The function returns the maximum of `a` and `b`.
+
+ll min(ll a, ll b)
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: The function returns the minimum of `a` and `b`.
+
+ll asc(const void* a, const void* b)
+    // Precondition: `a` and `b` are pointers to `ll` integers.
+    // Postcondition: The function returns a positive value if `*(ll*)a` is greater than `*(ll*)b`, zero if they are equal, and a negative value otherwise.
+
+ll dsc(const void* a, const void* b)
+    // Precondition: `a` and `b` are pointers to `ll` integers.
+    // Postcondition: The function returns a positive value if `*(ll*)b` is greater than `*(ll*)a`, zero if they are equal, and a negative value otherwise.
+
+int main()
+    // Input format: A single line containing an integer `n`.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variable `n` has been declared.
+    // Postcondition: The function prints the minimum number of operations needed to reduce `n` to 0, where each operation is either subtracting a multiple of 11 or a number from 1 to 6.
+```

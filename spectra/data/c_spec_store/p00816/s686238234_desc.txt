@@ -1,0 +1,26 @@
+```
+
+// Global variables
+None
+
+// This function takes a string `s`, an integer `n` representing the length of the string,
+// and an integer `m` representing a bitmask. It calculates the sum of the numbers
+// formed by splitting the string `s` at positions where the bitmask `m` has a bit set.
+int func(char* s, int n, int m)
+    Calls atoi(...)
+
+// This function reads input until it encounters a target value of 0.
+// For each input pair (target, paper), it determines the best way to split the string `paper`
+// such that the sum of the resulting numbers is less than or equal to the target and as close as possible to the target.
+// It outputs the best sum and the corresponding split of the string.
+// If there are multiple ways to achieve the best sum, it outputs "rejected".
+// If no valid split is found, it outputs "error".
+int main(void)
+    Calls func(...)
+    Calls strlen(...)
+    Calls puts(...)
+    Calls printf(...)
+    Calls putchar(...)
+    Calls scanf(...)
+
+```

@@ -1,0 +1,157 @@
+// Segment 1: Import and setup readline interface
+// Precondition: Node.js runtime environment with 'readline' module available.
+// Postcondition: Readline interface is created and ready to capture input from stdin.
+var read = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+var obj;
+var inLine = [];
+
+// Segment 2: Read input lines
+// Precondition: Readline interface is active and listening for input events.
+// Postcondition: Captured input lines are stored in the 'inLine' array.
+read.on('line', function(input) {
+    inLine.push(input);
+});
+
+// Segment 3: Process input after reading all lines
+// Precondition: Readline interface has closed, indicating end of input.
+// Postcondition: Input lines are processed, and the main logic is executed.
+// Input: Multiple lines of input, each line terminated by a newline character.
+read.on('close', function() {
+    obj = init(inLine);
+    console.error("\n");
+    var start = new Date();
+    Main();
+    var end = new Date() - start;
+
+    myerr("time : " + (end) + "ms");
+    myerr("memory : " + Math.round(process.memoryUsage().heapTotal / 1024) + "KB");
+});
+
+// Segment 4: Helper functions for input parsing
+// Precondition: Helper functions are called with appropriate arguments.
+// Postcondition: Return values are correctly parsed and converted as per the function's purpose.
+function nextInt() {
+    return myconv(next(), 1);
+}
+
+function nextStrArray() {
+    return myconv(next(), 2);
+}
+
+function nextIntArray() {
+    return myconv(next(), 4);
+}
+
+function nextCharArray() {
+    return myconv(next(), 6);
+}
+
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+// Segment 5: Initialize input object
+// Precondition: Input array is provided.
+// Postcondition: Returns an object to traverse through the input array.
+function init(input) {
+    var returnObj = {
+        list: input,
+        index: 0,
+        max: input.length,
+        hasNext: function() {
+            return (this.index < this.max);
+        },
+        next: function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException これ以上ないよ";
+            } else {
+                var returnInput = this.list[this.index];
+                this.index++;
+                return returnInput;
+            }
+        }
+    };
+    return returnObj;
+}
+
+// Segment 6: Output and error handling functions
+// Precondition: Functions are called with appropriate arguments.
+// Postcondition: Outputs are printed to stdout or stderr.
+function myout(s) {
+    console.log(s);
+}
+
+function myerr(s) {
+    console.error("debug:" + require("util").inspect(s, false, null));
+}
+
+// Segment 7: Conversion function
+// Precondition: Function is called with valid input and conversion type.
+// Postcondition: Returns the converted value based on the specified type.
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(" ");
+            case 4:
+                return i.split(" ").map(Number);
+            case 6:
+                return i.split("");
+            case 7:
+                return i.split("").map(Number);
+            case 8:
+                return i.join(" ");
+            case 9:
+                return i.join("\n");
+            case 0:
+                return i.join("");
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Segment 8: Main logic of the program
+// Precondition: Input has been parsed and is ready for processing.
+// Postcondition: Outputs whether the transformation from array A to array B is possible.
+// Input: 
+// - First line: Integer N
+// - Second line: N space-separated integers (array A)
+// - Third line: N space-separated integers (array B)
+// Output: "Yes" or "No"
+function Main() {
+    var N = nextInt();
+    var alist = nextIntArray();
+    var blist = nextIntArray();
+    var aSum = 0;
+    var bSum = 0;
+    for (var i = 0; i < N; i++) {
+        aSum += alist[i];
+        bSum += blist[i];
+    }
+    var acount = 0;
+    for (var i = 0; i < N; i++) {
+        if (alist[i] < blist[i]) {
+            acount += Math.floor((blist[i] - alist[i]) / 2);
+        } else {
+            acount -= alist[i] - blist[i];
+        }
+    }
+    if (acount >= 0) {
+        myout("Yes");
+    } else {
+        myout("No");
+    }
+}

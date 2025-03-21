@@ -1,0 +1,78 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given a grid of squares with <var>H</var> horizontal rows and <var>W</var> vertical columns, where each square is painted white or black.
+<var>HW</var> characters from <var>A_{11}</var> to <var>A_{HW}</var> represent the colors of the squares.
+<var>A_{ij}</var> is <code>#</code> if the square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left is black, and <var>A_{ij}</var> is <code>.</code> if that square is white.</p>
+<p>We will repeatedly perform the following operation until all the squares are black:</p>
+<ul>
+<li>Every white square that shares a side with a black square, becomes black.</li>
+</ul>
+<p>Find the number of operations that will be performed.
+The initial grid has at least one black square.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H,W \leq 1000</var></li>
+<li><var>A_{ij}</var> is <code>#</code> or <code>.</code>.</li>
+<li>The given grid has at least one black square.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var>
+<var>A_{11}</var><var>A_{12}</var><var>...</var><var>A_{1W}</var>
+<var>:</var>
+<var>A_{H1}</var><var>A_{H2}</var><var>...</var><var>A_{HW}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of operations that will be performed.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+...
+.#.
+...
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>After one operation, all but the corners of the grid will be black. After one more operation, all the squares will be black.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>6 6
+..#..#
+......
+#..#..
+......
+.#....
+....#.
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+</pre></section>
+</div>
+</span>

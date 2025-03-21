@@ -1,0 +1,29 @@
+```c
+// Global variables
+T stack[MAX+3], buf[MAX+3];
+int top, end;
+char str[MAX], *p;
+int tbl[13][3] = {
+    {1,2,3}, {1,3,2}, {2,1,3}, {2,3,1}, {3,1,2}, {3,2,1},
+    {1,1,1}, {1,1,2}, {2,2,1}, {1,2,1}, {2,1,2}, {1,2,2}, {2,1,1}
+};
+int rid;
+
+// Given a pointer to a character, this function reads consecutive digits 
+// from the input string and returns the corresponding integer value.
+long long getInt(void)
+
+// Given a character representing an operator, this function returns an 
+// integer code representing the operator type.
+int token(char c)
+
+// Given an operator code, this function returns the rank of the operator 
+// based on the current permutation of operator precedence.
+int rank(int op)
+
+// This function reads an arithmetic expression as a string from standard input.
+// It then evaluates the expression under 13 different permutations of operator precedence.
+// The function prints the maximum result obtained among all permutations.
+int main()
+  Calls getInt(...), token(...), and rank(...)
+```

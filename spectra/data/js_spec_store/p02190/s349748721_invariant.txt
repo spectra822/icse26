@@ -1,0 +1,25 @@
+// Segment 1: Reading input and processing it into an array of strings
+// Precondition: The program reads from standard input which contains multiple lines of text.
+// Postcondition: The variable `arr` is an array where each element is a line from the input (except the first line).
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Segment 2: Extracting the first line as an integer and the second line as an array of integers
+// Precondition: `arr` is a non-empty array of strings, where the first element is an integer and the second element is a space-separated string of integers.
+// Postcondition: `n` is an integer representing the number of elements in the array, and `a` is an array of integers parsed from the second element of `arr`.
+var n = arr.shift() - 0;
+var a = arr.shift().split(" ").map(Number);
+
+// Segment 3: Creating a set to find unique elements in the array
+// Precondition: `a` is an array of integers.
+// Postcondition: `s` is a Set containing the unique integers from the array `a`.
+var s = new Set();
+a.forEach(v => s.add(v));
+
+// Segment 4: Output the size of the set
+// Precondition: `s` is a Set containing unique integers.
+// Postcondition: The size of the set `s` is printed to the standard output.
+// Input format: The input consists of multiple lines. The first line contains a single integer `n` (number of elements).
+//               The second line contains `n` space-separated integers.
+// Output format: A single integer representing the number of unique integers in the input array is printed.
+console.log(s.size);

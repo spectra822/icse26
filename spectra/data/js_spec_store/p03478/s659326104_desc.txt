@@ -1,0 +1,44 @@
+// Function to split the input string by lines and then by spaces
+function spilitInput(input) {
+    var splited = [];
+    var rows = input.split('\n');
+    for (var i = 0; i < rows.length; i += 1) {
+        splited.push(rows[i].split(' '));
+    }
+    return splited;
+}
+
+// Main function to process the input and compute the result
+function Main(input) {
+    // Split the input into structured data
+    var splited = spilitInput(input);
+    
+    // Extract the first row values: n, a, b
+    var n = splited[0][0];
+    var a = splited[0][1];
+    var b = splited[0][2];
+    
+    // Initialize the total sum
+    var s_total = 0;
+
+    // Loop through each number from 1 to n
+    for (var i = 1; i <= n; i += 1) {
+        // Calculate the sum of digits of the current number
+        var sum = 0;
+        String(i).split('').forEach(function(i_n) {
+            sum += parseInt(i_n, 10);
+        });
+
+        // Check if the sum of digits is within the range [a, b]
+        if (a <= sum && sum <= b) {
+            // Add the number to the total sum if it meets the condition
+            s_total += i;
+        }
+    }
+
+    // Output the final result
+    console.log(s_total);
+}
+
+// Read input from stdin and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

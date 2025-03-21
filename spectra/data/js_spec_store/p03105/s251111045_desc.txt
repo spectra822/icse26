@@ -1,0 +1,27 @@
+// Function to process the input and determine the maximum sound level
+const main = stdin => {
+    // Read and split input lines into an array
+    const input = stdin.trim().split('\n');
+    
+    // Parse the first line to get values of A, B, and C
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+    const C = parseInt(input[0].split(" ")[2]);
+
+    // Calculate the initial sound level based on B and A
+    const sound = Math.floor(B / A);
+    
+    // Determine the maximum sound level that does not exceed C
+    let Maxsound;
+    if (sound < C) {
+        Maxsound = sound;
+    } else {
+        Maxsound = C;
+    }
+    
+    // Output the result
+    console.log(Maxsound);
+}
+
+// Read input from standard input and call the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

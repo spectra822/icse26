@@ -1,0 +1,65 @@
+<H1><font color="#000">Problem F:</font> Marked Ancestor</H1>
+
+<p>
+You are given a tree <i>T</i> that consists of <i>N</i> nodes. Each node is numbered from 1 to <i>N</i>, and node 1 is always the root node of <i>T</i>. Consider the following two operations on <i>T</i>:
+</p>
+<ul>
+    <li><span>M v</span>: (Mark) Mark node <span>v</span>.</li>
+    <li><span>Q v</span>: (Query) Print the index of the nearest marked ancestor of node <span>v</span> which is nearest to it. Initially, only the root node is marked. Note that a node is an ancestor of itself.</li>
+</ul>
+
+<p>
+Your job is to write a program that performs a sequence of these operations on a given tree and calculates
+the value that each Q operation will print. To avoid too large output file, your program is requested to
+print the sum of the outputs of all query operations. Note that the judges confirmed that it is possible to
+calculate every output of query operations in a given sequence.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input consists of multiple datasets. Each dataset has the following format:
+</p>
+
+<p>
+The first line of the input contains two integers <i>N</i> and <i>Q</i>, which denotes the number of nodes in the tree
+<i>T</i> and the number of operations, respectively. These numbers meet the following conditions: 1 &le; <i>N</i> &le; 100000 and 1 &le; <i>Q</i> &le; 100000.
+</p>
+<p>
+The following <i>N</i> - 1 lines describe the configuration of the tree <i>T</i>. Each line contains a single integer <i>p<sub>i</sub></i> (<i>i</i> = 2, ... , <i>N</i>), which represents the index of the parent of <i>i</i>-th node.
+</p>
+<p>
+The next <i>Q</i> lines contain operations in order. Each operation is formatted as "<span>M v</span>" or "<span>Q v</span>", where <i>v</i> is the index of a node.
+</p>
+
+<p>
+The last dataset is followed by a line containing two zeros. This line is not a part of any dataset and should not be processed.
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+For each dataset, print the sum of the outputs of all query operations in one line.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+6 3
+1
+1
+2
+3
+3
+Q 5
+M 3
+Q 5
+0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+4
+</pre>
+
+

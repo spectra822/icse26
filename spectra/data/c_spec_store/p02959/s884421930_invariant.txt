@@ -1,0 +1,9 @@
+```c
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The next `N+1` lines contain integers `A[1]` to `A[N+1]` separated by spaces.
+    // The next `N` lines contain integers `B[1]` to `B[N]` separated by spaces.
+    // Output format: A single integer on a new line.
+    // Precondition: The variable `N` has been declared. Arrays `A` and `B` have been declared with sufficient size.
+    // Postcondition: The sum `S` of the maximum elements that can be paired from `A` and `B` according to the program's logic is printed.
+```

@@ -1,0 +1,57 @@
+// Read input from standard input and split into an array of lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Process each test case until a zero is encountered
+while (true) {
+    // Read the first number in the current test case
+    var n = Arr.shift() - 0;
+    
+    // If the number is '0', exit the loop
+    if (n == 0) break;
+    
+    // Read the array of numbers for the current test case
+    var arr = (Arr.shift()).split(" ").map(Number);
+    
+    // Initialize the counter for the number of steps
+    var cnt = 0;
+    
+    // Transform the array until it becomes a sequence from 1 to n or the limit is reached
+    while (true) {
+        // Check if the array is already sorted as a sequence from 1 to n
+        var flag = arr.every(function(v, i) {
+            return (i + 1 == v);
+        });
+        
+        // If the array is sorted, break out of the loop
+        if (flag) break;
+        
+        // Get the length of the array
+        var L = arr.length;
+        
+        // Decrement each element by 1
+        arr = arr.map(function(v) {
+            return v - 1;
+        });
+        
+        // Remove all zero elements from the array
+        arr = arr.filter(function(v) {
+            return (v != 0);
+        });
+        
+        // Append the length of the original array to the end of the array
+        arr.push(L);
+        
+        // Increment the counter for the number of steps
+        cnt++;
+        
+        // If the counter reaches 10000, set it to -1 and break the loop
+        if (cnt == 10000) {
+            cnt = -1;
+            break;
+        }
+    }
+    
+    // Output the number of steps taken to transform the array
+    console.log(cnt);
+}

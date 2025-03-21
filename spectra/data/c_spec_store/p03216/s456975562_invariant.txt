@@ -1,0 +1,10 @@
+```c
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The second line contains a string `s` of length `n`.
+    // The third line contains an integer `q`.
+    // The next `q` lines contain one integer `k` each.
+    // Output format: For each `k`, a single number in a new line.
+    // Precondition: The global variables `n`, `s`, and `q` have been declared.
+    // Postcondition: For each `k`, the program prints the number of valid subsequences of length `k` in the string `s` that follow the pattern "DMC".
+```

@@ -1,0 +1,8 @@
+Input:
+0101
+1010
+#
+
+Output:
+No
+No

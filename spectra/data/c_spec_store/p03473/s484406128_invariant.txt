@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A single integer `m` on the first line.
+    // Output format: A single integer on the first line.
+    // Precondition: The integer `m` is read from standard input.
+    // Postcondition: The integer `48 - m` is printed to standard output.
+```

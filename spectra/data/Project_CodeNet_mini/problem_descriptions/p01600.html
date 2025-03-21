@@ -1,0 +1,53 @@
+
+<h2>Problem J: Tree Construction</h2>
+
+<p>Consider a two-dimensional space with a set of points (<var>x<sub>i</sub></var>,
+<var>y<sub>i</sub></var>) that satisfy <var>x<sub>i</sub></var> < <var>x<sub>j</sub></var>
+and <var>y<sub>i</sub></var> > <var>y<sub>j</sub></var> for all <var>i < j</var>.
+We want to have them all connected by a directed tree whose edges go toward
+either right (<var>x</var> positive) or upward (<var>y</var> positive). The
+figure below shows an example tree.</p>
+
+<div align="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_treeConstruction"><br>
+Figure 1: An example tree</div>
+
+<p>Write a program that finds a tree connecting all given points with the
+shortest total length of edges.</p>
+
+<h2>Input</h2>
+
+<p>The input begins with a line that contains an integer <var>n</var> (1 <=
+<var>n</var> <= 1000), the number of points. Then <var>n</var> lines follow. The
+<var>i</var>-th line contains two integers <var>x<sub>i</sub></var> and <var>y<sub>i</sub></var>
+(0 <= <var>x<sub>i</sub></var>, <var>y<sub>i</sub></var> <= 10000), which give
+the coordinates of the <var>i</var>-th point.</p>
+
+<h2>Output</h2>
+
+<p>Print the total length of edges in a line.</p>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+5
+1 5
+2 4
+3 3
+4 2
+5 1
+</pre>
+
+<h2>Output for the Sample Input 1</h2>
+
+<pre>12</pre>
+
+<h2>Sample Input 2</h2>
+
+<pre>
+1
+10000 0
+</pre>
+
+<h2>Output for the Sample Input 2</h2>
+
+<pre>0</pre>

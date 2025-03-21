@@ -1,0 +1,89 @@
+<span class="lang-en">
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have <var>N</var> boxes, numbered <var>1</var> through <var>N</var>. At first, box <var>1</var> contains one red ball, and each of the other boxes contains one white ball.</p>
+<p>Snuke will perform the following <var>M</var> operations, one by one. In the <var>i</var>-th operation, he randomly picks one ball from box <var>x_i</var>, then he puts it into box <var>y_i</var>.</p>
+<p>Find the number of boxes that may contain the red ball after all operations are performed.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2≤N≤10^5</var></li>
+<li><var>1≤M≤10^5</var></li>
+<li><var>1≤x_i,y_i≤N</var></li>
+<li><var>x_i≠y_i</var></li>
+<li>Just before the <var>i</var>-th operation is performed, box <var>x_i</var> contains at least <var>1</var> ball.</li>
+</ul>
+</section>
+</div>
+<hr>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>x_1</var> <var>y_1</var>
+<var>:</var>
+<var>x_M</var> <var>y_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of boxes that may contain the red ball after all operations are performed.</p>
+</section>
+</div>
+</div>
+<hr>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 2
+1 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>Just after the first operation, box <var>1</var> is empty, box <var>2</var> contains one red ball and one white ball, and box <var>3</var> contains one white ball.</p>
+<p>Now, consider the second operation. If Snuke picks the red ball from box <var>2</var>, the red ball will go into box <var>3</var>. If he picks the white ball instead, the red ball will stay in box <var>2</var>.
+Thus, the number of boxes that may contain the red ball after all operations, is <var>2</var>.</p>
+</section>
+</div>
+<hr>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 3
+1 2
+2 3
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>All balls will go into box <var>3</var>.</p>
+</section>
+</div>
+<hr>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>4 4
+1 2
+2 3
+4 1
+3 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>3
+</pre></section>
+</div>
+</hr></hr></hr></hr></span>

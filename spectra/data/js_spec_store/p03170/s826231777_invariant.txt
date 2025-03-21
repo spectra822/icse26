@@ -1,0 +1,60 @@
+// Segment 1: Input Parsing and Initialization
+// Precondition: The input is provided as a single string with multiple lines. The first line contains two integers N and K. The second line contains N integers.
+// Postcondition: The input is parsed into variables N, K, and array 'a'. An array 'aCheck' is initialized to keep track of the presence of elements in 'a'.
+
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) { // Input: Multiple lines of strings
+        return x.split(" ")
+    });
+    let N = parseInt(input[0][0], 10); // First line, first integer
+    let K = parseInt(input[0][1], 10); // First line, second integer
+    let a = input[1].map(e => parseInt(e, 10)); // Second line, array of integers
+    let aCheck = Array.from({
+        length: 1e5 + 1
+    }, () => false);
+    for (x of a) {
+        aCheck[x] = true;
+    }
+
+// Segment 2: Dynamic Programming Initialization
+// Precondition: Variables N, K, array 'a', and array 'aCheck' are initialized and populated correctly.
+// Postcondition: A DP array of size (K + 1) is initialized with 0s, and DP[0] is set to 2.
+
+    let DP = Array.from({
+        length: K + 1
+    }, () => 0);
+     
+    DP[0] = 2;
+
+// Segment 3: Dynamic Programming Computation
+// Precondition: DP array is initialized with DP[0] set to 2.
+// Postcondition: The DP array is filled based on the game rules. DP[i] indicates the result of the game if there are i stones left (1 for "First" player win, 2 for "Second" player win).
+
+    for (let i = 1; i <= K; i++) {
+        DP[i] = 2;
+        for (let x of a) {
+            if (x > i) break;
+            if (DP[i - x] === 2) {
+                DP[i] = 1;
+                break;
+            }
+        }
+    }
+
+// Segment 4: Result Output
+// Precondition: DP array is fully computed.
+// Postcondition: The result of the game is printed based on the value of DP[K].
+// Output: A single string "First" or "Second" indicating which player wins the game.
+
+    if (DP.pop() === 1) console.log("First");
+    else console.log("Second");
+}
+
+// Input: The input is provided through "/dev/stdin" in the format:
+// First line: Two integers N and K separated by a space.
+// Second line: N integers separated by spaces.
+// Example:
+// 2 4
+// 2 3
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

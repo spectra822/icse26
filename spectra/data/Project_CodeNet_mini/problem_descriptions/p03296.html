@@ -1,0 +1,95 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi lives in another world. There are slimes (creatures) of <var>10000</var> colors in this world. Let us call these colors Color <var>1, 2, ..., 10000</var>.</p>
+<p>Takahashi has <var>N</var> slimes, and they are standing in a row from left to right. The color of the <var>i</var>-th slime from the left is <var>a_i</var>.
+If two slimes of the same color are adjacent, they will start to combine themselves. Because Takahashi likes smaller slimes, he has decided to change the colors of some of the slimes with his magic.</p>
+<p>Takahashi can change the color of one slime to any of the <var>10000</var> colors by one spell.
+How many spells are required so that no slimes will start to combine themselves?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 100</var></li>
+<li><var>1 \leq a_i \leq N</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>...</var> <var>a_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum number of spells required.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5
+1 1 2 2 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>For example, if we change the color of the second slime from the left to <var>4</var>, and the color of the fourth slime to <var>5</var>, the colors of the slimes will be <var>1, 4, 2, 5, 2</var>, which satisfy the condition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+1 2 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>Although the colors of the first and third slimes are the same, they are not adjacent, so no spell is required.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>5
+1 1 1 1 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>2
+</pre>
+<p>For example, if we change the colors of the second and fourth slimes from the left to <var>2</var>, the colors of the slimes will be <var>1, 2, 1, 2, 1</var>, which satisfy the condition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>14
+1 2 2 3 3 3 4 4 4 4 1 2 3 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>4
+</pre></section>
+</div>
+</span>

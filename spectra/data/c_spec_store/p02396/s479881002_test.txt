@@ -1,0 +1,10 @@
+Input:
+10
+20
+30
+0
+
+Output:
+Case 1: 10
+Case 2: 20
+Case 3: 30

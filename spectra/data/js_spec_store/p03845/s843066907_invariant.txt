@@ -1,0 +1,44 @@
+// Segment 1: Setup input handling
+// Precondition: The program is starting, and no inputs have been read yet.
+// Postcondition: The program is ready to read and store lines of input.
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+var lines = [];
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Segment 2: Read input lines
+// Precondition: The program is set up to read input lines, and no lines have been read yet.
+// Postcondition: The 'lines' array contains all input lines as strings, one line per array element.
+
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+// Segment 3: Process input after reading is complete
+// Precondition: All input lines have been read and stored in the 'lines' array.
+// Postcondition: The program has processed the input and output the required results.
+
+reader.on('close', () => {
+    // Extract and parse input values
+    // Precondition: 'lines' contains all input lines as strings.
+    // Postcondition: Variables N, t, tsum, M, and px are initialized and hold the parsed input values.
+    const N = lines[0] - 0; // First line is the number of elements in the array t
+    const t = lines[1].split(" ").map(v => v - 0); // Second line is the array t
+    const tsum = t.reduce((a, b) => a + b, 0); // Sum of all elements in t
+    const M = lines[2]; // Third line is the number of queries
+    const px = lines.filter((v, i) => i > 2).map(v => v.split(" ").map(v => v - 0)); // Extracting queries
+
+    // Process each query and output results
+    // Precondition: px contains all queries as arrays of integers [p, x].
+    // Postcondition: For each query, the program outputs the modified sum.
+    // Input: Each query is a pair of integers `p` and `x`, separated by a space.
+    // Output: For each query, output a single integer representing the modified sum.
+    px.forEach(([p, x]) => {
+        console.log(tsum - t[p - 1] + x);
+    });
+});

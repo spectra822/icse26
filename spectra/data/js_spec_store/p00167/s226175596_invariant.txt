@@ -1,0 +1,93 @@
+// Segment 1: Reading input and initial processing
+
+// Precondition: The input is provided through stdin, consisting of multiple lines. 
+// Each line contains a single integer. The last integer in the input is 0, which is a sentinel value.
+
+// Postcondition: The input is read from stdin, the trailing newline character is removed,
+// and the input is split into an array of strings, each representing an integer.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.replace(/\n$/, "")).split("\n");
+
+// Segment 2: Main loop to process each test case
+
+// Precondition: Arr is an array of strings, each representing an integer. 
+// The first integer (n) in each test case denotes the number of subsequent integers in that test case. 
+// The loop continues until n is 0.
+
+// Postcondition: For each test case, an array `arr` of n integers is created. 
+// The number of swaps needed to sort `arr` using bubble sort is calculated and printed to stdout.
+
+// Input format: 
+// Multiple lines of integers. Each test case starts with an integer n, followed by n integers. 
+// The input ends with a line containing a single integer 0.
+
+// Output format:
+// For each test case, a single integer indicating the number of swaps needed to sort the array.
+
+while (true) {
+    var n = Arr.shift() - 0;
+    if (n == 0) break;
+
+    // Segment 3: Reading the integers for the current test case
+
+    // Precondition: n is a positive integer representing the number of integers in the current test case.
+    
+    // Postcondition: An array `arr` of n integers is created, containing the integers for the current test case.
+
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        var x = Arr.shift() - 0;
+        arr.push(x);
+    }
+
+    // Segment 4: Bubble sort and counting swaps
+    
+    // Precondition: `arr` is an array of n integers.
+    
+    // Postcondition: The number of swaps needed to sort `arr` using bubble sort is calculated and stored in `cnt`.
+    
+    var L = 1;
+    var cnt = 0;
+    while (true) {
+        if (arr.length == L) break;
+        for (var i = 0; i < arr.length - L; i++) {
+            var memo = arr[i];
+            if (arr[i] > arr[i + 1]) {
+                cnt++;
+                arr[i] = arr[i + 1];
+                arr[i + 1] = memo;
+            }
+        }
+        L++;
+    }
+
+    // Segment 5: Outputting the result for the current test case
+
+    // Precondition: `cnt` is the number of swaps needed to sort `arr`.
+    
+    // Postcondition: The value of `cnt` is printed to stdout.
+
+    console.log(cnt);
+}
+5
+5
+3
+2
+1
+4
+6
+1
+2
+3
+4
+5
+6
+3
+3
+2
+1
+0
+7
+0
+3

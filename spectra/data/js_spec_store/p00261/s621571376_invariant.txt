@@ -1,0 +1,69 @@
+// Segment 1: Import required module and read input
+// Precondition: The file system module 'fs' must be available.
+// Postcondition: The variable 'input' contains the contents of the standard input as a string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Process input and initialize variables
+// Precondition: 'input' is a non-empty string containing lines of binary strings followed by a '#' character.
+// Postcondition: 'Arr' is an array of strings, each representing a binary string, with the last element being '#'.
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Main loop to process each binary string
+// Precondition: 'Arr' is an array of strings with the last element being '#'.
+// Postcondition: Each binary string in 'Arr' is processed according to the state machine logic, and the result is printed.
+while (true) {
+    // Segment 3.1: Read and remove the first element from 'Arr'
+    // Precondition: 'Arr' is a non-empty array of strings.
+    // Postcondition: 'str' contains the first element of 'Arr', and 'Arr' has one less element.
+    var str = Arr.shift();
+    
+    // Segment 3.2: Check for termination condition
+    // Precondition: 'str' is a string.
+    // Postcondition: If 'str' is '#', the loop terminates.
+    if (str == "#") break;
+    
+    // Segment 3.3: Initialize state variable
+    // Precondition: 'str' is a binary string.
+    // Postcondition: 'p' is initialized to 'A'.
+    var p = "A";
+    
+    // Segment 3.4: Process each character in the binary string
+    // Precondition: 'str' is a binary string, 'p' is initialized to 'A'.
+    // Postcondition: 'p' is updated based on the state machine logic for each character in 'str'.
+    for (var i = 0; i < str.length; i++) {
+        var s = str[i] - 0;
+        if (p == "A" && s === 0) p = "X";
+        else if (p == "A" && s === 1) p = "Y";
+        else if (p == "B" && s === 0) p = "Y";
+        else if (p == "B" && s === 1) p = "X";
+        else if (p == "W" && s === 0) p = "B";
+        else if (p == "W" && s === 1) p = "Y";
+        else if (p == "X" && s === 0) p = "";
+        else if (p == "X" && s === 1) p = "Z";
+        else if (p == "Y" && s === 0) p = "X";
+        else if (p == "Y" && s === 1) p = "";
+        else if (p == "Z" && s === 0) p = "W";
+        else if (p == "Z" && s === 1) p = "B";
+    }
+    
+    // Segment 3.5: Output result based on final state
+    // Precondition: 'p' is the final state after processing the binary string.
+    // Postcondition: Outputs 'Yes' if 'p' is 'B', otherwise 'No'.
+    // Output format: A single line containing either 'Yes' or 'No'.
+    console.log((p == "B") ? "Yes" : "No");
+}
+  0100
+  0101
+  10100
+  01000
+  0101011
+  0011
+  011111
+  #
+  Yes
+  No
+  Yes
+  No
+  Yes
+  No
+  Yes

@@ -1,0 +1,43 @@
+// Segment 1: Function Definition and Initial Input Processing
+
+// Precondition: The input is provided as a string where the numbers are separated by spaces.
+// Postcondition: The input string is trimmed and split into an array of strings.
+
+function main(input) {
+    input = input.trim(); // The input string is trimmed of any leading or trailing whitespace.
+    let list = input.split(" "); // The trimmed input string is split into an array of strings based on spaces.
+    
+    // Segment 2: Parsing and Initial Calculations
+
+    // Precondition: 'list' is an array of strings representing integers.
+    // Postcondition: 'min', 'max', and 'a' are integers parsed from the array.
+    // 'dai' and 'syou' are the floor division results of 'max' and 'min' by 'a' respectively.
+
+    let min = parseInt(list[0]) - 1; // 'min' is the integer value of the first element in 'list' minus one.
+    let max = parseInt(list[1]); // 'max' is the integer value of the second element in 'list'.
+    let a = parseInt(list[2]); // 'a' is the integer value of the third element in 'list'.
+    let dai = Math.floor(max / a); // 'dai' is the floor division result of 'max' by 'a'.
+    let syou = Math.floor(min / a); // 'syou' is the floor division result of 'min' by 'a'.
+
+    // Segment 3: Calculation of Answer and Output
+
+    // Precondition: 'dai' and 'syou' are the floor division results of 'max' and 'min' by 'a' respectively.
+    // Postcondition: The difference between 'dai' and 'syou' is computed and printed.
+
+    let answer = dai - syou; // 'answer' is the difference between 'dai' and 'syou'.
+    console.log(answer); // The result is printed to the console.
+
+    // Input Format: A single string of space-separated integers.
+    // Example: "5 10 2"
+    // Output Format: A single integer printed to the console.
+    // Example: 3
+}
+
+// Segment 4: Reading Input and Calling Main Function
+
+// Precondition: The program reads input from "/dev/stdin".
+// Postcondition: The 'main' function is called with the input string.
+// Input Format: The input is read from the standard input as a string.
+// Output Format: The output is printed to the standard output as specified in Segment 3.
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

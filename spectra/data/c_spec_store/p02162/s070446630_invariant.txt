@@ -1,0 +1,9 @@
+```c
+int main(void)
+    // Input format: Four integers T1, T2, R1, and R2, separated by spaces.
+    // Output format: A single string, either "Alice", "Bob", or "Draw", followed by a newline.
+    // Precondition: The input consists of exactly four integers.
+    // Postcondition: The program prints "Alice" if either T1 < T2 (and R1 or R2 is negative) or R1 > R2.
+    //                The program prints "Bob" if either T1 > T2 (and R1 or R2 is negative) or R1 < R2.
+    //                The program prints "Draw" if T1 == T2 (and R1 or R2 is negative) or R1 == R2.
+```

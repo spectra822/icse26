@@ -1,0 +1,39 @@
+```c
+void swap(int *x, int *y)
+    // Precondition: The pointers `x` and `y` point to valid integer variables.
+    // Postcondition: The values pointed to by `x` and `y` have been swapped.
+
+int gcd(int a, int b)
+    // Precondition: `a` and `b` are non-negative integers.
+    // Postcondition: The greatest common divisor of `a` and `b` is returned.
+
+int dn(const void *a, const void *b)
+    // Precondition: `a` and `b` are pointers to integers.
+    // Postcondition: Returns a positive, zero, or negative value if the integer pointed to by `b` is less than, equal to, or greater than the integer pointed to by `a`.
+
+long int modpow(long int a, long int n, long int mod)
+    // Precondition: `a`, `n`, and `mod` are non-negative integers, and `mod` is greater than zero.
+    // Postcondition: Returns `(a^n) % mod`.
+
+int max(int a, int b)
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: Returns the greater of `a` and `b`.
+
+int min(int a, int b)
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: Returns the smaller of `a` and `b`.
+
+void chmax(int *a, int b)
+    // Precondition: `a` is a pointer to an integer, and `b` is an integer.
+    // Postcondition: If `b` is greater than the value pointed to by `a`, the value pointed to by `a` is updated to `b`.
+
+void chmin(int *a, int b)
+    // Precondition: `a` is a pointer to an integer, and `b` is an integer.
+    // Postcondition: If `b` is less than the value pointed to by `a`, the value pointed to by `a` is updated to `b`.
+
+int main(void)
+    // Input format: Three integers `h`, `w`, and `k` on a single line, separated by spaces.
+    // Output format: A single line with either "Yes" or "No".
+    // Precondition: `h`, `w`, and `k` are non-negative integers.
+    // Postcondition: Prints "Yes" if there exist non-negative integers `i` and `j` such that `(w*i) + (h*j) - 2*i*j` equals `k`. Otherwise, prints "No".
+```

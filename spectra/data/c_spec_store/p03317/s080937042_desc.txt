@@ -1,0 +1,13 @@
+```c
+// Global variables
+// None
+
+// This is the main function which calculates the minimum number of operations required
+// to reduce the array to a subarray of length k.
+// It takes two inputs `n` and `k`, representing the length of the array and the subarray length respectively.
+// It reads an array of `n` elements and then calculates the number of operations required
+// based on the given conditions.
+int main()
+    // Calls scanf(...)
+    // Calls printf(...)
+```

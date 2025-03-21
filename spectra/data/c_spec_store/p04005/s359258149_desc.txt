@@ -1,0 +1,10 @@
+```c
+// Global variables
+// None
+
+// This function reads three long integers from the standard input, checks if any of them are even.
+// If any of them is even, it prints '0'. Otherwise, it finds the maximum of the three numbers,
+// sets that maximum number to 1, and prints the product of the three numbers.
+int main()
+  // Calls to other functions: None
+```

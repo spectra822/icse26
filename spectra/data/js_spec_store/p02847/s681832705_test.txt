@@ -1,0 +1,5 @@
+Input:
+THU
+
+Output:
+3

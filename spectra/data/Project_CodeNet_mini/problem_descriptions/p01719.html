@@ -1,0 +1,116 @@
+
+
+
+<p>長年の研究の末、イクタ君は未来予知能力を手に入れた！　彼がこの研究に費やした時間や金銭は莫大なものであったが、ついに報われる時がやってきたのだ。手始めに金銭を取り戻すため、イクタ君は株式投資を始めることにした。
+</p>
+
+<p>
+イクタ君は現在株式は全く保有しておらず、 <var>x</var> 円を所持している。彼が投資対象に定めた株式は <var>n</var> 種類で、それらについて今日から <var>d</var> 日分の株価を予知することに成功した。その結果、驚くべきことに今日から <var>d</var> 日間は日中の株価変動が全くないことが判明した。つまり、今日を1日目としたときの <var>i </var>（<var>1 &le; i &le; d</var>）日目の株式 <var>j</var> （<var>1 &le; j &le; n</var>）の株価 <var>p<sub>i,j</sub></var> 円がわかっている。イクタ君はそれぞれの日に自由に株式を売買できる。すなわち、任意の時点で以下の操作（購入・売却）を任意の順番で任意の回数行える。ただし、各操作の前後での所持金と株式の保有単位数は非負整数でなければならない。
+</p>
+
+<ul>
+<li> 購入 : <var>i</var> 日目に、株式の種類 <var>j</var> （<var>1 &le; j &le; n</var>）を一つ選び、所持金 <var>p<sub>i,j</sub></var> 円を支払い1単位の株式 <var>j</var> を得る。
+</li>
+<li> 売却 : <var>i</var> 日目に、株式の種類 <var>j</var> （<var>1 &le; j &le; n</var>）を一つ選び、1単位の株式 <var>j</var> を支払い <var>p<sub>i,j</sub></var> 円を得る。
+</li></ul>
+
+<p>（彼が研究に没頭する間に証券取引システムは大きな発達を遂げ、取引手数料はかからなくなった。）
+</p>
+
+<p>イクタ君は大学で情報科学を修めていたが、未来予知研究に明け暮れるすえに大学で学んだことをすべて忘れてしまっていた。そんな彼の代わりに最終日の所持金を最大化するプログラムを書いてあげてほしい。
+</p>
+
+<h2>Input</h2>
+
+<p>入力は以下の形式で与えられる。
+</p>
+<pre>
+<var>n</var> <var>d</var> <var>x</var> <br><var>p<sub>1,1</sub></var> ... <var>p<sub>1,n</sub></var><br>...<br><var>p<sub>d,1</sub></var> ... <var>p<sub>d,n</sub></var><br></pre>
+
+<ul><li> <var>n</var> : 株式の種類数
+</li><li> <var>d</var> : 日数
+</li><li> <var>x</var> : 1日目の所持金
+</li><li> <var>p<sub>i,j</sub></var> :<var> i </var>日目の銘柄<var>j</var>の株価（今日を1日目とする）
+</li></ul>
+
+
+<h3>Constraints</h3>
+<p>入力中の各変数は以下の制約を満たす整数である。
+</p>
+
+<ul>
+<li> <var>1 &le; n &le; 10</var>
+</li>
+<li> <var>1 &le; d &le; 10</var>
+</li>
+<li> <var>1 &le; x, p<sub>i,j</sub> &le; 10<sup>5</sup></var>
+</li>
+<li> 最終日の所持金が <var>10<sup>5</sup></var> 以下となることが保証されている。
+</li>
+</ul>
+
+
+<h2>Output</h2>
+<p>最適に投資した場合の最終日の所持金を1行に出力せよ。
+</p>
+
+<h2>Sample Input 1</h2>
+
+<pre>2 2 5
+3 2
+5 4
+</pre>
+
+<h2>Output for the Sample Input 1</h2>
+
+<pre>9
+</pre>
+<ul><li>例えば、それぞれの株式を1単位ずつ購入します。
+</li></ul>
+
+
+<h2>Sample Input 2</h2>
+
+<pre>1 2 5
+6
+10000
+</pre>
+
+<h2>Output for the Sample Input 2</h2>
+
+<pre>5
+</pre>
+<ul><li> 1単位より小さい取引はできません。小口投資家の悲哀です。
+</li></ul>
+
+
+<h2>Sample Input 3</h2>
+
+<pre>2 3 5
+4 5
+6 3
+8 5
+</pre>
+
+<h2>Output for the Sample Input 3</h2>
+
+<pre>11
+</pre>
+<ul><li> 1日目は1種類目の株式に、2日目は2種類目の株式に投資します。
+</li></ul>
+
+
+<h2>Sample Input 4</h2>
+
+<pre>3 3 10
+10 9 6
+8 7 3
+7 5 1
+</pre>
+
+<h2>Output for the Sample Input 4</h2>
+
+<pre>10
+</pre>
+<ul><li> 景気が悪い時もあります。
+</li></ul>

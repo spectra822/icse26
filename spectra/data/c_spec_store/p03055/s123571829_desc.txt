@@ -1,0 +1,27 @@
+```c
+// Global variables
+int a[400005], b[400005];
+int h[400005], l;
+
+// Compare the values in array `a` at indices `h[x]` and `h[y]`.
+// Return 1 if `a[h[x]] > a[h[y]]`, otherwise return -1.
+int comp_h(int x, int y)
+
+// Swap the values in array `h` at indices `x` and `y`.
+void swap_h(int x, int y)
+
+// Insert a new element `ne` into the heap represented by array `h` and update the heap accordingly.
+void push(int ne)
+    Calls comp_h(...)
+    Calls swap_h(...)
+
+// Remove and return the smallest element from the heap represented by array `h` and update the heap accordingly.
+int pop()
+    Calls swap_h(...)
+    Calls comp_h(...)
+
+// Main function that reads input, processes the data to determine the depth of nodes in a tree, and prints "First" or "Second" based on the computed depth.
+int main()
+    Calls push(...)
+    Calls pop(...)
+```

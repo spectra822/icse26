@@ -1,0 +1,35 @@
+const {
+    reverse
+} = require("dns");
+
+// Main function that processes the input and finds the K-th common divisor of A and B
+const main = stdin => {
+    // Read and parse the input values
+    const input = stdin.trim().split('\n');
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+    const K = parseInt(input[0].split(" ")[2]);
+
+    // Find all divisors of A
+    let Aresults = [];
+    for (let i = 1; i <= A; i++) {
+        if (A % i == 0) {
+            Aresults.push(i);
+        }
+    }
+
+    // Find common divisors of A and B
+    let ABresults = [];
+    for (let i = 0; i < Aresults.length; i++) {
+        if (B % Aresults[i] == 0) {
+            ABresults.push(Aresults[i])
+        }
+    }
+
+    // Reverse the list of common divisors and print the K-th one
+    const ABresults2 = ABresults.reverse();
+    console.log(ABresults2[K - 1]);
+}
+
+// Read input from standard input and run the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

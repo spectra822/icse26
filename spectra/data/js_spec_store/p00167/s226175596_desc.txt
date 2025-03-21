@@ -1,0 +1,49 @@
+// Import the 'fs' module and read the input from stdin
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of strings, each representing a line
+var Arr = (input.replace(/\n$/, "")).split("\n");
+
+// Main loop to process each test case
+while (true) {
+    // Read the number of elements in the current test case
+    var n = Arr.shift() - 0;
+    
+    // If n is 0, break out of the loop as it signifies the end of input
+    if (n == 0) break;
+    
+    // Initialize an array to store the elements of the current test case
+    var arr = [];
+    
+    // Read n elements and add them to the array
+    for (var i = 0; i < n; i++) {
+        var x = Arr.shift() - 0;
+        arr.push(x);
+    }
+    
+    // Initialize the length to be compared and the count of swaps
+    var L = 1;
+    var cnt = 0;
+    
+    // Bubble sort algorithm to count the number of swaps needed to sort the array
+    while (true) {
+        // If the array is fully sorted, break out of the loop
+        if (arr.length == L) break;
+        
+        // Perform a pass of bubble sort
+        for (var i = 0; i < arr.length - L; i++) {
+            var memo = arr[i];
+            // If the current element is greater than the next element, swap them
+            if (arr[i] > arr[i + 1]) {
+                cnt++;
+                arr[i] = arr[i + 1];
+                arr[i + 1] = memo;
+            }
+        }
+        // Increment L to reduce the range of comparison in the next pass
+        L++;
+    }
+    
+    // Print the number of swaps for the current test case
+    console.log(cnt);
+}

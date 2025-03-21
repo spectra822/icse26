@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: Three integers h, m, s on each line, separated by spaces. The input ends when a line containing -1 -1 -1 is encountered.
+    // Output format: For each input line, two lines of output in the format HH:MM:SS. The first line represents the time remaining until 02:00:00.
+    // The second line represents three times the remaining time.
+    // Precondition: The input values for hours (h) are between 0 and 23, for minutes (m) are between 0 and 59, and for seconds (s) are between 0 and 59.
+    // Postcondition: The program will print the required output for each valid input line until the termination condition (-1 -1 -1) is encountered.
+```

@@ -1,0 +1,40 @@
+// Function definition for main, which takes stdin input
+const main = stdin => {
+    // Read and parse input
+    const input = stdin.trim().split('\n')
+    const N = parseInt(input[0])
+
+    // Extract card numbers and sort them in descending order
+    const cards = input[1].split(' ').map(x => parseInt(x))
+    const sortedCards = cards.sort((a, b) => b - a)
+
+    // Calculate Alice's score by summing cards at even indices
+    const alices = sortedCards.filter((a, i) => i % 2 === 0).reduce((a, b) => a + b)
+
+    // Calculate Bob's score by summing cards at odd indices
+    const bobs = sortedCards.filter((a, i) => i % 2 !== 0).reduce((a, b) => a + b)
+
+    // Output the difference between Alice's and Bob's scores
+    console.log(alices - bobs)
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))
+   // Function definition for main, which takes stdin input
+   const main = stdin => {
+       // Read and parse input
+       const input = stdin.trim().split('\n')
+       const N = parseInt(input[0])
+       // Extract card numbers and sort them in descending order
+       const cards = input[1].split(' ').map(x => parseInt(x))
+       const sortedCards = cards.sort((a, b) => b - a)
+       // Calculate Alice's score by summing cards at even indices
+       const alices = sortedCards.filter((a, i) => i % 2 === 0).reduce((a, b) => a + b)
+       // Calculate Bob's score by summing cards at odd indices
+       const bobs = sortedCards.filter((a, i) => i % 2 !== 0).reduce((a, b) => a + b)
+       // Output the difference between Alice's and Bob's scores
+       console.log(alices - bobs)
+   }
+
+   // Read input from standard input and pass it to the main function
+   main(require("fs").readFileSync("/dev/stdin", "utf8"))

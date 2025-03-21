@@ -1,0 +1,22 @@
+// Segment 1: Input Reading and Parsing
+// Precondition: The input is a string in the format "a b c d" where a, b, c, and d are integers, followed by a newline character.
+// Postcondition: The variables `a`, `b`, `c`, and `d` are initialized as integers.
+
+function Main(input) {
+    const lines = input.split('\n');
+    // Input: "a b c d\n"
+    const [a, b, c, d] = lines[0].split(' ').map(s => parseInt(s));
+
+    // Segment 2: Interval Calculation
+    // Precondition: `a`, `b`, `c`, and `d` are integers representing two intervals [a, b] and [c, d].
+    // Postcondition: Computes the overlap length of the two intervals and logs it if there is an overlap, otherwise logs 0.
+    // Output: An integer representing the overlap length of the intervals [a, b] and [c, d].
+
+    console.log(Math.max(Math.min(b, d) - Math.max(a, c), 0));
+}
+
+// Segment 3: Reading from Standard Input
+// Precondition: The program is executed in an environment where the input is provided via standard input.
+// Postcondition: The program reads the input from standard input and passes it to the `Main` function for processing.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

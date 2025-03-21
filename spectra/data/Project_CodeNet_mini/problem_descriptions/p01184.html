@@ -1,0 +1,93 @@
+
+<H1><font color="#000">Problem D:</font> International Party</H1>
+
+<p>
+Isaac H. Ives is attending an international student party (maybe for girl-hunting). Students there enjoy
+talking in groups with excellent foods and drinks. However, since students come to the party from all
+over the world, groups may not have a language spoken by all students of the group. In such groups,
+some student(s) need to work as interpreters, but intervals caused by interpretation make their talking
+less exciting.
+</p>
+<p>
+Needless to say, students want exciting talks. To have talking exciting as much as possible, Isaac proposed
+the following rule: the number of languages used in talking should be as little as possible, and not exceed
+five. Many students agreed with his proposal, but it is not easy for them to find languages each student
+should speak. So he calls you for help.
+</p>
+<p>
+Your task is to write a program that shows the minimum set of languages to make talking possible, given
+lists of languages each student speaks.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input consists of a series of data sets.
+</p>
+<p>
+The first line of each data set contains two integers <i>N</i> (1 &le; <i>N</i> &le; 30) and <i>M</i> (2 &le; <i>M</i> &le; 20) separated
+by a blank, which represent the numbers of languages and students respectively. The following <i>N</i> lines
+contain language names, one name per line. The following <i>M</i> lines describe students in the group. The
+<i>i</i>-th line consists of an integer <i>K<sub>i</sub></i> that indicates the number of languages the <i>i</i>-th student speaks, and
+<i>K<sub>i</sub></i> language names separated by a single space. Each language name consists of up to twenty alphabetic
+letters.
+</p>
+<p>
+A line that contains two zeros indicates the end of input and is not part of a data set.
+</p>
+
+<H2>Output</H2>
+
+<p>
+Print a line that contains the minimum number <i>L</i> of languages to be spoken, followed by <i>L</i> language
+names in any order. Each language name should be printed in a separate line. In case two or more sets of
+the same size is possible, you may print any one of them. If it is impossible for the group to enjoy talking
+with not more than five languages, you should print a single line that contains “Impossible” (without
+quotes).
+</p>
+<p>
+Print an empty line between data sets.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+3 4
+English
+French
+Japanese
+1 English
+2 French English
+2 Japanese English
+1 Japanese
+2 2
+English
+Japanese
+1 English
+1 Japanese
+6 7
+English
+Dutch
+German
+French
+Italian
+Spanish
+1 English
+2 English Dutch
+2 Dutch German
+2 German French
+2 French Italian
+2 Italian Spanish
+1 Spanish
+0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+2
+English
+Japanese
+
+Impossible
+
+Impossible
+</pre>

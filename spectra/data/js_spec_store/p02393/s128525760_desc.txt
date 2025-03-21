@@ -1,0 +1,14 @@
+// Load the 'fs' module to read the input from standard input
+const fs = require('fs');
+
+// Read the input from standard input, assuming it's provided as a single line of space-separated numbers
+const input = fs.readFileSync('/dev/stdin', 'utf8');
+
+// Split the input string into an array of strings, then convert each string to a number
+const numbers = input.split(' ').map(Number);
+
+// Sort the array of numbers in ascending order
+const sortedNumbers = numbers.sort((a, b) => a - b);
+
+// Join the sorted array of numbers back into a single space-separated string and print it
+console.log(sortedNumbers.join(' '));

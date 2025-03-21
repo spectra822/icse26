@@ -1,0 +1,14 @@
+```c
+long long dp[2010][2010];
+    // Precondition: The global array `dp` has been declared with dimensions 2010x2010.
+    // Postcondition: The global array `dp` is used to store intermediate results of the dynamic programming approach.
+
+int main(){
+    // Input format: The first line contains two integers `n` and `m`.
+    // The next line contains `n` integers separated by spaces.
+    // The next line contains `m` integers separated by spaces.
+    // Output format: A single number.
+    // Precondition: The global array `dp` has been declared, and the predefined constant `mod` is set to 1000000007.
+    // Postcondition: The number of ways to interleave sequences `s` and `t` such that the longest common subsequence is minimized is printed modulo `mod`.
+}
+```

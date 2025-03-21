@@ -1,0 +1,30 @@
+// Segment 1: Reading input from stdin
+const main = stdin => {
+    // Precondition: `stdin` is a string representing the input text, which contains multiple lines.
+    // Postcondition: `input` is an array of strings, where each string is a line from the input.
+    const input = stdin.trim().split('\n')
+
+    // Segment 2: Parsing the first line of input to extract A and B
+    // Precondition: `input[0]` is a string in the format "A B" where A and B are integers.
+    // Postcondition: `A` and `B` are integers parsed from the first line of input.
+    const [A, B] = input[0].split(' ').map(x => parseInt(x))
+
+    // Segment 3: Checking if A and B have the same parity and printing result
+    // Precondition: `A` and `B` are integers.
+    // Postcondition: If A and B have different parity, 'IMPOSSIBLE' is printed and function returns.
+    // Otherwise, the average of A and B is printed.
+    if (A % 2 !== B % 2) {
+        console.log('IMPOSSIBLE')
+        return
+    }
+
+    console.log((A + B) / 2)
+}
+
+// Input format: A single string read from stdin, containing two integers A and B separated by a space.
+// Output format: A single integer (the average of A and B) or the string 'IMPOSSIBLE'.
+
+// Segment 4: Reading from standard input and invoking the main function
+// Precondition: The program is being executed in an environment where `require("fs").readFileSync` can read from "/dev/stdin".
+// Postcondition: The main function is called with the input read from standard input.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

@@ -1,0 +1,34 @@
+// Segment 1: Reading and parsing input
+// Precondition: The input is provided via '/dev/stdin' and consists of 5 lines of integers.
+// Postcondition: The input is read, trimmed, split into lines, and converted into an array of numbers stored in `arr`.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n").map(Number);
+
+// Segment 2: Initializing variables
+// Precondition: `arr` is an array of at least 5 integers.
+// Postcondition: Variables `a`, `b`, `c`, `d`, `e`, and `t` are initialized with values from `arr` and `t` is set to 0.
+var a = arr[0];
+var b = arr[1];
+var c = arr[2];
+var d = arr[3];
+var e = arr[4];
+var t = 0;
+
+// Segment 3: Calculating time if `a` is negative
+// Precondition: Variables `a`, `b`, `c`, `d`, `e`, and `t` are initialized.
+// Postcondition: If `a` is negative, `t` is incremented by the cost to move `a` to 0, and `a` is set to 0.
+if (a < 0) {
+    t += Math.abs(a) * c + d;
+    a = 0;
+}
+
+// Segment 4: Calculating time for the remaining distance
+// Precondition: Variables `a`, `b`, `e`, and `t` are properly set, with `a` being non-negative.
+// Postcondition: `t` is incremented by the cost to move from `a` to `b`.
+t += (b - a) * e;
+
+// Segment 5: Output the result
+// Precondition: The total time `t` has been calculated.
+// Postcondition: The value of `t` is printed to the console.
+// Output format: A single integer printed on one line.
+console.log(t);

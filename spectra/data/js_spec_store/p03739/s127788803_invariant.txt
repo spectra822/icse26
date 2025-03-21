@@ -1,0 +1,57 @@
+// Segment 1: Importing required module and reading input
+// Precondition: The file system module 'fs' is available for use.
+// Postcondition: The variable 'input' contains the content read from the standard input in UTF-8 format.
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+// Segment 2: Main function wrapper
+// Precondition: 'input' is a string containing the input data.
+// Postcondition: The main logic of the program is executed, and the result is logged to the console.
+(input => {
+    // Segment 3: Parsing input
+    // Precondition: 'input' is a non-empty string where the first line contains an integer N, and the second line contains N space-separated integers.
+    // Postcondition: 'lines' is an array of strings split by newline, 'N' is an integer representing the number of elements, and 'a' is an array of N integers.
+    const lines = input.split('\n');
+    const N = lines[0] - 0;
+    const a = lines[1].split(' ').map(Number);
+
+    // Segment 4: First pattern calculation
+    // Precondition: 'N' is a positive integer, 'a' is an array of N integers.
+    // Postcondition: 'ans1' contains the minimum number of operations needed to make the sequence alternate starting with a positive number.
+    let ans1 = 0;
+    let sum = 0;
+    for (let i = 0; i < N; i++) {
+        const odd = i % 2;
+        if (!odd & sum + a[i] > 0) {
+            sum += a[i];
+        } else if (odd & sum + a[i] < 0) {
+            sum += a[i];
+        } else {
+            ans1 += Math.abs(sum + a[i] - (odd ? -1 : 1));
+            sum = odd ? -1 : 1;
+        }
+    }
+
+    // Segment 5: Second pattern calculation
+    // Precondition: 'N' is a positive integer, 'a' is an array of N integers.
+    // Postcondition: 'ans2' contains the minimum number of operations needed to make the sequence alternate starting with a negative number.
+    let ans2 = 0;
+    sum = 0;
+    for (let i = 0; i < N; i++) {
+        const odd = (i + 1) % 2;
+        if (!odd & sum + a[i] > 0) {
+            sum += a[i];
+        } else if (odd & sum + a[i] < 0) {
+            sum += a[i];
+        } else {
+            ans2 += Math.abs(sum + a[i] - (odd ? -1 : 1));
+            sum = odd ? -1 : 1;
+        }
+    }
+
+    // Segment 6: Output result
+    // Precondition: 'ans1' and 'ans2' are integers representing the minimum number of operations for two alternate patterns.
+    // Postcondition: The minimum of 'ans1' and 'ans2' is logged to the console.
+    // Input format: The input consists of two lines. The first line contains an integer N. The second line contains N space-separated integers.
+    // Output format: A single integer representing the minimum number of operations required.
+    console.log(Math.min(ans1, ans2));
+})(input);

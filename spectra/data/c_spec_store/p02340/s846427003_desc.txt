@@ -1,0 +1,24 @@
+```c
+// Global variables
+#define BUF_SIZE 20
+#define DIVISOR 1000000007
+#define NUM_MAX 1000
+#define K_MAX 1000
+
+// pdp[# of partitions][# of balls]
+static uint64_t pdp[K_MAX+1][NUM_MAX+1];
+
+// Reads two integers from stdin and stores them in the provided addresses.
+// Returns 0 on success and -1 on failure.
+int get_int2(int *a1, int *a2)
+
+// Initializes the global 2D array `pdp` which stores the number of ways to partition `j` balls into `i` partitions,
+// with the values modulo `DIVISOR`.
+void init()
+
+// The main function that reads input values for `n` and `k`, initializes the `pdp` array,
+// and then prints the number of ways to partition `n` balls into `k` partitions.
+int main(void)
+  Calls get_int2(...)
+  Calls init(...)
+```

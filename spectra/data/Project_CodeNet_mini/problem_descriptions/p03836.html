@@ -1,0 +1,78 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Dolphin resides in two-dimensional Cartesian plane, with the positive <var>x</var>-axis pointing right and the positive <var>y</var>-axis pointing up.<br/>
+Currently, he is located at the point <var>(sx,sy)</var>. In each second, he can move up, down, left or right by a distance of <var>1</var>.<br/>
+Here, both the <var>x</var>- and <var>y</var>-coordinates before and after each movement must be integers.<br/>
+He will first visit the point <var>(tx,ty)</var> where <var>sx &lt; tx</var> and <var>sy &lt; ty</var>, then go back to the point <var>(sx,sy)</var>, then visit the point <var>(tx,ty)</var> again, and lastly go back to the point <var>(sx,sy)</var>.<br/>
+Here, during the whole travel, he is not allowed to pass through the same point more than once, except the points <var>(sx,sy)</var> and <var>(tx,ty)</var>.<br/>
+Under this condition, find a shortest path for him.  </p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>-1000 ≤ sx &lt; tx ≤ 1000</var> </li>
+<li><var>-1000 ≤ sy &lt; ty ≤ 1000</var> </li>
+<li><var>sx,sy,tx</var> and <var>ty</var> are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>sx</var> <var>sy</var> <var>tx</var> <var>ty</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print a string <var>S</var> that represents a shortest path for Dolphin.<br/>
+The <var>i</var>-th character in <var>S</var> should correspond to his <var>i</var>-th movement.<br/>
+The directions of the movements should be indicated by the following characters:  </p>
+<ul>
+<li><code>U</code>: Up</li>
+<li><code>D</code>: Down</li>
+<li><code>L</code>: Left</li>
+<li><code>R</code>: Right</li>
+</ul>
+<p>If there exist multiple shortest paths under the condition, print any of them.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>0 0 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>UURDDLLUUURRDRDDDLLU
+</pre>
+<p>One possible shortest path is:</p>
+<ul>
+<li>Going from <var>(sx,sy)</var> to <var>(tx,ty)</var> for the first time: <var>(0,0)</var> → <var>(0,1)</var> → <var>(0,2)</var> → <var>(1,2)</var></li>
+<li>Going from <var>(tx,ty)</var> to <var>(sx,sy)</var> for the first time: <var>(1,2)</var> → <var>(1,1)</var> → <var>(1,0)</var> → <var>(0,0)</var></li>
+<li>Going from <var>(sx,sy)</var> to <var>(tx,ty)</var> for the second time: <var>(0,0)</var> → <var>(-1,0)</var> → <var>(-1,1)</var> → <var>(-1,2)</var> → <var>(-1,3)</var> → <var>(0,3)</var> → <var>(1,3)</var> → <var>(1,2)</var></li>
+<li>Going from <var>(tx,ty)</var> to <var>(sx,sy)</var> for the second time: <var>(1,2)</var> → <var>(2,2)</var> → <var>(2,1)</var> → <var>(2,0)</var> → <var>(2,-1)</var> → <var>(1,-1)</var> → <var>(0,-1)</var> → <var>(0,0)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>-2 -2 1 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>UURRURRDDDLLDLLULUUURRURRDDDLLDL
+</pre></section>
+</div>
+</span>

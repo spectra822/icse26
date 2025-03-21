@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// Main function that reads input and computes the minimum distance
+// after performing a series of operations on the given values.
+// It reads three integers x, k, and d, and computes the minimum distance
+// that can be achieved by subtracting d from x, k times.
+int main(int argv, char* argc[])
+    // No calls to other functions
+```

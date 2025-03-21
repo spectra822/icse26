@@ -1,0 +1,10 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The second line contains a string `string` of length `n`.
+    // Output format: A single integer, the count of non-overlapping occurrences of the substring "ABC".
+    // Precondition: `n` is a positive integer less than or equal to 50.
+    // The length of `string` is equal to `n`.
+    // `string` consists of uppercase English letters only.
+    // Postcondition: The number of non-overlapping occurrences of the substring "ABC" in `string` is printed.
+```

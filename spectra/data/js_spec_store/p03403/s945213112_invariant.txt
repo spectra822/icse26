@@ -1,0 +1,75 @@
+"use strict"
+
+// Segment 1: Import and Read Input
+// Precondition: The "fs" module is available for file system operations.
+// Postcondition: The input is read from "/dev/stdin", split by lines, and stored in the 'input' array.
+const create = () => {
+    const input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+    
+    // Segment 2: Initialize State Object
+    // Precondition: 'input' is a non-empty array of strings.
+    // Postcondition: An object 'res' is created with 'list', 'index', 'max', 'hasNext', and 'next' properties.
+    const res = {
+        "list": input,
+        "index": 0,
+        "max": input.length,
+        "hasNext": function() {
+            return this.index < this.max;
+        },
+        "next": function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException";
+            } else {
+                return this.list[this.index++];
+            }
+        }
+    };
+    return res;
+}
+
+// Precondition: The 'create' function is defined and creates an object with methods to iterate over input.
+// Postcondition: The variable 'o' is initialized with the object returned from 'create'.
+const o = create();
+
+// Segment 3: Helper Functions
+// Precondition: 'o' is an object with 'next' and 'hasNext' methods.
+// Postcondition: Helper functions are defined to read next input as string, integer, string array, integer array, or char array.
+const next = () => o.next();
+const nextInt = () => parseInt(o.next());
+const nextStrArray = () => o.next().split(" ");
+const nextIntArray = () => o.next().split(" ").map(el => parseInt(el));
+const nextCharArray = () => o.next().split("");
+const hasNext = () => o.hasNext();
+const myout = (...x) => console.log(...x);
+
+// Segment 4: Main Logic
+// Precondition: Input is provided in the following format:
+//               Line 1: An integer n (number of elements in the array)
+//               Line 2: n space-separated integers (elements of the array)
+// Postcondition: For each element in the array, the modified total distance is calculated and printed in the following format:
+//               Output: n lines, each containing an integer value
+const Main = () => {
+    // Precondition: The input is correctly formatted as described above.
+    // Postcondition: The variable 'n' holds the number of elements, and 'a' is an array with 0 added at both ends.
+    let n = nextInt();
+    let a = [0];
+    a.push(...nextIntArray());
+    a.push(0);
+
+    // Precondition: 'a' is an array with 0 at the beginning and end, and the original input array in the middle.
+    // Postcondition: 'total' holds the sum of absolute differences between consecutive elements in 'a'.
+    let total = 0;
+    for (let i = 1; i < a.length; i++) {
+        total += Math.abs(a[i] - a[i - 1]);
+    }
+
+    // Precondition: 'total' is calculated.
+    // Postcondition: For each element in the array (excluding the added 0s), the modified total distance is calculated and printed.
+    for (let i = 1; i < a.length - 1; i++) {
+        console.log(total - Math.abs(a[i] - a[i - 1]) - Math.abs(a[i + 1] - a[i]) + Math.abs(a[i + 1] - a[i - 1]));
+    }
+}
+
+// Precondition: All functions and variables are defined and initialized as required.
+// Postcondition: The 'Main' function is executed to process input and produce output.
+Main();

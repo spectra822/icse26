@@ -1,0 +1,130 @@
+// Segment 1: Variable Declarations and Readline Setup
+// Precondition: Node.js environment with 'readline' module available.
+// Postcondition: A readline interface is created to read input from stdin and output to stdout.
+var read = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+var obj;
+var inLine = [];
+
+// Segment 2: Readline Event Handlers
+// Precondition: Readline interface has been created.
+// Postcondition: Input lines are collected into the 'inLine' array, and 'Main' function is called after input is closed.
+// Input format: Multiple lines of input (each line is a string).
+// Output format: No output in this segment.
+read.on('line', function(input) {
+    inLine.push(input);
+});
+read.on('close', function() {
+    obj = init(inLine);
+    console.error('\n↑入力 ↓出力');
+    Main();
+});
+
+// Segment 3: Utility Functions
+// Precondition: None (utility functions can be called independently).
+// Postcondition: Utility functions for cloning objects, parsing input, and converting data types are defined.
+
+function makeClone(obj) {
+    return (obj instanceof Set) ? new Set(Array.from(obj)) : JSON.parse(JSON.stringify(obj));
+}
+
+function nextInt() {
+    return myconv(next(), 1);
+}
+
+function nextStrArray() {
+    return myconv(next(), 2);
+}
+
+function nextIntArray() {
+    return myconv(next(), 4);
+}
+
+function nextCharArray() {
+    return myconv(next(), 6);
+}
+
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+// Segment 4: Initialization Function
+// Precondition: 'input' is an array of strings containing the input data.
+// Postcondition: An object with methods to iterate over the input data is created and returned.
+
+function init(input) {
+    return {
+        list: input,
+        index: 0,
+        max: input.length,
+        hasNext: function() {
+            return (this.index < this.max);
+        },
+        next: function() {
+            if (this.hasNext()) {
+                return this.list[this.index++];
+            } else {
+                throw 'ArrayIndexOutOfBoundsException There is no more input';
+            }
+        }
+    };
+}
+
+// Segment 5: Output and Error Logging Functions
+// Precondition: None (utility functions can be called independently).
+// Postcondition: Functions to print output and log errors are defined.
+
+function myout(s) {
+    console.log(s);
+}
+
+function myerr(s) {
+    console.error('debug:' + require('util').inspect(s, false, null));
+}
+
+// Segment 6: Data Conversion Function
+// Precondition: 'i' is a string or array, 'no' is a number indicating the conversion type.
+// Postcondition: 'i' is converted according to the specified type and returned.
+
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(' ');
+            case 4:
+                return i.split(' ').map(Number);
+            case 6:
+                return i.split('');
+            case 7:
+                return i.split('').map(Number);
+            case 8:
+                return i.join(' ');
+            case 9:
+                return i.join('\n');
+            case 0:
+                return i.join('');
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Segment 7: Main Function
+// Precondition: 'obj' is initialized with input data, 'nextInt' function is available.
+// Postcondition: The result of the computation is printed to the console.
+// Input format: A single integer N (the first line of input).
+// Output format: A single integer, which is the ceiling of N/2.
+function Main() {
+    var N = nextInt();
+    myout(Math.ceil(N / 2));
+}

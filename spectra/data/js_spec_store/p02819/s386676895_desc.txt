@@ -1,0 +1,47 @@
+// Function to generate all k-length permutations of numbers from 1 to n
+function permutation(n, k) {
+    var ret = [
+        []
+    ];
+    var next;
+    for (var i = 0; i < k; i++) {
+        next = [];
+        ret.forEach(e => {
+            for (var k = 1; k <= n; k++) {
+                if (!e.includes(k)) {
+                    next.push(e.concat([k]));
+                }
+            }
+        });
+        ret = next.concat([]);
+    }
+    return ret;
+}
+
+// Main function to process input, find the smallest prime number greater than or equal to X, and output it
+function Main(input) {
+    // Split the input into lines and remove any trailing empty line
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    // Parse the first line of input as an integer X
+    var X = input[0].split(' ')[0] - 0;
+
+    // Loop to find the smallest prime number greater than or equal to X
+    loop1:
+        while (true) {
+            for (var i = 2; i ** 2 <= X; i++) {
+                if (X % i === 0) {
+                    X++;
+                    continue loop1;
+                }
+            }
+            // Output the prime number
+            console.log(X);
+            return;
+        }
+}
+
+// Read input from standard input and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

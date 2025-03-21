@@ -1,0 +1,5 @@
+// Read input from standard input, split by new lines, and convert each line to a number
+let [x, a, b] = require("fs").readFileSync("/dev/stdin", "utf8").split("\n").map(Number);
+
+// Compute the result of (x - a) modulo b and print it
+console.log((x - a) % b);

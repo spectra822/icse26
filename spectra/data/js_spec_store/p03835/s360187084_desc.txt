@@ -1,0 +1,28 @@
+// Function that serves as the entry point of the program and processes the input
+function main(input) {
+    // Splitting the input into an array of arguments and parsing K and S as integers
+    const args = input.split(' ');
+    const K = parseInt(args[0], 10);
+    const S = parseInt(args[1], 10);
+
+    // Initializing the count of valid (x, y, z) combinations
+    let count = 0;
+
+    // Nested loops to iterate over all possible values of x and y within the range [0, K]
+    for (let x = 0; x <= K; x++) {
+        for (let y = 0; y <= K; y++) {
+            // Calculating the value of z based on the current x and y
+            z = S - x - y;
+            // Checking if z is within the valid range [0, K] and incrementing the count if it is
+            if (0 <= z && z <= K) {
+                count++;
+            }
+        }
+    }
+
+    // Outputting the final count of valid (x, y, z) combinations
+    console.log(count);
+}
+
+// Reading input from standard input and running the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

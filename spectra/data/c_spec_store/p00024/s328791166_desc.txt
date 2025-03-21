@@ -1,0 +1,10 @@
+```c
+// No global variables
+
+// This function reads a floating-point value `v` in a loop until EOF is reached.
+// For each value `v`, it calculates an integer `n` based on the given formula
+// and prints the result. The formula used is `n = (int)((4.9 * v * v / 9.8 / 9.8) + 5) / 5`,
+// incremented by 1.
+int main(void)
+  Calls no other functions
+```

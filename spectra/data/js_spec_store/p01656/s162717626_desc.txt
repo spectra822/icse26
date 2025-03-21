@@ -1,0 +1,26 @@
+// Import the 'fs' module and read input from '/dev/stdin'
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of strings, each representing a line
+var Arr = (input.trim()).split("\n");
+
+// Extract the first line, split it into N and Q, and convert them to numbers
+var NQ = (Arr.shift()).split(" ").map(Number);
+var N = NQ[0];
+var Q = NQ[1];
+
+// Initialize the default string
+var str = "kogakubu10gokan";
+
+// Loop through the remaining lines of the input
+for (var i = 0; i < N; i++) {
+    // Split each line into an array of strings
+    var arr = Arr[i].split(" ");
+    // Convert the first element to a number
+    var a = arr[0] - 0;
+    // If 'a' is less than or equal to Q, update the string 'str'
+    if (a <= Q) str = arr[1];
+}
+
+// Output the final value of 'str'
+console.log(str);

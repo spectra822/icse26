@@ -1,0 +1,35 @@
+// Segment 1: Variable Declarations and Input Reading
+// Precondition: The '/dev/stdin' file contains the input data.
+// Postcondition: The input data is read, trimmed, split into lines, and converted to an array of numbers stored in 'Arr'.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n").map(Number);
+
+// Segment 2: Main Loop to Process Each Set of Numbers
+// Precondition: 'Arr' contains the numbers to be processed, where the first number of each set is the length 'L'.
+// Postcondition: The loop continues until 'L' is 0. For each set, the frequency of numbers 0-9 is calculated and printed.
+// Input format: Multiple lines of integers, where the first integer in each segment is the length 'L' followed by 'L' integers.
+// Output format: For each set of numbers, outputs 10 lines with either "-" or a string of "*" representing the frequency of each digit (0-9).
+while (true) {
+    var L = Arr.shift();
+    if (L == 0) break;
+
+    // Segment 3: Frequency Array Initialization
+    // Precondition: 'L' is the length of the current set of numbers to process.
+    // Postcondition: 'arr' is initialized to store the frequency of each digit (0-9).
+    var arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    // Segment 4: Count Frequencies of Numbers
+    // Precondition: 'Arr' contains the next 'L' numbers to process.
+    // Postcondition: 'arr' contains the frequency count of each digit (0-9) based on the next 'L' numbers.
+    for (var i = 0; i < L; i++) {
+        arr[Arr.shift()]++;
+    }
+
+    // Segment 5: Output Frequencies
+    // Precondition: 'arr' contains the frequency count of each digit (0-9).
+    // Postcondition: Output 10 lines, each containing either "-" or a string of "*" representing the frequency of each digit (0-9).
+    for (var i = 0; i < 10; i++) {
+        if (arr[i] == 0) console.log("-");
+        else console.log(Array(arr[i] + 1).join("*"));
+    }
+}

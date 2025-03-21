@@ -1,0 +1,87 @@
+
+
+
+<H1>投石おみくじ</H1>
+
+<p>
+ 「自分の道は自分で切り開く」をモットーに、ある神社が自分自身の手で運勢を決めるおみくじを作りました。そのおみくじを引く人にはまず6つの石を投げてもらい、その投げた石の一つ目と二つ目を結ぶ 線分、三つ目と四つ目を結ぶ 線分、五つ目と六つ目を結ぶ 線分の3本の線分の交点を頂点とする 三角形の面積から運勢を決めるというものです。各運勢と三角形の面積との関係は以下のとおりです。
+</p>
+
+<center>
+<table>
+<tr><th width="300">線分の交点を頂点とする三角形の面積</th><th>            運勢</th></tr>
+<tr><td>         1,900,000以上     </td><td>大吉 (dai-kichi)</td></tr>
+ <tr><td> 1,000,000以上1,900,000未満 </td><td>中吉 (chu-kichi)</td></tr>
+ <tr><td>  100,000以上1,000,000未満  </td><td>  吉 (kichi)</td></tr>
+ <tr><td>   0より大きく 100,000未満   </td><td>  小吉 (syo-kichi)</td></tr>
+ <tr><td>          三角形なし         </td><td>   凶 (kyo)</td></tr>
+</table>
+</center>
+<br/>
+
+<p>
+ しかし、三角形の面積の大きさの判定は神主さんが手計算でやっているので正確とはいえず、時間もかかってしまいます。そこで近所に住む優秀なプログラマであるあなたは、一刻でも早くプログラムを書いて神主さんを助けてあげることにしました。
+</p>
+
+<p>
+ 3 本の線分の情報を入力とし、線分の交点を頂点とする 三角形の面積から運勢を出力するプログラムを作成してください。線分の情報は始点の座標 (<var>x<sub>1</sub></var>, <var>y<sub>1</sub></var>) と、終点の座標 (<var>x<sub>2</sub></var>, <var>y<sub>2</sub></var>) が与えられ、始点と終点の座標は必ず異なることとします。また、2 つ以上の線分が同一直線上にある場合、交点を持たない 2 つの線分がある場合、3 つの線分が 1 点で交わる場合は、「三角形なし」となります。
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_stoning">
+</center>
+<br/><br/>
+
+<H2>Input</H2>
+
+<p>
+ 複数のデータセットの並びが入力として与えられます。入力の終わりはゼロ4つの行で示されます。
+ 各データセットは以下の形式で与えられます。
+</p>
+
+<pre>
+<var>line<sub>1</sub></var>
+<var>line<sub>2</sub></var>
+<var>line<sub>3</sub></var>
+</pre>
+
+<p>
+<var>i</var> 行目に <var>i</var> 番目の線分の情報が与えられます。各線分の情報は以下の形式で与えられます。
+</p>
+
+<pre>
+<var>x<sub>1</sub></var> <var>y<sub>1</sub></var> <var>x<sub>2</sub></var> <var>y<sub>2</sub></var>
+</pre>
+
+<p>
+線分の端点の座標を表す整数 (<var>x<sub>1</sub></var>, <var>y<sub>1</sub></var>),  (<var>x<sub>2</sub></var>, <var>y<sub>2</sub></var>) (-1000 &le; <var>x<sub>1</sub></var>, <var>y<sub>1</sub></var>, <var>x<sub>2</sub></var>, <var>y<sub>2</sub></var> &le; 1000 ) が空白区切りで与えられます。
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+データセット毎に、おみくじの結果を１行に出力します。
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+-3 -2 9 6
+3 -2 7 6
+-1 0 5 0
+2 2 -1 -1
+0 1 2 1
+-3 -1 3 1
+0 0 0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+syo-kichi
+kyo
+</pre>
+
+
+

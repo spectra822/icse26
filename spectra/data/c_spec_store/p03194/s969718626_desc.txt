@@ -1,0 +1,13 @@
+```c
+// Global variables
+long n, p, ans = 1;
+
+// The main function that reads input values `n` and `p`.
+// It then calculates the largest integer `ans` such that `ans^n` divides `p`.
+// The function iterates over possible factors of `p` and calculates the highest power of each factor that divides `p`.
+// If the count of a factor is at least `n`, the factor is raised to the power of `count/n` and multiplied to `ans`.
+// If `p` is greater than 1 after factorization and `n` equals 1, `p` is multiplied to `ans`.
+// Finally, it prints the result `ans`.
+int main()
+  Calls (none)
+```

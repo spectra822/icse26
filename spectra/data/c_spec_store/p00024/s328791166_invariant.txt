@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: One or more lines, each containing a single floating-point number.
+    // Output format: For each input line, print a single integer followed by a newline.
+    // Precondition: The input is a sequence of valid floating-point numbers.
+    // Postcondition: For each floating-point number `v` from the input, an integer `n` is calculated and printed. The integer `n` is derived from the formula `n = (int)((4.9 * v * v / 9.8 / 9.8 + 5) / 5) + 1`.
+```

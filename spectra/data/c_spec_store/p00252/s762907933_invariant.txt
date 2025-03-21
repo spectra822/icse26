@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Three integers a, b, and c are provided as input, separated by spaces.
+    // Output format: A single string "Open" or "Close" is printed.
+    // Precondition: The variables a, b, and c are declared and are integers.
+    // Postcondition: The program prints "Open" if the combination of a, b, and c matches (1, 1, 0) or (0, 0, 1). Otherwise, it prints "Close".
+```

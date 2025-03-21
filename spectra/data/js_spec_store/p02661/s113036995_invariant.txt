@@ -1,0 +1,46 @@
+// Segment 1: Reading and parsing input
+// Precondition: The input is provided through stdin in the format specified below.
+// Input format: 
+// The first line contains a single integer N.
+// The following N lines each contain two integers separated by a space.
+// Example:
+// 2
+// 1 2
+// 2 3
+console.log((args => {
+    // Postcondition: The input has been parsed into the variables N, A, and B.
+    const [
+        [N], ...X
+    ] = args.trim().split('\n').map(r => r.split(' ').map(v => v | 0));
+
+    // Segment 2: Initializing and populating arrays A and B
+    // Precondition: N is defined and X is an array of N pairs of integers.
+    const A = [],
+        B = [];
+    for (let i = 0; i < N; i++) {
+        A.push(X[i][0]);
+        B.push(X[i][1]);
+    }
+    // Postcondition: Arrays A and B contain the first and second integers from each pair in X, respectively.
+
+    // Segment 3: Sorting arrays A and B
+    // Precondition: Arrays A and B are populated with N integers each.
+    A.sort((a, b) => a - b);
+    B.sort((a, b) => a - b);
+    // Postcondition: Arrays A and B are sorted in ascending order.
+
+    // Segment 4: Calculating the result based on the sorted arrays
+    // Precondition: N, A, and B are defined and A and B are sorted.
+    if (N & 1) {
+        const m = (N - 1) / 2;
+        // Postcondition: For odd N, the result is calculated as B[m] - A[m] + 1.
+        return B[m] - A[m] + 1;
+    } else {
+        const m = N / 2;
+        // Postcondition: For even N, the result is calculated as B[m] + B[m - 1] - A[m] - A[m - 1] + 1.
+        return B[m] + B[m - 1] - A[m] - A[m - 1] + 1;
+    }
+})(require('fs').readFileSync('/dev/stdin', 'utf8')));
+
+// Output format: A single integer, which is the calculated result.
+// Example output: 3

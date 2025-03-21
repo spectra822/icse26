@@ -1,0 +1,30 @@
+// Read the input from the standard input (usually used for competitive programming)
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of numbers
+var arr = input.split(" ").map(Number);
+
+// Extract the first two numbers as a and b
+var a = arr[0];
+var b = arr[1];
+
+// Check if both numbers are equal, if so, print the number and exit
+if (a === b) {
+    console.log(a);
+    return;
+}
+
+// Determine the larger and smaller number between a and b
+var x = Math.max(a, b);
+var y = Math.min(a, b);
+
+// Calculate the remainder of the larger number divided by the smaller number
+var c = x % y;
+
+// Find the greatest common divisor (GCD) by iterating from the remainder down to 1
+for (var i = c; i >= 1; i--) {
+    if (x % i == 0 && y % i == 0) break;
+}
+
+// Print the GCD
+console.log(i);

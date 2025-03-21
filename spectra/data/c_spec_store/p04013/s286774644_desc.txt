@@ -1,0 +1,14 @@
+```c
+// Global variables
+// None
+
+// This function reads input values for N and A, then reads an array x of size N.
+// It calculates the sum of the elements in x.
+// It initializes a 3D array dp to store the number of ways to choose k elements from the first j elements
+// such that their sum is s.
+// It then fills the dp array based on the values of x, and calculates the number of ways to choose k elements
+// from the array x such that their sum is exactly k*A.
+// Finally, it prints the result.
+int main(void)
+    // No calls to other functions
+```

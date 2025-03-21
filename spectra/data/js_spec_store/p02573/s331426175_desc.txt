@@ -1,0 +1,81 @@
+// Segment: Variable declarations and input handling
+let inputString = "";
+let currentLine = 0;
+
+// Segment: Collecting input data
+process.stdin.on("data", (data) => {
+    inputString += data;
+});
+process.stdin.on("end", function() {
+    inputString = inputString
+        .trim()
+        .split("\n")
+        .map((str) => str.trim());
+    main();
+});
+
+// Segment: Function to read lines of input
+function readLine() {
+    return inputString[currentLine++];
+}
+
+// Segment: Main function to process the input and find the largest connected component
+function main() {
+    // Read total number of people and number of connections
+    let [totalPeople, t] = readLine()
+        .split(" ")
+        .map((n) => parseInt(n));
+
+    // Initialize graph and seenCouple objects
+    const graph = {};
+    const seenCouple = {};
+
+    // Read each connection and build the graph
+    while (t--) {
+        let [p1, p2] = readLine()
+            .split(" ")
+            .map((n) => parseInt(n));
+
+        // Ensure each connection is only added once
+        if (!seenCouple[`${p1}-${p2}`]) {
+            seenCouple[`${p1}-${p2}`] = true;
+
+            // Add connection to the graph
+            if (!graph[p1]) graph[p1] = { [p2]: true };
+            else graph[p1][p2] = true;
+            if (!graph[p2]) graph[p2] = { [p1]: true };
+            else graph[p2][p1] = true;
+        }
+    }
+
+    // Initialize variables to track the largest connected component
+    let max = 1;
+    let visited = {};
+
+    // Traverse the graph to find the largest connected component
+    for (let key in graph) {
+        if (!visited[key]) {
+            const stack = [key];
+            let count = 0;
+
+            // Depth-first search (DFS) to count the size of the connected component
+            while (stack.length) {
+                const node = stack.pop();
+                visited[node] = true;
+                count++;
+                for (let neighbor in graph[node]) {
+                    if (!visited[neighbor]) {
+                        visited[neighbor] = true;
+                        stack.push(neighbor);
+                    }
+                }
+            }
+
+            // Update the maximum size of connected components found
+            max = Math.max(max, count);
+        }
+    }
+
+    // Output the result
+    console.log(max);
+}

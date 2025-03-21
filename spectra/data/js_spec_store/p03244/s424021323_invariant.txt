@@ -1,0 +1,129 @@
+// Segment 1: Utility Functions
+// Precondition: None
+// Postcondition: Utility functions to handle input, output, error, and conversion are defined.
+
+function myin() {
+    return require("fs").readFileSync("/dev/stdin", "utf8").trim();
+}
+
+function myout(t) {
+    console.log(t);
+}  
+
+function myerr(t) {
+    console.error(t);
+}  
+
+function myconv(i, no) {
+    switch (no) {
+        case 0:
+            return i;
+        case 1:
+            return parseInt(i);
+        case 2:
+            return i.split(" ");
+        case 3:
+            return i.split("\n");
+        case 4:
+            return i.split(" ").map((a) => Number(a));
+        case 5:
+            return i.split("\n").map((a) => Number(a));
+        case 6:
+            return i.split("");
+        case 7:
+            return i.split("").map((a) => Number(a));
+    }
+}
+
+// Segment 2: Main Function Setup
+// Precondition: Utility functions are defined
+// Postcondition: Input is read and processed into necessary formats
+// Input format: 
+// First line: An integer N
+// Second line: A space-separated list of N integers
+// Output format: None
+
+function Main(input) {
+    input = myconv(input, 3);
+    var N = myconv(input[0], 1);
+    var list = myconv(input[1], 2);
+
+    // Segment 3: Initialize Counters
+    // Precondition: Input has been processed into N and list
+    // Postcondition: Odd and even counters are initialized
+
+    var oddlist = {};
+    var evenlist = {};
+    for (var i = 0; i < N; i++) {
+        if (i % 2 == 0) {
+            if (oddlist[list[i]] == null) {
+                oddlist[list[i]] = 1;
+            } else {
+                oddlist[list[i]]++;
+            }
+        } else {
+            if (evenlist[list[i]] == null) {
+                evenlist[list[i]] = 1;
+            } else {
+                evenlist[list[i]]++;
+            }
+        }
+    }
+
+    // Segment 4: Early Termination Check
+    // Precondition: Counters for odd and even indexed elements are populated
+    // Postcondition: If certain conditions are met, output is produced and function terminates
+    // Output format: An integer printed on a new line
+
+    var output = 0;
+    var oddSet = Object.keys(oddlist);
+    var evenSet = Object.keys(evenlist);
+    if (oddSet.length == 1 && evenSet.length == 1) {
+        if (evenSet[0] == oddSet[0]) {
+            myout(N / 2);
+            return;
+        } else {
+            myout(0);
+            return;
+        }
+    }
+
+    // Segment 5: Calculate Minimum Changes
+    // Precondition: Early termination conditions are not met
+    // Postcondition: Minimum changes to make the array alternating are calculated and output
+    // Output format: An integer printed on a new line
+
+    var tmp = 0;
+    var lastSelect = "";
+    oddSet.sort(function(a, b) {
+        return oddlist[b] - oddlist[a];
+    });
+    evenSet.sort(function(a, b) {
+        return evenlist[b] - evenlist[a];
+    });
+
+    if (oddSet[0] == evenSet[0]) {
+        var mae = 10000000;
+        var ato = 10000000;
+        if (oddSet[1] != null) {
+            mae = (N / 2 - oddlist[oddSet[1]]) + (N / 2 - evenlist[evenSet[0]]);
+        }
+        if (evenSet[1] != null) {
+            ato = (N / 2 - oddlist[oddSet[0]]) + (N / 2 - evenlist[evenSet[1]]);
+        }
+        output = Math.min(mae, ato);
+    } else {
+        output = (N / 2 - oddlist[oddSet[0]]) + (N / 2 - evenlist[evenSet[0]]);
+    }
+    myout(output);
+}
+
+// Segment 6: Execute Main Function
+// Precondition: Main function is defined
+// Postcondition: Main function is executed with input from stdin
+// Input format: 
+// First line: An integer N
+// Second line: A space-separated list of N integers
+// Output format: An integer printed on a new line
+
+Main(myin());

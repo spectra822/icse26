@@ -1,0 +1,8 @@
+Input:
+3 5
+2 math
+6 science
+4 history
+
+Output:
+history

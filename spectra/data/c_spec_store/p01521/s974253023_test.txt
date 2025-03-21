@@ -1,0 +1,5 @@
+Input:
+oxxoxooxox
+
+Output:
+o

@@ -1,0 +1,74 @@
+<H1>RSQ and RUQ</H1>
+
+<p>
+  Write a program which manipulates a sequence $A$ = {$a_0, a_1, ..., a_{n-1}$} with the following operations:
+</p>
+
+<p>
+  <ul>
+    <li> $update(s, t, x)$: change $a_s, a_{s+1}, ..., a_t$ to $x$.</li>
+    <li> $getSum(s, t)$: print the sum of $a_s, a_{s+1}, ..., a_t$.</li>
+  </ul>
+</p>
+
+<p>
+  Note that the initial values of $a_i ( i = 0, 1, ..., n-1 )$ are 0.
+</p>
+
+<h2>Input</h2>
+<pre>
+$n$ $q$
+$query_1$
+$query_2$
+:
+$query_q$
+</pre>
+<p>
+In the first line, $n$ (the number of elements in $A$) and $q$ (the number of queries) are given. Then, $i$-th query $query_i$ is given in the following format:
+</p>
+
+</p>
+<pre>
+0 $s$ $t$ $x$
+</pre>
+<p>or</p>
+<pre>
+1 $s$ $t$
+</pre>
+<p>
+  The first digit represents the type of the query. '<span>0</span>' denotes $update(s, t, x)$
+ and '<span>1</span>' denotes $find(s, t)$.
+</p>
+
+<h2>Output</h2>
+<p>
+  For each $getSum$ query, print the sum in a line.
+</p>
+
+<h2>Constraints</h2>
+<ul>
+  <li>$1 &le; n &le; 100000$</li>
+  <li>$1 &le; q &le; 100000$</li>
+  <li>$0 &le; s &le; t &lt; n$</li>
+  <li>$-1000 &le; x &le; 1000$</li>
+</ul>
+
+<h2>Sample Input 1</h2>
+<pre>
+6 7
+0 1 3 1
+0 2 4 -2
+1 0 5
+1 0 1
+0 3 5 3
+1 3 4
+1 0 5
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+-5
+1
+6
+8
+</pre>

@@ -1,0 +1,50 @@
+<H1><font color="#000">Problem A:</font> Calling Extraterrestrial Intelligence Again</H1>
+
+<p>
+A message from humans to extraterrestrial intelligence was sent through the Arecibo radio telescope in Puerto Rico on the afternoon of Saturday November l6, l974. The message consisted of l679 bits and was meant to be translated to a rectangular picture with 23 &times; 73  pixels. Since both 23 and 73 are prime numbers, 23 &times; 73  is the unique possible size of the translated rectangular picture each edge of which is longer than l pixel. Of course, there was no guarantee that the receivers would try to translate the message to a rectangular picture. Even if they would, they might put the pixels into the rectangle incorrectly. The senders of the Arecibo message were optimistic.
+</p>
+<p>
+We are planning a similar project. Your task in the project is to find the most suitable width and height of the translated rectangular picture. The term ``most suitable'' is defined as follows. An integer m greater than 4 is given. A positive fraction <i>a</i>/<i>b</i> less than or equal to 1 is also given. The area of the picture should not be greater than <i>m</i>. Both of the width and the height of the translated picture should be prime numbers. The ratio of the width to the height should not be less than <i>a</i>/<i>b</i> nor greater than 1. You should maximize the area of the picture under these constraints.
+</p>
+<p>
+In other words, you will receive an integer <i>m</i> and a fraction <i>a</i>/<i>b</i> . It holds that <i>m</i> &gt; 4 and 0 &lt; <i>a</i>/<i>b</i> &le; 1 . You should find the pair of prime numbers <i>p</i>, <i>q</i> such that <i>pq</i> &le; <i>m</i> and <i>a</i>/<i>b</i> &le; <i>p</i>/<i>q</i> &le; 1 , and furthermore, the product <i>pq</i> takes the maximum value among such pairs of two prime numbers. You should report <i>p</i> and <i>q</i> as the "most suitable" width and height of the translated picture. 
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input is a sequence of at most 2000 triplets of positive integers, delimited by a space character in between. Each line contains a single triplet. The sequence is followed by a triplet of zeros, 0 0 0, which indicates the end of the input and should not be treated as data to be processed.
+</p>
+<p>
+The integers of each input triplet are the integer <i>m</i>, the numerator <i>a</i>, and the denominator <i>b</i> described above, in this order. You may assume 4 &lt; <i>m</i> &lt; 100000 and 1 &le; <i>a</i> &le; <i>b</i> &le; 1000.
+</p>
+
+<H2>Output</H2>
+
+<p>
+The output is a sequence of pairs of positive integers. The <i>i</i>-th output pair corresponds to the <i>i</i>-th input triplet. The integers of each output pair are the width <i>p</i> and the height <i>q</i> described above, in this order.
+</p>
+<p>
+Each output line contains a single pair. A space character is put between the integers as a delimiter. No other characters should appear in the output. 
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+5 1 2
+99999 999 999
+1680 5 16
+1970 1 1
+2002 4 11
+0 0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+2 2
+313 313
+23 73
+43 43
+37 53
+</pre>
+
+

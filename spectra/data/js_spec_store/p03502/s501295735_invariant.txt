@@ -1,0 +1,24 @@
+"use strict";
+
+// Precondition: The program is executed in a Node.js environment and the input is provided via standard input.
+// Postcondition: The input is read from the standard input and passed to the Main function.
+function Main(input) {
+    // Precondition: `input` is a string representing a non-negative integer.
+    // Postcondition: `X` is the integer representation of `input` and `sum` is the sum of its digits.
+    const X = Number(input);
+    const sum = input.split("").reduce((acc, cur) => Number(acc) + Number(cur), 0);
+
+    // Precondition: `X` is a non-negative integer and `sum` is the sum of its digits.
+    // Postcondition: If `X` is divisible by `sum`, "Yes" is printed; otherwise, "No" is printed.
+    if (X % sum === 0) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
+}
+
+// Precondition: The program is executed in a Node.js environment and the input is provided via standard input.
+// Postcondition: The `Main` function is called with the content of the standard input as its argument.
+// Input format: A single line containing a non-negative integer.
+// Output format: A single line containing either "Yes" or "No".
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

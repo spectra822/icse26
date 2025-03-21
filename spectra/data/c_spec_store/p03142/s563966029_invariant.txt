@@ -1,0 +1,14 @@
+```c
+void ae(int f, int t)
+    // Precondition: The global arrays `ec` and `es` have been declared.
+    // Postcondition: The adjacency list for node `f` has been updated to include node `t`.
+    // If necessary, the memory allocated to `es[f]` has been reallocated to accommodate the new element.
+
+int main(void)
+    // Input format: The first line contains two integers `N` and `M`.
+    // The next `N-1+M` lines each contain two integers `A` and `B`, separated by a whitespace.
+    // Output format: `N` lines, each containing a single integer.
+    // Precondition: The global arrays `ec`, `es`, `sansyo`, `next_count`, `next_buffer`, and `answer` have been declared.
+    // Postcondition: The program reads the input values, constructs the adjacency list and dependency counts,
+    // and prints the immediate predecessor of each node in the topological order, or 0 if the node has no predecessor.
+```

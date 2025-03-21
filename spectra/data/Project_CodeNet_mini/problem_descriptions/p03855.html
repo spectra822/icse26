@@ -1,0 +1,103 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> cities. There are also <var>K</var> roads and <var>L</var> railways, extending between the cities.
+The <var>i</var>-th road bidirectionally connects the <var>p_i</var>-th and <var>q_i</var>-th cities, and the <var>i</var>-th railway bidirectionally connects the <var>r_i</var>-th and <var>s_i</var>-th cities.
+No two roads connect the same pair of cities. Similarly, no two railways connect the same pair of cities.</p>
+<p>We will say city <var>A</var> and <var>B</var> are <em>connected by roads</em> if city <var>B</var> is reachable from city <var>A</var> by traversing some number of roads. Here, any city is considered to be connected to itself by roads.
+We will also define <em>connectivity by railways</em> similarly.</p>
+<p>For each city, find the number of the cities connected to that city by both roads and railways.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 ≦ N ≦ 2*10^5</var></li>
+<li><var>1 ≦ K, L≦ 10^5</var></li>
+<li><var>1 ≦ p_i, q_i, r_i, s_i ≦ N</var></li>
+<li><var>p_i &lt; q_i</var></li>
+<li><var>r_i &lt; s_i</var></li>
+<li>When <var>i ≠ j</var>, <var>(p_i, q_i) ≠ (p_j, q_j)</var></li>
+<li>When <var>i ≠ j</var>, <var>(r_i, s_i) ≠ (r_j, s_j)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var> <var>L</var>
+<var>p_1</var> <var>q_1</var>
+:
+<var>p_K</var> <var>q_K</var>
+<var>r_1</var> <var>s_1</var>
+:
+<var>r_L</var> <var>s_L</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <var>N</var> integers. The <var>i</var>-th of them should represent the number of the cities connected to the <var>i</var>-th city by both roads and railways.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 3 1
+1 2
+2 3
+3 4
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1 2 2 1
+</pre>
+<p>All the four cities are connected to each other by roads.</p>
+<p>By railways, only the second and third cities are connected. Thus, the answers for the cities are <var>1, 2, 2</var> and <var>1</var>, respectively.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 2 2
+1 2
+2 3
+1 4
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1 2 2 1
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>7 4 4
+1 2
+2 3
+2 5
+6 7
+3 5
+4 5
+3 4
+6 7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1 1 2 1 2 2 2
+</pre></section>
+</div>
+</span>

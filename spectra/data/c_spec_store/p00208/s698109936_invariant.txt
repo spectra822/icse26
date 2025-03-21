@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: An integer `a` followed by zero or more integers, each on a new line. The input ends when `a` is zero.
+    // Output format: For each input integer `a` (except the terminating zero), print an integer on a new line.
+    // Precondition: The variable `n` is a global array of size 200 initialized to zero. The variables `i`, `j`, `k`, `a`, `b`, `c` are declared.
+    // Postcondition: For each input integer `a` (except the terminating zero), the program prints the corresponding integer after converting `a` to a modified base-8 number and adjusting digits greater than 3 and 5 by incrementing them.
+```

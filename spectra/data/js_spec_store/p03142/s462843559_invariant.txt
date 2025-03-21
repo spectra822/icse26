@@ -1,0 +1,172 @@
+// Segment 1: Read input and initialize the interface
+// Preconditions: Node.js environment with 'readline' module available.
+// Postconditions: Input lines are read and stored in `inLine` array, `obj` is initialized with these lines.
+var read = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+var obj;
+var inLine = [];
+read.on('line', function(input) {
+    inLine.push(input);
+});
+read.on('close', function() {
+    obj = init(inLine);
+    myerr("-----start-----");
+    var start = new Date();
+    Main();
+    var end = new Date() - start;
+    myerr("----- end -----");
+    myerr("time : " + (end) + "ms");
+});
+
+// Segment 2: Utility functions for reading input
+// Preconditions: `obj` is an object with `next` and `hasNext` methods.
+// Postconditions: Functions for reading and converting input values are defined.
+function nextInt() {
+    return myconv(next(), 1);
+}
+
+function nextStrArray() {
+    return myconv(next(), 2);
+}
+
+function nextIntArray() {
+    return myconv(next(), 4);
+}
+
+function nextCharArray() {
+    return myconv(next(), 6);
+}
+
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+// Segment 3: Initialize input processing object
+// Preconditions: `input` is an array of strings.
+// Postconditions: Returns an object with methods to iterate over the input lines.
+function init(input) {
+    var returnObj = {
+        list: input,
+        index: 0,
+        max: input.length,
+        hasNext: function() {
+            return (this.index < this.max);
+        },
+        next: function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException これ以上ないよ";
+            } else {
+                var returnInput = this.list[this.index];
+                this.index++;
+                return returnInput;
+            }
+        }
+    };
+    return returnObj;
+}
+
+// Segment 4: Output and error logging functions
+// Preconditions: None
+// Postconditions: Functions for standard output and error logging are defined.
+function myout(s) {
+    console.log(s);
+}
+
+function myerr(s) {
+    console.error("debug:" + require("util").inspect(s, false, null));
+}
+
+// Segment 5: Input conversion utility function
+// Preconditions: `i` is a string or array, `no` is an integer indicating conversion type.
+// Postconditions: Returns the converted value based on `no`.
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(" ");
+            case 4:
+                return i.split(" ").map(Number);
+            case 6:
+                return i.split("");
+            case 7:
+                return i.split("").map(Number);
+            case 8:
+                return i.join(" ");
+            case 9:
+                return i.join("\n");
+            case 0:
+                return i.join("");
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Segment 6: Main function to process input and perform topological sort
+// Preconditions: Input has been read and converted into `obj`.
+// Postconditions: Outputs the topological order of nodes or indicates an error if not possible.
+// Input format: First line contains two integers N and M. The next N-1+M lines contain two integers each representing edges.
+// Output format: N lines each containing an integer representing the parent node in the topological order or 0 if no parent.
+function Main() {
+    var one = nextIntArray();
+    var N = one[0];
+    var M = one[1];
+    var list = new Array(N);
+    for (var i = 0; i < N; i++) {
+        list[i] = {
+            child: new Set(),
+            parent: new Set(),
+            from: null,
+        };
+    }
+    for (var i = 0; i < N - 1 + M; i++) {
+        var tmp = nextIntArray();
+        list[tmp[0] - 1].child.add(tmp[1] - 1);
+        list[tmp[1] - 1].parent.add(tmp[0] - 1);
+    }
+    for (var i = 0; i < N; i++) {
+        if (list[i].parent.size == 0) {
+            topologicalSort(i);
+            break;
+        }
+    }
+    var output = new Array(N);
+    for (var i = 0; i < N; i++) {
+        output[i] = list[i].from;
+        if (output[i] == null) {
+            output[i] = 0;
+        }
+    }
+    myout(myconv(output, 9));
+
+    // Segment 7: Topological sort function
+    // Preconditions: `index` is the starting node index for topological sorting.
+    // Postconditions: Updates the `list` array with parent information for each node.
+    function topologicalSort(index) {
+        var ok = [];
+        var queue = [index];
+        while (queue.length > 0) {
+            var parent = queue.shift();
+            ok.push(parent);
+            var child = Array.from(list[parent].child);
+            for (var i = 0; i < child.length; i++) {
+                list[parent].child.delete(child[i]);
+                list[child[i]].parent.delete(parent);
+                if (list[child[i]].parent.size == 0) {
+                    list[child[i]].from = parent + 1;
+                    queue.push(child[i]);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a board with a <var>2 \times N</var> grid.
+Snuke covered the board with <var>N</var> dominoes without overlaps.
+Here, a domino can cover a <var>1 \times 2</var> or <var>2 \times 1</var> square.</p>
+<p>Then, Snuke decided to paint these dominoes using three colors: red, cyan and green.
+Two dominoes that are adjacent by side should be painted by different colors.
+Here, it is not always necessary to use all three colors.</p>
+<p>Find the number of such ways to paint the dominoes, modulo <var>1000000007</var>.</p>
+<p>The arrangement of the dominoes is given to you as two strings <var>S_1</var> and <var>S_2</var> in the following manner:</p>
+<ul>
+<li>Each domino is represented by a different English letter (lowercase or uppercase).</li>
+<li>The <var>j</var>-th character in <var>S_i</var> represents the domino that occupies the square at the <var>i</var>-th row from the top and <var>j</var>-th column from the left.</li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 52</var></li>
+<li><var>|S_1| = |S_2| = N</var></li>
+<li><var>S_1</var> and <var>S_2</var> consist of lowercase and uppercase English letters.</li>
+<li><var>S_1</var> and <var>S_2</var> represent a valid arrangement of dominoes.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>S_1</var>
+<var>S_2</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of such ways to paint the dominoes, modulo <var>1000000007</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+aab
+ccb
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>6
+</pre>
+<p>There are six ways as shown below:</p>
+<p><img alt="" src="https://atcoder.jp/img/arc081/899673bd23529f4fb5e41c6e7d5bc372.png"/></p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1
+Z
+Z
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+</pre>
+<p>Note that it is not always necessary to use all the colors.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>52
+RvvttdWIyyPPQFFZZssffEEkkaSSDKqcibbeYrhAljCCGGJppHHn
+RLLwwdWIxxNNQUUXXVVMMooBBaggDKqcimmeYrhAljOOTTJuuzzn
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>958681902
+</pre></section>
+</div>
+</span>

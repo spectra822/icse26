@@ -1,0 +1,10 @@
+```c
+int main(void)
+    // Input format: A single string `a` of up to 999 characters.
+    // Output format: A single string, which is the transformed input string `a`.
+    // Precondition: The input string `a` should contain only uppercase English letters.
+    // Postcondition: The output is the input string `a` with each character shifted according to the specified rules:
+    //                - If the character is between 'D' and 'Z', it is shifted 3 positions back in the alphabet.
+    //                - Otherwise, it is shifted 23 positions forward in the alphabet.
+    //                The output string ends with a newline character.
+```

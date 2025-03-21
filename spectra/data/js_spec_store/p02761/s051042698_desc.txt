@@ -1,0 +1,154 @@
+// Import the 'readline' module and initialize the interface for reading input
+var read = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Variables to store input and process it
+var obj;
+var inLine = [];
+
+// Event listener for reading lines of input
+read.on('line', function(input) {
+    inLine.push(input);
+});
+
+// Event listener for closing the input stream and initializing the program
+read.on('close', function() {
+    obj = init(inLine);
+    console.error('\n↑入力 ↓出力');
+    Main();
+});
+
+// Function to create a deep clone of an object or a Set
+function makeClone(obj) {
+    return (obj instanceof Set) ? new Set(Array.from(obj)) : JSON.parse(JSON.stringify(obj));
+}
+
+// Functions to fetch and convert input data
+function nextInt() {
+    return myconv(next(), 1);
+}
+
+function nextStrArray() {
+    return myconv(next(), 2);
+}
+
+function nextIntArray() {
+    return myconv(next(), 4);
+}
+
+function nextCharArray() {
+    return myconv(next(), 6);
+}
+
+// Function to get the next input value
+function next() {
+    return obj.next();
+}
+
+// Function to check if there is more input
+function hasNext() {
+    return obj.hasNext();
+}
+
+// Function to initialize input object with methods to navigate through input data
+function init(input) {
+    return {
+        list: input,
+        index: 0,
+        max: input.length,
+        hasNext: function() {
+            return (this.index < this.max);
+        },
+        next: function() {
+            if (this.hasNext()) {
+                return this.list[this.index++];
+            } else {
+                throw 'ArrayIndexOutOfBoundsException ‚There is no more input';
+            }
+        }
+    };
+}
+
+// Functions for output and error logging
+function myout(s) {
+    console.log(s);
+}
+
+function myerr(s) {
+    console.error('debug:' + require('util').inspect(s, false, null));
+}
+
+// Function to convert input string into various formats based on the provided type
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(' ');
+            case 4:
+                return i.split(' ').map(Number);
+            case 6:
+                return i.split('');
+            case 7:
+                return i.split('').map(Number);
+            case 8:
+                return i.join(' ');
+            case 9:
+                return i.join('\n');
+            case 0:
+                return i.join('');
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Main function to process the input and solve the problem
+function Main() {
+    // Read the first line of input and parse the values N and M
+    var one = nextIntArray();
+    var N = one[0];
+    var M = one[1];
+
+    // Read the subsequent M lines of input and store the constraints
+    var list = new Array(M);
+    for (var i = 0; i < M; i++) {
+        var tmp = nextIntArray();
+        list[i] = {
+            si: tmp[0],
+            ci: tmp[1]
+        };
+    }
+
+    // Iterate through all possible numbers with N digits to find a valid number
+    for (var i = 0; i < Math.pow(10, N); i++) {
+        var isOK = true;
+        var check = i.toString();
+
+        // Check if the current number has exactly N digits
+        if (check.length != N) {
+            isOK = false;
+        }
+
+        // Validate the current number against the given constraints
+        for (var j = 0; j < M; j++) {
+            if (check[list[j].si - 1] != list[j].ci) {
+                isOK = false;
+            }
+        }
+
+        // If a valid number is found, output it and return
+        if (isOK) {
+            myout(i);
+            return;
+        }
+    }
+
+    // If no valid number is found, output -1
+    myout(-1);
+}

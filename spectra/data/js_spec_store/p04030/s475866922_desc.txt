@@ -1,0 +1,38 @@
+// This function takes an input, processes the string according to specific rules, and prints the result.
+function main(input) {
+    // Convert the input to a string and split it into an array of characters.
+    const S = input.toString().split('');
+    
+    // Initialize an empty array to store the result.
+    let result = [];
+    
+    // Iterate over each character in the input array.
+    for (let i = 0; i < S.length; i++) {
+        // Switch statement to handle different types of characters.
+        switch (S[i]) {
+            // If the character is '0', add '0' to the result array.
+            case '0':
+                result.push('0');
+                break;
+            // If the character is '1', add '1' to the result array.
+            case '1':
+                result.push('1');
+                break;
+            // If the character is 'B', remove the last element from the result array if it is not empty.
+            case 'B':
+                if (result.length > 0) {
+                    result.pop();
+                }
+                break;
+            // For any other character, do nothing.
+            default:
+                break;
+        }
+    }
+    
+    // Join the result array into a string and print it.
+    console.log(result.join(''));
+}
+
+// Read the input from the standard input (usually used for competitive programming) and pass it to the main function.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

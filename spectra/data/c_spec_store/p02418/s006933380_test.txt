@@ -1,0 +1,6 @@
+Input:
+abcabc
+cab
+
+Output:
+Yes

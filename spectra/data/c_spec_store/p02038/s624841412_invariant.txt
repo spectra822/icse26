@@ -1,0 +1,12 @@
+```c
+char souti(char a, char b)
+    // Precondition: 'a' and 'b' are characters that can either be 'T' or 'F'.
+    // Postcondition: Returns 'F' if 'a' is 'T' and 'b' is 'F'; otherwise, returns 'T'.
+
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The next `N` lines each contain a string of up to 3 characters.
+    // Output format: A single character followed by a newline.
+    // Precondition: The global variables `N` and `P` have been declared.
+    // Postcondition: The output is the result of repeatedly applying the `souti` function to the first two elements, and then to the result and the next element in `P` for all `N` elements.
+```

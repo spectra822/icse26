@@ -1,0 +1,6 @@
+Input:
+5
+7 10 3 8 5
+
+Output:
+NO

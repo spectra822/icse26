@@ -1,0 +1,95 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi went to an all-you-can-eat buffet with <var>N</var> kinds of dishes and ate all of them (Dish <var>1</var>, Dish <var>2</var>, <var>\ldots</var>, Dish <var>N</var>) once.</p>
+<p>The <var>i</var>-th dish <var>(1 \leq i \leq N)</var> he ate was Dish <var>A_i</var>.</p>
+<p>When he eats Dish <var>i</var> <var>(1 \leq i \leq N)</var>, he gains <var>B_i</var> satisfaction points.</p>
+<p>Additionally, when he eats Dish <var>i+1</var> just after eating Dish <var>i</var> <var>(1 \leq i \leq N - 1)</var>, he gains <var>C_i</var> more satisfaction points.</p>
+<p>Find the sum of the satisfaction points he gained.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>2 \leq N \leq 20</var></li>
+<li><var>1 \leq A_i \leq N</var></li>
+<li><var>A_1, A_2, ..., A_N</var> are all different.</li>
+<li><var>1 \leq B_i \leq 50</var></li>
+<li><var>1 \leq C_i \leq 50</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+<var>B_1</var> <var>B_2</var> <var>...</var> <var>B_N</var>
+<var>C_1</var> <var>C_2</var> <var>...</var> <var>C_{N-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the sum of the satisfaction points Takahashi gained, as an integer.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+3 1 2
+2 5 4
+3 6
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>14
+</pre>
+<p>Takahashi gained <var>14</var> satisfaction points in total, as follows:</p>
+<ul>
+<li>First, he ate Dish <var>3</var> and gained <var>4</var> satisfaction points.</li>
+<li>Next, he ate Dish <var>1</var> and gained <var>2</var> satisfaction points.</li>
+<li>Lastly, he ate Dish <var>2</var> and gained <var>5 + 3 = 8</var> satisfaction points.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+2 3 4 1
+13 5 8 24
+45 9 15
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>74
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2
+1 2
+50 50
+50
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>150
+</pre></section>
+</div>
+</span>

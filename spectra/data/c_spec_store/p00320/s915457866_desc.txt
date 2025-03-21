@@ -1,0 +1,27 @@
+```c
+// Global variables
+int connect[12][4] = {
+    {0, 1, 1, 1},
+    {0, 0, 2, 0},
+    {0, 1, 3, 1},
+    {0, 0, 4, 0},
+    {1, 0, 2, 1},
+    {2, 1, 3, 0},
+    {3, 0, 4, 1},
+    {4, 1, 1, 0},
+    {5, 1, 1, 1},
+    {5, 0, 4, 0},
+    {5, 1, 3, 1},
+    {5, 0, 4, 0}
+};
+
+// Given an array `arr` and its length `n`, this function generates the next lexicographical permutation of the array.
+// If the array is the highest permutation, it returns 0; otherwise, it returns 1.
+int next_permutation(int arr[], int n)
+    // No calls to other functions
+
+// This function reads dimensions of 6 rectangles and tries to fit them together by permuting and rotating them.
+// It prints "yes" if they can form a valid configuration according to the `connect` array, otherwise it prints "no".
+int main(void)
+    Calls next_permutation(...)
+```

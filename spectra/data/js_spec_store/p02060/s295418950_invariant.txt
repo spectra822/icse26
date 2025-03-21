@@ -1,0 +1,47 @@
+// Segment 1: Reading input
+// Precondition: The program is executed in an environment where the input is provided via standard input (stdin).
+// Postcondition: The variable `input` contains the entire input as a single string, and the variable `arr` contains the input split into an array of strings, each representing a line of input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Segment 2: Parsing the input
+// Precondition: The `arr` array contains the input lines where the first line is an integer `n`, the second line contains space-separated integers `p`, and the third line contains space-separated integers `t`.
+// Postcondition: The variable `n` contains the integer number of units, the array `p` contains the integer costs, and the array `t` contains the integer times.
+var n = arr.shift() - 0;
+var p = arr.shift().split(" ").map(Number);
+var t = arr.shift().split(" ").map(Number);
+
+// Segment 3: Initializing the state array
+// Precondition: The variables `n`, `p`, and `t` are properly initialized.
+// Postcondition: The array `s` is initialized with size 201 where all values are set to Infinity except `s[0]` which is set to 0.
+var s = [];
+for (var i = 0; i <= 200; i++) s[i] = Infinity;
+s[0] = 0;
+
+// Segment 4: Dynamic programming to compute minimum cost
+// Precondition: The array `s` is initialized with `s[0]` set to 0 and all other values set to Infinity.
+// Postcondition: The array `s` is updated to reflect the minimum cost to reach each time unit up to 200.
+for (var i = 0; i <= 100; i++) {
+    if (s[i] == Infinity) continue;
+    s[i + t[0]] = Math.min(s[i] + p[0], s[i + t[0]]);
+    s[i + t[1]] = Math.min(s[i] + p[1], s[i + t[1]]);
+    s[i + t[2]] = Math.min(s[i] + p[2], s[i + t[2]]);
+    s[i + t[3]] = Math.min(s[i] + p[3], s[i + t[3]]);
+}
+
+// Segment 5: Finding the minimum cost beyond the required units
+// Precondition: The array `s` has been fully populated with the minimum costs to reach each time unit up to 200.
+// Postcondition: The variable `min` contains the minimum cost to reach at least `n` units of time.
+var min = Infinity;
+for (var i = n; i <= 200; i++) min = Math.min(min, s[i]);
+
+// Segment 6: Outputting the result
+// Precondition: The variable `min` contains the minimum cost to reach at least `n` units of time.
+// Postcondition: The minimum cost is printed to standard output.
+// Input format: (example)
+// 10
+// 1 2 3 4
+// 1 2 4 8
+// Output format: (example)
+// 6
+console.log(min);

@@ -1,0 +1,23 @@
+```
+int dcmp(double x)
+    // Precondition: The variable `x` is a double precision floating-point number.
+    // Postcondition: The function returns 0 if the absolute value of `x` is less than EPS, -1 if `x` is negative, and 1 if `x` is positive.
+
+double cross(double ax, double ay, double bx, double by)
+    // Precondition: The variables `ax`, `ay`, `bx`, and `by` are double precision floating-point numbers.
+    // Postcondition: The function returns the cross product of the vectors (ax, ay) and (bx, by).
+
+void lineIntersection(PP *p, LINE *a, PP *vs, PP *ve)
+    // Precondition: The pointers `p`, `a`, `vs`, and `ve` point to valid PP and LINE structures.
+    // Postcondition: The point of intersection between the line segment `a` and the line passing through `vs` and `ve` is stored in `p`.
+
+int convex_cut(LINE *u, int n, PP *p, PP *po)
+    // Precondition: The pointer `u` points to a valid LINE structure, `n` is the number of points in the polygon, and `p` and `po` point to arrays of PP structures of sufficient size.
+    // Postcondition: The function returns the number of points in the polygon after cutting with the line `u`. The resulting polygon points are stored in `po`.
+
+int main()
+    // Input format: The first line contains an integer `n`. The next `n` lines each contain two integers representing the coordinates of points. The input ends with a line containing an integer `0`.
+    // Output format: For each test case, output `1` if the polygon formed by the points intersects the predefined square, otherwise output `0`.
+    // Precondition: The global arrays `p` and `a` have been declared and initialized.
+    // Postcondition: The program reads the input, processes the test cases, and prints `1` or `0` for each test case based on the intersection condition.
+```

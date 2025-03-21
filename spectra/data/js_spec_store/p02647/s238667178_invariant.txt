@@ -1,0 +1,59 @@
+"use strict";
+
+// Segment 1: Reading and parsing input
+// Precondition: The input is provided as a string in the format "N K\nA1 A2 A3 ... AN\n".
+// Postcondition: The input string is split into an array of integers, with N and K extracted.
+const main = arg => {
+    const inputList = arg.trim().split("\n");
+    const N = parseInt(inputList[0].split(" ")[0]);
+    const K = parseInt(inputList[0].split(" ")[1]);
+    let ALightList = inputList[1].split(" ").map(ele => parseInt(ele));
+
+    // Segment 2: Simulation of K steps
+    // Precondition: ALightList contains the initial state of the lights, K is the number of iterations.
+    // Postcondition: ALightList is updated after simulating K steps or earlier if it stabilizes.
+    for (let i = 0; i < K; i++) {
+        const imos = Array(ALightList.length).fill(0);
+
+        // Segment 3: Applying the imos method to update light ranges
+        // Precondition: imos array is initialized to zeros, ALightList contains the current state of lights.
+        // Postcondition: imos array is updated with the range increments and decrements.
+        for (let j = 0; j < ALightList.length; j++) {
+            let minus = j - ALightList[j];
+            let plus = j + ALightList[j] + 1;
+            if (minus < 0) {
+                minus = 0;
+            }
+            imos[minus]++;
+            imos[plus]--;
+        }
+        imos.length = ALightList.length;
+
+        // Segment 4: Accumulating imos values to get the new state
+        // Precondition: imos array contains the range increments and decrements.
+        // Postcondition: imos array is transformed to contain the new state of the lights.
+        for (let k = 1; k < imos.length; k++) {
+            imos[k] += imos[k - 1]
+        }
+
+        // Segment 5: Checking for stabilization and updating ALightList
+        // Precondition: imos array contains the new state of the lights.
+        // Postcondition: If the new state matches the current state, the loop breaks. Otherwise, ALightList is updated.
+        if (ALightList.every((ele, idx) => ele == imos[idx])) {
+            break;
+        }
+
+        ALightList = imos;
+    }
+
+    // Segment 6: Outputting the final state
+    // Precondition: ALightList contains the final state of the lights.
+    // Postcondition: The final state of the lights is printed as a space-separated string.
+    // Output format: "A1 A2 A3 ... AN\n"
+    console.log(ALightList.join(" "))
+}
+
+// Segment 7: Reading input from standard input and invoking main function
+// Precondition: The program is executed in an environment where '/dev/stdin' provides the input.
+// Postcondition: The main function is called with the input read from '/dev/stdin'.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

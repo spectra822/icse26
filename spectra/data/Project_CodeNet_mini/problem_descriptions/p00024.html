@@ -1,0 +1,55 @@
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<H1>Physical Experiments</H1>
+
+<p>
+Ignoring the air resistance, velocity of a freely falling object $v$ after $t$ seconds and its drop $y$ in $t$ seconds are represented by the following formulas:<br/>
+<br/>
+$ v = 9.8 t $<br/>
+$ y = 4.9 t^2 $<br/>
+</p>
+<!--
+<center><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_physical"></center>
+-->
+
+<p>
+A person is trying to drop down a glass ball and check whether it will crack. Your task is to write a program to help this experiment.
+</p>
+
+<p>
+You are given the  minimum velocity to crack the ball. Your program should print the lowest possible floor of a building to crack the ball. The height of the $N$ floor of the building is defined by $5 \times N - 5$.
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+The input consists of multiple datasets. Each dataset, a line, consists of the minimum velocity <i>v</i> (0 &lt; <i>v</i> &lt 200) to crack the ball. The value is given by a decimal fraction, with at most 4 digits after the decimal point. The input ends with EOF. The number of datasets is less than or equal to 50.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each dataset, print the lowest possible floor where the ball cracks.
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+25.4
+25.4
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+8
+8
+</pre>
+
+

@@ -1,0 +1,19 @@
+// Segment 1: Import the 'fs' module and read the input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Process the input to create an array of strings, each representing a line of the input
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Define the mappings for the alphabet shift (Caesar cipher)
+var abc = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
+var def = "D E F G H I J K L M N O P Q R S T U V W X Y Z A B C".split(" ");
+
+// Segment 4: Loop through each line of input, decode it using the Caesar cipher, and print the result
+for (var i = 0; i < Arr.length; i++) {
+    var str = Arr[i];
+    var STR = "";
+    for (var j = 0; j < str.length; j++) {
+        STR += abc[def.indexOf(str[j])];
+    }
+    console.log(STR);
+}

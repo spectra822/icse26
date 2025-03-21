@@ -1,0 +1,24 @@
+```c
+// Global variables
+int Q;
+int N[114514];
+int count[114514];
+int mizukinana;
+int fukuennmisato[64][2];
+int64_t utiyamayumi;
+int64_t yosinagasayuri;
+
+// Recursive function to calculate product of factors and update the global variable `yosinagasayuri`
+// If the accumulated product `acc` is not equal to `utiyamayumi`, multiply `yosinagasayuri` by `acc`
+// Calls itself recursively to explore all combinations of factors up to `fukuennmisato[idx][1]`
+void minaseinori(int idx, int64_t acc)
+    Calls minaseinori(...)
+
+// Main function to process the input and output the results
+// Reads the number of queries `Q` and the array `N`
+// For each number in the array `N`, calculates the number of integers up to that number
+// that have a product of prime factors greater than or equal to twice the number itself
+// Utilizes the helper function `minaseinori(...)` to calculate the products of factors
+int main(void)
+    Calls minaseinori(...)
+```

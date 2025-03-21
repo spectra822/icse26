@@ -1,0 +1,9 @@
+```c
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The next line contains `N` integers separated by spaces.
+    // Output format: A single string, either "YES" or "NO".
+    // Precondition: The variable `N` is declared and will be initialized with a positive integer value.
+    // The array `A` is declared with a size sufficient to hold `N+1` elements.
+    // Postcondition: The program will output "YES" if the conditions specified in the algorithm are met, otherwise "NO".
+```

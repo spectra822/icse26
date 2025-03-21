@@ -1,0 +1,24 @@
+```c
+struct adjcency_list* make_adjcency_list(int V)
+    // Precondition: V is a non-negative integer representing the number of vertices.
+    // Postcondition: A pointer to an adjacency list with V vertices is returned. Each vertex's edge list is initialized to be empty.
+
+void push_edge(struct adjcency_list* graph, int source, struct edge _edge)
+    // Precondition: `graph` is a valid pointer to an adjacency list, `source` is a valid vertex index in the graph, and `_edge` is a valid edge structure.
+    // Postcondition: The edge `_edge` is appended to the edge list of the vertex `source` in the adjacency list `graph`.
+
+void dump_adjcency_list(const struct adjcency_list* g)
+    // Precondition: `g` is a valid pointer to an adjacency list.
+    // Postcondition: The adjacency list `g` is printed to the standard output in a readable format.
+
+int is_cyclic(struct adjcency_list* g)
+    // Precondition: `g` is a valid pointer to an adjacency list.
+    // Postcondition: A non-zero value is returned if the graph contains a cycle; otherwise, zero is returned.
+
+int main(void)
+    // Input format: The first line contains two integers `V` and `E` separated by a space.
+    //               The next `E` lines each contain two integers `s` and `t` separated by a space, representing an edge from vertex `s` to vertex `t`.
+    // Output format: A single integer, either 0 or 1, indicating whether the graph contains a cycle.
+    // Precondition: The input format is strictly followed, and `V` and `E` are non-negative integers.
+    // Postcondition: The program prints `1` if the graph contains a cycle, otherwise it prints `0`.
+```

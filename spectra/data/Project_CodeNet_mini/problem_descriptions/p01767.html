@@ -1,0 +1,70 @@
+
+
+
+<h1 id="b-rupc">B : RUPC</h1>
+<h2 id="問題文">問題文</h2>
+<p>ロシア連邦でプログラミングコンテストが開催される。コンテストには <var>N</var> 個の問題が出題され、<var>M</var> 人の参加者がいる。問題 <var>i</var> には得点 <var>a_i</var> が設定されており、参加者 <var>j</var> の実力は <var>b_j</var> であることがわかっている。問題 <var>i</var> と参加者 <var>j</var> について、 <var>a_i &le; b_j</var> のときかつそのとき限り、参加者 <var>j</var> は問題 <var>i</var> を必ず解くことができる。 コンテストを通した参加者の得点は、その人が解くことができた問題の得点の総和である。また、参加者 <var>j</var> は、このコンテストでの目標点数 <var>c_j</var> を定めている。</p>
+<p>各参加者が、目標点数以上の得点を獲得できるか判定せよ。</p>
+<h2 id="入力">入力</h2>
+<p>入力は以下の形式で与えられる。</p>
+<pre><var>N</var>
+<var>a_{0}</var> <var>a_{1}</var> <var>a_{2}</var> <var>…</var> <var>a_{N&minus;1}</var>
+<var>M</var>
+<var>b_{0}</var> <var>b_{1}</var> <var>b_{2}</var> <var>…</var> <var>b_{M&minus;1}</var>
+<var>c_{0}</var> <var>c_{1}</var> <var>c_{2}</var> <var>…</var> <var>c_{M&minus;1}</var>
+</pre>
+
+<h2 id="制約">制約</h2>
+<ul>
+<li>入力はすべて整数である</li>
+<li><var>1 \&le; N \&le; 300\,000</var></li>
+<li><var>1 \&le; M \&le; 300\,000</var></li>
+<li><var>0 \&le; a_{i} \&le; 1\,000\,000</var></li>
+<li><var>0 \&le; b_{i} \&le; 1\,000\,000</var></li>
+<li><var>0 \&le; c_{i} \&le; &sum;a_k</var></li>
+</ul>
+<h2 id="出力">出力</h2>
+<p>答えを <var>M</var> 行で出力せよ。 <var>i</var> 行目には、参加者 <var>i&minus;1</var> が目標点数以上の得点を獲得できるなら <code>Yes</code>、できないなら <code>No</code> と出力せよ。</p>
+<h2 id="サンプル">サンプル</h2>
+<h3 id="サンプル入力1">サンプル入力1</h3>
+<pre>6
+1 2 1 3 4 5
+7
+1 3 4 5 3 1 0
+2 4 5 3 4 5 3
+</pre>
+
+<h3 id="サンプル出力1">サンプル出力1</h3>
+<pre>Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+</pre>
+
+<p>各参加者の得られる得点は以下のようになる。</p>
+<ul>
+<li>参加者0 : <var>1+1=2</var></li>
+<li>参加者1 : <var>1+2+1+3=7</var></li>
+<li>参加者2 : <var>1+2+1+3+4=11</var></li>
+<li>参加者3 : <var>1+2+1+3+4+5=16</var></li>
+<li>参加者4 : <var>1+2+1+3=7</var></li>
+<li>参加者5 : <var>1+1=2</var></li>
+<li>参加者6 : <var>0</var></li>
+</ul>
+<h3 id="サンプル入力2">サンプル入力2</h3>
+<pre>8
+1 1 2 3 3 4 6 100
+4
+1 3 4 99
+1 10 15 120
+</pre>
+
+<h3 id="サンプル出力2">サンプル出力2</h3>
+<pre>Yes
+Yes
+No
+No
+</pre>

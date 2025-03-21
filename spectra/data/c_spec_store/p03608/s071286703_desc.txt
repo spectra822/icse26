@@ -1,0 +1,25 @@
+```c
+// Global variables
+int d[201][201];
+int r[9];
+int res;
+bool used[9];
+int N, M, R;
+
+// Depth-First Search (DFS) to find the minimum distance.
+// `c` is the current count of nodes visited,
+// `las` is the last node visited,
+// `dist` is the current distance traveled.
+// Updates the global variable `res` with the minimum distance found.
+void dfs(int c, int las, int dist)
+    Calls dfs(...)
+
+// Main function to read input, initialize variables, compute shortest paths using the Floyd-Warshall algorithm,
+// and perform DFS to find the minimum distance.
+// Reads `N` (number of nodes), `M` (number of edges), and `R` (number of nodes to visit).
+// Reads the nodes to visit, and the edges with their weights.
+// Computes the shortest paths between all pairs of nodes.
+// Calls the DFS function to find the minimum distance.
+int main(void)
+    Calls dfs(...)
+```

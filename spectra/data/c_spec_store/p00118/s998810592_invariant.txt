@@ -1,0 +1,14 @@
+```
+void DFS(int i, int j, int H, int W)
+    // Precondition: The global arrays `str` and `area_id` have been initialized. The indices `i` and `j` are within the bounds of `H` and `W` respectively.
+    // Postcondition: All connected components of the same character as `str[i][j]` starting from the position `(i, j)` have been assigned the same `area_id` value.
+
+int main(void)
+    // Input format: 
+    // - An integer `H` and an integer `W` on the first line.
+    // - `H` lines each containing a string of length `W` representing the grid.
+    // - Repeated until a line containing "0 0".
+    // Output format: A single integer on a new line for each grid, representing the number of distinct areas.
+    // Precondition: The global arrays `str` and `area_id` have been declared. The input grid dimensions `H` and `W` are non-negative integers.
+    // Postcondition: The number of distinct areas in each grid is printed. The program terminates when "0 0" is input.
+```

@@ -1,0 +1,27 @@
+// Read input from standard input and split it into an array of lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Extract the first line as nm and convert it to an array of numbers
+var nm = (arr.shift()).split(" ").map(Number);
+
+// Convert the remaining lines of arr to numbers
+arr = arr.map(Number);
+
+// Perform a bubble sort-like operation nm[1] times
+for (var i = 1; i <= nm[1]; i++) {
+    for (var j = 0; j < arr.length - 1; j++) {
+        // Compare the remainder of arr[j] and arr[j + 1] when divided by i
+        var a = arr[j] % i;
+        var b = arr[j + 1] % i;
+        if (b < a) {
+            // Swap arr[j] and arr[j + 1] if arr[j + 1] % i is less than arr[j] % i
+            var memo = arr[j + 1];
+            arr[j + 1] = arr[j];
+            arr[j] = memo;
+        }
+    }
+}
+
+// Print the final sorted array, each number on a new line
+console.log(arr.join("\n"));

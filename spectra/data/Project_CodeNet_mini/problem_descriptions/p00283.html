@@ -1,0 +1,69 @@
+
+
+
+<h1>巨樹の刻み手</h1>
+
+<p>
+あなたは <var>N</var> 種類の道具を使って、目の前の巨樹を切り倒そうとしています。はじめは、樹の耐久力は <var>D</var>、あなたの経験値は 0 ですが、道具 <var>i</var> で１回樹を叩くと樹の耐久力は <var>a<sub>i</sub></var> 減り、あなたは <var>e<sub>i</sub></var> の経験値を得ます。ただし、道具 <var>i</var> を使うためには、あなたは <var>r<sub>i</sub></var> 以上の経験値を持っていなければなりません。樹の耐久力が 0 以下になると樹は倒れます。
+</p>
+
+<p>
+樹の耐久力と道具についての情報が与えられたとき、樹を切り倒すには最低何回樹を叩かなければいけないかを求めるプログラムを作成してください。
+</p>
+
+
+<h2>入力</h2>
+
+<p>
+入力は複数のデータセットからなる。入力の終わりはゼロ２つの行で示される。各データセットは以下の形式で与えられる。
+</p>
+
+<pre>
+<var>D</var> <var>N</var>
+<var>a<sub>1</sub></var> <var>e<sub>1</sub></var> <var>r<sub>1</sub></var>
+<var>a<sub>2</sub></var> <var>e<sub>2</sub></var> <var>r<sub>2</sub></var>
+:
+<var>a<sub>N</sub></var> <var>e<sub>N</sub></var> <var>r<sub>N</sub></var>
+</pre>
+
+<p>
+1 行目に樹の耐久力を表す整数 <var>D</var> (1 &le; <var>D</var> &le; 100) と道具の種類の数 <var>N</var>(1 &le; <var>N</var> &le; 100) が与えられる。続く <var>N</var> 行に道具 1 から <var>N</var> までの情報が与えられる。<var>a<sub>i</sub></var> (0 &le; <var>a<sub>i</sub></var> &le; 100) と <var>e<sub>i</sub></var> (0 &le; <var>e<sub>i</sub></var> &le; 100) は、道具iを１回使うことで減る樹の耐久力とあなたが得ることのできる経験値をそれぞれ表す。<var>r<sub>i</sub></var> (0 &le; <var>r<sub>i</sub></var> &le; 100) は道具を使うために必要な経験値を表す。<var>a<sub>i</sub></var>, <var>e<sub>i</sub></var>, <var>r<sub>i</sub></var> はすべて整数である。<br>
+<br>
+データセットの数は 50 を超えない。
+</p>
+
+<h2>出力</h2>
+<p>
+樹を切り倒すのに必要な、樹を叩く最小の回数を１行に出力する。ただし、樹を切り倒すことが不可能な場合は <span>NA</span> と出力する。
+</p>
+
+<h2>入出力例</h2>
+<br>
+
+<h2>入力例</h2>
+<pre>
+15 4
+1 1 0
+1 2 2
+5 10 5
+8 1 15
+60 4
+5 2 0
+8 8 2
+3 5 0
+49 0 18
+100 1
+1 1 1
+0 0
+</pre>
+
+<h2>出力例</h2>
+<pre>
+6
+4
+NA
+</pre>
+
+
+
+

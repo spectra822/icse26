@@ -1,0 +1,214 @@
+
+<H1>
+Patience
+</H1>
+
+<p>
+As the proverb says,
+</p>
+<BLOCKQUOTE>
+	<I>"Patience is bitter, but its fruit is sweet."</I>
+</BLOCKQUOTE>
+<p>
+Writing programs within the limited time may impose 
+some patience on you, but you enjoy it and win the contest, we hope.
+</P>
+<p>
+The word "patience" has the meaning of perseverance, 
+but it has another meaning in card games.
+Card games for one player are called "patience" in the UK
+and "solitaire" in the US.
+</p>
+<P>
+
+Let's play a patience in this problem.
+</p>
+<P>
+In this card game, you use only twenty cards whose 
+face values are positive and less than or equal to 5 (Ace's value
+is 1 as usual).
+Just four cards are available for each face value.
+</p>
+<P>
+At the beginning, the twenty cards are laid
+in five rows by four columns (See Figure 1).
+All the cards are dealt face up.
+</p>
+<p>
+An example of the initial layout is shown in Figure 2.</P>
+
+<TABLE>
+<TR>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_initial"></TD>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_example"></TD>
+</TR>
+<TR>
+<TD ALIGN="center">Figure 1: Initial layout</TD>
+<TD ALIGN="center">Figure 2: Example of the initial layout</TD>
+</TR>
+</TABLE>
+
+<P>
+
+The purpose of the game is to remove as many cards as possible
+by repeatedly removing a pair of neighboring cards 
+of the same face value.
+Let us call such a pair a <i>matching pair</i>.
+</P>
+
+<p>
+The phrase "a pair of neighboring cards" means a pair of cards which are
+adjacent to each other.
+For example, in Figure 1, <I>C</i><SUB>6</SUB> is adjacent to any of
+the following eight cards:
+</p>
+<I>C</i><SUB>1</SUB>, 
+<I>C</i><SUB>2</SUB>, 
+<I>C</i><SUB>3</SUB>, 
+<I>C</i><SUB>5</SUB>, 
+<I>C</i><SUB>7</SUB>, 
+<I>C</i><SUB>9</SUB>, 
+<I>C</i><SUB>10</SUB> and <I>C</i><SUB>11</SUB>.
+In contrast,
+<I>C</i><SUB>3</SUB> is adjacent to only the following three cards:
+<I>C</i><SUB>2</SUB>, 
+<I>C</i><SUB>6</SUB> and <I>C</i><SUB>7</SUB>.
+
+<P>
+Every time you remove a pair, you must rearrange the remaining cards 
+as compact as possible.<BR>
+To put it concretely, each remaining card <I>C<SUB>i</SUB></I> 
+must be examined in turn
+in its subscript order to be shifted to the uppermost-leftmost
+space.
+</p>
+
+<P>
+How to play:
+</p>
+<OL>
+<LI> Search a matching pair.
+<LI> When you find more than one pair, choose one.<BR>
+In Figure 3, you decided to remove the pair of 
+<I>C</i><SUB>6</SUB> and <I>C</i><SUB>9</SUB>.
+<LI> Remove the pair. (See Figure 4)
+<LI> Shift the remaining cards to the uppermost-leftmost space
+(See Figure 5, 6).
+<LI> Repeat the above procedure until you cannot remove any pair.
+</OL>
+
+<TABLE>
+<TR>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_match1"></TD>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_remove1"></TD>
+</TR>
+<TR>
+<TD ALIGN="center">Figure 3: A matching pair found</TD>
+<TD ALIGN="center">Figure 4: Remove the matching pair</TD>
+</TR>
+</TABLE>
+
+<TABLE>
+<TR>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_shift1"></TD>
+<TD ALIGN="center"><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_card_removed1"></TD>
+</TR>
+<TR>
+<TD ALIGN="center">Figure 5: Shift the remaining cards</TD>
+<TD ALIGN="center">Figure 6: Rearranged layout</TD>
+</TR>
+</TABLE>
+
+<P>
+If you can remove all the twenty cards, you win the game 
+and your penalty is 0.
+If you leave some cards,
+you lose the game and 
+your penalty is the number of the remaining cards.
+</p>
+<P>
+Whenever you find multiple matching pairs,
+you must choose one pair out of them 
+as in the step 2 of the above procedure.
+The result of the game depends on these choices.
+</P>
+<p>
+Your job is to write a program which answers the minimal penalty
+for each initial layout.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input consists of multiple card layouts.
+The input is given in the following format.
+</p>
+
+<PRE>
+        <I>N</I>
+        <I>Layout</i><SUB>0</SUB>
+        <I>Layout</i><SUB>1</SUB>
+        ...
+        <I>Layout</i><SUB><i>N</i>-1</SUB>
+</PRE>
+
+<p>
+<I>N</I> is the number of card layouts.
+Each card layout gives the initial state of a game.
+A card layout is given in the following format.
+</p>
+
+<PRE>
+        <I>C</i><SUB>0</SUB>   <I>C</i><SUB>1</SUB>   <I>C</i><SUB>2</SUB>   <I>C</i><SUB>3</SUB>
+        <I>C</i><SUB>4</SUB>   <I>C</i><SUB>5</SUB>   <I>C</i><SUB>6</SUB>   <I>C</i><SUB>7</SUB>
+        <I>C</i><SUB>8</SUB>   <I>C</i><SUB>9</SUB>   <I>C</i><SUB>10</SUB>  <I>C</i><SUB>11</SUB>
+        <I>C</i><SUB>12</SUB>  <I>C</i><SUB>13</SUB>  <I>C</i><SUB>14</SUB>  <I>C</i><SUB>15</SUB>
+        <I>C</i><SUB>16</SUB>  <I>C</i><SUB>17</SUB>  <I>C</i><SUB>18</SUB>  <I>C</i><SUB>19</SUB>
+</PRE>
+
+<p>
+<I>C<SUB>i</SUB></I> (0 &lt;= <I>i</I> &lt;= 19) is an integer 
+from 1 to 5 which represents the face value of the card.
+</P>
+
+<H2>Output</H2>
+<p>
+For every initial card layout, the minimal penalty should be output,
+each in a separate line.
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+4
+1 4 5 2
+3 1 4 3
+5 4 2 2
+4 5 2 3
+1 1 3 5
+5 1 5 1
+4 5 3 2
+3 2 1 4
+1 4 5 3
+2 3 4 2
+1 2 1 2
+5 4 5 4
+2 1 2 1
+3 5 3 4
+3 3 5 4
+4 2 3 1
+2 5 3 1
+3 5 4 2
+1 5 4 1
+4 5 3 2
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+0
+4
+12
+0
+</pre>
+

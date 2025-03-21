@@ -1,0 +1,32 @@
+// Segment 1: Reading and parsing input
+// Precondition: `input` is a non-empty string containing three space-separated integers followed by newline characters.
+// Postcondition: `input` is split into an array of strings, each representing a line of input.
+
+function Main(input) {
+    input = input.split("\n");
+
+    // Segment 2: Extracting and converting input values to BigInt
+    // Precondition: `input` is an array of strings with at least one element.
+    // Postcondition: `a`, `b`, and `c` are BigInt values extracted from the first element of `input`.
+    let a = BigInt(input[0].split(" ")[0]);
+    let b = BigInt(input[0].split(" ")[1]);
+    let c = BigInt(input[0].split(" ")[2]);
+
+    // Segment 3: Calculating the value of `num`
+    // Precondition: `a`, `b`, and `c` are BigInt values.
+    // Postcondition: `num` is a BigInt value calculated based on the given formula.
+    let num = a ** 2n + b ** 2n + c ** 2n - (2n * a * b) - (2n * b * c) - (2n * c * a);
+
+    // Segment 4: Making the decision and printing the result
+    // Precondition: `num` is a BigInt value.
+    // Postcondition: Outputs "Yes" if the conditions are met, otherwise outputs "No".
+    // Input format: A single line string of three space-separated integers.
+    // Output format: A single line string "Yes" or "No".
+    if ((c - a - b) > 0 && num > 0) console.log("Yes");
+    else console.log("No");
+}
+
+// Segment 5: Reading input from stdin and calling the Main function
+// Precondition: The program is executed in an environment where `fs` module is available and `/dev/stdin` contains the input.
+// Postcondition: The Main function is called with the input read from `/dev/stdin`.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

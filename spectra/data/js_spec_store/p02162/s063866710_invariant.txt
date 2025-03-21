@@ -1,0 +1,24 @@
+// Segment 1: Reading input and parsing it
+// Precondition: The program is executed in an environment where the input is provided via standard input (/dev/stdin).
+// Postcondition: The variables t, tt, r, and rr are initialized with integer values parsed from the input string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var [t, tt, r, rr] = input.trim().split(" ").map(Number);
+
+// Segment 2: Conditional check when r or rr is -1
+// Precondition: The variables t, tt, r, and rr are initialized with integer values.
+// Postcondition: The program outputs "Bob", "Alice", or "Draw" if either r or rr is -1.
+// Input format: A single line with four integers separated by spaces, e.g., "9 8 1000 999\n"
+// Output format: A single word ("Bob", "Alice", or "Draw") followed by a newline.
+if (r == -1 || rr == -1) {
+    if (t > tt) console.log("Bob");
+    else if (t < tt) console.log("Alice");
+    else if (t == tt) console.log("Draw");
+} 
+// Segment 3: Conditional check when both r and rr are not -1
+// Precondition: The variables t, tt, r, and rr are initialized with integer values, and neither r nor rr is -1.
+// Postcondition: The program outputs "Alice", "Bob", or "Draw" based on the comparison of r and rr.
+// Input format: A single line with four integers separated by spaces, e.g., "9 8 1000 999\n"
+// Output format: A single word ("Bob", "Alice", or "Draw") followed by a newline.
+else if (r > rr) console.log("Alice");
+else if (r < rr) console.log("Bob");
+else if (r == rr) console.log("Draw");

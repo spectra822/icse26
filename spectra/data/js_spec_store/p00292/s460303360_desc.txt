@@ -1,0 +1,21 @@
+// Read input from stdin and split it into an array of lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Remove the first element which contains the number of test cases
+Arr.shift();
+
+// Iterate over each line of input, process it and print the result
+Arr.forEach(function(v, i) {
+    // Split the current line into an array of numbers
+    var arr = Arr[i].split(" ").map(Number);
+
+    // Compute the remainder of the division arr[0] % arr[1]
+    var a = arr[0] % arr[1];
+
+    // If the remainder is 0, set it to arr[1]
+    if (a == 0) a = arr[1];
+
+    // Print the result
+    console.log(a);
+});

@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains a string `str1`.
+    // The second line contains a string `str2`.
+    // Output format: A single word "Yes" or "No" followed by a newline.
+    // Precondition: Both strings `str1` and `str2` are non-empty and their combined length does not exceed 400 characters.
+    // Postcondition: The program prints "Yes" if `str2` is a substring of the concatenation of `str1` with itself, otherwise it prints "No".
+```

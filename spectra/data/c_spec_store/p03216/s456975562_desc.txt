@@ -1,0 +1,15 @@
+```c
+// Global variables
+int n;
+char s[1000006];
+int q;
+int k[102];
+
+// This function is the main entry point of the program.
+// It reads input values for `n`, a string `s`, and `q` queries into global variables.
+// For each query, it calculates the number of valid substrings of length `k[j]`
+// that match the pattern 'D' followed by 'M' followed by 'C'.
+// It prints the result for each query.
+int main()
+  Calls no other functions
+```

@@ -1,0 +1,111 @@
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<H1>日本の暦 </H1>
+
+<p>
+「西暦」は西洋から輸入された概念ですが、日本には暦上の年を表す方法として「元号」に年を付けて識別する和暦という概念があります。例えば今年は西暦なら２０１６年ですが、和暦なら平成２８年です。どちらもよく使われる年の表現方法ですが、ある年の西暦がわかっていても和暦で何年かわからない、またはその逆の状況を経験したことはありませんか？
+</p>
+
+<p>
+西暦で年が与えられたとき和暦の年を、和暦で年が与えられたとき西暦の年を出力するプログラムを作成せよ。ただし、西暦と和暦の対応は、簡単のため以下のようにする。
+</p>
+
+<center>
+<table>
+<tr>
+<th width="260">西暦</th>
+<th width="260">和暦</th>
+</tr>
+<tr>
+<td>１８６８年から１９１１年</td>
+<td>明治元年から明治４４年</td>
+</tr>
+<tr>
+<td>１９１２年から１９２５年</td>
+<td>大正元年から大正１４年</td>
+</tr>
+<tr>
+<td>１９２６年から１９８８年</td>
+<td>昭和元年から昭和６３年</td>
+</tr>
+<tr>
+<td>１９８９年から２０１６年</td>
+<td>平成元年から平成２８年</td>
+</tr>
+</table>
+</center>
+<br>
+
+<h2>Input</h2>
+
+<p>
+入力は以下の形式で与えられる。 
+</p>
+
+<pre>
+<var>E</var> <var>Y</var>
+</pre>
+
+<p>
+入力は１行からなり、<var>E</var> (0 &le; <var>E</var> &le; 4) は与えられる暦の種類、<var>Y</var> はその暦での年であり、<var>E</var> が 0 のときは西暦 <var>Y</var> (1868 &le; <var>Y</var> &le; 2016)年、1 のときは和暦の明治 <var>Y</var> (1 &le; <var>Y</var> &le; 44)年、2 のときは和暦の大正 <var>Y</var> (1 &le; <var>Y</var> &le; 14)年、3 のときは和暦の昭和 <var>Y</var> (1 &le; <var>Y</var> &le; 63)年、4 のときは和暦の平成 <var>Y</var> (1 &le; <var>Y</var> &le; 28)年を表す。
+</p>
+
+
+<h2>Output</h2>
+
+<p>
+西暦ならば和暦に、和暦ならば西暦に変換した結果を、１行に出力する。ただし、西暦を和暦に変換した結果は、明治なら文字「M」、大正なら文字「T」、昭和なら文字「S」、平成なら文字「H」を先頭に付けて出力する。 
+</p>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+0 2015
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+H27
+</pre>
+<br/>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+0 1912
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+T1
+</pre>
+<br/>
+
+<h2>Sample Input 3</h2>
+<pre>
+2 1
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+1912
+</pre>
+<br/>
+
+<h2>Sample Input 4</h2>
+<pre>
+4 28
+</pre>
+
+<h2>Sample Output 4</h2>
+<pre>
+2016
+</pre>

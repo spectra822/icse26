@@ -1,0 +1,115 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi has a string <var>S</var> of length <var>N</var> consisting of digits from <code>0</code> through <code>9</code>.</p>
+<p>He loves the prime number <var>P</var>. He wants to know how many non-empty (contiguous) substrings of <var>S</var> - there are <var>N \times (N + 1) / 2</var> of them - are divisible by <var>P</var> when regarded as integers written in base ten.</p>
+<p>Here substrings starting with a <code>0</code> also count, and substrings originated from different positions in <var>S</var> are distinguished, even if they are equal as strings or integers.</p>
+<p>Compute this count to help Takahashi.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li><var>S</var> consists of digits.</li>
+<li><var>|S| = N</var></li>
+<li><var>2 \leq P \leq 10000</var></li>
+<li><var>P</var> is a prime number.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>P</var>
+<var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of non-empty (contiguous) substrings of <var>S</var> that are divisible by <var>P</var> when regarded as an integer written in base ten.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 3
+3543
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>6
+</pre>
+<p>Here <var>S</var> = <code>3543</code>. There are ten non-empty (contiguous) substrings of <var>S</var>:</p>
+<ul>
+<li>
+<p><code>3</code>: divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>35</code>: not divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>354</code>: divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>3543</code>: divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>5</code>: not divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>54</code>: divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>543</code>: divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>4</code>: not divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>43</code>: not divisible by <var>3</var>.</p>
+</li>
+<li>
+<p><code>3</code>: divisible by <var>3</var>.</p>
+</li>
+</ul>
+<p>Six of these are divisible by <var>3</var>, so print <var>6</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 2
+2020
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>10
+</pre>
+<p>Here <var>S</var> = <code>2020</code>. There are ten non-empty (contiguous) substrings of <var>S</var>, all of which are divisible by <var>2</var>, so print <var>10</var>.</p>
+<p>Note that substrings beginning with a <code>0</code> also count.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>20 11
+33883322005544116655
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>68
+</pre></section>
+</div>
+</span>

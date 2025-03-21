@@ -1,0 +1,9 @@
+```c
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The second line contains a string `S` of length `N`.
+    // The third line contains a string `T` of length `N`.
+    // Output format: A single integer.
+    // Precondition: The variable `N` is declared and is a positive integer. The strings `S` and `T` are declared and are of length `N`.
+    // Postcondition: The length of the shortest string that can be formed by appending `S` and `T` such that `T` is a suffix of the resulting string is printed.
+```

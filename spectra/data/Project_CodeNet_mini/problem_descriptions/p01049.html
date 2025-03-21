@@ -1,0 +1,119 @@
+
+
+
+<h1>Array Update</h1>
+
+<h2>Problem</h2>
+<p>
+項数 <var>N</var>、初項 <var>a</var>、公差 <var>d</var> の等差数列 <var>A</var> がある。以下の形式で数列を更新する命令文が <var>M</var> 個与えられるので、与えられた順序で数列 <var>A</var> を <var>M</var> 回更新したときの <var>K</var> 項目の値を求めよ。
+</p>
+
+<ul>
+<li>  
+<var>i</var> 番目の命令文は3つの整数 <var> x<sub>i</sub> , y<sub>i</sub> , z<sub>i</sub> </var>で表される(1 &le; <var>i</var> &le; <var>M</var>)。<br>
+</li>
+
+<li>
+<var>x<sub>i</sub></var>が0だった場合、<var>y<sub>i</sub></var>項目の値と
+<var>z<sub>i</sub></var>項目の値を入れ替える。<br>
+</li>
+
+<li>
+<var>x<sub>i</sub></var>が1だった場合、<var>y<sub>i</sub></var>項目の値を
+<var>z<sub>i</sub></var>項目の値に書き換える。 <br>
+</li>
+
+</ul>
+
+
+<h2>Input</h2>
+
+<pre>
+<var>N</var>
+<var>a</var> <var>d</var>
+<var>M</var>
+<var>x<sub>1</sub></var> <var>y<sub>1</sub></var> <var>z<sub>1</sub></var>
+<var>x<sub>2</sub></var> <var>y<sub>2</sub></var> <var>z<sub>2</sub></var>
+...
+<var>x<sub>M</sub></var> <var>y<sub>M</sub></var> <var>z<sub>M</sub></var>
+<var>K</var>
+</pre>
+
+<p>
+1行目に、1つの整数 <var>N</var> が与えられる。
+2行目に、2つの整数 <var>a</var> と <var>d</var> が空白区切りで与えられる。
+3行目に、1つの整数 <var>M</var> が与えられる。
+
+4行目からの <var>M</var> 行のうち <var>i</var> 行目には <var>i</var> 番目の命令文を表す 3 つの整数 <var>x<sub>i</sub>, y<sub>i</sub>, z<sub>i</sub></var> が空白区切りで与えられる。
+
+最後の行に、1つの整数 <var>K</var> が与えられる。
+</p>
+
+<h2>Constraints</h2>
+
+<ul>
+				<li>1 &le; <var>N</var> &le; 10<sup>8</sup></li>
+<li>1 &le; <var>a</var> &le; 5</li>
+<li>1 &le; <var>d</var> &le; 5</li>
+<li>1 &le; <var>M</var> &le; 10</li>
+<li>0 &le; <var>x<sub>i</sub></var> &le; 1 (1 &le; <var>i</var> &le; <var>M</var>)</li>
+<li>1 &le; <var>y<sub>i</sub></var> &le; <var>N</var> (1 &le; <var>i</var> &le; <var>M</var>)</li>
+<li>1 &le; <var>z<sub>i</sub></var> &le; <var>N</var> (1 &le; <var>i</var> &le; <var>M</var>)</li>
+<li><var>y<sub>i</sub></var> &ne; <var>z<sub>i</sub></var> (1 &le; <var>i</var> &le; <var>M</var>)</li>
+<li>1 &le; <var>K</var> &le; <var>N</var></li>
+</ul>
+
+<h2>Output</h2>
+<p>
+入力で与えられた順番で数列<var>A</var>を<var>M</var>回更新したときの<var>K</var>項目を出力せよ。
+</p>
+
+<h2>Sample Input 1</h2>
+<pre>
+5
+2 3
+3
+0 2 5
+0 3 5
+1 2 4
+2  
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+11
+</pre>
+
+<p>
+{  2 ,  5 ,  8 , 11 , 14 }<br>
+　             ↓<br>
+0 2 5 … 2項目の値と5項目の値を入れ替える<br>
+　             ↓<br>
+{  2 , 14 ,  8 , 11 ,  5 }<br>
+　             ↓<br>
+0 3 5 … 3項目の値と5項目の値を入れ替える<br>
+　             ↓<br>
+{  2 , 14 ,  5 , 11 ,  8 }<br>
+　             ↓<br>
+1 2 4 … 2項目の値を4項目の値に書き換える<br>
+　             ↓<br>
+{  2 ,  11 ,  5 , 11 ,  8 }<br>
+よって2項目は11である。  
+</p>
+
+<h2>Sample Input 2</h2>
+<pre>
+6
+5 5
+4
+0 1 2
+1 1 2
+0 4 1
+1 1 6
+3  
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+15
+</pre>

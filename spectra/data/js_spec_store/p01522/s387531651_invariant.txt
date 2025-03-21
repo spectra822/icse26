@@ -1,0 +1,85 @@
+// Segment 1: Reading and processing input
+
+// Precondition:
+// - The program is executed in an environment where '/dev/stdin' is available and properly set up.
+// - The input is structured such that the first line contains two integers N and K.
+// - The next K lines each contain a list of integers representing boats.
+// - The line after the boats contains an integer R.
+// - The next R lines each contain a pair of integers representing pairs of rabbits.
+
+// Postcondition:
+// - The variable 'Arr' contains an array of input lines split by newlines.
+// - The variables 'N' and 'K' are initialized with the first two values from the input.
+// - The variable 'rabbit' is an array of length N, initialized with 'true' values indicating all rabbits are initially on the island.
+// - The variable 'boat' is an array of arrays, each inner array containing the indices of rabbits on a boat.
+// - The variable 'R' is initialized with the number of rabbit pairs.
+// - The variable 'PQ' is an array of arrays, each inner array containing the indices of a pair of rabbits.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var NK = Arr.shift().split(" ").map(Number);
+var N = NK[0];
+var K = NK[1];
+var rabbit = [];
+for (var i = 0; i < N; i++) rabbit[i] = true;
+var boat = [];
+for (var i = 0; i < K; i++) {
+    var v = Arr.shift().split(" ").map(function(value) {
+        return (value - 0) - 1;
+    });
+    v.shift();
+    boat.push(v);
+}
+var R = Arr.shift() - 0;
+var PQ = [];
+for (var i = 0; i < R; i++) {
+    var v = Arr.shift().split(" ").map(function(value) {
+        return (value - 0) - 1;
+    });
+    PQ.push(v);
+}
+
+// Segment 2: Processing boat and rabbit pairs
+
+// Precondition:
+// - The variable 'boat' is an array of arrays containing indices of rabbits on each boat.
+// - The variable 'PQ' is an array of arrays containing pairs of rabbit indices.
+
+// Postcondition:
+// - The variable 'rabbit' is updated to mark rabbits that are on the same boat as any of the pairs in 'PQ' as false.
+
+boat.forEach(function(v) {
+    PQ.forEach(function(V) {
+        var a = v.indexOf(V[0]);
+        var b = v.indexOf(V[1]);
+        if (a !== -1 && b !== -1) {
+            rabbit[V[0]] = false;
+            rabbit[V[1]] = false;
+        }
+    });
+});
+
+// Segment 3: Counting and outputting the result
+
+// Precondition:
+// - The variable 'rabbit' contains boolean values indicating whether each rabbit is still on the island or not.
+
+// Postcondition:
+// - The variable 'ans' contains the count of rabbits that have been marked as false (i.e., those that are not on the island).
+// - The count is printed to the console.
+
+// Input format:
+// The input is read from '/dev/stdin' and is structured as follows:
+// First line: "N K" where N is the number of rabbits and K is the number of boats
+// Next K lines: Each line contains the indices of rabbits on a boat, starting with the number of rabbits on that boat followed by their indices
+// Next line: An integer R
+// Next R lines: Each line contains a pair of integers representing a pair of rabbits
+
+// Output format:
+// A single integer representing the number of rabbits that are not on the island.
+
+var ans = 0;
+rabbit.forEach(function(v) {
+    if (!v) ans++;
+});
+console.log(ans);

@@ -1,0 +1,36 @@
+// Segment 1: Reading Input
+// Precondition: The program is executed in an environment where `/dev/stdin` can be accessed.
+// Postcondition: The variable `args` contains the input read from `/dev/stdin` as a string.
+const args = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Parsing Input
+// Precondition: `args` contains a string with at least one newline character.
+// Postcondition: `n` contains the string representation of a number, `S` contains the string of parentheses, `N` is the integer representation of `n`.
+const [n, S] = args.trim().split`\n`;
+const N = n | 0;
+
+// Segment 3: Initializing Counters
+// Precondition: `N` is a non-negative integer, `S` is a string of length `N`.
+// Postcondition: `r` and `l` are initialized to 0.
+let r = 0, l = 0;
+
+// Segment 4: Counting Closing Parentheses to Balance
+// Precondition: `l` is 0, `S` is a string of length `N`.
+// Postcondition: `l` contains the count of unmatched closing parentheses from the end of `S`.
+for (let i = N; i--;) l += (S[i] === ')') ? 1 : l ? -1 : 0;
+
+// Segment 5: Counting Opening Parentheses to Balance
+// Precondition: `r` is 0, `S` is a string of length `N`.
+// Postcondition: `r` contains the count of unmatched opening parentheses from the start of `S`.
+for (let i = 0; i < N; i++) r += (S[i] === '(') ? 1 : r ? -1 : 0;
+
+// Segment 6: Constructing the Balanced Parentheses String
+// Precondition: `l` and `r` contain the counts of unmatched parentheses, `S` is a string of length `N`.
+// Postcondition: The balanced string is constructed by adding `l` opening parentheses before `S` and `r` closing parentheses after `S`.
+const balancedString = '('.repeat(l) + S + ')'.repeat(r);
+
+// Segment 7: Outputting the Result
+// Precondition: `balancedString` contains the balanced parentheses string.
+// Postcondition: The balanced string is printed to the console.
+// Output: A single line containing the balanced parentheses string.
+console.log(balancedString);

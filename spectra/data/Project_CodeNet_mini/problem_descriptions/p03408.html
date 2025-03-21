@@ -1,0 +1,138 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi has <var>N</var> blue cards and <var>M</var> red cards.
+A string is written on each card. The string written on the <var>i</var>-th blue card is <var>s_i</var>, and the string written on the <var>i</var>-th red card is <var>t_i</var>.</p>
+<p>Takahashi will now announce a string, and then check every card. Each time he finds a blue card with the string announced by him, he will earn <var>1</var> yen (the currency of Japan); each time he finds a red card with that string, he will lose <var>1</var> yen.</p>
+<p>Here, we only consider the case where the string announced by Takahashi and the string on the card are exactly the same. For example, if he announces <code>atcoder</code>, he will not earn money even if there are blue cards with <code>atcoderr</code>, <code>atcode</code>, <code>btcoder</code>, and so on. (On the other hand, he will not lose money even if there are red cards with such strings, either.)</p>
+<p>At most how much can he earn on balance?</p>
+<p>Note that the same string may be written on multiple cards.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>N</var> and <var>M</var> are integers.</li>
+<li><var>1 \leq N, M \leq 100</var></li>
+<li><var>s_1, s_2, ..., s_N, t_1, t_2, ..., t_M</var> are all strings of lengths between <var>1</var> and <var>10</var> (inclusive) consisting of lowercase English letters.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>s_1</var>
+<var>s_2</var>
+<var>:</var>
+<var>s_N</var>
+<var>M</var>
+<var>t_1</var>
+<var>t_2</var>
+<var>:</var>
+<var>t_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>If Takahashi can earn at most <var>X</var> yen on balance, print <var>X</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+apple
+orange
+apple
+1
+grape
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>He can earn <var>2</var> yen by announcing <code>apple</code>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+apple
+orange
+apple
+5
+apple
+apple
+apple
+apple
+apple
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>If he announces <code>apple</code>, he will lose <var>3</var> yen. If he announces <code>orange</code>, he can earn <var>1</var> yen.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>1
+voldemort
+10
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+voldemort
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>0
+</pre>
+<p>If he announces <code>voldemort</code>, he will lose <var>9</var> yen. If he announces <code>orange</code>, for example, he can avoid losing a yen.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>6
+red
+red
+blue
+yellow
+yellow
+red
+5
+red
+red
+yellow
+green
+blue
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>1
+</pre></section>
+</div>
+</span>

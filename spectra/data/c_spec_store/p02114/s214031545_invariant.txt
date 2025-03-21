@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: An integer `n` followed by `n` lines each containing a string of length `n` (either 'o' or 'x').
+    // Output format: A single integer.
+    // Precondition: The global arrays `X` and `Y` have been declared and initialized.
+    // Postcondition: The program prints the number of clusters of 'o' characters, minus one, divided by three (integer division).
+```

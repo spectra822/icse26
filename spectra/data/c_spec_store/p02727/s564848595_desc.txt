@@ -1,0 +1,19 @@
+```c
+// Global variables
+int X, Y, A, B, C;
+int p[114514], q[114514], r[114514];
+
+// Comparison function used for sorting integers in descending order.
+// Takes two pointers to integers `x` and `y` and compares their values.
+int mizuhasu(const void* x, const void* y)
+    // No calls to other functions
+
+// Main function to read input, sort arrays `p`, `q`, `r`, and compute the maximum sum of selected elements.
+// It reads input values for X, Y, A, B, C and the arrays p, q, r.
+// It sorts the arrays in descending order and then selects the top X elements from p and top Y elements from q, 
+// replacing some elements with elements from r if they are larger.
+// Finally, it calculates and prints the sum of the selected elements.
+int main(void)
+    Calls mizuhasu(...)
+    Calls qsort(...)
+```

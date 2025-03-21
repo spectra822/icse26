@@ -1,0 +1,23 @@
+// Read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Parse the input values into variables a, b, and x
+var [a, b, x] = input.trim().split(" ").map(Number);
+
+// Initialize the minimum cost to a very large number (Infinity)
+var min = Infinity;
+
+// Iterate over possible values of i (number of 1000-unit items)
+for (var i = 0; i <= 20; i++) {
+    // Iterate over possible values of j (number of 500-unit items)
+    for (var j = 0; j <= 40; j++) {
+        // Check if the total units meet or exceed the required amount x
+        if (i * 1000 + j * 500 >= x) {
+            // Update the minimum cost if the current cost is lower
+            min = Math.min(min, i * a + j * b);
+        }
+    }
+}
+
+// Output the minimum cost
+console.log(min);

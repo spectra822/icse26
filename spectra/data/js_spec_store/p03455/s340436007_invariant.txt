@@ -1,0 +1,34 @@
+// Precondition: The `main` function is defined and ready to be executed with a single string argument `input`.
+// Postcondition: The program reads the input, processes it, and prints "Even" or "Odd" to the console.
+function main(input) {
+    
+    // Precondition: `input` is a string containing two integers separated by a space.
+    // Postcondition: `input` is split into an array of two elements, and `a` and `b` are parsed as integers.
+    input = input.split(" ");
+    var a = parseInt(input[0]);
+    var b = parseInt(input[1]);
+
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: The product of `a` and `b` is checked for evenness or oddness.
+    // Input: Two integers separated by a space, e.g., "3 4"
+    // Output: "Even" if the product of the two integers is even, otherwise "Odd"
+    if ((a * b) % 2 == 0) {
+        console.log("Even");
+    } else {
+        console.log("Odd");
+    }
+}
+
+// Precondition: The program reads from standard input.
+// Postcondition: The `main` function is called with the input read from standard input.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+    function main(input) {
+        input = input.split(" ");
+        var a = parseInt(input[0]);
+        var b = parseInt(input[1]);
+        if ((a * b) % 2 == 0) {
+            console.log("Even");
+        } else {
+            console.log("Odd");
+        }
+    main(require('fs').readFileSync('/dev/stdin', 'utf8'));

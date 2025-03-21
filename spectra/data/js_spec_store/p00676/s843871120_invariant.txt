@@ -1,0 +1,43 @@
+// Segment 1: Function Definition
+// Precondition: The function `heron` is called with three positive numbers `a`, `b`, and `c`.
+// Postcondition: The function returns the area of a triangle calculated using Heron's formula.
+function heron(a, b, c) {
+    var s = (a + b + c) / 2;
+    var S = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    return S;
+}
+
+// Segment 2: Input Handling
+// Precondition: The input is read from a file through '/dev/stdin', and it contains multiple lines. Each line has three space-separated integers.
+// Postcondition: The input is split into an array `Arr` where each element is a line from the input file.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Loop Through Input
+// Precondition: `Arr` is an array of strings, each representing a line of space-separated integers.
+// Postcondition: For each line in `Arr`, the space-separated integers are parsed into numbers `A`, `L`, and `X`. The area calculations are performed, and the results are printed.
+// Input: Each line of input should be in the format `A L X` where `A`, `L`, and `X` are integers.
+// Output: For each line of input, the output is a single floating-point number printed to 10 decimal places.
+for (var i = 0; i < Arr.length; i++) {
+    var ALX = Arr[i].split(" ").map(Number);
+    var A = ALX[0];
+    var L = ALX[1];
+    var X = ALX[2];
+    
+    var sum = 0;
+    
+    // Segment 4: Area Calculation for Triangle 1
+    // Precondition: `A` and `L` are positive integers.
+    // Postcondition: The area of the triangle with sides `A`, `L`, and `L` is added to `sum`.
+    sum += heron(A, L, L);
+    
+    // Segment 5: Area Calculation for Triangle 2
+    // Precondition: `L` and `X` are positive integers.
+    // Postcondition: The area of the triangle with sides `L`, `(L + X) / 2`, and `(L + X) / 2` is calculated and doubled, then added to `sum`.
+    sum += (heron(L, (L + X) / 2, (L + X) / 2) * 2);
+    
+    // Segment 6: Output Result
+    // Precondition: `sum` is a floating-point number representing the total area calculated.
+    // Postcondition: `sum` is printed to the console with 10 decimal places.
+    console.log(sum.toFixed(10));
+}

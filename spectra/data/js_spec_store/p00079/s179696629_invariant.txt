@@ -1,0 +1,57 @@
+// Segment 1: Function Definition
+// Precondition: None
+// Postcondition: Defines a function heron(a, b, c) that calculates the area of a triangle using Heron's formula.
+
+function heron(a, b, c) {
+    var s = (a + b + c) / 2;
+    var S = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    return S;
+}
+
+// Segment 2: Reading Input
+// Precondition: The program expects the standard input to contain coordinates in the format specified below:
+// Input format:
+// 0.0,0.0
+// 0.0,1.0
+// 1.0,1.0
+// 2.0,0.0
+// 1.0,-1.0
+// Postcondition: The input is read from stdin and processed into an array of coordinate pairs.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Initial Variable Setup
+// Precondition: The input array Arr contains at least two lines of coordinates.
+// Postcondition: The first two coordinate pairs are extracted and processed into individual variables.
+
+var xy1 = (Arr.shift()).split(",").map(Number);
+var xy2 = (Arr.shift()).split(",").map(Number);
+var x1 = xy1[0];
+var y1 = xy1[1];
+var x2 = xy2[0];
+var y2 = xy2[1];
+var sum = 0;
+
+// Segment 4: Iteration and Area Calculation
+// Precondition: The remaining elements in Arr are coordinate pairs representing vertices of triangles.
+// Postcondition: The sum of the areas of triangles formed by consecutive points is calculated and stored in the variable `sum`.
+
+for (var I = 0; I < Arr.length; I++) {
+    var xy3 = Arr[I].split(",").map(Number);
+    var x3 = xy3[0];
+    var y3 = xy3[1];
+    var d12 = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    var d13 = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
+    var d23 = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+    sum += heron(d12, d13, d23);
+    x2 = xy3[0];
+    y2 = xy3[1];
+}
+
+// Segment 5: Output the Result
+// Precondition: The variable `sum` contains the total area of the triangles calculated.
+// Postcondition: The total area is printed to the standard output with 6 decimal places.
+// Output format: 2.500000
+
+console.log(sum.toFixed(6));

@@ -1,0 +1,43 @@
+```c
+// Global variables
+const int inf = 1012345678;
+
+// Given two integers `a` and `b`, returns their greatest common divisor.
+int gcd(int a, int b)
+
+// Given two integers `a` and `b`, returns their least common multiple.
+int lcm(int a, int b)
+    Calls gcd(...)
+
+// Given an array `a` of length `n`, returns the greatest common divisor of the elements in the array.
+int ngcd(int n, int a[])
+    Calls gcd(...)
+
+// Given an array `a` of type `keytype` and length `last - first + 1`, sorts the array in place using the quicksort algorithm.
+void quicksort(keytype a[], int first, int last)
+
+// Given an integer `x`, returns 1 if `x` is a prime number, otherwise returns 0.
+int is_prime(int x)
+
+// Given two strings `s` and `t`, and an index `i`, returns 1 if `t` is a substring of `s` starting from index `i`, otherwise returns 0.
+int is_substr(char s[], char t[], int i)
+
+// Given an integer `n`, factorizes `n` into its prime factors and stores the factors in array `ftr`. The number of factors is stored in `num`.
+void factorize(int ftr[], int *num, int n)
+
+// Given an array `p` of length `N`, generates the next permutation of `p` in lexicographic order. Returns 1 if the next permutation exists, otherwise returns 0.
+int nextperm(int p[], int N)
+
+// Given a 2D array `v` of size `size1 x size2`, calculates the binomial coefficients and stores them in `v`.
+void comb(int size1, int size2, int v[size1][size2])
+
+// Given two integers `a` and `b`, returns their absolute difference.
+int abs_val(int a, int b)
+
+// Given two integers `a` and `b`, returns the smaller of the two.
+int min(int a, int b)
+
+// The main function reads three integers `a`, `b`, and `c` from standard input.
+// If `a <= c <= b`, prints "Yes", otherwise prints "No".
+int main()
+```

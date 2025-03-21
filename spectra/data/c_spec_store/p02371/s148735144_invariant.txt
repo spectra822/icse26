@@ -1,0 +1,23 @@
+```
+int MAX(int a, int b)
+    // Precondition: The integers `a` and `b` are defined.
+    // Postcondition: The function returns the maximum of the two integers `a` and `b`.
+
+int dfs(int v, int e, int s, int d)
+    // Precondition: The global arrays `ta`, `nt`, `fr`, `to`, `co`, and `f` have been initialized. `s` is a valid node index, and `d` is the current distance.
+    // Postcondition: The function returns the maximum distance from the starting node `s` to any other node in the graph, updating `f`, `C`, and calling itself recursively.
+
+int bfs(int v, int e, int s, int *g)
+    // Precondition: The global arrays `ta`, `nt`, `fr`, `to`, `co`, and `q` have been initialized. `s` is a valid starting node, and `g` is a pointer to an integer.
+    // Postcondition: The function performs a breadth-first search (BFS) from node `s`, updating the distance array `C` and the queue `q`. It returns the maximum distance found and updates `*g` to the node at this maximum distance.
+
+int tyokkei(int v, int e, int *a, int *b, int *c)
+    // Precondition: The global arrays `ta`, `nt`, `fr`, `to`, `co`, `C`, and `f` have been declared. Arrays `a`, `b`, and `c` contain the edges and costs of the graph.
+    // Postcondition: The function returns the diameter (longest shortest path) of the graph, updating the global arrays `ta`, `nt`, `fr`, `to`, `co`, `C`, and `f`.
+
+int main()
+    // Input format: The first line contains an integer `n`. The next `n-1` lines each contain three integers `a`, `b`, and `c`, separated by spaces.
+    // Output format: A single integer.
+    // Precondition: The global arrays `a`, `b`, and `c` have been declared.
+    // Postcondition: The diameter of the tree is printed.
+```

@@ -1,0 +1,14 @@
+```c
+// Global variables
+int n;
+int i;
+int a[100009];
+
+// Main function: 
+// Reads an integer `n` and an array of `n` integers.
+// Checks if it's possible to make the sequence non-decreasing by decrementing some elements at most once.
+// Prints "Yes" if possible, otherwise prints "No".
+int main()
+  // Calls scanf(...)
+  // Calls printf(...)
+```

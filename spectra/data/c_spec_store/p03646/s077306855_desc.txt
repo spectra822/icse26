@@ -1,0 +1,14 @@
+```c
+// Global variables
+// None
+
+// This is the main function of the program.
+// It takes an integer `k` as input and generates an array of integers based on the value of `k`.
+// Depending on the value of `k`, the function behaves differently:
+// - If `k >= 50`, it generates an array of size 50 and modifies its elements based on `k`.
+// - If `k >= 2`, it generates an array of size `k` where all elements are `k`.
+// - If `k == 0`, it outputs a fixed array "4\n3 3 3 3\n".
+// - If `k == 1`, it outputs a fixed array "3\n1 0 3\n".
+int main()
+    Calls: None
+```

@@ -1,0 +1,42 @@
+// Function to generate all combinations of a given length from a range of numbers
+function kumiawase(start, end, len) {
+    var ans = [];
+    var loop = function(a, arr) {
+        if (arr.length == len) ans.push(arr);
+        else {
+            for (var i = a; i <= end; i++) loop(i + 1, arr.concat(i));
+        }
+    }
+    loop(start, []);
+    return ans;
+}
+
+// Read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split input into an array of strings, each representing a line of input
+var arr = input.trim().split("\n");
+
+// Process each line of input
+arr.some(function(v, i) {
+    // If the line is "0 0 0", stop processing
+    if (v == "0 0 0") return true;
+
+    // Split the line into an array of numbers
+    var nks = v.split(" ").map(Number);
+
+    // Generate all combinations of length nks[1] from numbers 1 to nks[0]
+    var ary = kumiawase(1, nks[0], nks[1]);
+
+    // Count how many of these combinations have a sum equal to nks[2]
+    var cnt = 0;
+    ary.forEach(function(v) {
+        var sum = v.reduce(function(a, b) {
+            return a + b;
+        });
+        if (sum == nks[2]) cnt++;
+    });
+
+    // Print the count for this line of input
+    console.log(cnt);
+});

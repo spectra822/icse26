@@ -1,0 +1,80 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a grid with <var>H</var> horizontal rows and <var>W</var> vertical columns, and there are obstacles on some of the squares.</p>
+<p>Snuke is going to choose one of the squares not occupied by an obstacle and place a lamp on it.
+The lamp placed on the square will emit straight beams of light in four cardinal directions: up, down, left, and right.
+In each direction, the beam will continue traveling until it hits a square occupied by an obstacle or it hits the border of the grid. It will light all the squares on the way, including the square on which the lamp is placed, but not the square occupied by an obstacle.</p>
+<p>Snuke wants to maximize the number of squares lighted by the lamp.</p>
+<p>You are given <var>H</var> strings <var>S_i</var> (<var>1 \leq i \leq H</var>), each of length <var>W</var>. If the <var>j</var>-th character (<var>1 \leq j \leq W</var>) of <var>S_i</var> is <code>#</code>, there is an obstacle on the square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left; if that character is <code>.</code>, there is no obstacle on that square.</p>
+<p>Find the maximum possible number of squares lighted by the lamp.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H \leq 2,000</var></li>
+<li><var>1 \leq W \leq 2,000</var></li>
+<li><var>S_i</var> is a string of length <var>W</var> consisting of <code>#</code> and <code>.</code>.</li>
+<li><code>.</code> occurs at least once in one of the strings <var>S_i</var> (<var>1 \leq i \leq H</var>).</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var>
+<var>S_1</var>
+<var>:</var>
+<var>S_H</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible number of squares lighted by the lamp.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 6
+#..#..
+.....#
+....#.
+#.#...
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>8
+</pre>
+<p>If Snuke places the lamp on the square at the second row from the top and the second column from the left, it will light the following squares: the first through fifth squares from the left in the second row, and the first through fourth squares from the top in the second column, for a total of eight squares.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>8 8
+..#...#.
+....#...
+##......
+..###..#
+...#..#.
+##....#.
+#...#...
+###.#..#
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>13
+</pre></section>
+</div>
+</span>

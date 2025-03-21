@@ -1,0 +1,90 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a grid with <var>H</var> rows and <var>W</var> columns, where each square is painted black or white.</p>
+<p>You are given <var>H</var> strings <var>S_1, S_2, ..., S_H</var>, each of length <var>W</var>.
+If the square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left is painted black, the <var>j</var>-th character in the string <var>S_i</var> is <code>#</code>; if that square is painted white, the <var>j</var>-th character in the string <var>S_i</var> is <code>.</code>.</p>
+<p>Find the number of pairs of a black square <var>c_1</var> and a white square <var>c_2</var> that satisfy the following condition:</p>
+<ul>
+<li>There is a path from the square <var>c_1</var> to the square <var>c_2</var> where we repeatedly move to a vertically or horizontally adjacent square through an alternating sequence of black and white squares: black, white, black, white...</li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H, W \leq 400</var></li>
+<li><var>|S_i| = W</var> (<var>1 \leq i \leq H</var>)</li>
+<li>For each <var>i</var> (<var>1 \leq i \leq H</var>), the string <var>S_i</var> consists of characters <code>#</code> and <code>.</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var>
+<var>S_1</var>
+<var>S_2</var>
+<var>:</var>
+<var>S_H</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the answer.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+.#.
+..#
+#..
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>10
+</pre>
+<p>Some of the pairs satisfying the condition are <var>((1, 2), (3, 3))</var> and <var>((3, 1), (3, 2))</var>, where <var>(i, j)</var> denotes the square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2 4
+....
+....
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>4 3
+###
+###
+...
+###
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>6
+</pre></section>
+</div>
+</span>

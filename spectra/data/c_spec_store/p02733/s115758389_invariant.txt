@@ -1,0 +1,8 @@
+``` 
+int main()
+    // Input format: The first line contains three integers `H`, `W`, and `K` separated by spaces.
+    // The next `H` lines each contain a string of length `W` consisting of characters '0' and '1'.
+    // Output format: A single integer on a new line.
+    // Precondition: The input values `H`, `W`, and `K` are positive integers, and `S` is a 2D array of characters of size [12][1002].
+    // Postcondition: The minimum number of vertical cuts required to ensure that each section contains at most `K` '1's is printed.
+```

@@ -1,0 +1,24 @@
+```c
+// Global variables
+int N, M, d[1<<17], que[1<<17], l=0, r=0;
+edge G[1<<17], *nil;
+
+// Structure to represent an edge in a graph
+typedef struct E {
+    int to;
+    struct E *next;
+} edge;
+
+// Function to add an edge between two nodes in the graph
+// Given nodes `i` and `j`, it creates an edge from `i` to `j`
+// and updates the adjacency list of node `i` to include this new edge.
+void push(int i, int j)
+    Calls malloc(...)
+
+// Main function to read input, construct the graph, and perform a BFS
+// Initializes the graph and distance array, reads edges, and constructs the graph using `push`.
+// Performs a BFS starting from node 1 to find the shortest path to all other nodes.
+// Prints "Yes" followed by the parent of each node in the BFS tree.
+int main()
+    Calls push(...)
+```

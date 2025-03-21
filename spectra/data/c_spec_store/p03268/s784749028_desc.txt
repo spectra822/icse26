@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// This function takes two long long integers N and K as input.
+// It computes and prints the value based on whether K is odd or even.
+// If K is odd, it prints (N / K) * (N / K) * (N / K).
+// If K is even, it prints (N / K) * (N / K) * (N / K) + ((N + K / 2) / K) * ((N + K / 2) / K) * ((N + K / 2) / K).
+int main()
+    Calls printf(...) and fflush(stdout)
+```

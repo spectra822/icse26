@@ -1,0 +1,13 @@
+```c
+int bs(int D[], int n, int c)
+    // Precondition: The array `D` has been initialized with at least `n` elements. The value of `n` is greater than 0.
+    // Postcondition: The function returns the index of the smallest element in `D` that is greater than or equal to `c`.
+    // If no such element exists, it returns the index where `c` should be inserted to maintain the sorted order.
+
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain an integer `a[i]`.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The global variables `n`, `a`, and `dp` have been declared.
+    // Postcondition: The length of the longest increasing subsequence in the array `a` is printed.
+```

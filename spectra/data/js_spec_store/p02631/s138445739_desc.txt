@@ -1,0 +1,37 @@
+// Utility function to split input into lines
+const readLines = (input) => input.split('\n')
+
+// Utility function to print a value to the console
+const println = (value) => console.log(value)
+
+// Utility function to parse an integer from a string
+const readInt = (input) => parseInt(input, 10)
+
+// Utility function to parse a space-separated list of integers from a string
+const readIntList = (input) => input.split(' ').map(n => parseInt(n, 10))
+
+// Utility function to compare two values in natural order
+const naturalOrder = (a, b) => {
+    if (b == a) return 0
+    return (a < b) ? -1 : 1
+}
+
+// Main function to process the input and produce the output
+function main(input) {
+    // Read and parse input lines
+    const lines = readLines(input)
+    const n = readInt(lines[0])
+    const aArray = readIntList(lines[1])
+
+    // Calculate the XOR of all elements in the array
+    const allXor = aArray.reduce((acc, a) => acc ^ a)
+
+    // Calculate the result for each element and join them into a string
+    const ans = aArray.map((a, i) => a ^ allXor).join(' ')
+
+    // Print the result
+    println(ans)
+}
+
+// Read the input from the standard input and pass it to the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

@@ -1,0 +1,36 @@
+```c
+// Global variables
+None
+
+// Swap the values of two integers pointed to by `x` and `y`.
+void swap(int *x, int *y)
+
+// Calculate the greatest common divisor (GCD) of two integers `a` and `b` using the Euclidean algorithm.
+int gcd(int a, int b)
+
+// Calculate `a` raised to the power of `n` modulo `mod` using the method of exponentiation by squaring.
+long int modpow(long int a, long int n, long int mod)
+
+// Calculate the modular multiplicative inverse of `a` modulo `mod` using Fermat's Little Theorem.
+long int modinv(long int a, long int mod)
+    Calls modpow(...)
+
+// Return the maximum of two integers `a` and `b`.
+int max(int a, int b)
+
+// Return the minimum of two integers `a` and `b`.
+int min(int a, int b)
+
+// Update the value pointed to by `a` to `b` if `b` is greater than the value pointed to by `a`.
+void chmax(int *a, int b)
+
+// Update the value pointed to by `a` to `b` if `b` is smaller than the value pointed to by `a`.
+void chmin(int *a, int b)
+
+// This function reads an integer `n` which represents the number of elements in an array `h`.
+// It then reads `n` integers into the array `h`.
+// The function calculates the maximum number of consecutive elements in the array `h` that are non-increasing.
+// It prints the maximum count of such consecutive elements.
+int main(void)
+    Calls chmax(...)
+```

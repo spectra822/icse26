@@ -1,0 +1,6 @@
+Input:
+5
+RRRRL
+
+Output:
+Yes

@@ -1,0 +1,58 @@
+// Precondition: The code is executed in a Node.js environment where '/dev/stdin' can be read and contains the input data.
+// Postcondition: The input is read, split into lines, and the first line is parsed as the number of elements. 
+(function(input) {
+    var p = input.split('\n');
+    var n = Number(p.shift());
+    
+    // Precondition: The first element of the array `p` is a string of space-separated integers.
+    // Postcondition: The array `A` contains the integers parsed from the string.
+    var A = p.shift().split(' ').map(Number);
+
+    // Precondition: The array `A` contains the integers to be partitioned.
+    // Postcondition: The array `A` is partitioned around a pivot element, and the pivot's final position is returned.
+    var i = partition(A, 0, A.length - 1);
+    
+    // Precondition: The array `A` is partitioned and `i` is the index of the pivot element.
+    // Postcondition: The array `A` is printed with the pivot element surrounded by square brackets.
+    console.log(A.map(function(e, index) {
+        if (index === i) {
+            return '[' + e + ']';
+        }
+        return e;
+    }).join(' '));
+})(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+// Input format:
+// The input is read from standard input and has the following format:
+// The first line contains an integer `n` which is the number of elements in the array.
+// The second line contains `n` space-separated integers which are the elements of the array.
+
+// Output format:
+// The output is a single line that contains the array after partitioning.
+// The pivot element is enclosed in square brackets.
+
+// Precondition: The array `A` contains integers, and `p` and `r` are valid indices in the array.
+// Postcondition: The array `A` is partitioned around the pivot element `A[r]`, and the pivot's final position is returned.
+function partition(A, p, r) {
+    var x = A[r];
+    var i = p - 1;
+    
+    // Precondition: `j` iterates from `p` to `r-1`.
+    // Postcondition: Elements less than or equal to `x` are moved to the left of the array.
+    for (var j = p; j <= r - 1; j++) {
+        if (A[j] <= x) {
+            i++;
+            var tmp = A[i];
+            A[i] = A[j];
+            A[j] = tmp;
+        }
+    }
+    
+    // Precondition: The element at `r` is the pivot element.
+    // Postcondition: The pivot element is placed at its correct position in the array.
+    var tmp = A[i + 1];
+    A[i + 1] = A[r];
+    A[r] = tmp;
+
+    return i + 1;
+}

@@ -1,0 +1,76 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part"><section>
+<h3>Problem Statement</h3>
+<p>A professor invented Cookie Breeding Machine for his students who like cookies very much. </p>
+<p>When one cookie with the taste of <var>x</var> is put into the machine and a non-negative integer <var>y</var> less than or equal to <var>127</var> is input on the machine,
+        it consumes the cookie and generates two cookies with the taste of <var>y</var> and (<var>x</var> XOR <var>y</var>). </p>
+<p>Here, XOR represents <a href="https://en.wikipedia.org/wiki/Exclusive_or">Bitwise Exclusive OR</a>. </p>
+<p>At first, there is only one cookie and the taste of it is <var>D</var> . </p>
+<p>Find the maximum value of the sum of the taste of the exactly <var>N</var> cookies generated after the following operation is conducted <var>N-1</var> times. </p>
+<ol>
+<li>Put one of the cookies into the machine. </li>
+<li>Input a non-negative integer less than or equal to <var>127</var> on the machine. </li>
+</ol>
+</section></div>
+<div class="part"><section>
+<h3>Constraints</h3>
+<ul>
+<li><var>1 \leq T \leq 1000</var></li>
+<li><var>1 \leq N_t \leq 1000</var> <var>(1 \leq t \leq T)</var></li>
+<li><var>1 \leq D_t \leq 127</var> <var>(1 \leq t \leq T)</var></li>
+</ul>
+</section></div>
+<hr/>
+<div class="io-style">
+<div class="part"><section>
+<h3>Input</h3>
+<p>The input is given from Standard Input in the following format:</p>
+<pre>
+<var>T</var>
+<var>N_1</var> <var>D_1</var>
+:
+<var>N_T</var> <var>D_T</var>
+</pre>
+<p>
+            The input consists of multiple test cases. An Integer <var>T</var> that represents the number of test cases is given on line <var>1</var>. <br/>
+            Each test case is given on the next <var>T</var> lines. <br/>
+            In the <var>t</var>-th test case (<var> 1 \leq t \leq T </var>),
+            <var>N_t</var> that represents the number of cookies generated through the operations and <var>D_t</var> that represents the taste of the initial cookie are given separated by space. <br/>
+</p>
+</section></div>
+<div class="part"><section>
+<h3>Output</h3>
+<p>For each test case, print the maximum value of the sum of the taste of the <var>N</var> cookies generated through the operations on one line. </p>
+</section></div>
+</div>
+<hr/>
+<div class="part"><section>
+<h3>Sample Input 1</h3>
+<pre>
+3
+3 1
+4 108
+1 10
+</pre>
+</section></div>
+<div class="part"><section>
+<h3>Sample Output 1</h3>
+<pre>
+255
+400
+10
+</pre>
+<p>
+        On the 1st test case, if the machine is used as follows, three cookies with the taste of <var>61</var>, <var>95</var> and <var>99</var> are generated.
+        Since the sum of these values is maximum among all possible ways, the answer is <var>255</var>.
+        <ol>
+<li>Put the cookie with the taste of <var>1</var> and input an integer <var>60</var> on the machine, lose the cookie and get two cookies with the taste of <var>60</var> and <var>61</var>. </li>
+<li>Put the cookie with the taste of <var>60</var> and input an integer <var>99</var> on the machine, lose the cookie and get two cookies with the taste of <var>99</var> and <var>95</var>. </li>
+</ol>
+</p>
+<p>
+        On the 3rd test case, the machine may not be used.
+    </p>
+</section></div>
+</span>

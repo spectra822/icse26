@@ -1,0 +1,135 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>In Dwango Co., Ltd., there is a content distribution system named 'Dwango Media Cluster', and it is called 'DMC' for short.<br/>
+The name 'DMC' sounds cool for Niwango-kun, so he starts to define DMC-ness of a string.</p>
+<p>Given a string <var>S</var> of length <var>N</var> and an integer <var>k</var> <var>(k \geq 3)</var>,
+he defines the <em><var>k</var>-DMC number</em> of <var>S</var> as the number of triples <var>(a, b, c)</var> of integers that satisfy the following conditions:</p>
+<ul>
+<li><var>0 \leq a &lt; b &lt; c \leq N - 1</var></li>
+<li><var>S[a]</var> = <code>D</code></li>
+<li><var>S[b]</var> = <code>M</code></li>
+<li><var>S[c]</var> = <code>C</code></li>
+<li><var>c-a &lt; k</var></li>
+</ul>
+<p>Here <var>S[a]</var> is the <var>a</var>-th character of the string <var>S</var>. Indexing is zero-based, that is, <var>0 \leq a \leq N - 1</var> holds.</p>
+<p>For a string <var>S</var> and <var>Q</var> integers <var>k_0, k_1, ..., k_{Q-1}</var>, calculate the <var>k_i</var>-DMC number of <var>S</var> for each <var>i</var> <var>(0 \leq i \leq Q-1)</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>3 \leq N \leq 10^6</var></li>
+<li><var>S</var> consists of uppercase English letters</li>
+<li><var>1 \leq Q \leq 75</var></li>
+<li><var>3 \leq k_i \leq N</var></li>
+<li>All numbers given in input are integers</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>S</var>
+<var>Q</var>
+<var>k_{0}</var> <var>k_{1}</var> <var>...</var> <var>k_{Q-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Print <var>Q</var> lines.
+The <var>i</var>-th line should contain the <var>k_i</var>-DMC number of the string <var>S</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3>
+<pre>18
+DWANGOMEDIACLUSTER
+1
+18
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3>
+<pre>1
+</pre>
+<p><var>(a,b,c) = (0, 6, 11)</var> satisfies the conditions.<br/>
+Strangely, Dwango Media Cluster does not have so much DMC-ness by his definition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3>
+<pre>18
+DDDDDDMMMMMCCCCCCC
+1
+18
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3>
+<pre>210
+</pre>
+<p>The number of triples can be calculated as <var>6\times 5\times 7</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3>
+<pre>54
+DIALUPWIDEAREANETWORKGAMINGOPERATIONCORPORATIONLIMITED
+3
+20 30 40
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3>
+<pre>0
+1
+2
+</pre>
+<p><var>(a, b, c) = (0, 23, 36), (8, 23, 36)</var> satisfy the conditions except the last one, namely, <var>c-a &lt; k_i</var>.<br/>
+By the way, DWANGO is an acronym for "Dial-up Wide Area Network Gaming Operation".</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3>
+<pre>30
+DMCDMCDMCDMCDMCDMCDMCDMCDMCDMC
+4
+5 10 15 20
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3>
+<pre>10
+52
+110
+140
+</pre></section>
+</div>
+</span>

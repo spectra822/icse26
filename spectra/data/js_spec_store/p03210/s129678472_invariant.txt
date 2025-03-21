@@ -1,0 +1,21 @@
+// Segment 1: Function Definition and Input Handling
+// Precondition: The function main is called with a single argument 'arg' which is a string.
+// Postcondition: The input string 'arg' is trimmed and split into an array 'input', and 'x' is assigned the numeric value of the first element of 'input'.
+function main(arg) {
+    const input = arg.trim().split('\n'); // Input format: A single string with '\n' separated values.
+    const x = Number(input[0]); // Input format: The first element of the split string should be a number in string format.
+
+    // Segment 2: Conditional Check and Output
+    // Precondition: 'x' is defined and is a number.
+    // Postcondition: If 'x' is 7, 5, or 3, 'YES' is printed to the console; otherwise, 'NO' is printed.
+    if (x === 7 || x === 5 || x === 3) {
+        console.log('YES'); // Output format: A single line with either 'YES' or 'NO'.
+    } else {
+        console.log('NO'); // Output format: A single line with either 'YES' or 'NO'.
+    }
+}
+
+// Segment 3: Program Execution with Input
+// Precondition: The program is run in an environment where the 'fs' module is available and '/dev/stdin' contains the input data.
+// Postcondition: The 'main' function is called with the content of '/dev/stdin' as its argument.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

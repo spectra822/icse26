@@ -1,0 +1,45 @@
+// Segment 1: Input Handling
+
+// Precondition: The input is available as a single string with lines separated by '\n'.
+// Postcondition: The input is split into an array of lines. If the last line is empty, it is removed.
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Segment 2: Variable Initialization
+
+    // Precondition: The input array contains at least two lines.
+    // Postcondition: N is the integer parsed from the first line of input, S is the string from the second line of input.
+    const N = input[0].split(' ')[0] - 0;
+    const S = input[1];
+
+    // Segment 3: Counting 'ABC' Substrings
+
+    // Precondition: S is a non-empty string.
+    // Postcondition: The variable 'ans' contains the count of 'ABC' substrings in S.
+    var ans = 0;
+    for (var i = 0; i <= S.length - 3; i++) {
+        if (S.slice(i, i + 3) === 'ABC') {
+            ans++;
+        }
+    }
+
+    // Segment 4: Output Result
+
+    // Precondition: 'ans' contains the count of 'ABC' substrings in S.
+    // Postcondition: The count 'ans' is printed to the console.
+    console.log(ans);
+}
+
+// Input: A string containing multiple lines. The first line contains an integer N. The second line contains a string S.
+// Example:
+// 10
+// ZABCDBABCQ
+
+// Output: An integer representing the count of 'ABC' substrings in the string S.
+// Example Output:
+// 2
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

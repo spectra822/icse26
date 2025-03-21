@@ -1,0 +1,76 @@
+
+<H1><font color="#000">Problem A: </font>Alien's Counting</H1>
+
+<p>
+Natsuki and her friends were taken to the space by an alien and made friends with a lot of aliens. During the space travel, she discovered that aliens’ hands were often very different from humans’. Generally speaking, in a kind of aliens, there are <i>N</i> fingers and <i>M</i> bend rules on a hand. Each bend rule describes that a finger A always bends when a finger B bends. However, this rule does not always imply that the finger B bends when the finger A bends.
+</p>
+
+<p>
+When she were counting numbers with the fingers, she was anxious how many numbers her alien friends can count with the fingers. However, because some friends had too complicated rule sets, she could not calculate those. Would you write a program for her?
+</p>
+
+<H2>Input</H2>
+
+<p>
+<i>N M</i><br>
+<i>S</i><sub>1</sub> <i>D</i><sub>1</sub><br>
+<i>S</i><sub>2</sub> <i>D</i><sub>2</sub><br>
+.<br>
+.<br>
+.<br>
+<i>S</i><sub><i>M</i></sub> <i>D</i><sub><i>M</I></sub><br>
+</p>
+
+<p>
+The first line contains two integers <i>N</i> and <i>M</i> (1 &le; <i>N</i> &le; 1000, 0 &le; <i>M</i> &le; 1000) in this order. The following <i>M</i> lines mean bend rules. Each line contains two integers <i>S<sub>i</sub></i> and <i>D<sub>i</sub></i> in this order, which mean that the finger <i>D<sub>i</sub></i> always bends when the finger <i>S<sub>i</sub></i> bends. Any finger appears at most once in <i>S</i>.
+
+</p>
+
+<H2>Output</H2>
+
+<p>
+Calculate how many numbers her alien friends can count with the fingers. Print the answer modulo 1000000007 in a line.
+</p>
+
+<H2>Sample Input 1</H2>
+<pre>
+5 4
+2 3
+3 4
+4 3
+5 4
+</pre>
+
+<H2>Output for the Sample Input 1</H2>
+<pre>
+10
+</pre>
+
+
+
+<H2>Sample Input 2</H2>
+<pre>
+5 5
+1 2
+2 3
+3 4
+4 5
+5 1
+</pre>
+
+<H2>Output for the Sample Input 2</H2>
+<pre>
+2
+</pre>
+
+
+<H2>Sample Input 3</H2>
+<pre>
+5 0
+</pre>
+
+<H2>Output for the Sample Input 3</H2>
+<pre>
+32
+</pre>
+

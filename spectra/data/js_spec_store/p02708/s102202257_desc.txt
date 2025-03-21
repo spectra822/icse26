@@ -1,0 +1,35 @@
+// Main function that receives the input, computes the result, and prints it
+const main = (input) => {
+    // Modulus value for large number operations to prevent overflow
+    const mod = 10 ** 9 + 7
+    // Parse the input to extract n and k values
+    const [n, k] = input.trim().split(' ').map(Number)
+
+    // Initialize the answer to 0
+    let ans = 0
+
+    // Loop over the range from k to n + 1
+    for (let i = k; i <= n + 1; i++) {
+        // Sum of the first i-1 natural numbers
+        const s_sum = (i - 1) * i / 2
+
+        // The first value in the range from n to n-i+1
+        const b_f = n - i + 1
+
+        // Sum of the first i natural numbers starting from b_f
+        const b_sum = (b_f + n) * i / 2
+
+        // Update the answer with the difference between b_sum and s_sum plus 1
+        ans += b_sum - s_sum + 1
+    }
+
+    // Print the result modulo mod to handle large numbers
+    return console.log((ans % mod + mod) % mod)
+}
+
+// Check if the script should run in test mode or main mode based on environment variable
+process.env.MYTEST ?
+    // If in test mode, call the test function (not provided in the code)
+    (process.env.MYTEST === 'test' ? test() : main(require('fs').readFileSync('dev/stdin', 'utf8'))) :
+    // If not in test mode, call the main function with input from standard input
+    main(require('fs').readFileSync('/dev/stdin', 'utf8'))

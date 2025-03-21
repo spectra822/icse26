@@ -1,0 +1,57 @@
+```c
+#include<stdio.h>
+
+int main() {
+    // Input format: The first line contains two integers `n` and `m`.
+    // The next `n` lines each contain a single integer representing the array `k`.
+    // The next `m` lines each contain a single integer representing the array `t`.
+    // Output format: A single integer.
+    // Precondition: The variables `n` and `m` are positive integers.
+    // Postcondition: The minimum cost calculated according to the given logic is printed.
+
+    int n, m, hi[1001][1001], k[1001], t[1001], i, j;
+
+    scanf("%d%d", &n, &m);
+
+    for (i = 1; i <= n; i++) {
+        // Precondition: The variable `i` is within the range [1, n].
+        // Postcondition: The `i-th` element of the array `k` is read from the input.
+        scanf("%d", &k[i]);
+    }
+
+    for (i = 1; i <= m; i++) {
+        // Precondition: The variable `i` is within the range [1, m].
+        // Postcondition: The `i-th` element of the array `t` is read from the input.
+        scanf("%d", &t[i]);
+    }
+
+    for (i = 0; i <= m; i++) {
+        for (j = 0; j <= n; j++) {
+            // Precondition: The variables `i` and `j` are within the range [0, m] and [0, n] respectively.
+            // Postcondition: The element `hi[i][j]` is initialized to a large value (1000000000).
+            hi[i][j] = 1000000000;
+        }
+    }
+
+    for (i = 0; i <= m; i++) {
+        // Precondition: The variable `i` is within the range [0, m].
+        // Postcondition: The element `hi[i][0]` is initialized to 0.
+        hi[i][0] = 0;
+    }
+
+    for (i = 1; i <= m; i++) {
+        for (j = 1; j <= n; j++) {
+            // Precondition: The variables `i` and `j` are within the range [1, m] and [1, n] respectively.
+            // Postcondition: The element `hi[i][j]` is updated to the minimum cost by considering the current and previous states.
+            hi[i][j] = k[j] * t[i] + (hi[i - 1][j - 1]);
+            if (hi[i][j] > hi[i - 1][j]) hi[i][j] = hi[i - 1][j];
+        }
+    }
+
+    // Precondition: The variables `m` and `n` are within the range of the initialized `hi` array.
+    // Postcondition: The minimum cost stored in `hi[m][n]` is printed.
+    printf("%d\n", hi[m][n]);
+
+    return 0;
+}
+```

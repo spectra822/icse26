@@ -1,0 +1,110 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke stands on a number line. He has <var>L</var> ears, and he will walk along the line continuously under the following conditions:</p>
+<ul>
+<li>He never visits a point with coordinate less than <var>0</var>, or a point with coordinate greater than <var>L</var>.</li>
+<li>He starts walking at a point with integer coordinate, and also finishes walking at a point with integer coordinate.</li>
+<li>He only changes direction at a point with integer coordinate.</li>
+</ul>
+<p>Each time when Snuke passes a point with coordinate <var>i-0.5</var>, where <var>i</var> is an integer, he put a stone in his <var>i</var>-th ear.</p>
+<p>After Snuke finishes walking, Ringo will repeat the following operations in some order so that, for each <var>i</var>, Snuke's <var>i</var>-th ear contains <var>A_i</var> stones:</p>
+<ul>
+<li>Put a stone in one of Snuke's ears.</li>
+<li>Remove a stone from one of Snuke's ears.</li>
+</ul>
+<p>Find the minimum number of operations required when Ringo can freely decide how Snuke walks.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq L \leq 2\times 10^5</var></li>
+<li><var>0 \leq A_i \leq 10^9(1\leq i\leq L)</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>L</var>
+<var>A_1</var>
+<var>:</var>
+<var>A_L</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum number of operations required when Ringo can freely decide how Snuke walks.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4
+1
+0
+2
+3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>Assume that Snuke walks as follows:</p>
+<ul>
+<li>He starts walking at coordinate <var>3</var> and finishes walking at coordinate <var>4</var>, visiting coordinates <var>3,4,3,2,3,4</var> in this order.</li>
+</ul>
+<p>Then, Snuke's four ears will contain <var>0,0,2,3</var> stones, respectively.
+Ringo can satisfy the requirement by putting one stone in the first ear.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>8
+2
+0
+0
+2
+1
+3
+4
+1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>7
+314159265
+358979323
+846264338
+327950288
+419716939
+937510582
+0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1
+</pre></section>
+</div>
+</span>

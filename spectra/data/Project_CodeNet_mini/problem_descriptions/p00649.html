@@ -1,0 +1,173 @@
+
+<h1>Problem C: Yanagi's Comic</h1>
+<p>
+Yanagi is a high school student, and she is called "Hime" by her boyfriend who is a ninja fanboy. She likes picture books very much, so she often writes picture books by herself.
+She always asks you to make her picture book as an assistant.
+Today, you got asked to help her with making a comic.
+</p>
+
+<p>
+She sometimes reads her picture books for children in kindergartens.
+Since Yanagi wants to let the children read,
+she wants to insert numbers to frames in order.
+Of course, such a task should be done by the assistant, you.
+</p>
+
+<p>
+You want to do the task easily and fast, so you decide to write a program to output the order of reading frames based on the positions of the frames.
+</p>
+
+<p>
+Write a program to print the number of order for each frame.
+</p>
+
+<p>
+The comics in this problem satisfy the following rules.
+</p>
+
+<p>
+The each comic is drawn on a sheet of rectangle paper.
+You can assume that the top side of the paper is on the x-axis.
+And you can assume that the right-hand side of the paper is on the y-axis.
+The positive direction of the x-axis is leftward.
+The positive direction of the y-axis is down direction.
+The paper is large enough to include all frames of the comic.
+In other words, no area in a frame is out of the paper.
+</p>
+
+<p>
+The area of each frame is at least one.
+All sides of each frame are parallel to the x-axis or the y-axis.
+The frames can't overlap one another.
+However the frames may share the line of side.
+</p>
+
+<p>
+You must decide the order to read <i> K </i>, where <i> K </i> is a set of frames, with the following steps.
+</p>
+<pre>
+<b>Step 1</b>:You must choose an unread frame at the right-most position in <i>K</i>.
+        If you find such frames multiple, you must choose the frame at the top position among them.
+        If you can't find any unread frames, you stop reading <i>K</i>.
+        The frame you chose is "Starting Frame".
+        In step 1, you assume that the position of a frame is the top-right point of the frame.
+</pre>
+
+<pre>
+<b>Step 2</b>:You should draw a line from the right-bottom point of "Starting Frame" to leftward horizontally.
+        If the line touch the right-hand side of other frame, you should stop drawing.
+        If the line is on the side of other frame, you should not stop drawing.
+        If the line touch the edge of paper, you should stop drawing.
+</pre>
+
+<pre>
+<b>Step 3</b>:The set of the unread frames which are above the line ( they may be the bottom-side on the line ) drawn at Step 2 is <i>L</i>.
+        And you should read <i>L</i>.
+</pre>
+
+<pre>
+<b>Step 4</b>: Go back to Step 1.
+</pre>
+
+
+<h2>Input</h2>
+
+
+<p>
+The input consists of multiple datasets.
+The last dataset is followed by a line containing one zero.
+You don't have to process this data.
+</p>
+
+
+<p>
+Each datasets is in the following format.
+</p>
+<pre>
+<i>n
+x<sub>01</sub> y<sub>01</sub> x<sub>11</sub> y<sub>11</sub>
+x<sub>02</sub> y<sub>02</sub> x<sub>12</sub> y<sub>12</sub>
+....
+x<sub>0n</sub> y<sub>0n</sub> x<sub>1n</sub> y<sub>1n</sub>
+</i>
+</pre>
+<p>
+All numbers of the datasets are integer.
+They are separated by a space.
+The first line of a dataset contains one integer.
+<i>n</i> is the number of frames of the comic.
+<i> x<sub>0i</sub> </i> , <i> y<sub>0i</sub> </i>, <i> x<sub>1i</sub> </i>, <i> y<sub>1i</sub> </i>  are two non-neighboring points of <i> i </i> th frame in the line.
+</p>
+
+<h2>Constraints</h2>
+<p>
+0 &lt <i>n</i> &lt 10<br>
+(<i>x<sub>0i</sub></i> != <i>x<sub>1i</sub></i>) and (<i>y<sub>0i</sub></i> != <i>y<sub>1i</sub></i>)<br>
+0 &le; <i> x<sub>0i</sub> </i>, <i> y<sub>0i</sub> </i>, <i>x<sub>1i</sub> </i>, <i> y<sub>1i</sub> </i> &le; 500<br>
+</p>
+
+<h2>Output</h2>
+<p>
+Print n lines for each dataset.
+Print the number of order for <i>i</i>th frame in the <i>i</i>th line.
+And you should print blank line between the datasets.<br>
+Output format:
+</p2>
+<pre>
+<i>num<sub>1</sub></i>
+<i>num<sub>2</sub></i>
+...
+<i>num<sub>i</sub></i>
+...
+<i>num<sub>n</sub></i>
+</pre>
+
+<h2>Sample input</h2>
+<pre>
+4
+0 0 100 60
+0 60 50 90
+50 60 100 90
+0 90 100 120
+6
+0 0 100 40
+0 40 50 70
+50 40 100 60
+50 60 100 80
+0 70 50 120
+50 80 100 120
+0
+</pre>
+
+<h2>Sample output</h2>
+<pre>
+1
+2
+3
+4
+
+1
+2
+4
+5
+3
+6
+</pre>
+<p>
+These pictures are related to first sample and second sample.
+Gray frames have been read already.
+A red line denotes the line drawn at Step 2. Numbers in the figures denote the order of frames given by input.
+</p>
+<br>
+
+<p>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_uapc2011_C1"><br>
+This is related to the first sample.<br>
+</p>
+
+<p>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_uapc2011_C2">
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_uapc2011_C3"><br>
+These are related to the second sample.
+</p>
+

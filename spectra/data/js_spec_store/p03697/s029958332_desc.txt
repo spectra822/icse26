@@ -1,0 +1,5 @@
+// Read input from standard input, split it by spaces, and convert the strings to numbers
+let [a, b] = require("fs").readFileSync("/dev/stdin", "utf8").split(" ").map(Number);
+
+// Check if the sum of a and b is greater than or equal to 10, and print "error" if true; otherwise, print the sum
+console.log(a + b >= 10 ? "error" : a + b);

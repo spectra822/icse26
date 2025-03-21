@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A single line containing five integers a, b, c, d, and e, separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The input integers a, b, c, d, and e have been declared.
+    // Postcondition: The program prints the position (1-based index) of the first zero in the input integers. If no zero is found, no output is produced.
+```

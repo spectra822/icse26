@@ -1,0 +1,95 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a board with <var>N</var> rows and <var>M</var> columns.
+The information of this board is represented by <var>N</var> strings <var>S_1,S_2,\ldots,S_N</var>.
+Specifically, the state of the square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left is represented as follows:</p>
+<ul>
+<li><var>S_{i,j}=</var><code>.</code> : the square is empty.</li>
+<li><var>S_{i,j}=</var><code>#</code> : an obstacle is placed on the square.</li>
+<li><var>S_{i,j}=</var><code>o</code> : a piece is placed on the square.</li>
+</ul>
+<p>Yosupo repeats the following operation:</p>
+<ul>
+<li>Choose a piece and move it to its right adjecent square or its down adjacent square.
+Moving a piece to squares with another piece or an obstacle is prohibited.
+Moving a piece out of the board is also prohibited.</li>
+</ul>
+<p>Yosupo wants to perform the operation as many times as possible.
+Find the maximum possible number of operations.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 50</var></li>
+<li><var>1 \leq M \leq 50</var></li>
+<li><var>S_i</var> is a string of length <var>M</var> consisting of <code>.</code>, <code>#</code> and <code>o</code>.</li>
+<li><var>1 \leq (</var> the number of pieces <var>)\leq 100</var>.
+In other words, the number of pairs <var>(i, j)</var> that satisfy <var>S_{i,j}=</var><code>o</code> is between <var>1</var> and <var>100</var>, both inclusive.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>S_1</var>
+<var>S_2</var>
+<var>\vdots</var>
+<var>S_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible number of operations in a line.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+o..
+...
+o.#
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+</pre>
+<p>Yosupo can perform operations <var>4</var> times as follows:</p>
+<pre>o..      .o.      ..o      ...      ...
+...  -&gt;  ...  -&gt;  ...  -&gt;  ..o  -&gt;  ..o
+o.#      o.#      o.#      o.#      .o#
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>9 10
+.#....o#..
+.#..#..##o
+.....#o.##
+.###.#o..o
+#.#...##.#
+..#..#.###
+#o.....#..
+....###..o
+o.......o#
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>24
+</pre></section>
+</div>
+</span>

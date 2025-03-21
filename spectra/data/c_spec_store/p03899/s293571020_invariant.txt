@@ -1,0 +1,12 @@
+```c
+void run (void)
+    // Precondition: The function expects three integers to be read from standard input, followed by an array of integers.
+    // Postcondition: The maximum value calculated based on the given logic is printed to standard output.
+
+int main (void)
+    // Input format: The first line contains three integers `n`, `m`, and `k`, separated by spaces.
+    // The second line contains `n` integers separated by spaces.
+    // Output format: A single integer printed on a new line.
+    // Precondition: The `run` function is defined and can be executed.
+    // Postcondition: The `run` function is called, and its output is printed.
+```

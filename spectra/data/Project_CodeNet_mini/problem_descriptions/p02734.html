@@ -1,0 +1,89 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Given are a sequence of <var>N</var> integers <var>A_1</var>, <var>A_2</var>, <var>\ldots</var>, <var>A_N</var> and a positive integer <var>S</var>.<br/>
+For a pair of integers <var>(L, R)</var> such that <var>1\leq L \leq R \leq N</var>, let us define <var>f(L, R)</var> as follows:<br/></p>
+<ul>
+<li><var>f(L, R)</var> is the number of sequences of integers <var>(x_1, x_2, \ldots , x_k)</var> such that <var>L \leq x_1 &lt; x_2 &lt; \cdots &lt; x_k \leq R</var> and <var>A_{x_1}+A_{x_2}+\cdots +A_{x_k} = S</var>.</li>
+</ul>
+<p>Find the sum of <var>f(L, R)</var> over all pairs of integers <var>(L, R)</var> such that <var>1\leq L \leq R\leq N</var>. Since this sum can be enormous, print it modulo <var>998244353</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 3000</var></li>
+<li><var>1 \leq S \leq 3000</var></li>
+<li><var>1 \leq A_i \leq 3000</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>S</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the sum of <var>f(L, R)</var>, modulo <var>998244353</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 4
+2 2 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>5
+</pre>
+<p>The value of <var>f(L, R)</var> for each pair is as follows, for a total of <var>5</var>.</p>
+<ul>
+<li><var>f(1,1) = 0</var></li>
+<li><var>f(1,2) = 1</var> (for the sequence <var>(1, 2)</var>)</li>
+<li><var>f(1,3) = 2</var> (for <var>(1, 2)</var> and <var>(3)</var>)</li>
+<li><var>f(2,2) = 0</var></li>
+<li><var>f(2,3) = 1</var> (for <var>(3)</var>)</li>
+<li><var>f(3,3) = 1</var> (for <var>(3)</var>)</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5 8
+9 9 9 9 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 10
+3 1 4 1 5 9 2 6 5 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>152
+</pre></section>
+</div>
+</span>

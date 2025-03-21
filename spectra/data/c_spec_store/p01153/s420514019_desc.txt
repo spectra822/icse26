@@ -1,0 +1,13 @@
+```c
+// Global variables
+int a[102];
+int dp[102][102];
+
+// The main function reads multiple test cases.
+// For each test case, it reads the number of elements and the elements themselves.
+// It then uses dynamic programming to compute the maximum value of the sum of absolute differences
+// when elements are gathered in a specific order.
+// Finally, it prints the result for each test case.
+int main()
+    Calls memset(...)
+```

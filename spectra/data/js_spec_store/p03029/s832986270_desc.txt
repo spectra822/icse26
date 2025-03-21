@@ -1,0 +1,15 @@
+// Function definition for the main logic of the program
+const main = input => {
+    // Parse the input: trim and split the input string, then convert to integers
+    const [A, P] = input.trim().split(' ').map(x => parseInt(x))
+    
+    // Calculate the result using the formula (3 * A + P) / 2 and print it
+    console.log(Math.floor((3 * A + P) / 2))
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+   const main = input => {
+   const [A, P] = input.trim().split(' ').map(x => parseInt(x))
+   console.log(Math.floor((3 * A + P) / 2))
+   main(require("fs").readFileSync("/dev/stdin", "utf8"));

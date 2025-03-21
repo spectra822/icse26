@@ -1,0 +1,119 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> blocks, numbered <var>1, 2, \ldots, N</var>.
+For each <var>i</var> (<var>1 \leq i \leq N</var>), Block <var>i</var> has a weight of <var>w_i</var>, a solidness of <var>s_i</var> and a value of <var>v_i</var>.</p>
+<p>Taro has decided to build a tower by choosing some of the <var>N</var> blocks and stacking them vertically in some order.
+Here, the tower must satisfy the following condition:</p>
+<ul>
+<li>For each Block <var>i</var> contained in the tower, the sum of the weights of the blocks stacked above it is not greater than <var>s_i</var>.</li>
+</ul>
+<p>Find the maximum possible sum of the values of the blocks contained in the tower.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 10^3</var></li>
+<li><var>1 \leq w_i, s_i \leq 10^4</var></li>
+<li><var>1 \leq v_i \leq 10^9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>w_1</var> <var>s_1</var> <var>v_1</var>
+<var>w_2</var> <var>s_2</var> <var>v_2</var>
+<var>:</var>
+<var>w_N</var> <var>s_N</var> <var>v_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible sum of the values of the blocks contained in the tower.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+2 2 20
+2 1 30
+3 1 40
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>50
+</pre>
+<p>If Blocks <var>2, 1</var> are stacked in this order from top to bottom, this tower will satisfy the condition, with the total value of <var>30 + 20 = 50</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+1 2 10
+3 1 10
+2 4 10
+1 6 10
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>40
+</pre>
+<p>Blocks <var>1, 2, 3, 4</var> should be stacked in this order from top to bottom.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>5
+1 10000 1000000000
+1 10000 1000000000
+1 10000 1000000000
+1 10000 1000000000
+1 10000 1000000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>5000000000
+</pre>
+<p>The answer may not fit into a 32-bit integer type.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>8
+9 5 7
+6 2 7
+5 7 3
+7 8 8
+1 9 6
+3 3 3
+4 1 7
+4 5 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>22
+</pre>
+<p>We should, for example, stack Blocks <var>5, 6, 8, 4</var> in this order from top to bottom.</p></section>
+</div>
+</span>

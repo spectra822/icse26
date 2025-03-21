@@ -1,0 +1,28 @@
+// Read the input from the standard input and pass it to the IIFE
+console.log((args => {
+    // Split the input into the number of characters (n) and the string (S), then convert n to an integer (N)
+    const [n, S] = args.trim().split`\n`;
+    const N = n | 0;
+
+    // Initialize counters for right and left parentheses that need to be added
+    let r = 0,
+        l = 0;
+
+    // Count the number of unmatched closing parentheses from the right end
+    for (let i = N; i--;) l += (S[i] === ')') ? 1 : l ? -1 : 0;
+
+    // Count the number of unmatched opening parentheses from the left end
+    for (let i = 0; i < N; i++) r += (S[i] === '(') ? 1 : r ? -1 : 0;
+
+    // Add the necessary number of opening and closing parentheses to balance the string
+    return '('.repeat(l) + S + ')'.repeat(r);
+})(require('fs').readFileSync('/dev/stdin', 'utf8')));
+   console.log((args => {
+   const [n, S] = args.trim().split`\n`;
+   const N = n | 0;
+   let r = 0,
+       l = 0;
+   for (let i = N; i--;) l += (S[i] === ')') ? 1 : l ? -1 : 0;
+   for (let i = 0; i < N; i++) r += (S[i] === '(') ? 1 : r ? -1 : 0;
+   return '('.repeat(l) + S + ')'.repeat(r);
+   })(require('fs').readFileSync('/dev/stdin', 'utf8')));

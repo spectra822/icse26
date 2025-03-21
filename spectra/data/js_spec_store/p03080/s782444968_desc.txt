@@ -1,0 +1,23 @@
+// Function definition for Main, which processes the input
+function Main(input) {
+    // Splitting the input into an array of strings, where each element is a line from the input
+    input = input.split('\n');
+    
+    // Splitting the second line of input into individual characters and sorting them
+    var str = input[1].split('').sort();
+    
+    // Finding the index of the first occurrence of 'R' in the sorted array
+    var firstR = str.indexOf('R');
+
+    // Checking if half of the first input number minus the index of the first 'R' is less than or equal to 0
+    if (parseInt(input[0]) * .5 - firstR <= 0) {
+        // If the condition is true, print 'No'
+        console.log('No')
+    } else {
+        // If the condition is false, print 'Yes'
+        console.log('Yes')
+    }
+}
+
+// Reading input from standard input and passing it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

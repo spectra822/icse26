@@ -1,0 +1,8 @@
+```
+main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain an integer `a[i]`, separated by whitespace.
+    // Output format: A single word "Yes" or "No".
+    // Precondition: The global variables `n` and `a` have been declared.
+    // Postcondition: The program checks if it is possible to make the array non-decreasing by decrementing at most one element at each index. If possible, it prints "Yes"; otherwise, it prints "No".
+```

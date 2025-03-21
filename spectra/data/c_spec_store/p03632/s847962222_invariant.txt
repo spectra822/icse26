@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: The first line contains four integers A, B, C, and D, separated by spaces.
+    // Output format: A single integer number on one line.
+    // Precondition: The variables A, B, C, and D are declared and can hold integer values.
+    // Postcondition: The program calculates and prints the amount of overlap (if any) between the two intervals [A, B] and [C, D], minus 1 if there is an overlap.
+```

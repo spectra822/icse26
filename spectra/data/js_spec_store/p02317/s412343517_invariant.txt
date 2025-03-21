@@ -1,0 +1,107 @@
+// Segment 1: Variable Declarations and Input Handling
+
+// Precondition: The program is being run in a Node.js environment or a browser environment.
+// Postcondition: The input has been read and split into an array of strings, `ls`.
+
+function main() {
+    var input = getInput();  // Input: Read from stdin or a DOM element in the case of a browser.
+    var ls = input.split('\n');  // Input: A string with multiple lines, each representing a number.
+                                 // Output: An array of strings, each representing a line of the input.
+
+    // Segment 2: Parsing Input
+
+    // Precondition: `ls` is an array of strings, where the first element is the number of subsequent elements.
+    // Postcondition: `n` is an integer representing the number of subsequent elements, `nums` is an array of integers.
+
+    var n = parseInt(ls[0]);  // Extract the number of elements.
+    var nums = ls.slice(1, n + 1).map(function(s) {  // Extract the numbers and convert them to integers.
+        return parseInt(s);
+    });
+
+    // Segment 3: Computing the Length of the Longest Increasing Subsequence (LIS)
+
+    // Precondition: `nums` is an array of integers.
+    // Postcondition: The length of the longest increasing subsequence of `nums` is printed to the console.
+
+    console.log(lis(nums));  // Output: A single integer representing the length of the LIS.
+}
+
+// Segment 4: LIS Calculation
+
+// Precondition: `xs` is an array of integers.
+// Postcondition: Returns the length of the longest increasing subsequence in `xs`.
+
+function lis(xs) {
+    var table = [xs[0]];  // Initialize the table with the first element.
+    for (var i = 1; i < xs.length; i++) {
+        var x = xs[i];
+        table[search(table, x) + 1] = x;  // Update the table with the correct position of `x`.
+        debug(table);  // Optional: Debug output to trace the table state.
+    }
+    return table.length;  // Output: Length of the longest increasing subsequence.
+}
+
+// Segment 5: Binary Search for LIS Calculation
+
+// Precondition: `table` is a sorted array of integers, `x` is an integer to be inserted.
+// Postcondition: Returns the index of the largest value in `table` that is less than `x`.
+
+function search(table, x) {
+    var l = 0, h = table.length;
+
+    if (table.length == 0 || x <= table[0]) {
+        return -1;  // If `x` is smaller than the smallest element in the table, return -1.
+    }
+
+    while (l + 1 < h) {
+        var pivot = Math.floor((l + h + 1) / 2);
+        if (table[pivot] < x) {
+            l = pivot;
+        } else {
+            h = pivot;
+        }
+        debug({ l: l, h: h });  // Optional: Debug output to trace the binary search state.
+    }
+    return l;  // Output: Index of the largest value in `table` that is less than `x`.
+}
+
+// Segment 6: Environment Detection and Input Handling
+
+// Precondition: The environment is either Node.js or a browser.
+// Postcondition: Returns the input as a string from the appropriate source.
+
+nodeJS = typeof require != 'undefined';  // Detect if running in a Node.js environment.
+
+function getInput() {
+    if (!nodeJS) {
+        return document.getElementById('input').value;  // Input: Value from a DOM element with id 'input' (browser).
+    }
+    return require('fs').readFileSync('/dev/stdin').toString();  // Input: Read from stdin (Node.js).
+}
+
+// Segment 7: Debug Function
+
+// Precondition: `x` is any value to be output for debugging purposes.
+// Postcondition: Outputs `x` to the error console if in a browser environment.
+
+function debug(x) {
+    if (!nodeJS) {
+        console.error(x);  // Output: Debug information to the error console (browser).
+    }
+}
+
+// Segment 8: Main Function Execution
+
+// Precondition: The environment is Node.js.
+// Postcondition: The `main` function is executed.
+
+if (nodeJS) {
+    main();  // Start the program in a Node.js environment.
+}
+    5
+    5
+    1
+    3
+    2
+    4
+    3

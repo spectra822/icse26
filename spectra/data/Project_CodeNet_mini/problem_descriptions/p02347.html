@@ -1,0 +1,86 @@
+
+<H1>Range Search (kD Tree)</H1>
+
+<p>
+The range search problem consists of a set of attributed records <var>S</var> to determine which records from  <var>S</var> intersect with a given range.
+</p>
+
+<p>
+For <var>n</var> points on a plane, report a set of points which are within in a given range. Note that you do not need to consider insert and delete operations for the set.
+</p>
+
+
+<H2>Input</H2>
+
+<pre>
+<var>n</var>
+<var>x<sub>0</sub></var> <var>y<sub>0</sub></var>
+<var>x<sub>1</sub></var> <var>y<sub>1</sub></var>
+:
+<var>x<sub>n-1</sub></var> <var>y<sub>n-1</sub></var>
+<var>q</var>
+<var>sx<sub>0</sub></var> <var>tx<sub>0</sub></var> <var>sy<sub>0</sub></var> <var>ty<sub>0</sub></var>
+<var>sx<sub>1</sub></var> <var>tx<sub>1</sub></var> <var>sy<sub>1</sub></var> <var>ty<sub>1</sub></var>
+:
+<var>sx<sub>q-1</sub></var> <var>tx<sub>q-1</sub></var> <var>sy<sub>q-1</sub></var> <var>ty<sub>q-1</sub></var>
+</pre>
+
+
+<p>
+The first integer <var>n</var> is the number of points. In the following <var>n</var> lines, the coordinate of the <var>i</var>-th point is given by two integers <var>x<sub>i</sub></var> and <var>y<sub>i</sub></var>. 
+</p>
+
+<p>
+The next integer <var>q</var> is the number of queries. In the following <var>q</var> lines, each query is given by four integers, 
+<var>sx<sub>i</sub></var>, 
+<var>tx<sub>i</sub></var>, 
+<var>sy<sub>i</sub></var>, 
+<var>ty<sub>i</sub></var>.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each query, report IDs of points such that 
+<var>sx<sub>i</sub></var> &le; <var>x</var> &le; <var>tx<sub>i</sub></var> and
+<var>sy<sub>i</sub></var> &le; <var>y</var> &le; <var>ty<sub>i</sub></var>.
+The IDs should be reported in ascending order. Print an ID in a line, and print a blank line at the end of output for the each query.
+</p>
+
+<H2>Constraints</H2>
+
+<ul>
+<li>0 &le; <var>n</var> &le; 500,000</li>
+<li>0 &le; <var>q</var> &le; 20,000</li>
+<li>-1,000,000,000 &le; <var>x</var>, <var>y</var>, <var>sx</var>, <var>tx</var>, <var>sy</var>, <var>ty</var> &le; 1,000,000,000</li>
+<li><var>sx</var> &le; <var>tx</var></li>
+<li><var>sy</var> &le; <var>ty</var></li>
+<li>For each query, the number of points which are within the range is less than or equal to 100.</li>
+</ul>
+
+
+<H2>Sample Input 1</H2>
+<pre>
+6
+2 1
+2 2
+4 2
+6 2
+3 3
+5 4
+2
+2 4 0 4
+4 10 2 5
+</pre>
+<H2>Sample Output 1</H2>
+<pre>
+0
+1
+2
+4
+
+2
+3
+5
+
+</pre>

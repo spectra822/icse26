@@ -1,0 +1,16 @@
+```c
+void merge(long long A[], long long left, long long mid, long long right)
+    // Precondition: Arrays `A`, `L`, and `R` are properly allocated and `left <= mid <= right`.
+    // Postcondition: The subarray `A[left..right-1]` is merged and sorted.
+
+void mergeSort(long long A[], long long left, long long right)
+    // Precondition: Array `A` is properly allocated and `left <= right`.
+    // Postcondition: The subarray `A[left..right-1]` is sorted.
+
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The next line contains `N` space-separated integers.
+    // Output format: A single number.
+    // Precondition: The global variable `N` and the array `a` have been declared.
+    // Postcondition: The absolute difference between the sum of the larger half and the sum of the smaller half of the sorted array `a` is printed.
+```

@@ -1,0 +1,84 @@
+"use strict";
+
+// Segment 1: Import and Input Reading
+// Precondition: The program is executed in an environment where the input is provided via stdin.
+// Postcondition: The input is read and split into an array of strings `cin`, and `cid` is initialized to 0.
+var input = require("fs").readFileSync("/dev/stdin", "utf8");
+var cin = input.split(/ |\n/), cid = 0;
+
+// Segment 2: Utility Functions
+// Precondition: The input has been read and split into `cin`.
+// Postcondition: Functions `next`, `nexts`, and `nextm` are defined to handle input reading, and the function `xArray` is defined to create multidimensional arrays.
+function next(a) {
+    return a ? cin[cid++] : +cin[cid++];
+}
+
+function nexts(n, a) {
+    return a ? cin.slice(cid, cid += n) : cin.slice(cid, cid += n).map(a => +a);
+}
+
+function nextm(h, w, a) {
+    var r = [], i = 0;
+    if (a)
+        for (; i < h; i++) r.push(cin.slice(cid, cid += w));
+    else
+        for (; i < h; i++) r.push(cin.slice(cid, cid += w).map(a => +a));
+    return r;
+}
+
+function xArray(v) {
+    var a = arguments, l = a.length, r = "Array(a[" + --l + "]).fill().map(x=>{return " + v + ";})";
+    while (--l) r = "Array(a[" + l + "]).fill().map(x=>" + r + ")";
+    return eval(r);
+}
+
+// Segment 3: Modular Multiplication Function
+// Precondition: The variable `mod` is defined.
+// Postcondition: The function `mul` is defined to perform modular multiplication.
+var mod = 998244353;
+
+function mul() {
+    for (var a = arguments, r = a[0], i = a.length; --i;) r = ((r >> 16) * a[i] % mod * 65536 + (r & 65535) * a[i]) % mod;
+    return r;
+}
+
+// Segment 4: Main Execution
+// Precondition: All utility functions and constants are defined. Input has been read and split into `cin`.
+// Postcondition: The main logic is executed, and if there is any output, it is printed to the console.
+/* Input format:
+n s
+a1 a2 a3 ... an
+Each value is separated by space or newline.
+
+Output format:
+A single integer representing the result.
+*/
+var myOut = main();
+if (myOut !== undefined) console.log(myOut);
+
+function main() {
+    // Segment 5: Initialize Variables
+    // Precondition: Input values are available in `cin`.
+    // Postcondition: Variables `n`, `s`, `a`, `dp`, and `ans` are initialized.
+    var n = next(), s = next();
+    var a = nexts(n);
+    var dp = xArray(0, s);
+    var ans = 0;
+
+    // Segment 6: Main Logic Loop
+    // Precondition: Variables `n`, `s`, `a`, `dp`, and `ans` are initialized.
+    // Postcondition: The value of `ans` is computed based on the logic provided.
+    for (var i = 0; i < n; i++) {
+        var t = a[i], l = i + 1, r = n - i;
+        if (t === s) ans += mul(l, r);
+        if (t >= s) continue;
+        ans += mul(dp[s - t], r);
+        for (var j = s - t; --j;) {
+            dp[j + t] += dp[j];
+            dp[j + t] %= mod;
+        }
+        dp[t] += l;
+        dp[t] %= mod;
+    }
+    return ans % mod;
+}

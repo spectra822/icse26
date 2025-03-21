@@ -1,0 +1,9 @@
+Input:
+4
+1 2 R
+4 2 U
+2 1 L
+3 2 D
+
+Output:
+SAFE

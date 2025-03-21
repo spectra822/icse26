@@ -1,0 +1,79 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Fennec and Snuke are playing a board game.</p>
+<p>On the board, there are <var>N</var> cells numbered <var>1</var> through <var>N</var>, and <var>N-1</var> roads, each connecting two cells. Cell <var>a_i</var> is adjacent to Cell <var>b_i</var> through the <var>i</var>-th road. Every cell can be reached from every other cell by repeatedly traveling to an adjacent cell. In terms of graph theory, the graph formed by the cells and the roads is a tree.</p>
+<p>Initially, Cell <var>1</var> is painted black, and Cell <var>N</var> is painted white. The other cells are not yet colored.
+Fennec (who goes first) and Snuke (who goes second) alternately paint an uncolored cell.
+More specifically, each player performs the following action in her/his turn:</p>
+<ul>
+<li>Fennec: selects an uncolored cell that is adjacent to a <strong>black</strong> cell, and paints it <strong>black</strong>.</li>
+<li>Snuke: selects an uncolored cell that is adjacent to a <strong>white</strong> cell, and paints it <strong>white</strong>.</li>
+</ul>
+<p>A player loses when she/he cannot paint a cell. Determine the winner of the game when Fennec and Snuke play optimally.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 10^5</var></li>
+<li><var>1 \leq a_i, b_i \leq N</var></li>
+<li>The given graph is a tree.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>b_1</var>
+<var>:</var>
+<var>a_{N-1}</var> <var>b_{N-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>If Fennec wins, print <code>Fennec</code>; if Snuke wins, print <code>Snuke</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>7
+3 6
+1 2
+3 1
+7 4
+5 7
+1 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Fennec
+</pre>
+<p>For example, if Fennec first paints Cell <var>2</var> black, she will win regardless of Snuke's moves.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+1 4
+4 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>Snuke
+</pre></section>
+</div>
+</span>

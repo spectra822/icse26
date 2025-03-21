@@ -1,0 +1,11 @@
+```c
+int main()
+    // Input format: A single integer `n`.
+    // Output format: A single string followed by a newline.
+    // Precondition: The input integer `n` is read from standard input.
+    // Postcondition: The output string corresponds to the given integer `n` as follows:
+    // - If `n` is 25, the output is "Christmas".
+    // - If `n` is 24, the output is "Christmas Eve".
+    // - If `n` is 23, the output is "Christmas Eve Eve".
+    // - If `n` is 22, the output is "Christmas Eve Eve Eve".
+```

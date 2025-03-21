@@ -1,0 +1,53 @@
+<h2>B: 自身の 2 倍</h2>
+
+<h3>問題</h3>
+<p>クエリが <var>Q</var> 個与えられます。1 個のクエリにつき、 1 つの正の整数 <var>N</var> が与えられるので、次の 2 つの条件を満たす正の整数 <var>M</var> の個数を求めてください。</p>
+
+<ul>
+<li><var>2 \leq M \leq N</var> を満たす</li>
+<li><var>M</var> の約数のうち、<var>M</var> を除いたものの総積が <var>M</var> の <var>2</var> 倍以上になる</li>
+</ul>
+
+<h3>入力形式</h3>
+<p>入力は以下の形式で与えられます。</p>
+
+<pre>
+<var>Q</var>
+<var>N_1</var>
+<var>N_2</var>
+<var>:</var>
+<var>N_Q</var>
+</pre>
+
+<ul>
+<li><var>1</var> 行目では、クエリ数 <var>Q</var> が与えられます。</li>
+<li><var>2</var> 行目から <var>N+1</var> 行目では、各クエリについて与えられる 1 つの正の整数 <var>N</var> が与えられます。</li>
+</ul>
+
+<h3>制約</h3>
+<ul>
+<li><var>1 \leq Q \leq 10^5</var></li>
+<li><var>2 \leq N_i \leq 10^5</var> <var>(1 \leq i \leq Q)</var></li>
+</ul>
+
+<h3>出力形式</h3>
+<p>上記の 2 つの条件を満たす正の整数の個数を、各 <var>N_i</var> に対して、改行区切りで出力してください。</p>
+
+<h3>入力例</h3>
+<pre>
+3
+43
+9
+24
+</pre>
+
+<h3>出力例</h3>
+<pre>
+11
+0
+5
+</pre>
+
+<ul>
+<li> <var>N=24</var> の時、<var>M</var> として考えられるのは <var>12</var>, <var>16</var>, <var>18</var>, <var>20</var>, <var>24</var> の <var>5</var> 種類である。</li>
+</ul>

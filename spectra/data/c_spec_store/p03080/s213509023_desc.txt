@@ -1,0 +1,14 @@
+```c
+// Global variables
+int N;
+char s[128] = "";
+int kitaeri = 0;
+int i;
+
+// The main function reads an integer N and a string s of length N.
+// It then calculates a value `kitaeri` by iterating through the string.
+// For each character 'R' in the string, it increments `kitaeri`, and for each other character, it decrements `kitaeri`.
+// Finally, it prints "Yes" if `kitaeri` is greater than 0, otherwise it prints "No".
+int main(void)
+    Calls puts(...)
+```

@@ -1,0 +1,15 @@
+```
+long long recursion(int l, int r)
+    // Precondition: The global 2D array `dp` has been declared and initialized to zero.
+    // The global array `sum` has been declared and populated such that `sum[i]` contains the cumulative sum of elements from `a[1]` to `a[i]`.
+    // `l` and `r` are valid indices within the bounds of the array `a`.
+    // Postcondition: The minimum cost to merge the subarray `a[l]` to `a[r]` is computed and stored in `dp[l][r]`.
+    // If `l` equals `r`, `dp[l][r]` remains zero. Otherwise, `dp[l][r]` is updated to the minimal cost computed recursively.
+
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The next `N` lines contain integers representing the array `a`.
+    // Output format: A single number representing the minimum cost to merge the entire array.
+    // Precondition: The global variable `N` and the global array `a` have been declared.
+    // Postcondition: The minimum cost to merge the entire array `a` from `1` to `N` is printed.
+```

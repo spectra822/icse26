@@ -1,0 +1,8 @@
+```c
+int main(){
+    // Input format: Two integers `a` and `b` separated by a whitespace.
+    // Output format: A single integer.
+    // Precondition: The variables `a` and `b` are valid integers.
+    // Postcondition: The maximum value among the expressions `a+b`, `a-b`, and `a*b` is printed.
+}
+```

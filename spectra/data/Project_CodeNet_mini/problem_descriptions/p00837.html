@@ -1,0 +1,178 @@
+
+<H1><font color="#000">Problem B:</font> Book Replacement</H1>
+
+<p>
+The deadline of Prof. Hachioji’s assignment is tomorrow. To complete the task, students have
+to copy pages of many reference books in the library.
+</p>
+<p>
+All the reference books are in a storeroom and only the librarian is allowed to enter it. To obtain
+a copy of a reference book’s page, a student should ask the librarian to make it. The librarian
+brings books out of the storeroom and makes page copies according to the requests. The overall
+situation is shown in Figure 1.
+</p>
+<p>
+Students queue up in front of the counter. Only a single book can be requested at a time. If a
+student has more requests, the student goes to the end of the queue after the request has been
+served.
+</p>
+<p>
+In the storeroom, there are m desks <i>D</i><sub>1</sub>, ... , <i>D</i><sub><i>m</i></sub>, and a shelf. They are placed in a line in this
+order, from the door to the back of the room. Up to c books can be put on each of the desks. If
+a student requests a book, the librarian enters the storeroom and looks for it on <i>D</i><sub>1</sub>, ... , <i>D</i><sub><i>m</i></sub> in
+this order, and then on the shelf. After finding the book, the librarian takes it and gives a copy
+of a page to the student.
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bookReplacement">
+</center>
+
+<p>
+Then the librarian returns to the storeroom with the requested book, to put it on <i>D</i><sub>1</sub> according to the following procedure.
+</p>
+
+<ul>
+<li>If <i>D</i><sub>1</sub> is not full (in other words, the number of books on <i>D</i><sub>1</sub> &lt; <i>c</i>), the librarian puts the requested book there.</li>
+<li>
+If <i>D</i><sub>1</sub> is full, the librarian
+<ul>
+   <li> temporarily puts the requested book on the non-full desk closest to the entrance or,
+     in case all the desks are full, on the shelf,</li>
+   <li> finds the book on <i>D</i><sub>1</sub> that has not been requested for the longest time (i.e. the least recently used book) and takes it,</li>
+   <li> puts it on the non-full desk (except <i>D</i><sub>1</sub> ) closest to the entrance or, in case all the desks except <i>D</i><sub>1</sub> are full, on the shelf,</li>
+   <li> takes the requested book from the temporary place,</li>
+   <li> and finally puts it on <i>D</i><sub>1</sub> .</li>
+</ul>
+</ul>
+
+<p>
+Your task is to write a program which simulates the behaviors of the students and the librarian,
+and evaluates the total cost of the overall process. Costs are associated with <i>accessing</i> a desk
+or the shelf, that is, putting/taking a book on/from it in the description above. The cost of an
+access is <i>i</i> for desk <i>D<sub>i</sub></i> and <i>m</i> + 1 for the shelf. That is, an access to <i>D</i><sub>1</sub>, ... , <i>D<sub>m</sub></i> , and the shelf
+costs 1, ... , <i>m</i>, and <i>m</i> + 1, respectively. Costs of other actions are ignored.
+</p>
+<p>
+Initially, no books are put on desks. No new students appear after opening the library.
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+The input consists of multiple datasets. The end of the input is indicated by a line containing
+three zeros separated by a space. It is not a dataset.
+</p>
+<p>
+The format of each dataset is as follows.
+</p>
+
+<pre>
+      <i>m c n</i>
+      <i>k</i><sub>1</sub>
+      <i>b</i><sub>11</sub> . . . <i>b</i><sub>1<i>k</i><sub>1</sub></sub>
+      .
+      .
+      .
+      <i>k<sub>n</sub></i>
+      <i>b</i><sub><i>n</i>1</sub> . . . <i>b<sub>nk<sub>n</sub></sub></i>
+</pre>
+<p>
+Here, all data items are positive integers. <i>m</i> is the number of desks not exceeding 10. <i>c</i> is the number of books allowed to put on a desk, which does not exceed 30. <i>n</i> is the number of
+students not exceeding 100. <i>k<sub>i</sub></i> is the number of books requested by the <i>i</i>-th student, which does
+not exceed 50. <i>b<sub>ij</sub></i> is the ID number of the book requested by the <i>i</i>-th student on the <i>j</i>-th turn.
+No two books have the same ID number. Note that a student may request the same book more
+than once. <i>b<sub>ij</sub></i> is less than 100.
+</p>
+<p>
+Here we show you an example of cost calculation for the following dataset.
+</p>
+
+<pre>
+3 1 2
+3
+60 61 62
+2
+70 60
+</pre>
+
+<p>
+In this dataset, there are 3 desks (<i>D</i><sub>1</sub>, <i>D</i><sub>2</sub>, <i>D</i><sub>3</sub> ). At most 1 book can be put on each desk. The
+number of students is 2. The first student requests 3 books of which IDs are 60, 61, and 62,
+respectively, and the second student 2 books of which IDs are 70 and 60, respectively.
+</p>
+<p>
+The calculation of the cost for this dataset is done as follows. First, for the first request of the
+first student, the librarian takes the book 60 from the shelf and puts it on <i>D</i><sub>1</sub> and the first
+student goes to the end of the queue, costing 5. Next, for the first request of the second student,
+the librarian takes the book 70 from the shelf, puts it on <i>D</i><sub>2</sub>, moves the book 60 from <i>D</i><sub>1</sub> to <i>D</i><sub>3</sub> ,
+and finally moves the book 70 from <i>D</i><sub>2</sub> to <i>D</i><sub>1</sub> , costing 13. Similarly, the cost for the books 61,
+60, and 62, are calculated as 14, 12, 14, respectively. Therefore, the total cost is 58.
+
+
+
+<H2>Output</H2>
+
+<p>
+For each dataset, output the total cost of processing all the requests, in a separate line.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+2 1 1
+1
+50
+2 1 2
+1
+50
+1
+60
+2 1 2
+2
+60 61
+1
+70
+4 2 3
+3
+60 61 62
+1
+70
+2
+80 81
+3 1 2
+3
+60 61 62
+2
+70 60
+1 2 5
+2
+87 95
+3
+96 71 35
+2
+68 2
+3
+3 18 93
+2
+57 2
+2 2 1
+5
+1 2 1 3 1
+0 0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+4
+16
+28
+68
+58
+98
+23
+</pre>
+
+
+
+

@@ -1,0 +1,107 @@
+<span class="lang-en">
+<p>Score : <var>900</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> squares in a row. The squares are numbered <var>1, 2, ..., N</var> from left to right.</p>
+<p>You have two pieces, initially placed on square <var>A</var> and <var>B</var>, respectively.
+You will be asked to process <var>Q</var> queries of the following kind, in the order received:</p>
+<ul>
+<li>Given an integer <var>x_i</var>, move one of the two pieces of your choice to square <var>x_i</var>.</li>
+</ul>
+<p>Here, it takes you one second to move a piece one square.
+That is, the time it takes to move a piece from square <var>X</var> to <var>Y</var> is <var>|X-Y|</var> seconds.</p>
+<p>Your objective is to process all the queries in the shortest possible time.</p>
+<p>You may only move the pieces in response to queries, and you may not move both pieces at the same time.
+Also, it is not allowed to rearrange the order in which queries are given.
+It is, however, allowed to have both pieces in the same square at the same time.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≤ N, Q ≤ 200,000</var></li>
+<li><var>1 ≤ A, B ≤ N</var></li>
+<li><var>1 ≤ x_i ≤ N</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>Q</var> <var>A</var> <var>B</var>
+<var>x_1</var> <var>x_2</var> ... <var>x_Q</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Let the shortest possible time to process all the queries be <var>X</var> seconds. Print <var>X</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>8 3 1 8
+3 5 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>7
+</pre>
+<p>All the queries can be processed in seven seconds, by:</p>
+<ul>
+<li>moving the piece at square <var>1</var> to <var>3</var></li>
+<li>moving the piece at square <var>8</var> to <var>5</var></li>
+<li>moving the piece at square <var>3</var> to <var>1</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>9 2 1 9
+5 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>4
+</pre>
+<p>The piece at square <var>9</var> should be moved first.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>9 2 1 9
+5 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>4
+</pre>
+<p>The piece at square <var>1</var> should be moved first.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>11 16 8 1
+1 1 5 1 11 4 5 2 5 3 3 3 5 5 6 7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>21
+</pre></section>
+</div>
+</span>

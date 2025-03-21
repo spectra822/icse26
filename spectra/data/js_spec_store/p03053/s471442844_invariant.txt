@@ -1,0 +1,59 @@
+// Precondition: The input is provided as a string via 'require('fs').readFileSync('/dev/stdin', 'utf8')'.
+// Postcondition: The input string is split into an array of strings, where the first element contains the dimensions (H and W) and the rest elements contain the grid rows.
+console.log((args => {
+    const [HW, ...A] = args.trim().split('\n');
+    
+    // Precondition: The first element of the array is a string containing two integers separated by a space.
+    // Postcondition: The dimensions H and W are extracted and parsed as integers.
+    const [H, W] = HW.split(' ').map(v => v | 0);
+
+    // Precondition: Variables 'stack', '_stack', and 'count' are declared and initialized. 'map' is initialized as a 2D array of size HxW with all values set to false.
+    // Postcondition: The 'map' is populated with 'true' at positions where there is a '#', and those positions are pushed into 'stack'.
+    let stack = [],
+        _stack = [],
+        count = 0;
+    const map = Array.from({
+        length: H
+    }, _ => Array(W).fill(false));
+    for (let i = 0; i < H; i++) {
+        for (let j = 0; j < W; j++) {
+            if (A[i][j] === '#') {
+                stack.push([i, j]);
+                map[i][j] = true;
+            }
+        }
+    }
+
+    // Precondition: The 'dir' array is initialized with possible movement directions (up, left, down, right).
+    // Postcondition: The BFS algorithm is executed to count the number of steps required to fill the entire grid with '#'.
+    const dir = [
+        [-1, 0],
+        [0, -1],
+        [1, 0],
+        [0, 1]
+    ];
+    while (stack.length) {
+        const [i, j] = stack.pop();
+        for (const [di, dj] of dir) {
+            const h = i + di,
+                w = j + dj;
+            if (h < 0 || H <= h || w < 0 || W <= w || map[h][w]) continue;
+            map[h][w] = true;
+            _stack.push([h, w]);
+        }
+        if (stack.length === 0) {
+            [stack, _stack] = [_stack, []];
+            count++;
+        }
+    }
+
+    // Precondition: The BFS algorithm has completed, and 'count' represents the number of steps taken plus one.
+    // Postcondition: The result 'count-1' is returned as a string.
+    return `${count-1}`;
+    
+})(require('fs').readFileSync('/dev/stdin', 'utf8')));
+    3 3
+    ...
+    .#.
+    ...
+    2

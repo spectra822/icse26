@@ -1,0 +1,55 @@
+// Precondition: `i`, `ns`, `N`, and `cnt` are defined and initialized. `ns` is a dictionary where keys are node numbers and values are arrays of destination nodes.
+// Postcondition: The function returns a boolean indicating whether a path exists from node `i` to node `N` within 2 intermediate nodes.
+function checkRegularFlights(i, ns, N, cnt) {
+    if (cnt <= 2) {
+        var dests = (i in ns) ? ns[i] : [];
+        for (var i = 0; i < dests.length; i++) {
+            var dest = dests[i];
+            if (dest == N)
+                return true;
+            if (checkRegularFlights(dest, ns, N, cnt + 1))
+                return true;
+        }
+    }
+    return false;
+}
+
+// Precondition: `input` is a string containing multiple lines of space-separated integers. The first line represents the number of nodes and edges.
+// Each subsequent line represents a directed edge between two nodes in the format "n m".
+// Postcondition: The function reads the input, constructs the flight routes, determines if a path from node 1 to node N exists within 2 intermediate nodes, and prints "POSSIBLE" or "IMPOSSIBLE".
+function Main(input) {
+    // Precondition: `input` is a non-empty string containing multiple lines of space-separated integers.
+    // Postcondition: `lines` is an array of strings, each representing a line of the input.
+    var lines = input.split("\n");
+
+    // Precondition: `lines` is an array of strings. `ns` is an empty array. `N` is initialized to -1.
+    // Postcondition: `ns` is a dictionary where keys are node numbers and values are arrays of destination nodes. `N` is the highest node number encountered in the input.
+    var ns = [];
+    var N = -1;
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        var mc = lines[i].match(/(\d+) (\d+)/);
+        if (mc) {
+            var n = parseInt(mc[1]);
+            var m = parseInt(mc[2]);
+            if (!(n in ns))
+                ns[n] = [];
+            ns[n].push(m);
+            if (n > N)
+                N = n;
+        }
+    }
+
+    // Precondition: `ns` is a dictionary of flight routes, and `N` is the highest node number.
+    // Postcondition: Logs "POSSIBLE" if there is a path from node 1 to node N within 2 intermediate nodes, otherwise logs "IMPOSSIBLE".
+    var result = checkRegularFlights(1, ns, N, 1) ? "POSSIBLE" : "IMPOSSIBLE";
+    console.log(result);
+}
+
+// Input: The input is read from the standard input, typically passed as a single string with multiple lines.
+// Example input format:
+// 3 2
+// 1 2
+// 2 3
+// Output: The output is either "POSSIBLE" or "IMPOSSIBLE", printed to the standard output.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

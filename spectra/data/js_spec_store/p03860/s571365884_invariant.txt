@@ -1,0 +1,22 @@
+// Segment 1: Import required modules and read input from stdin
+// Precondition: Node.js environment with 'fs' module available, and '/dev/stdin' contains input text.
+// Postcondition: The 'input' variable contains the entire content of '/dev/stdin' as a string.
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Define the main function
+// Precondition: 'input' is a non-empty string.
+// Postcondition: The function 'main' is defined, which will process the input string to generate the output.
+function main(input) {
+    // Segment 3: Process the input string and generate output
+    // Precondition: 'input' is a string with at least 9 characters.
+    // Postcondition: Logs a string in the format 'A' + input[8] + 'C' to the console.
+    // Input: A single line string, e.g., "AtCoder Beginner Contest"
+    // Output: A single line string in the format "A{input[8]}C", e.g., "ABC"
+    console.log('A' + input.substring(8, 9) + 'C');
+}
+
+// Segment 4: Invoke the main function with the input
+// Precondition: 'main' function is defined and 'input' is a valid string.
+// Postcondition: The program has executed and produced the expected output.
+main(input);

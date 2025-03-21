@@ -1,0 +1,53 @@
+"use strict";
+
+// Segment 1: Function definition and input parsing
+// Precondition: The input is provided as a string with two lines. The first line contains two integers N and K. The second line contains N integers.
+// Postcondition: Variables N, K, and A are initialized. N and K are integers, and A is an array of integers.
+function Main(input) {
+    const params = input.trim().split("\n");
+    const [N, K] = params[0].trim().split(" ").map(Number);
+    const A = params[1].trim().split(" ").map(Number);
+
+    // Segment 2: Initialize counts array
+    // Precondition: N is a positive integer.
+    // Postcondition: counts is an array of length (N + 1) with all elements initialized to 0.
+    const counts = Array(N + 1).fill(0);
+
+    // Segment 3: Count occurrences of each element in A
+    // Precondition: A is an array of N integers where each integer is between 1 and N.
+    // Postcondition: counts array is updated such that counts[i] contains the number of occurrences of integer i in array A.
+    for (let i = 0; i < N; i++) {
+        counts[A[i]] = counts[A[i]] + 1;
+    }
+
+    // Segment 4: Filter and sort the counts array
+    // Precondition: counts array is populated with the occurrences of each integer from 1 to N.
+    // Postcondition: filterdCounts is a sorted array of non-zero counts in ascending order.
+    const filterdCounts = counts.sort((a, b) => a - b).filter((a) => a);
+
+    // Segment 5: Calculate the minimum number of changes required
+    // Precondition: filterdCounts is a sorted array of non-zero counts. K is a positive integer less than or equal to filterdCounts.length.
+    // Postcondition: Output the minimum number of changes required to have at most K distinct integers.
+    if (filterdCounts.length <= K) {
+        // Output: 0
+        console.log(0);
+        return;
+    }
+
+    let rewriteCount = 0;
+    let change = filterdCounts.length - K;
+    for (let i = 0; i < change; i++) {
+        rewriteCount += filterdCounts[i];
+    }
+
+    // Output: An integer representing the minimum number of changes required.
+    console.log(rewriteCount);
+}
+
+// Input format: The input is read from standard input (stdin).
+// The first line contains two integers N and K separated by a space.
+// The second line contains N integers separated by spaces.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+  5 2
+  1 1 2 2 5
+  1

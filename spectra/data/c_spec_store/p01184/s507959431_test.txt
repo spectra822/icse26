@@ -1,0 +1,22 @@
+Input:
+5 3
+Alice
+Bob
+Charlie
+David
+Eve
+2
+Alice
+Bob
+2
+Charlie
+David
+3
+Alice
+David
+Eve
+
+Output:
+2
+Alice
+David

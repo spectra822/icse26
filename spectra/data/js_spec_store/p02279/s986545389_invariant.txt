@@ -1,0 +1,75 @@
+// Segment 1: Reading input and parsing it into lines
+// Precondition: The program is executed with input provided through /dev/stdin
+// Postcondition: The variable `line` contains an array of strings, each representing a line from the input
+const line = require('fs').readFileSync('/dev/stdin', 'utf-8').split('\n');
+
+// Segment 2: Function to create a new node
+// Precondition: `id` is a non-negative integer, `arr` is an array of non-negative integers
+// Postcondition: Returns an object representing a node with the given id, children, and initial parent and depth
+const newNode = (id, arr) => {
+    return {
+        id: id,
+        children: [...arr],
+        parentNode: -1,
+        depth: null
+    };
+};
+
+// Segment 3: Function to convert a node to a string representation
+// Precondition: `node` is an object representing a node with properties: id, children, parentNode, and depth
+// Postcondition: Returns a string describing the node's id, parent, depth, type, and children
+const nodeToString = node => {
+    const type = node.parentNode === -1 ? 'root' :
+        node.children.length > 0 ? 'internal node' :
+        'leaf';
+    const arr = `[${node.children.join(', ')}]`;
+    return `node ${node.id}: parent = ${node.parentNode}, depth = ${node.depth}, ${type}, ${arr}`;
+};
+
+// Segment 4: Function to set the depth of each node in the tree
+// Precondition: `tree` is an array of nodes, each node has an id, children, parentNode, and depth
+// Postcondition: Each node in `tree` has its depth property correctly set according to its position in the tree
+const setDepth = tree => {
+    const root = tree.filter(x => x.parentNode === -1)[0];
+    const helper = (node, n) => {
+        node.depth = n;
+        node.children.forEach(x => {
+            helper(tree[x], n + 1);
+        });
+    };
+    helper(root, 0);
+};
+
+// Segment 5: Parse the input into variables and create the tree nodes
+// Input format:
+// The first line contains a single integer n (the number of nodes).
+// The next n lines each contain a node description: an integer id, followed by the number of children, followed by the children ids.
+// Precondition: `line` is an array of strings, with the first element being the number of nodes, and the rest being node descriptions
+// Postcondition: `tree` is an array of node objects, sorted by their id, and each node has its parentNode set
+const n = parseInt(line[0]);
+const data = line.slice(1, n + 1)
+    .map(x => x.split(' ').map(Number));
+
+const tree = data.map(x => {
+    const id = x[0];
+    const children = x.slice(2);
+    return newNode(id, children);
+});
+
+tree.sort((a, b) => a.id - b.id);
+tree.forEach((x, _, arr) => {
+    x.children.forEach(y => {
+        arr[y].parentNode = x.id;
+    });
+});
+
+// Segment 6: Set the depth of each node and print the tree
+// Precondition: `tree` is an array of nodes, with each node having its parentNode set correctly
+// Postcondition: The depth of each node is set, and the tree is printed in the specified format
+// Output format:
+// Each line represents a node in the following format: 
+// "node id: parent = parentId, depth = depth, type, [children]"
+// where type is one of "root", "internal node", or "leaf"
+setDepth(tree);
+
+console.log(tree.map(x => nodeToString(x)).join('\n'));

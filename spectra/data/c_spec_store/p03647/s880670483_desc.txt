@@ -1,0 +1,9 @@
+```c
+// Global variables
+int m[1 << 18];
+int *p;
+
+// Main function that processes input and checks the conditions to determine if the sequence of operations results in "POSSIBLE" or "IMPOSSIBLE".
+int main(int n, int a, int b)
+    // Calls to scanf, puts
+```

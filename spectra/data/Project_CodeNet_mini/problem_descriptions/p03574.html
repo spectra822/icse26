@@ -1,0 +1,105 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given an <var>H × W</var> grid.<br/>
+The squares in the grid are described by <var>H</var> strings, <var>S_1,...,S_H</var>.<br/>
+The <var>j</var>-th character in the string <var>S_i</var> corresponds to the square at the <var>i</var>-th row from the top and <var>j</var>-th column from the left <var>(1 \leq i \leq H,1 \leq j \leq W)</var>.<br/>
+<code>.</code> stands for an empty square, and <code>#</code> stands for a square containing a bomb.  </p>
+<p>Dolphin is interested in how many bomb squares are horizontally, vertically or diagonally adjacent to each empty square.<br/>
+(Below, we will simply say "adjacent" for this meaning. For each square, there are at most eight adjacent squares.)<br/>
+He decides to replace each <code>.</code> in our <var>H</var> strings with a digit that represents the number of bomb squares adjacent to the corresponding empty square.  </p>
+<p>Print the strings after the process.  </p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H,W \leq 50</var></li>
+<li><var>S_i</var> is a string of length <var>W</var> consisting of <code>#</code> and <code>.</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:  </p>
+<pre><var>H</var> <var>W</var>
+<var>S_1</var>
+<var>:</var>
+<var>S_H</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the <var>H</var> strings after the process.<br/>
+The <var>i</var>-th line should contain a string <var>T_i</var> of length <var>W</var>, where the <var>j</var>-th character in <var>T_i</var> corresponds to the square at the <var>i</var>-th row from the top and <var>j</var>-th row from the left in the grid <var>(1 \leq i \leq H, 1 \leq j \leq W)</var>.  </p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 5
+.....
+.#.#.
+.....
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>11211
+1#2#1
+11211
+</pre>
+<p>For example, let us observe the empty square at the first row from the top and first column from the left.<br/>
+There is one bomb square adjacent to this empty square: the square at the second row and second column.<br/>
+Thus, the <code>.</code> corresponding to this empty square is replaced with <code>1</code>.  </p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 5
+#####
+#####
+#####
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>#####
+#####
+#####
+</pre>
+<p>It is possible that there is no empty square.  </p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>6 6
+#####.
+#.#.##
+####.#
+.#..#.
+#.##..
+#.#...
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>#####3
+#8#7##
+####5#
+4#65#2
+#5##21
+#4#310
+</pre></section>
+</div>
+</span>

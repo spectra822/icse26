@@ -1,0 +1,220 @@
+
+
+
+<H1>爆弾の連鎖</H1>
+
+<p>
+縦 8、横 8 のマスからなる図1 のような平面があります。その平面上に、いくつかの爆弾が置かれています。図2 にその例を示します（● = 爆弾）。
+</p>
+
+<center>
+<table>
+<tr>
+<td>
+	<table cellpadding=0 cellspacing=0>
+               <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	</table>
+</td>
+<td>
+<table cellpadding=0 cellspacing=0>
+       	       <tr><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td><td>●</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td></tr>
+	       <tr><td>●</td><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td><td>●</td></tr>
+	       <tr><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td></tr>
+	       <tr><td>□</td><td>●</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>●</td><td>□</td><td>●</td><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td></tr>
+	       <tr><td>□</td><td>●</td><td>□</td><td>●</td><td>□</td><td>□</td><td>●</td><td>□</td></tr>
+	       
+	</table>
+</td>
+</tr>
+<tr><th width=160>図1</th><th width=160>図2</th></tr>
+</table>
+</center>
+<br/>
+
+<!--
+<pre >
+□□□□□□□□　　　□□□●□□●□　　　□□□□□□□□
+□□□□□□□□　　　□□□□□●□□　　　□□□□□●□□
+□□□□□□□□　　　●□□□●□□●　　　●□□□●□□●
+□□□□□□□□　　　□□●□□□●□　　　□□●□□□□□
+□□□□□□□□　　　□●□□□□□□　　　□□□□□□□□
+□□□□□□□□　　　□□□□●□□□　　　□□□□●□□□
+□□□□□□□□　　　●□●□□□●□　　　●□●□□□□□
+□□□□□□□□　　　□●□●□□●□　　　□□□□□□□□
+　　　図1 　　　　　　　　　　図2 　　　　　　　　図3
+</pre>
+-->
+
+<p>
+爆弾が爆発すると、その爆弾の上下左右 3 マスに爆風の影響が及び、それらのマスに置かれている爆弾も連鎖的に爆発します。たとえば、図 3 に示す爆弾が爆発すると図 4 の■のマスに爆風の影響が及びます。
+</p>
+
+<center>
+<table>
+<tr>
+<td>
+	<table cellpadding=0 cellspacing=0>
+               <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>●</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	</table>
+</td>
+<td>
+<table cellpadding=0 cellspacing=0>
+  <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>■</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>■</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>■</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>■</td><td>■</td><td>■</td><td>●</td><td>■</td><td>■</td><td>■</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>■</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+	       <tr><td>□</td><td>□</td><td>□</td><td>■</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+
+	       
+	</table>
+</td>
+</tr>
+<tr><th width=160>図3</th><th width=160>図4</th></tr>
+</table>
+</center>
+<br/>
+
+<!--
+<pre>
+   １２３４５６７８　
+１ □□□□□□□□　　　□□□□□□□□
+２ □□□□□□□□　　　□□□□□□□□
+３ □□□□□□□□　　　□□□☆□□□□
+４ □□□□□□□□　　　□□□☆□□□□
+５ □□□□□□□□　　　□□□☆□□□□
+６ □□□●□□□□　　　☆☆☆●☆☆☆□
+７ □□□□□□□□　　　□□□☆□□□□
+８ □□□□□□□□　　　□□□☆□□□□
+　　  　図4 　　　　　　　　　　図5
+</pre>
+-->
+
+<p>
+爆弾が置かれている状態と最初に爆発する爆弾の位置を読み込んで、最終的な平面の状態を出力するプログラムを作成してください。
+</p>
+
+<H2>Input</H2>
+
+<p>
+入力は以下の形式で与えられます。
+</p>
+
+<pre>
+<var>n</var>
+（空行）
+データセット 1
+（空行）
+データセット 2
+..
+..
+データセット <var>n</var>
+</pre>
+
+<p>
+１行目にデータセットの数 <var>n</var> (<var>n</var> &le; 20) が与えられます。続いて <var>n</var> 個のデータセットが与えられます。各データセットの直前に１つの空行が与えられます。各データセットは以下の形式で与えられます。
+</p>
+
+<pre>
+<var>g<sub>1,1</sub>g<sub>2,1</sub></var>...<var>g<sub>8,1</sub></var>
+<var>g<sub>1,2</sub>g<sub>2,2</sub></var>...<var>g<sub>8,2</sub></var>
+:
+<var>g<sub>1,8</sub>g<sub>2,8</sub></var>...<var>g<sub>8,8</sub></var>
+<var>X</var>
+<var>Y</var>
+</pre>
+
+
+<!--
+<p>
+平面の中で爆弾が置かれているマスを 1、置かれていないマスを 0 で表現した数字の列が与えられます。8文字からなる数列一行が、空間の一行を表現しています。さらに続く2 行で、最初に爆発する爆弾の座標が与えられます。第一行目の数字が X 座標、第二行目の数字が Y 座標を表します。左上、左下、右上、右下の座標が、それぞれ、(1, 1)、(1, 8)、(8, 1)、(8, 8) です。例えば、図4 に示す爆弾が最初に爆発するとき、与えられる座標は(4, 6) です。
+</p>
+-->
+
+<p>
+最初の８行に、平面を表す８つの文字列が与えられます。各文字列は８文字からなる数列で、爆弾が置かれているマスを 1、置かれていないマスを 0 で表します。
+続く２行で、最初に爆発する爆弾の <var>X</var> 座標と <var>Y</var> 座標が与えられます。左上、左下、右上、右下の座標が、それぞれ、(1, 1)、(1, 8)、(8, 1)、(8, 8) です。例えば、図 4 に示す爆弾が最初に爆発するとき、与えられる座標は (4, 6) です。
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+各データセットについて以下のように出力して下さい。
+</p>
+
+<p>
+爆発しないで残った爆弾のあるマスを 1、爆弾のないマスを 0 で表現することとします。平面の一行を数字 8 個からなる一行とし 8 行の文字列で最終的な平面の状態を出力してください。各データセットの先頭は、サンプル出力のように Data <var>x</var>: から出力しなければなりません。ここで、<var>x</var> はデータセットの番号です。
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+2
+
+00010010
+00000100
+10001001
+00100010
+01000000
+00001000
+10100010
+01010010
+2
+5
+
+00010010
+00000100
+10001001
+00100010
+01000000
+00001000
+10100010
+01010010
+2
+5
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+Data 1:
+00000000
+00000100
+10001001
+00100000
+00000000
+00001000
+10100000
+00000000
+Data 2:
+00000000
+00000100
+10001001
+00100000
+00000000
+00001000
+10100000
+00000000
+</pre>
+
+

@@ -1,0 +1,11 @@
+```c
+static U32 CalcGcd_U32(U32 u32_large_num, U32 u32_small_num)
+    // Precondition: `u32_large_num` and `u32_small_num` are non-negative integers, and `u32_large_num` >= `u32_small_num`.
+    // Postcondition: Returns the greatest common divisor (GCD) of `u32_large_num` and `u32_small_num`.
+
+int main(void)
+    // Input format: Two unsigned integers separated by a space, each on the range [1, 1000000000].
+    // Output format: A single unsigned integer followed by a newline.
+    // Precondition: None.
+    // Postcondition: Prints the GCD of the two input integers, or returns 1 if the input is out of the specified range.
+```

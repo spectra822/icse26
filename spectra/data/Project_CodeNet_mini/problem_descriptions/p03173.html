@@ -1,0 +1,117 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> slimes lining up in a row.
+Initially, the <var>i</var>-th slime from the left has a size of <var>a_i</var>.</p>
+<p>Taro is trying to combine all the slimes into a larger slime.
+He will perform the following operation repeatedly until there is only one slime:</p>
+<ul>
+<li>Choose two adjacent slimes, and combine them into a new slime. The new slime has a size of <var>x + y</var>, where <var>x</var> and <var>y</var> are the sizes of the slimes before combining them. Here, a cost of <var>x + y</var> is incurred. The positional relationship of the slimes does not change while combining slimes.</li>
+</ul>
+<p>Find the minimum possible total cost incurred.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>2 \leq N \leq 400</var></li>
+<li><var>1 \leq a_i \leq 10^9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>\ldots</var> <var>a_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum possible total cost incurred.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4
+10 20 30 40
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>190
+</pre>
+<p>Taro should do as follows (slimes being combined are shown in bold):</p>
+<ul>
+<li>(<strong>10</strong>, <strong>20</strong>, 30, 40) → (<strong>30</strong>, 30, 40)</li>
+<li>(<strong>30</strong>, <strong>30</strong>, 40) → (<strong>60</strong>, 40)</li>
+<li>(<strong>60</strong>, <strong>40</strong>) → (<strong>100</strong>)</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5
+10 10 10 10 10
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>120
+</pre>
+<p>Taro should do, for example, as follows:</p>
+<ul>
+<li>(<strong>10</strong>, <strong>10</strong>, 10, 10, 10) → (<strong>20</strong>, 10, 10, 10)</li>
+<li>(20, <strong>10</strong>, <strong>10</strong>, 10) → (20, <strong>20</strong>, 10)</li>
+<li>(20, <strong>20</strong>, <strong>10</strong>) → (20, <strong>30</strong>)</li>
+<li>(<strong>20</strong>, <strong>30</strong>) → (<strong>50</strong>)</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>3
+1000000000 1000000000 1000000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>5000000000
+</pre>
+<p>The answer may not fit into a 32-bit integer type.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>6
+7 6 8 6 1 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>68
+</pre>
+<p>Taro should do, for example, as follows:</p>
+<ul>
+<li>(7, 6, 8, 6, <strong>1</strong>, <strong>1</strong>) → (7, 6, 8, 6, <strong>2</strong>)</li>
+<li>(7, 6, 8, <strong>6</strong>, <strong>2</strong>) → (7, 6, 8, <strong>8</strong>)</li>
+<li>(<strong>7</strong>, <strong>6</strong>, 8, 8) → (<strong>13</strong>, 8, 8)</li>
+<li>(13, <strong>8</strong>, <strong>8</strong>) → (13, <strong>16</strong>)</li>
+<li>(<strong>13</strong>, <strong>16</strong>) → (<strong>29</strong>)</li>
+</ul></section>
+</div>
+</span>

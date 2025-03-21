@@ -1,0 +1,40 @@
+// Segment 1: Reading and trimming input
+
+// Precondition: The program expects an input string from the standard input device.
+// Postcondition: The variable 'str' contains the trimmed input string without leading or trailing whitespace.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var str = input.trim();
+
+// Segment 2: Replacing characters
+
+// Precondition: The variable 'str' contains a string of characters that may include 'o' and 'x'.
+// Postcondition: All consecutive 'o' characters in 'str' are replaced with '0' and all consecutive 'x' characters are replaced with '1'.
+
+str = str.replace(/o+/g, 0);
+str = str.replace(/x+/g, 1);
+
+// Segment 3: Extracting characters and determining the result
+
+// Precondition: The variable 'str' is a string with '0's and '1's.
+// Postcondition: The variable 'ans' is determined based on the conditions applied to the first and last characters of 'str'.
+
+var a = str[0];
+var b = str[str.length - 1];
+var ans = "x";
+if (a == 0 && b == 1) ans = "o";
+if (a == 0 && b == 0) ans = "o";
+if (a == 1 && b == 0) ans = "o";
+
+// Segment 4: Output the result
+
+// Precondition: The variable 'ans' contains the result which is either 'o' or 'x'.
+// Postcondition: The result stored in 'ans' is printed to the standard output.
+
+// Input format: A single line string consisting of characters 'o' and 'x'.
+// Example: "oxxoxoo"
+
+// Output format: A single character 'o' or 'x'.
+// Example: "o"
+
+console.log(ans);

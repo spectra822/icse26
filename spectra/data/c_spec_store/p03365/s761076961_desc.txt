@@ -1,0 +1,22 @@
+```c
+// Global variables
+#define MOD 1000000007
+ll fact[1000010];
+ll invfact[1000010];
+ll temp[1000010];
+
+// Computes (a^n) % m using modular exponentiation.
+// This function is used to calculate the modular inverse using Fermat's little theorem.
+ll pom(ll a, ll n, int m)
+    // No calls to other functions
+
+// Given two integers `n` and `r`, returns the binomial coefficient C(n, r) % MOD.
+// This function uses precomputed factorials and their modular inverses.
+ll choose(ll n, ll r)
+    // No calls to other functions
+
+// This function calculates and prints the result based on a given integer `n`.
+// It precomputes factorials and their inverses, then calculates a specific combinatorial result.
+int main()
+    Calls: pom(...), choose(...)
+```

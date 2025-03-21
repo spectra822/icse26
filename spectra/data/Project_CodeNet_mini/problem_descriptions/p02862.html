@@ -1,0 +1,76 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a knight - the chess piece - at the origin <var>(0, 0)</var> of a two-dimensional grid.</p>
+<p>When the knight is at the square <var>(i, j)</var>, it can be moved to either <var>(i+1,j+2)</var> or <var>(i+2, j+1)</var>.</p>
+<p>In how many ways can the knight reach the square <var>(X, Y)</var>?</p>
+<p>Find the number of ways modulo <var>10^9 + 7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq X \leq 10^6</var></li>
+<li><var>1 \leq Y \leq 10^6</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>X</var> <var>Y</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of ways for the knight to reach <var>(X, Y)</var> from <var>(0, 0)</var>, modulo <var>10^9 + 7</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>There are two ways: <var>(0,0) \to (1,2) \to (3,3)</var> and <var>(0,0) \to (2,1) \to (3,3)</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>The knight cannot reach <var>(2,2)</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>999999 999999
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>151840682
+</pre>
+<p>Print the number of ways modulo <var>10^9 + 7</var>.</p></section>
+</div>
+</span>

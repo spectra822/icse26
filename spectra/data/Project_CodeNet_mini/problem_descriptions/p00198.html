@@ -1,0 +1,96 @@
+
+
+
+<h1>立方体の作品</h1>
+
+<p>
+  芸術家品川は <var>n</var> 点の作品を出展するように依頼されました。そこで、立方体の 6 面をペンキで色付けしたものを作品として出展することにしました。作品は、Red、Yellow、Blue、Magenta、Green、Cyan の 6 色全てが使われていて、各面は 1 色で塗りつぶされています。品川は形が同じ立方体の作品でも色の配置の仕方を変え、異なる作品として <var>n</var> 点作成しました。
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_shinagawa1"><br/>
+</center>
+<br/>
+
+<p>
+ 彼の友人であるあなたは、友人のよしみで作品を出展前に閲覧させてもらいましたが、そこであることに気が付きました。それらの作品の中に異なる色付けをされているように見えても、実は同じ色の組み合わせをした立方体が存在していたのです。このままでは、 <var>n</var> 点の作品を出展することできなくなってしまいます。
+</p>
+
+<p>
+ 作成した作品の数と各作品の色の情報を入力とし、出展するためにあと何点必要かを出力するプログラムを作成してください。
+</p>
+
+<p>
+ 立方体の各面の色は c1 から c6 までの記号で表され、 以下のような配置となっています。また、c1 から c6 のそれぞれは Red、Yellow、Blue、Magenta、Green、Cyan のいずれか 1 色となります。
+</p>
+
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_shinagawa2"><br/>
+</center>
+<br/>
+
+
+<H2>Input</H2>
+
+<p>
+複数のデータセットの並びが入力として与えられます。 入力の終わりはゼロひとつの行で示されます。
+各データセットは以下の形式で与えられます。
+</p>
+
+<pre>
+<var>n</var>
+<var>cube<sub>1</sub></var>
+<var>cube<sub>2</sub></var>
+:
+<var>cube<sub>n</sub></var>
+</pre>
+
+<p>
+１行目に作品の数 <var>n</var> (1 &le; <var>n</var> &le; 30)、続く <var>n</var> 行に <var>i</var> 番目の作品の情報が与えられます。各作品の情報は次の形式で与えられます。
+</p>
+
+<pre>
+c1 c2 c3 c4 c5 c6
+</pre>
+
+<p>
+作品の色の配置 c<sub><var>i</var></sub> が空白区切りで与えられます。
+</p>
+
+<p>
+データセットの数は 100 を超えません。
+</p>
+
+
+
+<H2>Output</H2>
+
+<p>
+データセットごとに、出展するのにあと何点の作品が必要かを１行に出力します。
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+3
+Cyan Yellow Red Magenta Green Blue
+Cyan Yellow Red Magenta Green Blue
+Red Yellow Magenta Blue Green Cyan
+4
+Red Magenta Blue Green Yellow Cyan
+Red Yellow Magenta Blue Green Cyan
+Magenta Green Red Cyan Yellow Blue
+Cyan Green Yellow Blue Magenta Red
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+1
+1
+</pre>
+
+
+

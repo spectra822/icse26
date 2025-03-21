@@ -1,0 +1,24 @@
+```c
+// Global variables
+int n;
+int a[20];
+int x[20][20];
+int y[20][20];
+
+// Given an integer `z`, return the number of 1-bits in its binary representation.
+// If `z` is 0, return 0. Otherwise, recursively call `counter` with `z >> 1` and add `(z & 1)`.
+int counter(int z)
+    // No other function calls
+
+// This function initializes an array `a` of size 20 to zero.
+// It is not used in the main logic of the program.
+void zeros(int *a)
+    // No other function calls
+
+// This function reads input values, processes them, and finds the maximum number of consistent statements.
+// It takes `n` as input, representing the number of people,
+// followed by `n` sets of statements, each set containing a number of statements and pairs of integers.
+// It iterates through all possible subsets of people to find the maximum subset with consistent statements.
+int main(void)
+    Calls counter(...)
+```

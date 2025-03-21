@@ -1,0 +1,26 @@
+'use strict';
+
+// Function that processes the input and calculates the number of attacks needed
+function Main(input) {
+    // Split the input string into an array of strings
+    input = input.split(" ");
+
+    // Parse the height of the monster and the attack power from the input
+    var h = parseInt(input[0], 10);
+    var a = parseInt(input[1], 10);
+
+    // Initialize the counter for the number of attacks
+    var count = 0;
+
+    // Loop until the monster's health is depleted
+    while (h > 0) {
+        h -= a;  // Reduce the monster's health by the attack power
+        count++; // Increment the attack counter
+    }
+
+    // Output the total number of attacks needed
+    console.log(count);
+}
+ 
+// Read the input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

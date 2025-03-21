@@ -1,0 +1,25 @@
+// Segment 1: Import and read input data
+// Precondition: The script is executed in an environment where the 'fs' module can be used to read from '/dev/stdin'.
+// Postcondition: The contents of '/dev/stdin' are read as a single string and passed to the `main` function.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))
+
+/**
+ * Segment 2: Define the main function
+ * Precondition: The main function is called with a single string argument `stdin`, which contains the input data.
+ * Postcondition: The function processes the input data, performs a calculation, and logs the result to the console.
+ *
+ * Input format: A single string containing multiple lines. The first line contains three integers A, B, and C separated by spaces.
+ * Output format: A single integer printed to the console.
+ */
+const main = stdin => {
+    // Segment 3: Process input data
+    // Precondition: `stdin` is a non-empty string with at least one line of input.
+    // Postcondition: `input` is an array of strings, each representing a line from `stdin`. The first line is split into three integers A, B, and C.
+    const input = stdin.trim().split('\n')
+    const [A, B, C] = input[0].split(' ').map(x => parseInt(x))
+
+    // Segment 4: Perform calculation and output result
+    // Precondition: A, B, and C are integers.
+    // Postcondition: The result of the calculation `Math.max(C - (A - B), 0)` is printed to the console.
+    console.log(Math.max(C - (A - B), 0));
+}

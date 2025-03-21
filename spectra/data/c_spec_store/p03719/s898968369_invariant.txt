@@ -1,0 +1,51 @@
+```c
+int gcd(int a, int b)
+    // Precondition: a and b are non-negative integers.
+    // Postcondition: The greatest common divisor of a and b is returned.
+
+int lcm(int a, int b)
+    // Precondition: a and b are non-negative integers.
+    // Postcondition: The least common multiple of a and b is returned.
+
+int ngcd(int n, int a[])
+    // Precondition: n is a positive integer, and a is an array of n non-negative integers.
+    // Postcondition: The greatest common divisor of the elements in the array a is returned.
+
+void quicksort(keytype a[], int first, int last)
+    // Precondition: a is an array of keytype elements, first and last are valid indices within the array.
+    // Postcondition: The array a is sorted in ascending order between indices first and last.
+
+int is_prime(int x)
+    // Precondition: x is a non-negative integer.
+    // Postcondition: Returns 1 if x is a prime number, otherwise returns 0.
+
+int is_substr(char s[], char t[], int i)
+    // Precondition: s and t are null-terminated strings, and i is a valid index within s.
+    // Postcondition: Returns 1 if t is a substring of s starting at index i, otherwise returns 0.
+
+void factorize(int ftr[], int *num, int n)
+    // Precondition: n is a positive integer. ftr is an array large enough to hold all prime factors of n.
+    // Postcondition: The array ftr is populated with the prime factors of n, and num is set to the number of factors.
+
+int nextperm(int p[], int N)
+    // Precondition: p is an array of integers representing a permutation of length N.
+    // Postcondition: Modifies p to the next permutation in lexicographical order. Returns 1 if such a permutation exists, otherwise returns 0.
+
+void comb(int size1, int size2, int v[size1][size2])
+    // Precondition: size1 and size2 are positive integers, and v is a 2D array with dimensions size1 x size2.
+    // Postcondition: The array v is populated with binomial coefficients, where v[i][j] contains "i choose j".
+
+int abs_val(int a, int b)
+    // Precondition: a and b are integers.
+    // Postcondition: Returns the absolute difference between a and b.
+
+int min(int a, int b)
+    // Precondition: a and b are integers.
+    // Postcondition: Returns the smaller of the two integers a and b.
+
+int main()
+    // Input format: Three integers a, b, and c separated by spaces.
+    // Output format: "Yes" if a <= c <= b, otherwise "No".
+    // Precondition: The program reads three integers from standard input.
+    // Postcondition: Prints "Yes" if the third integer is between the first and second integer (inclusive), otherwise prints "No".
+```

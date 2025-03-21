@@ -1,0 +1,104 @@
+<H1><font color="#000">Problem F:</font> Shredding Company</H1>
+
+<p>
+You have just been put in charge of developing a new shredder for the Shredding Company. Although a ``normal'' shredder would just shred sheets of paper into little pieces so that the contents would become unreadable, this new shredder needs to have the following unusual basic characteristics.
+</p>
+<ul>
+    <li> The shredder takes as input a <i>target number</i> and a sheet of paper with a number written on it.</li>
+    <li> It shreds (or cuts) the sheet into pieces each of which has one or more digits on it.</li>
+    <li> The sum of the numbers written on each piece is the closest possible number to the target number, without going over it.</li>
+</ul>
+<p>
+For example, suppose that the target number is <i>50</i>, and the sheet of paper has the number <i>12346</i>. The shredder would cut the sheet into four pieces, where one piece has <i>1</i>, another has <i>2</i>, the third has <i>34</i>, and the fourth has <i>6</i>. This is because their sum 43 (= 1 + 2 + 34 + 6) is closest to the target number <i>50</i> of all possible combinations without going over 50. For example, a combination where the pieces are <i>1</i>, <i>23</i>, <i>4</i>, and <i>6</i> is not valid, because the sum of this combination 34 (= 1 + 23 + 4 + 6) is less than the above combination's 43. The combination of <i>12</i>, <i>34</i>, and <i>6</i> is not valid either, because the sum 52 (= 12+34+6) is greater than the target number of 50. 
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_shredding">
+<p>Figure 1. Shredding a sheet of paper having the number <i>12346</i> when the target number is <i>50</i></p>
+</center>
+
+<p>
+There are also three special rules:
+</p>
+<ul>
+    <li> If the target number is the same as the number on the sheet of paper, then the paper is not cut. For example, if the target number is <i>100</i> and the number on the sheet of paper is also <i>100</i>, then the paper is not cut.</li>
+    <li> If it is not possible to make any combination whose sum is less than or equal to the target number, then error is printed on a display. For example, if the target number is <i>1</i> and the number on the sheet of paper is <i>123</i>, it is not possible to make any valid combination, as the combination with the smallest possible sum is <i>1</i>, <i>2</i>, <i>3</i>. The sum for this combination is 6, which is greater than the target number, and thus error is printed.</li>
+    <li> If there is more than one possible combination where the sum is closest to the target number without going over it, then <i>rejected</i> is printed on a display. For example, if the target number is <i>15</i>, and the number on the sheet of paper is <i>111</i>, then there are two possible combinations with the highest possible sum of 12: (a) <i>1</i> and <i>11</i> and (b) <i>11</i> and <i>1</i>; thus rejected is printed.
+</li>
+</ul>
+<p>
+In order to develop such a shredder, you have decided to first make a simple program that would simulate the above characteristics and rules. Given two numbers, where the first is the target number and the second is the number on the sheet of paper to be shredded, you need to figure out how the shredder should ``cut up'' the second number. 
+<H2>Input</H2>
+
+<p>
+The input consists of several test cases, each on one line, as follows:
+</p>
+<pre>
+<i>t</i><sub>1</sub> <i>num</i><sub>1</sub>
+<i>t</i><sub>2</sub> <i>num</i><sub>2</sub>
+...
+<i>t</i><sub><i>n</i></sub> <i>num</i><sub><i>n</i></sub>
+0 0
+</pre>
+<p>
+Each test case consists of the following two positive integers, which are separated by one space: (1) the first integer (<i>t<sub>i</sub></i> above) is the target number; (2) the second integer (<i>num<sub>i</sub></i> above) is the number that is on the paper to be shredded.
+</p>
+<p>
+Neither integers may have a 0 as the first digit, e.g., 123 is allowed but 0123 is not. You may assume that both integers are at most 6 digits in length. A line consisting of two zeros signals the end of the input. 
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each test case in the input, the corresponding output takes one of the following three types:
+</p>
+<ul>
+    <li> <i>sum</i> <i>part</i><sub>1</sub> <i>part</i><sub>2</sub>  ...</li>
+    <li> rejected</li>
+    <li> error</li>
+</ul>
+<p>
+In the first type, <i>part<sub>j</sub></i> and <i>sum</i> have the following meaning:
+</p>
+<ul>
+    <li> Each <i>part<sub>j</sub></i> is a number on one piece of shredded paper. The order of <i>part<sub>j</sub></i> corresponds to the order of the original digits on the sheet of paper.</li>
+    <li> <i>sum</i> is the sum of the numbers after being shredded, i.e., <i>sum</i> = <i>part</i><sub>1</sub> + <i>part</i><sub>2</sub> + ... .</li>
+</ul>
+<p>
+Each number should be separated by one space.
+</p>
+<p>
+The message "error" is printed if it is not possible to make any combination, and "rejected" if there is more than one possible combination.
+</p>
+<p>
+No extra characters including spaces are allowed at the beginning of each line, nor at the end of each line. 
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+50 12346
+376 144139
+927438 927438
+18 3312
+9 3142
+25 1299
+111 33333
+103 862150
+6 1104
+0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+43 1 2 34 6
+283 144 139
+927438 927438
+18 3 3 12
+error
+21 1 2 9 9
+rejected
+103 86 2 15 0
+rejected
+</pre>
+
+

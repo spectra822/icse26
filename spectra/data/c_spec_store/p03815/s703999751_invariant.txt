@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: A single integer `x`.
+    // Output format: A single integer followed by a newline.
+    // Precondition: `x` is a non-negative integer input through standard input.
+    // Postcondition: The program prints the minimum number of times a person would need to hit a button to increase a counter to at least `x` if each hit increases the counter by either 6 or 5, followed by a newline.
+```

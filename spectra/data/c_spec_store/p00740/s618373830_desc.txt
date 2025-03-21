@@ -1,0 +1,62 @@
+```c
+// Global variables
+long long mod = (long long)1e09 + 7;
+
+// Reads an integer from the standard input and returns it.
+int in(void)
+
+// Reads a long long integer from the standard input and returns it.
+long long llin(void)
+
+// Reads a double from the standard input and returns it.
+double din(void)
+
+// Reads a string from the standard input and stores it in the provided character array.
+void chin(char s[])
+
+// Prints an integer to the standard output.
+void print(int a)
+
+// Prints a long long integer to the standard output.
+void llprint(long long a)
+
+// Prints a double to the standard output with 10 decimal places.
+void dprint(double a)
+
+// Prints two integers to the standard output.
+void print2(int a, int b)
+
+// Returns the maximum of two long long integers.
+long long max(long long a, long long b)
+
+// Returns the minimum of two long long integers.
+long long min(long long a, long long b)
+
+// Compares two integers for use in qsort.
+int cmp(const void *a, const void *b)
+
+// Compares two integers in reverse order for use in qsort.
+int cmp_r(const void *a, const void *b)
+
+// Compares two characters for use in qsort.
+int char_cmp(const void *a, const void *b)
+
+// Compares two characters in reverse order for use in qsort.
+int char_cmp_r(const void *a, const void *b)
+
+// Swaps two integers.
+void swap(int *a, int *b)
+
+// Returns the greatest common divisor (GCD) of two long long integers.
+long long gcd(long long x, long long y)
+
+// Returns the least common multiple (LCM) of two long long integers.
+long long lcm(long long x, long long y)
+
+// This function reads pairs of integers `n` and `p` representing the number of people and the number of stones respectively.
+// For each pair, it simulates the distribution of stones among the people in a round-robin fashion.
+// If a person receives the last stone and all other people have zero stones, the function prints the index of that person.
+// The function continues until a pair `0 0` is encountered.
+int main(void)
+    Calls in(...), print(...), MEMSET(...)
+```

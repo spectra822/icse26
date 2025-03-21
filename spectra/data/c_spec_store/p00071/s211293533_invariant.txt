@@ -1,0 +1,13 @@
+```c
+void explode(char field[10][10], int px, int py)
+    // Precondition: `field` is a 10x10 character array with '0' or '1' characters, and `px` and `py` are valid indices within the bounds of the array (1 <= px, py <= 8).
+    // Postcondition: The character at `field[py][px]` is set to '0'. Any '1' characters in the explosion range (within 3 cells in four directions) are also set to '0' recursively.
+
+int main(void)
+    // Input format: The first line contains an integer `N`. 
+    // The following lines contain multiple grids of size 8x8, each grid followed by two integers `sx` and `sy` representing the coordinates.
+    // Each line of a grid contains 8 characters ('0' or '1'), and each grid is followed by two lines containing `sx` and `sy`.
+    // Output format: For each grid, the output starts with "Data X:", where X is the grid number (starting from 1), followed by the modified 8x8 grid.
+    // Precondition: The input follows the specified format, and `N` is a positive integer representing the number of grids.
+    // Postcondition: The program prints the modified grids after performing the explosion operation, with each grid preceded by "Data X:".
+```

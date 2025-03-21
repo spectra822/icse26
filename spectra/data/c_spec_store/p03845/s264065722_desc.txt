@@ -1,0 +1,15 @@
+```c
+// Global variables
+// No global variables
+
+// Main function that reads input values, computes the sum of an array,
+// and then computes and prints modified sums based on additional inputs.
+// It reads an integer `n` representing the number of elements in the array `t`.
+// Then it reads `n` integers into the array `t`.
+// Next, it reads an integer `m` representing the number of modifications.
+// Then it reads `m` pairs of integers into the arrays `p` and `x`.
+// The function calculates the sum of the array `t` and for each modification,
+// it prints the modified sum by replacing the `p[i]`-th element of `t` with `x[i]`.
+int main(void)
+    // No calls to other functions
+```

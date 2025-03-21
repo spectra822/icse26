@@ -1,0 +1,113 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi will play a game using a piece on an array of squares numbered <var>1, 2, \cdots, N</var>. Square <var>i</var> has an integer <var>C_i</var> written on it. Also, he is given a permutation of <var>1, 2, \cdots, N</var>: <var>P_1, P_2, \cdots, P_N</var>.</p>
+<p>Now, he will choose one square and place the piece on that square. Then, he will make the following move some number of times between <var>1</var> and <var>K</var> (inclusive):</p>
+<ul>
+<li>In one move, if the piece is now on Square <var>i</var> <var>(1 \leq i \leq N)</var>, move it to Square <var>P_i</var>. Here, his score increases by <var>C_{P_i}</var>.</li>
+</ul>
+<p>Help him by finding the maximum possible score at the end of the game. (The score is <var>0</var> at the beginning of the game.)</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 5000</var></li>
+<li><var>1 \leq K \leq 10^9</var></li>
+<li><var>1 \leq P_i \leq N</var></li>
+<li><var>P_i \neq i</var></li>
+<li><var>P_1, P_2, \cdots, P_N</var> are all different.</li>
+<li><var>-10^9 \leq C_i \leq 10^9</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>P_1</var> <var>P_2</var> <var>\cdots</var> <var>P_N</var>
+<var>C_1</var> <var>C_2</var> <var>\cdots</var> <var>C_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible score at the end of the game.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2
+2 4 5 1 3
+3 4 -10 -8 8
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>8
+</pre>
+<p>When we start at some square of our choice and make at most two moves, we have the following options:</p>
+<ul>
+<li>If we start at Square <var>1</var>, making one move sends the piece to Square <var>2</var>, after which the score is <var>4</var>. Making another move sends the piece to Square <var>4</var>, after which the score is <var>4 + (-8) = -4</var>.</li>
+<li>If we start at Square <var>2</var>, making one move sends the piece to Square <var>4</var>, after which the score is <var>-8</var>. Making another move sends the piece to Square <var>1</var>, after which the score is <var>-8 + 3 = -5</var>.</li>
+<li>If we start at Square <var>3</var>, making one move sends the piece to Square <var>5</var>, after which the score is <var>8</var>. Making another move sends the piece to Square <var>3</var>, after which the score is <var>8 + (-10) = -2</var>.</li>
+<li>If we start at Square <var>4</var>, making one move sends the piece to Square <var>1</var>, after which the score is <var>3</var>. Making another move sends the piece to Square <var>2</var>, after which the score is <var>3 + 4 = 7</var>.</li>
+<li>If we start at Square <var>5</var>, making one move sends the piece to Square <var>3</var>, after which the score is <var>-10</var>. Making another move sends the piece to Square <var>5</var>, after which the score is <var>-10 + 8 = -2</var>.</li>
+</ul>
+<p>The maximum score achieved is <var>8</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2 3
+2 1
+10 -7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>13
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>3 3
+3 1 2
+-1000 -2000 -3000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>-1000
+</pre>
+<p>We have to make at least one move.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>10 58
+9 1 6 7 8 4 3 2 10 5
+695279662 988782657 -119067776 382975538 -151885171 -177220596 -169777795 37619092 389386780 980092719
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>29507023469
+</pre>
+<p>The absolute value of the answer may be enormous.</p></section>
+</div>
+</span>

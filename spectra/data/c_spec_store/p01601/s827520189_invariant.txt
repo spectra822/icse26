@@ -1,0 +1,11 @@
+```c
+int rev(int n)
+    // Precondition: `n` is a non-negative integer.
+    // Postcondition: The function returns the integer `n` with its digits reversed.
+
+int main(void)
+    // Input format: A single integer `n` is read from standard input.
+    // Output format: A single integer (the closest palindrome to `n`) is printed to standard output.
+    // Precondition: `n` is a non-negative integer.
+    // Postcondition: The closest palindrome integer to `n` is found and printed. If there are two palindromes at the same distance, the smaller one is printed.
+```

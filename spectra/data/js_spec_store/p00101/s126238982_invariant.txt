@@ -1,0 +1,32 @@
+// Segment 1: Reading input from stdin
+
+// Precondition: The program is executed in an environment where '/dev/stdin' is available and contains the input data in the specified format.
+// Postcondition: The variable 'input' contains the entire input data as a string.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Processing input into an array of lines
+
+// Precondition: 'input' contains the entire input data as a string.
+// Postcondition: 'Arr' is an array of strings, where each element is a line from the input. 'L' is an integer representing the number of lines to process.
+
+var Arr = (input.trim()).split("\n");
+var L = (Arr.shift()) - 0;
+
+// Segment 3: Loop through each line and replace occurrences of "Hoshino" with "Hoshina"
+
+// Precondition: 'Arr' is an array of strings with at least 'L' elements. 'L' is a non-negative integer.
+// Postcondition: For each line in 'Arr', if the line contains "Hoshino", it is replaced with "Hoshina" and printed to stdout.
+
+// Input format:
+// The first line contains an integer L (the number of subsequent lines to process).
+// The next L lines contain strings that may or may not contain the substring "Hoshino".
+
+// Output format:
+// For each of the L lines, if the line contains "Hoshino", it is replaced with "Hoshina" and printed.
+// Each processed line is printed on a new line.
+
+for (var i = 0; i < L; i++) {
+    var str = Arr[i];
+    console.log(str.replace(/Hoshino/g, "Hoshina"));
+}

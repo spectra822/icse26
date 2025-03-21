@@ -1,0 +1,48 @@
+// Segment 1: Importing the 'fs' module and reading the input
+// Precondition: The 'fs' module should be available and the input should be provided via '/dev/stdin'.
+// Postcondition: The variable 'input' contains the entire input read as a string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Processing input into an array of numbers
+// Precondition: The 'input' variable contains a string of newline-separated values.
+// Postcondition: 'Arr' is an array of numbers, with 'L' being the first element indicating the length of subsequent elements.
+var Arr = (input.trim()).split("\n").map(Number);
+var L = Arr.shift();
+
+// Segment 3: Initializing the 'arr' array with six empty sub-arrays
+// Precondition: None (This segment does not depend on any prior values).
+// Postcondition: 'arr' is an array containing six empty sub-arrays.
+var arr = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+];
+
+// Segment 4: Categorizing the heights into different ranges
+// Precondition: 'L' is the number of height values in 'Arr', and 'arr' is an array of six empty sub-arrays.
+// Postcondition: Each sub-array in 'arr' contains asterisks ('*') corresponding to the heights in different ranges.
+for (var i = 0; i < L; i++) {
+    if (185 <= Arr[i]) arr[5].push("*");
+    else if (180 <= Arr[i]) arr[4].push("*");
+    else if (175 <= Arr[i]) arr[3].push("*");
+    else if (170 <= Arr[i]) arr[2].push("*");
+    else if (165 <= Arr[i]) arr[1].push("*");
+    else arr[0].push("*");
+}
+
+// Segment 5: Printing the results in the specified format
+// Precondition: 'arr' is filled with asterisks ('*') according to the height ranges.
+// Postcondition: Output is printed in the format where each line starts with a number (1 to 6) followed by a colon and the asterisks corresponding to that range.
+// Output Format:
+// 1:<asterisks for height less than 165>
+// 2:<asterisks for height between 165 and 169.99>
+// 3:<asterisks for height between 170 and 174.99>
+// 4:<asterisks for height between 175 and 179.99>
+// 5:<asterisks for height between 180 and 184.99>
+// 6:<asterisks for height 185 and above>
+for (var i = 0; i < arr.length; i++) {
+    console.log((i + 1) + ":" + arr[i].join(""));
+}

@@ -1,0 +1,33 @@
+// Segment 1: Set up standard input to be read from stdin
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// Segment 2: Initialize an empty array to store input lines
+var lines = [];
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Segment 3: Event listener for reading each line of input
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+// Segment 4: Event listener for when input is fully read
+reader.on('close', () => {
+    // Parse the number of elements in the array t
+    const N = lines[0] - 0;
+    // Parse the array t from the second line of input
+    const t = lines[1].split(" ").map(v => v - 0);
+    // Calculate the sum of the array t
+    const tsum = t.reduce((a, b) => a + b, 0);
+    // Parse the number of queries
+    const M = lines[2];
+    // Parse each query into an array of [p, x] pairs
+    const px = lines.filter((v, i) => i > 2).map(v => v.split(" ").map(v => v - 0));
+    // For each query, calculate and print the adjusted sum
+    px.forEach(([p, x]) => {
+        console.log(tsum - t[p - 1] + x);
+    })
+});

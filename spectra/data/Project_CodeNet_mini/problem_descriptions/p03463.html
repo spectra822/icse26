@@ -1,0 +1,81 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>A game is played on a strip consisting of <var>N</var> cells consecutively numbered from 1 to <var>N</var>. </p>
+<p>Alice has her token on cell <var>A</var>. Borys has his token on a different cell <var>B</var>.</p>
+<p>Players take turns, Alice moves first.
+The moving player must shift his or her token from its current cell <var>X</var> to the neighboring cell on the left, cell <var>X-1</var>, or on the right, cell <var>X+1</var>.
+Note that it's disallowed to move the token outside the strip or to the cell with the other player's token.
+In one turn, the token of the moving player must be shifted exactly once.</p>
+<p>The player who can't make a move loses, and the other player wins.</p>
+<p>Both players want to win. Who wins if they play optimally?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 100</var></li>
+<li><var>1 \leq A &lt; B \leq N</var></li>
+<li>All input values are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>A</var> <var>B</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <code>Alice</code> if Alice wins, <code>Borys</code> if Borys wins, and <code>Draw</code> if nobody wins.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Alice
+</pre>
+<p>Alice can move her token to cell 3. 
+After that, Borys will be unable to move his token to cell 3, so he will have to move his token to cell 5. 
+Then, Alice moves her token to cell 4. Borys can't make a move and loses. </p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>Borys
+</pre>
+<p>Alice can't make the very first move and loses.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>58 23 42
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>Borys
+</pre></section>
+</div>
+</span>

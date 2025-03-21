@@ -1,0 +1,67 @@
+<span class="lang-en">
+<p>Score : <var>1000</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>How many infinite sequences <var>a_1, a_2, ...</var> consisting of {<var>{1, ... ,n}</var>} satisfy the following conditions?</p>
+<ul>
+<li>The <var>n</var>-th and subsequent elements are all equal. That is, if <var>n \leq i,j</var>, <var>a_i = a_j</var>.</li>
+<li>For every integer <var>i</var>, the <var>a_i</var> elements immediately following the <var>i</var>-th element are all equal. That is, if <var>i &lt; j &lt; k\leq i+a_i</var>, <var>a_j = a_k</var>.</li>
+</ul>
+<p>Find the count modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq n \leq 10^6</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>n</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print how many sequences satisfy the conditions, modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+</pre>
+<p>The four sequences that satisfy the conditions are:</p>
+<ul>
+<li><var>1, 1, 1, ...</var></li>
+<li><var>1, 2, 2, ...</var></li>
+<li><var>2, 1, 1, ...</var></li>
+<li><var>2, 2, 2, ...</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>654321
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>968545283
+</pre></section>
+</div>
+</span>

@@ -1,0 +1,14 @@
+// Read input from standard input, split it into an array of strings
+let l = require("fs").readFileSync("/dev/stdin", "utf8").split(" ");
+
+// Convert the split input strings to numbers and map them to dates to get the number of days in the respective months
+[x, y] = l.map(i => new Date(2000, Number(i), 0).getDate());
+
+// Compare the number of days in the two months and print "Yes" if they are equal, otherwise print "No"
+console.log(x == y ? "Yes" : "No");
+    // Read input from standard input, split it into an array of strings
+    let l = require("fs").readFileSync("/dev/stdin", "utf8").split(" ");
+    // Convert the split input strings to numbers and map them to dates to get the number of days in the respective months
+    [x, y] = l.map(i => new Date(2000, Number(i), 0).getDate());
+    // Compare the number of days in the two months and print "Yes" if they are equal, otherwise print "No"
+    console.log(x == y ? "Yes" : "No");

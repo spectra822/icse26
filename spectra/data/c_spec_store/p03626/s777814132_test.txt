@@ -1,0 +1,7 @@
+Input:
+3
+aba
+abc
+
+Output:
+6

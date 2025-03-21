@@ -1,0 +1,26 @@
+// Segment 1: Import and read input
+// Precondition: The program is executed in an environment where the 'fs' module is available.
+// Postcondition: The 'stdin' variable contains the entire input as a string.
+const main = stdin => {
+    // Segment 2: Process the input
+    // Precondition: The 'stdin' variable contains the input string, possibly with leading/trailing whitespace.
+    // Postcondition: The 'input' variable is an array of strings, each representing a line of the input.
+    const input = stdin.trim().split('\n')
+
+    // Segment 3: Parse the first line of input
+    // Precondition: The 'input' variable contains at least one element, which is a string of space-separated integers.
+    // Postcondition: The variables 'A' and 'B' are integers parsed from the first line of input.
+    const [A, B] = input[0].split(' ').map(x => parseInt(x))
+
+    // Segment 4: Compute and output the result
+    // Precondition: 'A' and 'B' are integers.
+    // Postcondition: The program outputs the maximum value among (A + B), (A - B), and (A * B).
+    // Input format: A single line with two space-separated integers.
+    // Output format: A single integer.
+    console.log(Math.max(A + B, A - B, A * B))
+}
+
+// Segment 5: Read input from standard input and invoke 'main'
+// Precondition: The input is provided through standard input in the expected format.
+// Postcondition: The 'main' function processes the input and outputs the result.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

@@ -1,0 +1,11 @@
+```c
+// Global variables
+char buf[114514];
+
+// Main function that reads input from standard input, 
+// determines the length of the input, and prints "First" or "Second"
+// based on the specified condition.
+main(int n)
+  Calls read(...)
+  Calls puts(...)
+```

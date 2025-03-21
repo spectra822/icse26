@@ -1,0 +1,95 @@
+"use strict"
+
+// Segment 1: Function Definitions and Utility Functions
+// Precondition: None
+// Postcondition: Provides utility functions for reading input and processing it
+const create = () => {
+    const input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+    const res = {
+        "list": input,
+        "index": 0,
+        "max": input.length,
+        "hasNext": function() {
+            return this.index < this.max
+        },
+        "next": function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException";
+            } else {
+                return this.list[this.index++];
+            }
+        }
+    };
+    return res;
+}
+
+const o = create();
+const next = () => o.next()
+const nextInt = () => parseInt(o.next())
+const nextStrArray = () => o.next().split(" ")
+const nextIntArray = () => o.next().split(" ").map(el => parseInt(el))
+const nextCharArray = () => o.next().split("")
+const hasNext = () => o.hasNext()
+const myout = (...x) => console.log(...x)
+
+// Segment 2: Main Function Definition
+// Precondition: Utility functions are defined
+// Postcondition: Defines the main logic for the program
+const Main = () => {
+    // Segment 3: Reading Input
+    // Precondition: Input is provided in the format specified
+    // Input format: 
+    // First line contains two integers H and W separated by space (dimensions of the grid)
+    // Next H lines each contain a string of length W consisting of '.' and '#'
+    // Postcondition: Variables `H`, `W`, and `s` are initialized
+    const [H, W] = nextIntArray()
+    let s = []
+    while (hasNext()) {
+        s.push(next().split(""))
+    }
+
+    // Segment 4: Direction Vectors Initialization
+    // Precondition: None
+    // Postcondition: `dir` array is initialized with possible directions
+    let dir = [
+        [1, 0],
+        [-1, 0],
+        [0, 1],
+        [0, -1]
+    ]
+
+    // Segment 5: Main Logic to Check Conditions on Grid
+    // Precondition: Variables `H`, `W`, `s`, and `dir` are initialized
+    // Postcondition: Outputs "Yes" if conditions are met, otherwise "No"
+    for (let i = 0; i < H; i++) {
+        for (let j = 0; j < W; j++) {
+            if (s[i][j] == "#") {
+                let res = false
+                for (let el of dir) {
+                    let x = i + el[0]
+                    let y = j + el[1]
+                    if (x < 0 || x >= H || y < 0 || y >= W) continue
+                    if (s[x][y] == "#" || s[x][y] == "X") {
+                        res = true
+                        s[i][j] = "X"
+                    }
+                }
+                if (res == false) {
+                    console.log("No")
+                    return
+                }
+            }
+        }
+    }
+    console.log("Yes")
+}
+
+// Segment 6: Calling the Main Function
+// Precondition: Main function is defined
+// Postcondition: Executes the main logic of the program
+Main()
+3 3
+.#.
+###
+.#.
+Yes

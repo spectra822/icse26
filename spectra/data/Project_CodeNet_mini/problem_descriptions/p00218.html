@@ -1,0 +1,104 @@
+
+
+
+<H1>クラス分け</H1>
+
+<p>
+  会津進学塾では、生徒が塾に入る際に実力テストを行ってクラス分けをします。テストは数学、英語、国語の 3 科目行い、生徒を A,B,C クラスにクラス分けします。A クラスのレベルが一番高く、順に低くなっていきます。
+</p>
+
+<p>
+クラス分けの判断は以下の表に基づきます。
+</p>
+
+<center>
+<table border=1>
+<tr>
+<th width="460">               条件   </th><th width="80">           クラス</th>
+</tr>
+<tr>
+<td>100 点の科目がある       </td><td>              A </td>
+</tr>
+<tr>
+<td>数学と英語の平均点が 90 点以上   </td><td>             A </td>
+</tr>
+<tr>
+<td>3 科目の平均点が 80 点以上 </td><td>                A</td>
+</tr>
+<tr>
+<td>3 科目の平均点が 70 点以上  </td><td>               B</td>
+</tr>
+<tr>
+<td>3 科目の平均点が 50 点以上で数学か英語が 80 点以上 </td><td>  B</td>
+</tr>
+<tr>
+<td>上の条件を満たさない   </td><td>                    C</td>
+</tr>
+</table>
+</center>
+<br/>
+
+
+<p>
+  複数の条件を満たす場合は、よりレベルの高いクラスに分けられます。
+</p>
+<p>
+  生徒の人数 <var>n</var> (1 &le; <var>n</var> &le; 10000)、各生徒の数学の点数 <var>pm<sub>i</sub></var> (0 &le; <var>pm<sub>i</sub></var> &le; 100)、英語の点数 <var>pe<sub>i</sub></var> (0 &le; <var>pe<sub>i</sub></var> &le; 100)、国語の点数 <var>pj<sub>i</sub></var> (0 &le; <var>pj<sub>i</sub></var> &le; 100) を入力とし、各生徒のクラスA,B,C (半角英字) を出力するプログラムを作成してください。
+</p>
+
+<H2>Input</H2>
+
+<p>
+複数のデータセットの並びが入力として与えられます。入力の終わりはゼロひとつの行で示されます。
+各データセットは以下の形式で与えられます。
+</p>
+
+<pre>
+<var>n</var>
+<var>pm<sub>1</sub></var> <var>pe<sub>1</sub></var> <var>pj<sub>1</sub></var>
+<var>pm<sub>2</sub></var> <var>pe<sub>2</sub></var> <var>pj<sub>2</sub></var>
+:
+<var>pm<sub>n</sub></var> <var>pe<sub>n</sub></var> <var>pj<sub>n</sub></var>
+</pre>
+
+<p>
+入力はすべて整数で与えられます。データセットの数は 1000 を超えません。
+</p>
+
+
+
+
+<H2>Output</H2>
+
+<p>
+入力データセットごとに、各生徒のクラスを順番に出力します。
+
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+4
+100 70 20
+98 86 55
+80 34 36
+65 79 65
+2
+99 81 20
+66 72 90
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+A
+A
+B
+C
+A
+B
+</pre>
+
+
+

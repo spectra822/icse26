@@ -1,0 +1,63 @@
+// Main function that processes the input and calculates the result
+function Main(input) {
+    // Split the input into lines and remove any trailing empty line
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Read the first line as the string S and define the modulus constant
+    const S = input[0];
+    const MOD = 10 ** 9 + 7;
+
+    // Initialize an array to store the possibilities for remainders modulo 13
+    var possibility = new Array(13);
+    possibility.fill(0);
+
+    // Handle the last character of S to set initial possibilities
+    if (S[S.length - 1] === '?') {
+        for (var i = 0; i <= 9; i++) {
+            possibility[i] = 1;
+        }
+    } else {
+        possibility[S[S.length - 1] - 0] = 1;
+    }
+
+    // Initialize the multiplier for powers of ten modulo 13
+    var ten = 1;
+    var next;
+
+    // Iterate over the string S from right to left, excluding the last character
+    for (var j = S.length - 2; j >= 0; j--) {
+        // Update the ten multiplier for the current position
+        ten = ten * 10 % 13;
+
+        // Initialize a new array for the next set of possibilities
+        next = new Array(13);
+        next.fill(0);
+
+        // Calculate the possibilities based on the current character
+        if (S[j] === '?') {
+            for (var i = 0; i < 13; i++) {
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(e => {
+                    next[(i + ten * e) % 13] += possibility[i];
+                });
+            }
+        } else {
+            for (var i = 0; i < 13; i++) {
+                next[(i + ten * (S[j] - 0)) % 13] = possibility[i];
+            }
+        }
+
+        // Update the possibilities array with the next values, modulo MOD
+        possibility = next.slice().map(e => {
+            return e % MOD;
+        });
+    }
+
+    // Output the number of ways to form a number divisible by 13 with remainder 5
+    console.log(possibility[5]);
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

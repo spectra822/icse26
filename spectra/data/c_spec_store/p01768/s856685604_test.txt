@@ -1,0 +1,13 @@
+Input:
+4
+sugar 10
+flour 20
+milk 15
+butter 25
+3
+sugar flour
+flour milk
+milk butter
+
+Output:
+40

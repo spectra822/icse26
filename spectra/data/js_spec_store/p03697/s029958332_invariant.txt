@@ -1,0 +1,11 @@
+// Segment 1: Reading and parsing input
+// Precondition: The program reads a line of input from stdin, which contains two space-separated integers.
+// Postcondition: The variables `a` and `b` are assigned the parsed integer values from the input.
+let [a, b] = require("fs").readFileSync("/dev/stdin", "utf8").split(" ").map(Number);
+
+// Segment 2: Processing and outputting result
+// Precondition: The variables `a` and `b` are integers.
+// Postcondition: The program outputs the sum of `a` and `b` if it is less than 10; otherwise, it outputs "error".
+// Input Format: A single line containing two space-separated integers.
+// Output Format: A single integer or the string "error".
+console.log(a + b >= 10 ? "error" : a + b);

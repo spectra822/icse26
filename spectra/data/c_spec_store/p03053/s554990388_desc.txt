@@ -1,0 +1,12 @@
+```c
+// Global variables
+const int INF = 1001001001;
+int h, w, b[1001][1001], que[1001001], l = 0, r = 0, dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}, ans = 0;
+char a[1001][1001];
+
+// This function takes input for the dimensions of a grid `h` and `w`, and then reads the grid of characters `a`.
+// It initializes the distance array `b` to `INF` and sets the distance to `0` for cells containing `#`.
+// It also initializes a queue `que` with the positions of all `#` cells.
+int main()
+    Calls none
+```

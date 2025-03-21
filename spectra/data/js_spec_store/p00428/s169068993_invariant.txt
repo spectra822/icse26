@@ -1,0 +1,58 @@
+// Segment 1: Read input and initialize variables
+// Precondition: '/dev/stdin' contains the input data in the format specified below.
+// Postcondition: 'Arr' is an array of strings where each element is a line from the input.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Process each test case
+// Precondition: 'Arr' contains lines of input data.
+// Postcondition: Outputs the sorted indices for each test case until encountering "0 0".
+
+while (true) {
+    // Segment 2.1: Parse the first line of the test case and initialize arrays
+    // Precondition: 'Arr' has at least one element which is a string of two integers separated by a space.
+    // Postcondition: 'nm' is an array of two numbers. If both are zero, the loop breaks. 'arr' is initialized.
+    var nm = (Arr.shift()).split(" ").map(Number);
+    if (nm[0] == 0 && nm[1] == 0) break;
+    var arr = [];
+    for (var i = 0; i < nm[1]; i++) arr[i] = [i + 1, 0];
+
+    // Segment 2.2: Read and process each row of the test case
+    // Precondition: 'Arr' has at least 'nm[0]' lines, each containing 'nm[1]' integers separated by spaces.
+    // Postcondition: 'arr' is updated with the sum of values for each column.
+    for (var i = 0; i < nm[0]; i++) {
+        var v = (Arr.shift()).split(" ").map(Number);
+        v.forEach(function(val, i) {
+            arr[i][1] += val;
+        });
+    }
+
+    // Segment 2.3: Sort the array based on the sum of values and then by index
+    // Precondition: 'arr' contains pairs of indices and their respective sums.
+    // Postcondition: 'arr' is sorted by the sum in descending order and by index in ascending order if sums are equal.
+    arr.sort(function(a, b) {
+        if (a[1] == b[1]) return a[0] - b[0];
+        else return b[1] - a[1];
+    });
+
+    // Segment 2.4: Collect indices and output the result
+    // Precondition: 'arr' is sorted.
+    // Postcondition: Outputs the indices in the sorted order as a single line of space-separated integers.
+    var ans = [];
+    arr.forEach(function(val, i) {
+        ans.push(arr[i][0]);
+    });
+    console.log(ans.join(" "));
+}
+
+/*
+Input format:
+- Multiple test cases.
+- Each test case starts with a line containing two integers 'n' and 'm'.
+- Followed by 'n' lines, each containing 'm' integers (0 or 1).
+- Ends with a line "0 0" to indicate the end of input.
+
+Output format:
+- For each test case, a single line of 'm' space-separated integers representing the indices sorted based on the rules specified.
+*/

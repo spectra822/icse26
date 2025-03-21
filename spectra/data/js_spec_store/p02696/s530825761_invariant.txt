@@ -1,0 +1,27 @@
+// Segment 1: Reading and parsing input
+
+// Precondition: The program is executed with input provided via stdin.
+// Postcondition: The variables `A`, `B`, and `N` are assigned numerical values parsed from the first line of input.
+const input = require("fs").readFileSync("/dev/stdin", "utf8")
+const lines = input.split('\n')
+const [A, B, N] = lines[0].split(' ').map(Number)
+
+// Segment 2: Calculating the minimum value
+
+// Precondition: `A`, `B`, and `N` are defined and are numbers.
+// Postcondition: The variable `x` is assigned the minimum value between `N` and `B - 1`.
+const x = Math.min(N, B - 1)
+
+// Segment 3: Calculating the result
+
+// Precondition: `A`, `B`, and `x` are defined and are numbers.
+// Postcondition: The variable `res` is assigned the value of the expression `Math.floor(A * x / B) - A * Math.floor(x / B)`.
+const res = Math.floor(A * x / B) - A * Math.floor(x / B)
+
+// Segment 4: Outputting the result
+
+// Precondition: `res` is defined and is a number.
+// Postcondition: The value of `res` is printed to the standard output.
+// Input format: The input consists of a single line containing three space-separated integers: A, B, N. Example: "5 7 4\n"
+// Output format: The output is a single integer printed to the standard output. Example: "2"
+console.log(res)

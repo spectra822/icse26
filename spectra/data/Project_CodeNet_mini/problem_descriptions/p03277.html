@@ -1,0 +1,93 @@
+<span class="lang-en">
+<p>Score : <var>700</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We will define the <strong>median</strong> of a sequence <var>b</var> of length <var>M</var>, as follows:</p>
+<ul>
+<li>Let <var>b'</var> be the sequence obtained by sorting <var>b</var> in non-decreasing order. Then, the value of the <var>(M / 2 + 1)</var>-th element of <var>b'</var> is the median of <var>b</var>. Here, <var>/</var> is integer division, rounding down.</li>
+</ul>
+<p>For example, the median of <var>(10, 30, 20)</var> is <var>20</var>; the median of <var>(10, 30, 20, 40)</var> is <var>30</var>; the median of <var>(10, 10, 10, 20, 30)</var> is <var>10</var>.</p>
+<p>Snuke comes up with the following problem.</p>
+<p>You are given a sequence <var>a</var> of length <var>N</var>.
+For each pair <var>(l, r)</var> (<var>1 \leq l \leq r \leq N</var>), let <var>m_{l, r}</var> be the median of the contiguous subsequence <var>(a_l, a_{l + 1}, ..., a_r)</var> of <var>a</var>.
+We will list <var>m_{l, r}</var> for all pairs <var>(l, r)</var> to create a new sequence <var>m</var>.
+Find the median of <var>m</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 10^5</var></li>
+<li><var>a_i</var> is an integer.</li>
+<li><var>1 \leq a_i \leq 10^9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>...</var> <var>a_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the median of <var>m</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+10 30 20
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>30
+</pre>
+<p>The median of each contiguous subsequence of <var>a</var> is as follows:</p>
+<ul>
+<li>The median of <var>(10)</var> is <var>10</var>.</li>
+<li>The median of <var>(30)</var> is <var>30</var>.</li>
+<li>The median of <var>(20)</var> is <var>20</var>.</li>
+<li>The median of <var>(10, 30)</var> is <var>30</var>.</li>
+<li>The median of <var>(30, 20)</var> is <var>30</var>.</li>
+<li>The median of <var>(10, 30, 20)</var> is <var>20</var>.</li>
+</ul>
+<p>Thus, <var>m = (10, 30, 20, 30, 30, 20)</var> and the median of <var>m</var> is <var>30</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1
+10
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>10
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10
+5 9 5 9 8 9 3 5 4 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>8
+</pre></section>
+</div>
+</span>

@@ -1,0 +1,100 @@
+
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<H1>３乗根</H1>
+
+<p>
+$x^3 = q$ の解は漸化式 $x_{n+1} = x_n - \frac{x_{n}^3 - q}{3x_{n}^2}$ を計算していくことで近似的に求めることができます。</p>
+
+<p>
+$x_1$ に正の数 $\frac{q}{2}$ をいれ
+</p>
+
+<p>
+
+$x_2 = x_1 - \frac{x_{1}^3 - q}{3x_{1}^2}$、$x_3 = x_2 - \frac{x_{2}^3 - q}{3x_{2}^2}$、…　と計算します。</p>
+
+<p>
+この計算をしながら、
+</p>
+
+<p>
+$|x^3 - q|$ の値が、十分小さくなったところで、計算をやめ、最後に計算した $x_n$ を $x^3 = q$ の近似解とします。</p>
+
+<!--
+<p>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_1">
+
+の解は漸化式 
+
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_2"> 
+
+を計算していくことで近似的に求めることができます。</p>
+
+<p>
+ <img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_3">に正の数 <img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_4">をいれ
+</p>
+
+<p>
+
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_5"> 、<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_6"> 、…　と計算します。</p>
+
+<p>
+この計算をしながら、
+</p>
+
+<p>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_7"> の値が、十分小さくなったところで、計算をやめ、最後に計算した <img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_8">を
+</p>
+
+<p><img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_08_9">の近似解とします。</p>
+
+-->
+
+<p>
+この方法に従って、入力された正の整数 $q$ に対し、 $q$ の３乗根の近似値を出力するプログラムを作成してください。ただし、「十分小さくなった」という判定は $|x^3 - q| < 0.00001 q$ を用いてください。
+</p>
+
+
+
+<H2>入力</H2>
+
+<p>複数のデータセットが与えられる。各データセットに $q$ ($1 \leq q < 2^{31}$)（整数）が一行に与えられる。入力の終わりは -1 である。
+</p>
+
+<p>
+データセットの数は 50 を超えない。
+</p>
+
+
+<H2>出力</H2>
+
+<p>各データセットに対して $x$ （実数）を１行に出力する。出力結果に 0.00001 以下の誤差を含んでもよい。
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+15
+15
+-1
+</pre>
+
+
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+2.466212
+2.466212
+</pre>
+
+
+

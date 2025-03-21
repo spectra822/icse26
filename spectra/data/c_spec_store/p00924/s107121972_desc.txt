@@ -1,0 +1,21 @@
+```c
+// Global variables
+int M, N;
+char b[15];
+char b1[15];
+int p[15];
+int p1[15];
+
+// This function solves the problem of bit string reordering.
+// It takes a bit string `bit`, an array of run lengths `runlen`, the length of the bit string `len`,
+// the length of the run lengths array `runlenlen`, and a start character `start`.
+// The function returns the minimum number of swaps needed to reorder the bit string.
+int solve(char bit[], int runlen[], int len, int runlenlen, char start)
+    Calls solve(...)
+
+// The main function reads input values for N and M, and the bit string and run lengths.
+// It then determines the minimum number of swaps needed to reorder the bit string according to the given run lengths.
+// The function prints the result.
+int main()
+    Calls solve(...)
+```

@@ -1,0 +1,27 @@
+```c
+void init(int n)
+    // Precondition: The global array `adj` has been declared and `n` specifies the number of elements to be initialized.
+    // Postcondition: All elements of the global array `adj` have been initialized with a capacity of INIT_CAP, and their sizes are set to zero.
+
+void add(int from, int to)
+    // Precondition: The global array `adj` has been initialized and `from` and `to` are valid indices within the bounds of `adj`.
+    // Postcondition: The global array `adj[from].to` has been updated to include `to` as an element. If the size of `adj[from].to` is equal to `adj[from].cap`, then the capacity of `adj[from].to` is doubled.
+
+int searchIdx(char str[])
+    // Precondition: The global array `ing` has been declared and `str` is a null-terminated string.
+    // Postcondition: The index of the element in the global array `ing` with the name `str` is returned. If no such element exists, the value `n` is returned.
+
+void dfs(int i)
+    // Precondition: The global array `visited` has been declared and `i` is a valid index within the bounds of `adj`.
+    // Postcondition: The global variable `min` is updated to the minimum of its current value and `ing[i].cost`. The global array `visited` is updated to mark the element `i` as visited. The function is recursively called on all elements in the global array `adj[i].to` that have not been visited.
+
+int searchMinCost(int i)
+    // Precondition: The global array `visited` has been declared and `i` is a valid index within the bounds of `adj`.
+    // Postcondition: The global variable `min` is updated to the minimum cost of the elements reachable from `i`. The global array `visited` is updated to mark all reachable elements as visited. The cost of element `i` is updated to the minimum cost of the reachable elements. The return value is the minimum cost of the reachable elements.
+
+int main(void)
+    // Input format: The first line contains an integer `n`. The next `n` lines contain a string `name` and an integer `cost`, separated by a whitespace. The next line contains an integer `m`. The next `m` lines contain two strings `s` and `t`, separated by a whitespace.
+    // Output format: A single number.
+    // Precondition: The global variables `n`, `adj`, and `ing` have been declared.
+    // Postcondition: The total cost of all elements in the global array `ing` is printed.
+```

@@ -1,0 +1,56 @@
+// Import the 'fs' module to read input from stdin
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Read the input and split it into lines
+var Arr = (input.trim()).split("\n");
+
+// Main loop that processes each test case
+while (true) {
+    // Read the next line and split it into two numbers
+    var np = Arr.shift();
+    
+    // If the input is "0 0", break the loop
+    if (np == "0 0") break;
+    
+    // Convert the input into two integers, n and p
+    np = np.split(" ").map(Number);
+    var n = np[0];
+    var p = np[1];
+    
+    // Initialize an array of size n with all elements set to 0
+    var arr = [];
+    for (var i = 0; i < n; i++) arr.push(0);
+    
+    // Initialize a counter j to 0
+    var j = 0;
+    
+    // Loop to distribute p stones among players
+    for (var i = 0; i < 1000000; i++) {
+        // If j reaches the end of the array, reset it to 0
+        if (j == arr.length) j = 0;
+        
+        // If there are stones left to distribute
+        if (p > 0) {
+            p--; // Decrease the number of stones by 1
+            arr[j]++; // Increase the count for the current player by 1
+            
+            // Check if the current player has all the stones
+            if (p == 0) {
+                var sum = arr.reduce(function(a, b) {
+                    return a + b;
+                });
+                if (sum - arr[j] == 0) {
+                    console.log(j); // Print the index of the current player
+                    break;
+                }
+            }
+        } else {
+            // If no stones are left to distribute, take all stones from the current player
+            p = arr[j];
+            arr[j] = 0;
+        }
+        
+        // Move to the next player
+        j++;
+    }
+}

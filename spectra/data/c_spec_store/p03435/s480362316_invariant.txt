@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Nine integers representing a 3x3 matrix, separated by spaces or newlines.
+    // Output format: A single word "Yes" or "No" followed by a newline.
+    // Precondition: The input matrix c is a 3x3 matrix of integers.
+    // Postcondition: The output is "Yes" if each column of the matrix c, after subtracting the minimum value of each row from each element in that row, has all equal elements. Otherwise, the output is "No".
+```

@@ -1,0 +1,82 @@
+// Segment 1: Function `permutation` definition
+
+// Precondition: 
+// n is a positive integer representing the range of numbers (1 to n).
+// k is a positive integer representing the length of each permutation.
+
+// Postcondition: 
+// Returns an array of all possible permutations of length k using numbers from 1 to n.
+
+function permutation(n, k) {
+    var ret = [
+        []
+    ];
+    var next;
+    for (var i = 0; i < k; i++) {
+        next = [];
+        ret.forEach(e => {
+            for (var k = 1; k <= n; k++) {
+                if (!e.includes(k)) {
+                    next.push(e.concat([k]));
+                }
+            }
+        });
+        ret = next.concat([]);
+    }
+    return ret;
+}
+
+// Segment 2: Function `Main` definition and input processing
+
+// Precondition: 
+// The input is a string containing lines separated by newline characters. 
+// The first line contains an integer X representing the starting number.
+
+// Postcondition: 
+// Processes the input to extract the integer X.
+// Continuously increments X until it finds a prime number.
+// Prints the first prime number greater than or equal to the initial value of X.
+
+// Input Format:
+// The input is read from standard input and consists of a single integer (X) on one line.
+
+// Output Format:
+// The output is a single integer, which is the first prime number greater than or equal to X.
+
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    var X = input[0].split(' ')[0] - 0;
+
+    // Segment 3: Prime number search
+
+    // Precondition: 
+    // X is a positive integer.
+
+    // Postcondition: 
+    // Finds and prints the smallest prime number greater than or equal to X.
+
+    loop1:
+        while (true) {
+            for (var i = 2; i ** 2 <= X; i++) {
+                if (X % i === 0) {
+                    X++;
+                    continue loop1;
+                }
+            }
+            console.log(X);
+            return;
+        }
+}
+
+// Segment 4: Execution of Main function with input from standard input
+
+// Precondition: 
+// Assumes the script is run in an environment where the 'fs' module is available and the input is provided via '/dev/stdin'.
+
+// Postcondition: 
+// Executes the Main function with the input read from the standard input.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

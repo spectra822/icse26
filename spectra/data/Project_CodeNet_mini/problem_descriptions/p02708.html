@@ -1,0 +1,85 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have <var>N+1</var> integers: <var>10^{100}</var>, <var>10^{100}+1</var>, ..., <var>10^{100}+N</var>.</p>
+<p>We will choose <var>K</var> or more of these integers. Find the number of possible values of the sum of the chosen numbers, modulo <var>(10^9+7)</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2\times 10^5</var></li>
+<li><var>1 \leq K \leq N+1</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of possible values of the sum, modulo <var>(10^9+7)</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>10
+</pre>
+<p>The sum can take <var>10</var> values, as follows:</p>
+<ul>
+<li><var>(10^{100})+(10^{100}+1)=2\times 10^{100}+1</var></li>
+<li><var>(10^{100})+(10^{100}+2)=2\times 10^{100}+2</var></li>
+<li><var>(10^{100})+(10^{100}+3)=(10^{100}+1)+(10^{100}+2)=2\times 10^{100}+3</var></li>
+<li><var>(10^{100}+1)+(10^{100}+3)=2\times 10^{100}+4</var></li>
+<li><var>(10^{100}+2)+(10^{100}+3)=2\times 10^{100}+5</var></li>
+<li><var>(10^{100})+(10^{100}+1)+(10^{100}+2)=3\times 10^{100}+3</var></li>
+<li><var>(10^{100})+(10^{100}+1)+(10^{100}+3)=3\times 10^{100}+4</var></li>
+<li><var>(10^{100})+(10^{100}+2)+(10^{100}+3)=3\times 10^{100}+5</var></li>
+<li><var>(10^{100}+1)+(10^{100}+2)+(10^{100}+3)=3\times 10^{100}+6</var></li>
+<li><var>(10^{100})+(10^{100}+1)+(10^{100}+2)+(10^{100}+3)=4\times 10^{100}+6</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>200000 200001
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>We must choose all of the integers, so the sum can take just <var>1</var> value.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>141421 35623
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>220280457
+</pre></section>
+</div>
+</span>

@@ -1,0 +1,85 @@
+"use strict"
+
+// Precondition: The "fs" module is available and the "/dev/stdin" path is accessible.
+// Postcondition: A function `create` is defined which reads input from stdin, processes it into a list, and returns an object with methods to iterate over this list.
+const create = () => {
+    const input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+    const res = {
+        "list": input,
+        "index": 0,
+        "max": input.length,
+        "hasNext": function() {
+            return this.index < this.max;
+        },
+        "next": function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException";
+            } else {
+                return this.list[this.index++];
+            }
+        }
+    };
+    return res;
+}
+
+// Precondition: `create` function is defined and works as expected.
+// Postcondition: An object `o` is created using `create` and several helper functions (`next`, `nextInt`, `nextStrArray`, `nextIntArray`, `nextCharArray`, `hasNext`, `myout`) are defined.
+const o = create();
+const next = () => o.next();
+const nextInt = () => parseInt(o.next());
+const nextStrArray = () => o.next().split(" ");
+const nextIntArray = () => o.next().split(" ").map(el => parseInt(el));
+const nextCharArray = () => o.next().split("");
+const hasNext = () => o.hasNext();
+const myout = (...x) => console.log(...x);
+
+// Precondition: Helper functions for input reading and output are defined.
+// Postcondition: The main logic of the program is executed, processing the input grid and printing the processed grid.
+// Input format: First line contains two integers h and w separated by a space.
+//               Next h lines contain w characters each, representing the grid.
+// Output format: h lines, each with w characters representing the processed grid.
+const Main = () => {
+    // Precondition: The input grid dimensions and content are available as an iterable through the helper functions.
+    // Postcondition: The grid dimensions `h` and `w` are parsed, and the grid `s` is read into an array of strings.
+    let [h, w] = nextIntArray();
+    let s = [];
+    while (hasNext()) {
+        s.push(next());
+    }
+
+    // Precondition: The grid `s` is available as an array of strings.
+    // Postcondition: A grid `a` of the same dimensions is created, initialized with zeros, and filled based on the rules.
+    let a = Array.from(new Array(h), _ => new Array(w).fill(0));
+    let dir = [
+        [-1, -1], [-1, 0], [-1, 1],
+        [0, -1], [0, 1],
+        [1, -1], [1, 0], [1, 1],
+    ];
+    for (let i = 0; i < s.length; i++) {
+        for (let j = 0; j < s[i].length; j++) {
+            if (s[i][j] == "#") {
+                a[i][j] = "#";
+            } else {
+                let cnt = 0;
+                for (let d of dir) {
+                    let x = j + d[0];
+                    let y = i + d[1];
+                    if (0 <= x && x < s[0].length && 0 <= y && y < s.length) {
+                        if (s[y][x] == "#") cnt++;
+                    }
+                }
+                a[i][j] = cnt;
+            }
+        }
+    }
+
+    // Precondition: The grid `a` is fully processed and ready to be output.
+    // Postcondition: The processed grid `a` is printed line by line.
+    for (let l of a) {
+        console.log(l.join(""));
+    }
+}
+
+// Precondition: The program and all its components are defined correctly.
+// Postcondition: The `Main` function is executed, processing the input and outputting the result.
+Main();

@@ -1,0 +1,14 @@
+Input:
+```
+"hello" "world"
+"hello" "world"
+"foo" "bar"
+"foo" "baz"
+"abc" "def" "ghi"
+"abc" "def" "ghi"
+```
+
+Output:
+DIFFERENT
+DIFFERENT
+DIFFERENT

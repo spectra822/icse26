@@ -1,0 +1,68 @@
+
+<H1>Cycle Detection for a Directed Graph</H1>
+<br/>
+
+<p>
+Find a cycle in a directed graph <var>G(V, E)</var>.
+</p>
+
+<H2>Input</H2>
+
+<p>
+A directed graph <var>G</var> is given in the following format:
+</p>
+
+<pre>
+<var>|V|</var> <var>|E|</var>
+<var>s<sub>0</sub></var> <var>t<sub>0</sub></var>
+<var>s<sub>1</sub></var> <var>t<sub>1</sub></var>
+:
+<var>s<sub>|E|-1</sub></var> <var>t<sub>|E|-1</sub></var>
+</pre>
+
+
+<p>
+<var>|V|</var> is the number of nodes and <var>|E|</var> is the number of edges in the graph. The graph nodes are named with the numbers 0, 1,..., <var>|V|</var>-1 respectively.
+</p>
+<p>
+<var>s<sub>i</sub></var> and <var>t<sub>i</sub></var> represent source and target nodes of <var>i</var>-th edge (directed).
+</p>
+
+<H2>Output</H2>
+
+<p>
+Print 1 if <var>G</var> has cycle(s), 0 otherwise.
+</p>
+
+<h2>Constraints</h2>
+<ul>
+<li> 1 &le; <var>|V|</var> &le; 100</li>	
+<li> 0 &le; <var>|E|</var> &le; 1,000</li>
+<li> <var>s<sub>i</sub></var> &ne; <var>t<sub>i</sub></var></li>
+</ul>
+
+
+<H2>Sample Input 1</H2>
+<pre>
+3 3
+0 1
+0 2
+1 2
+</pre>
+<H2>Sample Output 1</H2>
+<pre>
+0
+</pre>
+<br/>
+
+<H2>Sample Input 2</H2>
+<pre>
+3 3
+0 1
+1 2
+2 0
+</pre>
+<H2>Sample Output 2</H2>
+<pre>
+1
+</pre>

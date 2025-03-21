@@ -1,0 +1,6 @@
+Input:
+abcdeabc
+edcbafgh
+
+Output:
+5

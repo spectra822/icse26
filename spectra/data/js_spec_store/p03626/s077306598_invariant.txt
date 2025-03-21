@@ -1,0 +1,78 @@
+// Segment 1: Variable Declarations and Initial Setup
+
+// Precondition: The function `main` is called with a single string argument `input`.
+// Postcondition: The input string is split into lines, the first line is converted to the integer N, 
+// and the second line is split into an array of characters S. Initial variables `res`, `i`, and `isYoko` are set.
+
+function main(input) {
+    var tmp = input.split(/\r\n|\r|\n/);
+    var N = Number(tmp[0]);
+    var S = tmp[1].split('');
+    
+    var res;
+    var i = 0;
+    var isYoko;
+
+    // Segment 2: Initial Check and Setup for the First Pair of Characters
+
+    // Precondition: The input string has been split into N and S, and initial variables have been declared.
+    // Postcondition: The initial value of `res` is set based on the first pair of characters in S, 
+    // and `i` and `isYoko` are updated accordingly.
+
+    if (S[i] == S[i + 1]) {
+        res = 6;
+        i = i + 2;
+        isYoko = true;
+    } else {
+        res = 3;
+        i++;
+        isYoko = false;
+    }
+
+    // Segment 3: Loop Through Remaining Characters and Calculate Result
+
+    // Precondition: The initial value of `res` has been set, and variables `i` and `isYoko` are initialized.
+    // Postcondition: The variable `res` is updated based on the pattern of characters in S, 
+    // and the loop runs until all characters are processed.
+
+    for (; i < N - 1; i++) {
+        if (S[i] == S[i + 1]) {
+            if (isYoko) {
+                res = res * 3;
+            } else {
+                res = res * 2;
+            }
+            i++;
+            isYoko = true;
+        } else {
+            if (!isYoko) {
+                res = res * 2;
+            }
+            isYoko = false;
+        }
+    }
+
+    // Segment 4: Final Adjustment and Output
+
+    // Precondition: The loop has processed all characters up to the second-to-last character.
+    // Postcondition: If there is one remaining character, `res` is updated accordingly. 
+    // The final result is printed modulo 1000000007.
+
+    if (i < N) {
+        if (!isYoko) {
+            res = res * 2;
+        }
+    }
+
+    console.log(res % 1000000007);
+}
+
+// Input Format: A single string containing multiple lines. The first line contains an integer N. 
+// The second line contains a string of length N. Example:
+// 3
+// aab
+
+// Output Format: A single integer representing the result of the calculation modulo 1000000007. Example:
+// 6
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

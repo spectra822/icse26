@@ -1,0 +1,22 @@
+```c
+// Global variables
+#define SENTINEL 1000000000000000000
+
+// Merges two subarrays of A[].
+// First subarray is A[left..mid-1]
+// Second subarray is A[mid..right-1]
+// Uses SENTINEL as a large value for comparison.
+void merge(long long A[], long long left, long long mid, long long right)
+  Calls malloc(...), free(...)
+
+// Divides the array into two halves, calls itself for the two halves, and then merges the two sorted halves.
+void mergeSort(long long A[], long long left, long long right)
+  Calls mergeSort(...) and merge(...)
+
+// The main function reads input, processes it, and prints the result.
+// It reads two integers N and K, followed by an array A of length N.
+// It counts occurrences of elements in A and stores it in array c.
+// It sorts the array c using mergeSort and calculates the result based on the sorted counts.
+int main(void)
+  Calls mergeSort(...)
+```

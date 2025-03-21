@@ -1,0 +1,98 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke has an integer sequence <var>A</var> of length <var>N</var>.</p>
+<p>He will freely choose an integer <var>b</var>.
+Here, he will get sad if <var>A_i</var> and <var>b+i</var> are far from each other.
+More specifically, the <em>sadness</em> of Snuke is calculated as follows:</p>
+<ul>
+<li><var>abs(A_1 - (b+1)) + abs(A_2 - (b+2)) + ... + abs(A_N - (b+N))</var></li>
+</ul>
+<p>Here, <var>abs(x)</var> is a function that returns the absolute value of <var>x</var>.</p>
+<p>Find the minimum possible sadness of Snuke.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li><var>1 \leq A_i \leq 10^9</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum possible sadness of Snuke.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5
+2 2 3 5 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>If we choose <var>b=0</var>, the sadness of Snuke would be <var>abs(2-(0+1))+abs(2-(0+2))+abs(3-(0+3))+abs(5-(0+4))+abs(5-(0+5))=2</var>.
+Any choice of <var>b</var> does not make the sadness of Snuke less than <var>2</var>, so the answer is <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>9
+1 2 3 4 5 6 7 8 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>6
+6 5 4 3 2 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>18
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>7
+1 1 1 1 2 3 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>6
+</pre></section>
+</div>
+</span>

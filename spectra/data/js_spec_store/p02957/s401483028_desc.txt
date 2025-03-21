@@ -1,0 +1,21 @@
+// Main function that takes standard input and processes it
+const main = stdin => {
+    // Read and parse the input
+    const input = stdin.trim().split('\n')
+
+    // Extract and convert the first line of input into two integers, A and B
+    const [A, B] = input[0].split(' ').map(x => parseInt(x))
+    
+    // Check if A and B have different parity (one is even, the other is odd)
+    if (A % 2 !== B % 2) {
+        // If they have different parity, print 'IMPOSSIBLE' and exit
+        console.log('IMPOSSIBLE')
+        return
+    }
+
+    // If they have the same parity, calculate and print the average
+    console.log((A + B) / 2)
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

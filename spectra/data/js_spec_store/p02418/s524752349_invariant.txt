@@ -1,0 +1,18 @@
+// Segment 1: Reading input and preparing the array
+// Precondition: The program is executed in an environment where '/dev/stdin' provides input data
+// Postcondition: The input is read, trimmed, and split into an array of strings, where each element is a line of input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Concatenating the first line and preparing the search string
+// Precondition: Arr is an array of strings with at least one element
+// Postcondition: Variable 'a' contains the first element of Arr concatenated three times. Variable 'b' contains the second element of Arr
+var a = Arr[0] + Arr[0] + Arr[0];
+var b = Arr[1];
+
+// Segment 3: Checking if 'b' is a substring of 'a' and printing the result
+// Precondition: 'a' and 'b' are both defined strings
+// Postcondition: The program outputs "Yes" if 'b' is a substring of 'a', otherwise it outputs "No"
+// Input format: the input is read from standard input, consisting of two lines of text
+// Output format: a single line "Yes" or "No"
+console.log((a.indexOf(b) !== -1) ? "Yes" : "No");

@@ -1,0 +1,44 @@
+// Segment 1: Initialize input handling
+// Precondition: The program is starting and needs to set up input handling.
+// Postcondition: The program is ready to receive input from stdin and store it in the 'lines' array.
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+var lines = [];
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+
+// Segment 2: Handle each line of input
+// Precondition: The input handling has been set up, and the program is ready to process each line of input.
+// Postcondition: Each line of input is added to the 'lines' array.
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+
+// Segment 3: Process input after reading is complete
+// Precondition: All input lines have been read and stored in the 'lines' array.
+// Postcondition: The program has processed the input to determine the appropriate output.
+// Input format: A single line containing three space-separated integers A, B, and C.
+// Output format: A single integer, either 0 or the minimum product of two of the integers if all are odd.
+reader.on('close', () => {
+    const [A, B, C] = lines[0].split(" ").map(v => BigInt(v));
+    if (A % 2n == 0n || B % 2n == 0n || C % 2n == 0n) {
+        console.log(0);
+    } else {
+        console.log(min(A * B, B * C, A * C).toString());
+    }
+});
+
+
+// Segment 4: Define the min function
+// Precondition: The 'min' function is called with an array of BigInt values.
+// Postcondition: The function returns the smallest value from the array.
+// Input format: An array of BigInt values.
+// Output format: A single BigInt value representing the smallest value in the array.
+min = (...a) => {
+    return a.reduce((a, b) => a < b ? a : b, a[0])
+};

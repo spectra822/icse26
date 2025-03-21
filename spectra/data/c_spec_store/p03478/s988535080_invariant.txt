@@ -1,0 +1,9 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The second line contains two integers `A` and `B`, separated by a whitespace.
+    // Output format: A single integer.
+    // Precondition: `N` is a non-negative integer.
+    // `A` and `B` are integers such that 0 <= A <= B <= 45.
+    // Postcondition: The sum of all integers from 1 to `N` inclusive, for which the sum of their digits is between `A` and `B` inclusive, is printed.
+```

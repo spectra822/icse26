@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: The first line contains three integers `N`, `A`, and `B`, separated by spaces.
+    // Output format: A single line containing either "Alice" or "Borys", followed by a newline.
+    // Precondition: The variables `N`, `A`, and `B` are integers such that 1 <= A < B <= N.
+    // Postcondition: The program prints "Alice" if the difference between `B` and `A` is even, otherwise prints "Borys".
+```

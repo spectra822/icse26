@@ -1,0 +1,19 @@
+```
+int counter(int z)
+    // Precondition: The integer `z` is non-negative.
+    // Postcondition: The function returns the number of 1s in the binary representation of `z`.
+
+void zeros(int *a)
+    // Precondition: The pointer `a` points to an array of at least 20 integers.
+    // Postcondition: The first 20 elements of the array pointed to by `a` are set to 0.
+
+int main(void)
+    // Input format: 
+    // The first line contains an integer `n`.
+    // The next `n` blocks each contain:
+    //   - An integer `a[i]` in a new line.
+    //   - `a[i]` lines each containing two integers `x[i][j]` and `y[i][j]`, separated by a space.
+    // Output format: A single integer.
+    // Precondition: The input values are provided as described in the input format.
+    // Postcondition: The program prints the maximum number of consistent statements that can be true simultaneously.
+```

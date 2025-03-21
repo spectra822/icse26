@@ -1,0 +1,13 @@
+Input:
+4
+apple
+banana
+apple
+orange
+3
+apple
+banana
+grape
+
+Output:
+1

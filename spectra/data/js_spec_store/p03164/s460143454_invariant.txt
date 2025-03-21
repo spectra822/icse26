@@ -1,0 +1,63 @@
+// Segment 1: Input Parsing
+// Precondition: The input is a string with multiple lines, where the first line contains two integers N and W, and each subsequent line contains two integers representing the weight and value of an item.
+// Postcondition: The input string is parsed into an array of arrays, where the first element is [N, W] and the rest are [weight, value] pairs for each item.
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    let N = parseInt(input[0][0], 10);
+    let W = parseInt(input[0][1], 10);
+    let arr_wv = [];
+    for (let i = 0; i < N; i++) {
+        arr_wv.push(input[i + 1].map(e => parseInt(e, 10)));
+    }
+
+    // Segment 2: Initialization of DP array
+    // Precondition: N, W are integers, and arr_wv is an array of [weight, value] pairs.
+    // Postcondition: DP is initialized such that DP[i][j] represents the minimum total weight to achieve exactly j value using the first i items. Initial DP state is set with infinite weights.
+    let DP = [Array.from({ length: 1e3 * N + 1 }, () => Infinity)];
+    DP[0][0] = 0;
+
+    // Segment 3: DP Array Population
+    // Precondition: DP is initialized, and arr_wv contains the weights and values of the items.
+    // Postcondition: DP array is populated with the minimum weights required to achieve each possible value using the items.
+    let tmpline;
+    for (let i = 0; i < N; i++) {
+        tmpline = arr_wv[i];
+        DP.push([]);
+        for (let j = 0; j < tmpline[1]; j++) {
+            DP[i + 1].push(DP[i][j]);
+        }
+        for (let j = tmpline[1]; j < DP[0].length; j++) {
+            DP[i + 1].push(Math.min(DP[i][j], DP[i][j - tmpline[1]] + tmpline[0]));
+        }
+    }
+
+    // Segment 4: Finding the Maximum Value
+    // Precondition: DP array is fully populated.
+    // Postcondition: The maximum value that can be achieved with a total weight not exceeding W is found and printed.
+    let x = DP.pop();
+    let ans = 0;
+    for (let i = x.length - 1; i >= 0; i--) {
+        if (x[i] <= W) {
+            ans = i;
+            break;
+        }
+    }
+    console.log(ans);
+}
+
+// Input: The input is provided via standard input in the following format:
+// The first line contains two integers N and W.
+// The next N lines each contain two integers representing the weight and value of an item.
+// Example:
+// 3 8
+// 3 30
+// 4 50
+// 5 60
+
+// Output: The output is a single integer representing the maximum value that can be achieved with a total weight not exceeding W.
+// Example:
+// 90
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

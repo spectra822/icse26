@@ -1,0 +1,16 @@
+// Read the input from standard input and split it into an array of lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Initialize a counter to keep track of palindrome lines
+var cnt = 0;
+
+// Iterate over each line in the array
+Arr.forEach(function(v) {
+    // Reverse the current line and check if it is a palindrome
+    var str = v.split("").reverse().join("");
+    if (str == v) cnt++;
+});
+
+// Output the count of palindrome lines
+console.log(cnt);

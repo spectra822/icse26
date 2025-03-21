@@ -1,0 +1,71 @@
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<H1>The Smallest Window II</H1>
+
+<p>
+  For a given array $a_1, a_2, a_3, ... , a_N$ of $N$ elements and an integer $K$, find the smallest sub-array size (smallest window length) where the elements in the sub-array contains all integers in range [$1, 2, ..., K$]. If there is no such sub-array, report 0.
+</p>
+
+<h2>Constraints</h2>
+<ul>
+<li> $1 \leq N \leq 10^5$ </li>
+<li> $1 \leq K \leq 10^5$</li>
+<li> $1 \leq a_i \leq 10^5$</li>
+</ul>
+
+<h2>Input</h2>
+
+<p>The input is given in the following format.</p>
+
+<p>
+$N$ $K$<br>
+$a_1$ $a_2$ ... $a_N$<br>
+</p>
+
+<h2>Output</h2>
+
+<p>
+  Print the smallest sub-array size in a line.
+</p>
+
+<h2>Sample Input 1</h2>
+<pre>
+6 2
+4 1 2 1 3 5
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+2
+</pre>
+
+
+
+<h2>Sample Input 2</h2>
+<pre>
+6 3
+4 1 2 1 3 5
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+3
+</pre>
+
+
+<h2>Sample Input 3</h2>
+<pre>
+3 4
+1 2 3
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+0
+</pre>

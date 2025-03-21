@@ -1,0 +1,16 @@
+```c
+// Global variables
+int a[100010];
+
+// Depth-First Search (DFS) function that traverses the array `a` starting from index `n`,
+// marking visited nodes by setting their value to -1.
+void dfs(int n)
+    // No calls to other functions
+
+// Main function that handles input and determines the output based on the problem requirements.
+// It first reads input values for `n` and `k`, then populates the array `a`.
+// Depending on the values of `n` and `k`, it either checks for a specific sequence pattern
+// or counts components using the `dfs` function. Finally, it prints "Yes" or "No" based on the analysis.
+int main()
+    // Calls dfs(...)
+```

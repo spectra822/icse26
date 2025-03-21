@@ -1,0 +1,57 @@
+// Segment 1: Reading input
+// Precondition: The program is executed in an environment where "/dev/stdin" provides the input in UTF-8 format.
+// Postcondition: The 'input' variable contains a string representing the entire input.
+// Input format: The input is provided through standard input (stdin) and consists of four lines:
+//   - The first line contains five integers X, Y, A, B, and C separated by spaces.
+//   - The second line contains A integers separated by spaces.
+//   - The third line contains B integers separated by spaces.
+//   - The fourth line contains C integers separated by spaces.
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+(input => {
+
+    // Segment 2: Parsing input
+    // Precondition: 'input' is a string with four lines, formatted as described in Segment 1.
+    // Postcondition: 'lines' is an array with four elements, each containing a string.
+    //   The first element is a string of five space-separated integers.
+    //   The second element is a string of A space-separated integers.
+    //   The third element is a string of B space-separated integers.
+    //   The fourth element is a string of C space-separated integers.
+    const lines = input.split('\n');
+    
+    // Precondition: 'lines' is an array of strings, with the first element being a string of five space-separated integers.
+    // Postcondition: 'X', 'Y', 'A', 'B', and 'C' are integers representing the respective values from the first line of input.
+    const [X, Y, A, B, C] = lines[0].split(' ').map(Number);
+    
+    // Precondition: 'lines' contains at least four elements, with the second, third, and fourth elements being strings of space-separated integers.
+    // Postcondition: 'p', 'q', and 'r' are arrays of integers, sorted in ascending order.
+    const p = lines[1].split(' ').map(Number).sort((a, b) => a - b);
+    const q = lines[2].split(' ').map(Number).sort((a, b) => a - b);
+    const r = lines[3].split(' ').map(Number).sort((a, b) => a - b);
+
+    // Segment 3: Selecting top X, Y, and all C elements
+    // Precondition: 'p', 'q', and 'r' are sorted arrays of integers.
+    // Postcondition: 'S' is an array containing the largest X elements from 'p', the largest Y elements from 'q', and all elements from 'r'.
+    const S = [
+        ...p.splice(A - X, X),
+        ...q.splice(B - Y, Y),
+        ...r
+    ];
+
+    // Segment 4: Sorting and summing the top X+Y elements
+    // Precondition: 'S' is an array of integers.
+    // Postcondition: 'ans' is the sum of the largest X+Y elements in 'S'.
+    S.sort((a, b) => b - a);
+
+    let ans = 0;
+    for (let i = 0; i < X + Y; i++) {
+        ans += S[i];
+    }
+
+    // Segment 5: Outputting the result
+    // Precondition: 'ans' is an integer representing the sum of the top X+Y elements from the original sets.
+    // Postcondition: The value of 'ans' is printed to standard output.
+    // Output format: A single integer is printed to standard output.
+    console.log(ans);
+
+})(input);

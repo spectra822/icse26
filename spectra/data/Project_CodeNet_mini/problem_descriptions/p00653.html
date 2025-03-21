@@ -1,0 +1,99 @@
+
+<H1>Problem G: School of Killifish</H1>
+<p>
+Jon is the leader of killifish.
+Jon have a problem in these days.
+Jon has a plan to built new town in a pond.
+Of course new towns should have a school for children. But there are some natural enemies in a pond.
+Jon thinks that the place of a school should be the safest place in a pond for children.
+</p>
+
+<p>
+Jon has asked by some construction companies to make construction plans and Jon has <i> q </i> construction plans now.
+The plan is selected by voting. But for each plan, the safest place for the school should be decided before voting.
+</p>
+
+<p>
+A pond is expressed by a 2D grid whose size is <i>r*c</i>.
+The grid has <i>r</i> rows and <i>c</i> columns. The coordinate of the top-left cell is (0,0). The coordinate of the bottom-right cell is expressed as (<i>r</i>-1,<i>c</i>-1).
+Each cell has an integer which implies a dangerousness.
+The lower value implies safer than the higher value.
+<i>q</i> plans are given by four integer <i>r1</i> ,<i>c1</i> ,<i>r2</i> and <i>c2</i> which represent the subgrid. 
+The top-left corner is (<i>r1</i>,<i>c1</i>) and the bottom-right corner is (<i>r2</i>,<i>c2</i>).
+</p>
+
+<p>
+You have the <i>r*c</i> grid and <i>q</i> plans. Your task is to find the safest point for each plan.
+You should find the lowest value in the subgrid.
+</p>
+
+<h2>Input</h2>
+<p>
+Input consists of multiple datasets.<br>
+Each dataset is given in the following format.
+</p>
+
+<pre>
+<i>r</i> <i>c</i> <i>q</i>
+<i>grid<sub>0,0</sub></i> <i>grid<sub>0,1</sub></i> ... <i>grid<sub>0,c-1</sub></i>
+...
+<i>grid<sub>r-1,0</sub></i> ... <i>grid<sub>r-1,c-1</sub></i>
+<i>r1</i> <i>c1</i> <i>r2</i> <i>c2</i>
+...
+<i>r1</i> <i>c1</i> <i>r2</i> <i>c2</i>
+</pre>
+
+<p>
+The first line consists of 3 integers, <i>r</i> ,<i>c</i> , and <i>q</i> .
+Next <i>r</i> lines have <i>c</i> integers.
+<i>grid<sub>i,j</sub></i> means a dangerousness of the grid.
+And you can assume 0 &le; <i>grid<sub>i,j</sub></i> &le; 2<sup>31</sup>-1.
+After that, <i>q</i> queries, <i>r1</i>, <i>c1</i>, <i>r2</i> and <i>c2</i>,  are given.
+</p>
+
+<p>
+The dataset satisfies following constraints.<br>
+<i>r*c</i> &le; 10<sup>6</sup><br>
+<i>q</i> &le; 10<sup>4</sup><br>
+For each query, you can assume that <i>r1</i>&le; <i>r2</i> and <i>c1</i> &le; <i>c2</i> .
+
+If <i> r * c </i> &le; 250000, <i>q</i> &le; 100 is assured.
+If <i> r * c </i> &gt; 250000, Input consists of only that case.
+</p>
+
+<h2>Output</h2>
+<p>
+For each query you should print the lowest value in the subgrid in a line.
+</p>
+
+<H2>Sample input</H2>
+<pre>
+3 3 4
+1 2 3
+4 2 2
+2 1 1
+0 0 2 2
+0 0 1 1
+1 0 1 0
+0 1 1 2
+1 10 4
+1 2 3 4 5 6 7 8 9 10
+0 0 0 9
+0 0 0 4
+0 5 0 9
+0 4 0 5
+0 0 0
+</pre>
+
+<h2>Sample output</h2>
+<pre>
+1
+1
+4
+2
+1
+1
+6
+5
+</pre>
+

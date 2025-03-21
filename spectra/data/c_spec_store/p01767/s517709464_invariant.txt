@@ -1,0 +1,19 @@
+```c
+int compare(const void *a, const void *b)
+    // Precondition: `a` and `b` are valid pointers to integers.
+    // Postcondition: Returns a negative value if `*a` is less than `*b`, zero if they are equal, and a positive value if `*a` is greater than `*b`.
+
+int upperBound(int data[], int n, int key)
+    // Precondition: `data` is a sorted array of length `n`, and `key` is an integer.
+    // Postcondition: Returns the smallest index `l` such that `data[l]` is greater than `key`, or `n` if no such index exists.
+
+<main function signature>
+    // Input format: The first line contains an integer `n`.
+    // The next line contains `n` integers separated by spaces.
+    // The next line contains an integer `m`.
+    // The next line contains `m` integers separated by spaces.
+    // The next line contains `m` long long integers separated by spaces.
+    // Output format: `m` lines, each containing either "Yes" or "No".
+    // Precondition: The arrays `a`, `b`, and `c` are declared and have sufficient space to hold their respective input sizes.
+    // Postcondition: For each `i` from 0 to `m-1`, prints "Yes" if the sum of the smallest `upperBound(a, n, b[i])` elements of `a` is greater than or equal to `c[i]`, otherwise prints "No".
+```

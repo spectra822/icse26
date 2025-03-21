@@ -1,0 +1,46 @@
+// Main function that processes the input and computes the maximum number of books that can be read
+const main = (input) => {
+    // Parse the input into usable variables
+    input = input.trim().split('\n')
+    const [n, m, k] = input[0].split(' ').map(BigInt)
+    const a = input[1].split(' ').map(BigInt)
+    const b = input[2].split(' ').map(BigInt)
+
+    // Initialize variables to keep track of read books and their cumulative reading times
+    const a_read = [],
+        b_read = []
+    let a_sum = 0n,
+        b_sum = 0n
+
+    // Calculate the maximum number of books that can be read from list b without exceeding time k
+    for (let i = 0; i < b.length; i++) {
+        if (b_sum + b[i] <= k) {
+            b_read.push(b[i])
+            b_sum += b[i]
+        } else break
+    }
+
+    // Initialize the answer with the number of books read from list b
+    let ans = b_read.length
+
+    // Iterate through books in list a and adjust the reading times and book counts
+    for (let i = 0; i < a.length; i++) {
+        a_read.push(a[i])
+        a_sum += a[i]
+
+        // Adjust the books read from list b to ensure total reading time does not exceed k
+        while (a_sum + b_sum > k && b_read.length) b_sum -= b_read.pop()
+
+        // If the total reading time exceeds k, exit the loop
+        if (a_sum + b_sum > k) break
+
+        // Update the answer with the maximum number of books read so far
+        ans = Math.max(ans, a_read.length + b_read.length)
+    }
+
+    // Output the final answer
+    return console.log(ans)
+}
+
+// Determine whether to run the main function or the test function based on the environment variable
+process.env.MYTEST ? test() : main(require('fs').readFileSync('/dev/stdin', 'utf8'))

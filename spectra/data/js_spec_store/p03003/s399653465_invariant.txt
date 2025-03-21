@@ -1,0 +1,102 @@
+// Segment 1: Module definition and input processing
+
+// Precondition: The `require` function and `fs` module are available in the environment.
+// Postcondition: A function `GET` is defined which reads input from stdin and processes it.
+
+var GET = (function() {
+    function f(s) {
+        return new g(s);
+    }
+
+    function g(s) {
+        this._s = s.trim().split("\n");
+        this._y = 0;
+    }
+    g.prototype.a = function(f) {
+        var s = this._s,
+            y = this._y,
+            r;
+        if (typeof s[y] === "string") s[y] = s[y].split(" ").reverse();
+        r = s[y].pop();
+        if (!s[y].length) this._y++;
+        return f ? r : +r;
+    };
+    g.prototype.l = function(f) {
+        var s = this._s[this._y++].split(" ");
+        return f ? s : s.map(a => +a);
+    };
+    g.prototype.m = function(n, f) {
+        var r = this._s.slice(this._y, this._y += n).map(a => a.split(" "));
+        return f ? r : r.map(a => a.map(a => +a));
+    };
+    g.prototype.r = function(n, f) {
+        var r = this._s.slice(this._y, this._y += n);
+        return f ? r : r.map(a => +a);
+    };
+    return f;
+})();
+
+// Precondition: The input file is available at "/dev/stdin" and contains valid input data.
+// Postcondition: The variable `o` is an instance of the `g` class with the input data loaded.
+// Input format: Space-separated integers on multiple lines, read from stdin.
+
+var o = GET(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Segment 2: Utility function definition
+
+// Precondition: The `arguments` object is available and contains the dimensions for the array.
+// Postcondition: The function `xArray` is defined, which generates a multi-dimensional array filled with a specified value.
+
+function xArray(v) {
+    var a = arguments,
+        l = a.length,
+        r = "Array(a[" + --l + "]).fill(0).map(x=>{return " + v + ";})";
+    while (--l) r = "Array(a[" + l + "]).fill(0).map(x=>" + r + ")";
+    return eval(r);
+}
+
+// Segment 3: Constant definition
+
+// Precondition: None
+// Postcondition: The constant `mod` is defined with the value 1e9 + 7.
+
+var mod = 1e9 + 7;
+
+// Segment 4: Main function definition and execution
+
+// Precondition: The `o` object is properly initialized with input data.
+// Postcondition: The `main` function is defined and executed, and its result is logged to the console.
+// Input format: Two integers `n` and `m` followed by two sequences of integers `s` and `t`.
+// Output format: A single integer printed to the console.
+
+console.log(main());
+
+function main() {
+    var n = o.a();
+    var m = o.a();
+    var s = o.l();
+    var t = o.l();
+    var dp = xArray(0, n + 1, m + 1);
+    var ans = 1;
+    
+    // Segment 5: Dynamic programming calculation
+
+    // Precondition: Variables `n`, `m`, `s`, `t`, `dp`, and `ans` are initialized.
+    // Postcondition: The variable `ans` contains the result of the dynamic programming calculation.
+
+    for (var i = 0; i < n; i++) {
+        var x = 0;
+        for (var j = 0; j < m; j++) {
+            if (s[i] === t[j]) {
+                x += dp[i][j] + 1;
+                ans += dp[i][j] + 1;
+                ans %= mod;
+                dp[i + 1][j + 1] = dp[i + 1][j] + dp[i][j + 1] + 1;
+            } else {
+                dp[i + 1][j + 1] = x + dp[i][j + 1];
+            }
+            dp[i + 1][j + 1] %= mod;
+        }
+    }
+    return ans;
+}

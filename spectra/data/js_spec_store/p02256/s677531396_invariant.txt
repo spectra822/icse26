@@ -1,0 +1,30 @@
+// Segment 1: Read and parse input
+// Precondition: The program is executed in an environment where '/dev/stdin' provides input in the format "number1 number2" (e.g., "54 20").
+// Postcondition: `arr` is an array of two integers parsed from the input string, `a` and `b` are assigned the values of these integers.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.split(" ").map(Number);
+var a = arr[0];
+var b = arr[1];
+
+// Segment 2: Check if the numbers are equal and handle that case
+// Precondition: `a` and `b` are integers parsed from the input.
+// Postcondition: If `a` and `b` are equal, the program prints `a` and terminates. If not, the program continues to the next segment.
+// Input: Two integers separated by a space (e.g., "54 20\n")
+// Output (if numbers are equal): One integer (e.g., "54\n")
+if (a === b) {
+    console.log(a);
+    return;
+}
+
+// Segment 3: Calculate the greatest common divisor (GCD) of `a` and `b`
+// Precondition: `a` and `b` are distinct integers.
+// Postcondition: The program calculates and prints the GCD of `a` and `b`.
+// Input: Two integers separated by a space (e.g., "54 20\n")
+// Output: One integer representing the GCD (e.g., "2\n")
+var x = Math.max(a, b);
+var y = Math.min(a, b);
+var c = x % y;
+for (var i = c; i >= 1; i--) {
+    if (x % i == 0 && y % i == 0) break;
+}
+console.log(i);

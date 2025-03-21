@@ -1,0 +1,41 @@
+// Segment 1: Variable Declarations and Input Handling
+// Precondition: The program is executed and '/dev/stdin' contains a single line input in the format "e y" where e and y are integers.
+// Postcondition: The variables `e` and `y` are initialized with the parsed input values.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var [e, y] = input.trim().split(" ").map(Number);
+
+// Segment 2: Era Identifiers
+// Precondition: The variables `e` and `y` are initialized with the parsed input values.
+// Postcondition: The variable `mtsh` is initialized as an array containing the era identifiers "M", "T", "S", "H".
+var mtsh = "MTSH".split("");
+
+// Segment 3: Conversion from Gregorian to Japanese Era
+// Precondition: The variables `e`, `y`, and `mtsh` are initialized.
+// Postcondition: If `e` is 0, it checks the range of `y` and converts it to the corresponding Japanese era and year. It then logs the result in the format "EraIdentifierYear" (e.g., "H27").
+// Input: "0 2015" (for example)
+// Output: "H27"
+if (e == 0) {
+    if (y >= 1868 && y <= 1911) {
+        e = 1;
+        y -= 1868
+    } else if (y >= 1912 && y <= 1925) {
+        e = 2;
+        y -= 1912
+    } else if (y >= 1926 && y <= 1988) {
+        e = 3;
+        y -= 1926
+    } else if (y >= 1989 && y <= 2016) {
+        e = 4;
+        y -= 1989
+    }
+    console.log(mtsh[e - 1] + (y + 1));
+
+// Segment 4: Conversion from Japanese Era to Gregorian Year
+// Precondition: The variables `e`, `y`, and `mtsh` are initialized, and `e` is not 0.
+// Postcondition: Converts the Japanese era and year to the corresponding Gregorian year and logs the result.
+// Input: "1 27" (for example)
+// Output: "1894"
+} else if (e == 1) console.log(1868 + y - 1);
+else if (e == 2) console.log(1912 + y - 1);
+else if (e == 3) console.log(1926 + y - 1);
+else if (e == 4) console.log(1989 + y - 1);

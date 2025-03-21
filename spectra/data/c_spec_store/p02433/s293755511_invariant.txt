@@ -1,0 +1,44 @@
+```c
+Cell* newCell(int data)
+    // Precondition: None
+    // Postcondition: A new Cell is created with the given data, and its `prev` and `next` pointers are set to NULL. The new Cell is returned.
+
+void print(Cell *cell)
+    // Precondition: The input `cell` is a valid pointer to a Cell in a doubly linked list.
+    // Postcondition: The data of all cells in the doubly linked list, starting from the head, is printed, excluding cells with data equal to END.
+
+int isEnd(Cell *cursor)
+    // Precondition: The input `cursor` is a valid pointer to a Cell.
+    // Postcondition: Returns 1 if the data of the Cell pointed to by `cursor` is equal to END, otherwise returns 0.
+
+int isFront(Cell *cursor)
+    // Precondition: The input `cursor` is a valid pointer to a Cell.
+    // Postcondition: Returns 1 if the Cell pointed to by `cursor` is the first cell in the doubly linked list (i.e., has no previous Cell), otherwise returns 0.
+
+Cell* insert(Cell *cursor, int data)
+    // Precondition: The input `cursor` is a valid pointer to a Cell in a doubly linked list.
+    // Postcondition: A new Cell with the given data is inserted before the Cell pointed to by `cursor`. The function returns a pointer to the new Cell.
+
+Cell* move(Cell *cursor, int d)
+    // Precondition: The input `cursor` is a valid pointer to a Cell in a doubly linked list, and `d` is an integer.
+    // Postcondition: The cursor is moved `d` positions in the doubly linked list. If `d` is negative, the cursor moves backwards. If `d` is positive, the cursor moves forwards. If the cursor reaches the front or end of the list, an error message is printed and the program exits.
+
+Cell* erase(Cell *cursor)
+    // Precondition: The input `cursor` is a valid pointer to a Cell in a doubly linked list.
+    // Postcondition: The Cell pointed to by `cursor` is removed from the doubly linked list. The function returns a pointer to the next Cell in the list, or the same cursor if it is the end Cell.
+
+void answer()
+    // Precondition: None
+    // Postcondition: The function processes a series of commands to manipulate a doubly linked list, and prints the data of the list excluding END.
+
+int test()
+    // Precondition: None
+    // Postcondition: A test sequence of insert, move, and erase operations is performed on a doubly linked list, and the data of the list is printed. The function returns 0.
+
+int main(void)
+    // Input format: The first line contains an integer `q`.
+    // The next `q` lines contain commands in the format `0 data`, `1 d`, or `2`.
+    // Output format: Each element of the doubly linked list, excluding the element with data equal to END, is printed on a new line.
+    // Precondition: None
+    // Postcondition: The function processes a series of commands to manipulate a doubly linked list, and prints the data of the list excluding END.
+```

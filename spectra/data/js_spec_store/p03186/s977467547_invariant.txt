@@ -1,0 +1,29 @@
+// Segment 1: Include required modules and define the main function.
+// Precondition: Node.js runtime environment with 'fs' module available.
+// Postcondition: Main function is defined and ready to be executed.
+
+function Main(input) {
+    // Segment 2: Parse input string into an array of numbers.
+    // Precondition: input is a non-empty string of space-separated numbers.
+    // Postcondition: input is converted into an array of numbers.
+    // Input format: A single line string, e.g., "3 1 4".
+    input = input.split(" ").map(Number);
+
+    // Segment 3: Perform calculations using the parsed input values.
+    // Precondition: input is an array of at least 3 numbers.
+    // Postcondition: n and m variables are calculated based on input values.
+    var n = input[1] + input[0] + 1;
+    var m = Math.min(n, input[2]);
+
+    // Segment 4: Output the final result.
+    // Precondition: m and input[1] are valid numbers.
+    // Postcondition: The sum of m and input[1] is printed to the console.
+    // Output format: A single integer value printed to the console, e.g., "5".
+    console.log(m + input[1]);
+}
+
+// Segment 5: Read input from stdin and execute the main function.
+// Precondition: Input is provided via stdin.
+// Postcondition: Main function is executed with the read input.
+// Input format: A single line string, e.g., "3 1 4".
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

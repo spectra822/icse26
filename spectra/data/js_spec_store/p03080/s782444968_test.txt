@@ -1,0 +1,6 @@
+Input:
+6
+ABCDEF
+
+Output:
+Yes

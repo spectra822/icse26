@@ -1,0 +1,13 @@
+```c
+// Global variables
+ll a[100010];
+
+// This function calculates the maximum sum of pairs in the array `a`
+// by iterating over all possible distances `d` and summing pairs of elements
+// at indices `s` and `g` (initially `0` and `n-1` respectively) and updating `s` and `g`
+// until they cross each other or reach invalid positions.
+// It reads the size of the array `n` and the elements of the array `a` from input,
+// then performs the described calculation and prints the result.
+int main()
+    // Calls max(...)
+```

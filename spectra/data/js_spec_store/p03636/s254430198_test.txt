@@ -1,0 +1,5 @@
+Input:
+hello
+
+Output:
+h3o

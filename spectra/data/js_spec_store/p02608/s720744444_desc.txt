@@ -1,0 +1,45 @@
+// Set up the process to read from standard input
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// Initialize an array to store input lines
+var lines = [];
+
+// Create an interface to read lines from standard input
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Event listener for each line of input
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+// Event listener for when input is closed
+reader.on('close', () => {
+    // Parse the first line as an integer N
+    const N = lines[0] - 0;
+
+    // Initialize a map to store the counts of each value of a
+    const ansmap = {};
+
+    // Calculate the limit for x, y, z based on the square root of N
+    const limit = Math.sqrt(N);
+
+    // Iterate through all possible values of x, y, z up to the limit
+    for (let x = 1; x < limit; x++)
+        for (let y = 1; y < limit; y++)
+            for (let z = 1; z < limit; z++) {
+                // Calculate the value of a based on the formula
+                const a = x * x + y * y + z * z + x * y + x * z + y * z;
+
+                // Increment the count of a in the ansmap
+                ansmap[a] = (ansmap[a] || 0) + 1;
+            }
+
+    // Output the count for each number from 1 to N
+    for (let i = 1; i <= N; i++) {
+        console.log(ansmap[i] || 0);
+    }
+});

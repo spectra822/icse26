@@ -1,0 +1,47 @@
+```
+int gcd(int a, int b)
+    // Precondition: The integers `a` and `b` are non-negative.
+    // Postcondition: The greatest common divisor of `a` and `b` is returned.
+
+int lcm(int a, int b)
+    // Precondition: The integers `a` and `b` are non-negative.
+    // Postcondition: The least common multiple of `a` and `b` is returned.
+
+int ngcd(int n, int a[])
+    // Precondition: The array `a` contains `n` non-negative integers.
+    // Postcondition: The greatest common divisor of all elements in the array `a` is returned.
+
+void quicksort(keytype a[], int first, int last)
+    // Precondition: The array `a` contains elements of type `keytype` and `first` and `last` are valid indices in the array.
+    // Postcondition: The elements in the array `a` between indices `first` and `last` (inclusive) are sorted in ascending order.
+
+int is_prime(int x)
+    // Precondition: The integer `x` is non-negative.
+    // Postcondition: Returns 1 if `x` is a prime number, otherwise returns 0.
+
+int is_substr(char s[], char t[], int i)
+    // Precondition: The strings `s` and `t` are null-terminated and `i` is a valid index in `s`.
+    // Postcondition: Returns 1 if `t` is a substring of `s` starting at index `i`, otherwise returns 0.
+
+void factorize(int ftr[], int *num, int n)
+    // Precondition: The integer `n` is non-negative and the array `ftr` has sufficient space to store the factors of `n`.
+    // Postcondition: The array `ftr` is filled with the prime factors of `n` and the integer pointed to by `num` is set to the count of factors.
+
+int nextperm(int p[], int N)
+    // Precondition: The array `p` contains `N` integers representing a permutation.
+    // Postcondition: Generates the next permutation of `p` in lexicographic order. Returns 1 if the next permutation was successfully generated, otherwise returns 0.
+
+void comb(int size1, int size2, int v[size1][size2])
+    // Precondition: The integer `size1` is greater than `size2` and both are non-negative. The 2D array `v` has dimensions `size1` by `size2`.
+    // Postcondition: The 2D array `v` is filled with binomial coefficients.
+
+int abs_val(int a, int b)
+    // Precondition: The integers `a` and `b` are defined.
+    // Postcondition: Returns the absolute difference between `a` and `b`.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The integer `n` is non-negative.
+    // Postcondition: The `n`-th term in the Lucas sequence is printed.
+```

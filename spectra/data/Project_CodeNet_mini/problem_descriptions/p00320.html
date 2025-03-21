@@ -1,0 +1,79 @@
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<H1>直方体</H1>
+
+<p>
+アイヅ放送協会の教育番組(ＡＨＫ教育)では、子供向けの工作番組「あそんでつくろ」という番組を放送しています。今日は画用紙で箱を作る回ですが、用意した長方形の画用紙で直方体ができるかを確かめたいと思います。ただし、画用紙は切ったり折ったりしてはいけません。
+</p>
+
+<p>
+６つの長方形が与えられるので、それらを使って直方体が作れるかどうか判定するプログラムを作成せよ。
+</p>
+
+
+<h2>Input</h2>
+
+<p>
+入力は以下の形式で与えられる。
+</p>
+
+<pre>
+<var>h<sub>1</sub></var> <var>w<sub>1</sub></var>
+<var>h<sub>2</sub></var> <var>w<sub>2</sub></var>
+<var>h<sub>3</sub></var> <var>w<sub>3</sub></var>
+<var>h<sub>4</sub></var> <var>w<sub>4</sub></var>
+<var>h<sub>5</sub></var> <var>w<sub>5</sub></var>
+<var>h<sub>6</sub></var> <var>w<sub>6</sub></var>
+</pre>
+
+<p>
+入力は６行からなり、それぞれの行に各長方形の縦の長さを表す整数 <var>h<sub>i</sub></var> (1 &le; <var>h<sub>i</sub></var> &le; 1000) と横の長さを表す整数 <var>w<sub>i</sub></var> (1 &le; <var>w<sub>i</sub></var> &le; 1000) が与えられる。
+</p>
+
+
+<h2>Output</h2>
+
+<p>
+直方体を作成できる場合には「yes」を、作成できない場合には「no」を出力する。ただし、立方体は直方体の一種なので、立方体の場合でも「yes」と出力する。
+</p>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+2 2
+2 3
+2 3
+2 3
+2 2
+3 2
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+yes
+</pre>
+<br/>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+2 2
+2 3
+2 3
+2 3
+2 2
+2 2
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+no
+</pre>

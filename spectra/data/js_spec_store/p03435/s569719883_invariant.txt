@@ -1,0 +1,40 @@
+// Precondition: The program is executed in an environment where the 'fs' module is available and input is provided via '/dev/stdin'
+// Postcondition: The input from '/dev/stdin' is read and stored as a string in the 'input' variable
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+;
+
+// Precondition: 'input' is a non-empty string containing multiple lines of space-separated integers
+// Postcondition: The 'lines' array contains each line of 'input' as a separate string
+(input => {
+    const lines = input.split('\n');
+
+    // Precondition: 'lines' is an array of strings where each string is a line from the input
+    // Postcondition: 'map' is a 2D array where each sub-array contains integers parsed from the corresponding line in 'lines'
+    const map = [];
+    for (let i = 0; i < 3; i++) {
+        map[i] = lines[i].split(' ').map(Number);
+    }
+
+    // Precondition: 'map' is a 3x3 2D array of integers
+    // Postcondition: 'diff1' contains the difference between the first and second element of the first row, 'diff2' contains the difference between the second and third element of the first row
+    let diff1 = 0;
+    let diff2 = 0;
+
+    diff1 = map[0][0] - map[0][1];
+    diff2 = map[0][1] - map[0][2];
+
+    // Precondition: 'diff1' and 'diff2' contain the initial differences calculated from the first row of 'map'
+    // Postcondition: The program has determined if all rows of 'map' have consistent differences between consecutive elements as in the first row
+    for (var i = 1; i < 3; i++) {
+        if (diff1 !== map[i][0] - map[i][1]) break;
+        if (diff2 !== map[i][1] - map[i][2]) break;
+    }
+
+    // Precondition: 'i' is the loop index indicating the current row being checked, and the loop has exited either because all rows are consistent or a discrepancy was found
+    // Postcondition: The program outputs 'Yes' if all rows are consistent, otherwise 'No'
+    // Input format: 3 lines of space-separated integers
+    // Output format: A single line containing either 'Yes' or 'No'
+    console.log(i === 3 ? 'Yes' : 'No');
+
+})(input);

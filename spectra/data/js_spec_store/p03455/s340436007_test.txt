@@ -1,0 +1,5 @@
+Input:
+3 7
+
+Output:
+Odd

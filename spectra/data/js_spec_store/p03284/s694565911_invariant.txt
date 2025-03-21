@@ -1,0 +1,41 @@
+// Segment 1: Importing necessary modules and defining the main function
+// Preconditions:
+// - The 'fs' module must be available for reading input from the file system.
+// - The 'main' function must be defined to take a single argument 'arg'.
+// Postconditions:
+// - The 'main' function is defined and ready to process the input.
+const main = (arg) => {
+
+    // Segment 2: Parsing and processing input
+    // Preconditions:
+    // - The input argument 'arg' must be a non-empty string.
+    // - The input string 'arg' must contain at least one line, where the first line has two space-separated integers.
+    // Postconditions:
+    // - 'lines' is an array of strings, each representing a line from the input.
+    // - 'N' is an integer representing the first number from the first line of input.
+    // - 'K' is an integer representing the second number from the first line of input.
+    const lines = arg.trim().split('\n');
+    const [N, K] = lines[0].split(' ').map(Number);
+
+    // Segment 3: Calculating and outputting the result
+    // Preconditions:
+    // - 'N' and 'K' must be defined as integers.
+    // - The program should determine if N is divisible by K.
+    // Postconditions:
+    // - The program outputs '0' if N is divisible by K, otherwise it outputs '1'.
+    // Output format:
+    // - The output is a single integer followed by a newline.
+    console.log(N % K === 0 ? 0 : 1);
+};
+
+// Segment 4: Reading input from the standard input and invoking the main function
+// Preconditions:
+// - The standard input must be available and readable.
+// - The 'main' function should be invoked with the input read from standard input.
+// Postconditions:
+// - The 'main' function is executed with the provided input.
+// Input format:
+// - The input is a single string containing space-separated integers, followed by a newline.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+  7 3
+  1

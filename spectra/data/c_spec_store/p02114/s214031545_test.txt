@@ -1,0 +1,10 @@
+Input:
+5
+oxooo
+xxoxx
+ooxoo
+oxxxx
+oooxo
+
+Output:
+1

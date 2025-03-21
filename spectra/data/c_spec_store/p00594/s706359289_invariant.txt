@@ -1,0 +1,11 @@
+```c
+int cmp(const void *s, const void *b)
+    // Precondition: The pointers `s` and `b` point to valid integers.
+    // Postcondition: Returns a positive value if the integer pointed to by `b` is greater than the integer pointed to by `s`, zero if they are equal, and a negative value otherwise.
+
+int main(void)
+    // Input format: Multiple test cases. Each test case starts with an integer `n` (number of elements in the array). The next `n` integers are the elements of the array `a`. A test case with `n = 0` indicates the end of input.
+    // Output format: For each test case, print the integer `k` if the color (integer) `k` appears more than half the time. Otherwise, print "NO COLOR".
+    // Precondition: The global array `a` has been declared. The input is provided in the specified format.
+    // Postcondition: For each test case, either the integer `k` that appears more than half the time is printed, or "NO COLOR" is printed if no such integer exists.
+```

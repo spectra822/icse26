@@ -1,0 +1,19 @@
+// Function definition for main, which processes the input and determines what to print based on the value of D.
+function main(input) {
+    // Parsing the input to an integer.
+    const D = parseInt(input, 10);
+
+    // Conditional statements to determine the correct output based on the value of D.
+    if (D === 25) {
+        console.log('Christmas');
+    } else if (D === 24) {
+        console.log('Christmas Eve');
+    } else if (D === 23) {
+        console.log('Christmas Eve Eve');
+    } else {
+        console.log('Christmas Eve Eve Eve');
+    }
+}
+
+// Calling the main function with input read from '/dev/stdin'.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

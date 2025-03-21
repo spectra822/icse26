@@ -1,0 +1,49 @@
+// Main function that processes the input, performs calculations, and outputs the result
+function Main(input) {
+    // Splitting input into lines and removing the last empty line if it exists
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    
+    // Parsing the number of elements (N) from the first line of input
+    const N = input[0].split(' ')[0] - 0;
+
+    // Parsing the array from the second line of input, adjusting each element by its index, and sorting the array
+    var array = input[1].split(' ').map((e, i) => {
+        return e - i - 1;
+    }).sort((a, b) => {
+        return a - b;
+    });
+
+    // Calculating the total minimum cost to make the array elements equal to the median element
+    console.log(array.reduce((acc, cur) => {
+        return acc + Math.abs(cur - array[Math.floor(array.length / 2)]);
+    }, 0));
+}
+
+// Reading input from standard input and passing it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Function to generate all permutations of `k` elements from a set of `n` elements
+function permutation(n, k) {
+    // Initializing the result with an empty array
+    var ret = [
+        []
+    ];
+    var next;
+
+    // Generating permutations by iteratively adding elements
+    for (var i = 0; i < k; i++) {
+        next = [];
+        ret.forEach(e => {
+            for (var k = 1; k <= n; k++) {
+                if (!e.includes(k)) {
+                    next.push(e.concat([k]));
+                }
+            }
+        });
+        ret = next.concat([]);
+    }
+    return ret;
+}

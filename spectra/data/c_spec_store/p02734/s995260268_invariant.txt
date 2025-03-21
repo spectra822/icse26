@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains two integers `n` and `s`, separated by a whitespace.
+    //               The next line contains `n` integers, separated by whitespace.
+    // Output format: A single number.
+    // Precondition: `n` and `s` are non-negative integers. The array `a` is of size `n` and contains non-negative integers.
+    // Postcondition: The number of valid subsequences such that their sum does not exceed `s` is printed, modulo 998244353.
+```

@@ -1,0 +1,66 @@
+// Segment 1: Importing required module and reading input
+// Precondition: The 'fs' module should be available in the environment.
+// Postcondition: The 'input' variable contains the input data read from '/dev/stdin' in UTF-8 format.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Parsing input data
+// Precondition: 'input' contains the raw input string with multiple lines.
+// Postcondition: 'Arr' is an array where each element is a line of input, and 'n' is the number of test cases.
+var Arr = (input.trim()).split("\n");
+var n = Arr.shift() - 0;
+
+// Segment 3: Processing each test case
+// Precondition: 'Arr' contains the remaining lines of input, each representing a number to be processed.
+// Postcondition: For each test case, the sum of two numbers is calculated and printed, or "overflow" if the result exceeds 80 digits.
+/*
+Input format:
+- The first line contains an integer n (number of test cases).
+- Each test case consists of two lines, each containing a number (as a string).
+
+Output format:
+- For each test case, print the sum of the two numbers.
+- If the sum exceeds 80 digits, print "overflow".
+*/
+while (n > 0) {
+    // Segment 4: Reading and reversing the numbers
+    // Precondition: 'Arr' contains at least two lines representing the numbers to be summed.
+    // Postcondition: 'a' and 'b' are arrays of digits in reverse order, representing the two numbers.
+    var a = (Arr.shift()).split("").reverse().map(Number);
+    var b = (Arr.shift()).split("").reverse().map(Number);
+
+    // Segment 5: Initializing the result array 'c'
+    // Precondition: 'a' and 'b' are valid arrays of digits.
+    // Postcondition: 'c' is initialized with zeros, and its length is one more than the maximum length of 'a' and 'b'.
+    var c = [];
+    var max = Math.max(a.length, b.length);
+    for (var i = 0; i < max + 1; i++) c[i] = 0;
+
+    // Segment 6: Summing the digits of 'a' and 'b'
+    // Precondition: 'a', 'b', and 'c' are valid arrays of digits.
+    // Postcondition: 'c' contains the sum of 'a' and 'b' in reverse order, with possible carryovers handled.
+    for (var i = 0; i < max; i++) {
+        var sum = 0;
+        if (a.length > i) sum += a[i];
+        if (b.length > i) sum += b[i];
+        c[i] += sum;
+    }
+
+    // Segment 7: Handling carryovers in the result array 'c'
+    // Precondition: 'c' contains the sum of 'a' and 'b' with possible values >= 10.
+    // Postcondition: 'c' is adjusted so that all values are single digits, with carryovers propagated.
+    for (var i = 0; i < max; i++) {
+        if (c[i] >= 10) {
+            c[i] -= 10;
+            c[i + 1]++;
+        }
+    }
+
+    // Segment 8: Removing leading zeros from 'c' and preparing the output
+    // Precondition: 'c' is a valid array of digits representing the sum of 'a' and 'b'.
+    // Postcondition: 'str' contains the final result as a string, or "overflow" if the length of 'c' exceeds 80 digits.
+    if (c[c.length - 1] == 0) c.pop();
+    var str = c.reverse().join("");
+    if (c.length > 80) str = "overflow";
+    console.log(str);
+    n--;
+}

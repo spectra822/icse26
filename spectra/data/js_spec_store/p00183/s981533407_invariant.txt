@@ -1,0 +1,52 @@
+// Segment 1: Read input from standard input and initialize variables
+
+// Precondition: The program is executed in an environment where '/dev/stdin' contains the input data in the specified format.
+// Postcondition: The variable 'input' contains the raw input string from standard input.
+//                The variable 'Arr' is an array of lines from the input, with the last newline character removed.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.replace(/\n$/, "")).split("\n");
+
+// Segment 2: Main loop to process each game board
+
+// Precondition: 'Arr' contains the lines of the input, where each set of three lines represents a game board.
+// Postcondition: Each game board is processed to determine if there is a winning line, and the result is printed.
+// Input format: Multiple lines of characters ('b', 'w', '+'), each three characters long, with a terminating line '0'.
+// Output format: For each game board, output 'b', 'w', or 'NA' on a new line.
+while (true) {
+    // Segment 3: Read the first line of the current game board
+
+    // Precondition: 'Arr' contains at least one line that is not '0'.
+    // Postcondition: The variable 'x' contains the first line of the current game board as an array of characters.
+    var x = Arr.shift().split("");
+    if (x[0] == "0") break;
+
+    // Segment 4: Read the second and third lines of the current game board
+
+    // Precondition: 'Arr' contains at least two more lines after the first line of the current game board.
+    // Postcondition: The variables 'y' and 'z' contain the second and third lines of the current game board as arrays of characters.
+    var y = Arr.shift().split("");
+    var z = Arr.shift().split("");
+
+    // Segment 5: Determine if there is a winning line (three consecutive 'b's or 'w's)
+
+    // Precondition: 'x', 'y', and 'z' contain the lines of the current game board.
+    // Postcondition: The variable 'ans' contains 'b' if player 'b' has a winning line, 'w' if player 'w' has a winning line, or 'NA' if there is no winning line.
+    var ans = "NA";
+    for (var i = 0; i < 2; i++) {
+        var s = (["b", "w"])[i];
+        if (x[0] + x[1] + x[2] == s + s + s) ans = s;
+        if (y[0] + y[1] + y[2] == s + s + s) ans = s;
+        if (z[0] + z[1] + z[2] == s + s + s) ans = s;
+        if (x[0] + y[0] + z[0] == s + s + s) ans = s;
+        if (x[1] + y[1] + z[1] == s + s + s) ans = s;
+        if (x[2] + y[2] + z[2] == s + s + s) ans = s;
+        if (x[0] + y[1] + z[2] == s + s + s) ans = s;
+        if (x[2] + y[1] + z[0] == s + s + s) ans = s;
+    }
+
+    // Segment 6: Print the result for the current game board
+
+    // Precondition: The variable 'ans' contains the result for the current game board.
+    // Postcondition: The result 'ans' is printed to the standard output.
+    console.log(ans);
+}

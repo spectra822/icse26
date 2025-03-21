@@ -1,0 +1,15 @@
+// Function definition for main, which takes an input parameter
+function main(input) {
+    // Trim the input to remove any leading or trailing whitespace
+    input = input.trim();
+
+    // Split the input by new lines and convert each line to a number
+    const [a, b, c, d] = input.split('\n').map(Number);
+
+    // Conditional logic to calculate the output based on the values of a, b, c, and d
+    // If a is greater than b, calculate b * c + (a - b) * d, otherwise calculate a * c
+    console.log(a > b ? b * c + (a - b) * d : a * c);
+}
+
+// Read the input from standard input (typically used in competitive programming)
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

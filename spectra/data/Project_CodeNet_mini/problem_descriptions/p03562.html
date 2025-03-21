@@ -1,0 +1,116 @@
+<span class="lang-en">
+<p>Score : <var>1000</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> non-negative integers written on a blackboard. The <var>i</var>-th integer is <var>A_i</var>.</p>
+<p>Takahashi can perform the following two kinds of operations any number of times in any order:</p>
+<ul>
+<li>Select one integer written on the board (let this integer be <var>X</var>). Write <var>2X</var> on the board, without erasing the selected integer.</li>
+<li>Select two integers, possibly the same, written on the board (let these integers be <var>X</var> and <var>Y</var>). Write <var>X</var> XOR <var>Y</var> (XOR stands for bitwise xor) on the blackboard, without erasing the selected integers.</li>
+</ul>
+<p>How many different integers not exceeding <var>X</var> can be written on the blackboard? We will also count the integers that are initially written on the board.
+Since the answer can be extremely large, find the count modulo <var>998244353</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 6</var></li>
+<li><var>1 \leq X &lt; 2^{4000}</var></li>
+<li><var>1 \leq A_i &lt; 2^{4000}(1\leq i\leq N)</var></li>
+<li>All input values are integers.</li>
+<li><var>X</var> and <var>A_i(1\leq i\leq N)</var> are given in binary notation, with the most significant digit in each of them being <var>1</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>X</var>
+<var>A_1</var>
+<var>:</var>
+<var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of different integers not exceeding <var>X</var> that can be written on the blackboard.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 111
+1111
+10111
+10010
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+</pre>
+<p>Initially, <var>15</var>, <var>23</var> and <var>18</var> are written on the blackboard. Among the integers not exceeding <var>7</var>, four integers, <var>0</var>, <var>3</var>, <var>5</var> and <var>6</var>, can be written.
+For example, <var>6</var> can be written as follows:</p>
+<ul>
+<li>Double <var>15</var> to write <var>30</var>.</li>
+<li>Take XOR of <var>30</var> and <var>18</var> to write <var>12</var>.</li>
+<li>Double <var>12</var> to write <var>24</var>.</li>
+<li>Take XOR of <var>30</var> and <var>24</var> to write <var>6</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 100100
+1011
+1110
+110101
+1010110
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>37
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>4 111001100101001
+10111110
+1001000110
+100000101
+11110000011
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1843
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>1 111111111111111111111111111111111111111111111111111111111111111
+1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>466025955
+</pre>
+<p>Be sure to find the count modulo <var>998244353</var>.</p></section>
+</div>
+</span>

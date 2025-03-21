@@ -1,0 +1,23 @@
+// Segment 1: Reading and parsing input
+// Precondition: The program is executed in an environment where the standard input contains a sequence of integers, each on a new line, ending with the integer 0.
+// Postcondition: The variable `arr` is an array of arrays, where each sub-array contains a number from the input and its corresponding index.
+const arr = require('fs').readFileSync('/dev/stdin', 'utf8').split('\n').map((n, i) => [Number(n), i]);
+
+// Segment 2: Processing and outputting results
+// Precondition: `arr` is an array of arrays, each containing a number and its index.
+// Postcondition: The program prints lines to the standard output in the format "Case X: Y" for each number Y in `arr` until it encounters a number 0.
+while (([n, i] = arr.shift())[0] !== 0) {
+    // Input format: A sequence of integers, each on a new line, ending with the integer 0.
+    // Output format: For each integer Y (before encountering 0), prints "Case X: Y" where X is the 1-based index of the integer.
+    console.log(`Case ${i + 1}: ${n}`);
+}
+// Precondition: The program is executed in an environment where the standard input contains a sequence of integers, each on a new line, ending with the integer 0.
+// Postcondition: The variable `arr` is an array of arrays, where each sub-array contains a number from the input and its corresponding index.
+const arr = require('fs').readFileSync('/dev/stdin', 'utf8').split('\n').map((n, i) => [Number(n), i]);
+// Precondition: `arr` is an array of arrays, each containing a number and its index.
+// Postcondition: The program prints lines to the standard output in the format "Case X: Y" for each number Y in `arr` until it encounters a number 0.
+while (([n, i] = arr.shift())[0] !== 0) {
+    // Input format: A sequence of integers, each on a new line, ending with the integer 0.
+    // Output format: For each integer Y (before encountering 0), prints "Case X: Y" where X is the 1-based index of the integer.
+    console.log(`Case ${i + 1}: ${n}`);
+}

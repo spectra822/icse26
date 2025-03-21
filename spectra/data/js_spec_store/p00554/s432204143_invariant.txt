@@ -1,0 +1,31 @@
+// Segment 1: Reading input and initializing variables
+// Precondition: None
+// Postcondition: `input` contains the entire input as a string, `arr` contains the input split by line, and `n` is the first number in the first line.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+var nm = arr.shift().split(" ").map(Number);
+var n = nm[0];
+var max = 0;
+
+// Segment 2: Mapping and transforming `arr` to calculate the differences
+// Precondition: `arr` is an array of strings where each string is a pair of space-separated numbers.
+// Postcondition: `arr` is transformed to hold the maximum of 0 and the difference between `n` and the first number of each pair. Also, `max` holds the maximum of these differences.
+arr = arr.map(function(v) {
+    var ab = v.split(" ").map(Number);
+    max = Math.max(max, n - ab[0]);
+    return Math.max(0, n - ab[0]);
+});
+
+// Segment 3: Reducing the array to calculate the sum
+// Precondition: `arr` is an array of numbers.
+// Postcondition: `sum` holds the sum of all elements in `arr`.
+var sum = arr.reduce(function(a, b) {
+    return a + b;
+});
+
+// Segment 4: Outputting the result
+// Precondition: `sum` and `max` are calculated.
+// Postcondition: Outputs the result of `sum - max`.
+// Input Format: The input is provided via standard input and consists of multiple lines. The first line contains two space-separated integers. Each of the following lines contains two space-separated integers.
+// Output Format: The output is a single integer printed to standard output.
+console.log(sum - max);

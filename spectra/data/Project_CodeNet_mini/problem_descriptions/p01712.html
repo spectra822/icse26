@@ -1,0 +1,91 @@
+
+
+
+<h1>問題 A : Koto Distance</h1>
+<h2>問題文</h2>
+<p>
+	Koto は言わずと知れた碁盤の目の街である．
+	この街は東西方向に <var>W</var> メートル，南北方向に <var>H</var> メートルに伸びる長方形の領域によってできている．
+	この街の西端から <var>x</var> メートル，南端から <var>y</var> メートルの点は <var>(x,&thinsp; y) </var> と記される．
+	ここの街に住む人は古くから伝わる独自の文化を重んじており，その一つにKoto距離という変わった距離尺度がある．
+2つの点 <var>(x_1, y_1)</var>，<var>(x_2, y_2)</var> の Koto 距離は，min<var>(|x_1 - x_2|,&thinsp; |y_1 - y_2|)</var> によって定義される．
+</p>
+<p>
+	最近この街全体に Wifi を使えるようにする計画が立ち上がった．
+	現在の計画では，親機を <var>N</var> 個作ることになっている．
+<var>i</var> 番目の親機は点 <var>(x_i, &thinsp;y_i)</var> に設置され，Koto距離が <var>w_i</var> 以下の領域に対して Wifi を提供する．
+</p>
+<p>
+	親機を計画どおり建てた場合に，街の内部及び境界上に Wifi を提供できるかどうかを判定せよ．
+</p>
+<p>
+	<font color=gray>なお，Koto距離は一般に三角不等式を満たさないため，距離の公理を満たさないということはここだけの秘密である．</font>
+</p>
+
+<h2>入力形式</h2>
+<p>
+入力は以下の形式で与えられる．
+<pre>
+<var>N</var> <var>W</var> <var>H</var>
+<var>x_1</var> <var>y_1</var> <var>w_1</var>
+<var>...</var>
+<var>x_N</var> <var>y_N</var> <var>w_N</var>
+</pre>
+
+<h2>出力形式</h2>
+<p>
+街の内部および境界上に Wifi を提供できるなら “Yes” を，そうでない場合は “No” を出力せよ．
+</p>
+
+
+<h2>制約</h2>
+<ul>
+<li><var>1 &le; N &le; 10^5</var></li>
+<li><var>1 &le; W &le; 10^5</var></li>
+<li><var>1 &le; H &le; 10^5</var></li>
+<li><var>0 &le; x_i &le; W</var></li>
+<li><var>0 &le; y_i &le; H</var></li>
+<li><var>1 &le; w_i &le; 10^5</var></li>
+<li>同一座標に親機は複数存在しない</li>
+</ul>
+
+
+<h2>入出力例</h2>
+<h3>入力例 1</h3>
+<pre>
+3 9 9
+2 2 2
+5 5 2
+8 8 2
+</pre>
+<h3>出力例 1</h3>
+<pre>
+Yes
+</pre>
+<p>２番目の親機が提供するWifiの範囲は以下の通りである．</p>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_JAGSummer2013_Koto-Sample0"></img>
+
+<h3>入力例 2</h3>
+<pre>
+2 7 7
+2 2 1
+6 6 1
+</pre>
+
+<h3>出力例 2</h3>
+<pre>
+No
+</pre>
+
+<h3>入力例 3</h3>
+<pre>
+3 10 20
+5 10 5
+2 10 1
+8 10 1
+</pre>
+
+<h3>出力例 3</h3>
+<pre>
+Yes
+</pre>

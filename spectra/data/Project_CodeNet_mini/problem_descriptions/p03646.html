@@ -1,0 +1,109 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a sequence of length <var>N</var> consisting of non-negative integers. Consider performing the following operation on this sequence until the largest element in this sequence becomes <var>N-1</var> or smaller.</p>
+<ul>
+<li>Determine the largest element in the sequence (if there is more than one, choose one). Decrease the value of this element by <var>N</var>, and increase each of the other elements by <var>1</var>.</li>
+</ul>
+<p>It can be proved that the largest element in the sequence becomes <var>N-1</var> or smaller after a finite number of operations.</p>
+<p>You are given an integer <var>K</var>. Find an integer sequence <var>a_i</var> such that the number of times we will perform the above operation is exactly <var>K</var>. It can be shown that there is always such a sequence under the constraints on input and output in this problem.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>0 ≤ K ≤ 50 \times 10^{16}</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>K</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print a solution in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> ... <var>a_N</var>
+</pre>
+<p>Here, <var>2 ≤ N ≤ 50</var> and <var>0 ≤ a_i ≤ 10^{16} + 1000</var> must hold.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+3 3 3 3
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+1 0 3
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>2
+2 2
+</pre>
+<p>The operation will be performed twice: [2, 2] -&gt; [0, 3] -&gt; [1, 1].</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>7
+27 0 0 0 0 0 0
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 5</h3><pre>1234567894848
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 5</h3><pre>10
+1000 193 256 777 0 1 1192 1234567891011 48 425
+</pre></section>
+</div>
+</span>

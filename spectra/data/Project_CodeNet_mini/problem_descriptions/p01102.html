@@ -1,0 +1,113 @@
+
+<h3><u>Almost Identical Programs</u></h3>
+
+<p>
+The programming contest named
+<i>Concours de Programmation Comtemporaine Interuniversitaire</i> (CPCI)
+has a judging system similar to that of ICPC;
+contestants have to submit correct outputs for two different inputs
+to be accepted as a correct solution.
+
+Each of the submissions should include the program that generated
+the output.  A pair of submissions is judged to be a correct
+solution when, in addition to the correctness of the outputs, they
+include an identical program.
+</p>
+<p>
+Many contestants, however, do not stop including a different version
+of their programs in their second submissions, after modifying a
+single string literal in their programs representing 
+the input file name, attempting to process different input.
+
+The organizers of CPCI are exploring the possibility of showing a
+special error message for such <em>close</em> submissions, 
+indicating contestants what's wrong with such submissions.
+
+Your task is to detect such close submissions.
+</p>
+
+
+<h3>Input</h3>
+
+
+<p>
+The input consists of at most 100 datasets, each in the following format.
+</p>
+
+<pre>
+<i>s</i><sub>1</sub>
+<i>s</i><sub>2</sub>
+</pre>
+
+<p>
+Each of <i>s</i><sub>1</sub> and <i>s</i><sub>2</sub> is
+a string written in a line, with the length between 1 and 200, inclusive.
+They are the first and the second submitted programs respectively.
+
+A program consists of lowercase letters (<tt>a</tt>, <tt>b</tt>, ..., <tt>z</tt>), uppercase letters (<tt>A</tt>, <tt>B</tt>, ..., <tt>Z</tt>),
+digits (<tt>0</tt>, <tt>1</tt>, ..., <tt>9</tt>), double quotes (<tt>"</tt>), and semicolons (<tt>;</tt>).
+When double quotes occur in a program, there are always even number of them.
+</p>
+
+
+<p>
+The end of the input is indicated by a line containing one '<tt>.</tt>' (period).
+</p>
+
+
+<h3>Output</h3>
+
+
+
+<p>
+For each dataset, print the judge result in a line.
+</p>
+<p>
+If the given two programs are identical, print <tt>IDENTICAL</tt>.
+If two programs differ with only one corresponding string literal, print <tt>CLOSE</tt>.
+Otherwise, print <tt>DIFFERENT</tt>.
+
+A string literal is a possibly empty sequence of characters between an
+odd-numbered occurrence of a double quote and the next occurrence of
+a double quote.
+</p>
+
+
+<h3>Sample Input</h3>
+
+
+<pre>print"hello";print123
+print"hello";print123
+read"B1input";solve;output;
+read"B2";solve;output;
+read"C1";solve;output"C1ans";
+read"C2";solve;output"C2ans";
+""""""""
+"""42"""""
+slow"program"
+fast"code"
+"super"fast"program"
+"super"faster"program"
+X""
+X
+I"S""CREAM"
+I"CE""CREAM"
+11"22"11
+1"33"111
+.
+</pre>
+
+
+<h3>Output for the Sample Input</h3>
+
+
+<pre>IDENTICAL
+CLOSE
+DIFFERENT
+CLOSE
+DIFFERENT
+DIFFERENT
+DIFFERENT
+CLOSE
+DIFFERENT
+</pre>

@@ -1,0 +1,14 @@
+Input:
+5
+0 3 1 4 3
+1 0
+2 0
+3 1 2
+4 0
+
+Output:
+node 0: parent = -1, depth = 0, root, [1, 4, 3]
+node 1: parent = 0, depth = 1, leaf, []
+node 2: parent = 3, depth = 2, leaf, []
+node 3: parent = 0, depth = 1, internal node, [2]
+node 4: parent = 0, depth = 1, leaf, []

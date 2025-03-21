@@ -1,0 +1,95 @@
+// Segment 1: Variable Declarations and Input Handling
+// Precondition: The program starts execution and waits for input data via stdin.
+// Postcondition: The program has declared necessary variables and set up event listeners for stdin data.
+
+let inputString = "";
+let currentLine = 0;
+process.stdin.on("data", (data) => {
+    inputString += data;
+});
+process.stdin.on("end", function() {
+    inputString = inputString
+        .trim()
+        .split("\n")
+        .map((str) => str.trim());
+    main();
+});
+
+// Segment 2: ReadLine Function
+// Precondition: `inputString` array is populated with input lines, and `currentLine` is initialized to 0.
+// Postcondition: Each call to `readLine` returns the next line from `inputString` and increments `currentLine`.
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+// Segment 3: Main Function Declaration and Initial Input Parsing
+// Precondition: `inputString` is populated with input lines.
+// Postcondition: The variables `totalPeople` and `t` are initialized, and an empty `graph` and `seenCouple` objects are created.
+
+// Input Format: 
+// - First line contains two integers `totalPeople` and `t` separated by a space.
+// - Next `t` lines each contain two integers representing a pair of people.
+// Example:
+// 5 3
+// 1 2
+// 3 4
+// 5 1
+
+function main() {
+    let [totalPeople, t] = readLine()
+        .split(" ")
+        .map((n) => parseInt(n));
+    const graph = {};
+    const seenCouple = {};
+
+// Segment 4: Graph Building Loop
+// Precondition: `t` contains the number of pairs to be read from input.
+// Postcondition: The `graph` object is populated with adjacency lists for each person, and `seenCouple` keeps track of unique pairs.
+
+    while (t--) {
+        let [p1, p2] = readLine()
+            .split(" ")
+            .map((n) => parseInt(n));
+
+        if (!seenCouple[`${p1}-${p2}`]) {
+            seenCouple[`${p1}-${p2}`] = true;
+
+            if (!graph[p1]) graph[p1] = { [p2]: true };
+            else graph[p1][p2] = true;
+            if (!graph[p2]) graph[p2] = { [p1]: true };
+            else graph[p2][p1] = true;
+        }
+    }
+
+// Segment 5: Finding the Largest Connected Component
+// Precondition: The `graph` object is fully populated with adjacency lists.
+// Postcondition: The size of the largest connected component is calculated and printed.
+
+// Output Format: 
+// - A single integer representing the size of the largest connected component.
+// Example Output:
+// 3
+
+    let max = 1;
+    let visited = {};
+    for (let key in graph) {
+        if (!visited[key]) {
+            const stack = [key];
+            let count = 0;
+            while (stack.length) {
+                const node = stack.pop();
+                visited[node] = true;
+                count++;
+                for (let key in graph[node]) {
+                    if (!visited[key]) {
+                        visited[key] = true;
+                        stack.push(key);
+                    }
+                }
+            }
+            max = Math.max(max, count);
+        }
+    }
+    console.log(max);
+}

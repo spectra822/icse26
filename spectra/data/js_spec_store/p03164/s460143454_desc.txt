@@ -1,0 +1,52 @@
+// Function to process the input and execute the main logic
+function Main(input) {
+    // Process input: trim whitespace, split by lines, and further split each line by spaces
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+
+    // Extract the number of items (N) and the maximum allowable weight (W)
+    let N = parseInt(input[0][0], 10);
+    let W = parseInt(input[0][1], 10);
+
+    // Extract the weights and values of the items into an array
+    let arr_wv = [];
+    for (let i = 0; i < N; i++) {
+        arr_wv.push(input[i + 1].map(e => parseInt(e, 10)));
+    }
+
+    // Initialize a dynamic programming (DP) array to store the minimum weights for each value
+    let DP = [Array.from({
+        length: 1e3 * N + 1
+    }, () => Infinity)];
+    DP[0][0] = 0;
+
+    // Fill the DP array with the minimum weights for each possible total value
+    let tmpline;
+    for (let i = 0; i < N; i++) {
+        tmpline = arr_wv[i];
+        DP.push([]);
+        for (let j = 0; j < tmpline[1]; j++) {
+            DP[i + 1].push(DP[i][j]);
+        }
+        for (let j = tmpline[1]; j < DP[0].length; j++) {
+            DP[i + 1].push(Math.min(DP[i][j], DP[i][j - tmpline[1]] + tmpline[0]));
+        }
+    }
+
+    // Determine the maximum value that can be achieved without exceeding the weight W
+    let x = DP.pop();
+    let ans = 0;
+    for (let i = x.length - 1; i >= 0; i--) {
+        if (x[i] <= W) {
+            ans = i;
+            break;
+        }
+    }
+
+    // Output the result
+    console.log(ans);
+}
+
+// Read input from standard input and invoke the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

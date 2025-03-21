@@ -1,0 +1,9 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The second line contains a string `S1` of length `N`.
+    // The third line contains a string `S2` of length `N`.
+    // Output format: A single number.
+    // Precondition: `N` is a non-negative integer, and `S1` and `S2` are strings of length `N`.
+    // Postcondition: The program calculates and prints the value of `ans` which represents the number of ways to arrange the tiles modulo 1000000007.
+```

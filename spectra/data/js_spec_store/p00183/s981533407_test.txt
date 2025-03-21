@@ -1,0 +1,8 @@
+Input:
+b w w
+w b w
+w w b
+0
+
+Output:
+NA

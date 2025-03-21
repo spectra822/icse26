@@ -1,0 +1,18 @@
+```c
+// Global variables
+ll w[4001];
+char buf[48002], *p;
+ll dp[4001][4001];
+int k[4001][4001];
+
+// Reads a long long integer from a global buffer `buf` and increments the buffer pointer `p`.
+// Returns the read long long integer.
+ll getlong()
+    // No calls to other functions
+
+// Main function that processes the input, initializes the segment sums,
+// and calculates the minimum cost to merge the sashimi segments using dynamic programming.
+// It then prints the result.
+int main()
+    Calls getlong(...)
+```

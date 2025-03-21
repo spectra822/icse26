@@ -1,0 +1,128 @@
+// Segment 1: Variable Declarations and Utility Functions
+
+// Precondition: The program begins execution.
+// Postcondition: Essential variables and utility functions are declared.
+
+function rep(a, b, c) {
+    if (c == null) {
+        c = b;
+        b = a;
+        a = 0;
+    }
+    for (var i = a; i < b; ++i) {
+        if (c(i) === false) {
+            break;
+        }
+    }
+}
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+var input = '';
+var input_index = 0;
+
+function scan(type) {
+    if (type === 'string') {
+        return input[input_index++];
+    } else {
+        return +input[input_index++];
+    }
+}
+
+function print(val) {
+    console.log(val);
+}
+
+// Segment 2: Input Handling
+
+// Precondition: The program is waiting for user input.
+// Postcondition: The input is read from stdin and split into an array of strings.
+
+// Input format: Multiple lines of space-separated integers.
+// Example: 
+// 3 9 9
+// 2 2 2
+// 5 5 2
+// 8 8 2
+
+process.stdin.on('data', function(chunk) {
+    input += chunk;
+});
+process.stdin.on('end', function() {
+    input = input.split(/\s+/);
+    main();
+});
+
+// Segment 3: Main Function Setup
+
+// Precondition: The input has been read and split into an array of strings.
+// Postcondition: The main function initializes variables and arrays needed for the computation.
+
+function main() {
+    var n = scan();
+    var w = scan();
+    var h = scan();
+
+    var x = [];
+    rep(w + 1, function(i) {
+        x[i] = 0;
+    });
+    var y = [];
+    rep(h + 1, function(i) {
+        y[i] = 0;
+    });
+
+    // Segment 4: Reading and Processing Input Coordinates
+
+    // Precondition: The arrays `x` and `y` are initialized to zero.
+    // Postcondition: The arrays `x` and `y` are updated based on the input coordinates.
+
+    // Input format: n lines of three integers each.
+    // Example: 
+    // 2 2 2
+    // 5 5 2
+    // 8 8 2
+
+    rep(n, function() {
+        var a = scan();
+        var b = scan();
+        var c = scan();
+        ++x[Math.max(a - c, 0)];
+        --x[Math.min(a + c, w)];
+        ++y[Math.max(b - c, 0)];
+        --y[Math.min(b + c, h)];
+    });
+
+    // Segment 5: Accumulate Coverage in Arrays
+
+    // Precondition: The arrays `x` and `y` have been updated with increment/decrement values.
+    // Postcondition: The arrays `x` and `y` are transformed into cumulative coverage arrays.
+
+    rep(w, function(i) {
+        x[i + 1] += x[i];
+    });
+    rep(h, function(i) {
+        y[i + 1] += y[i];
+    });
+
+    // Segment 6: Check Coverage and Output Result
+
+    // Precondition: The arrays `x` and `y` represent the coverage of each coordinate.
+    // Postcondition: The result is printed based on whether any coordinate is fully covered.
+
+    // Output format: Single line with 'Yes' or 'No'.
+    // Example: 
+    // Yes
+
+    var s = true;
+    rep(w, function(i) {
+        s = x[i] > 0 && s;
+    });
+    var t = true;
+    rep(h, function(i) {
+        t = y[i] > 0 && t;
+    });
+
+    print(s || t ? 'Yes' : 'No');
+}

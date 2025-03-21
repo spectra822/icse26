@@ -1,0 +1,10 @@
+Input:
+10
+DMDMCCDMCD
+2
+3
+5
+
+Output:
+2
+5

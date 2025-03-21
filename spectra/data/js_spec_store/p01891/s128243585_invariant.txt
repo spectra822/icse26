@@ -1,0 +1,48 @@
+// Segment 1: Read and parse input
+// Precondition: The input is provided through standard input in the format:
+// The first line contains four integers n, m, a, b separated by spaces.
+// The second line contains n integers separated by spaces.
+// Postcondition: The input is parsed and stored in variables nmab and d.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+var nmab = arr[0].split(" ").map(Number);
+var d = arr[1].split(" ").map(Number);
+
+// Segment 2: Extract variables m, a, and b from nmab
+// Precondition: nmab is an array of four integers.
+// Postcondition: m, a, and b are assigned the corresponding values from nmab.
+var m = nmab[1];
+var a = nmab[2];
+var b = nmab[3];
+
+// Segment 3: Filter elements in d that are greater than or equal to a
+// Precondition: d is an array of integers, and a is an integer.
+// Postcondition: haiki is an array containing all elements in d that are greater than or equal to a.
+var haiki = [];
+for (var i = 0; i < d.length; i++) {
+    if (d[i] >= a) haiki.push(d[i]);
+    else break;
+}
+
+// Segment 4: Determine the number of elements to output based on conditions
+// Precondition: haiki is an array of integers, m is an integer, b is an integer.
+// Postcondition: The number of elements to output is determined and printed to the console.
+// Input format: (from standard input)
+// Integer n, m, a, b in the first line separated by spaces.
+// n integers in the second line separated by spaces.
+// Output format: (to standard output)
+// A single integer representing the number of elements that meet the criteria.
+if (d.length - haiki.length < m) {
+    haiki.reverse();
+    var cnt = 0;
+    for (var i = 0; i < haiki.length; i++) {
+        if (haiki[i] <= b) cnt++;
+        else break;
+    }
+    console.log(haiki.length - cnt);
+} else {
+    console.log(haiki.length);
+}
+  n m a b
+  d1 d2 ... dn
+  x

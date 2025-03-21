@@ -1,0 +1,13 @@
+```c
+void dfs(int c, int las, int dist)
+    // Precondition: The global arrays `r` and `used` have been initialized, and the global matrix `d` has been populated.
+    // Postcondition: The global variable `res` is updated with the minimum distance found by traversing all permutations of `r` using depth-first search.
+
+int main(void)
+    // Input format: The first line contains three integers `N`, `M`, and `R`.
+    // The next line contains `R` integers representing the elements of array `r`.
+    // The next `M` lines each contain three integers `A`, `B`, and `C`.
+    // Output format: A single integer.
+    // Precondition: The global variables `d`, `r`, `res`, `used`, `N`, `M`, and `R` have been declared.
+    // Postcondition: The global variable `res` contains the minimum distance required to visit all elements in `r`, and this value is printed.
+```

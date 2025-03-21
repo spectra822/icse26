@@ -1,0 +1,130 @@
+
+
+
+<H1>バブルソート</H1>
+
+<p>
+データを並べ替えるための整列（ソート）アルゴリズムはコンピュータ科学には欠かせない基本的なアルゴリズムです。例えば、下図のように「整数値の配列の要素を昇順に並べ替える」という操作が整列です。
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort1"><br>
+</center>
+
+
+<p>
+多くの整列アルゴリズムが考案されてきましたが、その中でも基本的なアルゴリズムの１つがバブルソートです。例として、与えられた整数値の配列をバブルソートで昇順に並べてみます。
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort2"><br/>
+</center>
+<br/>
+
+<p>
+バブルソートでは、各計算ステップにおいて、配列を「ソートされた部分」と「ソートされていない部分」に分けて考えます。最初は配列全体がソートされていない部分になります。
+</p>
+
+<p>
+ソートされていない部分の先頭から、隣同士の要素を比較して（図では緑色の要素）、大きい値が右にくるようにそれらを交換します。二つの値が等しい場合は交換しません。
+</p>
+
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort3"><br/>
+<br/>
+</center>
+
+<p>
+この処理をソートされていない部分（図では白色の要素）の末尾まで繰り返します。最後に、末尾をソートされている部分（図では青色の要素）に追加して1ステップが完了します。
+</p>
+
+<p>
+このステップをソートされていない部分の長さが1になるまで繰り返します。
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort4"><br/>
+<br/>
+<br/>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort5"><br/>
+<br/>
+<br/>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_bubbleSort6"><br/>
+<br/>
+</center>
+
+<p>
+このようにソートされていない部分の長さが 1 になったら、ソートの処理を終了します。
+</p>
+
+
+<p>
+それでは、<var>n</var> 個の数値の配列を入力とし、数値が配列の先頭から昇順に並ぶように上記のバブルソートの手順で並べ替えを行い、要した配列要素の交換回数を出力するプログラムを作成してください。
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+複数のデータセットの並びが入力として与えられます。入力の終わりはゼロひとつの行で示されます。
+各データセットは以下の形式で与えられます。
+</p>
+
+<pre>
+<var>n</var>
+<var>a<sub>1</sub></var>
+<var>a<sub>2</sub></var>
+:
+<var>a<sub>n</sub></var>
+</pre>
+
+<p>
+１行目に数値の数 <var>n</var> (1 &le; <var>n</var> &le; 100)、続く <var>n</var> 行に<var>i</var>  番目の数値 <var>a<sub>i</sub></var> (1 &le; <var>a<sub>i</sub></var> &le; 1000000) が与えられます。
+</p>
+
+<p>
+データセットの数は 20 を超えません。
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+データセットごとにデータ要素の交換回数（整数）を１行に出力します。
+</p>
+
+
+<H2>Sample Input</H2>
+
+<pre>
+5
+5
+3
+2
+1
+4
+6
+1
+2
+3
+4
+5
+6
+3
+3
+2
+1
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+7
+0
+3
+</pre>
+
+
+

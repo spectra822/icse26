@@ -1,0 +1,32 @@
+// Import the 'fs' module and read the input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of strings, each representing a line of input
+var arr = input.trim().split("\n");
+
+// Extract the first element of the array, which represents the number of queries
+var q = arr.shift() - 0;
+
+// Initialize an empty string to store the output
+var str = "";
+
+// Initialize a Map to store key-value pairs
+var map = new Map();
+
+// Process each query
+for (var i = 0; i < q; i++) {
+    // Split the current line into three parts: a, b, and c
+    var [a, b, c] = arr[i].split(" ");
+    
+    // If the command is "0", set the key-value pair in the map
+    if (a == "0") map.set(b, c);
+    
+    // If the command is "1", append the value associated with the key to the output string (or "0" if the key doesn't exist)
+    else if (a == "1") str += ((map.has(b)) ? map.get(b) : "0") + "\n";
+    
+    // If the command is "2", delete the key-value pair from the map
+    else map.delete(b);
+}
+
+// Print the final output string, trimmed of any trailing whitespace
+console.log(str.trim());

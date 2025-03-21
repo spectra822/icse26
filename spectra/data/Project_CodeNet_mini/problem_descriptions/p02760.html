@@ -1,0 +1,115 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a bingo card with a <var>3\times3</var> grid. The square at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left contains the number <var>A_{i, j}</var>.</p>
+<p>The MC will choose <var>N</var> numbers, <var>b_1, b_2, \cdots, b_N</var>. If our bingo sheet contains some of those numbers, we will mark them on our sheet.</p>
+<p>Determine whether we will have a bingo when the <var>N</var> numbers are chosen, that is, the sheet will contain three marked numbers in a row, column, or diagonal.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq A_{i, j} \leq 100</var></li>
+<li><var>A_{i_1, j_1} \neq A_{i_2, j_2} ((i_1, j_1) \neq (i_2, j_2))</var></li>
+<li><var>1 \leq N \leq 10</var></li>
+<li><var>1 \leq b_i \leq 100</var></li>
+<li><var>b_i \neq b_j (i \neq j)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>A_{1, 1}</var> <var>A_{1, 2}</var> <var>A_{1, 3}</var>
+<var>A_{2, 1}</var> <var>A_{2, 2}</var> <var>A_{2, 3}</var>
+<var>A_{3, 1}</var> <var>A_{3, 2}</var> <var>A_{3, 3}</var>
+<var>N</var>
+<var>b_1</var>
+<var>\vdots</var>
+<var>b_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>If we will have a bingo, print <code>Yes</code>; otherwise, print <code>No</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>84 97 66
+79 89 11
+61 59 7
+7
+89
+7
+87
+79
+24
+84
+30
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Yes
+</pre>
+<p>We will mark <var>A_{1, 1}, A_{2, 1}, A_{2, 2}, A_{3, 3}</var>, and complete the diagonal from the top-left to the bottom-right.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>41 7 46
+26 89 2
+78 92 8
+5
+6
+45
+16
+57
+17
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>No
+</pre>
+<p>We will mark nothing.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>60 88 34
+92 41 43
+65 73 48
+10
+60
+43
+88
+11
+48
+73
+65
+41
+92
+34
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>Yes
+</pre>
+<p>We will mark all the squares.</p></section>
+</div>
+</span>

@@ -1,0 +1,378 @@
+
+
+<H1>Problem I: FIMO sequence</H1>
+<p>
+Your task is to simulate the sequence defined in the remaining part of the problem description.
+</p>
+
+<p>
+This sequence is empty at first.
+<i> i </i>-th element of this sequence is expressed as <i> a<sub>i</sub> </i>.
+The first element of this sequence is <i> a<sub>1</sub> </i> if the sequence is not empty.
+The operation is given by integer from 0 to 9.
+The operation is described below.
+</p>
+
+<p>
+0:
+This query is given with some integer <i>x</i>.
+If this query is given, the integer x is inserted into the sequence.
+If the sequence is empty, <i>a<sub>1</sub></i> = <i>x</i>.
+If the sequence has <i>n</i> elements, <i>a<sub>n+1</sub></i> = <i>x</i>.
+Same integer will not appear more than once as <i>x</i>.
+</p>
+
+<p>
+1:
+If this query is given, one element in the sequence is deleted.
+The value in the middle of the sequence is deleted.
+If the sequence has <i>n</i> elements and <i> n </i> is even, <i> a<sub>n/2</sub> </i> will be deleted.
+If <i> n </i> is odd, <i> a<sub>&lceil;n/2&rceil;</sub> </i> will be deleted.
+This query is not given when the sequence is empty.
+
+Assume that the sequence has <i> a<sub>1</sub> </i>=1,<i> a<sub>2</sub> </i>=2,<i> a<sub>3</sub> </i>=3,<i> a<sub>4</sub> </i>=4 and <i> a<sub>5</sub> </i>=5.
+In this case, <i> a<sub>3</sub> </i> will be deleted.
+After deletion, the sequence will be <i> a<sub>1</sub> </i>=1, <i> a<sub>2</sub> </i>=2,<i> a<sub>3</sub> </i>=4,<i> a<sub>4</sub> </i>=5.
+
+Assume that the sequence has <i> a<sub>1</sub> </i>=1,<i> a<sub>2</sub> </i>=2,<i> a<sub>3</sub> </i>=3 and <i> a<sub>4</sub> </i>=4,
+In this case, <i> a<sub>2</sub> </i> will be deleted.
+After deletion, the sequence will be <i> a<sub>1</sub> </i>=1,<i> a<sub>2</sub> </i>=3, <i> a<sub>3</sub> </i>=4.
+</p>
+
+<p>
+2:
+The first half of the sequence is defined by the index from 1 to &lceil;<i>n</i>/2&rceil; .
+If this query is given, you should compute the minimum element of the first half of the sequence.
+This query is not given when the sequence is empty.
+</p>
+
+<p>
+Let me show an example.<br>
+Assume that the sequence is {6,2,3,4,5,1,8}.
+In this case, the minimum element of the first half of the sequence, {6,2,3,4} is 2.
+</p>
+
+
+<p>
+3:
+The latter half of the sequence is elements that do not belong to the first half of the sequence.
+If this query is given, you should compute the minimum element of the latter half of the sequence.
+This query is not given when the sequence is empty.
+</p>
+
+<p>
+Let me show an example.<br>
+Assume that the sequence is {6,2,3,4,5,1,8}.
+In this case the answer for this query is 1 from {5,1,8}.
+</p>
+
+<p>
+4:
+This query is given with an integer <i>i</i>.
+Assume that deletion is repeated until the sequence is empty.
+Some elements in the first half of the sequence will become the answer for query 2.
+You should compute the <i> i </i>-th minimum element from the answers.
+This query is not given when the sequence is empty.
+You can assume that <i> i </i>-th minimum element exists when this query is given.
+</p>
+
+<p>
+Let me show an example.
+</p>
+<pre>
+Assume that deletion will be repeated to the sequence {6,2,3,4,5,1,8}.
+{6,2,3,4,5,1,8} The minimum element in the first half of the sequence is 2.
+{6,2,3,5,1,8}   The minimum element in the first half of the sequence is 2.
+{6,2,5,1,8}     The minimum element in the first half of the sequence is 2.
+{6,2,1,8}       The minimum element in the first half of the sequence is 2.
+{6,1,8}         The minimum element in the first half of the sequence is 1.
+{6,8}           The minimum element in the first half of the sequence is 6.
+{8}             The minimum element in the first half of the sequence is 8.
+{}              The first half of the sequence is empty.
+</pre>
+<p>
+For the initial state, {6,2,3,4} is the first half of the sequence.
+2 and 6 become the minimum element of the first half of the sequence.
+In this example, the 1-st minimum element is 2 and the 2-nd is 6.
+</p>
+
+<p>
+5:
+This query is given with an integer <i> i </i>.
+Assume that deletion is repeated until the sequence is empty.
+Some elements in the latter half of the sequence will become the answer for query 3.
+You should compute the <i> i </i>-th minimum element from the answers.
+This query is not given when the sequence is empty.
+You can assume that <i> i </i>-th minimum element exists when this query is given.
+</p>
+
+<p>
+Let me show an example.
+</p>
+<pre>
+Assume that deletion will be repeated to the sequence {6,2,3,4,5,1,8}.
+{6,2,3,4,5,1,8} The minimum elemets in the latter half of the sequence is 1.
+{6,2,3,5,1,8}   The minimum elemets in the latter half of the sequence is 1.
+{6,2,5,1,8}     The minimum elemets in the latter half of the sequence is 1.
+{6,2,1,8}       The minimum elemets in the latter half of the sequence is 1.
+{6,1,8}         The minimum elemets in the latter half of the sequence is 8.
+{6,8}           The minimum elemets in the latter half of the sequence is 8.
+{8}             The latter half of the sequence is empty.
+{}              The latter half of the sequence is empty.
+</pre>
+<p>
+For the initial state, {5,1,8} is the latter half of the sequence.
+1 and 8 becomes the minimum element of the latter half ot the sequence.
+In this example, the 1-st minimum element is 1 and the 2-nd is 8.
+</p>
+
+<p>
+6:
+If this query is given, you should compute the maximum element of the first half of the sequence.
+This query is not given when the sequence is empty.
+</p>
+<p>
+Let me show an example.<br>
+Assume that the sequence is {1,3,2,5,9,6,7}.
+In this case, the maximum element of the first half of the sequence,{1,3,2,5}, is 5.
+</p>
+
+<p>
+7:
+If this query is given, you should compute the maximum element of the latter half of the sequence.
+This query is not given when the sequence is empty.
+</p>
+
+<p>
+Let me show an example.<br>
+Assume that the sequence is {1,3,2,5,9,6,7}.
+In this case, the maximum element of the latter half of the sequence,{9,6,7}, is 9.
+</p>
+
+<p>
+8:
+This query is given with an integer <i> i </i>.
+Assume that deletion is repeated until the sequence is empty.
+Some elements in the first half of the sequence will become the answer for query 6.
+You should compute the <i> i </i>-th maximum element from the answers.
+This query is not given when the sequence is empty.
+You can assume that <i> i </i>-th maximum elements exists when this query is given.
+</p>
+
+<p>Let me show an example.</p>
+<pre>
+Assume that deletion will be repeated to the sequence {1,3,2,5,9,6,7}.
+{1,3,2,5,9,6,7} The maximum element in the first half of the sequence is 5.
+{1,3,2,9,6,7}   The maximum element in the first half of the sequence is 3.
+{1,3,9,6,7}     The maximum element in the first half of the sequence is 9.
+{1,3,6,7}       The maximum element in the first half of the sequence is 3.
+{1,6,7}         The maximum element in the first half of the sequence is 6.
+{1,7}           The maximum element in the first half of the sequence is 1.
+{7}             The maximum element in the first half of the sequence is 7.
+{}              The first half of the sequence is empty.
+</pre>
+<p>
+For the initial state, {1,3,2,5} is the first half of the sequence.
+1,3 and 5 becomes the maximum element of the first half of the sequence.
+In this example, the 1-st maximum element is 5, the 2-nd is 3 and the 3-rd is 1.
+</p>
+
+<p>
+9:
+This query is given with an integer <i> i </i>.
+Assume that deletion is repeated until the sequence is empty.
+Some elements in the latter half of the sequence will become the answer for query 7.
+You should compute the <i> i </i>-th maximum element from the answers.
+This query is not given when the sequence is empty.
+You can assume that <i> i </i>-th maximum elements exists when this query is given.
+</p>
+
+<p>Let me show an example.</p>
+<pre>
+Assume that deletion will be repeated to the sequence {1,3,2,5,9,6,7}.
+{1,3,2,5,9,6,7} The maximum element in the latter half of the sequence is 9.
+{1,3,2,9,6,7}   The maximum element in the latter half of the sequence is 9.
+{1,3,9,6,7}     The maximum element in the latter half of the sequence is 7.
+{1,3,6,7}       The maximum element in the latter half of the sequence is 7.
+{1,6,7}         The maximum element in the latter half of the sequence is 7.
+{1,7}           The maximum element in the latter half of the sequence is 7.
+{7}             The latter half of the sequence is empty.
+{}              The latter half of the sequence is empty.
+</pre>
+<p>
+For the initial state, {9,6,7} is the latter half of the sequence.
+7 and 9 becomes the maximum element of the latter half of the sequence.
+In this example, the 1-st maximum element is 9 and the 2-nd is 7.
+</p>
+
+<h2>Input</h2>
+<p>
+Input consists of multiple test cases.
+The first line is the number of queries.
+Following q lines are queries.
+</p>
+<pre>
+<i>q</i>
+<i>query<sub>0</sub></i>
+...
+<i>query<sub>i</sub></i>
+...
+<i>qurey_<sub>q-1</sub></i>
+</pre>
+
+<p>
+The sum of the number of queries in the input data is less than 200001.
+If <i>query<sub>i</sub></i> = 0, 4, 5, 8, and 9 are consists of pair of integers.
+Other queries are given with a single integer.
+You can assume that the length of the sequence doesn't exceed 20000.
+</p>
+
+<h2>Output</h2>
+<p>
+If the query is 0, you don't output any numbers.
+If the query is 1, you should output the deleted number.
+For other queries, you should output the computed value.
+For each case, you should output "end" (without quates) after you process all queries.
+</p>
+
+<h2>Sample input</h2>
+<pre>
+5
+0 1
+0 2
+0 3
+0 4
+1
+6
+0 1
+0 2
+0 3
+0 4
+0 5
+1
+31
+0 6
+0 2
+0 3
+0 4
+0 5
+0 1
+0 8
+4 1
+4 2
+5 1
+5 2
+2
+3
+1
+2
+3
+1
+2
+3
+1
+2
+3
+1
+2
+3
+1
+2
+3
+1
+2
+1
+32
+0 1
+0 3
+0 2
+0 5
+0 9
+0 6
+0 7
+8 1
+8 2
+8 3
+9 1
+9 2
+6
+7
+1
+6
+7
+1
+6
+7
+1
+6
+7
+1
+6
+7
+1
+6
+7
+1
+6
+1
+0
+</pre>
+
+<h2>Sample output</h2>
+<pre>
+2
+end
+3
+end
+2
+6
+1
+8
+2
+1
+4
+2
+1
+3
+2
+1
+5
+2
+1
+2
+1
+8
+1
+6
+8
+6
+8
+8
+end
+5
+3
+1
+9
+7
+5
+9
+5
+3
+9
+2
+9
+7
+9
+3
+7
+3
+6
+7
+6
+1
+7
+1
+7
+7
+end
+</pre>

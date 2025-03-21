@@ -1,0 +1,17 @@
+// Function definition for Main which takes an input string
+const Main = (input) => {
+    // Parse the input: trim whitespace, split by new lines, and extract the number of elements and the array
+    const tmp = input.trim().split('\n')
+    const N = parseInt(tmp[0])
+    const aArr = tmp[1].split(' ').map(Number)
+
+    // Calculate the result by summing the array and subtracting N
+    var result = aArr.reduce((a, x) => a += x, 0) - N
+
+    // Output the result to the console and return it
+    console.log(result)
+    return result
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require('fs').readFileSync('/dev/stdin', 'utf8'))

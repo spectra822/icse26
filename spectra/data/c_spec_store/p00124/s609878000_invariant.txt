@@ -1,0 +1,14 @@
+```c
+<main function signature>
+    // Input format: The first line contains an integer `n`.
+    //                For the next `n` lines, each line contains a string `name`, an integer `win`, an integer `lose`, and an integer `draw`, separated by spaces.
+    //                This is followed by a line containing the integer `0`.
+    //                The input sequence can repeat multiple times.
+    // Output format: For each input sequence until `n` is zero, the program outputs the `name` and `score` of each team, sorted by score in descending order.
+    //                Each team's information is printed on a new line, with the name and score separated by a comma.
+    //                If there is more than one sequence, the outputs of different sequences are separated by a blank line.
+    // Precondition: The input values for `n`, `name`, `win`, `lose`, and `draw` are provided in the specified format.
+    //               The array `team` has been declared and can hold up to 10 teams.
+    // Postcondition: The teams' names and scores are printed in descending order of scores for each sequence of inputs.
+    //                If there are multiple sequences, the outputs are separated by a blank line.
+```

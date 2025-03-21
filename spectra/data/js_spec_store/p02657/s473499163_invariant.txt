@@ -1,0 +1,35 @@
+// Segment 1: Main Function Definition
+// Precondition: 'input' is a string containing two space-separated integers, followed by a newline character.
+// Postcondition: The product of the two integers has been printed to the console.
+function Main(input) {
+    input = input.split("\n");
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+
+    console.log(A * B);
+}
+
+// Segment 2: Debug Function Definition
+// Precondition: There is an HTML element with id="input" that contains a string with two space-separated integers followed by a newline character.
+// Postcondition: The product of the two integers from the input element has been printed to the console.
+/* Input format: 
+   - The input value is taken from an HTML element with id="input".
+   - The input value is a string in the format "A B\n" where A and B are integers.
+   Output format:
+   - The output is printed to the console and is the product of the two integers.
+*/
+function debug() {
+    var input = document.getElementById("input").value;
+    Main(input);
+}
+
+// Segment 3: Initial Execution
+// Precondition: The script is being executed in an environment where '/dev/stdin' contains a string with two space-separated integers followed by a newline character.
+// Postcondition: The product of the two integers read from '/dev/stdin' has been printed to the console.
+/* Input format: 
+   - The input is read from '/dev/stdin'.
+   - The input value is a string in the format "A B\n" where A and B are integers.
+   Output format:
+   - The output is printed to the console and is the product of the two integers.
+*/
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

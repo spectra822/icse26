@@ -1,0 +1,86 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>If there is an integer not less than <var>0</var> satisfying the following conditions, print the smallest such integer; otherwise, print <code>-1</code>.</p>
+<ul>
+<li>The integer has exactly <var>N</var> digits in base ten. (We assume <var>0</var> to be a <var>1</var>-digit integer. For other integers, leading zeros are not allowed.)</li>
+<li>The <var>s_i</var>-th digit from the left is <var>c_i</var>. <var>\left(i = 1, 2, \cdots, M\right)</var></li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 3</var></li>
+<li><var>0 \leq M \leq 5</var></li>
+<li><var>1 \leq s_i \leq N</var></li>
+<li><var>0 \leq c_i \leq 9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>s_1</var> <var>c_1</var>
+<var>\vdots</var>
+<var>s_M</var> <var>c_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the answer.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+1 7
+3 2
+1 7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>702
+</pre>
+<p><var>702</var> satisfies the conditions - its <var>1</var>-st and <var>3</var>-rd digits are <code>7</code> and <code>2</code>, respectively - while no non-negative integer less than <var>702</var> satisfies them.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+2 1
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>-1
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>3 1
+1 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>-1
+</pre></section>
+</div>
+</span>

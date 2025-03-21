@@ -1,0 +1,23 @@
+```c
+// Global variables
+HASH hash[HASHSIZ+2], *hashend = hash + HASHSIZ;
+char sa[4004]; int wa;
+char sb[4004]; int wb;
+short f[26];
+
+// Inserts the frequency array `f` into the hash table.
+void insert(short *f)
+    Calls memcmp(...) and memcpy(...)
+
+// Looks up the frequency array `f` in the hash table.
+// Returns 1 if found, otherwise returns 0.
+int lookup(short *f)
+    Calls memcmp(...)
+
+// The main function reads two strings `sa` and `sb`,
+// computes the length of the longest substring of `sa`
+// that is an anagram of a substring of `sb`,
+// and prints this length.
+int main()
+    Calls insert(...) and lookup(...)
+```

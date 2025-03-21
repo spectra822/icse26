@@ -1,0 +1,128 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>An SNS has <var>N</var> users - User <var>1</var>, User <var>2</var>, <var>\cdots</var>, User <var>N</var>.</p>
+<p>Between these <var>N</var> users, there are some relationships - <var>M</var> <em>friendships</em> and <var>K</var> <em>blockships</em>.</p>
+<p>For each <var>i = 1, 2, \cdots, M</var>, there is a bidirectional friendship between User <var>A_i</var> and User <var>B_i</var>.</p>
+<p>For each <var>i = 1, 2, \cdots, K</var>, there is a bidirectional blockship between User <var>C_i</var> and User <var>D_i</var>.</p>
+<p>We define User <var>a</var> to be a <em>friend candidate</em> for User <var>b</var> when all of the following four conditions are satisfied:</p>
+<ul>
+<li><var>a \neq b</var>.</li>
+<li>There is not a friendship between User <var>a</var> and User <var>b</var>.</li>
+<li>There is not a blockship between User <var>a</var> and User <var>b</var>.</li>
+<li>There exists a sequence <var>c_0, c_1, c_2, \cdots, c_L</var> consisting of integers between <var>1</var> and <var>N</var> (inclusive) such that <var>c_0 = a</var>, <var>c_L = b</var>, and there is a friendship between User <var>c_i</var> and <var>c_{i+1}</var> for each <var>i = 0, 1, \cdots, L - 1</var>.</li>
+</ul>
+<p>For each user <var>i = 1, 2, ... N</var>, how many friend candidates does it have?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>2 ≤ N ≤ 10^5</var></li>
+<li><var>0 \leq M \leq 10^5</var></li>
+<li><var>0 \leq K \leq 10^5</var></li>
+<li><var>1 \leq A_i, B_i \leq N</var></li>
+<li><var>A_i \neq B_i</var></li>
+<li><var>1 \leq C_i, D_i \leq N</var></li>
+<li><var>C_i \neq D_i</var></li>
+<li><var>(A_i, B_i) \neq (A_j, B_j) (i \neq j)</var></li>
+<li><var>(A_i, B_i) \neq (B_j, A_j)</var></li>
+<li><var>(C_i, D_i) \neq (C_j, D_j) (i \neq j)</var></li>
+<li><var>(C_i, D_i) \neq (D_j, C_j)</var></li>
+<li><var>(A_i, B_i) \neq (C_j, D_j)</var></li>
+<li><var>(A_i, B_i) \neq (D_j, C_j)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var> <var>K</var>
+<var>A_1</var> <var>B_1</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var>
+<var>C_1</var> <var>D_1</var>
+<var>\vdots</var>
+<var>C_K</var> <var>D_K</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the answers in order, with space in between.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 4 1
+2 1
+1 3
+3 2
+3 4
+4 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>0 1 0 1
+</pre>
+<p>There is a friendship between User <var>2</var> and <var>3</var>, and between <var>3</var> and <var>4</var>. Also, there is no friendship or blockship between User <var>2</var> and <var>4</var>. Thus, User <var>4</var> is a friend candidate for User <var>2</var>.</p>
+<p>However, neither User <var>1</var> or <var>3</var> is a friend candidate for User <var>2</var>, so User <var>2</var> has one friend candidate.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5 10 0
+1 2
+1 3
+1 4
+1 5
+3 2
+2 4
+2 5
+4 3
+5 3
+4 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0 0 0 0 0
+</pre>
+<p>Everyone is a friend of everyone else and has no friend candidate.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 9 3
+10 1
+6 7
+8 2
+2 5
+8 4
+7 3
+10 9
+6 4
+5 8
+2 6
+7 5
+3 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1 3 5 4 3 3 3 3 1 0
+</pre></section>
+</div>
+</span>

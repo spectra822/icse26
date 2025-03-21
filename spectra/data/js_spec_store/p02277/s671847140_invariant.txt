@@ -1,0 +1,91 @@
+// Segment 1: Main function and initial setup
+(function(input) {
+    // Precondition: 'input' is a string with multiple lines, where the first line is a number n, and the next n lines are strings in the format 'X d' where X is a character and d is a digit.
+    var p = input.split('\n');
+    var n = Number(p.shift());
+    var A = p.slice(0, n);
+    var C = [].concat(A);
+
+    // Postcondition: 'p' is an array with the first element removed, 'n' is the number of elements to process, 'A' is an array of the first n elements from 'p', and 'C' is a copy of 'A'.
+
+    // Input: (via file read) String with multiple lines, e.g., "6\nD 3\nH 2\nD 1\nS 3\nD 2\nC 1\n"
+    // Output: (via console.log) "Stable" or "Not stable" followed by the sorted elements, each on a new line.
+
+    // Segment 2: Perform partitioning and check stability
+    partition(A, 0, A.length - 1);
+    console.log(check(C, A) ? 'Stable' : 'Not stable');
+    console.log(A.join('\n'));
+})(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+// Segment 3: Function to extract number from a string
+function getNumber(a) {
+    // Precondition: 'a' is a string in the format 'X d' where X is a character and d is a digit.
+    return Number(a.slice(1, a.length));
+    // Postcondition: Returns the number part of the string 'a'.
+}
+
+// Segment 4: Function to get concatenated words with the same number
+function getWords(a, n) {
+    // Precondition: 'a' is an array of strings in the format 'X d' where X is a character and d is a digit, 'n' is a number.
+    var r = '';
+    for (var i = 0; i < a.length; i++) {
+        if (getNumber(a[i]) === n) {
+            r += a[i];
+        }
+    }
+    return r;
+    // Postcondition: Returns a concatenated string of all elements in 'a' that have the number 'n'.
+}
+
+// Segment 5: Function to check stability of sorting
+function check(c, a) {
+    // Precondition: 'c' and 'a' are arrays of strings in the format 'X d' where X is a character and d is a digit.
+    var i = 0;
+    while (i < a.length) {
+        var n = getNumber(c[i]);
+        if (getWords(c, n) !== getWords(a, n)) {
+            return false;
+        }
+        i++;
+    }
+    return true;
+    // Postcondition: Returns true if the order of elements with the same number in 'c' and 'a' is the same, false otherwise.
+}
+
+// Segment 6: Function to perform the partition operation
+function partition(A, p, r) {
+    // Precondition: 'A' is an array of strings in the format 'X d' where X is a character and d is a digit, 'p' and 'r' are indices within the bounds of the array.
+    if (p >= r || r >= A.length) {
+        return;
+    }
+    var flg = true;
+    var minj = p;
+    for (var j = p + 1; j <= r; j++) {
+        if (getNumber(A[minj]) > getNumber(A[j])) {
+            flg = false;
+        }
+        minj = j;
+    }
+    if (flg) {
+        return;
+    }
+
+    var x = A[r];
+    var i = p - 1;
+    var flg = false;
+    for (var j = p; j <= r - 1; j++) {
+        if (getNumber(A[j]) <= getNumber(x)) {
+            i++;
+            var tmp = A[i];
+            A[i] = A[j];
+            A[j] = tmp;
+        }
+    }
+    var tmp = A[i + 1];
+    A[i + 1] = A[r];
+    A[r] = tmp;
+
+    partition(A, p, i);
+    partition(A, i + 2, r);
+    // Postcondition: 'A' is partially sorted such that elements less than or equal to 'x' are on the left, and elements greater than 'x' are on the right.
+}

@@ -1,0 +1,37 @@
+// Segment 1: Reading and parsing input
+// Precondition: Input is provided via /dev/stdin in the format:
+//               The first line contains an integer n (the number of elements).
+//               The second line contains n space-separated integers.
+// Postcondition: The variable `arr` contains input lines split into an array of strings,
+//                and the variable `a` contains the parsed integers from the second line.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+var a = arr[1].split(" ").map(Number);
+
+// Segment 2: Initialization of variables
+// Precondition: The variable `a` is a non-empty array of integers.
+// Postcondition: The variable `ans` is initialized to -1.
+var ans = -1;
+
+// Segment 3: Nested loop to find maximum product of two elements
+// Precondition: The variable `a` is a non-empty array of integers, and `ans` is initialized to -1.
+// Postcondition: The variable `ans` contains the maximum product of two elements in `a`
+//                that form a number with consecutive digits, or -1 if no such product exists.
+for (var i = 0; i < a.length; i++) {
+    for (var j = i + 1; j < a.length; j++) {
+        var v = (a[i] * a[j]) + "";
+        var flag = true;
+        v.split("").map(Number).reduce(function(a, b) {
+            if (a + 1 != b) flag = false;
+            return b;
+        });
+        if (flag) ans = Math.max(ans, v - 0);
+    }
+}
+
+// Segment 4: Output the result
+// Precondition: The variable `ans` contains the maximum product of two elements in `a`
+//               that form a number with consecutive digits, or -1 if no such product exists.
+// Postcondition: The value of `ans` is printed to the standard output.
+// Output format: A single integer printed on a new line.
+console.log(ans);

@@ -1,0 +1,27 @@
+Here is a Javascript program
+
+```javascript
+// p02606
+function main(input){
+  input = input.trim();
+  let list = input.split(" ");
+  let min = parseInt(list[0])-1;
+  let max = parseInt(list[1]);
+  let a = parseInt(list[2]);
+  let dai = Math.floor(max/a);
+  let syou = Math.floor(min/a);
+  let answer = dai - syou;
+  console.log(answer);
+}
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+```
+
+We can generate a test case for this program consisting of a sample input and the expected output:
+
+--Generated test case--
+Sample Input:
+5 10 2
+
+Expected Output:
+3
+--End of test case--

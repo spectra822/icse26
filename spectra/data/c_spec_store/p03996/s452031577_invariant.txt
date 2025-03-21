@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains three integers `n`, `m`, and `q` separated by spaces.
+    // The next `q` lines each contain a single integer.
+    // Output format: A single word "Yes" or "No".
+    // Precondition: `n`, `m`, and `q` are non-negative integers.
+    // Postcondition: The program prints "Yes" if the sequence of operations can be completed, otherwise it prints "No".
+```

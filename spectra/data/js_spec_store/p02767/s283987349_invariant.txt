@@ -1,0 +1,64 @@
+// Segment 1: Input Handling and Initial Setup
+
+// Precondition: The function Main is called with a single string argument 'input' that represents the entire input to the program, 
+// where the first line contains an integer N (1 ≤ N ≤ 100), and the second line contains N integers separated by spaces.
+
+// Postcondition: The input string 'input' is split into an array of strings, and any trailing empty string is removed from the array.
+// The first element of the array is converted to an integer N, and the second element is split into an array of integers X.
+
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    const N = input[0] - 0;
+    const X = input[1].split(' ').map(e => {
+        return e - 0;
+    });
+
+    // Segment 2: Calculate Mean and Initial Sum
+
+    // Precondition: 'N' is an integer representing the number of elements in array 'X', and 'X' is an array of integers with length N.
+    
+    // Postcondition: The variable 'sum' holds the total sum of all elements in array 'X', and 'p' holds the rounded mean of the elements in 'X'.
+    
+    var sum = 0;
+    X.forEach(e => {
+        sum += e;
+    });
+    var p = Math.round(sum / N);
+
+    // Segment 3: Calculate Sum of Squared Differences
+
+    // Precondition: 'sum' holds the total sum of all elements in array 'X', and 'p' holds the rounded mean of the elements in 'X'.
+    
+    // Postcondition: The variable 'sum' holds the total of the squared differences between each element in 'X' and the rounded mean 'p'.
+    
+    sum = 0;
+    X.forEach(e => {
+        sum += (e - p) ** 2;
+    });
+
+    // Segment 4: Output the Result
+
+    // Precondition: 'sum' holds the total of the squared differences between each element in 'X' and the rounded mean 'p'.
+    
+    // Postcondition: The program outputs a single integer which is the value of 'sum'.
+    // Output format: A single integer followed by a newline character.
+
+    console.log(sum);
+}
+
+// Input Format: 
+// The input is read from the standard input ("/dev/stdin").
+// The first line contains an integer N.
+// The second line contains N space-separated integers.
+
+// Example Input:
+// 2
+// 1 4
+
+// Example Output:
+// 5
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

@@ -1,0 +1,24 @@
+// Reading input from standard input and splitting it into lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Extracting the number of lines to process
+var L = (Arr.shift()) - 0;
+
+// Loop through each line and perform the replacement
+for (var i = 0; i < L; i++) {
+    var str = Arr[i];
+    // Replace occurrences of "Hoshino" with "Hoshina"
+    console.log(str.replace(/Hoshino/g, "Hoshina"));
+}
+   // Reading input from standard input and splitting it into lines
+   var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+   var Arr = (input.trim()).split("\n");
+   // Extracting the number of lines to process
+   var L = (Arr.shift()) - 0;
+   // Loop through each line and perform the replacement
+   for (var i = 0; i < L; i++) {
+       var str = Arr[i];
+       // Replace occurrences of "Hoshino" with "Hoshina"
+       console.log(str.replace(/Hoshino/g, "Hoshina"));
+   }

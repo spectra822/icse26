@@ -1,0 +1,81 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Given is a sequence of <var>N</var> integers <var>A_1, \ldots, A_N</var>.</p>
+<p>Find the (multiplicative) inverse of the sum of the inverses of these numbers, <var>\frac{1}{\frac{1}{A_1} + \ldots + \frac{1}{A_N}}</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 100</var></li>
+<li><var>1 \leq A_i \leq 1000</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>\ldots</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print a decimal number (or an integer) representing the value of <var>\frac{1}{\frac{1}{A_1} + \ldots + \frac{1}{A_N}}</var>.</p>
+<p>Your output will be judged correct when its absolute or relative error from the judge's output is at most <var>10^{-5}</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+10 30
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>7.5
+</pre>
+<p><var>\frac{1}{\frac{1}{10} + \frac{1}{30}} = \frac{1}{\frac{4}{30}} = \frac{30}{4} = 7.5</var>.</p>
+<p>Printing <code>7.50001</code>, <code>7.49999</code>, and so on will also be accepted.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+200 200 200
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>66.66666666666667
+</pre>
+<p><var>\frac{1}{\frac{1}{200} + \frac{1}{200} + \frac{1}{200}} = \frac{1}{\frac{3}{200}} = \frac{200}{3} = 66.6666...</var>.</p>
+<p>Printing <code>6.66666e+1</code> and so on will also be accepted.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>1
+1000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1000
+</pre>
+<p><var>\frac{1}{\frac{1}{1000}} = 1000</var>.</p>
+<p>Printing <code>+1000.0</code> and so on will also be accepted.</p></section>
+</div>
+</span>

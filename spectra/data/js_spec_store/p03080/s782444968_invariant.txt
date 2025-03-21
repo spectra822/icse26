@@ -1,0 +1,42 @@
+// Segment 1: Function Definition and Input Parsing
+
+// Preconditions:
+// - 'input' is a string containing multiple lines.
+// - The first line of 'input' is an integer.
+// - The second line of 'input' is a string of characters.
+
+// Postconditions:
+// - 'input' is split into an array of lines.
+// - 'str' contains the characters from the second line of 'input', sorted alphabetically.
+// - 'firstR' is the index of the first occurrence of 'R' in the sorted 'str' array.
+
+function Main(input) {
+    input = input.split('\n');
+    var str = input[1].split('').sort();
+    var firstR = str.indexOf('R');
+
+    // Segment 2: Condition Check and Output
+
+    // Preconditions:
+    // - 'input[0]' is a string representation of an integer.
+    // - 'firstR' is the index of the first occurrence of 'R' in the sorted 'str' array.
+
+    // Postconditions:
+    // - If the product of the integer from 'input[0]' and 0.5 minus 'firstR' is less than or equal to 0, 'No' is logged.
+    // - Otherwise, 'Yes' is logged.
+
+    if (parseInt(input[0]) * .5 - firstR <= 0) {
+        console.log('No')
+    } else {
+        console.log('Yes')
+    }
+}
+
+// Input Format:
+// - The input is read from standard input and is expected to be a string of the form:
+//   <integer>\n<string of characters>
+
+// Output Format:
+// - The output is either 'Yes' or 'No', printed on a new line.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

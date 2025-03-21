@@ -1,0 +1,37 @@
+```c
+// Global variables
+point p[MAX_N];
+node t[MAX_N];
+int pid[MAX_N];
+int n;
+int np;
+int n_pid;
+
+// Comparator function for sorting points by x-coordinate
+int cmpx_func(const void *l_, const void *r_)
+
+// Comparator function for sorting points by y-coordinate
+int cmpy_func(const void *l_, const void *r_)
+
+// Given a range `[l, r)` of points and a depth in the tree,
+// construct a k-d tree and return the index of the node representing this range.
+int makeKDTree(int l, int r, int depth)
+    Calls qsort(...)
+    Calls makeKDTree(...)
+
+// Given a k-d tree node `v`, a search range `[sx, tx] x [sy, ty]`,
+// and the depth in the tree, find all points within the search range
+// and store their IDs in the global array `pid`.
+void find(int v, int sx, int tx, int sy, int ty, int depth)
+    Calls find(...)
+
+// Comparator function for sorting integers
+int cmpi_func(const void *l_, const void *r_)
+
+// Main function to read input, build the k-d tree,
+// process range search queries, and print results.
+int main(int argc, char** argv)
+    Calls makeKDTree(...)
+    Calls find(...)
+    Calls qsort(...)
+```

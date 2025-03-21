@@ -1,0 +1,76 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have an integer sequence <var>A</var> of length <var>N</var>, where <var>A_1 = X, A_{i+1} = A_i + D (1 \leq  i &lt; N )</var> holds.</p>
+<p>Takahashi will take some (possibly all or none) of the elements in this sequence, and Aoki will take all of the others.</p>
+<p>Let <var>S</var> and <var>T</var> be the sum of the numbers taken by Takahashi and Aoki, respectively. How many possible values of <var>S - T</var> are there?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>-10^8 \leq X, D \leq 10^8</var></li>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>X</var> <var>D</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of possible values of <var>S - T</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 4 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>8
+</pre>
+<p><var>A</var> is <var>(4, 6, 8)</var>.</p>
+<p>There are eight ways for (Takahashi, Aoki) to take the elements: <var>((), (4, 6, 8)), ((4), (6, 8)), ((6), (4, 8)), ((8), (4, 6))), ((4, 6), (8))), ((4, 8), (6))), ((6, 8), (4)))</var>, and <var>((4, 6, 8), ())</var>.</p>
+<p>The values of <var>S - T</var> in these ways are <var>-18, -10, -6, -2, 2, 6, 10</var>, and <var>18</var>, respectively, so there are eight possible values of <var>S - T</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2 3 -3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2
+</pre>
+<p><var>A</var> is <var>(3, 0)</var>. There are two possible values of <var>S - T</var>: <var>-3</var> and <var>3</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>100 14 20
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>49805
+</pre></section>
+</div>
+</span>

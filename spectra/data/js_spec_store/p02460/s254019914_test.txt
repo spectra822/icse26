@@ -1,0 +1,13 @@
+Input:
+6
+0 foo 10
+1 foo
+0 bar 20
+1 bar
+2 foo
+1 foo
+
+Output:
+10
+20
+0

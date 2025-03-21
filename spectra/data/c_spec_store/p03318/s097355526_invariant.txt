@@ -1,0 +1,11 @@
+```c
+int S(long int x)
+    // Precondition: The parameter `x` is a non-negative long integer.
+    // Postcondition: The function returns the sum of the digits of `x`.
+
+int main()
+    // Input format: The first line contains a single long integer `n`.
+    // Output format: The next `n` lines each contain a single long integer.
+    // Precondition: The variable `n` is a non-negative long integer.
+    // Postcondition: The program prints the first `n` numbers in a sequence where each number has the smallest possible ratio of the number to the sum of its digits, starting from 1.
+```

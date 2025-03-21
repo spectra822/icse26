@@ -1,0 +1,85 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p><var>N</var> people are arranged in a row from left to right.</p>
+<p>You are given a string <var>S</var> of length <var>N</var> consisting of <code>0</code> and <code>1</code>, and a positive integer <var>K</var>.</p>
+<p>The <var>i</var>-th person from the left is standing on feet if the <var>i</var>-th character of <var>S</var> is <code>0</code>, and standing on hands if that character is <code>1</code>.</p>
+<p>You will give the following direction at most <var>K</var> times (possibly zero):</p>
+<p><strong>Direction</strong>: Choose integers <var>l</var> and <var>r</var> satisfying <var>1 \leq l \leq r \leq N</var>, and flip the <var>l</var>-th, <var>(l+1)</var>-th, <var>...</var>, and <var>r</var>-th persons. That is, for each <var>i = l, l+1, ..., r</var>, the <var>i</var>-th person from the left now stands on hands if he/she was standing on feet, and stands on feet if he/she was standing on hands.</p>
+<p>Find the maximum possible number of <strong>consecutive</strong> people standing on hands after at most <var>K</var> directions.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>N</var> is an integer satisfying <var>1 \leq N \leq 10^5</var>.</li>
+<li><var>K</var> is an integer satisfying <var>1 \leq K \leq 10^5</var>.</li>
+<li>The length of the string <var>S</var> is <var>N</var>.</li>
+<li>Each character of the string <var>S</var> is <code>0</code> or <code>1</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible number of consecutive people standing on hands after at most <var>K</var> directions.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 1
+00010
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+</pre>
+<p>We can have four consecutive people standing on hands, which is the maximum result, by giving the following direction:</p>
+<ul>
+<li>Give the direction with <var>l = 1, r = 3</var>, which flips the first, second and third persons from the left.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>14 2
+11101010110011
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>8
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>1 1
+1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1
+</pre>
+<p>No directions are necessary.</p></section>
+</div>
+</span>

@@ -1,0 +1,19 @@
+// Segment 1: Reading input
+// Precondition: The program is executed in an environment where the input can be read from "/dev/stdin".
+// Postcondition: The variable `m` is assigned a numeric value read from the input.
+/* Input format:
+   A single integer value.
+   Example:
+   21
+*/
+let m = Number(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Segment 2: Calculating and printing the result
+// Precondition: The variable `m` contains a numeric value.
+// Postcondition: The program prints the result of the expression (48 - m) to the standard output.
+/* Output format:
+   A single integer value.
+   Example:
+   27
+*/
+console.log(48 - m);

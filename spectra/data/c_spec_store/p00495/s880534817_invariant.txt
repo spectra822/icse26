@@ -1,0 +1,14 @@
+```c
+int get_len(int an, int bn, int *ais, int *bis, int k0)
+    // Precondition: `an`, `bn`, and `k0` are non-negative integers. `ais` and `bis` are arrays of length at least `an` and `bn` respectively.
+    // Postcondition: Returns the length of the longest subsequence starting from `k0` in `bis` that can be matched in order with elements in `ais`.
+
+int main(int argc, char **argv)
+    // Input format: The first line contains an integer `an`.
+    // The second line contains an integer `bn`.
+    // The next `an` lines each contain a single integer, representing elements of the array `ais`.
+    // The next `bn` lines each contain a single integer, representing elements of the array `bis`.
+    // Output format: A single integer representing the length of the longest subsequence.
+    // Precondition: `an` and `bn` are non-negative integers. The input conforms to the specified format.
+    // Postcondition: Prints the length of the longest subsequence of `bis` that can be matched in order with elements in `ais`.
+```

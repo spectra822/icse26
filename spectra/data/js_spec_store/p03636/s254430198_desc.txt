@@ -1,0 +1,14 @@
+// Function definition for the main logic
+const main = args => {
+    // Read and trim the input string
+    const s = args.trim();
+    
+    // Calculate the length of the trimmed string
+    const l = s.length;
+    
+    // Log the first character, the number of characters between the first and last character, and the last character
+    console.log(`${s[0]}${l - 2}${s[l - 1]}`)
+};
+
+// Read input from standard input and execute the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

@@ -1,0 +1,104 @@
+<span class="lang-en">
+<p>Score: <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>There is a cave.</p>
+<p>The cave has <var>N</var> rooms and <var>M</var> passages. The rooms are numbered <var>1</var> to <var>N</var>, and the passages are numbered <var>1</var> to <var>M</var>. Passage <var>i</var> connects Room <var>A_i</var> and Room <var>B_i</var> bidirectionally. One can travel between any two rooms by traversing passages. Room <var>1</var> is a special room with an entrance from the outside.</p>
+<p>It is dark in the cave, so we have decided to place a signpost in each room except Room <var>1</var>. The signpost in each room will point to one of the rooms directly connected to that room with a passage.</p>
+<p>Since it is dangerous in the cave, our objective is to satisfy the condition below for each room except Room <var>1</var>.</p>
+<ul>
+<li>If you start in that room and repeatedly move to the room indicated by the signpost in the room you are in, you will reach Room <var>1</var> after traversing the minimum number of passages possible.</li>
+</ul>
+<p>Determine whether there is a way to place signposts satisfying our objective, and print one such way if it exists.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li>All values in input are integers.</li>
+<li><var>2 \leq N \leq 10^5</var></li>
+<li><var>1 \leq M \leq 2 \times 10^5</var></li>
+<li><var>1 \leq A_i, B_i \leq N\ (1 \leq i \leq M)</var></li>
+<li><var>A_i \neq B_i\ (1 \leq i \leq M)</var></li>
+<li>One can travel between any two rooms by traversing passages.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>A_1</var> <var>B_1</var>
+<var>:</var>
+<var>A_M</var> <var>B_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>If there is no way to place signposts satisfying the objective, print <code>No</code>.</p>
+<p>Otherwise, print <var>N</var> lines. The first line should contain <code>Yes</code>, and the <var>i</var>-th line <var>(2 \leq i \leq N)</var> should contain the integer representing the room indicated by the signpost in Room <var>i</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 4
+1 2
+2 3
+3 4
+4 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Yes
+1
+2
+2
+</pre>
+<p>If we place the signposts as described in the sample output, the following happens:</p>
+<ul>
+<li>Starting in Room <var>2</var>, you will reach Room <var>1</var> after traversing one passage: <var>(2) \to 1</var>. This is the minimum number of passages possible.</li>
+<li>Starting in Room <var>3</var>, you will reach Room <var>1</var> after traversing two passages: <var>(3) \to 2 \to 1</var>. This is the minimum number of passages possible.</li>
+<li>Starting in Room <var>4</var>, you will reach Room <var>1</var> after traversing two passages: <var>(4) \to 2 \to 1</var>. This is the minimum number of passages possible.</li>
+</ul>
+<p>Thus, the objective is satisfied.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>6 9
+3 4
+6 1
+2 4
+5 3
+4 6
+1 5
+6 2
+4 5
+5 6
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>Yes
+6
+5
+5
+1
+1
+</pre>
+<p>If there are multiple solutions, any of them will be accepted.</p></section>
+</div>
+</span>

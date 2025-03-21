@@ -1,0 +1,11 @@
+```
+// Global variables
+None
+
+// This is the main function which reads three integers N, A, and B.
+// It then iterates through all numbers from 1 to N, calculates the sum of their digits,
+// and if this sum lies between A and B (inclusive), it adds the number to a counter.
+// Finally, it prints the counter value.
+int main(void)
+  No calls to other functions
+```

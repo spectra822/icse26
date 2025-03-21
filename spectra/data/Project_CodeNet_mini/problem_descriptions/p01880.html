@@ -1,0 +1,124 @@
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</script>
+
+<h2>Best Matched Pair</h2>
+
+<p>
+You are working for a worldwide game company as an engineer in Tokyo. This company holds an annual event for all the staff members of the company every summer. This year's event will take place in Tokyo. You will participate in the event on the side of the organizing staff. And you have been assigned to plan a recreation game which all the participants will play at the same time.
+</p>
+
+<p>
+After you had thought out various ideas, you designed the rules of the game as below.
+</p>
+
+<ul>
+<li> Each player is given a positive integer before the start of the game.</li>
+<li> Each player attempts to make a pair with another player in this game, and formed pairs compete with each other by comparing the products of two integers.</li>
+<li> Each player can change the partner any number of times before the end of the game, but cannot have two or more partners at the same time.</li>
+<li> At the end of the game, the pair with the largest product wins the game.</li>
+</ul>
+
+<p>
+In addition, regarding the given integers, the next condition must be satisfied for making a pair.
+</p>
+
+<ul>
+<li> The sequence of digits obtained by considering the product of the two integers of a pair as a string must be increasing and consecutive from left to right. For example, 2, 23, and 56789 meet this condition, but 21, 334, 135 or 89012 do not.</li>
+</ul>
+
+<p>
+Setting the rules as above, you noticed that multiple pairs may be the winners who have the same product depending on the situation. However, you can find out what is the largest product of two integers when a set of integers is given.
+</p>
+
+<p>
+Your task is, given a set of distinct integers which will be assigned to the players, to compute the largest possible product of two integers, satisfying the rules of the game mentioned above.
+</p>
+
+
+<h3>Input</h3>
+<p>
+The input consists of a single test case formatted as follows.<br/>
+<br/>
+$N$<br/>
+$a_1$ $a_2$ ... $a_N$<br/>
+</p>
+
+<p>
+The first line contains a positive integer $N$ which indicates the number of the players of the game. $N$ is an integer between 1 and 1,000. The second line has $N$ positive integers that indicate the numbers given to the players. For $i = 1, 2, ... , N - 1$, there is a space between $a_i$ and $a_{i+1}$. $a_i$ is between 1 and 10,000 for $i = 1, 2, ..., N$, and if $i \ne j$, then $a_i \ne a_j$.
+</p>
+
+
+<h3>Output</h3>
+<p>
+Print the largest possible product of the two integers satisfying the conditions for making a pair. If any two players cannot make a pair, print -1.
+</p>
+
+<h3>Sample Input 1</h3>
+<pre>
+2
+1 2
+</pre>
+
+<h3>Output for the Sample Input 1</h3>
+<pre>
+2
+</pre>
+
+<h3>Sample Input 2</h3>
+<pre>
+3
+3 22 115
+</pre>
+
+<h3>Output for the Sample Input 2</h3>
+<pre>
+345
+</pre>
+
+<h3>Sample Input 3</h3>
+<pre>
+2
+1 11
+</pre>
+
+<h3>Output for the Sample Input 3</h3>
+<pre>
+-1
+</pre>
+
+<h3>Sample Input 4</h3>
+<pre>
+2
+5 27
+</pre>
+
+<h3>Output for the Sample Input 4</h3>
+<pre>
+-1
+</pre>
+
+<h3>Sample Input 5</h3>
+<pre>
+2
+17 53
+</pre>
+
+<h3>Output for the Sample Input 5</h3>
+<pre>
+-1
+</pre>
+
+<h3>Sample Input 6</h3>
+<pre>
+10
+53 43 36 96 99 2 27 86 93 23
+</pre>
+
+<h3>Output for the Sample Input 6</h3>
+<pre>
+3456
+</pre>

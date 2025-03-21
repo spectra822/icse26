@@ -1,0 +1,36 @@
+// Precondition: The program is executed in a Node.js environment with access to the 'fs' module.
+// Postcondition: The variable 'input' is a string containing the contents of the file '/dev/stdin'.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Precondition: The variable 'input' contains newline-separated integers as a string.
+// Postcondition: The variable 'arr' is an array of integers parsed from the 'input' string.
+var arr = input.trim().split("\n").map(Number);
+
+// Input format: The input is a series of newline-separated integers ending with a zero.
+// Output format: For each integer (except the last zero), the program prints the largest possible sum as described in the problem, followed by a newline.
+while (true) {
+    // Precondition: 'arr' is a non-empty array of integers.
+    // Postcondition: 'n' is the first integer of 'arr', and 'arr' no longer contains 'n'.
+    var n = arr.shift();
+
+    // Precondition: 'n' is an integer.
+    // Postcondition: If 'n' is zero, the loop terminates. Otherwise, it continues with further calculations.
+    if (n == 0) break;
+
+    // Precondition: 'n' is a non-zero integer.
+    // Postcondition: 'max' is initialized to zero and will store the maximum sum found for the current 'n'.
+    var max = 0;
+
+    // Precondition: 'i' and 'j' iterate from 0 to 54 and 0 to 96 respectively.
+    // Postcondition: 'max' contains the largest sum of the form i^3 + j*(j+1)*(j+2)/6 that is less than or equal to 'n'.
+    for (var i = 0; i <= 54; i++) {
+        for (var j = 0; j <= 96; j++) {
+            var sum = i * i * i + (j * (j + 1) * (j + 2)) / 6;
+            if (n >= sum) max = Math.max(max, sum);
+        }
+    }
+
+    // Precondition: 'max' contains the largest valid sum for the given 'n'.
+    // Postcondition: The value of 'max' is printed to the console.
+    console.log(max);
+}

@@ -1,0 +1,39 @@
+// Segment 1: Input Handling
+// Precondition: The function receives a single string `input` which contains multiple lines of text, each line separated by a newline character.
+// Postcondition: The `input` variable is split into an array of strings, and the last element is removed if it is an empty string.
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Segment 2: Parsing Input
+    // Precondition: `input` is an array of strings where the first element represents the number of elements and the second element is a space-separated list of integers.
+    // Postcondition: `N` is an integer representing the number of elements, and `H` is an array of integers.
+    const N = input[0].split(' ')[0] - 0;
+    const H = input[1].split(' ').map(e => {
+        return e - 0;
+    });
+
+    // Segment 3: Check Heights
+    // Precondition: `N` is an integer and `H` is an array of integers of length `N`.
+    // Postcondition: The program prints 'Yes' if the heights are non-decreasing with an allowance of a decrease by 1 at most, otherwise prints 'No'.
+    var max = Infinity;
+    for (var i = N - 1; i >= 0; i--) {
+        if (H[i] <= max) {
+            max = H[i];
+        } else if (H[i] > max + 1) {
+            console.log('No'); // Output: 'No'
+            return;
+        }
+    }
+    console.log('Yes'); // Output: 'Yes'
+}
+
+// Input Format: A single string containing multiple lines.
+// Line 1: A single integer N (number of elements).
+// Line 2: N space-separated integers representing the heights.
+
+// Output Format: A single line containing either 'Yes' or 'No'.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

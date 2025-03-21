@@ -1,0 +1,27 @@
+"use strict";
+
+// Segment 1: Function definition and input handling
+// Precondition: The program receives a string input from standard input, which represents the contents of a file.
+// Postcondition: The input string is trimmed, split by newlines, and the first element is split by spaces to extract the integer N.
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+
+    // Segment 2: Calculation of temp and rest
+    // Precondition: N is a valid integer greater than or equal to 0.
+    // Postcondition: temp holds the integer division of N by 11, and rest holds the remainder when N is divided by 11.
+    let temp = Math.floor(N / 11);
+    let rest = N % 11;
+
+    // Segment 3: Output the result
+    // Precondition: temp and rest are correctly calculated based on the value of N.
+    // Postcondition: The program outputs an integer which is the result of (temp * 2) + Math.ceil(rest / 6).
+    // Input format: A single integer N on a single line.
+    // Output format: A single integer result on a single line.
+    console.log((temp * 2) + Math.ceil(rest / 6));
+}
+
+// Segment 4: Reading input from standard input and invoking the main function
+// Precondition: The program is executed in an environment where the input is provided via standard input.
+// Postcondition: The main function is called with the input string read from standard input.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

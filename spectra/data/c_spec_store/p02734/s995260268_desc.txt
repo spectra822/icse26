@@ -1,0 +1,12 @@
+```c
+// Global variables
+long mod = 998244353;
+
+// Main function to solve the problem
+// It reads input values for `n` and `s`, and an array `a` of size `n`.
+// It uses dynamic programming to compute the number of ways to partition
+// the array such that the sum of the elements in each partition does not exceed `s`.
+// The result is printed as the output.
+int main(void)
+  // No calls to other functions
+```

@@ -1,0 +1,116 @@
+// Import the filesystem module and read input from stdin
+function myin() {
+    return require("fs").readFileSync("/dev/stdin", "utf8").trim();
+}
+
+// Function to output the result to stdout
+function myout(t) {
+    console.log(t);
+}  
+
+// Function to output errors to stderr
+function myerr(t) {
+    console.error(t);
+}  
+
+// Function to convert input string to various formats based on the provided `no` parameter
+function myconv(i, no) {
+    switch (no) {
+        case 0:
+            return i;
+        case 1:
+            return parseInt(i);
+        case 2:
+            return i.split(" ");
+        case 3:
+            return i.split("\n");
+        case 4:
+            return i.split(" ").map((a) => Number(a));
+        case 5:
+            return i.split("\n").map((a) => Number(a));
+        case 6:
+            return i.split("");
+        case 7:
+            return i.split("").map((a) => Number(a));
+    }
+}
+
+// Main function to process the input and compute the result
+function Main(input) {
+    // Convert input into an array of lines
+    input = myconv(input, 3);
+    
+    // Parse the first line as an integer N
+    var N = myconv(input[0], 1);
+    
+    // Parse the second line as an array of strings
+    var list = myconv(input[1], 2);
+    
+    // Initialize dictionaries to count occurrences of numbers at odd and even indices
+    var oddlist = {};
+    var evenlist = {};
+    
+    // Populate oddlist and evenlist based on the index of each element
+    for (var i = 0; i < N; i++) {
+        if (i % 2 == 0) {
+            if (oddlist[list[i]] == null) {
+                oddlist[list[i]] = 1;
+            } else {
+                oddlist[list[i]]++;
+            }
+        } else {
+            if (evenlist[list[i]] == null) {
+                evenlist[list[i]] = 1;
+            } else {
+                evenlist[list[i]]++;
+            }
+        }
+    }
+
+    // Initialize output variable
+    var output = 0;
+    
+    // Get the unique keys from oddlist and evenlist
+    var oddSet = Object.keys(oddlist);
+    var evenSet = Object.keys(evenlist);
+    
+    // Handle the case where both oddSet and evenSet contain only one unique element
+    if (oddSet.length == 1 && evenSet.length == 1) {
+        if (evenSet[0] == oddSet[0]) {
+            myout(N / 2);
+            return;
+        } else {
+            myout(0);
+            return;
+        }
+    }
+
+    // Sort oddSet and evenSet based on the counts in descending order
+    oddSet.sort(function(a, b) {
+        return oddlist[b] - oddlist[a];
+    });
+    evenSet.sort(function(a, b) {
+        return evenlist[b] - evenlist[a];
+    });
+
+    // Compute the minimum number of changes required
+    if (oddSet[0] == evenSet[0]) {
+        var mae = 10000000;
+        var ato = 10000000;
+        if (oddSet[1] != null) {
+            mae = (N / 2 - oddlist[oddSet[1]]) + (N / 2 - evenlist[evenSet[0]]);
+        }
+        if (evenSet[1] != null) {
+            ato = (N / 2 - oddlist[oddSet[0]]) + (N / 2 - evenlist[evenSet[1]]);
+        }
+        output = Math.min(mae, ato);
+    } else {
+        output = (N / 2 - oddlist[oddSet[0]]) + (N / 2 - evenlist[evenSet[0]]);
+    }
+    
+    // Output the result
+    myout(output);
+}
+
+// Execute the Main function with the input read from stdin
+Main(myin());

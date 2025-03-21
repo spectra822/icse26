@@ -1,0 +1,35 @@
+// Read input from standard input and split it into lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Loop through each line of input
+for (var I = 0; I < Arr.length; I++) {
+    // Split the current line into two numbers, n and x
+    var nx = Arr[I].split(" ").map(Number);
+    var n = nx[0];
+    var x = nx[1];
+
+    // Check for the termination condition (n == 0 && x == 0)
+    if (n == 0 && x == 0) break;
+
+    // Initialize counter for the number of valid (i, j, k) triplets
+    var cnt = 0;
+
+    // Iterate through possible values for i
+    for (var i = 1; i <= n; i++) {
+        // Iterate through possible values for j, ensuring j > i
+        for (var j = i + 1; j <= n; j++) {
+            // If the sum of i and j is greater than or equal to x, break out of the inner loop
+            if (i + j >= x) break;
+            
+            // Calculate the value of k such that i + j + k = x
+            var k = x - (i + j);
+            
+            // Check if k is a valid number such that k > j and k <= n
+            if (k > j && k <= n) cnt++;
+        }
+    }
+
+    // Output the count of valid triplets for the current line of input
+    console.log(cnt);
+}

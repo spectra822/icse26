@@ -1,0 +1,16 @@
+// Segment 1
+// Precondition: The program is executed in an environment where the 'fs' module is available and '/dev/stdin' contains input data.
+// Postcondition: The variable 'input' contains the content read from '/dev/stdin' and the variable 'str' contains this content trimmed of whitespace.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var str = input.trim();
+
+// Segment 2
+// Precondition: The variable 'str' contains a string with three space-separated binary digits (e.g., "1 0 0").
+// Postcondition: The program prints "Close" or "Open" based on the value of 'str'.
+// Input format: A single line containing three space-separated binary digits (e.g., "0 0 1").
+// Output format: A single line containing either "Close" or "Open".
+if (str == "1 0 0") console.log("Close");
+if (str == "0 1 0") console.log("Close");
+if (str == "1 1 0") console.log("Open");
+if (str == "0 0 1") console.log("Open");
+if (str == "0 0 0") console.log("Close");

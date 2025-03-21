@@ -1,0 +1,16 @@
+// Function definition for the main logic
+function main(arg) {
+    // Reading input and preparing it for processing
+    const input = arg.trim().split('\n');
+    const x = Number(input[0]);
+    
+    // Checking if the input number is one of the specific values (7, 5, 3)
+    if (x === 7 || x === 5 || x === 3) {
+        console.log('YES');
+    } else {
+        console.log('NO');
+    }
+}
+
+// Reading input from standard input and invoking the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

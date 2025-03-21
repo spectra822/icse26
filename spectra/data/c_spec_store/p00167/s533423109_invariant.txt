@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: A sequence of datasets, each starting with an integer `n` (1 <= n <= 100), followed by `n` integers.
+    // The sequence ends with a single `0` on a line.
+    // Output format: For each dataset, a single integer representing the number of swaps performed to sort the array.
+    // Precondition: The input sequence of datasets is correctly formatted as described.
+    // Postcondition: The number of swaps required to sort each array is printed, one per line.
+```

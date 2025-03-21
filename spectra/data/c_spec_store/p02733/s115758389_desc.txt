@@ -1,0 +1,12 @@
+```c
+// Global variables
+int i, H, W, K;
+char S[12][1002];
+
+// Main function that processes the input grid and calculates the minimum number of horizontal cuts required
+// to ensure that each segment in a vertical column has at most K '1's.
+// It reads the dimensions H, W, K and the grid S from input, then iterates over all possible cut configurations
+// to find the optimal solution.
+int main()
+    // No function calls
+```

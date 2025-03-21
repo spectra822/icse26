@@ -1,0 +1,51 @@
+// Read input from standard input and split it by lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Main loop that processes each test case
+while (true) {
+    // Read the first line of the test case and check for termination condition
+    var nm = Arr.shift();
+    if (nm == "0 0") break;
+
+    // Parse n and m
+    nm = nm.split(" ").map(Number);
+    var n = nm[0];
+    var m = nm[1];
+
+    // Read the next n and m numbers into arrays N and M respectively
+    var N = [];
+    var M = [];
+    for (var i = 0; i < n; i++) N.push(Arr.shift() - 0);
+    for (var i = 0; i < m; i++) M.push(Arr.shift() - 0);
+
+    // Calculate the sum of elements in arrays N and M
+    var sumN = N.reduce(function(a, b) {
+        return a + b;
+    });
+    var sumM = M.reduce(function(a, b) {
+        return a + b;
+    });
+
+    // Find all pairs of elements (N[i], M[j]) that balance the sums
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < m; j++) {
+            var a = sumN - N[i] + M[j];
+            var b = sumM + N[i] - M[j];
+            if (a == b) arr.push([N[i] + M[j], N[i], M[j]]);
+        }
+    }
+
+    // If no pairs found, output -1 and continue to next test case
+    if (arr.length == 0) {
+        console.log(-1);
+        continue;
+    }
+
+    // Sort the pairs by the sum of the elements and output the first pair
+    arr.sort(function(a, b) {
+        return a[0] - b[0];
+    });
+    console.log(arr[0][1] + " " + arr[0][2]);
+}

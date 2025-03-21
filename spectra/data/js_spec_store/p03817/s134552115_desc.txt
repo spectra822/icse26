@@ -1,0 +1,18 @@
+"use strict";
+
+// Function definition: main entry point for the program
+const main = arg => {
+    // Parsing input: Read and parse input to extract N
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+
+    // Calculating the number of full sets of 11 and the remaining part
+    let temp = Math.floor(N / 11);
+    let rest = N % 11;
+
+    // Output the result: Calculate and print the minimum number of operations
+    console.log((temp * 2) + Math.ceil(rest / 6));
+}
+
+// Reading input from standard input and invoking main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

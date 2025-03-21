@@ -1,0 +1,15 @@
+```c
+int func(char* s, int n, int m)
+    // Precondition: The string `s` is null-terminated and has a length of at least `n`. `n` is the length of the string `s`. `m` is an integer used as a bitmask.
+    // Postcondition: The function returns the sum of integers formed by splitting the string `s` at positions where the corresponding bit in `m` is set. The original string `s` remains unchanged.
+
+int main(void)
+    // Input format: The input consists of multiple lines. Each line contains an integer `target` followed by a string `paper`.
+    //               The input ends when `target` is 0 and `paper` is "0".
+    // Output format: For each line of input, the output is either:
+    //                - The largest sum not exceeding `target`, followed by the string `paper` split by spaces at positions that form this sum.
+    //                - "error" if no sum of splits is less than or equal to `target`.
+    //                - "rejected" if there are multiple ways to achieve the largest sum.
+    // Precondition: The program reads input from standard input (stdin).
+    // Postcondition: The program prints either the largest sum and the corresponding split of the string `paper`, or "error" or "rejected" based on the conditions described above.
+```

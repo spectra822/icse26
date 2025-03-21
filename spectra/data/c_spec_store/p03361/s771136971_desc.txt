@@ -1,0 +1,12 @@
+```c
+// Global variables
+char s[51][60];
+
+// Main function that reads the dimensions of a grid `H` and `W`, and then reads the grid contents.
+// It checks each cell in the grid to see if it contains a '#' character. If a '#' character is found,
+// it verifies whether any adjacent cell (up, down, left, or right) also contains a '#' character.
+// If no adjacent cell contains a '#', the function prints "No" and exits.
+// If all '#' characters have at least one adjacent '#', the function prints "Yes".
+int main()
+  // No calls to other functions
+```

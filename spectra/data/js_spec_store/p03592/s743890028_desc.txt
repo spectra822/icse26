@@ -1,0 +1,27 @@
+// Function definition for Main, which processes the input and checks a specific condition
+function Main(input) {
+    // Initialize flag to false; this will be used to determine the final output
+    var flag = false;
+
+    // Split the input string into an array of numbers
+    input = input.split(" ").map(Number);
+
+    // Iterate through all possible values of i from 0 to input[0]
+    for (var i = 0; i <= input[0]; i++) {
+        // Iterate through all possible values of j from 0 to input[1]
+        for (var j = 0; j <= input[1]; j++) {
+            // Check if the specific condition is met
+            if (i * input[1] + j * input[0] - i * j * 2 == input[2]) {
+                // If condition is met, set flag to true and break out of the loop
+                flag = true;
+                break;
+            }
+        }
+    }
+
+    // Output "Yes" if flag is true; otherwise, output "No"
+    console.log(flag ? "Yes" : "No");
+}
+
+// Read input from standard input, trim any extra whitespace, and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

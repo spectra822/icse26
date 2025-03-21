@@ -1,0 +1,8 @@
+Input:
+madam
+racecar
+hello
+level
+
+Output:
+3

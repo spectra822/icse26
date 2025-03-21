@@ -1,0 +1,11 @@
+```c
+int next_permutation(int arr[], int n)
+    // Precondition: `arr` is an array of integers of length `n`.
+    // Postcondition: Returns 1 if the next lexicographical permutation of `arr` is found and modifies `arr` to be that permutation. Returns 0 if `arr` is already the highest permutation and leaves `arr` unchanged.
+
+int main(void)
+    // Input format: The first 6 lines each contain two integers separated by a space.
+    // Output format: A single word "yes" or "no".
+    // Precondition: The global array `connect` is defined with 12 rows and 4 columns, representing connections.
+    // Postcondition: Prints "yes" if a valid rotation and permutation of the blocks exists such that all connections match; otherwise, prints "no".
+```

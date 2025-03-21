@@ -1,0 +1,6 @@
+Input:
+4
+T F F T
+
+Output:
+T

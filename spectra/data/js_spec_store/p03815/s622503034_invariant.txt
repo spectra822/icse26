@@ -1,0 +1,40 @@
+'use strict'
+
+// Segment 1: Importing required module
+// Precondition: The file system module 'fs' must be available.
+// Postcondition: The 'fs' module is available for reading input from the file system.
+const fs = require("fs");
+
+// Segment 2: Main function definition
+// Precondition: The 'main' function is defined and ready to take an input parameter.
+// Postcondition: The 'main' function is defined and can be invoked with an input parameter.
+function main(input) {
+    // Segment 3: Calculate the quotient of input divided by 11
+    // Precondition: The 'input' parameter is a positive integer representing the input value.
+    // Postcondition: The variable 'x' holds the integer quotient of 'input' divided by 11.
+    const x = Math.floor(input / 11);
+
+    // Segment 4: Conditional checks and output
+    // Precondition: The variable 'x' is defined and holds a valid integer.
+    // Postcondition: The program outputs a specific value to the console based on the remainder of 'input' divided by 11.
+    /*
+        Input: A single integer 'input' (e.g., 7)
+        Output: A single integer printed to the console (e.g., 2)
+    */
+    if (input % 11 > 6) {
+        console.log(x * 2 + 2);
+    } else if (input % 11 > 0) {
+        console.log(x * 2 + 1);
+    } else {
+        console.log(x * 2);
+    }
+}
+
+// Segment 5: Read input and invoke main function
+// Precondition: The input file '/dev/stdin' contains a single integer value.
+// Postcondition: The 'main' function is invoked with the integer value read from the input file.
+/*
+    Input: A single integer from the file '/dev/stdin'
+    Output: None (The output is handled within the 'main' function)
+*/
+main(fs.readFileSync("/dev/stdin", "utf8"));

@@ -1,0 +1,28 @@
+// Segment 1: main Function Declaration
+
+// Precondition: None
+// Postcondition: The main function is declared, which will process input text and print a specific formatted output.
+const main = args => {
+
+    // Segment 2: Input Handling and Initialization
+
+    // Precondition: The 'args' parameter is a string that may contain leading or trailing whitespace.
+    // Postcondition: 's' is a trimmed version of 'args'. 'l' is the length of 's'.
+    const s = args.trim(); // Remove leading and trailing whitespace from input.
+    const l = s.length;    // Determine the length of the trimmed string.
+
+    // Segment 3: Output Formatting and Printing
+
+    // Precondition: 's' is a non-empty string with length 'l'.
+    // Postcondition: The first character, the number of characters between the first and last character minus two, and the last character of 's' are printed in the format `<first character><number><last character>`.
+    // Input format: A single string containing a word (e.g., "internationalization").
+    // Output format: A single line in the format "i18n" where 'i' is the first character, '18' is the count of characters between the first and last character minus two, and 'n' is the last character.
+    console.log(`${s[0]}${l - 2}${s[l - 1]}`)
+};
+
+// Segment 4: Input Reading and Function Invocation
+
+// Precondition: The program is executed in an environment where 'require' and 'fs' are available, and '/dev/stdin' contains the input string.
+// Postcondition: The 'main' function is invoked with the content read from '/dev/stdin'.
+// Input format: A single string read from standard input (e.g., "internationalization\n").
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

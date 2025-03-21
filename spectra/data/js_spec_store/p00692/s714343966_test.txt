@@ -1,0 +1,10 @@
+Input:
+1
+abcd
+bcda
+cdab
+dabc
+abcd
+
+Output:
+4

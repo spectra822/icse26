@@ -1,0 +1,17 @@
+```c
+void COMinit()
+    // Precondition: The global arrays `fac`, `finv`, and `inv` have been declared.
+    // Postcondition: The global arrays `fac`, `finv`, and `inv` are initialized such that `fac[i]` contains i!, 
+    // `inv[i]` contains the modular multiplicative inverse of i, and `finv[i]` contains the modular multiplicative inverse of i!.
+
+long long COM(int n, int k)
+    // Precondition: The global arrays `fac`, `finv`, and `inv` have been initialized by `COMinit()`.
+    // Postcondition: The function returns the value of the binomial coefficient C(n, k) modulo `MOD`.
+
+int main(void)
+    // Input format: Two integers `x` and `y` separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The global arrays `fac`, `finv`, and `inv` have been declared.
+    // Postcondition: The program prints the number of valid paths modulo `MOD` from (0,0) to (x,y) 
+    // if it is possible to reach (x, y) in (x + y)/3 steps, otherwise it prints 0.
+```

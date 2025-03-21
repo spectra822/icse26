@@ -1,0 +1,23 @@
+// Segment 1: Reading and parsing input
+// Precondition: The file '/dev/stdin' is available and contains a single line with an integer.
+// Postcondition: The variable D contains the integer value read from the input.
+
+const input = require('fs').readFileSync('/dev/stdin', 'utf8');
+const D = parseInt(input, 10);
+
+// Segment 2: Checking the value of D and determining the output
+// Precondition: D is an integer between 22 and 25 inclusive.
+// Postcondition: The appropriate Christmas-related message is logged to the console based on the value of D.
+
+// Input: A single integer on a single line (e.g., "25\n")
+// Output: A single line with the appropriate message (e.g., "Christmas\n")
+
+if (D === 25) {
+    console.log('Christmas'); // Output: "Christmas\n"
+} else if (D === 24) {
+    console.log('Christmas Eve'); // Output: "Christmas Eve\n"
+} else if (D === 23) {
+    console.log('Christmas Eve Eve'); // Output: "Christmas Eve Eve\n"
+} else {
+    console.log('Christmas Eve Eve Eve'); // Output: "Christmas Eve Eve Eve\n"
+}

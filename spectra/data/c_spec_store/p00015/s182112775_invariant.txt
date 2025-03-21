@@ -1,0 +1,12 @@
+```c
+void convert(char charNum[], int intNum[])
+    // Precondition: `charNum` is a null-terminated string representing a non-negative integer.
+    // Postcondition: `intNum` contains the reversed digits of `charNum` as integers, with leading zeros preserved.
+
+int main(int argc, const char * argv[])
+    // Input format: The first line contains an integer `dataSet`.
+    // For each dataset, the next two lines each contain a string of up to 128 characters representing non-negative integers.
+    // Output format: For each dataset, print the sum of the two numbers. If the sum exceeds 80 digits, print "overflow".
+    // Precondition: The input contains valid integers as strings, and `dataSet` is a positive integer.
+    // Postcondition: The program prints the sum of the two numbers for each dataset, or "overflow" if the sum exceeds 80 digits.
+```

@@ -1,0 +1,30 @@
+```c
+// Global variables
+#define N 8
+#define MD 1000000007
+
+int cnt[N + 1];
+
+// Given two long long integers `a` and `b`, return the smaller of the two.
+long long min(long long a, long long b)
+
+// Given two long long integers `a` and `b`, return the larger of the two.
+long long max(long long a, long long b)
+
+// Initialize the global array `cnt` such that `cnt[i]` represents the number of `i`-digit numbers.
+void init()
+  // Calls no other functions
+
+// Given an integer `a` and an integer `k`, return `a` raised to the power `k` modulo `MD`.
+long long power(int a, int k)
+  // Calls no other functions
+
+// The main function reads an integer `s` and calculates a specific result based on the value of `s`.
+// It initializes the `cnt` array and then performs various calculations involving `s`, updating `ans` accordingly.
+// Finally, it prints the result `ans`.
+int main()
+  // Calls init(...)
+  // Calls power(...)
+  // Calls min(...)
+  // Calls max(...)
+```

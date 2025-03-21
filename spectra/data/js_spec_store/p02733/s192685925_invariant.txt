@@ -1,0 +1,151 @@
+// Segment 1: Initial Setup
+
+// Precondition: The input is a string containing multiple lines, with the first line containing three integers H, W, and K.
+// Postcondition: The input string is split into an array of arrays of strings, and the integers H, W, and K are extracted.
+
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    var H = parseInt(input[0][0], 10);
+    var W = parseInt(input[0][1], 10);
+    var K = parseInt(input[0][2], 10);
+    arr_S = [];
+    arr_SS = [];
+    var tmp;
+
+// Segment 2: Data Preparation
+
+// Precondition: H, W, and K are defined. Input is split into arrays of strings.
+// Postcondition: arr_S contains the parsed grid values, and arr_SS contains the cumulative sums for each row.
+
+    for (var i = 0; i < H; i++) {
+        arr_S.push(input[i + 1][0].split("").map(e => parseInt(e, 10)));
+        arr_SS.push([0]);
+        tmp = 0;
+        for (var j = 0; j < W; j++) {
+            tmp += arr_S[i][j];
+            arr_SS[i].push(tmp);
+        }
+    }
+     
+// Segment 3: Initialization for Combination Loop
+
+// Precondition: arr_S and arr_SS are populated with the grid values and cumulative sums respectively.
+// Postcondition: Variables for the combination loop are initialized. The answer is initialized to a maximum possible value.
+
+    var N = H - 1;  
+    var hDiv;
+    var tmpRowSet;
+    var tmpSum;
+    var CountHCut;
+    var tmpCut;
+    var ans = (H - 1) + (W - 1);
+
+// Segment 4: Combination Loop
+
+// Precondition: Variables for the combination loop are initialized.
+// Postcondition: The minimal number of cuts needed is calculated and stored in the variable `ans`.
+
+    whole_loop:
+        for (var k = 0; k < Math.pow(2, N); k++) {
+             
+            if (N === 0) {
+                tmpRowSet = [arr_SS[0].slice()];
+                CountHCut = 0;
+            } else {
+                hDiv = [0, 1, 2, 3, 4, 5, 6, 7];
+                hDiv.length = H;
+                tmpRowSet = [arr_SS[0].slice()];
+                 
+                tmp = k.toString(2);
+                tmp = ('0'.repeat(N) + tmp).substr(-1 * N);
+                CountHCut = 0;
+                 
+                for (var l = 0; l < tmp.length; l++) {
+                     
+                    if (tmp.substr(l, 1) === '0') {
+                        hDiv[l + 1] = hDiv[l];
+                        tmpRowSet[tmpRowSet.length - 1] = VO(tmpRowSet[tmpRowSet.length - 1], arr_SS[l + 1], '+');
+                    } else {
+                        tmpRowSet.push(arr_SS[l + 1].slice());
+                        CountHCut++;
+                    }
+                }
+            }
+             
+            tmpSum = [0, 0, 0, 0, 0, 0, 0, 0];
+            tmpSum.length = tmpRowSet.length;
+            tmpCut = [];
+            for (var i = 1; i <= W; i++) {
+                part_loop: for (var j = 0; j < tmpRowSet.length; j++) {
+                     
+                    if (tmpRowSet[j][i] - tmpSum[j] > K) {
+                        if (i === 1 || tmpCut[tmpCut.length - 1] === i - 1) continue whole_loop;
+                        tmpCut.push(i - 1);  
+                        for (var jj = 0; jj < tmpRowSet.length; jj++) {
+                            tmpSum[jj] = tmpRowSet[jj][i - 1];
+                             
+                        }
+                        i--;
+                        break part_loop;
+                    }
+                }
+            }
+             
+            ans = Math.min(ans, CountHCut + tmpCut.length);
+        }
+
+// Segment 5: Output the Result
+
+// Precondition: The minimal number of cuts needed is calculated and stored in the variable `ans`.
+// Postcondition: The result is output to the console.
+
+// Output Format: A single integer representing the minimal number of cuts needed.
+    console.log(ans);
+
+}
+
+// Segment 6: Helper Function
+
+// Precondition: Takes two arrays v1 and v2, and a string op representing an operation.
+// Postcondition: Returns a new array resulting from applying the operation op on corresponding elements of v1 and v2.
+
+function VO(v1, v2, op) {
+    var ans = []
+    if (v1.length !== v2.length) {
+        if (v2.length === 1) {
+            v2 = Array.from({
+                length: (v1.length)
+            }, () => v2);
+        } else {
+            return null;
+        }
+    }
+    for (var i = 0; i < v1.length; i++) {
+        if (op == '+') {
+            ans.push(v1[i] + v2[i]);
+        }
+        if (op == '-') {
+            ans.push(v1[i] - v2[i]);
+        }
+        if (op == '*') {
+            ans.push(v1[i] * v2[i]);
+        }
+        if (op == '/') {
+            ans.push(v1[i] / v2[i]);
+        }
+        if (op == '%') {
+            ans.push(v1[i] % v2[i]);
+        }
+        if (op == '||') {
+            ans.push(Math.max(v1[i], v2[i]));
+        }
+    }
+    return ans;
+}
+
+// Input Format: The input is read from the standard input.
+// The first line contains three integers H, W, and K.
+// The next H lines contain W characters each (either '0' or '1').
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

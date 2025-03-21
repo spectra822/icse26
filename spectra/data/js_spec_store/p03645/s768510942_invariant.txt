@@ -1,0 +1,50 @@
+// Precondition: The program is invoked and the input is read from standard input.
+// The input format is a string with multiple lines, where the first line contains two integers N and M,
+// followed by M lines each containing two integers a and b.
+// Postcondition: The input string is processed and split into lines and then into integers.
+console.log((args => {
+    const [
+        [N, M], ...tmp
+    ] = args.trim().split`\n`.map(r => r.split` `.map(v => v | 0));
+
+    // Precondition: N and M are positive integers and tmp is a list of M pairs of integers.
+    // Postcondition: An adjacency list G is created with N+1 empty arrays.
+    const G = Array.from({
+        length: N + 1
+    }, _ => []);
+
+    // Precondition: G is an empty adjacency list with N+1 arrays, and tmp contains M pairs of integers.
+    // Postcondition: The adjacency list G is populated with the connections defined by the pairs in tmp.
+    for (let i = 0; i < M; i++) {
+        const [a, b] = tmp[i];
+        G[a].push(b);
+        G[b].push(a);
+    }
+
+    // Precondition: G is a populated adjacency list representing the connections between nodes.
+    // Postcondition: The function checks for a path from node 1 to node N via any intermediate node.
+    // If such a path exists, it returns 'POSSIBLE', otherwise it returns 'IMPOSSIBLE'.
+    for (const x of G[1]) {
+        for (const t of G[x]) {
+            if (t === N) return 'POSSIBLE';
+        }
+    }
+    return 'IMPOSSIBLE';
+})(require('fs').readFileSync('/dev/stdin', 'utf8')));
+
+/*
+Input format:
+- The first line contains two integers N and M separated by a space.
+- The next M lines each contain two integers a and b separated by a space.
+
+Example Input:
+3 2
+1 2
+2 3
+
+Output format:
+- A single string, either 'POSSIBLE' or 'IMPOSSIBLE', indicating whether there is a path from node 1 to node N.
+
+Example Output:
+POSSIBLE
+*/

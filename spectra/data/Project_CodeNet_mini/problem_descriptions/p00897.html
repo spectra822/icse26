@@ -1,0 +1,101 @@
+
+<H1><font color="#000">Problem D: </font>Long Distance Taxi </H1>
+
+<p>
+A taxi driver, Nakamura, was so delighted because he got a passenger who wanted to go to a
+city thousands of kilometers away. However, he had a problem. As you may know, most taxis in
+Japan run on liquefied petroleum gas (LPG) because it is cheaper than gasoline. There are more
+than 50,000 gas stations in the country, but less than one percent of them sell LPG. Although
+the LPG tank of his car was full, the tank capacity is limited and his car runs 10 kilometer per
+liter, so he may not be able to get to the destination without filling the tank on the way. He
+knew all the locations of LPG stations.
+Your task is to write a program that finds the best way from the current location to the destination without running out of gas.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input consists of several datasets, and each dataset is in the following format.
+</p>
+
+<p>
+<i>N M cap<br>
+src dest</i><br>
+<i>c</i><sub>1,1</sub> <i>c</i><sub>1,2</sub> <i>d</i><sub>1</sub><br>
+<i>c</i><sub>2,1</sub> <i>c</i><sub>2,2</sub> <i>d</i><sub>2</sub><br>
+.<br>
+.<br>
+.<br>
+<i>c</i><sub>N,1</sub> <i>c</i><sub>N,2</sub> <i>d</i><sub>N</sub><br>
+<i>s</i><sub>1</sub><br>
+<i>s</i><sub>2</sub><br>
+.<br>
+.<br>
+.<br>
+<i>s</i><sub>M</sub>
+
+<p>
+The first line of a dataset contains three integers (<i>N, M, cap</i>), where <i>N</i> is the number of roads
+(1 &le; <i>N</i> &le; 3000),<i>M</i> is the number of LPG stations (1&le; <i>M</i> &le; 300), and <i>cap</i> is the tank capacity
+(1 &le; <i>cap</i> &le; 200) in liter. The next line contains the name of the current city (<i>src</i>) and the name
+of the destination city (<i>dest</i>). The destination city is always different from the current city.
+The following <i>N</i> lines describe roads that connect cities. The road i (1 &le; <i>i</i> &le; N) connects two
+different cities <i>c</i><sub>i,1</sub> and <i>c</i><sub>i,2</sub> with an integer distance <i>d</i><sub>i</sub> (0 &lt; <i>d</i><sub>i</sub> &le; 2000) in kilometer, and he can
+go from either city to the other. You can assume that no two different roads connect the same
+pair of cities. The columns are separated by a single space. The next <i>M</i> lines (<i>s</i><sub>1</sub>,<i>s</i><sub>2</sub>,...,<i>s</i><sub>M</sub>) indicate the names of the cities with LPG station. 
+You can assume that a city with LPG station has at least one road.
+</p>
+
+<p>
+The name of a city has no more than 15 characters. Only English alphabet ('A' to 'Z' and 'a'
+to 'z', case sensitive) is allowed for the name.
+</p>
+
+<p>
+A line with three zeros terminates the input.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each dataset, output a line containing the length (in kilometer) of the shortest possible
+journey from the current city to the destination city. If Nakamura cannot reach the destination,
+output "-1" (without quotation marks). You must not output any other characters.
+The actual tank capacity is usually a little bit larger than that on the specification sheet, so
+you can assume that he can reach a city even when the remaining amount of the gas becomes
+exactly zero. In addition, you can always fill the tank at the destination so you do not have to
+worry about the return trip.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+6 3 34
+Tokyo Kyoto
+Tokyo Niigata 335
+Tokyo Shizuoka 174
+Shizuoka Nagoya 176
+Nagoya Kyoto 195
+Toyama Niigata 215
+Toyama Kyoto 296
+Nagoya
+Niigata
+Toyama
+6 3 30
+Tokyo Kyoto
+Tokyo Niigata 335
+Tokyo Shizuoka 174
+Shizuoka Nagoya 176
+Nagoya Kyoto 195
+Toyama Niigata 215
+Toyama Kyoto 296
+Nagoya
+Niigata
+Toyama
+0 0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+846
+-1
+</pre>

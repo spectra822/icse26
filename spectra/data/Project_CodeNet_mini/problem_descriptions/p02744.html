@@ -1,0 +1,79 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>In this problem, we only consider strings consisting of lowercase English letters.</p>
+<p>Strings <var>s</var> and <var>t</var> are said to be <strong>isomorphic</strong> when the following conditions are satisfied:</p>
+<ul>
+<li><var>|s| = |t|</var> holds.</li>
+<li>For every pair <var>i, j</var>, one of the following holds:<ul>
+<li><var>s_i = s_j</var> and <var>t_i = t_j</var>.</li>
+<li><var>s_i \neq s_j</var> and <var>t_i \neq t_j</var>.</li>
+</ul>
+</li>
+</ul>
+<p>For example, <code>abcac</code> and <code>zyxzx</code> are isomorphic, while <code>abcac</code> and <code>ppppp</code> are not.</p>
+<p>A string <var>s</var> is said to be in <strong>normal form</strong> when the following condition is satisfied:</p>
+<ul>
+<li>For every string <var>t</var> that is isomorphic to <var>s</var>, <var>s \leq t</var> holds. Here <var>\leq</var> denotes lexicographic comparison.</li>
+</ul>
+<p>For example, <code>abcac</code> is in normal form, but <code>zyxzx</code> is not since it is isomorphic to <code>abcac</code>, which is lexicographically smaller than <code>zyxzx</code>.</p>
+<p>You are given an integer <var>N</var>.
+Print all strings of length <var>N</var> that are in normal form, in lexicographically ascending order.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 10</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Assume that there are <var>K</var> strings of length <var>N</var> that are in normal form: <var>w_1, \ldots, w_K</var> in lexicographical order.
+Output should be in the following format:</p>
+<pre><var>w_1</var>
+<var>:</var>
+<var>w_K</var>
+</pre>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>a
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>aa
+ab
+</pre></section>
+</div>
+</span>

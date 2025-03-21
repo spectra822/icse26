@@ -1,0 +1,14 @@
+```c
+// Global variables
+#define MAX 100001
+long long int table[MAX];
+
+// Given the width `w` of a histogram, this function finds the area of the largest rectangle
+// that can be formed within the bounds of the histogram.
+long long int large_histogram(long long int w)
+
+// The main function reads the width `w` of the histogram and the heights of the histogram bars.
+// It then calls `large_histogram` to find the largest rectangular area in the histogram and prints the result.
+int main(void)
+  Calls large_histogram(...)
+```

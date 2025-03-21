@@ -1,0 +1,20 @@
+// Function definition for Main which takes input as an argument
+function Main(input) {
+    // Split the input string by spaces and store the values in an array 'hoge'
+    const hoge = input.split(' ');
+
+    // Convert the first, second, and third elements of 'hoge' to numbers and store them in variables A, B, and C respectively
+    const A = Number(hoge[0]);
+    const B = Number(hoge[1]);
+    const C = Number(hoge[2]);
+
+    // Check if C is between A and B inclusive, and print 'Yes' if true, otherwise print 'No'
+    if (C >= A && C <= B) {
+        console.log('Yes');
+    } else {
+        console.log('No');
+    }
+}
+
+// Read input from standard input and call the Main function with it
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

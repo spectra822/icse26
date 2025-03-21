@@ -1,0 +1,57 @@
+// Segment 1: Import and read input
+// Precondition: The program is run in a Node.js environment with the input provided through the standard input.
+// Postcondition: The input is read from the standard input and split into an array of strings.
+const ans = main(require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n"));
+console.log(ans);
+
+// Segment 2: Function to split a string into an array of numbers
+// Precondition: The input string `s` contains space-separated integers.
+// Postcondition: The function returns an array of integers parsed from the input string.
+function splitN(s) {
+    return s.split(' ').map(Number);
+}
+
+// Segment 3: Main function to compute the path
+// Precondition: The input `lines` is an array of strings, where the first element contains four space-separated integers.
+// Postcondition: The function returns a string that represents the path based on the input coordinates.
+function main(lines) {
+    // Segment 3a: Parse input coordinates
+    // Precondition: `lines[0]` is a string with four space-separated integers.
+    // Postcondition: The variables `sx`, `sy`, `tx`, and `ty` are assigned the respective integer values from the input.
+    const [sx, sy, tx, ty] = splitN(lines[0]);
+
+    // Segment 3b: Calculate differences and initialize the path string
+    // Precondition: `sx`, `sy`, `tx`, and `ty` are defined and are integers.
+    // Postcondition: `dx` and `dy` hold the differences in x and y coordinates, and `s` is initialized to an empty string.
+    const dx = tx - sx,
+        dy = ty - sy;
+    let s = '';
+
+    // Segment 3c: Construct the path string
+    // Precondition: `dx` and `dy` hold the differences in x and y coordinates.
+    // Postcondition: `s` contains the constructed path string based on the movements defined.
+    s += 'U'.repeat(dy) + 'R'.repeat(dx);
+    s += 'D'.repeat(dy) + 'L'.repeat(dx);
+    s += 'L' + 'U'.repeat(dy + 1) + 'R'.repeat(dx + 1) + 'D';
+    s += 'R' + 'D'.repeat(dy + 1) + 'L'.repeat(dx + 1) + 'U';
+
+    // Segment 3d: Return the constructed path string
+    // Precondition: `s` contains the constructed path string.
+    // Postcondition: The function returns the path string `s`.
+    return s;
+}
+
+/*
+Input Format:
+- The input is provided via standard input.
+- It consists of a single line with four space-separated integers: sx, sy, tx, ty.
+
+Example Input:
+0 0 1 2
+
+Output Format:
+- The output is a single line containing a string that represents the path.
+
+Example Output:
+UURDDLLUUURRDRDDDLLU
+*/

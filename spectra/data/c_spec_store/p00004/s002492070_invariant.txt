@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: Each line contains six floating-point numbers separated by spaces.
+    // Multiple lines of input can be provided until EOF.
+    // Output format: Each line of output contains two floating-point numbers separated by a space and rounded to three decimal places.
+    // Precondition: The input consists of valid floating-point numbers.
+    // Postcondition: For each line of input, the program calculates values of x and y that satisfy the given equations and prints them rounded to three decimal places.
+```

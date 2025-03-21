@@ -1,0 +1,43 @@
+// Segment 1: Input Handling
+// Precondition: The program is executed with an input string passed via stdin.
+// Postcondition: The variable 'input' is a list of characters derived from the input string.
+function main(input) {
+    input = input.split('');
+    
+    // Segment 2: Variable Initialization
+    // Precondition: 'input' is a list of characters with at least three elements.
+    // Postcondition: The variables 'egg', 'meat', 'veg' are assigned the first three characters of 'input'.
+    var egg = input[0];
+    var meat = input[1];
+    var veg = input[2];
+    
+    // Segment 3: Base Noodle Count Initialization
+    // Precondition: The variables 'egg', 'meat', 'veg' are initialized.
+    // Postcondition: The variable 'ndl' is initialized to 700.
+    var ndl = 700;
+    
+    // Segment 4: Noodle Count Adjustment
+    // Precondition: 'ndl' is initialized to 700, and 'egg', 'meat', 'veg' are assigned.
+    // Postcondition: 'ndl' is increased by 100 for each character in 'egg', 'meat', 'veg' that is 'o'.
+    if (egg === 'o') {
+        ndl += 100
+    }
+    if (meat === 'o') {
+        ndl += 100
+    }
+    if (veg === 'o') {
+        ndl += 100
+    }
+    
+    // Segment 5: Output Result
+    // Precondition: 'ndl' has been adjusted based on the values of 'egg', 'meat', 'veg'.
+    // Postcondition: The final value of 'ndl' is printed to the console.
+    // Input format: A single string of three characters (e.g., "oxo").
+    // Output format: A single integer followed by a newline (e.g., 900\n).
+    console.log(ndl);
+}
+
+// Entry Point
+// Precondition: The program is executed in an environment where 'fs' module is available and '/dev/stdin' contains the input string.
+// Postcondition: The 'main' function is called with the input string read from '/dev/stdin'.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

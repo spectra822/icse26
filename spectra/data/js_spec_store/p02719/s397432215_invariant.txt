@@ -1,0 +1,34 @@
+"use strict";
+
+// Segment 1: Function definition and input reading
+// Precondition: The program is executed in a Node.js environment with access to the file system.
+// Postcondition: The main function is defined and the input is read from the standard input.
+const main = (input) => {
+    // Input format: A single string with multiple lines.
+    // The first line contains two integers separated by a space.
+    // Example: "7 4\n"
+    const spi = input.split('\n');
+
+    // Segment 2: Parsing the input
+    // Precondition: The input string is split into an array of lines.
+    // Postcondition: The first line is parsed into two BigInt values, n and k.
+    const [n, k] = spi[0].split(' ').map(e => BigInt(e));
+
+    // Segment 3: Calculating the minimal absolute difference
+    // Precondition: n and k are BigInt values.
+    // Postcondition: The minimal absolute difference between n % k and k is calculated.
+    const a1 = n % k;
+    const a2 = a1 - k < 0 ? -(a1 - k) : a1 - k;
+
+    // Segment 4: Output the result
+    // Precondition: The minimal absolute difference is calculated and stored in either a1 or a2.
+    // Postcondition: The result is printed to the console.
+    // Output format: A single integer as a string.
+    // Example: "1"
+    console.log((a1 <= a2 ? a1 : a2).toString());
+};
+
+// Segment 5: Reading input and invoking the main function
+// Precondition: The program is executed with the input provided via standard input.
+// Postcondition: The main function is invoked with the input read from standard input.
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

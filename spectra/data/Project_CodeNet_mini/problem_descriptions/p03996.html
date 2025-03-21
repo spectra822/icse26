@@ -1,0 +1,107 @@
+<span class="lang-en">
+<p>Score : <var>1200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> arrays.
+The length of each array is <var>M</var> and initially each array contains integers <var>(1，2，...，M)</var> in this order.</p>
+<p>Mr. Takahashi has decided to perform <var>Q</var> operations on those <var>N</var> arrays.
+For the <var>i</var>-th (<var>1≤i≤Q</var>) time, he performs the following operation.</p>
+<ul>
+<li>Choose an arbitrary array from the <var>N</var> arrays and move the integer <var>a_i</var> (<var>1≤a_i≤M</var>) to the front of that array. For example, after performing the operation on <var>a_i=2</var> and the array <var>(5，4，3，2，1)</var>, this array becomes <var>(2，5，4，3，1)</var>.</li>
+</ul>
+<p>Mr. Takahashi wants to make <var>N</var> arrays exactly the same after performing the <var>Q</var> operations.
+Determine if it is possible or not.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2≤N≤10^5</var></li>
+<li><var>2≤M≤10^5</var></li>
+<li><var>1≤Q≤10^5</var></li>
+<li><var>1≤a_i≤M</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>Q</var>
+<var>a_1</var> <var>a_2</var> <var>...</var> <var>a_Q</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <code>Yes</code> if it is possible to make <var>N</var> arrays exactly the same after performing the <var>Q</var> operations.
+Otherwise, print <code>No</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2 2
+3
+2 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Yes
+</pre>
+<p>You can perform the operations as follows.</p>
+<p><img src="/img/other/code_festival_2016_quala/gbanjthabot/E_0.png"/></p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+3
+2 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>No
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2 3
+3
+3 2 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>Yes
+</pre>
+<p>You can perform the operations as follows.</p>
+<p><img src="/img/other/code_festival_2016_quala/gbanjthabot/E_2.png"/></p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>3 3
+6
+1 2 2 3 3 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>No
+</pre></section>
+</div>
+</span>

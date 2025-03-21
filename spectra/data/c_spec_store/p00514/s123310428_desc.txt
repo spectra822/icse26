@@ -1,0 +1,26 @@
+```c
+// Global variables
+int tabaicho_main[8667];
+
+// Set the first element of the global array `tabaicho_main` to `num`.
+// Initialize the rest of the elements to 0.
+void tabaicho_set(int num)
+
+// Multiply the global array `tabaicho_main` by `num`.
+void tabaicho_mul(int num)
+
+// Divide the global array `tabaicho_main` by `num`.
+void tabaicho_div(int num)
+
+// Print the number represented by the global array `tabaicho_main`.
+void tabaicho_print(void)
+
+// Read three integers `n`, `m`, and `r` from input.
+// Calculate the number of ways to distribute `r` items into `n` groups, where each group has at least `m` items.
+// Print the result.
+int main(void)
+  Calls tabaicho_set(...)
+  Calls tabaicho_mul(...)
+  Calls tabaicho_div(...)
+  Calls tabaicho_print(...)
+```

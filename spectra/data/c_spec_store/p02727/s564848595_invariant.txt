@@ -1,0 +1,15 @@
+```c
+int mizuhasu(const void* x, const void* y)
+    // Precondition: `x` and `y` are pointers to integers.
+    // Postcondition: Returns -1 if the integer pointed to by `x` is greater than the integer pointed to by `y`, 
+    // 0 if they are equal, and 1 if the integer pointed to by `x` is less than the integer pointed to by `y`.
+
+int main(void)
+    // Input format: The first line contains five integers `X`, `Y`, `A`, `B`, and `C`.
+    // The next `A` lines contain a single integer each, representing the array `p`.
+    // The next `B` lines contain a single integer each, representing the array `q`.
+    // The next `C` lines contain a single integer each, representing the array `r`.
+    // Output format: A single number.
+    // Precondition: The global variables `X`, `Y`, `A`, `B`, `C`, `p`, `q`, and `r` have been declared.
+    // Postcondition: The sum of the top `X` elements from `p` and the top `Y` elements from `q` after possible replacements with elements from `r` is printed.
+```

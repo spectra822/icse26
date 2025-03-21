@@ -1,0 +1,33 @@
+// Read input from standard input and split into lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Parse the first line as the target value 'n'
+var n = arr.shift() - 0;
+
+// Parse the second line as the array of costs 'p'
+var p = arr.shift().split(" ").map(Number);
+
+// Parse the third line as the array of times 't'
+var t = arr.shift().split(" ").map(Number);
+
+// Initialize the minimum cost array 's' with Infinity
+var s = [];
+for (var i = 0; i <= 200; i++) s[i] = Infinity;
+s[0] = 0; // Starting point has zero cost
+
+// Dynamic programming to calculate minimum cost to reach each time
+for (var i = 0; i <= 100; i++) {
+    if (s[i] == Infinity) continue;
+    s[i + t[0]] = Math.min(s[i] + p[0], s[i + t[0]]);
+    s[i + t[1]] = Math.min(s[i] + p[1], s[i + t[1]]);
+    s[i + t[2]] = Math.min(s[i] + p[2], s[i + t[2]]);
+    s[i + t[3]] = Math.min(s[i] + p[3], s[i + t[3]]);
+}
+
+// Find the minimum cost to reach at least 'n' time
+var min = Infinity;
+for (var i = n; i <= 200; i++) min = Math.min(min, s[i]);
+
+// Output the result
+console.log(min);

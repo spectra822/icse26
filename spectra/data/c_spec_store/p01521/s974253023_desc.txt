@@ -1,0 +1,13 @@
+```c
+// Global variables
+char B[200];  // Array to store the input string
+char c[256];  // Array to count occurrences of each character
+int i;        // Loop variable
+
+// This function reads a string from standard input, and counts the number of 
+// non-consecutive occurrences of 'o' and 'x'. It then prints 'o' if 'o' occurs 
+// more frequently, and 'x' otherwise.
+int main()
+    // Calls gets(...) to read input
+    // Calls puts(...) to print output
+```

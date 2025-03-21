@@ -1,0 +1,80 @@
+"use strict";
+
+// Segment 1: Variable and function declarations
+// Precondition: The program starts execution in strict mode.
+// Postcondition: The necessary variables and utility functions for parsing input and creating arrays are declared.
+var input = require("fs").readFileSync("/dev/stdin", "utf8");
+var cin = input.split(/ |\n/),
+    cid = 0;
+
+function next(a) {
+    return a ? cin[cid++] : +cin[cid++];
+}
+
+function nexts(n, a) {
+    return a ? cin.slice(cid, cid += n) : cin.slice(cid, cid += n).map(a => +a);
+}
+
+function nextm(h, w, a) {
+    var r = [],
+        i = 0;
+    if (a)
+        for (; i < h; i++) r.push(cin.slice(cid, cid += w));
+    else
+        for (; i < h; i++) r.push(cin.slice(cid, cid += w).map(a => +a));
+    return r;
+}
+
+function xArray(v) {
+    var a = arguments,
+        l = a.length,
+        r = "Array(a[" + --l + "]).fill().map(x=>{return " + v + ";})";
+    while (--l) r = "Array(a[" + l + "]).fill().map(x=>" + r + ")";
+    return eval(r);
+}
+
+// Segment 2: Main function invocation and output handling
+// Precondition: All necessary functions and variables are declared.
+// Postcondition: The main function is called, and if it returns a value, it is printed to the console.
+var myOut = main();
+if (myOut !== undefined) console.log(myOut);
+
+// Segment 3: Main function definition and variable initialization
+// Precondition: Input has been read from stdin and split into tokens.
+// Postcondition: Variables `n`, `p`, and `s` are initialized, and the `ans` variable is set to 0.
+// Input format: 
+// Line 1: Two integers `n` and `p` separated by a space.
+// Line 2: A string of `n` digits.
+function main() {
+    var n = next(),
+        p = next();
+    var s = next(1);
+    var ans = 0;
+
+    // Segment 4: Special case for when 10 % p === 0
+    // Precondition: Variables `n`, `p`, `s`, and `ans` are initialized.
+    // Postcondition: If 10 % p === 0, the number of valid substrings is calculated.
+    if (10 % p === 0) {
+        for (var i = 0; i < n; i++) {
+            if (s[i] % p === 0) ans += i + 1;
+        }
+        return ans;
+    }
+
+    // Segment 5: General case for when 10 % p !== 0
+    // Precondition: 10 % p !== 0, and variables `n`, `p`, `s`, and `ans` are initialized.
+    // Postcondition: The number of valid substrings is calculated using remainder map.
+    var map = xArray(0, p);
+    map[0] = 1;
+    var keta = 1,
+        val = 0;
+    for (var i = n; i--;) {
+        val += s[i] * keta;
+        val %= p;
+        map[val]++;
+        keta *= 10;
+        keta %= p;
+    }
+    for (var i = 0; i < p; i++) ans += map[i] * (map[i] - 1) / 2;
+    return ans;
+}

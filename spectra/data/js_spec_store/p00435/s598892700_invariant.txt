@@ -1,0 +1,24 @@
+// Segment 1: Read Input
+// Precondition: The program is executed in an environment where /dev/stdin is available and contains the input data.
+// Postcondition: The variable 'input' contains the entire input as a single string, and 'Arr' is an array of strings, each representing a line of input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Initialize Alphabet Arrays
+// Precondition: The variable 'Arr' is defined and contains the input data split into lines.
+// Postcondition: The variables 'abc' and 'def' are arrays where 'abc' represents the standard English alphabet and 'def' represents the alphabet shifted by 3 positions.
+var abc = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
+var def = "D E F G H I J K L M N O P Q R S T U V W X Y Z A B C".split(" ");
+
+// Segment 3: Process Each Line of Input
+// Input format: Each element of 'Arr' is a single line of uppercase letters without spaces or special characters.
+// Output format: For each line of input, output the corresponding decoded string (shifted by -3 positions in the alphabet).
+// Precondition: 'Arr', 'abc', and 'def' are defined.
+// Postcondition: Each line of input is processed, and the decoded result is printed to the console.
+for (var i = 0; i < Arr.length; i++) {
+    var str = Arr[i];
+    var STR = "";
+    for (var j = 0; j < str.length; j++) 
+        STR += abc[def.indexOf(str[j])];
+    console.log(STR);
+}

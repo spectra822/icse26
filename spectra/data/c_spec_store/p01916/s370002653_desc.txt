@@ -1,0 +1,10 @@
+```c
+// Global variables
+char str[1010];
+int a[30] = {};
+
+// Main function that reads a string input, processes it to count the number of characters with odd frequencies,
+// and then prints half the count of such characters.
+int main(void)
+  // No calls to other functions
+```

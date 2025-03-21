@@ -1,0 +1,52 @@
+// Precondition: The program is starting execution. No lines have been read from stdin yet.
+// Postcondition: The program is set up to read input from stdin with UTF-8 encoding.
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// Precondition: The program is set up to read input from stdin.
+// Postcondition: An empty array 'lines' has been declared to store input lines.
+var lines = [];
+
+// Precondition: The 'lines' array has been declared.
+// Postcondition: A 'readline' interface 'reader' has been created to read input from stdin.
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Precondition: The 'readline' interface 'reader' has been created.
+// Postcondition: Each line of input is being pushed into the 'lines' array.
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+// Precondition: Input lines are being collected in the 'lines' array.
+// Postcondition: Once the input is complete, the main computation starts.
+//                The first line of input is parsed as an integer N.
+reader.on('close', () => {
+    const N = lines[0] - 0;
+
+    // Precondition: N has been parsed from the first line of input.
+    // Postcondition: An empty object 'ansmap' has been initialized to store the counts.
+    //                'limit' has been calculated as the square root of N.
+    const ansmap = {};
+    const limit = Math.sqrt(N);
+
+    // Precondition: 'ansmap' has been initialized and 'limit' has been calculated.
+    // Postcondition: The triple nested loops have calculated the values of 'a' for each combination of x, y, and z less than 'limit'.
+    //                The results are stored in 'ansmap' with the count of each value of 'a'.
+    for (let x = 1; x < limit; x++)
+        for (let y = 1; y < limit; y++)
+            for (let z = 1; z < limit; z++) {
+                const a = x * x + y * y + z * z + x * y + x * z + y * z;
+                ansmap[a] = (ansmap[a] || 0) + 1;
+            }
+
+    // Precondition: 'ansmap' contains the counts of each value of 'a' calculated from the nested loops.
+    // Postcondition: The program has printed out the counts for each integer from 1 to N (inclusive).
+    // Input format: An integer N followed by a newline.
+    // Output format: N lines, each containing an integer (the count of occurrences for each integer from 1 to N).
+    for (let i = 1; i <= N; i++) {
+        console.log(ansmap[i] || 0);
+    }
+});

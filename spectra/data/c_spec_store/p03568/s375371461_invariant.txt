@@ -1,0 +1,9 @@
+```c
+int main()
+    // Input format: The first line contains an integer `N`.
+    // The next `N` lines each contain an integer `A`.
+    // Output format: A single number.
+    // Precondition: `N` is a non-negative integer.
+    // Postcondition: The program computes the value of `3^N - 2^k`, where `k` is the number of even integers in the input list.
+    // The result is printed to the standard output.
+```

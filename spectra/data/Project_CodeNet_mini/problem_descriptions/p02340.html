@@ -1,0 +1,73 @@
+<!--<h1>写像12相 その10:ボールに区別なし・箱に区別なし・入れ方に制限なし</h1>-->
+<h1>Balls and Boxes 10</h1>
+
+<table border="">
+  <tr><th>Balls</th><th>Boxes</th><th>Any way</th><th>At most one ball</th><th>At least one ball</th></tr>
+  <tr><th>Distinguishable</th><th>Distinguishable</th><td>1</td><td>2</td><td>3</td></tr>
+  <tr><th>Indistinguishable</th><th>Distinguishable</th><td>4</td><td>5</td><td>6</td></tr>
+  <tr><th>Distinguishable</th><th>Indistinguishable</th><td>7</td><td>8</td><td>9</td></tr>
+  <tr><th>Indistinguishable</th><th>Indistinguishable</th><td style="background-color:#aff">10</td><td>11</td><td>12</td></tr>
+</table>
+
+<h2>Problem</h2>
+
+<p>You have $n$ balls and $k$ boxes. You want to put these balls into the boxes.</p>
+<p>Find the number of ways to put the balls under the following conditions:</p>
+
+<ul>
+  <li>Each ball is <b>not</b> distinguished from the other.</li>
+  <li>Each box is <b>not</b> distinguished from the other.</li>
+  <li>Each ball can go into only one box and no one remains outside of the boxes.</li>
+  <li>Each box can contain an arbitrary number of balls (including zero).</li>
+</ul>
+
+<p>Note that you must print this count modulo $10^9+7$.</p>
+
+<h2>Input</h2>
+
+<pre>
+$n$ $k$
+</pre>
+
+<p>The first line will contain two integers $n$ and $k$.</p>
+
+<h2>Output</h2>
+
+<p>Print the number of ways modulo $10^9+7$ in a line.</p>
+
+<h2>Constraints</h2>
+
+<ul>
+  <li>$1 \le n \le 1000$</li>
+  <li>$1 \le k \le 1000$</li>
+</ul>
+
+<h2>Sample Input 1</h2>
+<pre>
+5 3
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+5
+</pre>
+
+<h2>Sample Input 2</h2>
+<pre>
+10 5
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+30
+</pre>
+
+<h2>Sample Input 3</h2>
+
+<pre>
+100 100
+</pre>
+<h2>Sample Output 3</h2>
+<pre>
+190569292
+</pre>

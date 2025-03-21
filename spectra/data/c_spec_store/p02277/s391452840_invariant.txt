@@ -1,0 +1,19 @@
+```c
+void quicksort(card *A, int p, int r)
+    // Precondition: The array `A` contains `card` elements and the indices `p` and `r` are valid indices within the array.
+    // Postcondition: The subarray `A[p..r]` is sorted in non-decreasing order based on the `val` field of the `card` structure.
+
+int partition(card *A, int p, int r)
+    // Precondition: The array `A` contains `card` elements and the indices `p` and `r` are valid indices within the array.
+    // Postcondition: The subarray `A[p..r]` is partitioned around a pivot such that all elements less than or equal to the pivot are to its left and all elements greater than the pivot are to its right. The pivot index is returned.
+
+int main()
+    // Input format: 
+    // The first line contains an integer `n`.
+    // The next `n` lines each contain a character and an integer, separated by a space.
+    // Output format: 
+    // A string "Stable" or "Not stable" on one line.
+    // The next `n` lines each contain a character and an integer, separated by a space.
+    // Precondition: The input data is correctly formatted and `n` is a non-negative integer.
+    // Postcondition: The program prints "Stable" if the sorting is stable, otherwise it prints "Not stable". Then, it prints the sorted array `A`.
+```

@@ -1,0 +1,16 @@
+```c
+// Global variables
+int N;
+char P[114514];
+
+// Given two characters `a` and `b`, return 'F' if `a` is 'T' and `b` is 'F'.
+// Otherwise, return 'T'.
+char souti(char a, char b)
+
+// This function reads an integer `N` and a sequence of `N` characters.
+// It processes the sequence using the `souti` function and
+// prints a single character as the result.
+// If the input is invalid, it returns 1.
+int main(void)
+  Calls souti(...)
+```

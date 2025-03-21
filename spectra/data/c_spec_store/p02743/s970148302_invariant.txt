@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: Three floating-point numbers `a`, `b`, and `c` separated by spaces, followed by a newline.
+    // Output format: A single line containing either "Yes" or "No".
+    // Precondition: The input values `a`, `b`, and `c` are valid floating-point numbers.
+    // Postcondition: Prints "Yes" if the condition `d*d > 4.0L*a*b && d > 0` is true, where `d = c - a - b`. Otherwise, prints "No".
+```

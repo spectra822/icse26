@@ -1,0 +1,27 @@
+// Segment 1: Function Definition
+// Precondition: None
+// Postcondition: The function 'main' is defined and ready to be executed.
+function main(input) {
+
+    // Segment 2: Parsing Input
+    // Precondition: 'input' is a string containing space-separated integers.
+    // Postcondition: 'args' is an array of integers parsed from the input string.
+    const args = input.split(' ').map(n => parseInt(n, 10));
+
+    // Segment 3: Calculating Area
+    // Precondition: 'args' is an array of integers where args[0] and args[1] represent the base and height of a triangle, respectively.
+    // Postcondition: 'S' is the area of the triangle calculated using the formula (base * height) / 2.
+    const S = (args[0] * args[1]) / 2;
+
+    // Segment 4: Outputting Result
+    // Precondition: 'S' is the calculated area of the triangle.
+    // Postcondition: The area 'S' is printed to the console.
+    // Output format: The output is a single integer followed by a newline.
+    console.log(S);
+}
+
+// Segment 5: Reading Input and Executing Function
+// Precondition: '/dev/stdin' contains the input string.
+// Postcondition: The 'main' function is executed with the content read from '/dev/stdin'.
+// Input format: The input is a single line containing space-separated integers.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

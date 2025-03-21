@@ -1,0 +1,11 @@
+```c
+void enumeration(int result[], int used[], int n, int d)
+    // Precondition: `result` and `used` are arrays of size at least `n`. `d` is a non-negative integer less than or equal to `n`.
+    // Postcondition: All permutations of the elements in `used` are printed to STDOUT in lexicographical order, with each permutation on a new line.
+
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // Output format: Each of the `n!` permutations of the numbers 1 to `n` are printed, each on a new line.
+    // Precondition: An integer `n` is provided as input, where `n` is a positive integer.
+    // Postcondition: All permutations of the numbers from 1 to `n` are printed to STDOUT, each permutation on a new line.
+```

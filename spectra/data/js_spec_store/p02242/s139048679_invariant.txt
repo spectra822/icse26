@@ -1,0 +1,63 @@
+const [WHITE, BLACK] = [0, 1];
+
+// Precondition: None.
+// Postcondition: The `WHITE` and `BLACK` constants are defined with values 0 and 1 respectively.
+
+(function main() {
+    // Precondition: A file containing the input is available at '/dev/stdin'.
+    // Postcondition: The lines of the input file are read and split into an array of strings.
+    const lines = require('fs').readFileSync('/dev/stdin', 'utf8').trim().split('\n');
+
+    // Precondition: `lines` is an array of strings where the first element is a number `n`.
+    // Postcondition: `n` is a number representing the number of vertices, and `range_n` is an array of numbers from 0 to n-1.
+    const n = Number(lines.shift());
+    const range_n = Array.from(Array(n), (e, i) => i);
+
+    // Precondition: `lines` is an array of strings representing the adjacency list in the custom format.
+    // Postcondition: `adj` is a 2D array where `adj[i][j]` represents the weight of the edge from vertex `i` to vertex `j`. If no edge exists, the weight is Infinity.
+    const adj = []
+    let x, k, arr;
+    lines.forEach((l, i) => {
+        adj[i] = [].concat(range_n).fill(Infinity);
+        [x, k, ...arr] = l.split(' ').map(Number);
+        for (let j = 0; j < k; j++) adj[i][arr[2 * j]] = arr[2 * j + 1];
+    });
+
+    // Precondition: `n` is a number representing the number of vertices.
+    // Postcondition: `dist` and `color` are arrays of length `n` initialized to Infinity and WHITE respectively, except `dist[0]` which is 0.
+    const dist = [];
+    const color = [];
+    for (let i = 0; i < n; i++) {
+        dist[i] = Infinity;
+        color[i] = WHITE;
+    }
+    dist[0] = 0;
+
+    // Precondition: `dist` and `color` are arrays of length `n`.
+    // Postcondition: `min` is an array of length `n` initialized to Infinity except `min[0]` which is 0. `u` is initialized to 0.
+    let mincost, u = 0,
+        min = [].concat(range_n).fill(Infinity);
+    min[0] = 0;
+
+    // Precondition: `adj` is a 2D array representing the adjacency list and `min` is an array of minimum costs.
+    // Postcondition: The minimum cost to reach each vertex from the starting vertex (vertex 0) is calculated and stored in `min`.
+    while (true) {
+        adj[u].forEach((v, i) => {
+            if (color[i] !== BLACK && min[u] + v < min[i]) min[i] = min[u] + v;
+        });
+
+        mincost = range_n.reduce((m, i) => {
+            if (color[i] === BLACK || min[i] >= m) return m;
+            return min[u = i];
+        }, Infinity);
+
+        if (mincost === Infinity) break;
+
+        color[u] = BLACK;
+    }
+
+    // Precondition: `min` is an array containing the minimum costs to reach each vertex from the starting vertex.
+    // Postcondition: The minimum cost to reach each vertex is printed in the format "vertex cost" for each vertex.
+    console.log(min.map((e, i) => `${i} ${e}`).join('\n'));
+    // Output format: Each line contains two space-separated integers representing the vertex and its minimum cost from the starting vertex.
+})();

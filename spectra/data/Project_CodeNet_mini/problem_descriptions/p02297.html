@@ -1,0 +1,81 @@
+
+<H1>Area</H1>
+<br/>
+
+<p>
+For a given polygon <var>g</var>, computes the area of the polygon.
+</p>
+
+<p>
+<var>g</var> is represented by a sequence of points <var>p<sub>1</sub></var>, <var>p<sub>2</sub></var>,..., <var>p<sub>n</sub></var> where line segments connecting <var>p<sub>i</sub></var> and <var>p<sub>i+1</sub></var> (1 &le; <var>i</var> &le; <var>n-1</var>) are sides of <var>g</var>. The line segment connecting <var>p<sub>n</sub></var> and <var>p<sub>1</sub></var> is also a side of the polygon.
+</p>
+
+<p>
+Note that the polygon is not necessarily convex.
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+The input consists of coordinates of the points <var>p<sub>1</sub></var>,..., <var>p<sub>n</sub></var> in the following format:
+</p>
+
+<pre>
+<var>n</var>
+<var>x<sub>1</sub></var> <var>y<sub>1</sub></var> 
+<var>x<sub>2</sub></var> <var>y<sub>2</sub></var>
+:
+<var>x<sub>n</sub></var> <var>y<sub>n</sub></var>
+</pre>
+
+
+<p>
+The first integer <var>n</var> is the number of points. The coordinate of a point <var>p<sub>i</sub></var> is given by two integers <var>x<sub>i</sub></var> and <var>y<sub>i</sub></var>. The coordinates of points are given in the order of counter-clockwise visit of them.
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+Print the area of the polygon in a line. The area should be printed with one digit to the right of the decimal point.
+</p>
+
+<H2>Constraints</H2>
+
+<ul>
+<li>
+3 &le; <var>n</var> &le; 100
+</li>
+<li>
+-10000 &le; <var>x<sub>i</sub></var>, <var>y<sub>i</sub></var> &le; 10000
+</li>
+<li>No point will occur more than once.</li>
+<li>Two sides can intersect only at a common endpoint.</li>
+</ul>
+
+<H2>Sample Input 1</H2>
+<pre>
+3
+0 0
+2 2
+-1 1
+</pre>
+<H2>Sample Output 1</H2>
+<pre>
+2.0
+</pre>
+<br/>
+
+<H2>Sample Input 2</H2>
+<pre>
+4
+0 0
+1 1
+1 2
+0 2
+</pre>
+<H2>Sample Output 2</H2>
+<pre>
+1.5
+</pre>

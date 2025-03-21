@@ -1,0 +1,62 @@
+// Segment 1: Reading and processing input
+
+// Precondition: The program expects input from the standard input in the format:
+// The first line contains an integer n (the number of elements).
+// The second line contains n space-separated integers.
+// Example input:
+// 3
+// 3 0 1
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().replace(/\n/g, " ").split(" ");
+var n = arr.shift() - 0;
+
+// Postcondition: The variable `n` contains the number of elements. 
+// The array `arr` contains n space-separated integers converted from strings.
+
+// Segment 2: Initialize and populate the boolean array
+
+// Precondition: `n` is a non-negative integer, and `arr` contains `n` integers.
+
+var a = [];
+for (var i = 0; i < 10000; i++) a[i] = false;
+
+// Postcondition: The array `a` is initialized with 10000 elements, all set to false.
+
+// Segment 3: Mark sums in the boolean array
+
+// Precondition: `a` is an array of 10000 elements, all set to false. 
+// `arr` is an array of integers with length `n`.
+
+for (var i = 0; i < n; i++) {
+    a[arr[i] - 0] = true;
+    if (i + 1 < n) a[(arr[i] + arr[i + 1]) - 0] = true;
+    if (i + 2 < n) a[(arr[i] + arr[i + 1] + arr[i + 2]) - 0] = true;
+    if (i + 3 < n) a[(arr[i] + arr[i + 1] + arr[i + 2] + arr[i + 3]) - 0] = true;
+}
+
+// Postcondition: The array `a` has true values at indices corresponding to 
+// individual elements of `arr` and their sums up to 4 consecutive elements.
+
+// Segment 4: Find and print the smallest missing number
+
+// Precondition: The array `a` has true values at indices corresponding to 
+// individual elements of `arr` and their sums up to 4 consecutive elements.
+
+for (var i = 0; i < 10000; i++) {
+    if (a[i] == false) {
+        console.log(i);
+        break;
+    }
+}
+
+// Postcondition: The program outputs the smallest non-negative integer that 
+// is not present in the array `a`.
+// Example output:
+// 2
+<number of elements>
+<space-separated list of integers>
+3
+3 0 1
+<smallest non-negative integer not present in the array a>
+2

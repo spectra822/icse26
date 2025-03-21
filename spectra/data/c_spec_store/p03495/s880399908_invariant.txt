@@ -1,0 +1,16 @@
+```c
+void merge(long long A[], long long left, long long mid, long long right)
+    // Precondition: The arrays `A`, `L`, and `R` are properly allocated. `left`, `mid`, and `right` are valid indices in `A`.
+    // Postcondition: The subarrays `A[left..mid-1]` and `A[mid..right-1]` are merged into a sorted array in `A[left..right-1]`.
+
+void mergeSort(long long A[], long long left, long long right)
+    // Precondition: The array `A` is properly allocated. `left` and `right` are valid indices in `A`.
+    // Postcondition: The array `A[left..right-1]` is sorted in ascending order.
+
+int main(void)
+    // Input format: The first line contains two integers `N` and `K`.
+    //               The second line contains `N` integers separated by spaces.
+    // Output format: A single integer.
+    // Precondition: The variables `N` and `K` are declared, and the array `A` is properly allocated.
+    // Postcondition: The variable `ans` contains the sum of the smallest `N - K` elements in the frequency array `c` and is printed.
+```

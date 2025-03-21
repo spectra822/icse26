@@ -1,0 +1,21 @@
+// Function definition for main, which takes an input string, processes it, and prints whether the product of two numbers is even or odd.
+function main(input) {
+    // Split the input string into an array of strings based on spaces
+    input = input.split(" ");
+    
+    // Parse the first and second elements of the array as integers
+    var a = parseInt(input[0]);
+    var b = parseInt(input[1]);
+    
+    // Check if the product of the two numbers is even or odd
+    if ((a * b) % 2 == 0) {
+        // If the product is even, print "Even"
+        console.log("Even");
+    } else {
+        // If the product is odd, print "Odd"
+        console.log("Odd");
+    }
+}
+
+// Read input from standard input and pass it to the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

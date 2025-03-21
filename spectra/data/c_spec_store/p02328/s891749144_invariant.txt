@@ -1,0 +1,12 @@
+```
+long long int large_histogram(long long int w)
+    // Precondition: The global array `table` has been initialized with `w` elements.
+    // Postcondition: The maximum rectangular area in the histogram represented by `table` is returned in `return_val`.
+
+int main(void)
+    // Input format: The first line contains an integer `w`.
+    // The next line contains `w` integers separated by spaces.
+    // Output format: A single number.
+    // Precondition: The global array `table` has been declared with a size of at least `w+1` elements.
+    // Postcondition: The maximum rectangular area in the histogram is printed.
+```

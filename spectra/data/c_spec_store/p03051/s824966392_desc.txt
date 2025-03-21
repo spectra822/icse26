@@ -1,0 +1,21 @@
+```c
+// Global variables
+#define int long long
+#define p (int)(1e9 + 7)
+
+// This function takes an integer `a` and returns `a` modulo `p`.
+// If `a` is negative, it adds `p` to make it positive.
+int MOD(int a)
+
+// This function computes the power of an integer `a` raised to `N` using recursion.
+// It uses modular arithmetic to keep the results within the range of `p`.
+int power(int a, int N)
+  Calls MOD(...), power(...)
+
+// This function reads an integer `N` and an array of `N` integers from input.
+// It calculates the XOR prefix sum array `s` and counts the number of zero sums in `Onum`.
+// It then uses dynamic programming to calculate the number of valid subsequences with a given XOR sum.
+// Finally, it prints the result.
+signed main()
+  Calls MOD(...), power(...)
+```

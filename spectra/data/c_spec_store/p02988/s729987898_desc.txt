@@ -1,0 +1,13 @@
+```c
+// Global variables
+int n;
+int num[1000];
+int count;
+
+// Main function that reads an integer `n` and an array `num` of size `n` from input.
+// It then counts the number of times a subarray of three consecutive integers
+// forms a strictly increasing or strictly decreasing sequence.
+// Finally, it prints the count.
+int main()
+    // No function calls
+```

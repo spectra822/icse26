@@ -1,0 +1,102 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi, who lives on the number line, is now at coordinate <var>X</var>. He will make exactly <var>K</var> moves of distance <var>D</var> in the positive or negative direction.</p>
+<p>More specifically, in one move, he can go from coordinate <var>x</var> to <var>x + D</var> or <var>x - D</var>.</p>
+<p>He wants to make <var>K</var> moves so that the absolute value of the coordinate of the destination will be the smallest possible.</p>
+<p>Find the minimum possible absolute value of the coordinate of the destination.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>-10^{15} \leq X \leq 10^{15}</var></li>
+<li><var>1 \leq K \leq 10^{15}</var></li>
+<li><var>1 \leq D \leq 10^{15}</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>X</var> <var>K</var> <var>D</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum possible absolute value of the coordinate of the destination.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>6 2 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>Takahashi is now at coordinate <var>6</var>. It is optimal to make the following moves:</p>
+<ul>
+<li>Move from coordinate <var>6</var> to (<var>6 - 4 =</var>) <var>2</var>.</li>
+<li>Move from coordinate <var>2</var> to (<var>2 - 4 =</var>) <var>-2</var>.</li>
+</ul>
+<p>Here, the absolute value of the coordinate of the destination is <var>2</var>, and we cannot make it smaller.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>7 4 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>Takahashi is now at coordinate <var>7</var>. It is optimal to make, for example, the following moves:</p>
+<ul>
+<li>Move from coordinate <var>7</var> to <var>4</var>.</li>
+<li>Move from coordinate <var>4</var> to <var>7</var>.</li>
+<li>Move from coordinate <var>7</var> to <var>4</var>.</li>
+<li>Move from coordinate <var>4</var> to <var>1</var>.</li>
+</ul>
+<p>Here, the absolute value of the coordinate of the destination is <var>1</var>, and we cannot make it smaller.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>8
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>1000000000000000 1000000000000000 1000000000000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>1000000000000000
+</pre>
+<p>The answer can be enormous.</p></section>
+</div>
+</span>

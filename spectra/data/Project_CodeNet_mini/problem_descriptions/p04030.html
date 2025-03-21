@@ -1,0 +1,66 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Sig has built his own keyboard. Designed for ultimate simplicity, this keyboard only has <var>3</var> keys on it: the <code>0</code> key, the <code>1</code> key and the backspace key.</p>
+<p>To begin with, he is using a plain text editor with this keyboard. This editor always displays one string (possibly empty). Just after the editor is launched, this string is empty. When each key on the keyboard is pressed, the following changes occur to the string:</p>
+<ul>
+<li>The <code>0</code> key: a letter <code>0</code> will be inserted to the right of the string.</li>
+<li>The <code>1</code> key: a letter <code>1</code> will be inserted to the right of the string.</li>
+<li>The backspace key: if the string is empty, nothing happens. Otherwise, the rightmost letter of the string is deleted.</li>
+</ul>
+<p>Sig has launched the editor, and pressed these keys several times. You are given a string <var>s</var>, which is a record of his keystrokes in order. In this string, the letter <code>0</code> stands for the <code>0</code> key, the letter <code>1</code> stands for the <code>1</code> key and the letter <code>B</code> stands for the backspace key. What string is displayed in the editor now?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≦ |s| ≦ 10</var> (<var>|s|</var> denotes the length of <var>s</var>)</li>
+<li><var>s</var> consists of the letters <code>0</code>, <code>1</code> and <code>B</code>.</li>
+<li>The correct answer is not an empty string.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>s</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the string displayed in the editor in the end.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>01B0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>00
+</pre>
+<p>Each time the key is pressed, the string in the editor will change as follows: <code>0</code>, <code>01</code>, <code>0</code>, <code>00</code>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>0BB1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>Each time the key is pressed, the string in the editor will change as follows: <code>0</code>, <code>(empty)</code>, <code>(empty)</code>, <code>1</code>.</p></section>
+</div>
+</span>

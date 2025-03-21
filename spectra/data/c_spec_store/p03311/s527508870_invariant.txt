@@ -1,0 +1,12 @@
+```
+int cmpnum(const void * n1, const void * n2)
+    // Precondition: `n1` and `n2` are pointers to long integers.
+    // Postcondition: Returns 1 if the value pointed to by `n1` is greater than the value pointed to by `n2`, -1 if it is less, and 0 if they are equal.
+
+int main(void)
+    // Input format: The first line contains a long integer `n`.
+    // The next line contains `n` long integers separated by spaces.
+    // Output format: A single long integer.
+    // Precondition: The input array `a` has `n` elements.
+    // Postcondition: The minimum sadness value is computed and printed as a long integer.
+```

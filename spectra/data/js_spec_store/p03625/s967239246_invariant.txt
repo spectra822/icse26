@@ -1,0 +1,78 @@
+'use strict'
+
+// Segment 1: multiply function declaration
+// Precondition: None
+// Postcondition: The multiply function is declared and can be used to multiply two numbers represented as strings.
+const multiply = (a, b) => {
+    let aa = a.toString().split('').reverse().map(v => ~~v);
+    let bb = b.toString().split('').reverse().map(v => ~~v);
+    let cc = Array.apply(null, { length: aa.length + bb.length }).map(a => 0);
+
+    let ary1 = aa.length >= bb.length ? aa : bb;
+    let ary2 = aa.length < bb.length ? aa : bb;
+
+    for (let i = 0; i < ary1.length; i++) {
+        for (let j = 0; j < ary2.length; j++) {
+            let tmp = ary1[i] * ary2[j];
+            cc[i + j] += tmp;
+        }
+    }
+
+    for (let i = 0; i < cc.length; i++) {
+        let tmp = cc[i].toString().split('').reverse().map(v => ~~v);
+        cc[i] = tmp[0];
+        for (let j = 1; j < tmp.length; j++) {
+            cc[i + j] += tmp[j];
+        }
+    }
+
+    let tmp = cc.reverse().join('');
+    tmp = tmp.replace(/^0+/, '');
+
+    return tmp;
+}
+
+// Segment 2: main function declaration
+// Precondition: None
+// Postcondition: The main function is declared and can be used to process the input and output the result.
+function main(input) {
+    // Segment 3: Input processing
+    // Precondition: input is a string containing multiple lines, where the second line contains space-separated integers.
+    // Postcondition: input array is processed to derive sorted array of integers.
+    input = input.split(/\r?\n/);
+    input = input[1].split(' ').map(v => ~~v).sort((a, b) => b - a);
+
+    let ans = 0;
+    let sticks = [];
+    let prev = input[0];
+
+    // Segment 4: Find pairs of equal sticks
+    // Precondition: input is a sorted array of integers.
+    // Postcondition: sticks array contains pairs of equal lengths from the input array.
+    for (let i = 1; i < input.length; i++) {
+        if (prev == input[i]) {
+            sticks.push(input[i]);
+            prev = 0;
+        } else {
+            prev = input[i];
+        }
+    }
+
+    // Segment 5: Calculate and output the area
+    // Precondition: sticks array contains pairs of stick lengths.
+    // Postcondition: The area of the largest rectangle is printed. If no such pairs exist, 0 is printed.
+    if (sticks.length >= 2) {
+        ans = multiply(sticks[0], sticks[1]);
+        console.log(ans);
+    } else {
+        console.log(0);
+    }
+}
+
+// Segment 6: Read input and call main function
+// Precondition: The program is executed in an environment where it can read from "/dev/stdin".
+// Postcondition: The main function is called with the input read from "/dev/stdin".
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+6
+3 1 2 4 2 1
+2

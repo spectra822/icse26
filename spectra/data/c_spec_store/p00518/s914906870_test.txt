@@ -1,0 +1,6 @@
+Input:
+5
+JOIJO
+
+Output:
+504

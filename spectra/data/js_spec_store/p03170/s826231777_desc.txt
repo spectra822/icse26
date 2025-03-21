@@ -1,0 +1,49 @@
+// Function to read input, process it, and determine the winner of the game
+function Main(input) {
+    // Parse and clean input
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+
+    // Extract the number of integers N and the target sum K
+    let N = parseInt(input[0][0], 10);
+    let K = parseInt(input[0][1], 10);
+
+    // Convert the second line into an array of integers
+    let a = input[1].map(e => parseInt(e, 10));
+
+    // Create an array to check which numbers are present in the array 'a'
+    let aCheck = Array.from({
+        length: 1e5 + 1
+    }, () => false);
+    for (x of a) {
+        aCheck[x] = true;
+    }
+
+    // Initialize a DP array to store the game results
+    let DP = Array.from({
+        length: K + 1
+    }, () => 0);
+     
+    // Base case: if the sum is 0, the second player wins
+    DP[0] = 2;
+
+    // Fill the DP array based on the game rules
+    for (let i = 1; i <= K; i++) {
+        DP[i] = 2;
+        for (let x of a) {
+            if (x > i) break;
+            if (DP[i - x] === 2) {
+                DP[i] = 1;
+                break;
+            }
+        }
+    }
+
+    // Determine and print the winner based on the last value in the DP array
+    if (DP.pop() === 1) console.log("First");
+    else console.log("Second");
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

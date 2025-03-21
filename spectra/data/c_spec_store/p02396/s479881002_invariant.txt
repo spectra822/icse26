@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: A sequence of integers, each on a new line. The sequence ends with the integer 0.
+    // Output format: For each integer in the input sequence (except the terminating 0), output "Case i: x" 
+    // where i is the sequence number starting from 1 and x is the integer value. Each output is on a new line.
+    // Precondition: The input consists of integers, and there is at least one integer before the terminating 0.
+    // Postcondition: The program prints the sequence of integers with their respective case numbers, and terminates after processing the integer 0.
+```

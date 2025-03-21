@@ -1,0 +1,70 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>We have a tree with <var>N</var> vertices. The vertices are numbered <var>1</var> to <var>N</var>, and the <var>i</var>-th edge connects Vertex <var>a_i</var> and Vertex <var>b_i</var>.</p>
+<p>Takahashi loves the number <var>3</var>. He is seeking a permutation <var>p_1, p_2, \ldots , p_N</var> of integers from <var>1</var> to <var>N</var> satisfying the following condition:</p>
+<ul>
+<li>For every pair of vertices <var>(i, j)</var>, if the distance between Vertex <var>i</var> and Vertex <var>j</var> is <var>3</var>, the sum or product of <var>p_i</var> and <var>p_j</var> is a multiple of <var>3</var>.</li>
+</ul>
+<p>Here the distance between Vertex <var>i</var> and Vertex <var>j</var> is the number of edges contained in the shortest path from Vertex <var>i</var> to Vertex <var>j</var>.</p>
+<p>Help Takahashi by finding a permutation that satisfies the condition.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>2\leq N\leq 2\times 10^5</var></li>
+<li><var>1\leq a_i, b_i \leq N</var></li>
+<li>The given graph is a tree.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>b_1</var>
+<var>a_2</var> <var>b_2</var>
+<var>\vdots</var>
+<var>a_{N-1}</var> <var>b_{N-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>If no permutation satisfies the condition, print <code>-1</code>.</p>
+<p>Otherwise, print a permutation satisfying the condition, with space in between.
+If there are multiple solutions, you can print any of them.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5
+1 2
+1 3
+3 4
+3 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1 2 5 4 3 
+</pre>
+<p>The distance between two vertices is <var>3</var> for the two pairs <var>(2, 4)</var> and <var>(2, 5)</var>.</p>
+<ul>
+<li><var>p_2 + p_4 = 6</var></li>
+<li><var>p_2\times p_5 = 6</var></li>
+</ul>
+<p>Thus, this permutation satisfies the condition.</p></section>
+</div>
+</span>

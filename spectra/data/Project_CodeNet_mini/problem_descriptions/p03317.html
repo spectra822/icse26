@@ -1,0 +1,89 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a sequence of length <var>N</var>: <var>A_1, A_2, ..., A_N</var>. Initially, this sequence is a permutation of <var>1, 2, ..., N</var>.</p>
+<p>On this sequence, Snuke can perform the following operation:</p>
+<ul>
+<li>Choose <var>K</var> consecutive elements in the sequence. Then, replace the value of each chosen element with the minimum value among the chosen elements.</li>
+</ul>
+<p>Snuke would like to make all the elements in this sequence equal by repeating the operation above some number of times.
+Find the minimum number of operations required.
+It can be proved that, Under the constraints of this problem, this objective is always achievable.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq K \leq N \leq 100000</var></li>
+<li><var>A_1, A_2, ..., A_N</var> is a permutation of <var>1, 2, ..., N</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum number of operations required.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 3
+2 3 1 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>One optimal strategy is as follows:</p>
+<ul>
+<li>
+<p>In the first operation, choose the first, second and third elements. The sequence <var>A</var> becomes <var>1, 1, 1, 4</var>.</p>
+</li>
+<li>
+<p>In the second operation, choose the second, third and fourth elements. The sequence <var>A</var> becomes <var>1, 1, 1, 1</var>.</p>
+</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 3
+1 2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>8 3
+7 3 1 8 4 6 2 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>4
+</pre></section>
+</div>
+</span>

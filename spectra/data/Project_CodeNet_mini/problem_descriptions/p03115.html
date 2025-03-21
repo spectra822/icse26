@@ -1,0 +1,64 @@
+<span class="lang-en">
+<p>Score : <var>1000</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is an infinitely large triangular grid, as shown below.
+Each point with integer coordinates contains a lamp.</p>
+<p><img alt="" src="https://img.atcoder.jp/wtf19/f617c94527a62ed72fe7db12b6d1f6b0.png"/></p>
+<p>Initially, only the lamp at <var>(X, 0)</var> was on, and all other lamps were off.
+Then, Snuke performed the following operation zero or more times:</p>
+<ul>
+<li>Choose two integers <var>x</var> and <var>y</var>.
+Toggle (on to off, off to on) the following three lamps: <var>(x, y), (x, y+1), (x+1, y)</var>.</li>
+</ul>
+<p>After the operations, <var>N</var> lamps <var>(x_1, y_1), \cdots, (x_N, y_N)</var> are on, and all other lamps are off.
+Find <var>X</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 10^5</var></li>
+<li><var>-10^{17} \leq x_i, y_i \leq 10^{17}</var></li>
+<li><var>(x_i, y_i)</var> are pairwise distinct.</li>
+<li>The input is consistent with the statement, and you can uniquely determine <var>X</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>x_1</var> <var>y_1</var>
+<var>:</var>
+<var>x_N</var> <var>y_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <var>X</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4
+-2 1
+-2 2
+0 1
+1 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>-1
+</pre>
+<p>The following picture shows one possible sequence of operations:</p>
+<p><img alt="" src="https://img.atcoder.jp/wtf19/cff6dc4d81e995e9300ccbaca5bf85de.png"/></p></section>
+</div>
+</span>

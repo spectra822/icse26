@@ -1,0 +1,13 @@
+```c
+// Global variables
+// None
+
+// The main function reads input, processes data and prints the result.
+// It continues reading pairs of integers `w` and `d` until a pair of zeros is encountered.
+// For each pair, it reads `w` integers into array `a` and `d` integers into array `b`.
+// It then calculates the result by summing up the maximum counts of each integer from 1 to 20 in both arrays,
+// multiplied by the integer itself.
+// Finally, it prints the result for each pair.
+int main(void)
+  Calls max(...)
+```

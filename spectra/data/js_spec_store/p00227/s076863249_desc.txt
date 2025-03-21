@@ -1,0 +1,31 @@
+// Read input from standard input and split into an array of strings
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Main loop to process each test case
+while (true) {
+    // Read the first line which contains N and M, and break the loop if it is "0 0"
+    var NM = Arr.shift();
+    if (NM == "0 0") break;
+
+    // Parse N and M values from the input line
+    var nm = NM.split(" ").map(Number);
+    var m = nm[1];
+
+    // Read the subsequent line which contains the array elements
+    var arr = (Arr.shift()).split(" ").map(Number);
+
+    // Sort the array in descending order
+    arr.sort(function(a, b) {
+        return b - a;
+    });
+
+    // Calculate the sum of array elements excluding every m-th element
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if ((i + 1) % m != 0) sum += arr[i];
+    }
+
+    // Output the calculated sum for the current test case
+    console.log(sum);
+}

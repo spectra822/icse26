@@ -1,0 +1,27 @@
+```c
+// AOJ 3130 Calculation Training
+// 2020.1.14 bal4u
+
+#include <stdio.h>
+
+typedef long long ll;
+
+int main()
+    // Input format: A single line containing three integers: `N`, `A`, and `B`, separated by spaces.
+    // Output format: A single line containing two integers: the final values of `A` and `B`, separated by a space.
+    // Precondition: The input values `N`, `A`, and `B` are provided via standard input.
+    // Postcondition: The program outputs the final values of `A` and `B` after performing the specified calculations.
+{
+	ll N; int i, A, B;
+	
+	scanf("%lld%d%d", &N, &A, &B);
+	N %= 12;
+	i = 0; while (i < N) {
+		A = A-B, ++i;
+		if (i == N) break;
+		B = A+B, ++i;
+	}
+	printf("%d %d\n", A, B);
+	return 0;
+}
+```

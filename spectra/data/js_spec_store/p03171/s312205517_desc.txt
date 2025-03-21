@@ -1,0 +1,48 @@
+// Main function that processes the input and initializes the necessary variables
+function Main(input) {
+    // Parsing the input and converting it into a usable format
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+
+    // Extracting the number of elements and the array of integers
+    let N = parseInt(input[0][0], 10);
+    a = input[1].map(e => parseInt(e, 10));
+
+    // Initializing the kukanDP array for memoization
+    kukanDP = Array.from({
+        length: N
+    }, () => []);
+
+    // Calling the DP function and printing the result
+    console.log(DP(0, N - 1));
+}
+
+// Recursive DP function to calculate the maximum difference
+function DP(l, r) {
+    // If already computed, return the stored value
+    if (kukanDP[l][r] != null) return kukanDP[l][r];
+
+    // Base case: when there are only two elements
+    if (r === l + 1) {
+        kukanDP[l][r] = Math.abs(a[l] - a[r]);
+        return kukanDP[l][r];
+    }
+
+    // Base case: when there is only one element
+    if (r === l) {
+        kukanDP[l][r] = a[l];
+        return kukanDP[l][r];
+    }
+
+    // Recursive step: calculate the possible values by removing an element from either end
+    let tmp1 = a[l] - DP(l + 1, r);
+    let tmp2 = a[r] - DP(l, r - 1);
+
+    // Store the maximum value in the kukanDP array
+    kukanDP[l][r] = Math.max(tmp1, tmp2);
+    return kukanDP[l][r];
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

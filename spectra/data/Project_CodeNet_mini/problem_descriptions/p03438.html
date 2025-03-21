@@ -1,0 +1,90 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given two integer sequences of length <var>N</var>: <var>a_1,a_2,..,a_N</var> and <var>b_1,b_2,..,b_N</var>.
+Determine if we can repeat the following operation zero or more times so that the sequences <var>a</var> and <var>b</var> become equal.</p>
+<p>Operation: Choose two integers <var>i</var> and <var>j</var> (possibly the same) between <var>1</var> and <var>N</var> (inclusive), then perform the following two actions <strong>simultaneously</strong>:</p>
+<ul>
+<li>Add <var>2</var> to <var>a_i</var>.</li>
+<li>Add <var>1</var> to <var>b_j</var>.</li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≤ N ≤ 10</var> <var>000</var></li>
+<li><var>0 ≤ a_i,b_i ≤ 10^9</var> (<var>1 ≤ i ≤ N</var>)</li>
+<li>All input values are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>..</var> <var>a_N</var>
+<var>b_1</var> <var>b_2</var> <var>..</var> <var>b_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>If we can repeat the operation zero or more times so that the sequences <var>a</var> and <var>b</var> become equal, print <code>Yes</code>; otherwise, print <code>No</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1 2 3
+5 2 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Yes
+</pre>
+<p>For example, we can perform three operations as follows to do our job:</p>
+<ul>
+<li>First operation: <var>i=1</var> and <var>j=2</var>. Now we have <var>a = \{3,2,3\}</var>, <var>b = \{5,3,2\}</var>.</li>
+<li>Second operation: <var>i=1</var> and <var>j=2</var>. Now we have <var>a = \{5,2,3\}</var>, <var>b = \{5,4,2\}</var>.</li>
+<li>Third operation: <var>i=2</var> and <var>j=3</var>. Now we have <var>a = \{5,4,3\}</var>, <var>b = \{5,4,3\}</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5
+3 1 4 1 5
+2 7 1 8 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>No
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>5
+2 7 1 8 2
+3 1 4 1 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>No
+</pre></section>
+</div>
+</span>

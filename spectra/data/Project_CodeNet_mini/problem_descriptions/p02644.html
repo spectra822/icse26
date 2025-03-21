@@ -1,0 +1,116 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke, a water strider, lives in a rectangular pond that can be seen as a grid with <var>H</var> east-west rows and <var>W</var> north-south columns. Let <var>(i,j)</var> be the square at the <var>i</var>-th row from the north and <var>j</var>-th column from the west.</p>
+<p>Some of the squares have a lotus leaf on it and cannot be entered.
+The square <var>(i,j)</var> has a lotus leaf on it if <var>c_{ij}</var> is <code>@</code>, and it does not if <var>c_{ij}</var> is <code>.</code>.</p>
+<p>In one stroke, Snuke can move between <var>1</var> and <var>K</var> squares (inclusive) toward one of the four directions: north, east, south, and west.
+The move may not pass through a square with a lotus leaf. Moving to such a square or out of the pond is also forbidden.</p>
+<p>Find the minimum number of strokes Snuke takes to travel from the square <var>(x_1,y_1)</var> to <var>(x_2,y_2)</var>.
+If the travel from <var>(x_1,y_1)</var> to <var>(x_2,y_2)</var> is impossible, point out that fact.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H,W,K \leq 10^6</var></li>
+<li><var>H \times W \leq 10^6</var></li>
+<li><var>1 \leq x_1,x_2 \leq H</var></li>
+<li><var>1 \leq y_1,y_2 \leq W</var></li>
+<li><var>x_1 \neq x_2</var> or <var>y_1 \neq y_2</var>.</li>
+<li><var>c_{i,j}</var> is <code>.</code> or <code>@</code>.</li>
+<li><var>c_{x_1,y_1} =</var> <code>.</code></li>
+<li><var>c_{x_2,y_2} =</var> <code>.</code></li>
+<li>All numbers in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var> <var>K</var>
+<var>x_1</var> <var>y_1</var> <var>x_2</var> <var>y_2</var>
+<var>c_{1,1}c_{1,2}</var> <var>..</var> <var>c_{1,W}</var>
+<var>c_{2,1}c_{2,2}</var> <var>..</var> <var>c_{2,W}</var>
+<var>:</var>
+<var>c_{H,1}c_{H,2}</var> <var>..</var> <var>c_{H,W}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum number of strokes Snuke takes to travel from the square <var>(x_1,y_1)</var> to <var>(x_2,y_2)</var>, or print <code>-1</code> if the travel is impossible.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 5 2
+3 2 3 4
+.....
+.@..@
+..@..
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>5
+</pre>
+<p>Initially, Snuke is at the square <var>(3,2)</var>.
+He can reach the square <var>(3, 4)</var> by making five strokes as follows:</p>
+<ul>
+<li>
+<p>From <var>(3, 2)</var>, go west one square to <var>(3, 1)</var>.</p>
+</li>
+<li>
+<p>From <var>(3, 1)</var>, go north two squares to <var>(1, 1)</var>.</p>
+</li>
+<li>
+<p>From <var>(1, 1)</var>, go east two squares to <var>(1, 3)</var>.</p>
+</li>
+<li>
+<p>From <var>(1, 3)</var>, go east one square to <var>(1, 4)</var>.</p>
+</li>
+<li>
+<p>From <var>(1, 4)</var>, go south two squares to <var>(3, 4)</var>.</p>
+</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1 6 4
+1 1 1 6
+......
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>3 3 1
+2 1 2 3
+.@.
+.@.
+.@.
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>-1
+</pre></section>
+</div>
+</span>

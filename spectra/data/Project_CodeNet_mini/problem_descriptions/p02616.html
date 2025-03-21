@@ -1,0 +1,94 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Given are <var>N</var> integers <var>A_1,\ldots,A_N</var>.</p>
+<p>We will choose exactly <var>K</var> of these elements. Find the maximum possible product of the chosen elements.</p>
+<p>Then, print the maximum product modulo <var>(10^9+7)</var>, using an integer between <var>0</var> and <var>10^9+6</var> (inclusive).</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq K \leq N \leq 2\times 10^5</var></li>
+<li><var>|A_i| \leq 10^9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>A_1</var> <var>\ldots</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum product modulo <var>(10^9+7)</var>, using an integer between <var>0</var> and <var>10^9+6</var> (inclusive).</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 2
+1 2 -3 -4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>12
+</pre>
+<p>The possible products of the two chosen elements are <var>2</var>, <var>-3</var>, <var>-4</var>, <var>-6</var>, <var>-8</var>, and <var>12</var>, so the maximum product is <var>12</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 3
+-1 -2 -3 -4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1000000001
+</pre>
+<p>The possible products of the three chosen elements are <var>-24</var>, <var>-12</var>, <var>-8</var>, and <var>-6</var>, so the maximum product is <var>-6</var>.</p>
+<p>We print this value modulo <var>(10^9+7)</var>, that is, <var>1000000001</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2 1
+-1 1000000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1000000000
+</pre>
+<p>The possible products of the one chosen element are <var>-1</var> and <var>1000000000</var>, so the maximum product is <var>1000000000</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>10 10
+1000000000 100000000 10000000 1000000 100000 10000 1000 100 10 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>999983200
+</pre>
+<p>Be sure to print the product modulo <var>(10^9+7)</var>.</p></section>
+</div>
+</span>

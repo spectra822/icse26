@@ -1,0 +1,11 @@
+```c
+// Global variables
+int n, x;
+
+// Main function that reads input values `n` and `x` in a loop,
+// calculates the number of unique combinations (i, j, k) such that i + j + k = x
+// and i, j, k are distinct and within the range [1, n].
+// The loop terminates when both `n` and `x` are zero.
+int main()
+  Calls none
+```

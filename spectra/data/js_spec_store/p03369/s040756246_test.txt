@@ -1,0 +1,5 @@
+Input:
+oox
+
+Output:
+900

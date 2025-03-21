@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains a string `t`.
+    // The second line contains a string `b`.
+    // Output format: A single number.
+    // Precondition: The global arrays `a`, `t`, and `b` have been declared.
+    // Postcondition: The variable `a[st][sb]` contains the number of distinct subsequences of `t` that equal `b`, modulo M. This value is printed to STDOUT.
+```

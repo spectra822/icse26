@@ -1,0 +1,20 @@
+```c
+// Global variables
+int N, a[401];
+long long dp[401][401] = {}, sum[401];
+const long long sup = (long long)1 << 60;
+
+// This function uses recursion to find the minimum cost to merge subarrays
+// in the range [l, r].
+// It uses a dynamic programming approach to store intermediate results in the `dp` array.
+// If the value is already computed (dp[l][r] != 0), it returns the stored value.
+// Otherwise, it computes the minimum cost by considering all possible partitions of the range.
+long long recursion(int l, int r)
+    Calls recursion(...)
+
+// This function initializes the `a` array and `sum` array with user input.
+// It then calculates the prefix sums for array `a` and stores in `sum`.
+// Finally, it prints the result of the `recursion` function for the entire range [1, N].
+int main()
+    Calls recursion(...)
+```

@@ -1,0 +1,30 @@
+// This function takes an input string, processes it according to specific rules, and outputs a result.
+function Main(input) {
+    // Split the input string by new lines and initialize variables
+    input = input.split("\n");
+    var sum = 0;
+    var now = 1;
+    
+    // Split the second line of input into an array of strings and add a sentinel value at the end
+    var arr = input[1].split(" ");
+    arr.push("#");
+    
+    // Iterate through the array starting from the second element
+    for (var i = 1; i < arr.length; i++) {
+        // If the current element is the same as the previous one, increment the counter
+        if (arr[i] == arr[i - 1]) now++;
+        // If the current element is different from the previous one
+        else {
+            // Add the ceiling of (now - 1) / 2 to the sum
+            sum += Math.ceil((now - 1) / 2);
+            // Reset the counter
+            now = 1;
+        }
+    }
+    
+    // Output the final result
+    console.log(sum)
+}
+
+// Read the input from standard input, trim any extra whitespace, and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

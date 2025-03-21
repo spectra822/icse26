@@ -1,0 +1,83 @@
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<H1>繰り返す呪文</H1>
+
+<p>
+古代国家イワシロを発見し調査を進めた我々研究者は、ついにイワシロの中心部にある神殿を発見した。神殿にはイワシロの神にささげた石版が保管されていた。石版には、文章と呪文が一つずつ、２つの文字列が書かれていた。
+</p>
+
+<p>
+イワシロでは呪文が文章の中に、何回現れるかが重要な意味を持つ。ただし、呪文に含まれるすべての文字が順番に、文章の中にとびとびで現れるものも１回現れていると考える。例えば、文章が"abab" で、呪文が "ab" であれば、連続でないものも含めて "ab" は "abab" の中に３回現われている（ <u>ab</u>ab, ab<u>ab</u>, <u>a</u>ba<u>b</u> の３通り）。
+</p>
+
+<p>
+文章と呪文が与えられたとき、呪文が文章の中に何回現れるかを出力するプログラムを作成せよ。 
+</p>
+
+
+<h2>Input</h2>
+
+<p>
+入力は以下の形式で与えられる。 
+</p>
+
+<pre>
+<var>t</var>
+<var>b</var>
+</pre>
+
+<p>
+１行目に、石版に書かれた文章を表す文字列tが与えられる。２行目に、石版に書かれた呪文を表す文字列bが与えられる。どちらの文字列も英小文字だけから成る、長さが1以上1000以下の文字列である。 
+</p>
+
+
+<h2>Output</h2>
+
+<p>
+呪文が文章の中に何回現れるかを１行に出力する。ただし、出力すべき値は非常に大きくなりうるので、代わりに 1,000,000,007 で割った余りを出力する。 
+</p>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+abab
+ab
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+3
+</pre>
+<br/>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+aaaabaaaabaaaabaaaab
+aaaaa
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+4368
+</pre>
+<br>
+
+<h2>Sample Input 3</h2>
+<pre>
+data
+structure
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+0
+</pre>

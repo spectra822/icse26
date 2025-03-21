@@ -1,0 +1,70 @@
+// Set up the standard input stream and configure it to handle UTF-8 encoded text
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// Initialize an array to store input lines
+var lines = [];
+
+// Create an interface to read lines from the standard input
+var reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Event listener for reading each line of input
+reader.on('line', (line) => {
+    lines.push(line);
+});
+
+// Event listener for when the input stream is closed
+reader.on('close', () => {
+    // Parse the first line of input into N, A, and B as BigInt
+    const [N, A, B] = lines[0].split(" ").map(v => BigInt(v));
+    // Calculate the result using the calc function and print it
+    console.log(calc(N, A, B).toString());
+});
+
+// Function to calculate the minimum steps required
+calc = (N, a, b) => {
+    // If the absolute difference between a and b is even, return half of the difference
+    if (abs(a, b) % 2n == 0n) return abs(a, b) / 2n;
+    
+    // Handle edge cases where either a or b is 1
+    if (a == 1n) return min(b - 1n, calc(N, a, b - 1n) + 1n);
+    if (b == 1n) return min(a - 1n, calc(N, b, a - 1n) + 1n);
+    
+    // Handle edge cases where either a or b is N
+    if (a == N) return calc(N, N - a + 1n, N - b + 1n);
+    if (b == N) return calc(N, N - a + 1n, N - b + 1n);
+    
+    // If a and b are the same, the steps required are zero
+    if (a == b) return 0;
+    
+    // Recursively calculate the minimum steps required
+    if (a > b) {
+        return min(
+            calc(N, a - (b - 1n), 1n) + (b - 1n),
+            calc(N, N, b + (N - a)) + (N - a)
+        );
+    } else {
+        return min(
+            calc(N, a + (N - b), N) + (N - b),
+            calc(N, 1n, b - (a - 1n)) + (a - 1n)
+        );
+    }
+}
+
+// Function to calculate the absolute difference between two BigInt numbers
+abs = (a, b) => {
+    return a < b ? (b - a) : (a - b)
+}
+
+// Function to find the minimum value among given BigInt numbers
+min = (...a) => {
+    return a.reduce((a, b) => a < b ? a : b, a[0])
+};
+
+// Function to find the maximum value between two BigInt numbers (defined but not used in this script)
+max = (a, b) => {
+    return a > b ? a : b
+};

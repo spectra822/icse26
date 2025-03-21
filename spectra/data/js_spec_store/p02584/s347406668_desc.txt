@@ -1,0 +1,36 @@
+// Function definition to solve the problem based on given input
+function Main(input) {
+    // Parsing input and initializing variables
+    const row = input.split(" ");
+    let X = parseInt(row[0], 10);
+    let K = parseInt(row[1], 10);
+    const D = parseInt(row[2], 10);
+    let absX = Math.abs(X);
+
+    // Calculate how many full steps of size D can be taken towards zero
+    let a = Math.floor(absX / D);  
+    let ans;
+
+    // If the number of steps K is greater than or equal to the steps required to reach zero
+    if ((absX / D) >= K) {
+        // Calculate the remaining distance after taking K steps
+        ans = absX - D * K;
+
+    } else {
+        // Calculate the remaining steps after reaching closest to zero
+        let K2 = K - a;
+        // Calculate the remainder distance after reaching closest to zero
+        absX = absX % D;  
+        // If remaining steps are even, the position remains same, otherwise subtract D to get closest distance
+        if (K2 % 2 === 0) {
+            ans = absX;
+        } else {
+            ans = absX - D;
+        }
+    }
+    // Output the absolute value of the answer
+    console.log(Math.abs(ans));
+}
+
+// Read input from standard input and pass to Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

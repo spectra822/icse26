@@ -1,0 +1,19 @@
+"use strict";
+
+// Main function that processes the input and computes the result
+const main = (input) => {
+    // Split the input into lines and parse the first line as integers
+    const spi = input.split('\n');
+    const [n, k] = spi[0].split(' ').map(e => BigInt(e));
+
+    // Calculate the remainder of n divided by k
+    const a1 = n % k;
+    // Calculate the alternative value to minimize the result
+    const a2 = a1 - k < 0 ? -(a1 - k) : a1 - k;
+
+    // Determine the minimum of the two values and print it
+    console.log((a1 <= a2 ? a1 : a2).toString());
+};
+
+// Read the input from standard input and call the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

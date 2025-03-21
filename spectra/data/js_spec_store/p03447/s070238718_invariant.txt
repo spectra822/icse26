@@ -1,0 +1,11 @@
+// Segment 1: Reading and parsing input
+// Input format: Three lines of input, each containing a single integer.
+// Precondition: The input file /dev/stdin exists and contains exactly three lines of integers.
+// Postcondition: The variables x, a, and b are assigned integer values from the input.
+let [x, a, b] = require("fs").readFileSync("/dev/stdin", "utf8").split("\n").map(Number);
+
+// Segment 2: Calculating and printing the result
+// Output format: A single integer value printed to the console.
+// Precondition: x, a, and b are integers.
+// Postcondition: The result of the expression (x - a) % b is printed to the console.
+console.log((x - a) % b);

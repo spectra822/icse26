@@ -1,0 +1,51 @@
+"use strict";
+
+// Segment 1: Input reading and initial processing
+// Precondition: The program reads from standard input, expecting a string containing two integers separated by a space, followed by a newline.
+// Postcondition: The program splits the input into an array of strings, trims whitespaces, and parses the first two elements as integers N and X.
+const main = arg => {
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const X = parseInt(arg[0].split(" ")[1]);
+
+    // Segment 2: Array initialization and population
+    // Precondition: N is a non-negative integer.
+    // Postcondition: Arrays 'a' and 'p' are initialized and populated such that:
+    // - a[i] represents the total number of layers in the i-th level burger.
+    // - p[i] represents the total number of patties in the i-th level burger.
+    let a = [1];
+    let p = [1];
+
+    for (let i = 1; i < N; i++) {
+        a.push((a[i - 1] * 2) + 3);
+        p.push((p[i - 1] * 2) + 1);
+    }
+
+    // Segment 3: Recursive function definition
+    // Precondition: N and X are non-negative integers, and arrays 'a' and 'p' are correctly populated.
+    // Postcondition: Defines a recursive function 'rec' that computes the number of patties eaten based on the burger's level and layers.
+    const rec = (N, X) => {
+         
+        if (N === 0) {
+            return X <= 0 ? 0 : 1;
+             
+        } else if (X <= 1 + a[N - 1]) {
+            return rec(N - 1, X - 1);
+             
+        } else {
+            return p[N - 1] + 1 + rec(N - 1, X - 2 - a[N - 1]);
+        }
+    }
+
+    // Segment 4: Recursive function invocation and output
+    // Precondition: The recursive function 'rec' is defined.
+    // Postcondition: The program computes the number of patties eaten and prints the result.
+    let answer = rec(N, X);
+
+    // Input format: The program reads from standard input.
+    // Output format: A single integer is printed to the standard output.
+    console.log(answer)
+}
+
+// The main function is invoked with the input read from the standard input.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

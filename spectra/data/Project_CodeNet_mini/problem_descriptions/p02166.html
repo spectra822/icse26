@@ -1,0 +1,86 @@
+<h1>Problem E: Cyclic Shift Sort</h1>
+
+<h2>Problem</h2>
+<p>
+  長さ $N$ の順列 $P = \{ P_1, P_2, \ldots, P_N \} $ と整数 $K$ が与えられる。<br>
+  以下の操作を $0$ 回以上任意の回数繰り返すことで、順列 $P$ を単調増加にすることができるかどうか判定せよ。
+</p>
+  <ul>
+    <li>整数 $x \ (0 \le x \le N-K)$ を選ぶ。 $ P_{x+1}, \ldots, P_{x+K} $ を巡回右シフトする</li>
+  </ul>
+<p>
+  ただし、部分列 $U=U_1, \ldots, U_M$ の巡回右シフトとは、 $U=U_1, \ldots, U_M$ を $U=U_M, U_1, \ldots, U_{M-1}$ に変更することを意味する。
+
+</p>
+
+<h2>Input</h2>
+<p>入力は以下の形式で与えられる。</p>
+<pre>
+$N$ $K$
+$P_1$ $\ldots$ $P_N$
+</pre>
+<p>
+  1行目に順列の長さ $N$ 、整数 $K$ が空白区切りで与えられる。<br>
+  2行目に順列 $P$ の要素が空白区切りで与えられる。<br>
+</p>
+
+<h2>Constraints</h2>
+<p>入力は以下の条件を満たす。</p>
+<ul>
+  <li>$2 \leq K \leq N \leq 10^5 $</li>
+  <li>$ 1 \leq P_i \leq N \ (1 \leq i \leq N) $</li>
+  <li>$ P_i \neq P_j \ (i \neq j) $</li>
+  <li>入力はすべて整数</li>
+</ul>
+
+
+<h2>Output</h2>
+<p>
+  $P$ を単調増加にすることができるなら"Yes"を、できないのであれば"No"を $1$ 行に出力せよ。<br>
+</p>
+
+<h2>Sample Input 1</h2>
+<pre>
+3 3
+2 3 1
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+Yes
+</pre>
+
+<p>
+  $ x = 0 $ として操作を $1$ 回行うと、 $P$ を単調増加にすることができる。
+</p>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+3 2
+1 2 3
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+Yes
+</pre>
+<p>
+  $P$ が初めから単調増加である場合もある。
+</p>
+
+
+<h2>Sample Input 3</h2>
+<pre>
+3 3
+3 2 1
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+No
+</pre>
+
+<p>
+  どのように操作を行なったとしても、 $P$ を単調増加にすることはできない。
+</p>

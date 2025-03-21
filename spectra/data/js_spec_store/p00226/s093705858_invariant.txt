@@ -1,0 +1,57 @@
+// Segment 1: Read and process input
+
+// Precondition: The program is run in an environment where the 'fs' module is available and a valid input is provided via '/dev/stdin'.
+// Postcondition: The input is read from '/dev/stdin', trimmed, and split into an array of strings, each representing a line of input.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Iterate over each line of input
+
+// Precondition: 'Arr' is an array of strings where each string represents a line of input.
+// Postcondition: For each element in 'Arr', the program processes the string to determine the number of exact matches and partial matches between two 4-digit numbers.
+// Input format: Each line contains two 4-digit numbers separated by a space, with the last line being "0 0".
+// Output format: For each line (except the last one), output two integers separated by a space, representing the number of exact matches and partial matches respectively.
+
+for (var i = 0; i < Arr.length; i++) {
+    if (Arr[i] == "0 0") break;
+
+    // Segment 3: Split the input line into individual numbers
+
+    // Precondition: 'Arr[i]' is a string containing two 4-digit numbers separated by a space.
+    // Postcondition: 'arr' is an array of two strings, each representing a 4-digit number.
+    var arr = Arr[i].split(" ");
+
+    // Segment 4: Split the numbers into individual digits
+
+    // Precondition: 'arr' contains two strings, each representing a 4-digit number.
+    // Postcondition: 'x' and 'y' are arrays of characters, each representing the digits of the respective 4-digit numbers.
+    var x = (arr[0]).split("");
+    var y = (arr[1]).split("");
+
+    // Segment 5: Initialize counters for exact matches and partial matches
+
+    // Precondition: 'x' and 'y' are arrays of characters representing the digits of the two 4-digit numbers.
+    // Postcondition: 'h' is initialized to 0 to count exact matches, and 'b' is initialized to 0 to count partial matches.
+    var h = 0;
+    var b = 0;
+
+    // Segment 6: Compare digits for exact and partial matches
+
+    // Precondition: 'x' and 'y' are arrays of characters representing the digits of the two 4-digit numbers, and 'h' and 'b' are initialized to 0.
+    // Postcondition: 'h' contains the count of exact matches (same digit in the same position), and 'b' contains the count of partial matches (same digit in different positions).
+    for (var j = 0; j < 4; j++) {
+        if (x[j] == y[j]) {
+            h++;
+        } else if (y.indexOf(x[j]) != -1) {
+            b++;
+        }
+    }
+
+    // Segment 7: Output the result for the current line
+
+    // Precondition: 'h' and 'b' contain the counts of exact and partial matches respectively.
+    // Postcondition: The result is printed in the format "h b" for the current line.
+    // Output format: Two integers separated by a space, representing the number of exact matches and partial matches respectively.
+    console.log(h + " " + b);
+}

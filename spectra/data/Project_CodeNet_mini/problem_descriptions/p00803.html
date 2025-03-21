@@ -1,0 +1,52 @@
+
+<H1><font color="#000">Problem A:</font> Starship Hakodate-maru</H1>
+
+<p>
+The surveyor starship Hakodate-maru is famous for her two fuel containers with unbounded capacities. They hold the same type of atomic fuel balls.
+</p>
+<p>
+There, however, is an inconvenience. The shapes of the fuel containers <i>#</i>1 and <i>#</i>2 are always cubic and regular tetrahedral respectively. Both of the fuel containers should be either empty or filled according to their shapes. Otherwise, the fuel balls become extremely unstable and may explode in the fuel containers. Thus, the number of fuel balls for the container <i>#</i>1 should be a cubic number (<i>n</i><sup>3</sup> for some <i>n</i> = 0, 1, 2, 3,... ) and that for the container <i>#</i>2 should be a tetrahedral number ( <i>n</i>(<i>n</i> + 1)(<i>n</i> + 2)/6 for some <i>n</i> = 0, 1, 2, 3,... ).
+</p>
+<p>
+Hakodate-maru is now at the star base Goryokaku preparing for the next mission to create a precise and detailed chart of stars and interstellar matters. Both of the fuel containers are now empty. Commander Parus of Goryokaku will soon send a message to Captain Future of Hakodate-maru on how many fuel balls Goryokaku can supply. Captain Future should quickly answer to Commander Parus on how many fuel balls she requests before her ship leaves Goryokaku. Of course, Captain Future and her omcers want as many fuel balls as possible.
+</p>
+<p>
+For example, consider the case Commander Parus offers 151200 fuel balls. If only the fuel container <i>#</i>1 were available (i.e. ifthe fuel container <i>#</i>2 were unavailable), at most 148877 fuel balls could be put into the fuel container since 148877 = 53 &times; 53 &times; 53 &lt; 151200 &lt; 54 &times; 54 &times; 54 . If only the fuel container <i>#</i>2 were available, at most 147440 fuel balls could be put into the fuel container since 147440 = 95 &times; 96 &times; 97/6 &lt; 151200 &lt; 96 &times; 97 &times; 98/6 . Using both of the fuel containers <i>#</i>1 and <i>#</i>2, 151200 fuel balls can be put into the fuel containers since 151200 = 39 &times; 39 &times; 39 + 81 &times; 82 &times; 83/6 . In this case, Captain Future's answer should be "151200".
+</p>
+<p>
+Commander Parus's offer cannot be greater than 151200 because of the capacity of the fuel storages of Goryokaku. Captain Future and her omcers know that well.
+</p>
+<p>
+You are a fuel engineer assigned to Hakodate-maru. Your duty today is to help Captain Future with calculating the number of fuel balls she should request. 
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input is a sequence of at most 1024 positive integers. Each line contains a single integer. The sequence is followed by a zero, which indicates the end of data and should not be treated as input. You may assume that none of the input integers is greater than 151200.
+</p>
+
+<H2>Output</H2>
+
+<p>
+The output is composed of lines, each containing a single integer. Each output integer should be the greatest integer that is the sum of a nonnegative cubic number and a nonnegative tetrahedral number and that is not greater than the corresponding input number. No other characters should appear in the output.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+100
+64
+50
+20
+151200
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+99
+64
+47
+20
+151200
+</pre>

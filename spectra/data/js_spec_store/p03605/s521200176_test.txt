@@ -1,0 +1,5 @@
+Input:
+92
+
+Output:
+Yes

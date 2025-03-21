@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: Three integers `a`, `b`, and `c` separated by spaces.
+    // Output format: A single integer number without any decimal points.
+    // Precondition: The variables `a`, `b`, and `c` are defined and will be read from input.
+    // Postcondition: The area of the triangle formed with base `a` and height `b` is printed as an integer.
+```

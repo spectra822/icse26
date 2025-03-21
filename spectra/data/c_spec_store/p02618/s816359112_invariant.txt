@@ -1,0 +1,23 @@
+```
+int max(int D, int s[][type+1])
+    // Precondition: The integer D represents a valid day and s is a valid 2D array with satisfaction scores for each type on each day.
+    // Postcondition: The function returns the type with the highest satisfaction score on day D.
+
+int score_calc(int D, int s[][type+1], int schedul[], int c[type+1], int last[type+1])
+    // Precondition: D is the number of days, s is a valid 2D array with satisfaction scores, schedul is a valid schedule array, 
+    // c is a valid array with dissatisfaction coefficients, and last is a valid array to track the last day each type was chosen.
+    // Postcondition: The function calculates and returns the total score based on the given schedule, satisfaction scores, and dissatisfaction coefficients.
+
+void swap(int D, int s[][type+1], int schedul[], int c[type+1], int last[type+1], int *ini)
+    // Precondition: D is the number of days, s is a valid 2D array with satisfaction scores, schedul is a valid schedule array, 
+    // c is a valid array with dissatisfaction coefficients, last is a valid array to track the last day each type was chosen, and ini is a pointer to the initial score.
+    // Postcondition: The function attempts to swap two days in the schedule to improve the score. If the new score is higher, the schedule is updated and ini is set to the new score.
+
+int main(void)
+    // Input format: The first line contains an integer D.
+    // The next 26 lines contain integers representing dissatisfaction coefficients for each type.
+    // The next D lines contain 26 integers each, representing satisfaction scores for each type on each day.
+    // Output format: D lines, each containing one integer representing the type chosen for each day.
+    // Precondition: The global constant `type` is defined as 26, and the inputs are read correctly into the corresponding variables.
+    // Postcondition: The output is a schedule of types chosen for each day, printed to STDOUT.
+```

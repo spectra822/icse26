@@ -1,0 +1,12 @@
+```c
+// Global variables
+long long A[100001];
+
+// This function performs the main logic of the program.
+// It reads an integer `N` and an array `A` of size `N` from input,
+// then calculates the maximum number of pairs of 2 that can be made
+// from the elements of the array considering the described conditions.
+// It prints the result.
+int main()
+  // Calls: scanf, printf, fflush
+```

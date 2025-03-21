@@ -1,0 +1,53 @@
+// Precondition: `start`, `end`, and `len` are integers with start <= end and len >= 0
+// Postcondition: Returns an array of all combinations of `len` elements chosen from the range [start, end]
+function kumiawase(start, end, len) {
+    var ans = [];
+    var loop = function(a, arr) {
+        if (arr.length == len) ans.push(arr);
+        else {
+            for (var i = a; i <= end; i++) loop(i + 1, arr.concat(i));
+        }
+    }
+    loop(start, []);
+    return ans;
+}
+
+// Precondition: The program is executed in an environment where '/dev/stdin' contains multiple lines of input
+// Each line contains three space-separated integers
+// Postcondition: `input` contains the content of the input file as a string
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Precondition: `input` is a non-empty string with multiple lines, each line containing three space-separated integers
+// Postcondition: `arr` is an array of strings, where each string is a line from `input`, excluding the trailing newline
+var arr = input.trim().split("\n");
+
+// Precondition: `arr` is an array of strings, each representing a line of input
+// Postcondition: For each line in `arr` (except the line "0 0 0"), the program computes and prints the number of combinations
+// that sum to the third number in the line
+// Input format: Multiple lines, each containing three space-separated integers
+// Output format: For each valid input line, print one integer on a new line
+arr.some(function(v, i) {
+    if (v == "0 0 0") return true; // Stop processing if the line is "0 0 0"
+    
+    // Precondition: `v` is a string of the form "n k s" where n, k, and s are integers
+    // Postcondition: `nks` is an array of three integers [n, k, s]
+    var nks = v.split(" ").map(Number);
+    
+    // Precondition: `nks` is an array of three integers [n, k, s]
+    // Postcondition: `ary` is an array of all combinations of `k` elements chosen from the range [1, n]
+    var ary = kumiawase(1, nks[0], nks[1]);
+    
+    var cnt = 0;
+    
+    // Precondition: `ary` is an array of arrays, each containing `k` integers from the range [1, n]
+    // Postcondition: `cnt` is the number of combinations in `ary` whose elements sum up to `s`
+    ary.forEach(function(v) {
+        var sum = v.reduce(function(a, b) {
+            return a + b;
+        });
+        if (sum == nks[2]) cnt++;
+    });
+    
+    // Output the count of valid combinations
+    console.log(cnt);
+});

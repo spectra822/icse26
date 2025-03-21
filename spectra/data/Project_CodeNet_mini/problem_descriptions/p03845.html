@@ -1,0 +1,89 @@
+<span class="lang-en">
+<p>Score : <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Joisino is about to compete in the final round of a certain programming competition.
+In this contest, there are <var>N</var> problems, numbered <var>1</var> through <var>N</var>.
+Joisino knows that it takes her <var>T_i</var> seconds to solve problem <var>i(1≦i≦N)</var>.</p>
+<p>Also, there are <var>M</var> kinds of drinks offered to the contestants, numbered <var>1</var> through <var>M</var>.
+If Joisino takes drink <var>i(1≦i≦M)</var>, her brain will be stimulated and the time it takes for her to solve problem <var>P_i</var> will become <var>X_i</var> seconds.
+It does not affect the time to solve the other problems.</p>
+<p>A contestant is allowed to take exactly one of the drinks before the start of the contest.
+For each drink, Joisino wants to know how many seconds it takes her to solve all the problems if she takes that drink.
+Here, assume that the time it takes her to solve all the problems is equal to the sum of the time it takes for her to solve individual problems.
+Your task is to write a program to calculate it instead of her.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All input values are integers.</li>
+<li><var>1≦N≦100</var></li>
+<li><var>1≦T_i≦10^5</var></li>
+<li><var>1≦M≦100</var></li>
+<li><var>1≦P_i≦N</var></li>
+<li><var>1≦X_i≦10^5</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>T_1</var> <var>T_2</var> <var>...</var> <var>T_N</var>
+<var>M</var>
+<var>P_1</var> <var>X_1</var>
+<var>P_2</var> <var>X_2</var>
+<var>:</var>
+<var>P_M</var> <var>X_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>For each drink, calculate how many seconds it takes Joisino to solve all the problems if she takes that drink, and print the results, one per line.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+2 1 4
+2
+1 1
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>6
+9
+</pre>
+<p>If Joisino takes drink <var>1</var>, the time it takes her to solve each problem will be <var>1</var>, <var>1</var> and <var>4</var> seconds, respectively, totaling <var>6</var> seconds.</p>
+<p>If Joisino takes drink <var>2</var>, the time it takes her to solve each problem will be <var>2</var>, <var>3</var> and <var>4</var> seconds, respectively, totaling <var>9</var> seconds.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5
+7 2 3 8 5
+3
+4 2
+1 7
+4 13
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>19
+25
+30
+</pre></section>
+</div>
+</span>

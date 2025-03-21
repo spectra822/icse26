@@ -1,0 +1,12 @@
+```c
+// Global variables
+int n = 0;
+char string[51] = {};
+
+// Main function to find the count of the pattern "ABC" in a given string.
+// It reads an integer `n` and a string `string` of length `n`.
+// Then it iterates through the string to count occurrences of the pattern "ABC".
+// If the pattern is found, it increments the count and skips the next two characters to avoid overlapping patterns.
+int main(void)
+    // No calls to other functions
+```

@@ -1,0 +1,18 @@
+```c
+int in()
+    // Precondition: None
+    // Postcondition: Reads a non-negative integer from input and returns it.
+
+void topological_sort()
+    // Precondition: The global variables `V`, `to`, `hi`, `q`, `top`, `end`, and `count` have been initialized.
+    // Postcondition: Prints the vertices of the graph in topologically sorted order, each on a new line.
+
+int main()
+    // Input format: 
+    // The first line contains two integers `V` and `E`.
+    // The next `E` lines contain two integers `s` and `t`, each representing a directed edge from `s` to `t`.
+    // Output format: 
+    // The vertices in topologically sorted order, each printed on a new line.
+    // Precondition: The graph is a Directed Acyclic Graph (DAG).
+    // Postcondition: The vertices of the DAG are printed in topologically sorted order.
+```

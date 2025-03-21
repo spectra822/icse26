@@ -1,0 +1,37 @@
+// Read input from standard input and split it into an array of strings
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Parse the first line of input to get the values of n, m, a, and b
+var nmab = arr[0].split(" ").map(Number);
+var m = nmab[1];
+var a = nmab[2];
+var b = nmab[3];
+
+// Parse the second line of input to get the array d
+var d = arr[1].split(" ").map(Number);
+
+// Initialize an empty array to store the elements that meet the condition d[i] >= a
+var haiki = [];
+
+// Iterate over the array d and collect elements that are greater than or equal to a
+for (var i = 0; i < d.length; i++) {
+    if (d[i] >= a) haiki.push(d[i]);
+    else break;
+}
+
+// Check if the number of elements in d that do not meet the condition is less than m
+if (d.length - haiki.length < m) {
+    // Reverse the haiki array and count elements that are less than or equal to b
+    haiki.reverse();
+    var cnt = 0;
+    for (var i = 0; i < haiki.length; i++) {
+        if (haiki[i] <= b) cnt++;
+        else break;
+    }
+    // Output the number of elements in haiki that are greater than b
+    console.log(haiki.length - cnt);
+} else {
+    // Output the length of haiki if the condition is not met
+    console.log(haiki.length);
+}

@@ -1,0 +1,7 @@
+Input:
+6
+H4 C9 S4 D2 C3 D4
+
+Output:
+Stable
+H4 C9 S4 D2 C3 D4

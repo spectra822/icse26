@@ -1,0 +1,59 @@
+// Precondition: The program starts execution and sets up to read input from stdin.
+// Postcondition: The program is ready to read input in 'utf8' encoding and 'input' variable is initialized to store the input data.
+let input = ''
+
+process.stdin.resume()
+process.stdin.setEncoding('utf8')
+
+// Precondition: The program is set up to read input data from stdin.
+// Postcondition: The 'input' variable accumulates the input data chunks as a single string.
+process.stdin.on('data', function(chunk) {
+    input += chunk
+})
+
+// Precondition: The 'input' variable contains all the input data as a single string.
+// Postcondition: The 'input' variable is trimmed of extra spaces, split into lines, and the 'main' function is called.
+process.stdin.on('end', function() {
+    input = input.trim().split('\n')
+    main()
+})
+
+// Precondition: The 'input' variable contains an array of input lines, each representing a set of coefficients for linear equations.
+// Postcondition: For each set of coefficients, the program calculates the values of 'x' and 'y' and prints them formatted to three decimal places.
+// Input format: Each line contains six integers separated by spaces (e.g., "1 2 3 4 5 6").
+// Output format: Two floating-point numbers formatted to three decimal places separated by a space (e.g., "-1.000 2.000").
+function main() {
+    for (i = 0; i < input.length; i++) {
+        input_line = input[i].split(' ')
+        let sort_input_line = input_line.slice()
+        sort_input_line.sort(compareNumbers)
+        
+        // Precondition: 'input_line' contains six coefficients as strings.
+        // Postcondition: If the first coefficient is outside the range [-1000, 1000], the function terminates.
+        if (input_line[0] > 1000 || input_line[0] < -1000) {
+            return
+        }
+
+        // Precondition: 'input_line' contains six coefficients as strings.
+        // Postcondition: The variables 'a', 'b', 'c', 'd', 'e', and 'f' are assigned the respective coefficients.
+        let a = input_line[0]
+        let b = input_line[1]
+        let c = input_line[2]
+        let d = input_line[3]
+        let e = input_line[4]
+        let f = input_line[5]
+        
+        // Precondition: 'a', 'b', 'c', 'd', 'e', and 'f' are the coefficients of two linear equations.
+        // Postcondition: The values of 'x' and 'y' are calculated and printed formatted to three decimal places.
+        let x = (b * f - e * c) / (d * b - a * e)
+        let y = (c - a * x) / b
+        console.log(x.toFixed(3), y.toFixed(3))
+    }
+}
+
+// Precondition: 'a' and 'b' are numbers to be compared.
+// Postcondition: The function returns the difference between 'b' and 'a'.
+// Note: This function is used to sort numbers in descending order.
+function compareNumbers(a, b) {
+    return b - a;
+}

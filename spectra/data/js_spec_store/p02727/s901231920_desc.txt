@@ -1,0 +1,33 @@
+// Read input from stdin
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+(input => {
+    // Parse input and initialize variables
+    const lines = input.split('\n');
+    const [X, Y, A, B, C] = lines[0].split(' ').map(Number);
+    
+    // Parse and sort arrays p, q, and r
+    const p = lines[1].split(' ').map(Number).sort((a, b) => a - b);
+    const q = lines[2].split(' ').map(Number).sort((a, b) => a - b);
+    const r = lines[3].split(' ').map(Number).sort((a, b) => a - b);
+
+    // Select top X elements from p, top Y elements from q, and all elements from r
+    const S = [
+        ...p.splice(A - X, X),
+        ...q.splice(B - Y, Y),
+        ...r
+    ];
+
+    // Sort the combined array S in descending order
+    S.sort((a, b) => b - a);
+
+    // Calculate the sum of the top X + Y elements in S
+    let ans = 0;
+    for (let i = 0; i < X + Y; i++) {
+        ans += S[i];
+    }
+
+    // Output the result
+    console.log(ans);
+
+})(input)

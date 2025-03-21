@@ -1,0 +1,11 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain an integer `t[i]`.
+    // The next line contains an integer `m`.
+    // The next `m` lines each contain two integers `p[i]` and `x[i]`, separated by a whitespace.
+    // Output format: `m` lines, each containing a single integer.
+    // Precondition: The integers `n` and `m` are non-negative and do not exceed 100.
+    // The arrays `t`, `p`, and `x` have been declared with sizes sufficient to hold up to 100 elements.
+    // Postcondition: For each pair of `p[i]` and `x[i]`, the program prints the sum of the array `t` with the `p[i]`-th element replaced by `x[i]`.
+```

@@ -1,0 +1,41 @@
+// Precondition: The program is invoked with input from the standard input, which is a series of integers separated by newlines.
+// Postcondition: The input string is split into an array of integers.
+const main = args => {
+    // Input: A string with integers separated by newlines.
+    const [a, b, c, x] = args.split('\n').map(arg => Number(arg));
+
+    // Precondition: The variables a, b, c, and x are defined as integers.
+    // Postcondition: The variable ans is initialized to 0.
+    let ans = 0;
+
+    // Precondition: a, b, c are defined as integers. ans is initialized to 0.
+    // Postcondition: ans is incremented for each combination of i, j, k such that 500 * i + 100 * j + 50 * k equals x.
+    [...Array(a + 1)].forEach((_, i) => {
+        [...Array(b + 1)].forEach((_, j) => {
+            [...Array(c + 1)].forEach((_, k) => {
+                if (500 * i + 100 * j + 50 * k === x) ++ans;
+            });
+        });
+    });
+
+    // Precondition: ans contains the count of valid (i, j, k) combinations.
+    // Postcondition: The result stored in ans is printed to the console.
+    // Output: A single integer representing the count of combinations.
+    console.log(ans);
+};
+
+// Precondition: The program reads input from the standard input.
+// Postcondition: The program passes the input to the main function.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));
+   const main = args => {
+       const [a, b, c, x] = args.split('\n').map(arg => Number(arg));
+       let ans = 0;
+       [...Array(a + 1)].forEach((_, i) => {
+           [...Array(b + 1)].forEach((_, j) => {
+               [...Array(c + 1)].forEach((_, k) => {
+                   if (500 * i + 100 * j + 50 * k === x) ++ans;
+               });
+           });
+       });
+       console.log(ans);
+   main(require('fs').readFileSync('/dev/stdin', 'utf8'));

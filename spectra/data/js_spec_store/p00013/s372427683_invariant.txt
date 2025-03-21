@@ -1,0 +1,23 @@
+// Segment 1: Read and parse input
+// Precondition: The input should be provided in the form of a string with each number on a new line, read from '/dev/stdin'.
+// Postcondition: The variable 'Arr' contains an array of numbers parsed from the input string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n").map(Number);
+
+// Segment 2: Initialize an empty array 'arr'
+// Precondition: The variable 'Arr' should be an array of numbers.
+// Postcondition: The variable 'arr' is an empty array ready to be used for stack operations.
+var arr = [];
+
+// Segment 3: Process each number in 'Arr'
+// Precondition: 'Arr' is an array of numbers, and 'arr' is an empty array or contains numbers from previous operations.
+// Postcondition: For each number in 'Arr', if the number is 0, the last element of 'arr' is removed and printed; otherwise, the number is added to 'arr'.
+// Input format: Each number from the input is processed sequentially.
+// Output format: For each 0 in the input, the last number added to 'arr' is printed on a new line.
+Arr.forEach(function(v) {
+    if (v == 0) {
+        console.log(arr.pop());
+    } else {
+        arr.push(v);
+    }
+});

@@ -1,0 +1,13 @@
+```c
+// Global variables
+int j = 0;
+char S[11];
+char ans[11];
+
+// This is the main function that reads a string and processes it to remove characters based on 'B'.
+// It reads the input string `S`, processes each character, and outputs the modified string `ans`.
+// If the character is 'B', it decrements the position `j` unless `j` is already at 0.
+// Otherwise, it adds the character to `ans` and increments `j`.
+int main()
+  // No external function calls
+```

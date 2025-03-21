@@ -1,0 +1,10 @@
+```c
+// Global variables
+// (None)
+
+// This function reads three integers L, R, and d from the standard input.
+// It then calculates and prints the number of integers between L and R (inclusive)
+// that are divisible by d. The result is flushed to the standard output.
+int main()
+  Calls (None)
+```

@@ -1,0 +1,35 @@
+// Segment 1: Reading input from stdin and initializing array
+// Precondition: The input is provided through stdin and is a string of newline-separated values, ending with -1.
+// Postcondition: The variable 'Arr' is an array of strings, each representing a line from the input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Main loop to process each query
+// Precondition: 'Arr' is a non-empty array of strings, where each string is either a number or '-1'.
+// Postcondition: The program processes each number in 'Arr' until it encounters '-1', printing the cube root approximation for each number.
+while (true) {
+    // Segment 3: Read and process a single query
+    // Precondition: 'Arr' is non-empty and contains at least one element.
+    // Postcondition: If the query is -1, the loop breaks. Otherwise, it calculates the cube root of the query and prints the result.
+    var Q = Arr.shift() - 0;
+    if (Q == -1) break;
+
+    // Segment 4: Newton-Raphson method to approximate the cube root
+    // Precondition: Q is a non-negative number.
+    // Postcondition: The variable 'x' contains an approximation of the cube root of Q.
+    var x = Q / 2;
+    while (Math.abs(Math.pow(x, 3) - Q) >= 0.00001 * Q) {
+        x = x - (Math.pow(x, 3) - Q) / (3 * Math.pow(x, 2));
+    }
+
+    // Segment 5: Output the result
+    // Precondition: 'x' is the approximated cube root of Q.
+    // Postcondition: The approximated cube root of Q is printed to the console with six decimal places.
+    // Output format: A single floating-point number with six decimal places, followed by a newline.
+    console.log(x.toFixed(6));
+}
+    15
+    15
+    -1
+    2.466212
+    2.466212

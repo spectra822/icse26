@@ -1,0 +1,39 @@
+// Segment 1: Import and Read Input
+// Precondition: The '/dev/stdin' file path is accessible and contains the input data in UTF-8 format.
+// Postcondition: The input data is read and split into an array of strings, `Arr`, where each element is a line from the input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Processing Each Line of Input
+// Precondition: `Arr` is an array of strings where each string is a line from the input.
+// Postcondition: For each string in `Arr`, the counts of substrings "JOI" and "IOI" are calculated and printed.
+// Input: Each line of the input is a string containing uppercase letters.
+// Output: For each input line, two integers are printed on separate lines representing the counts of "JOI" and "IOI" respectively.
+Arr.forEach(function(v) {
+    // Segment 2.1: Initialize Counters
+    // Precondition: `v` is a string from the array `Arr`.
+    // Postcondition: `cntA` and `cntB` are initialized to zero.
+    var cntA = 0;
+    var cntB = 0;
+
+    // Segment 2.2: Count Substrings
+    // Precondition: `cntA` and `cntB` are initialized to zero.
+    // Postcondition: `cntA` contains the number of times "JOI" appears in `v`, and `cntB` contains the number of times "IOI" appears in `v`.
+    for (var i = 0; i < v.length - 2; i++) {
+        var str = v[i] + v[i + 1] + v[i + 2];
+        if (str == "JOI") cntA++;
+        if (str == "IOI") cntB++;
+    }
+    
+    // Segment 2.3: Print Results
+    // Precondition: `cntA` and `cntB` contain the counts of "JOI" and "IOI" substrings in `v` respectively.
+    // Postcondition: The values of `cntA` and `cntB` are printed to the console.
+    console.log(cntA);
+    console.log(cntB);
+});
+    2
+    0
+    1
+    3
+    2
+    3

@@ -1,0 +1,33 @@
+// Segment 1: Read input and split into array of strings
+// Precondition: The program is executed in an environment where '/dev/stdin' contains input data.
+// Postcondition: `Arr` is an array of strings, each representing one line of the input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Iterate over each line of input
+// Precondition: `Arr` is an array of strings, each representing one line of the input.
+// Postcondition: For each line in `Arr`, `nx` is an array of two numbers, `n` and `x`. The loop breaks if both `n` and `x` are 0.
+for (var I = 0; I < Arr.length; I++) {
+    var nx = Arr[I].split(" ").map(Number);
+    var n = nx[0];
+    var x = nx[1];
+    if (n == 0 && x == 0) break;
+
+    // Segment 3: Count valid triplets (i, j, k) such that i < j < k, i + j + k = x, and 1 <= i, j, k <= n
+    // Precondition: `n` and `x` are positive integers, and `n` >= 1.
+    // Postcondition: `cnt` is the number of valid triplets (i, j, k) that satisfy the given conditions.
+    var cnt = 0;
+    for (var i = 1; i <= n; i++) {
+        for (var j = i + 1; j <= n; j++) {
+            if (i + j >= x) break;
+            var k = x - (i + j);
+            if (k > j && k <= n) cnt++;
+        }
+    }
+
+    // Segment 4: Output the count of valid triplets
+    // Precondition: `cnt` is the number of valid triplets (i, j, k) calculated for the current line of input.
+    // Postcondition: The value of `cnt` is printed to the standard output.
+    // Output format: A single integer followed by a newline character.
+    console.log(cnt);
+}

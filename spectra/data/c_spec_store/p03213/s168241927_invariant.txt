@@ -1,0 +1,12 @@
+```c
+int num(int a)
+    // Precondition: The global array `yaku` has been populated with the frequencies of prime factors of numbers from 2 to `n`.
+    // Postcondition: The function returns the count of elements in `yaku` that are greater than or equal to `a-1`.
+
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // Output format: A single integer.
+    // Precondition: The global array `yaku` has been declared and initialized to zeros.
+    // Postcondition: The global array `yaku` is populated with the frequencies of prime factors of numbers from 2 to `n`.
+    // The program prints the count of ways to express `n!` as a product of prime factors with specific exponents.
+```

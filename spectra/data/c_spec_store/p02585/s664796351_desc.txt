@@ -1,0 +1,15 @@
+```c
+// Global variables
+int P[5001];
+int C[5001];
+
+// This function reads input values for N, K, P, and C.
+// Then it processes the sequence using a combination of nested loops to find the maximum value of a specific computation.
+// The function prints the result.
+// The computation involves finding the maximum sum of values in the sequence after a series of jumps determined by the arrays P and C and constrained by the number of jumps K.
+int main()
+    // Calls scanf(...)
+    // Uses nested loops for computations
+    // Calls printf(...)
+    // Calls fflush(stdout)
+```

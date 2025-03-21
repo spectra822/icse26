@@ -1,0 +1,82 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given a string <var>S</var> of length <var>N</var> consisting of <code>(</code> and <code>)</code>. Your task is to insert some number of <code>(</code> and <code>)</code> into <var>S</var> to obtain a <em>correct bracket sequence</em>.<br/>
+Here, a correct bracket sequence is defined as follows:  </p>
+<ul>
+<li><code>()</code> is a correct bracket sequence.</li>
+<li>If <var>X</var> is a correct bracket sequence, the concatenation of <code>(</code>, <var>X</var> and <code>)</code> in this order is also a correct bracket sequence.</li>
+<li>If <var>X</var> and <var>Y</var> are correct bracket sequences, the concatenation of <var>X</var> and <var>Y</var> in this order is also a correct bracket sequence.</li>
+<li>Every correct bracket sequence can be derived from the rules above.</li>
+</ul>
+<p>Find the shortest correct bracket sequence that can be obtained. If there is more than one such sequence, find the lexicographically smallest one.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>The length of <var>S</var> is <var>N</var>.</li>
+<li><var>1 ≤ N ≤ 100</var></li>
+<li><var>S</var> consists of <code>(</code> and <code>)</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the lexicographically smallest string among the shortest correct bracket sequences that can be obtained by inserting some number of <code>(</code> and <code>)</code> into <var>S</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+())
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>(())
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>6
+)))())
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>(((()))())
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>8
+))))((((
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>(((())))(((())))
+</pre></section>
+</div>
+</span>

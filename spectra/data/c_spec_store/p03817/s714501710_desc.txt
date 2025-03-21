@@ -1,0 +1,30 @@
+```c
+// Global variables
+bool flag;
+
+// Computes the greatest common divisor (GCD) of two numbers `a` and `b`.
+ll gcd(ll a, ll b)
+
+// Computes the least common multiple (LCM) of two numbers `a` and `b`.
+ll lcm(ll a, ll b)
+
+// Returns the maximum of two numbers `a` and `b`.
+ll max(ll a, ll b)
+
+// Returns the minimum of two numbers `a` and `b`.
+ll min(ll a, ll b)
+
+// Comparator function for sorting in ascending order.
+ll asc(const void* a, const void* b)
+
+// Comparator function for sorting in descending order.
+ll dsc(const void* a, const void* b)
+
+// This function calculates a value based on the input `n`.
+// It reads an integer `n` from standard input.
+// If `n` is divisible by 11, it sets `res` to 0.
+// If the remainder of `n` divided by 11 is between 1 and 6 (inclusive), it sets `res` to 1.
+// For other remainders, it sets `res` to 2.
+// It then calculates `ans` as `(n / 11 * 2) + res` and prints `ans`.
+int main()
+```

@@ -1,0 +1,11 @@
+Input:
+hello@2w
+@3xample
+@5z
+normaltext
+
+Output:
+helloww
+xxxample
+zzzzz
+normaltext

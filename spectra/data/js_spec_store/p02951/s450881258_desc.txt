@@ -1,0 +1,14 @@
+// Main function that processes the input and calculates the required result
+const main = stdin => {
+    // Split the input by new lines and trim any extra spaces
+    const input = stdin.trim().split('\n')
+
+    // Parse the first line of input into three integers A, B, and C
+    const [A, B, C] = input[0].split(' ').map(x => parseInt(x))
+
+    // Calculate the maximum value between C - (A - B) and 0, and print it
+    console.log(Math.max(C - (A - B), 0));
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

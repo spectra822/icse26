@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains two integers `N` and `A`, separated by a whitespace.
+    // The next `N` lines each contain a single integer `x[i]`.
+    // Output format: A single number.
+    // Precondition: `N` and `A` are positive integers. The array `x` has been declared with size `N+1`.
+    // Postcondition: The number of ways to choose some non-empty subset of `x` such that the average of the chosen elements is exactly `A` is printed.
+```

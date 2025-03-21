@@ -1,0 +1,78 @@
+<span class="lang-en">
+<p>Score : <var>1200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi is an expert of Clone Jutsu, a secret art that creates copies of his body.</p>
+<p>On a number line, there are <var>N</var> copies of Takahashi, numbered <var>1</var> through <var>N</var>.
+The <var>i</var>-th copy is located at position <var>X_i</var> and starts walking with velocity <var>V_i</var> in the positive direction at time <var>0</var>.</p>
+<p>Kenus is a master of Transformation Jutsu, and not only can he change into a person other than himself, but he can also transform another person into someone else.</p>
+<p>Kenus can select some of the copies of Takahashi at time <var>0</var>, and transform them into copies of Aoki, another Ninja.
+The walking velocity of a copy does not change when it transforms.
+From then on, whenever a copy of Takahashi and a copy of Aoki are at the same coordinate, that copy of Takahashi transforms into a copy of Aoki.</p>
+<p>Among the <var>2^N</var> ways to transform some copies of Takahashi into copies of Aoki at time <var>0</var>, in how many ways will all the copies of Takahashi become copies of Aoki after a sufficiently long time?
+Find the count modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≤ N ≤ 200000</var></li>
+<li><var>1 ≤ X_i,V_i ≤ 10^9(1 ≤ i ≤ N)</var></li>
+<li><var>X_i</var> and <var>V_i</var> are integers.</li>
+<li>All <var>X_i</var> are distinct.</li>
+<li>All <var>V_i</var> are distinct.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>X_1</var> <var>V_1</var>
+:
+<var>X_N</var> <var>V_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of the ways that cause all the copies of Takahashi to turn into copies of Aoki after a sufficiently long time, modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+2 5
+6 1
+3 7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>6
+</pre>
+<p>All copies of Takahashi will turn into copies of Aoki after a sufficiently long time if Kenus transforms one of the following sets of copies of Takahashi into copies of Aoki: <var>(2)</var>, <var>(3)</var>, <var>(1,2)</var>, <var>(1,3)</var>, <var>(2,3)</var> and <var>(1,2,3)</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+3 7
+2 9
+8 16
+10 8
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>9
+</pre></section>
+</div>
+</span>

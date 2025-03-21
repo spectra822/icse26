@@ -1,0 +1,9 @@
+```c
+int main()
+    // Input format: The first line contains two integers `H` and `W`.
+    // The next `H` lines each contain a string of length `W` consisting of characters '.' and '#'.
+    // Output format: A single word, either "Yes" or "No".
+    // Precondition: The input grid `s` has dimensions `H` x `W` and contains only the characters '.' and '#'.
+    // Postcondition: The program prints "Yes" if every '#' character in the grid has at least one adjacent '#' character 
+    // (up, down, left, or right). Otherwise, it prints "No".
+```

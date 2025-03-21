@@ -1,0 +1,105 @@
+<span class="lang-en">
+<p>Score : <var>800</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi and Aoki will play a game on a tree.
+The tree has <var>N</var> vertices numbered <var>1</var> to <var>N</var>, and the <var>i</var>-th of the <var>N-1</var> edges connects Vertex <var>a_i</var> and Vertex <var>b_i</var>.</p>
+<p>At the beginning of the game, each vertex contains a coin.
+Starting from Takahashi, he and Aoki will alternately perform the following operation:</p>
+<ul>
+<li>Choose a vertex <var>v</var> that contains one or more coins, and remove all the coins from <var>v</var>.</li>
+<li>Then, move each coin remaining on the tree to the vertex that is nearest to <var>v</var> among the adjacent vertices of the coin's current vertex.</li>
+</ul>
+<p>The player who becomes unable to play, loses the game.
+That is, the player who takes his turn when there is no coin remaining on the tree, loses the game.
+Determine the winner of the game when both players play optimally.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li><var>1 \leq a_i, b_i \leq N</var></li>
+<li><var>a_i \neq b_i</var></li>
+<li>The graph given as input is a tree.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>b_1</var>
+<var>a_2</var> <var>b_2</var>
+<var>:</var>
+<var>a_{N-1}</var> <var>b_{N-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <code>First</code> if Takahashi will win, and print <code>Second</code> if Aoki will win.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>First
+</pre>
+<p>Here is one possible progress of the game:</p>
+<ul>
+<li>Takahashi removes the coin from Vertex <var>1</var>. Now, Vertex <var>1</var> and Vertex <var>2</var> contain one coin each.</li>
+<li>Aoki removes the coin from Vertex <var>2</var>. Now, Vertex <var>2</var> contains one coin.</li>
+<li>Takahashi removes the coin from Vertex <var>2</var>. Now, there is no coin remaining on the tree.</li>
+<li>Aoki takes his turn when there is no coin on the tree and loses.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>6
+1 2
+2 3
+2 4
+4 6
+5 6
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>Second
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>7
+1 7
+7 4
+3 4
+7 5
+6 3
+2 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>First
+</pre></section>
+</div>
+</span>

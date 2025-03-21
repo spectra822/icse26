@@ -1,0 +1,12 @@
+```c
+// Global variables
+int railroad[10] = {};
+
+// Main function
+// This function simulates a simple stack-based railroad system where:
+// - Positive integers represent cars entering the system and being pushed onto the stack.
+// - A zero represents a car leaving the system and being popped from the stack, with its value printed.
+// The function reads a sequence of integers from standard input until EOF and processes them accordingly.
+int main(void)
+    // Calls to no other functions
+```

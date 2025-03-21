@@ -1,0 +1,13 @@
+```c
+int in()
+    // Precondition: The function `gc()` is defined to read a character from input.
+    // Postcondition: Reads an integer from input, consisting of digits, and returns it.
+
+int main()
+    // Input format: 
+    // The first line contains two integers `N` and `K` separated by a space.
+    // The second line contains `N` integers separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The global arrays `a` and `f` have been declared with size `MAX_N`.
+    // Postcondition: Prints the length of the smallest contiguous subarray containing at least one of each integer from 1 to `K`. If no such subarray exists, prints `0`.
+```

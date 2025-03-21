@@ -1,0 +1,41 @@
+'use strict';
+
+// Segment 1: Function declaration and input reading
+// Precondition: The program is executed in an environment where it can read from the standard input.
+// Postcondition: The input string is read from the standard input and split into an array of strings.
+function Main(input) {
+    // Input format: A single line containing space-separated integers.
+    input = input.split(" ");
+
+    // Segment 2: Parse the input and calculate max and min values
+    // Precondition: 'input' is an array of strings where each string represents an integer.
+    // Postcondition: 'a' is the maximum integer in the input array, 'b' is the minimum integer in the input array.
+    let a = parseInt(Math.max.apply(null, input));
+    let b = parseInt(Math.min.apply(null, input));
+
+    // Segment 3: Calculate the product of the max and min values
+    // Precondition: 'a' and 'b' are both integers.
+    // Postcondition: 'result' is the product of 'a' and 'b'.
+    let result = a * b;
+
+    // Segment 4: Compute the greatest common divisor (GCD) using the Euclidean algorithm
+    // Precondition: 'a' and 'b' are integers, with 'a' >= 'b'.
+    // Postcondition: 'a' contains the GCD of the original 'a' and 'b'.
+    let mod = 1;
+    while (mod > 0) {
+        mod = a % b;
+        a = b;
+        b = mod;
+    }
+
+    // Segment 5: Output the result divided by the GCD
+    // Precondition: 'a' contains the GCD of the original 'a' and 'b', and 'result' is the product of the original 'a' and 'b'.
+    // Postcondition: The result of the product divided by the GCD is printed to the standard output.
+    // Output format: A single integer followed by a newline.
+    console.log(result / a);
+}
+
+// Segment 6: Program entry point and input reading from standard input
+// Precondition: The program is executed in an environment where it can read from the standard input.
+// Postcondition: The input string is passed to the Main function.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

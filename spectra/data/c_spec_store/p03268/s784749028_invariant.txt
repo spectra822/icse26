@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains two integers `N` and `K`, separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: `N` and `K` are non-negative integers.
+    // Postcondition: If `K` is odd, the output is `(N / K) * (N / K) * (N / K)` followed by a newline.
+    // If `K` is even, the output is `(N / K) * (N / K) * (N / K) + ((N + K / 2) / K) * ((N + K / 2) / K) * ((N + K / 2) / K)` followed by a newline.
+```

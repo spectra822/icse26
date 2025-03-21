@@ -1,0 +1,27 @@
+'use strict'
+
+// Main function that processes the input and finds the position of the word 'snuke'
+const main = (INPUT) => {
+    // Split the input into lines
+    const input = INPUT.split('\n')
+    // Define the alphabet string to map column indices to letters
+    const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    
+    // Iterate over each line of the input starting from the second line
+    for (let i = 1; i < input.length; i++) {
+        // Split the current line into words
+        const S = input[i].split(' ')
+        // Iterate over each word in the current line
+        for (let j = 0; j < S.length; j++) {
+            // Check if the current word is 'snuke'
+            if (S[j] == 'snuke') {
+                // Print the result in the format: column letter + row number
+                console.log(abc[j] + i)
+                return
+            }
+        }
+    }
+}
+
+// Read input from stdin and call the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'))

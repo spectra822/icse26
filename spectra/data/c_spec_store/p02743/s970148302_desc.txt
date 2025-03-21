@@ -1,0 +1,11 @@
+```
+// Global variables
+// None
+
+// This function is the entry point of the program.
+// It reads three long double values `a`, `b`, and `c` from standard input.
+// It calculates `d` as `c - a - b` and checks if `d*d > 4.0L * a * b` and `d > 0`.
+// If both conditions are true, it prints "Yes"; otherwise, it prints "No".
+int main()
+  // No calls to other functions
+```

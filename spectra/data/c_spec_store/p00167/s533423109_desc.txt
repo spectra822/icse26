@@ -1,0 +1,10 @@
+```c
+// Global variables
+// None
+
+// This function reads an array of integers and performs a bubble sort on it.
+// It counts the number of swaps needed to sort the array and prints the count.
+// The function continues to read and process arrays until a zero is read.
+int main(void)
+    // No calls to other functions
+```

@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: The input consists of three integers L, R, and d separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variables `L`, `R`, and `d` are declared and will receive integer input values.
+    // Postcondition: The number of integers between L and R (inclusive) that are divisible by d is printed, followed by a newline.
+```

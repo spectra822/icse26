@@ -1,0 +1,90 @@
+
+<H1><font color="#000">Problem E:</font> Mirror Illusion</H1>
+
+<p>
+A rich man has a square room with mirrors for security or just for fun. Each side of the room is eight meters wide. The floor, the ceiling and the walls are not special; however, the room can be equipped with a lot of mirrors on the walls or as vertical partitions.
+</p>
+
+<p>
+Every mirror is one meter wide, as tall as the wall, double-side, perfectly reflective, and ultimately thin.
+</p>
+
+<p>
+Poles to fix mirrors are located at the corners of the room, on the walls and inside the room. Their locations are the 81 lattice points at intervals of one meter. A mirror can be fixed between two poles which are one meter distant from each other. If we use the sign "+" to represent a pole, the overview of the room can be illustrated as follows.
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_mirror">
+</center>
+
+<p>
+Let us denote a location on the floor by (<i>x</i>,<i>y</i>) in a rectangular coordinate system. For example, the rectangular coordinates of the four corners of the room are (0,0), (8,0), (0,8) and (8,8), respectively. The location (<i>x</i>,<i>y</i>) is in the room if and only if the conditions 0 &le; <i>x</i> &le; 8 and 0 &le; <i>y</i> &le; 8 are satisfied. If <i>i</i> and <i>j</i> are integers satisfying the conditions 0 &le; <i>i</i> &le; 8 and 0 &le; <i>j</i> &le; 8, we can denote by (<i>i</i>,<i>j</i>) the locations of poles.
+</p>
+
+<p>
+One day a thief intruded into this room possibly by breaking the ceiling. He stood at (0.75,0.25) and looked almost toward the center of the room. Precisely speaking, he looked toward the point (1, 0.5) of the same height as his eyes. So what did he see in the center of his sight? He would have seen one of the walls or himself as follows.
+</p>
+
+<ul>
+<li>If there existed no mirror, he saw the wall at (8, 7.5)</li>
+<li>If there existed one mirror between two poles at (8, 7) and (8, 8), he saw the wall at (7.5, 8). (Let us denote the line between these two poles by (8, 7)-(8, 8).)</li>
+<li>If there were four mirrors on (8, 7)-(8, 8), (7, 8)-(8, 8), (0, 0)-(0, 1) and (0, 0)-(1, 0), he saw himself at (0.75, 0.25).</li>
+<li>If there were four mirrors on (2, 1)-(2, 2), (1, 2)-(2, 2), (0, 0)-(0, 1) and (0, 0)-(1, 0), he saw himself at (0.75, 0.25)</li>
+</ul>
+
+<p>
+Your job is to write a program that reports the location at which the thief saw one of the walls or himself with the given mirror arrangements.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input contains multiple data sets, each representing how to equip the room with mirrors. A data set is given in the following format.
+</p>
+
+<pre>
+<i>n</i>
+<i>d</i><sub>1</sub> <i>i</i><sub>1</sub> <i>j</i><sub>1</sub>
+<i>d</i><sub>2</sub> <i>i</i><sub>2</sub> <i>j</i><sub>2</sub>
+. . .
+<i>d</i><sub><i>n</i></sub> <i>i</i><sub><i>n</i></sub> <i>j</i><sub><i>n</i></sub>
+</pre>
+
+
+<p>
+The first integer <i>n</i> is the number of mirrors, such that 0 &le; <i>n</i> &le; 144. The way the <i>k</i>-th (1 &le; <i>k</i> &le; <i>n</i>) mirror is fixed is given by <i>d<sub>k</sub></i> and (<i>i<sub>k</sub></i>,<i>j<sub>k</sub></i>). <i>d<sub>k</sub></i> is either 'x' or 'y', which gives the direction of the mirror. If <i>d<sub>k</sub></i> is 'x', the mirror is fixed on (<i>i<sub>k</sub></i>, <i>j<sub>k</sub></i>)-(<i>i<sub>k</sub></i> + 1, <i>j<sub>k</sub></i>). If <i>d<sub>k</sub></i> is 'y', the mirror is fixed on (<i>i<sub>k</sub></i>,<i>j<sub>k</sub></i>) (<i>i<sub>k</sub></i>,<i>j<sub>k</sub></i> + 1). The end of the input is indicated by a negative integer.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each data set, your program should output the location (<i>x</i>,<i>y</i>) at which the thief saw one of the walls or himself. The location should be reported in a line containing two integers which are separated by a single space and respectively represent <i>x</i> and <i>y</i> in centimeter as the unit of length. No extra lines nor spaces are allowed.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+0
+1
+y 8 7
+4
+y 8 7
+x 7 8
+y 0 0
+x 0 0
+4
+y 2 1
+x 1 2
+y 0 0
+x 0 0
+-1
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+800 750
+750 800
+75 25
+75 25
+</pre>
+
+

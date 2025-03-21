@@ -1,0 +1,14 @@
+```c
+// Global variables
+int a[1000], b[1000];
+
+// Main function
+// Reads two integers `n` and `m`.
+// Then reads `m` pairs of integers into arrays `a` and `b`.
+// If an element in `a` is greater than or equal to `n`, it sets both `a` and `b` at that index to 0 and increments `count1`.
+// If `m-1` is greater than `count1`, it processes the array `b` to store the difference between `n` and elements in `a`.
+// Sorts the array `b` and accumulates the sum of the first `m-count1-1` elements of `b` into `count2`.
+// Finally, prints `count2`.
+int main(void)
+    Calls no other functions
+```

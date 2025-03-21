@@ -1,0 +1,13 @@
+```c
+void mpl(void)
+    // Precondition: The global arrays `isprime` and `pr` have been declared.
+    // Postcondition: The global array `isprime` is updated to mark non-prime indices as 0 and prime indices as 1.
+    // The global array `pr` is populated with the prime numbers up to 100000, and `primenum` is set to the number of primes found.
+
+int main(void)
+    // Input format: A series of lines, each containing three integers `m`, `a`, and `b`, separated by spaces.
+    // The input ends when a line containing `0 0 0` is encountered.
+    // Output format: For each input line except the last, two integers `p` and `q` are printed on a new line, separated by a space.
+    // Precondition: The global variables `isprime`, `pr`, and `primenum` have been declared.
+    // Postcondition: For each input line (excluding the terminating line), the pair of primes `p` and `q` is found such that `p*q <= m` and `a*q <= p*b`, and `p*q` is maximized. The pair is then printed.
+```

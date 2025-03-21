@@ -1,0 +1,72 @@
+<H1>Partition</H1>
+<!--
+<p style="color:#f00">
+Please note that problem description and judge data for this problem are still under construction. They may revised and your submissions can be rejudged.
+</p>
+-->
+
+<p>
+Quick sort is based on the Divide-and-conquer approach. In QuickSort(A, p, r), first, a procedure Partition(A, p, r) divides an array A[p..r] into two subarrays A[p..q-1] and A[q+1..r] such that each element of A[p..q-1] is less than or equal to A[q], which is, inturn, less than or equal to each element of A[q+1..r]. It also computes the index q.
+</p>
+
+<p>
+In the conquer processes, the two subarrays A[p..q-1] and A[q+1..r] are sorted by recursive calls of QuickSort(A, p, q-1) and QuickSort(A, q+1, r).
+</p>
+
+
+<p>
+Your task is to read a sequence A and perform the Partition based on the following pseudocode:
+</p>
+
+<pre>
+Partition(A, p, r)
+1 x = A[r]
+2 i = p-1
+3 for j = p to r-1
+4     do if A[j] <= x
+5        then i = i+1
+6            exchange A[i] and A[j] 
+7 exchange A[i+1] and A[r]
+8 return i+1
+</pre>
+
+</p>
+Note that, in this algorithm, Partition always selects an element A[r] as a pivot element around which to partition the array A[p..r].
+</p>
+
+<H2>Input</H2>
+
+<p>
+The first line of the input includes an integer <i>n</i>, the number of elements in the sequence A.
+</p>
+<p>
+In the second line, <i>A<sub>i</sub></i> (<i>i</i> = 1,2,...,<i>n</i>), elements of the sequence are given separated by space characters.
+</p>
+
+<H2>Output</H2>
+
+
+<p>
+Print the sorted sequence. Two contiguous elements of the sequence should be separated by a space character. The element which is selected as the pivot of the partition should be indicated by <span>[</span>&nbsp;&nbsp;<span>]</span>.
+</p>
+
+<H2>Constraints</H2>
+
+<ul>
+  <li>1 &le; <i>n</i> &le; 100,000</li>
+  <li>0 &le; <i>A<sub>i</sub></i> &le; 100,000</li>
+</ul>
+
+
+<H2>Sample Input 1</H2>
+<pre>
+12
+13 19 9 5 12 8 7 4 21 2 6 11
+</pre>
+<H2>Sample Output 1</H2>
+<pre>
+9 5 8 7 4 2 6 [11] 21 13 19 12
+</pre>
+
+
+

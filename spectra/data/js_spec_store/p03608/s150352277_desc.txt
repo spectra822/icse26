@@ -1,0 +1,144 @@
+// Reading input from standard input and initializing the iterator object
+var input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+var obj = {
+    "list": input,
+    "index": 0,
+    "max": input.length,
+    "next": function() {
+        if (!this.hasNext()) {
+            throw "NoSuchElementException:次に要素は無いよ";
+        }
+        var returnObj = this.list[this.index];
+        this.index++;
+        return returnObj;
+    },
+    "hasNext": function() {
+        return (this.index < this.max);
+    }
+}
+
+// Entry point of the program
+Main();
+
+// Utility functions to fetch next input and check if more input exists
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+// Utility functions for outputting to console
+function myout(t) {
+    console.log(t);
+}  
+
+function myerr(t) {
+    console.error(t);
+}  
+
+// Utility function for converting input based on specified type
+function myconv(i, no) {
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(" ");
+            case 4:
+                return i.split(" ").map((a) => Number(a));
+            case 6:
+                return i.split("");
+            case 7:
+                return i.split("").map((a) => Number(a));
+            case 8:
+                return i.join(" ");
+            case 9:
+                return i.join("\n");
+            case 0:
+                return i.join("");
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Main function containing the core logic of the program
+function Main() {
+    // Reading the first line of input and converting it to an array of numbers
+    var one = myconv(next(), 4);
+    var N = one[0];
+    var M = one[1];
+    var R = one[2];
+    var max = Math.pow(10, 12);
+
+    // Initializing the distance matrix
+    var kyori = new Array(N);
+    for (var i = 0; i < N; i++) {
+        kyori[i] = new Array(N);
+    }
+
+    // Reading the travel nodes and adjusting to zero-based index
+    var travel = myconv(next(), 4);
+    for (var i = 0; i < R; i++) {
+        travel[i]--;
+    }
+
+    // Reading the edges and updating the distance matrix
+    for (var i = 0; i < M; i++) {
+        var tmp = myconv(next(), 4);
+        kyori[tmp[0] - 1][tmp[1] - 1] = tmp[2];
+        kyori[tmp[1] - 1][tmp[0] - 1] = tmp[2];
+    }
+
+    // Setting default distances to max for non-initialized paths
+    for (var i = 0; i < N; i++) {
+        for (var j = 0; j < N; j++) {
+            if (kyori[i][j] == null) {
+                kyori[i][j] = max;
+            }
+        }
+    }
+
+    // Applying the Floyd-Warshall algorithm to find shortest paths between all pairs
+    for (var k = 0; k < N; k++) {
+        for (var i = 0; i < N; i++) {
+            for (var j = 0; j < N; j++) {
+                if (kyori[i][j] > kyori[i][k] + kyori[k][j]) {
+                    kyori[i][j] = kyori[i][k] + kyori[k][j];
+                }
+            }
+        }
+    }
+
+    // Initializing the output variable to store the minimum travel cost
+    var output = max;
+
+    // Starting DFS from each travel node
+    for (var i = 0; i < R; i++) {
+        dfs(travel[i], new Set(travel), 0);
+    }
+
+    // Printing the minimum travel cost
+    myout(output);
+
+    // Depth-First Search (DFS) function to explore all permutations of travel nodes
+    function dfs(parent, set, moved) {
+        var tmpSet = new Set(set);
+        tmpSet.delete(parent);
+        if (tmpSet.size == 0) {
+            output = Math.min(output, moved);
+            return;
+        }
+        var nextTravel = Array.from(tmpSet);
+        for (var i = 0; i < nextTravel.length; i++) {
+            if (nextTravel[i] == parent) {
+                continue;
+            }
+            dfs(nextTravel[i], tmpSet, (moved + kyori[parent][nextTravel[i]]));
+        }
+    }
+}

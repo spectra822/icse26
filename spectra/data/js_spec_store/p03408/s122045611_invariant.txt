@@ -1,0 +1,68 @@
+// Segment 1: Variable Declarations and Input Parsing
+// Precondition: `input` is a non-empty string containing multiple lines separated by '\n'.
+// Postcondition: `args` is an array of strings split by '\n' from `input`.
+// `N` is an integer representing the number of blue items.
+// `M` is an integer representing the number of red items.
+
+function main(input) {
+    const args = input.split('\n');
+    const N = parseInt(args[0], 10);
+    const M = parseInt(args[N + 1], 10);
+    data = {};
+    let blues = [];
+    let reds = [];
+    let ans;
+
+    // Segment 2: Populate `blues` array
+    // Precondition: `args` is an array of strings, `N` is an integer.
+    // Postcondition: `blues` is an array of strings containing the first N elements from `args` starting from index 1.
+    for (let i = 1; i <= N; i++) {
+        blues.push(args[i]);
+    }
+
+    // Segment 3: Populate `reds` array
+    // Precondition: `args` is an array of strings, `N` and `M` are integers.
+    // Postcondition: `reds` is an array of strings containing the next M elements from `args` starting from index N+2.
+    for (let i = (N + 2); i <= (N + M + 1); i++) {
+        reds.push(args[i]);
+    }
+
+    // Segment 4: Count occurrences in `blues`
+    // Precondition: `blues` is an array of strings.
+    // Postcondition: `data` is an object where keys are elements from `blues` and values are their counts.
+    for (let i = 0; i < blues.length; i++) {
+        key = blues[i];
+        data[key] = data[key] ? data[key] + 1 : 1;
+    }
+
+    // Segment 5: Count occurrences in `reds`
+    // Precondition: `reds` is an array of strings, `data` is an object with keys representing elements from `blues`.
+    // Postcondition: `data` is updated such that keys are elements from `blues` and `reds` and values are their net counts.
+    for (let i = 0; i < reds.length; i++) {
+        key = reds[i];
+        data[key] = data[key] ? data[key] - 1 : -1;
+    }
+
+    // Segment 6: Determine the maximum value in `data`
+    // Precondition: `data` is an object with keys representing elements from `blues` and `reds` and values are their net counts.
+    // Postcondition: `ans` is the maximum net count found in `data`.
+    for (key in data) {
+        if (!ans || data[key] > ans) {
+            ans = data[key];
+        }
+    }
+
+    // Segment 7: Output the result
+    // Precondition: `ans` is the maximum net count found in `data`.
+    // Postcondition: The program outputs the value of `ans` or 0 if `ans` is negative.
+    // Input format: Multiple lines of strings.
+    // Output format: A single integer.
+    if (ans < 0) {
+        console.log(0);
+    } else {
+        console.log(ans);
+    }
+}
+
+// Assumption: The input is read from a file or standard input in a competitive programming environment.
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

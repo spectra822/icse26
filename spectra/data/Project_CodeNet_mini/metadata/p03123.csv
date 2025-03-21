@@ -1,0 +1,3 @@
+submission_id,problem_id,user_id,date,language,original_language,filename_ext,status,cpu_time,memory,code_size,accuracy
+s140612116,p03123,u721060623,1586350813,C,C (GCC 5.4.1),c,Accepted,204,128,1884,
+s602681602,p03123,u025222195,1586161303,C++,C++14 (GCC 5.4.1),cpp,Accepted,563,256,6202,

@@ -1,0 +1,5 @@
+// Segment 1: Import the 'fs' module and read the input from '/dev/stdin'
+let m = Number(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Segment 2: Calculate and print the difference between 48 and the input number
+console.log(48 - m);

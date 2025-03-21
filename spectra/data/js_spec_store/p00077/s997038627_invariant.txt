@@ -1,0 +1,41 @@
+// Segment 1: Importing required modules and reading input
+
+// Precondition: The 'fs' module is available in the runtime environment.
+// Postcondition: The 'input' variable contains the entire input read from '/dev/stdin' as a UTF-8 string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Processing the input into an array of strings
+
+// Precondition: 'input' is a non-empty string with line breaks separating different lines of input.
+// Postcondition: 'Arr' is an array of strings, where each element is a trimmed line from the input.
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Iterating over each line, performing replacements, and printing the results
+
+// Precondition: 'Arr' is a non-empty array of strings, each representing a line of input.
+// Postcondition: Each line in 'Arr' is processed to replace patterns and is printed to the standard output.
+/* Input format:
+   - Multiple lines of strings.
+   - Each line may contain patterns of the form @<digit><character>.
+   - Example: "ab@5C1@8050" (without quotes)
+*/
+
+/* Output format:
+   - Each processed line is printed.
+   - Patterns of the form @<digit><character> are replaced with the character repeated <digit> times.
+   - Example: "abCCCCC10000000050" (without quotes)
+*/
+Arr.forEach(function(v) {
+    v = v.replace(/@(\d)(.)/g, function(s, s1, s2) {
+        // Segment 3.1: Replacing patterns with repeated characters
+
+        // Precondition: 's' is a string matching the pattern @<digit><character>.
+        // Postcondition: The pattern is replaced with the character repeated <digit> times.
+        return Array((s1 - 0) + 1).join(s2);
+    });
+    // Segment 3.2: Printing the processed line
+
+    // Precondition: 'v' is a string with all patterns replaced by repeated characters.
+    // Postcondition: The processed string 'v' is printed to the standard output.
+    console.log(v);
+});

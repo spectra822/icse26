@@ -1,0 +1,37 @@
+// Precondition: The program starts execution, and the 'fs' module is available for reading input.
+// Postcondition: The 'input' variable contains the entire input from '/dev/stdin', and 'Arr' is an array of strings split by newlines.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Precondition: 'Arr' contains the input split into an array of strings.
+// Postcondition: The program processes each test case until it encounters "0 0".
+while (true) {
+    // Precondition: 'Arr' is not empty.
+    // Postcondition: 'NM' contains the first element of 'Arr', and if 'NM' equals "0 0", the loop breaks.
+    var NM = Arr.shift();
+    if (NM == "0 0") break;
+
+    // Precondition: 'NM' contains a string with two integers separated by a space.
+    // Postcondition: 'nm' is an array of two integers parsed from 'NM', and 'm' is the second integer.
+    var nm = NM.split(" ").map(Number);
+    var m = nm[1];
+
+    // Precondition: 'Arr' contains strings representing the values for the current test case.
+    // Postcondition: 'arr' is an array of integers parsed from the first element of 'Arr' and sorted in descending order.
+    var arr = (Arr.shift()).split(" ").map(Number);
+    arr.sort(function(a, b) {
+        return b - a;
+    });
+
+    // Precondition: 'arr' is a sorted array of integers, and 'm' is a positive integer.
+    // Postcondition: 'sum' contains the sum of integers in 'arr' except every m-th element.
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if ((i + 1) % m != 0) sum += arr[i];
+    }
+
+    // Precondition: 'sum' contains the calculated sum for the current test case.
+    // Postcondition: The sum is printed to the standard output.
+    // Output: sum (integer) followed by a newline character.
+    console.log(sum);
+}

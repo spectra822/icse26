@@ -1,0 +1,11 @@
+```
+
+// Global variables
+long long T[3], A[3], B[3];
+
+// Main function that reads input values, processes them, and prints the result.
+// It calculates the relative positions and velocities of two objects moving in a straight line.
+// Depending on the conditions, it determines whether they will meet infinitely many times or a finite number of times.
+int main()
+  Calls fflush(stdout)
+```

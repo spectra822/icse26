@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The input consists of multiple lines. Each line contains an integer `q`.
+    // The input ends when a line contains `-1`.
+    // Output format: For each integer `q`, the program outputs a single floating-point number with six decimal places.
+    // Precondition: The variable `q` is a non-negative integer or `-1`.
+    // Postcondition: The program computes the cube root of `q` using Newton's method and prints the result with six decimal places.
+```

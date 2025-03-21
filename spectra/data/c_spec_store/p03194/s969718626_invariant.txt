@@ -1,0 +1,8 @@
+```c
+main()
+    // Input format: The first line contains two integers `n` and `p`.
+    // Output format: A single number.
+    // Precondition: The variables `n`, `p`, and `ans` have been declared.
+    // Postcondition: `ans` is updated to the largest integer `x` such that `x^n` divides `p`.
+    // The value of `ans` is printed.
+```

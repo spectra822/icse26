@@ -1,0 +1,28 @@
+// Segment 1: Function Definition and Input Handling
+
+// Precondition: The input is provided as a single string with space-separated integers.
+// Postcondition: The input string is split into an array of strings, each representing a number.
+function Main(input) {
+    const numbers = input.split(' ');
+
+    // Segment 2: Loop to Find the First Occurrence of '0'
+
+    // Precondition: 'numbers' is an array of strings representing numbers.
+    // Postcondition: If '0' is found in the array, its position (1-based index) is logged to the console.
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] == 0) {
+            const ans = i + 1;
+            
+            // Input: No additional input.
+            // Output: A single integer representing the 1-based index of the first occurrence of '0'.
+            console.log(ans.toString());
+            break;
+        }
+    }
+}
+
+// Segment 3: Reading Input and Invoking the Main Function
+
+// Precondition: The script is executed in an environment where '/dev/stdin' provides the input.
+// Postcondition: The Main function is called with the content of '/dev/stdin' as argument.
+Main(require('fs').readFileSync('/dev/stdin', 'utf8'));

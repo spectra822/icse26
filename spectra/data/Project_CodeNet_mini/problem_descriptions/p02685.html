@@ -1,0 +1,78 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> blocks arranged in a row. Let us paint these blocks.</p>
+<p>We will consider two ways to paint the blocks different if and only if there is a block painted in different colors in those two ways.</p>
+<p>Find the number of ways to paint the blocks under the following conditions:</p>
+<ul>
+<li>For each block, use one of the <var>M</var> colors, Color <var>1</var> through Color <var>M</var>, to paint it. It is not mandatory to use all the colors.</li>
+<li>There may be at most <var>K</var> pairs of adjacent blocks that are painted in the same color.</li>
+</ul>
+<p>Since the count may be enormous, print it modulo <var>998244353</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N, M \leq 2 \times 10^5</var></li>
+<li><var>0 \leq K \leq N - 1</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var> <var>K</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the answer.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 2 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>6
+</pre>
+<p>The following ways to paint the blocks satisfy the conditions: <code>112</code>, <code>121</code>, <code>122</code>, <code>211</code>, <code>212</code>, and <code>221</code>. Here, digits represent the colors of the blocks.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>100 100 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>73074801
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>60522 114575 7559
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>479519525
+</pre></section>
+</div>
+</span>

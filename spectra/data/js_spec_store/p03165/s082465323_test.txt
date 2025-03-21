@@ -1,0 +1,6 @@
+Input:
+abcde
+ace
+
+Output:
+ace

@@ -1,0 +1,20 @@
+```
+// Global variables
+int A[1000000];
+
+// Partition the array `A` between indices `p` and `r`
+// using the element at index `r` as the pivot.
+// Rearrange the array such that all elements less than or equal to the pivot
+// are on the left of the pivot and all elements greater than the pivot are on the right.
+// Return the final position of the pivot.
+int Partition(int p, int r)
+    // No calls to other functions
+
+// Main function to read input, perform partitioning, and print the result.
+// Reads an integer `n` representing the number of elements in the array.
+// Reads `n` integers into the array `A`.
+// Calls the `Partition` function to partition the array.
+// Prints the array with the pivot element enclosed in square brackets.
+int main()
+    Calls Partition(...)
+```

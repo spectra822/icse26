@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain an integer.
+    // Output format: A single integer.
+    // Precondition: The input integer `n` is positive.
+    // Postcondition: The program prints the sum of the input integers, modified by the given rules. If the sum is a multiple of 10 and there is no non-multiple of 10, the output is 0. Otherwise, the smallest non-multiple of 10 is subtracted from the sum if the sum is a multiple of 10.
+```

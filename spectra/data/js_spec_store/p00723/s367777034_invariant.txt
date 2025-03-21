@@ -1,0 +1,63 @@
+// Segment 1: Read input and initialize variables
+
+// Precondition: The program is executed in an environment where it can read from standard input.
+// Postcondition: The input string is read, trimmed, and split into an array of strings (Arr). 
+// The first element of Arr is converted to a number (n), representing the number of test cases.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var n = Arr.shift() - 0;
+
+// Segment 2: Process each test case
+
+// Precondition: Arr contains 'n' strings, each representing a test case.
+// Postcondition: For each test case, a count of unique permutations of the string (with reversed substrings) is calculated and printed to the console.
+
+// Input: 
+// The first line contains an integer, n, the number of test cases.
+// The next n lines each contain a string to be processed.
+
+// Output:
+// For each test case, output the number of unique permutations of the string (with reversed substrings).
+
+for (var I = 0; I < n; I++) {
+    var str = Arr.shift();
+    
+    // Segment 3: Generate all possible partitions of the string into two non-empty substrings
+
+    // Precondition: str is a non-empty string.
+    // Postcondition: arr contains all possible pairs of substrings (A, B) such that A + B = str.
+
+    var arr = [];
+    for (var i = 1; i < str.length; i++) {
+        arr.push([str.slice(0, i), str.slice(i, str.length)]);
+    }
+
+    // Segment 4: Generate all unique permutations of each partition
+
+    // Precondition: arr contains pairs of substrings.
+    // Postcondition: obj contains all unique permutations of the substrings and their reversals.
+
+    var obj = {};
+    for (var i = 0; i < arr.length; i++) {
+        var A = arr[i][0];
+        var B = arr[i][1];
+        var a = A.split("").reverse().join("");
+        var b = B.split("").reverse().join("");
+        obj[A + B] = true;
+        obj[A + b] = true;
+        obj[a + B] = true;
+        obj[a + b] = true;
+        obj[B + A] = true;
+        obj[B + a] = true;
+        obj[b + A] = true;
+        obj[b + a] = true;
+    }
+
+    // Segment 5: Output the number of unique permutations
+
+    // Precondition: obj contains unique permutations of the string.
+    // Postcondition: The count of unique permutations is printed to the console.
+
+    console.log(Object.keys(obj).length);
+}

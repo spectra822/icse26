@@ -1,0 +1,60 @@
+// Main function to process input, compute partitions, and find the minimum difference
+function Main(s) {
+    // Split input into lines
+    s = s.split("\n");
+    // First line is the number of elements
+    var n = +s[0];
+    // Second line is the array of elements
+    var a = s[1].split(" ").map(a => +a);
+    
+    // Initialize prefix sum array
+    var b = [];
+    b[n - 1] = a.reduce((a, z, i) => {
+        b[i - 1] = a;
+        return a + z;
+    });
+    
+    // Initialize the answer with a large number
+    var ans = 9e9;
+    
+    // Iterate through the array to find partitions
+    for (var i = 2; i < n - 1; i++) {
+        // Calculate the midpoints for left and right partitions
+        var sl = b[i - 1] / 2,
+            sr = (b[n - 1] + b[i - 1]) / 2;
+        
+        // Find lower bounds for the partitions
+        var l = lower_bound(b, 1, i - 1, sl);
+        var r = lower_bound(b, i + 1, n - 1, sr);
+        
+        // Calculate the four segments
+        var m = [b[l - 1], b[i - 1] - b[l - 1], b[r - 1] - b[i - 1], b[n - 1] - b[r - 1]];
+        // Update the minimum difference
+        ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+        
+        // Check and update the minimum difference for different partition scenarios
+        if (i - l > 1) {
+            m = [b[l], b[i - 1] - b[l], b[r - 1] - b[i - 1], b[n - 1] - b[r - 1]];
+            ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+            if (n - r > 1) {
+                m = [b[l], b[i - 1] - b[l], b[r] - b[i - 1], b[n - 1] - b[r]];
+                ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+            }
+        }
+        if (n - r > 1) {
+            m = [b[l - 1], b[i - 1] - b[l - 1], b[r] - b[i - 1], b[n - 1] - b[r]];
+            ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+        }
+    }
+    // Output the minimum difference
+    console.log(ans);
+}
+
+// Function to find the lower bound in array d between indices a and b for value e
+function lower_bound(d, a, b, e) {
+    for (var c; 1 < b - a;) d[c = 0 | (a + b) / 2] < e ? a = c : b = c;
+    return d[a] < e ? b : a
+};
+
+// Read input from stdin and call the main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

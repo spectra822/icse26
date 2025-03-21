@@ -1,0 +1,7 @@
+Input:
+5
+abcde
+fbcde
+
+Output:
+10

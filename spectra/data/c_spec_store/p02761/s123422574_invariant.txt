@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains two integers `N` and `M`.
+    // The next `M` lines contain two integers `s` and `c`, separated by a whitespace.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variables `N` and `M` are positive integers.
+    // Postcondition: The program prints the smallest `N`-digit number that satisfies all the conditions provided in the input, or `-1` if no such number exists.
+```

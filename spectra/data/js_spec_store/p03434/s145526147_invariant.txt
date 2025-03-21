@@ -1,0 +1,42 @@
+// Segment 1: Reading and processing input
+// Precondition: `stdin` should be a non-empty string with multiple lines where the first line is an integer and the second line contains space-separated integers.
+// Postcondition: `input` is an array of strings split by new lines, `N` is an integer parsed from the first element of `input`, `cards` is an array of integers parsed from the second element of `input`.
+const main = stdin => {
+    const input = stdin.trim().split('\n')
+    const N = parseInt(input[0])
+
+    // Segment 2: Parsing and sorting cards
+    // Precondition: `input[1]` should be a string of space-separated integers.
+    // Postcondition: `cards` is an array of integers parsed from `input[1]`, `sortedCards` is a descending sorted version of `cards`.
+    const cards = input[1].split(' ').map(x => parseInt(x))
+    const sortedCards = cards.sort((a, b) => b - a)
+
+    // Segment 3: Calculating Alice's and Bob's scores
+    // Precondition: `sortedCards` is a descending sorted array of integers.
+    // Postcondition: `alices` is the sum of integers at even indices of `sortedCards`, `bobs` is the sum of integers at odd indices of `sortedCards`.
+    const alices = sortedCards.filter((a, i) => i % 2 === 0).reduce((a, b) => a + b, 0)
+    const bobs = sortedCards.filter((a, i) => i % 2 !== 0).reduce((a, b) => a + b, 0)
+
+    // Segment 4: Outputting the result
+    // Precondition: `alices` and `bobs` are integers representing the respective sums of Alice's and Bob's cards.
+    // Postcondition: The difference between `alices` and `bobs` is printed to the console.
+    // Output format: A single integer representing the difference between Alice's and Bob's scores.
+    console.log(alices - bobs)
+}
+
+// Input format: 
+// The input should be read from a file or standard input in the following format:
+// First line: an integer N (number of cards)
+// Second line: N space-separated integers representing the card values
+
+// Example Input:
+// 2
+// 3 1
+
+// Output format: 
+// A single integer representing the difference between the sum of Alice's cards and Bob's cards.
+
+// Example Output:
+// 2
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

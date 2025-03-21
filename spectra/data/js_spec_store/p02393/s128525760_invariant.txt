@@ -1,0 +1,31 @@
+// Segment 1: Reading input from stdin and converting it to a string
+// Precondition: The program is executed in an environment where stdin is available and readable.
+// Postcondition: The content of stdin is read as a UTF-8 string.
+let inputString = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Splitting the input string into an array of substrings
+// Precondition: `inputString` contains a space-separated string of numbers.
+// Postcondition: The input string is split into an array of substrings based on spaces.
+let stringArray = inputString.split(' ');
+
+// Segment 3: Converting the array of substrings to an array of numbers
+// Precondition: `stringArray` contains an array of substrings representing numbers.
+// Postcondition: The substrings are converted to an array of numbers.
+let numberArray = stringArray.map(Number);
+
+// Segment 4: Sorting the array of numbers in ascending order
+// Precondition: `numberArray` contains an array of numbers.
+// Postcondition: The array of numbers is sorted in ascending order.
+numberArray.sort((a, b) => a - b);
+
+// Segment 5: Joining the sorted array of numbers into a space-separated string
+// Precondition: `numberArray` contains a sorted array of numbers.
+// Postcondition: The sorted array of numbers is joined into a single space-separated string.
+let outputString = numberArray.join(' ');
+
+// Segment 6: Outputting the resulting string
+// Precondition: `outputString` contains a space-separated string of sorted numbers.
+// Postcondition: The sorted numbers are printed to stdout.
+// Input Format: A single line containing space-separated integers. Example: "3 8 1\n"
+// Output Format: A single line containing the sorted integers, space-separated. Example: "1 3 8\n"
+console.log(outputString);

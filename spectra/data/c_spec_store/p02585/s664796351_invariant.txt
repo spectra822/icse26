@@ -1,0 +1,9 @@
+```
+int main()
+    // Input format: The first line contains two integers `N` and `K`.
+    // The second line contains `N` integers representing the array `P`.
+    // The third line contains `N` integers representing the array `C`.
+    // Output format: A single integer, which is the maximum score achievable.
+    // Precondition: The arrays `P` and `C` are both declared with a size of at least 5001.
+    // Postcondition: The maximum score achievable within `K` moves is printed.
+```

@@ -1,0 +1,72 @@
+// Segment 1: Input processing and initial setup
+
+// Precondition: The program is invoked with a single string input.
+// Postcondition: The input string is split into an array of lines and trailing empty line is removed if present.
+
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    const S = input[0];
+    const MOD = 10 ** 9 + 7;
+
+// Segment 2: Initialization of possibility array
+
+// Precondition: The input string S is non-empty and MOD is defined as 10^9 + 7.
+// Postcondition: An array `possibility` with 13 elements is initialized. If the last character of S is '?', 
+//                the first 10 elements of `possibility` are set to 1. Otherwise, only the element corresponding 
+//                to the numeric value of the last character is set to 1.
+
+    var possibility = new Array(13);
+    possibility.fill(0);
+    if (S[S.length - 1] === '?') {
+        for (var i = 0; i <= 9; i++) {
+            possibility[i] = 1;
+        }
+    } else {
+        possibility[S[S.length - 1] - 0] = 1;
+    }
+
+// Segment 3: Calculation of possible remainders
+
+// Precondition: The `possibility` array is initialized based on the last character of S.
+// Postcondition: The `possibility` array is updated for each character in S from right to left, 
+//                considering each character and updating the possible remainders modulo 13.
+
+    var ten = 1;
+    var next;
+    for (var j = S.length - 2; j >= 0; j--) {
+        ten = ten * 10 % 13;
+        next = new Array(13);
+        next.fill(0);
+        if (S[j] === '?') {
+            for (var i = 0; i < 13; i++) {
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(e => {
+                    next[(i + ten * e) % 13] += possibility[i];
+                });
+            }
+        } else {
+            for (var i = 0; i < 13; i++) {
+                next[(i + ten * (S[j] - 0)) % 13] = possibility[i];
+            }
+        }
+        possibility = next.slice().map(e => {
+            return e % MOD;
+        });
+    }
+
+// Segment 4: Output result
+
+// Precondition: The `possibility` array is fully updated to reflect all possible remainders modulo 13.
+// Postcondition: The value of `possibility[5]` is printed to the console, representing the number of ways 
+//                the input string can be interpreted to produce a number that is congruent to 5 modulo 13.
+
+// Input Format: A single string containing digits and/or '?' characters, followed by a newline character.
+// Output Format: A single integer value printed to the console.
+
+    console.log(possibility[5]);
+}
+
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

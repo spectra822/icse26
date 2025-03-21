@@ -1,0 +1,38 @@
+// Segment 1: Importing and reading input
+
+// Precondition: The program is executed in an environment where `/dev/stdin` can be accessed.
+// Postcondition: The variable `input` contains the string read from standard input, and `str` contains the trimmed version of `input`.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var str = input.trim();
+
+// Segment 2: Initializing array
+
+// Precondition: `str` contains the trimmed input string.
+// Postcondition: `arr` is initialized with a single element `[0]`.
+var arr = [0];
+
+// Segment 3: Validating the presence of 'J', 'O', 'I' in `str`
+
+// Precondition: `str` contains the trimmed input string.
+// Postcondition: If 'J', 'O', or 'I' are not present in `str`, the string is set to an empty string.
+if (/J/.test(str) == false) str = "";
+if (/O/.test(str) == false) str = "";
+if (/I/.test(str) == false) str = "";
+
+// Segment 4: Matching and processing the pattern J+O+I+
+
+// Precondition: `str` is either an empty string or contains 'J', 'O', and 'I'.
+// Postcondition: `arr` is updated with lengths of the 'O' sequences that meet the criteria of having at least as many 'J's and 'I's.
+// Input Format: A single line string containing characters 'J', 'O', 'I'.
+// Output Format: A single integer representing the maximum length of the 'O' sequence that meets the criteria.
+str.replace(/(J+)(O+)(I+)/g, function(s, s1, s2, s3) {
+    if (s1.length >= s2.length && s3.length >= s2.length) arr.push(s2.length);
+    return "";
+});
+
+// Segment 5: Outputting the result
+
+// Precondition: `arr` contains the lengths of valid 'O' sequences, including an initial `0`.
+// Postcondition: The maximum value in `arr` is printed to standard output.
+// Output Format: A single integer.
+console.log(Math.max.apply(null, arr));

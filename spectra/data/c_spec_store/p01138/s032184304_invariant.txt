@@ -1,0 +1,11 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // Each of the next `n` lines contains a departure time and an arrival time in the format `HH:MM:SS HH:MM:SS`.
+    // The next line contains an integer `m`.
+    // Each of the next `m` lines contains a departure time and an arrival time in the format `HH:MM:SS HH:MM:SS`.
+    // The input ends with a line containing the integer `0`.
+    // Output format: For each set of input, a single number representing the maximum number of overlapping intervals.
+    // Precondition: The input contains valid times in the format `HH:MM:SS`.
+    // Postcondition: The maximum number of overlapping intervals for each set of input times is printed.
+```

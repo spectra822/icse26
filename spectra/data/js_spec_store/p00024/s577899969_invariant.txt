@@ -1,0 +1,37 @@
+// Segment 1: Importing and reading input
+// Preconditions: '/dev/stdin' should be accessible and contain valid input.
+// Postconditions: 'input' contains the string read from '/dev/stdin'.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Processing input into an array of numbers
+// Preconditions: 'input' should be a non-empty string with each line containing a valid number.
+// Postconditions: 'Arr' is an array of numbers parsed from the input string.
+var Arr = (input.trim()).split("\n").map(Number);
+
+// Segment 3: Calculating and printing results for each value in the array
+// Preconditions: 'Arr' is a non-empty array of numbers.
+// Postconditions: For each number in 'Arr', a corresponding result is printed to the console.
+/*
+  Input Format: 
+  Each line contains a single floating-point number.
+  
+  Output Format:
+  For each input number, an integer result is printed on a new line.
+*/
+Arr.forEach(function(v) {
+    // Segment 3.1: Calculating time 't'
+    // Preconditions: 'v' is a valid number from 'Arr'.
+    // Postconditions: 't' is calculated as 'v' divided by 9.8.
+    var t = v / 9.8;
+    
+    // Segment 3.2: Calculating distance 'y'
+    // Preconditions: 't' is the calculated time from the previous step.
+    // Postconditions: 'y' is calculated as 4.9 times 't' squared.
+    var y = 4.9 * t * t;
+    
+    // Segment 3.3: Calculating and printing the result 'n'
+    // Preconditions: 'y' is the calculated distance from the previous step.
+    // Postconditions: 'n' is the ceiling value of ('y' + 5) divided by 5, and it is printed to the console.
+    var n = Math.ceil((y + 5) / 5);
+    console.log(n);
+});

@@ -1,0 +1,12 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The next `N` lines each contain a string of up to 10 characters.
+    // The next line contains an integer `M`.
+    // The next `M` lines each contain a string of up to 10 characters.
+    // Output format: A single integer on a new line.
+    // Precondition: The variable `N` has been declared. 
+    // The variable `M` has been declared.
+    // The arrays `s` and `t` have been declared to hold up to `N` and `M` strings of up to 10 characters, respectively.
+    // Postcondition: The maximum difference between the count of any string in `s` and its count in `t` is printed.
+```

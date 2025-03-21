@@ -1,0 +1,10 @@
+```c
+int main()
+    // Input format: 
+    // The first line contains two integers separated by a space: T[1] and T[2].
+    // The second line contains two integers separated by a space: A[1] and A[2].
+    // The third line contains two integers separated by a space: B[1] and B[2].
+    // Output format: A single integer or the string "infinity".
+    // Precondition: The arrays T, A, and B have been declared with at least 3 elements each.
+    // Postcondition: The program calculates and prints the number of times the two runners will meet, considering their speeds and the distances they cover in given time intervals.
+```

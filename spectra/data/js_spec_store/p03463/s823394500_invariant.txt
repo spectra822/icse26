@@ -1,0 +1,33 @@
+// Segment 1: Reading input from stdin
+// Precondition: The program is run in an environment where it can read from stdin.
+// Postcondition: The variable `input` contains the entire input as a string.
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+// Segment 2: Function definition and invocation
+// Precondition: The `input` variable contains a string representing the input data.
+// Postcondition: The function processes the input and prints the result to stdout.
+;
+(input => {
+
+    // Segment 3: Parsing input
+    // Precondition: The `input` variable contains a string with multiple lines.
+    // Postcondition: The variables `N`, `A`, and `B` are extracted and converted to numbers.
+    const lines = input.split('\n');
+    const [N, A, B] = lines[0].split(' ').map(Number);
+
+    // Segment 4: Calculating difference and determining winner
+    // Precondition: The variables `A` and `B` contain the starting positions of Alice and Borys.
+    // Postcondition: The program prints "Alice" if the difference between `A` and `B` is even, otherwise it prints "Borys".
+    const diff = Math.abs(A - B);
+
+    console.log(diff % 2 ? 'Borys' : 'Alice');
+
+})(input);
+
+/*
+Input format:
+- A single line of input containing three integers N, A, and B separated by spaces.
+
+Output format:
+- A single line of output containing either "Alice" or "Borys".
+*/

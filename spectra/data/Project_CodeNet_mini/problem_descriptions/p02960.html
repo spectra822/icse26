@@ -1,0 +1,90 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Given is a string <var>S</var>. Each character in <var>S</var> is either a digit (<code>0</code>, ..., <code>9</code>) or <code>?</code>.</p>
+<p>Among the integers obtained by replacing each occurrence of <code>?</code> with a digit, how many have a remainder of <var>5</var> when divided by <var>13</var>? An integer may begin with <var>0</var>.</p>
+<p>Since the answer can be enormous, print the count modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>S</var> is a string consisting of digits (<code>0</code>, ..., <code>9</code>) and <code>?</code>.</li>
+<li><var>1 \leq |S| \leq 10^5</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Print the number of integers satisfying the condition, modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>??2??5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>768
+</pre>
+<p>For example, <var>482305, 002865,</var> and <var>972665</var> satisfy the condition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>?44
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+<p>Only <var>044</var> satisfies the condition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>7?4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>0
+</pre>
+<p>We may not be able to produce an integer satisfying the condition.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>?6?42???8??2??06243????9??3???7258??5??7???????774????4?1??17???9?5?70???76???
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>153716888
+</pre></section>
+</div>
+</span>

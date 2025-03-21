@@ -1,0 +1,22 @@
+'use strict'
+
+// Main function that takes input and processes it
+function main(input) {
+    // Calculate how many full sets of 11 can fit into the input
+    const x = Math.floor(input / 11)
+    
+    // Determine the output based on the remainder when input is divided by 11
+    if (input % 11 > 6) {
+        // If the remainder is greater than 6, two more operations are needed
+        console.log(x * 2 + 2)
+    } else if (input % 11 > 0) {
+        // If there is a remainder but it is 6 or less, one more operation is needed
+        console.log(x * 2 + 1)
+    } else {
+        // If there is no remainder, no additional operations are needed
+        console.log(x * 2)
+    }
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

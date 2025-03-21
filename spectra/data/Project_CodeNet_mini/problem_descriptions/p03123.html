@@ -1,0 +1,53 @@
+<span class="lang-en">
+<p>Score : <var>2000</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke has <var>R</var> red balls and <var>B</var> blue balls.
+He distributes them into <var>K</var> boxes, so that no box is empty and no two boxes are identical.
+Compute the maximum possible value of <var>K</var>.</p>
+<p>Formally speaking, let's number the boxes <var>1</var> through <var>K</var>.
+If Box <var>i</var> contains <var>r_i</var> red balls and <var>b_i</var> blue balls, the following conditions must be satisfied:</p>
+<ul>
+<li>For each <var>i</var> (<var>1 \leq i \leq K</var>), <var>r_i &gt; 0</var> or <var>b_i &gt; 0</var>.</li>
+<li>For each <var>i, j</var> (<var>1 \leq i &lt; j \leq K</var>), <var>r_i \neq r_j</var> or <var>b_i \neq b_j</var>.</li>
+<li><var>\sum r_i = R</var> and <var>\sum b_i = B</var> (no balls can be left outside the boxes).</li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq R, B \leq 10^{9}</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>R</var> <var>B</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible value of <var>K</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>8 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>5
+</pre>
+<p>The following picture shows one possible way to achieve <var>K = 5</var>:</p>
+<p><img alt="" src="https://img.atcoder.jp/wtf19/9ea9530037df204a84029678052ab593.png"/></p></section>
+</div>
+</span>

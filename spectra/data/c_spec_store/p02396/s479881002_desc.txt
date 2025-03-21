@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// The main function reads integers from the input until a zero is encountered.
+// For each integer read (except zero), it prints the case number and the integer.
+// The case number starts from 1 and increments by 1 for each input integer.
+int main(void)
+    // Calls printf(...)
+    // Calls scanf(...)
+```

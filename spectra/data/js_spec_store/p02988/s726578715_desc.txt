@@ -1,0 +1,26 @@
+// Function to process the input and count elements that are neither the minimum nor maximum of their neighbors
+const main = input => {
+    // Split the input by lines and parse the first line as an integer n
+    const inputs = input.trim().split('\n')
+    const n = parseInt(inputs[0])
+
+    // Parse the second line as an array of integers representing the sequence
+    const sequence = inputs[1].split(' ').map(a => parseInt(a))
+
+    // Initialize a counter for the number of elements that are neither the minimum nor maximum of their neighbors
+    let count = 0
+
+    // Loop through the sequence from the second element to the second-to-last element
+    for (let i = 1; i < n - 1; i++) {
+        // Check if the current element is greater than the minimum of its neighbors and less than the maximum of its neighbors
+        if (sequence[i] > Math.min(sequence[i - 1], sequence[i + 1]) && sequence[i] < Math.max(sequence[i - 1], sequence[i + 1])) {
+            count++  // If true, increment the count
+        }
+    }
+
+    // Print the final count
+    console.log(count)
+}
+
+// Read the input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

@@ -1,0 +1,19 @@
+// Segment 1: Reading and processing input
+
+// Precondition: The program is executed in an environment where input can be read from '/dev/stdin'.
+// Postcondition: The variable 'l' contains an array of strings representing the input values split by spaces.
+let l = require("fs").readFileSync("/dev/stdin", "utf8").split(" ");
+
+// Segment 2: Parsing input and mapping to dates
+
+// Precondition: 'l' contains an array of strings, each representing an integer.
+// Postcondition: The variables 'x' and 'y' contain the number of days in the months represented by the respective input values.
+// Input format: The input consists of two space-separated integers (e.g., "1 3\n").
+[x, y] = l.map(i => new Date(2000, Number(i), 0).getDate());
+
+// Segment 3: Comparing the number of days in the two months and producing output
+
+// Precondition: 'x' and 'y' contain the number of days in the respective months parsed from the input.
+// Postcondition: The program outputs "Yes" if the number of days in both months is the same, otherwise "No".
+// Output format: The output is either "Yes" or "No" followed by a newline.
+console.log(x == y ? "Yes" : "No");

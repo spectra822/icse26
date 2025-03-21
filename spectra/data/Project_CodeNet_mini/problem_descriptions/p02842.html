@@ -1,0 +1,82 @@
+<span class="lang-en">
+<p>Score: <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>Takahashi bought a piece of apple pie at ABC Confiserie. According to his memory, he paid <var>N</var> yen (the currency of Japan) for it.</p>
+<p>The consumption tax rate for foods in this shop is <var>8</var> percent. That is, to buy an apple pie priced at <var>X</var> yen before tax, you have to pay <var>X \times 1.08</var> yen (rounded down to the nearest integer).</p>
+<p>Takahashi forgot the price of his apple pie before tax, <var>X</var>, and wants to know it again. Write a program that takes <var>N</var> as input and finds <var>X</var>. We assume <var>X</var> is an integer.</p>
+<p>If there are multiple possible values for <var>X</var>, find any one of them. Also, Takahashi's memory of <var>N</var>, the amount he paid, may be incorrect. If no value could be <var>X</var>, report that fact.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>1 \leq N \leq 50000</var></li>
+<li><var>N</var> is an integer.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>If there are values that could be <var>X</var>, the price of the apple pie before tax, print any one of them.<br/>
+If there are multiple such values, printing any one of them will be accepted.<br/>
+If no value could be <var>X</var>, print <code>:(</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>432
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>400
+</pre>
+<p>If the apple pie is priced at <var>400</var> yen before tax, you have to pay <var>400 \times 1.08 = 432</var> yen to buy one.<br/>
+Otherwise, the amount you have to pay will not be <var>432</var> yen.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1079
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>:(
+</pre>
+<p>There is no possible price before tax for which you have to pay <var>1079</var> yen with tax.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>1001
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>927
+</pre>
+<p>If the apple pie is priced <var>927</var> yen before tax, by rounding down <var>927 \times 1.08 = 1001.16</var>, you have to pay <var>1001</var> yen.</p></section>
+</div>
+</span>

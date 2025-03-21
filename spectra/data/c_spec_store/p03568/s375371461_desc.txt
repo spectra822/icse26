@@ -1,0 +1,12 @@
+```c
+// Global variables
+int N, A, odd = 1, exp = 1;
+
+// Main function to read input, calculate the result, and print it.
+// Reads an integer N and then N integers. 
+// For each even integer read, multiplies `odd` by 2.
+// Calculates 3^N and stores it in `exp`.
+// Prints the result of `exp - odd`.
+int main()
+    // Calls to no other functions
+```

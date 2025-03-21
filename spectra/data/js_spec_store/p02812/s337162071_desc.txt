@@ -1,0 +1,30 @@
+// Main function that takes the input string and processes it
+function Main(input) {
+    // Split input by new lines and remove the last empty line if it exists
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Parse the first line to get the integer N (though it's not actually used in the program)
+    const N = input[0].split(' ')[0] - 0;
+
+    // Get the second line which contains the string S
+    const S = input[1];
+
+    // Initialize the answer variable to count occurrences of 'ABC'
+    var ans = 0;
+
+    // Loop through the string S and count how many times 'ABC' appears
+    for (var i = 0; i <= S.length - 3; i++) {
+        if (S.slice(i, i + 3) === 'ABC') {
+            ans++;
+        }
+    }
+
+    // Output the result
+    console.log(ans);
+}
+
+// Read input from standard input and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

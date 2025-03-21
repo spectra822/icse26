@@ -1,0 +1,70 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p><var>2N</var> players are running a competitive table tennis training on <var>N</var> tables numbered from <var>1</var> to <var>N</var>.</p>
+<p>The training consists of <i>rounds</i>.
+In each round, the players form <var>N</var> pairs, one pair per table.
+In each pair, competitors play a match against each other.
+As a result, one of them wins and the other one loses.</p>
+<p>The winner of the match on table <var>X</var> plays on table <var>X-1</var> in the next round,
+except for the winner of the match on table <var>1</var> who stays at table <var>1</var>.</p>
+<p>Similarly, the loser of the match on table <var>X</var> plays on table <var>X+1</var> in the next round,
+except for the loser of the match on table <var>N</var> who stays at table <var>N</var>.</p>
+<p>Two friends are playing their first round matches on distinct tables <var>A</var> and <var>B</var>.
+Let's assume that the friends are strong enough to win or lose any match at will.
+What is the smallest number of rounds after which the friends can get to play a match against each other?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 10^{18}</var></li>
+<li><var>1 \leq A &lt; B \leq N</var></li>
+<li>All input values are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>A</var> <var>B</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the smallest number of rounds after which the friends can get to play a match against each other.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>If the first friend loses their match and the second friend wins their match, they will both move to table <var>3</var> and play each other in the next round.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5 2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2
+</pre>
+<p>If both friends win two matches in a row, they will both move to table <var>1</var>.</p></section>
+</div>
+</span>

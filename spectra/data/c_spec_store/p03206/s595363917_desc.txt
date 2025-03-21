@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// This function reads an integer `n` from the input and prints a specific message 
+// depending on the value of `n`. If `n` is 25, it prints "Christmas". 
+// If `n` is 24, it prints "Christmas Eve". If `n` is 23, it prints "Christmas Eve Eve". 
+// If `n` is 22, it prints "Christmas Eve Eve Eve".
+int main()
+    // Calls to other functions: None
+```

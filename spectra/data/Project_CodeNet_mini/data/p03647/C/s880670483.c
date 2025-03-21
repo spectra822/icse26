@@ -1,0 +1,1 @@
+m[1<<18];*p;main(n,a,b){for(scanf("%d%*d",&n);~scanf("%d%d",&a,&b);p-m&&*p?n=0:++*p)p=m+(a-1?b-n?0:a:b);puts(n?"IMPOSSIBLE":"POSSIBLE");}

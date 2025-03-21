@@ -1,0 +1,17 @@
+```c
+// Global variables
+char str[128][128];
+int area_id[128][128];
+
+// Function to perform Depth-First Search (DFS) on a grid
+// starting from cell (i, j) to identify connected regions with the same character.
+// It updates the `area_id` array to mark all cells in the same region.
+void DFS(int i, int j, int H, int W)
+    // Calls DFS(...)
+
+// Main function that reads input dimensions H and W and a grid of characters.
+// It initializes the `area_id` to unique values and then performs DFS to find connected regions.
+// Finally, it counts and prints the number of unique regions.
+int main(void)
+    // Calls DFS(...)
+```

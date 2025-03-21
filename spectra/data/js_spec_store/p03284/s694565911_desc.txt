@@ -1,0 +1,12 @@
+// Function definition for the main logic of the program
+const main = (arg) => {
+    // Splitting the input string into lines and parsing the first line to get N and K
+    const lines = arg.trim().split('\n');
+    const [N, K] = lines[0].split(' ').map(Number);
+    
+    // Calculate the remainder of N divided by K and print 0 if it is divisible, otherwise print 1
+    console.log(N % K === 0 ? 0 : 1);
+};
+
+// Reading input from the standard input and invoking the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

@@ -1,0 +1,32 @@
+// Function definition for the Main function which takes an input
+function Main(input) {
+    
+    // Split the input into lines
+    input = input.split("\n");
+    
+    // Split the second line of input into an array of strings
+    tmp = input[1].split(" ");
+    
+    // Initialize an empty array to store the numbers
+    var Arrays = [];
+    var min;
+    var max;
+
+    // Parse the first line of input to get the total number of elements
+    var totalNum = parseInt(input[0], 10);
+    
+    // Loop through the number of elements and parse each element as an integer
+    for (i = 0; i <= totalNum - 1; i++) {
+        Arrays[i] = parseInt(tmp[i], 10);
+    }
+
+    // Find the minimum and maximum values in the array
+    min = Math.min(...Arrays);
+    max = Math.max(...Arrays);
+
+    // Output the difference between the maximum and minimum values
+    console.log(max - min);
+}
+
+// Read input from standard input and execute the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

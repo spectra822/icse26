@@ -1,0 +1,15 @@
+```c
+int main()
+    // Input format: The first line contains three integers separated by spaces.
+    // The second line contains three integers separated by spaces.
+    // Output format: A single integer printed on a new line.
+    // Precondition: The input consists of exactly two lines, each containing three integers.
+    // Postcondition: The program calculates the squared distance between two points (x[0], y[0]) and (x[1], y[1])
+    // and compares it with the squared sums and differences of their respective radii.
+    // Based on these comparisons, it outputs an integer from 0 to 4:
+    // 4 if the distance is greater than the sum of the radii,
+    // 3 if the distance equals the sum of the radii,
+    // 2 if the distance is between the sum and the absolute difference of the radii,
+    // 1 if the distance equals the absolute difference of the radii,
+    // 0 if the distance is less than the absolute difference of the radii.
+```

@@ -1,0 +1,80 @@
+<span class="lang-en">
+<p>Score: <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>E869120 has <var>A</var> <var>1</var>-yen coins and infinitely many <var>500</var>-yen coins.<br/>
+Determine if he can pay exactly <var>N</var> yen using only these coins.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>N</var> is an integer between <var>1</var> and <var>10000</var> (inclusive).</li>
+<li><var>A</var> is an integer between <var>0</var> and <var>1000</var> (inclusive).</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>If E869120 can pay exactly <var>N</var> yen using only his <var>1</var>-yen and <var>500</var>-yen coins, print <code>Yes</code>; otherwise, print <code>No</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2018
+218
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>Yes
+</pre>
+<p>We can pay <var>2018</var> yen with four <var>500</var>-yen coins and <var>18</var> <var>1</var>-yen coins, so the answer is <code>Yes</code>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2763
+0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>No
+</pre>
+<p>When we have no <var>1</var>-yen coins, we can only pay a multiple of <var>500</var> yen using only <var>500</var>-yen coins. Since <var>2763</var> is not a multiple of <var>500</var>, we cannot pay this amount.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>37
+514
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>Yes
+</pre></section>
+</div>
+</span>

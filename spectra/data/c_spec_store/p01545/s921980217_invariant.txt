@@ -1,0 +1,20 @@
+```c
+int in()
+    // Precondition: The global buffer `buf` has been read into and the pointer `p` is initialized to point to the start of `buf`.
+    // Postcondition: Returns an integer parsed from the buffer starting at `p`. The pointer `p` is updated to the position after the parsed integer.
+
+void update(int k, long long v)
+    // Precondition: The global segment tree array `seg` has been initialized, and `sz` is the size of the segment tree.
+    // Postcondition: The `k`-th element of the segment tree is updated to `v`. All relevant parent nodes in the segment tree are updated to maintain the max segment property.
+
+long long query(int a, int b, long long k, int l, int r)
+    // Precondition: The global segment tree array `seg` has been initialized, and `sz` is the size of the segment tree.
+    // Postcondition: Returns the maximum value in the range `[a, b)` within the segment tree, considering the segment represented by index `k` and range `[l, r)`.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The second line contains `n` integers separated by spaces.
+    // Output format: A single integer.
+    // Precondition: The global buffer `buf` has enough space to hold the input.
+    // Postcondition: The program calculates and prints the required answer based on the input sequence.
+```

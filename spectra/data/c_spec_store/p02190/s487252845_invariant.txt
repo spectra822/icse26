@@ -1,0 +1,12 @@
+```c
+int comp(const void *a, const void *b)
+    // Precondition: `a` and `b` are pointers to integers.
+    // Postcondition: Returns 1 if the integer pointed to by `a` is greater than the integer pointed to by `b`, -1 if it is less, and 0 if they are equal.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain a single integer.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The global variables `n` and `a` have been declared. 
+    // Postcondition: The number of unique integers in the array `a` is printed.
+```

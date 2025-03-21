@@ -1,0 +1,9 @@
+Input:
+3
+Red Yellow Blue Magenta Green Cyan
+Yellow Green Red Blue Cyan Magenta
+Blue Red Green Yellow Cyan Magenta
+0
+
+Output:
+0

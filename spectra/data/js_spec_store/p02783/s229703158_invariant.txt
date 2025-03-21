@@ -1,0 +1,35 @@
+'use strict';
+
+// Segment 1: Function definition and input handling
+// Precondition: The program receives a string input with two space-separated integers.
+// Postcondition: The input string is split into an array of two elements (h and a).
+function Main(input) {
+    input = input.split(" ");
+
+    // Segment 2: Variable declarations and initializations
+    // Precondition: 'input' is an array with at least two elements, both of which are strings representing integers.
+    // Postcondition: 'h' and 'a' are integers parsed from the input array, and 'count' is initialized to 0.
+    var h = parseInt(input[0], 10);
+    var a = parseInt(input[1], 10);
+    var count = 0;
+
+    // Segment 3: Loop to decrement 'h' by 'a' until 'h' is non-positive
+    // Precondition: 'h' and 'a' are initialized integers, and 'count' is initialized to 0.
+    // Postcondition: 'count' will be the number of times 'h' has been decremented by 'a' until 'h' is non-positive.
+    while (h > 0) {
+        h -= a;
+        count++;
+    }
+
+    // Segment 4: Output the result
+    // Precondition: 'count' holds the number of iterations required to make 'h' non-positive.
+    // Postcondition: The program outputs the value of 'count' to the standard output.
+    // Output format: An integer followed by a newline.
+    console.log(count);
+}
+
+// Segment 5: Reading input and invoking the main function
+// Precondition: The program reads input from the standard input (stdin).
+// Postcondition: The main function is invoked with the read input as an argument.
+// Input format: A single line containing two space-separated integers.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

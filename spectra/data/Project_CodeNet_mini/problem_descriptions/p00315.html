@@ -1,0 +1,153 @@
+
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<H1>品質管理</H1>
+
+<p>
+会津タカダ市が生産販売する布製コースターは、対称なデザインでとても美しいことで知られている。会津タカダ市では品質管理の一環として、製造ラインにカメラを設置し、各コースターを撮影して得られた画像が対称になっているかを自動で検証している。各コースターは <var>N</var> &times; <var>N</var> ピクセルの正方形の白黒画像として表される。各ピクセルは白または黒の画像に対応して、0 または 1 の値をとる。
+</p>
+
+<p>
+この度、生産ラインの機器更新にともなって、画像解析システムのソフトウェアを更新することになった。新システムでは、通信データ量を削減する工夫がなされ、以下の方法でカメラから解析システムにデータが送られてくる。
+</p>
+
+<ul>
+<li> ラインに流れてくる最初のコースターの情報は、<var>N</var> &times; <var>N</var> ピクセルの画像としてシステムに送られてくる。</li>
+<li> ２枚目以降のコースターの情報は、１つ前に送られた画像との差分だけが送られてくる。差分は、「0 から 1 」または「1 から 0 」へと変化したピクセルの位置の集合として与えられる。</li>
+</ul>
+
+<p>
+<var>C</var> 枚のコースターについて、１枚目の画像のピクセル情報と続く <var>C</var> - 1 枚分の差分情報を入力し、上下対称かつ左右対称となっているコースターの枚数を報告するプログラムを作成せよ。
+</p>
+
+
+<h2>Input</h2>
+
+<p>
+入力は以下の形式で与えられる。
+</p>
+
+<pre>
+<var>C</var> <var>N</var>
+<var>p<sub>11</sub>p<sub>12</sub></var>...<var>p<sub>1N</sub></var>
+<var>p<sub>21</sub>p<sub>22</sub></var>...<var>p<sub>2N</sub></var>
+:
+<var>p<sub>N1</sub>p<sub>N2</sub></var>...<var>p<sub>NN</sub></var>
+<var>diff<sub>1</sub></var>
+<var>diff<sub>2</sub></var>
+:
+<var>diff<sub>C&minus;1</sub></var>
+</pre>
+
+<p>
+１行目にコースターの枚数 <var>C</var> (1 &le; <var>C</var> &le; 10000) と画像の縦と横のピクセル数 <var>N</var> (2 &le; <var>N</var> &le; 1000 かつ <var>N</var> は偶数) が与えられる。２行目から <var>N</var> + 1 行目に最初のコースターの画像のピクセルを表す <var>N</var>行 &times; <var>N</var> 列の数字 <var>p<sub>ij</sub></var> (<var>p<sub>ij</sub></var> は 0 または 1)が与えられる。
+</p>
+
+<p>
+<var>N</var> + 2 行目以降に、２枚目以降のコースターの情報を表す差分 <var>diff<sub>i</sub></var> が次の形式で与えられる。
+</p>
+
+<pre>
+<var>D</var>
+<var>r<sub>1</sub></var> <var>c<sub>1</sub></var>
+<var>r<sub>2</sub></var> <var>c<sub>2</sub></var>
+:
+<var>r<sub>D</sub></var> <var>c<sub>D</sub></var>
+</pre>
+
+<p>
+１行目に変化したピクセルの数 <var>D</var> (0 &le; <var>D</var> &le; 100) が与えられる。続く<var>D</var> 行に変化したピクセルの行と列の番号をそれぞれ表す <var>r<sub>i</sub></var> と<var>c<sub>i</sub></var> (1 &le; <var>r<sub>i</sub></var>, <var>c<sub>i</sub></var> &le; <var>N</var>) が与えられる。<var>diff<sub>i</sub></var> の中に、同じ位置は２回以上与えられない。
+</p>
+
+
+
+<h2>Output</h2>
+
+<p>
+上下対称かつ左右対称となっているコースターの枚数を１行に出力する。
+</p>
+
+
+<h2>Sample Input 1</h2>
+
+<pre>
+7 8
+00100000
+00011000
+10111101
+01100110
+01000110
+10111101
+00011000
+00100100
+2
+5 3
+1 6
+1
+6 8
+3
+6 8
+3 3
+3 6
+2
+6 3
+6 6
+0
+2
+3 8
+6 8
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+3
+</pre>
+<p>
+入力例１のコースターの画像を以下に示す。この場合、２枚目、５枚目、６枚目のコースターが上下対称かつ左右対称となるため、3と報告する。
+</p>
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_PCK2015_checking" width="680">
+</center>
+<br/>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+1 6
+000000
+000000
+010010
+010010
+000000
+000000
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+1
+</pre>
+
+<br/>
+
+<h2>Sample Input 3</h2>
+<pre>
+2 2
+00
+00
+4
+1 1
+1 2
+2 1
+2 2
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+2
+</pre>

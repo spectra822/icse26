@@ -1,0 +1,11 @@
+```c
+int p(int n)
+    // Precondition: The input parameter `n` is a non-negative integer.
+    // Postcondition: The function returns the number of divisors of `n` greater than 1.
+
+int main()
+    // Input format: A sequence of integers, each on a new line. The sequence is terminated by the integer 0.
+    // Output format: For each input integer `l`, the output is an integer on a new line, representing the difference between the smallest prime number greater than or equal to `l` and the largest prime number less than or equal to `l`.
+    // Precondition: The input is a sequence of non-negative integers terminated by a 0.
+    // Postcondition: For each input integer `l`, the difference between the smallest prime number greater than or equal to `l` and the largest prime number less than or equal to `l` is printed on a new line. The program terminates after processing the input sequence.
+```

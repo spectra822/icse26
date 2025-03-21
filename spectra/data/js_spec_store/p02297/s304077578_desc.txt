@@ -1,0 +1,79 @@
+// Alias for console.log
+var log = console.log;
+
+// Check if the script is running in a Node.js environment and set up stdin handling
+if (typeof process != "undefined") {
+    var input = "";
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', function(chunk) {
+        input += chunk;
+    });
+    process.stdin.on('end', function() {
+        var lines = input.split("\n");
+        main(lines);
+    });
+}
+
+// Main function to process the input lines and calculate the area
+function main(lines) {
+    // Parse the input lines into an array of points
+    lines = lines.map(function(line) {
+        return line.split(" ").filter(function(e) {
+            return e != "";
+        }).map(function(e) {
+            var n = Number(e);
+            if (n.toString() == "NaN") {
+                return e.replace(/(\r)|(\n)/g, "");
+            }
+            return n;
+        });
+    });
+
+    // Remove the last line if it's not a point
+    var last = lines.pop();
+    if (last.length == 2) {
+        lines.push(last);
+    }
+
+    // Remove the first line which contains the number of points
+    lines.shift();  
+    var points = lines;
+
+    // Initialize variables for area calculation
+    var p0 = points[0];
+    var ps, pe;
+    var S = 0;
+    var length = points.length;
+
+    // Calculate the signed area using the shoelace formula
+    for (var i = 1; i < length - 1; i++) {
+        ps = points[i];
+        pe = points[i + 1];
+        S += sign_s(p0, ps, pe);
+    }
+
+    // Format the result to one decimal place
+    var r_S = "" + (S / 2);
+    var idx = r_S.indexOf(".");
+    if (idx == -1) {
+        r_S += ".0";
+    } else {
+        r_S = r_S.slice(0, idx + 2);
+    }
+
+    // Output the result
+    log(r_S);
+}
+
+// Function to calculate the signed area of the triangle formed by three points
+function sign_s(p1, p2, p3) {
+    var pa = [p2[0] - p1[0], p2[1] - p1[1]];
+    var pb = [p3[0] - p1[0], p3[1] - p1[1]];
+    return sign_s_main(pa, pb);
+}
+
+// Helper function to calculate the cross product of two vectors
+function sign_s_main(pa, pb) {
+    return (pa[0] * pb[1] - pa[1] * pb[0]);
+}

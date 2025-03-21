@@ -1,0 +1,11 @@
+// Segment 1: Import the required 'fs' module to read input from the standard input
+const fs = require('fs');
+
+// Segment 2: Define the main function which processes the input
+function main(input) {
+    // Segment 3: Log the output by concatenating 'A', the 9th character of the input, and 'C'
+    console.log('A' + input.substring(8, 9) + 'C');
+}
+
+// Segment 4: Read the input from standard input and pass it to the main function
+main(fs.readFileSync('/dev/stdin', 'utf8'));

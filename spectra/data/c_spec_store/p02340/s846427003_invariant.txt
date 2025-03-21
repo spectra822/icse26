@@ -1,0 +1,15 @@
+```c
+int get_int2(int *a1, int *a2)
+    // Precondition: `a1` and `a2` are valid pointers to integers.
+    // Postcondition: The first two integers from the input are stored in `*a1` and `*a2`. Returns 0 if successful, -1 otherwise.
+
+void init()
+    // Precondition: Global array `pdp` is declared with dimensions [K_MAX+1][NUM_MAX+1].
+    // Postcondition: The global array `pdp` is initialized such that `pdp[i][j]` contains the number of ways to partition `j` balls into `i` partitions, modulo `DIVISOR`.
+
+int main(void)
+    // Input format: The first line contains two integers `n` and `k` separated by a space.
+    // Output format: A single integer, which is the number of ways to partition `n` balls into `k` partitions, modulo `DIVISOR`.
+    // Precondition: The global array `pdp` is declared. The functions `get_int2` and `init` are defined.
+    // Postcondition: The number of ways to partition `n` balls into `k` partitions, modulo `DIVISOR`, is printed.
+```

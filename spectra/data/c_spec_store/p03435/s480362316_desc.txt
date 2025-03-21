@@ -1,0 +1,11 @@
+```c
+// Global variables
+None
+
+// Main function that checks if the given 3x3 matrix satisfies a specific condition.
+// The condition is that after subtracting the minimum value of each row from all elements in that row,
+// the resulting columns should all be identical.
+// Calls exit(0) if the condition is not met, otherwise prints "Yes".
+int main(void)
+  Calls exit(0)
+```

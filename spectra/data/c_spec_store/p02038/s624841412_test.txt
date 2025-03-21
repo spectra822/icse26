@@ -1,0 +1,10 @@
+Input:
+5
+TFF
+FTT
+TTT
+TFT
+FTF
+
+Output:
+F

@@ -1,0 +1,11 @@
+```c
+// Global variables
+None
+
+// This function calculates the number of ways to paint a grid of size 2xN
+// given two strings S1 and S2 of length N, where S1 represents the top row
+// and S2 represents the bottom row of the grid. The function uses modular arithmetic
+// to avoid overflow and prints the result.
+int main(void)
+  // No function calls
+```

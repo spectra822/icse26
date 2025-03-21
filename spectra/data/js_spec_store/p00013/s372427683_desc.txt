@@ -1,0 +1,31 @@
+// Import the 'fs' module and read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Parse the input into an array of numbers
+var Arr = (input.trim()).split("\n").map(Number);
+
+// Initialize an empty array to use as a stack
+var arr = [];
+
+// Process each number in the parsed input array
+Arr.forEach(function(v) {
+    if (v == 0) {
+        // If the number is 0, pop the top element from the stack and print it
+        console.log(arr.pop());
+    } else {
+        // If the number is not 0, push it onto the stack
+        arr.push(v);
+    }
+});
+    var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+    var Arr = (input.trim()).split("\n").map(Number);
+    var arr = [];
+    Arr.forEach(function(v) {
+        if (v == 0) {
+            // If the number is 0, pop the top element from the stack and print it
+            console.log(arr.pop());
+        } else {
+            // If the number is not 0, push it onto the stack
+            arr.push(v);
+        }
+    });

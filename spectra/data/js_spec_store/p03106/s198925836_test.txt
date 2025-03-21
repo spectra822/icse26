@@ -1,0 +1,5 @@
+Input:
+8 12 2
+
+Output:
+2

@@ -1,0 +1,93 @@
+
+<H1><font color="#000">Problem D: </font> Find the Outlier</H1>
+
+<p>
+Professor Abacus has just built a new computing engine for making numerical tables. It was designed to calculate the values of a polynomial function in one variable at several points at a time. With the polynomial function <i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> + 2<i>x</i> + 1, for instance, a possible expected calculation result is 1 (= <i>f</i>(0)), 4 (= <i>f</i>(1)), 9 (= <i>f</i>(2)), 16 (= <i>f</i>(3)), and 25 (= <i>f</i>(4)).
+</p>
+
+<p>
+It is a pity, however, the engine seemingly has faulty components and exactly one value among those calculated simultaneously is always wrong. With the same polynomial function as above, it can, for instance, output 1, 4, 12, 16, and 25 instead of 1, 4, 9, 16, and 25.
+</p>
+
+<p>
+You are requested to help the professor identify the faulty components. As the first step, you should write a program that scans calculation results of the engine and finds the wrong values.
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+The input is a sequence of datasets, each representing a calculation result in the following format.
+</p>
+
+<p>
+<i>d</i><br/>
+<i>v</i><sub>0</sub><br/>
+<i>v</i><sub>1</sub><br/>
+...<br/>
+<i>v</i><sub><i>d</i>+2</sub><br/>
+</p>
+
+<p>
+Here, <i>d</i> in the first line is a positive integer that represents the degree of the polynomial, namely, the highest exponent of the variable. For instance, the degree of 4<i>x</i><sup>5</sup> + 3<i>x</i> + 0.5 is five and that of 2.4<i>x</i> + 3.8 is one. <i>d</i> is at most five.
+</p>
+
+<p>
+The following <i>d</i> + 3 lines contain the calculation result of <i>f</i>(0), <i>f</i>(1), ... , and <i>f</i>(<i>d</i> + 2) in this order, where <i>f</i> is the polynomial function. Each of the lines contains a decimal fraction between -100.0 and 100.0, exclusive.
+</p>
+
+<p>
+You can assume that the wrong value, which is exactly one of <i>f</i>(0), <i>f</i>(1), ... , and <i>f</i>(<i>d</i>+2), has an error greater than 1.0. Since rounding errors are inevitable, the other values may also have errors but they are small and never exceed 10<sup>-6</sup>.
+</p>
+
+<p>
+The end of the input is indicated by a line containing a zero.
+</p>
+
+
+<H2>Output</H2>
+
+<p>
+For each dataset, output <i>i</i> in a line when <i>v<sub>i</sub></i> is wrong.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+2
+1.0
+4.0
+12.0
+16.0
+25.0
+1
+-30.5893962764
+5.76397083962
+39.3853798058
+74.3727663177
+4
+42.4715310246
+79.5420238202
+28.0282396675
+-30.3627807522
+-49.8363481393
+-25.5101480106
+7.58575761381
+5
+-21.9161699038
+-48.469304271
+-24.3188578417
+-2.35085940324
+-9.70239202086
+-47.2709510623
+-93.5066246072
+-82.5073836498
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+2
+1
+1
+6
+</pre>

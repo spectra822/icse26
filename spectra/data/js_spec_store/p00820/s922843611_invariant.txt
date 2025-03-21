@@ -1,0 +1,43 @@
+// Segment 1: Read and process input
+// Precondition: The program is executed in an environment where '/dev/stdin' is available and contains newline-separated integers.
+// Postcondition: The variable `arr` contains an array of integers read from the input, with each integer on a new line.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n").map(Number);
+
+// Segment 2: Iterate through each value in `arr` and process it
+// Precondition: `arr` is a non-empty array of integers.
+// Postcondition: For each integer `v` in `arr` (except the terminating zero), the number of ways it can be expressed as the sum of squares of up to four integers is printed.
+arr.some(function(v) {
+    if (v == 0) return true;  // Terminate the loop if the value is zero
+    
+    var cnt = 0;
+
+    // Segment 3: Check combinations of squares
+    // Precondition: `v` is a positive integer.
+    // Postcondition: The number of ways `v` can be expressed as the sum of squares of up to four integers is calculated and stored in `cnt`.
+    for (var a = 1; a <= 181; a++) {
+        var A = a * a;
+        if (v < A) break;
+        if (A == v) cnt++;
+        for (var b = a; b <= 181; b++) {
+            var B = A + b * b;
+            if (v < B) break;
+            if (B == v) cnt++;
+            for (var c = b; c <= 181; c++) {
+                var C = B + c * c;
+                if (v < C) break;
+                if (C == v) cnt++;
+                for (var d = c; d <= 181; d++) {
+                    var D = C + d * d;
+                    if (v < D) break;
+                    if (D == v) cnt++;
+                }
+            }
+        }
+    }
+
+    // Segment 4: Output the result
+    // Precondition: `cnt` contains the number of ways `v` can be expressed as the sum of squares of up to four integers.
+    // Postcondition: The value of `cnt` is printed to the standard output.
+    console.log(cnt);
+});

@@ -1,0 +1,56 @@
+// Main function that processes the input, initializes variables, and calls the DP function
+function Main(input) {
+    // Parse input into an array of arrays
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    
+    // Extract the number of elements N
+    let N = parseInt(input[0][0], 10);
+    
+    // Parse the array 'a' of integers
+    a = input[1].map(e => parseInt(e, 10));
+    
+    // Initialize DP table as a 2D array of empty arrays
+    DP = Array.from({ length: N }, () => []);
+    
+    // Calculate the prefix sums array 'ruisekiwa'
+    ruisekiwa = [0];
+    for (let i = 0; i < N; i++) ruisekiwa.push(ruisekiwa[i] + a[i]);
+    
+    // Call the kukanDP function with the full range and print the result
+    console.log(kukanDP(0, N - 1))
+}
+
+// Recursive function to calculate the minimum cost of merging the subarrays
+function kukanDP(l, r) {
+    // If result is already computed, return it
+    if (DP[l][r] != null) return DP[l][r];
+    
+    // Base case: if l == r, no cost to merge a single element
+    if (l === r) {
+        DP[l][r] = 0;
+        return 0;
+    }
+    
+    // Base case: if there are exactly two elements, cost is the sum of the two
+    if (r === l + 1) {
+        DP[l][r] = a[l] + a[r];
+        return DP[l][r];
+    }
+    
+    // Initialize temporary variable to store the minimum cost
+    let tmp = Infinity;
+    
+    // Divide the range and calculate the cost recursively
+    for (let i = l; i < r; i++) {
+        tmp = Math.min(tmp, kukanDP(l, i) + kukanDP(i + 1, r) - ruisekiwa[l] + ruisekiwa[r + 1]);
+    }
+    
+    // Store the computed result in DP table
+    DP[l][r] = tmp;
+    return tmp;
+}
+
+// Read input from standard input and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

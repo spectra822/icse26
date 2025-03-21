@@ -1,0 +1,56 @@
+// Precondition: The program is executed in an environment where '/dev/stdin' contains the input data.
+// Postcondition: The `input` variable contains the entire content of '/dev/stdin' as a string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Precondition: `input` is a non-empty string containing multiple lines, each with two space-separated values.
+// Postcondition: `Arr` is an array of strings, each representing a line from the input, trimmed of any leading or trailing whitespace.
+var Arr = (input.trim()).split("\n");
+
+// Precondition: `Arr` is an array of strings, each representing a line from the input.
+// Postcondition: `obj` is an object where keys are unique first elements from `Arr` and values are concatenated second elements from `Arr`.
+var obj = {};
+for (var i = 0; i < Arr.length; i++) {
+    var arr = Arr[i].split(" ");
+    var a = arr[0];
+    var b = arr[1];
+    if (a in obj) {
+        obj[a] += (" " + b);
+    } else {
+        obj[a] = b;
+    }
+}
+
+// Precondition: `obj` is an object with keys and string values (space-separated numbers).
+// Postcondition: `keys` is an array of the keys from `obj`, and `obj` values are sorted space-separated numbers.
+var keys = [];
+for (var k in obj) {
+    keys.push(k);
+    obj[k] = obj[k].split(" ").map(Number).sort(function(a, b) {
+        return a - b;
+    }).join(" ");
+}
+
+// Precondition: `keys` is an array of keys from `obj`.
+// Postcondition: `keys` is sorted in alphabetical order.
+keys.sort();
+
+// Precondition: `keys` is a sorted array of keys from `obj`, and `obj` values are sorted space-separated numbers.
+// Postcondition: The program outputs each key followed by its corresponding sorted values, each on a new line.
+// Input: none (reads from '/dev/stdin')
+// Output: Each key from `keys`, followed by its sorted values from `obj`, in the format:
+// key1
+// value1 value2 value3
+// key2
+// value1 value2
+for (var i = 0; i < keys.length; i++) {
+    console.log(keys[i] + "\n" + obj[keys[i]]);
+}
+key1 value1
+key2 value2
+key3 value3
+...
+key1
+sorted_value1 sorted_value2 ...
+key2
+sorted_value1 sorted_value2 ...
+...

@@ -1,0 +1,29 @@
+// Segment 1: Import the 'fs' module and read input
+// Precondition: The 'fs' module should be available in the environment.
+// Postcondition: The program reads the input from the standard input and passes it to the 'main' function.
+const main = input => {
+
+    // Segment 2: Parse the input
+    // Precondition: 'input' is a string containing two space-separated integers.
+    // Postcondition: 'A' and 'P' are integer values parsed from the input string.
+    const [A, P] = input.trim().split(' ').map(x => parseInt(x));
+
+    // Segment 3: Calculate and print the result
+    // Precondition: 'A' and 'P' are valid integers.
+    // Postcondition: The result of the computation (3 * A + P) / 2 is printed to the console, rounded down to the nearest integer.
+    console.log(Math.floor((3 * A + P) / 2));
+};
+
+// Segment 4: Read input from the standard input and invoke the main function
+// Precondition: The input is provided in the format "A P" where A and P are integers, followed by a newline.
+// Postcondition: The 'main' function is called with the input string.
+/*
+Input format: 
+A single line containing two integers separated by a space.
+Example: "1 3\n"
+
+Output format:
+A single integer printed to the console.
+Example: "3\n"
+*/
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

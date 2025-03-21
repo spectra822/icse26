@@ -1,0 +1,51 @@
+// Precondition: The 'fs' module is available and the input is provided via the standard input stream.
+// Postcondition: The 'input' variable contains the trimmed input read from stdin, and 'lines' is an array of trimmed strings split by newline.
+const input = require('fs').readFileSync('/dev/stdin', 'utf8').trim()
+const lines = input.trim().split("\n")
+
+// Precondition: 'lines' is an array of strings where each string represents a line of input.
+// Postcondition: Each iteration of the loop processes two lines at a time until fewer than two lines remain in the array.
+// Input format: Multiple lines of input where each pair of lines needs to be compared.
+// Output format: For each pair of lines, output either 'IDENTICAL', 'CLOSE', or 'DIFFERENT'.
+while (lines.length > 2) {
+    const s1 = lines.shift().trim(),
+        _s1 = s1.split('"')
+    const s2 = lines.shift().trim(),
+        _s2 = s2.split('"')
+
+    // Precondition: 's1' and 's2' are two strings to be compared.
+    // Postcondition: If 's1' and 's2' are identical, 'IDENTICAL' is printed.
+    if (s1 === s2) {
+        console.log('IDENTICAL')
+    } else {
+        // Precondition: '_s1' and '_s2' are arrays obtained by splitting 's1' and 's2' by the double-quote character.
+        // Postcondition: If the lengths of '_s1' and '_s2' are different, 'DIFFERENT' is printed.
+        if (_s1.length !== _s2.length) {
+            console.log('DIFFERENT')
+        } else {
+            let rs
+            let dif = false
+            const l = _s1.length
+
+            // Precondition: '_s1' and '_s2' have the same length.
+            // Postcondition: Compares corresponding segments of '_s1' and '_s2'. If they differ on even indices, 'DIFFERENT' is printed immediately.
+            // If they differ on odd indices, it checks if it's the first difference found. If a second difference is found on odd indices, 'DIFFERENT' is printed.
+            // Otherwise, 'CLOSE' is printed if the strings are close enough.
+            for (let i = 0; i < l; i++) {
+                if (_s1[i] !== _s2[i]) {
+                    if (i % 2) {
+                        if (dif) {
+                            rs = 'DIFFERENT'
+                        } else {
+                            dif = true
+                        }
+                    } else {
+                        rs = 'DIFFERENT'
+                        break
+                    }
+                }
+            }
+            console.log(rs === 'DIFFERENT' ? rs : 'CLOSE')
+        }
+    }
+}

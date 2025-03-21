@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains two integers `n` and `x`.
+    // The subsequent lines follow the same format until a line with `0 0` is encountered.
+    // Output format: For each pair of `n` and `x`, a single integer is printed on a new line.
+    // Precondition: The input consists of pairs of integers `n` and `x`, where `0 <= n, x <= 100`.
+    // Postcondition: For each pair of `n` and `x`, the program prints the number of unique triplets `(i, j, k)` such that `1 <= i, j, k <= n`, `i != j`, `j != k`, `i != k`, and `i + j + k == x`. The program terminates when `0 0` is encountered.
+```

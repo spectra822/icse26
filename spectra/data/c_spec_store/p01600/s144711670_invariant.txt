@@ -1,0 +1,12 @@
+```
+// int in()
+    // Precondition: The input is a sequence of digits (0-9) followed by a non-digit character.
+    // Postcondition: The function reads characters from standard input and returns the integer value formed by the sequence of digits.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain two integers `x` and `y`, separated by a whitespace.
+    // Output format: A single integer.
+    // Precondition: The global arrays `x` and `y` have been declared with a size of at least 1001.
+    // Postcondition: The minimum sum of absolute differences between the coordinates is printed.
+```

@@ -1,0 +1,35 @@
+// Segment 1: Input Reading and Parsing
+// Precondition: The input is provided via stdin and read as a single string.
+// Postcondition: The input string is trimmed and split into an array of strings, with each element representing a line of input.
+const main = stdin => {
+    const input = stdin.trim().split('\n')
+     
+    // Segment 2: Variable Declarations and Parsing
+    // Precondition: The input array has at least one element, and the first element contains three space-separated integers.
+    // Postcondition: The integers A, B, and C are parsed from the first element of the input array.
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+    const C = parseInt(input[0].split(" ")[2]);
+
+    // Segment 3: Computation of Maximum Sound
+    // Precondition: A, B, and C are defined and are integers.
+    // Postcondition: The variable Maxsound is assigned the minimum value between the result of Math.floor(B / A) and C.
+    const sound = Math.floor(B / A);
+    let Maxsound;
+    if (sound < C) {
+        Maxsound = sound;
+    } else {
+        Maxsound = C;
+    }
+
+    // Segment 4: Output
+    // Precondition: Maxsound is defined and holds the computed maximum sound value.
+    // Postcondition: The value of Maxsound is printed to the console.
+    // Input format: A single string with three integers separated by spaces.
+    // Output format: A single integer printed to the console.
+    console.log(Maxsound);
+}
+
+// Precondition: The program is run in an environment where `/dev/stdin` is available and contains the input data.
+// Postcondition: The main function is executed with the input data read from `/dev/stdin`.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

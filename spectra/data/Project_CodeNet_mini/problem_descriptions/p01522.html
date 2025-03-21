@@ -1,0 +1,124 @@
+
+
+<script src="./IMAGE/varmath.js" charset="UTF-8"></script>
+
+<h1>C - ソーシャル</h1>
+
+  <h2>問題文</h2>
+<p>
+うさぎが <var>N</var> 匹おり，ボートを使って川を渡ろうとしている．ボートは <var>K</var> 個あり，誰がどのボートに乗るかを適当に決めて乗ることにした．
+</p>
+<p>
+ところでうさぎというのは互いの仲の良し悪しに敏感であり，狭い空間に仲の悪いうさぎと一緒に閉じ込められると気分を悪くしてしまう．
+この <var>N</var> 匹のうさぎについても何組かのうさぎは仲が悪いということが分かっており，今の割り当てでは何匹かは気分を悪くしてしまう可能性がある．
+もっと良い割り当てを考えるのがよいところではあるが，ひとまず今の割り当てで何匹のうさぎが気分を悪くするかを求めて欲しい．
+</p>
+
+
+<h2>入力形式</h2>
+<p>
+入力は以下の形式で与えられる．
+</p>
+
+<pre>
+<var>N</var> <var>K</var>
+<var>m<sub>1</sub></var> <var>bunny<sub>1,1</sub></var> ... <var>bunny<sub>1,m<sub>1</sub></sub></var>
+<var>m<sub>2</sub></var> <var>bunny<sub>2,1</sub></var> ... <var>bunny<sub>2,m<sub>2</sub></sub></var>
+...
+<var>m<sub>K</sub></var> <var>bunny<sub>K,1</sub></var> ... <var>bunny<sub>K,m<sub>K</sub></sub></var>
+<var>R</var>
+<var>p<sub>1</sub></var> <var>q<sub>1</sub></var>
+...
+<var>p<sub>R</sub></var> <var>q<sub>R</sub></var>
+</pre>
+
+<p>
+<var>N</var> はボートに乗るうさぎの数である．<var>K</var> はボートの個数である．
+<var>m<sub>i</sub></var> はボート <var>i</var> に乗るうさぎの数である．<var>bunny<sub>i,1</sub>, ..., bunny<sub>i,m<sub>i</sub></sub></var> はボート <var>i</var> に乗るうさぎの番号 (1 以上 <var>N</var> 以下) を表す．
+<var>R</var> は仲の悪いうさぎの組の個数を表す．
+<var>p<sub>j</sub>, q<sub>j</sub></var> はうさぎ<var>p<sub>j</sub></var> とうさぎ <var>q<sub>j</sub></var> の仲が悪いことを表す．</p>
+
+<h2>出力形式</h2>
+<p>
+気分を悪くするうさぎの数を出力せよ．
+</p>
+
+<h2>制約</h2>
+<ul>
+  <li><var>1 &le; N &le; 50</var></li>
+  <li><var>1 &le; K &le; N</var></li>
+  <li><var>m<sub>1</sub> + ... + m<sub>K</sub> = N</var></li>
+  <li><var>{bunny<sub>1,1</sub>, ..., bunny<sub>1,m<sub>1</sub></sub>, bunny<sub>2,1</sub>, ..., bunny<sub>K,m<sub>K</sub></sub> } = {1, 2, ..., N}</var></li>
+  <li><var>0 &le; R &le; N(N-1)/2</var></li>
+  <li><var>1 &le; p<sub>j</sub> &lt; q<sub>j</sub> &le; N</var></li>
+  <li>組 <var>(p<sub>j</sub>, q<sub>j</sub>)</var> は全て異なる．</li>
+  <li>入力値はすべて整数である．</li>
+</ul>
+
+
+<h2>入出力例</h2>
+<h3>入力例 1</h3>
+<pre>
+6 2
+2 1 5
+4 2 3 4 6
+2
+1 2
+2 5
+</pre>
+
+<h3>出力例 1</h3>
+<pre>
+0
+</pre>
+
+<p>
+気分を悪くしているうさぎはいない．
+</p>
+
+<h3>入力例 2</h3>
+<pre>
+6 2
+2 1 5
+4 2 3 4 6
+3
+2 3
+3 4
+1 2
+</pre>
+
+<h3>出力例 2</h3>
+<pre>
+3
+</pre>
+
+<p>
+割り当ては例 1 と同じであるが仲の悪さを表す組が異なっている．この例ではうさぎ 2,3,4 が気分を悪くしてしまう．
+</p>
+
+<h3>入力例 3</h3>
+<pre>
+10 3
+3 4 1 9
+3 10 5 2
+4 3 8 7 6
+9
+3 4
+1 2
+1 9
+6 8
+1 6
+1 8
+6 7
+6 10
+7 8
+</pre>
+
+<h3>出力例 3</h3>
+<pre>
+5
+</pre>
+
+<hr>
+<address>Writer: 楠本充</address>
+<address>Tester: 小浜翔太郎</address>

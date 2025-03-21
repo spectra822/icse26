@@ -1,0 +1,20 @@
+```c
+int root(int x)
+    // Precondition: The global array `par` has been initialized such that each element is its own parent or points to another element.
+    // Postcondition: The root element of the set containing `x` is returned, with path compression applied to the elements along the path.
+
+int unite(int x, int y)
+    // Precondition: The global array `par` has been initialized such that each element is its own parent or points to another element.
+    // Postcondition: The set containing `x` is merged with the set containing `y`. If `x` and `y` were already in the same set, 0 is returned. Otherwise, 1 is returned.
+
+int same(int x, int y)
+    // Precondition: The global array `par` has been initialized such that each element is its own parent or points to another element.
+    // Postcondition: Returns 1 if `x` and `y` are in the same set, otherwise returns 0.
+
+int main(void)
+    // Input format: The first line contains two integers `n` and `m`.
+    // The next `m` lines each contain two integers `a[i]` and `b[i]`.
+    // Output format: `m` lines, each containing a single integer.
+    // Precondition: The global arrays `a`, `b`, `par`, `root_cnt`, and `ans` have been declared. The input values for `n` and `m` have been read.
+    // Postcondition: The number of possible ways to choose two different vertices that are in different connected components is printed for each step in the reverse order of edge addition.
+```

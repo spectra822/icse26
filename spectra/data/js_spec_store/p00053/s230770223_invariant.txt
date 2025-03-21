@@ -1,0 +1,57 @@
+// Segment 1: Function to generate prime numbers up to a given maximum
+
+// Precondition: max is a non-negative integer
+// Postcondition: Returns an array of all prime numbers up to max
+
+function prime(max) {
+    var arr = [];
+    for (var i = 0; i <= max; i++) arr[i] = i;
+    arr[0] = false;
+    arr[1] = false;
+    var sqrt = Math.floor(Math.sqrt(max));
+    for (var i = 2; i <= sqrt; i++) {
+        if (arr[i] == false) continue;
+        for (var j = i + i; j <= max; j += i) {
+            arr[j] = false;
+        }
+    }
+    var result = [];
+    for (var i = 0; i <= max; i++) {
+        if (arr[i] !== false) result.push(arr[i]);
+    }
+    return result;
+}
+
+// Segment 2: Generate prime numbers up to 999999 and read input
+
+// Precondition: prime function is correctly defined
+// Postcondition: p is an array of prime numbers up to 999999
+
+var p = prime(999999);
+
+// Precondition: input is a string read from '/dev/stdin' which contains multiple lines of numbers
+// Postcondition: Arr is an array of numbers parsed from input, each representing a line of the input
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n").map(Number);
+
+// Segment 3: Process each number in the input array and output the sum of the first 'a' prime numbers
+
+// Precondition: Arr is an array of numbers where each number is a non-negative integer
+// Postcondition: For each number in Arr, if the number is not zero, output the sum of the first 'a' primes
+
+for (var i = 0; i < Arr.length; i++) {
+    var a = Arr[i];
+    if (a == 0) break;
+    var sum = 0;
+    for (var j = 0; j < a; j++) {
+        sum += p[j];
+    }
+    console.log(sum);
+}
+
+// Input format:
+// A sequence of non-negative integers, each on a new line, ending with a zero (0).
+
+// Output format:
+// For each non-zero input integer 'a', output the sum of the first 'a' prime numbers on a new line.

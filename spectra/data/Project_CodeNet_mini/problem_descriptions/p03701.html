@@ -1,0 +1,87 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are taking a computer-based examination. The examination consists of <var>N</var> questions, and the score allocated to the <var>i</var>-th question is <var>s_i</var>. Your answer to each question will be judged as either "correct" or "incorrect", and your grade will be the sum of the points allocated to questions that are answered correctly. When you finish answering the questions, your answers will be immediately judged and your grade will be displayed... if everything goes well.</p>
+<p>However, the examination system is actually flawed, and if your grade is a multiple of <var>10</var>, the system displays <var>0</var> as your grade. Otherwise, your grade is displayed correctly. In this situation, what is the maximum value that can be displayed as your grade?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All input values are integers.</li>
+<li><var>1 ≤ N ≤ 100</var></li>
+<li><var>1 ≤ s_i ≤ 100</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>s_1</var>
+<var>s_2</var>
+<var>:</var>
+<var>s_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum value that can be displayed as your grade.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+5
+10
+15
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>25
+</pre>
+<p>Your grade will be <var>25</var> if the <var>10</var>-point and <var>15</var>-point questions are answered correctly and the <var>5</var>-point question is not, and this grade will be displayed correctly. Your grade will become <var>30</var> if the <var>5</var>-point question is also answered correctly, but this grade will be incorrectly displayed as <var>0</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+10
+10
+15
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>35
+</pre>
+<p>Your grade will be <var>35</var> if all the questions are answered correctly, and this grade will be displayed correctly.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>3
+10
+20
+30
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>0
+</pre>
+<p>Regardless of whether each question is answered correctly or not, your grade will be a multiple of <var>10</var> and displayed as <var>0</var>.</p></section>
+</div>
+</span>

@@ -1,0 +1,7 @@
+```c
+int main(int argv, char* argc[])
+    // Input format: The input consists of three space-separated integers: x, k, and d.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variables `x`, `k`, and `d` are valid long long integers and have been read from standard input.
+    // Postcondition: The absolute value of the result after performing the specified operations on `x`, `k`, and `d` is printed.
+```

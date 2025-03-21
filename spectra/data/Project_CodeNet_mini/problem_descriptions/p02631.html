@@ -1,0 +1,72 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> Snuke Cats numbered <var>1, 2, \ldots, N</var>, where <var>N</var> is <strong>even</strong>.</p>
+<p>Each Snuke Cat wears a red scarf, on which his favorite non-negative integer is written.</p>
+<p>Recently, they learned the operation called xor (exclusive OR).</p>
+<details>
+<summary style="display: list-item; outline: none;">What is xor?</summary>
+<p>
+For <var>n</var> non-negative integers <var>x_1, x_2, \ldots, x_n</var>, their xor, <var>x_1~\textrm{xor}~x_2~\textrm{xor}~\ldots~\textrm{xor}~x_n</var> is defined as follows:
+<ul>
+<li> When <var>x_1~\textrm{xor}~x_2~\textrm{xor}~\ldots~\textrm{xor}~x_n</var> is written in base two, the digit in the <var>2^k</var>'s place (<var>k \geq 0</var>) is <var>1</var> if the number of integers among <var>x_1, x_2, \ldots, x_n</var> whose binary representations have <var>1</var> in the <var>2^k</var>'s place is odd, and <var>0</var> if that count is even. </li>
+</ul>
+For example, <var>3~\textrm{xor}~5 = 6</var>.
+</p>
+</details>
+<p>They wanted to use this operation quickly, so each of them calculated the xor of the integers written on their scarfs except his scarf.</p>
+<p>We know that the xor calculated by Snuke Cat <var>i</var>, that is, the xor of the integers written on the scarfs except the scarf of Snuke Cat <var>i</var> is <var>a_i</var>.
+Using this information, restore the integer written on the scarf of each Snuke Cat.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>2 \leq N \leq 200000</var></li>
+<li><var>N</var> is <strong>even</strong>.</li>
+<li><var>0 \leq a_i \leq 10^9</var></li>
+<li>There exists a combination of integers on the scarfs that is consistent with the given information.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>\ldots</var> <var>a_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print a line containing <var>N</var> integers separated with space.</p>
+<p>The <var>i</var>-th of the integers from the left should represent the integer written on the scarf of Snuke Cat <var>i</var>.</p>
+<p>If there are multiple possible solutions, you may print any of them.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4
+20 11 9 24
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>26 5 7 22
+</pre>
+<ul>
+<li><var>5~\textrm{xor}~7~\textrm{xor}~22 = 20</var></li>
+<li><var>26~\textrm{xor}~7~\textrm{xor}~22 = 11</var></li>
+<li><var>26~\textrm{xor}~5~\textrm{xor}~22 = 9</var></li>
+<li><var>26~\textrm{xor}~5~\textrm{xor}~7 = 24</var></li>
+</ul>
+<p>Thus, this output is consistent with the given information.</p></section>
+</div>
+</span>

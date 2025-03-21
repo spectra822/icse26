@@ -1,0 +1,123 @@
+
+<H1><font color="#000">Problem G:</font> Walking Ant</H1>
+
+<p>
+Ants are quite diligent. They sometimes build their nests beneath flagstones.
+</p>
+
+<p>
+Here, an ant is walking in a rectangular area tiled with square flagstones, seeking the only hole leading to her nest.
+</p>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_walkingAnt">
+</center>
+
+<p>
+The ant takes exactly one second to move from one flagstone to another. That is, if the ant is on the flagstone with coordinates (<i>x</i>, <i>y</i>) at time <i>t</i>, she will be on one of the five flagstones with the following coordinates at time <i>t</i> + 1:
+</p>
+
+<p>
+(<i>x</i>, <i>y</i>), (<i>x</i> + 1, <i>y</i>), (<i>x</i> - 1, <i>y</i>), (<i>x</i>, <i>y</i> + 1), (<i>x</i>, <i>y</i> - 1).
+</p>
+
+<p>
+The ant cannot go out of the rectangular area. The ant can visit the same flagstone more than once.
+</p>
+
+<p>
+Insects are easy to starve. The ant has to go back to her nest without starving. Physical strength of the ant is expressed by the unit "HP". Initially, the ant has the strength of 6 HP. Every second, she loses 1 HP. When the ant arrives at a flagstone with some food on it, she eats a small piece of the food there, and recovers her strength to the maximum value, i.e., 6 HP, without taking any time. The food is plenty enough, and she can eat it as many times as she wants.
+</p>
+
+<p>
+When the ant's strength gets down to 0 HP, she dies and will not move anymore. If the ant's strength gets down to 0 HP at the moment she moves to a flagstone, she does not effectively reach the flagstone: even if some food is on it, she cannot eat it; even if the hole is on that stone, she has to die at the entrance of her home.
+</p>
+
+<p>
+If there is a puddle on a flagstone, the ant cannot move there.
+</p>
+
+<p>
+Your job is to write a program which computes the minimum possible time for the ant to reach the hole with positive strength from her start position, if ever possible.
+</p>
+
+<H2>Input</H2>
+
+<p>
+The input consists of multiple maps, each representing the size and the arrangement of the rectangular area. A map is given in the following format.
+</p>
+
+<pre>
+<i>w h</i>
+<i>d</i><sub>11</sub> <i>d</i><sub>12</sub> <i>d</i><sub>13</sub>  ... <i>d</i><sub>1<i>w</i></sub>
+<i>d</i><sub>2</sub> <i>d</i><sub>22</sub> <i>d</i><sub>23</sub>  ... <i>d</i><sub>2<i>w</i></sub>
+                 ...
+<i>d</i><sub><i>h</i>1</sub> <i>d</i><sub><i>h</i>2</sub> <i>d</i><sub><i>h</i>3</sub>  ... <i>d</i><sub><i>h</i><i>w</i></sub>
+</pre>
+
+<p>
+The integers <i>w</i> and <i>h</i> are the numbers of flagstones in the <i>x</i>- and <i>y</i>-directions, respectively. <i>w</i> and <i>h</i> are less than or equal to 8. The integer <i>d<sub>yx</sub></i> represents the state of the flagstone with coordinates (<i>x</i>, <i>y</i>) as follows.
+</p>
+
+<p>
+0: There is a puddle on the flagstone, and the ant cannot move there.
+</p>
+
+<p>
+1, 2: Nothing exists on the flagstone, and the ant can move there. '2' indicates where the ant initially stands.
+</p>
+
+<p>
+3: The hole to the nest is on the flagstone.
+</p>
+
+<p>
+4: Some food is on the flagstone.
+</p>
+
+
+<p>
+There is one and only one flagstone with a hole. Not more than five flagstones have food on them.
+</p>
+
+<p>
+The end of the input is indicated by a line with two zeros.
+</p>
+
+<p>
+Integer numbers in an input line are separated by at least one space character.
+</p>
+
+<H2>Output</H2>
+
+<p>
+for each map in the input, your program should output one line containing one integer representing the minimum time. If the ant cannot return to her nest, your program should output -1 instead of the minimum time.
+</p>
+
+<H2>Sample Input</H2>
+<pre>
+3 3
+2 1 1
+1 1 0
+1 1 3
+8 4
+2 1 1 0 1 1 1 0
+1 0 4 1 1 0 4 1
+1 0 0 0 0 0 0 1
+1 1 1 4 1 1 1 3
+8 5
+1 2 1 1 1 1 1 4
+1 0 0 0 1 0 0 1
+1 4 1 0 1 1 0 1
+1 0 0 0 0 3 0 1
+1 1 4 1 1 1 1 1
+0 0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+4
+-1
+13
+</pre>
+

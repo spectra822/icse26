@@ -1,0 +1,16 @@
+```c
+// Global variables
+int a[110], b[110], c[110], n;
+double d[20][1 << 16] = {};
+int fr[20][1 << 16] = {};
+
+// Given indices `i`, `j`, `k`, where `j` represents a subset of indices,
+// calculate and return a specific double value based on the global arrays `b` and `c`.
+double f(int i, int j, int k)
+
+// This is the main function that reads input, initializes data structures, 
+// and uses dynamic programming to find the optimal sequence to minimize a certain value.
+// It prints the sequence of indices from the global array `a`.
+int main()
+  Calls f(...)
+```

@@ -1,0 +1,14 @@
+// Function definition for the main logic
+const main = (inputs) => {
+    // Parsing the input length as a number
+    const length = Number(inputs[0]);
+    
+    // Calculating the volume of the cube with side length divided by 3
+    const volume = (length / 3) * (length / 3) * (length / 3);
+    
+    // Printing the result to 12 decimal places
+    console.log(volume.toFixed(12));
+}
+
+// Reading input from the standard input, processing it, and passing it to the main function
+main(require('fs').readFileSync('/dev/stdin', 'UTF-8').trim().split("\n"));

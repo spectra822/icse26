@@ -1,0 +1,56 @@
+// Function definition that takes the input and processes it
+function main(input) {
+    // Trim the input to remove leading and trailing whitespace
+    input = input.trim();
+    
+    // Split the input string by spaces to get individual components
+    let list = input.split(" ");
+    
+    // Parse the first two components as integers and adjust the min value
+    let min = parseInt(list[0]) - 1;
+    let max = parseInt(list[1]);
+    
+    // Parse the third component as the divisor 'a'
+    let a = parseInt(list[2]);
+    
+    // Calculate the number of multiples of 'a' up to 'max'
+    let dai = Math.floor(max / a);
+    
+    // Calculate the number of multiples of 'a' up to 'min'
+    let syou = Math.floor(min / a);
+    
+    // The answer is the difference between the two counts
+    let answer = dai - syou;
+    
+    // Print the answer
+    console.log(answer);
+}
+
+// Read input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"));
+    // Function definition that takes the input and processes it
+    function main(input) {
+        // Trim the input to remove leading and trailing whitespace
+        input = input.trim();
+        
+        // Split the input string by spaces to get individual components
+        let list = input.split(" ");
+        // Parse the first two components as integers and adjust the min value
+        let min = parseInt(list[0]) - 1;
+        let max = parseInt(list[1]);
+        
+        // Parse the third component as the divisor 'a'
+        let a = parseInt(list[2]);
+        // Calculate the number of multiples of 'a' up to 'max'
+        let dai = Math.floor(max / a);
+        
+        // Calculate the number of multiples of 'a' up to 'min'
+        let syou = Math.floor(min / a);
+        
+        // The answer is the difference between the two counts
+        let answer = dai - syou;
+        // Print the answer
+        console.log(answer);
+    }
+    // Read input from standard input and pass it to the main function
+    main(require("fs").readFileSync("/dev/stdin", "utf8"));

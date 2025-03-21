@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: A single line containing a string `str` of lowercase letters.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The array `str` and the integer array `a` have been declared.
+    // Postcondition: The number of characters that have an odd frequency in the string `str` is printed divided by 2.
+```

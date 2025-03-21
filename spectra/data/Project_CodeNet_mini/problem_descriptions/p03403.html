@@ -1,0 +1,101 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> sightseeing spots on the <var>x</var>-axis, numbered <var>1, 2, ..., N</var>.
+Spot <var>i</var> is at the point with coordinate <var>A_i</var>.
+It costs <var>|a - b|</var> yen (the currency of Japan) to travel from a point with coordinate <var>a</var> to another point with coordinate <var>b</var> along the axis.</p>
+<p>You planned a trip along the axis.
+In this plan, you first depart from the point with coordinate <var>0</var>, then visit the <var>N</var> spots in the order they are numbered, and finally return to the point with coordinate <var>0</var>.</p>
+<p>However, something came up just before the trip, and you no longer have enough time to visit all the <var>N</var> spots, so you decided to choose some <var>i</var> and cancel the visit to Spot <var>i</var>.
+You will visit the remaining spots as planned in the order they are numbered.
+You will also depart from and return to the point with coordinate <var>0</var> at the beginning and the end, as planned.</p>
+<p>For each <var>i = 1, 2, ..., N</var>, find the total cost of travel during the trip when the visit to Spot <var>i</var> is canceled.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 10^5</var></li>
+<li><var>-5000 \leq A_i \leq 5000</var> (<var>1 \leq i \leq N</var>)</li>
+<li>All input values are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <var>N</var> lines.
+In the <var>i</var>-th line, print the total cost of travel during the trip when the visit to Spot <var>i</var> is canceled.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+3 5 -1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>12
+8
+10
+</pre>
+<p>Spot <var>1</var>, <var>2</var> and <var>3</var> are at the points with coordinates <var>3</var>, <var>5</var> and <var>-1</var>, respectively.
+For each <var>i</var>, the course of the trip and the total cost of travel when the visit to Spot <var>i</var> is canceled, are as follows:</p>
+<ul>
+<li>For <var>i = 1</var>, the course of the trip is <var>0 \rightarrow 5 \rightarrow -1 \rightarrow 0</var> and the total cost of travel is <var>5 + 6 + 1 = 12</var> yen.</li>
+<li>For <var>i = 2</var>, the course of the trip is <var>0 \rightarrow 3 \rightarrow -1 \rightarrow 0</var> and the total cost of travel is <var>3 + 4 + 1 = 8</var> yen.</li>
+<li>For <var>i = 3</var>, the course of the trip is <var>0 \rightarrow 3 \rightarrow 5 \rightarrow 0</var> and the total cost of travel is <var>3 + 2 + 5 = 10</var> yen.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>5
+1 1 1 2 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>4
+4
+4
+2
+4
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>6
+-679 -2409 -3258 3095 -3291 -4462
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>21630
+21630
+19932
+8924
+21630
+19288
+</pre></section>
+</div>
+</span>

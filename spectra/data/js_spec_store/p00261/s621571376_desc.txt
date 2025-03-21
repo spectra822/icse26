@@ -1,0 +1,40 @@
+// Import the 'fs' module to read input from stdin
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of strings, each representing a line of input
+var Arr = (input.trim()).split("\n");
+
+// Loop through each line of input until a line containing "#" is encountered
+while (true) {
+    // Remove and return the first element from the array
+    var str = Arr.shift();
+    
+    // If the line is "#", break the loop
+    if (str == "#") break;
+
+    // Initialize the state variable 'p' to "A"
+    var p = "A";
+
+    // Process each character in the string
+    for (var i = 0; i < str.length; i++) {
+        // Convert the character to an integer (0 or 1)
+        var s = str[i] - 0;
+
+        // State transition logic based on the current state 'p' and input 's'
+        if (p == "A" && s === 0) p = "X";
+        else if (p == "A" && s === 1) p = "Y";
+        else if (p == "B" && s === 0) p = "Y";
+        else if (p == "B" && s === 1) p = "X";
+        else if (p == "W" && s === 0) p = "B";
+        else if (p == "W" && s === 1) p = "Y";
+        else if (p == "X" && s === 0) p = "";
+        else if (p == "X" && s === 1) p = "Z";
+        else if (p == "Y" && s === 0) p = "X";
+        else if (p == "Y" && s === 1) p = "";
+        else if (p == "Z" && s === 0) p = "W";
+        else if (p == "Z" && s === 1) p = "B";
+    }
+
+    // Output "Yes" if the final state is "B", otherwise "No"
+    console.log((p == "B") ? "Yes" : "No");
+}

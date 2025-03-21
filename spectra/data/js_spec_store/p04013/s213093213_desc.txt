@@ -1,0 +1,61 @@
+// Function to process the input and compute the result based on the problem logic
+function Main(input) {
+    // Splitting the input into lines and parsing the first line to get N and A
+    input = input.split("\n");
+    var N = parseInt(input[0].split(" ")[0]);
+    var A = parseInt(input[0].split(" ")[1]);
+    
+    // Parsing the second line to get the array x
+    var x = input[1].split(" ").map(i => parseInt(i));
+    
+    // Calculating the sum of elements in array x
+    var sum = 0;
+    for (var i = 0; i < N; i++) {
+        sum += x[i];
+    }
+    
+    // Initializing a 2D array (map) to store the number of ways to achieve certain sums with a certain number of elements
+    var map = new Array(sum + 1);
+    for (var i = 0; i < sum + 1; i++) {
+        var tmp = new Array(N + 1).fill(0);
+        map[i] = tmp;
+    }
+    map[0][0] = 1; // There's one way to achieve sum 0 with 0 elements
+    
+    // Populating the map array using dynamic programming
+    for (var k = 0; k < N; k++) {
+        for (var i = N; i > 0; i--) {
+            for (var j = sum + 1; j - x[k] >= 0; j--) {
+                if (map[j - x[k]][i - 1] != 0) {
+                    map[j][i] = map[j][i] + map[j - x[k]][i - 1];
+                }
+            }
+        }
+    }
+    
+    // Calculating the final answer by summing up all the valid ways to achieve multiples of A
+    var ans = 0;
+    for (var i = 1; i <= N; i++) {
+        if (i * A <= sum) {
+            ans += map[i * A][i];
+        }
+    }
+    
+    // Outputting the result and returning it
+    console.log('%s', ans);
+    return ans;
+}
+
+// Function to debug the Main function by comparing its output with expected output
+function debug(n) {
+    var input = document.getElementById("input" + n).value;
+    var ans = Main(input);
+    var result = "WA"; // WA stands for Wrong Answer
+    if (ans == document.getElementById("output" + n).value.split("\n")[0]) {
+        result = "AC"; // AC stands for Accepted
+    }
+    document.getElementById("result" + n).innerHTML = result;
+}
+
+// Reading input from standard input and invoking the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

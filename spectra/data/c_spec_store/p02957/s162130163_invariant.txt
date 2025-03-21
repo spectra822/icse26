@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: The input consists of a single line containing two long integers `a` and `b` separated by a space.
+    // Output format: If the sum of `a` and `b` is odd, the output is the string "IMPOSSIBLE" without quotes. Otherwise, the output is the integer (a + b) / 2.
+    // Precondition: The variables `a` and `b` are declared as long integers.
+    // Postcondition: The program outputs either "IMPOSSIBLE" if the sum of `a` and `b` is odd or the integer (a + b) / 2 if the sum is even. The program terminates after printing the result.
+```

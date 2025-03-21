@@ -1,0 +1,11 @@
+```c
+// Global variables
+long long A[100001];
+
+// Main function that reads input, processes the array, and checks if the given condition is met.
+// Takes an integer `N` representing the length of the array, followed by `N` integers.
+// It then calculates the sum and difference array, and checks if a certain condition holds.
+// If the condition is met, it prints "YES", otherwise "NO".
+int main()
+  Calls fflush(stdout)
+```

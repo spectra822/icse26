@@ -1,0 +1,28 @@
+'use strict';
+
+// Function to read input, process it, and output the result
+function Main(input) {
+    // Split input into an array of strings
+    input = input.split(" ");
+
+    // Convert array elements to integers and find the maximum and minimum values
+    let a = parseInt(Math.max.apply(null, input));
+    let b = parseInt(Math.min.apply(null, input));
+
+    // Calculate the product of the maximum and minimum values
+    let result = a * b;
+
+    // Calculate the greatest common divisor (GCD) using the Euclidean algorithm
+    let mod = 1;
+    while (mod > 0) {
+        mod = a % b;
+        a = b;
+        b = mod;
+    }
+
+    // Output the result divided by the GCD
+    console.log(result / a);
+}
+ 
+// Read input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

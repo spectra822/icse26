@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains two integers `N` and `W`, separated by a whitespace.
+    // The next `N` lines each contain two integers `w[i]` and `v[i]`, separated by a whitespace.
+    // Output format: A single integer representing the maximum value that can be achieved without exceeding the weight `W`.
+    // Precondition: The global variables `N`, `W`, `w`, `v`, and `ayaneru` have been declared.
+    // Postcondition: The maximum value that can be achieved without exceeding the weight `W` is printed. If no valid solution is found, "error!" is printed.
+```

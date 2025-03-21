@@ -1,0 +1,10 @@
+Input:
+4 5
+abcde
+abbce
+abeee
+abcde
+0 0
+
+Output:
+8

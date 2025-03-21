@@ -1,0 +1,36 @@
+"use strict";
+
+// Segment 1: Variable Declarations and Input Parsing
+// Precondition: `input` is a string containing two lines separated by "\n".
+// Postcondition: `input` is split into an array of strings, `N` and `A` are parsed as integers from the first and second elements of the array respectively.
+
+let myFunc = (input) => {
+    input = input.split("\n");
+    let N = parseInt(input[0]);
+    let A = parseInt(input[1]);
+
+    // Segment 2: Loop to Check Conditions
+    // Precondition: `N` and `A` are integers.
+    // Postcondition: Logs "Yes" if a value `i` in the range [0, A] exists such that `(N - i) % 500 === 0`, otherwise logs "No".
+    // Input: None (uses previously parsed variables)
+    // Output: "Yes" or "No" (depending on the conditions met in the loop)
+
+    for (let i = 0; i <= A; i++) {
+        if (i > N) break;
+        if ((N - i) % 500 === 0) {
+            console.log("Yes");
+            return 0;
+        }
+    }
+    console.log("No");
+};
+
+// Segment 3: Function Invocation and Reading from Standard Input
+// Precondition: The program is executed in an environment where `/dev/stdin` contains the input data.
+// Postcondition: The function `myFunc` is called with the content read from `/dev/stdin`.
+// Input: The content of `/dev/stdin`, which should be in the format:
+//        Line 1: An integer N
+//        Line 2: An integer A
+// Output: Depends on the condition checked in Segment 2 ("Yes" or "No")
+
+myFunc(require("fs").readFileSync("/dev/stdin", "utf8"));

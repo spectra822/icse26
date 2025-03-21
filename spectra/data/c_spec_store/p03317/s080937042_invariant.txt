@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains two integers `n` and `k`, separated by a whitespace.
+    // The next line contains `n` integers, separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: `n` and `k` are positive integers such that `1 <= k <= n`.
+    // Postcondition: The program calculates and prints the minimum number of operations required to reduce the array `a` to a single element by repeatedly removing `k` elements at a time and keeping the maximum of them.
+```

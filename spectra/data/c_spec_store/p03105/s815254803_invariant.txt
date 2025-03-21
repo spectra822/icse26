@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Three integers `a`, `b`, and `c` are provided in a single line separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: `a`, `b`, and `c` are integers read from the input.
+    // Postcondition: The program prints the minimum of `b / a` and `c`.
+```

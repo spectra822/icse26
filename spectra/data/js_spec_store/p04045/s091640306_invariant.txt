@@ -1,0 +1,59 @@
+// Segment 1: Reading and processing input
+// Precondition: The input is provided in the format of a string with two lines.
+// The first line contains two integers separated by a space. The second line contains a sequence of integers separated by spaces.
+// Input format:
+// 1000 8
+// 1 3 4 5 6 7 8 9
+function Main(input) {
+    input = input.split("\n");
+    var string = input[0].split(" ")[0];
+    var hate = input[1].split(" ");
+    
+    // Postcondition: `string` contains the starting number as a string.
+    // `hate` is an array of strings where each element is a digit to be avoided.
+    // Example: string = "1000", hate = ["1", "3", "4", "5", "6", "7", "8", "9"]
+
+    // Segment 2: Initialize variables and find the smallest acceptable number
+    // Precondition: `string` is a string representation of the starting number.
+    // `hate` is an array of strings representing digits to avoid.
+    var i = string - 0; // Convert string to number
+    var temp;
+    
+    // Postcondition: `i` is initialized to the start number, and `temp` is declared for future use.
+
+    // Segment 3: Finding the smallest number greater than or equal to the starting number 
+    // that does not contain any hated digits
+    // Precondition: `i` is the current number being checked, and `hate` is an array of digits to avoid.
+    while (true) {
+        temp = (i + "").split('');
+        
+        // Postcondition: `temp` is an array of digits of the current number `i`.
+        // Example: If `i` = 1001, then `temp` = ["1", "0", "0", "1"]
+
+        // Segment 4: Check if the current number contains any hated digits
+        // Precondition: `temp` is an array of digits of the current number `i`.
+        if (temp.every(e => {
+                return !hate.includes(e);
+            })) {
+            // Postcondition: If the current number does not contain any hated digits,
+            // it will be printed and the function will return.
+            // Output format: A single integer representing the smallest acceptable number.
+            console.log(i);
+            return;
+        }
+        i++;
+        
+        // Postcondition: If the current number contains any hated digits,
+        // increment `i` and repeat the check.
+    }
+}
+
+// Segment 5: Read input from stdin and call the Main function
+// Precondition: The input is provided in the format of a string with two lines.
+// The first line contains two integers separated by a space. The second line contains a sequence of integers separated by spaces.
+// Input format:
+// 1000 8
+// 1 3 4 5 6 7 8 9
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Postcondition: The program reads the input, processes it, and prints the smallest acceptable number.

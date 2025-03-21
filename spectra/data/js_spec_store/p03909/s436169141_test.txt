@@ -1,0 +1,8 @@
+Input:
+3
+hello world
+this is snuke
+example text
+
+Output:
+C2

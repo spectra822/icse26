@@ -1,0 +1,60 @@
+// Segment 1: Module Wrapper and Initial Setup
+// Precondition: The program is executed and the input is provided through '/dev/stdin'.
+// Postcondition: The input is read, split into lines, and variables `n` and `A` are initialized.
+
+(function(input) {
+    var p = input.split('\n');
+    var n = Number(p.shift());
+    var A = p.shift().split(' ').map(Number);
+
+    // Segment 2: Counting Sort Function Call
+    // Precondition: `A` is an array of numbers and `n` is the length of `A`.
+// Postcondition: `B` is a sorted array of the elements in `A`.
+    
+    var B = countingSort(A, 10000);
+    console.log(B.join(' '));
+})(require('fs').readFileSync('/dev/stdin', 'utf8'));
+
+// Segment 3: Counting Sort Function Definition
+// Precondition: `A` is an array of numbers, and `k` is the maximum value in `A`.
+// Postcondition: Returns a sorted array `D` that contains all elements of `A` in ascending order.
+
+function countingSort(A, k) {
+    var C = [];
+    for (var i = 0; i <= k; i++) {
+        C[i] = 0;
+    }
+    for (var i = 0; i < A.length; i++) {
+        C[A[i]]++;
+    }
+     
+    for (var i = 1; i <= k; i++) {
+        C[i] = C[i] + C[i - 1];
+    }
+     
+    var B = [];
+    for (var i = A.length - 1; i >= 0; i--) {
+        B[C[A[i]]] = A[i];
+        C[A[i]]--;
+    }
+    
+    // Segment 4: Filter Undefined Values
+    // Precondition: `B` is an array where sorted values from `A` are placed at their correct positions, but may contain undefined entries.
+// Postcondition: Returns array `D` which is `B` without any undefined values.
+    
+    var D = [];
+    for (var i = 0; i < B.length; i++) {
+        var n = B[i];
+        if (typeof(n) !== 'undefined') {
+            D.push(n);
+        }
+    }
+    return D;
+}
+
+// Input format:
+// The first line contains an integer `n`.
+// The second line contains `n` space-separated integers.
+
+// Output format:
+// A single line containing the sorted integers separated by spaces.

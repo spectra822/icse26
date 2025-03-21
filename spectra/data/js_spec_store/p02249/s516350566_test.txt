@@ -1,0 +1,12 @@
+Input:
+4 5
+abcde
+fghij
+klmno
+pqrst
+2 2
+gh
+lm
+
+Output:
+1 1

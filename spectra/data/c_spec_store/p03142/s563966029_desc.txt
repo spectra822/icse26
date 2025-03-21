@@ -1,0 +1,21 @@
+```c
+// Global variables
+int N, M;
+int ec[114514];
+int* es[114514];
+int sansyo[114514];
+int next_count[2];
+int next_buffer[2][114514];
+int answer[114514];
+
+// Add an edge from node `f` to node `t` in the adjacency list.
+// Dynamically reallocates memory for the adjacency list.
+void ae(int f, int t)
+  Calls realloc(...)
+
+// The main function reads input, constructs the graph, and finds the topological order.
+// It initializes global variables, reads edges, and performs a topological sort.
+// Finally, it prints the answer for each node.
+int main(void)
+  Calls ae(...)
+```

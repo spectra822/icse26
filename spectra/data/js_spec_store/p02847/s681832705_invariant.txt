@@ -1,0 +1,51 @@
+// Segment 1: main function declaration and input handling
+
+// Precondition: The program is executed with a single argument, `stdin`, which is a string representing the standard input.
+// Postcondition: The input string `stdin` is trimmed, split by newline characters, and stored in the `input` array. The first element of `input` is assigned to the variable `S`.
+
+const main = stdin => {
+    const input = stdin.trim().split('\n')
+    const S = input[0]
+
+    // Segment 2: Switch-case logic for determining the number of days until Sunday
+
+    // Precondition: `S` is a string representing a day of the week in its abbreviated form (e.g., 'SUN', 'MON', etc.).
+    // Postcondition: Based on the value of `S`, a number representing the days until Sunday is printed to the console.
+
+    switch (S) {
+        case 'SUN':
+            console.log(7)
+            break;
+        case 'MON':
+            console.log(6)
+            break;
+        case 'TUE':
+            console.log(5)
+            break;
+        case 'WED':
+            console.log(4)
+            break;
+        case 'THU':
+            console.log(3)
+            break;
+        case 'FRI':
+            console.log(2)
+            break;
+        case 'SAT':
+            console.log(1)
+            break;
+
+        default:
+            break;
+    }
+}
+
+// Segment 3: Execution of the main function with input from the standard input
+
+// Precondition: The script is run in an environment where the standard input is available and contains a single line representing a day of the week.
+// Postcondition: The `main` function is executed with the contents of the standard input.
+
+// Input format: A single string representing a day of the week in its abbreviated form, followed by a newline character.
+// Output format: A single integer representing the number of days until Sunday, followed by a newline character.
+
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

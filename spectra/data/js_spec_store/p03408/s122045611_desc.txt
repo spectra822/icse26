@@ -1,0 +1,53 @@
+// Function definition and input reading
+function main(input) {
+    const args = input.split('\n');
+
+    // Parsing the number of blue cards (N) and red cards (M)
+    const N = parseInt(args[0], 10);
+    const M = parseInt(args[N + 1], 10);
+
+    // Initialize data structures to store counts and lists of blue and red cards
+    data = {};
+    let blues = [];
+    let reds = [];
+    let ans;
+
+    // Populate the list of blue cards
+    for (let i = 1; i <= N; i++) {
+        blues.push(args[i]);
+    }
+
+    // Populate the list of red cards
+    for (let i = (N + 2); i <= (N + M + 1); i++) {
+        reds.push(args[i]);
+    }
+
+    // Count the occurrences of each blue card
+    for (let i = 0; i < blues.length; i++) {
+        key = blues[i];
+        data[key] = data[key] ? data[key] + 1 : 1;
+    }
+
+    // Subtract the occurrences of each red card from the blue card counts
+    for (let i = 0; i < reds.length; i++) {
+        key = reds[i];
+        data[key] = data[key] ? data[key] - 1 : -1;
+    }
+
+    // Determine the maximum value in the data dictionary
+    for (key in data) {
+        if (!ans || data[key] > ans) {
+            ans = data[key];
+        }
+    }
+
+    // Print the result, ensuring it is not negative
+    if (ans < 0) {
+        console.log(0);
+    } else {
+        console.log(ans);
+    }
+}
+
+// Read input from standard input and call the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

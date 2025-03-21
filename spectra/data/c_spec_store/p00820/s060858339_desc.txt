@@ -1,0 +1,15 @@
+```c
+// No global variables
+
+// Given an integer `n`, a count `c`, and a lower bound `low`,
+// recursively determine the number of ways to represent `n` as the sum of up to four squares.
+// It returns the count of such representations.
+int solve(int n, int c, int low)
+    Calls solve(...)
+
+// The main function for reading input integers and calculating the number of representations
+// of each integer as the sum of up to four squares using `solve` function.
+// It reads integers until a zero is encountered.
+int main()
+    Calls solve(...)
+```

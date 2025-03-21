@@ -1,0 +1,13 @@
+```
+int solve(char bit[], int runlen[], int len, int runlenlen, char start)
+    // Precondition: The arrays `bit` and `runlen` have been initialized with at least `len` and `runlenlen` elements respectively.
+    // Postcondition: The function returns the minimum number of swaps needed to reorder the bit string `bit` to start with `start` character.
+
+int main()
+    // Input format: The first line contains two integers `N` and `M` separated by a space.
+    // The next line contains `N` characters (`1` or `0`) separated by spaces.
+    // The next line contains `M` integers separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The global arrays `b` and `p` have been declared.
+    // Postcondition: The minimum number of swaps required to reorder the bit string `b` according to the run lengths in `p` is printed.
+```

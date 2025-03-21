@@ -1,0 +1,6 @@
+Input:
+7
+AABBCDE
+
+Output:
+72

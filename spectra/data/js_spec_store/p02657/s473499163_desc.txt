@@ -1,0 +1,20 @@
+// Segment 1: Main function definition
+// This function takes an input string, processes it to extract two integers A and B, and logs their product.
+function Main(input) {
+    input = input.split("\n");
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+
+    console.log(A * B);
+}
+
+// Segment 2: Debug function definition
+// This function is used for debugging purposes. It gets input from an HTML element and calls the Main function.
+function debug() {
+    var input = document.getElementById("input").value;
+    Main(input);
+}
+
+// Segment 3: Main function invocation
+// This segment reads input from the standard input and passes it to the Main function.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

@@ -1,0 +1,38 @@
+// Function definition for Main, which takes an input string
+function Main(input) {
+    
+    // Segment 1: Parse the input string into an array of strings
+    input = input.split("\n");
+    
+    // Segment 2: Extract the initial number and the list of hated digits
+    var string = input[0].split(" ")[0];
+    var output = "";
+    var hate = input[1].split(" ");
+    
+    // Segment 3: Convert the initial number string to an integer
+    var i = string - 0;
+    var temp;
+    
+    // Segment 4: Loop to find the smallest number greater than or equal to `i` that does not contain any hated digits
+    while (true) {
+         
+        // Convert the current number to an array of its digits
+        temp = (i + "").split('');
+        
+        // Check if the current number contains any hated digits
+        if (temp.every(e => {
+                return !hate.includes(e);
+            })) {
+            
+            // Print the result and exit the function if no hated digits are found
+            console.log(i);
+            return;
+        }
+        
+        // Increment the number and continue the loop
+        i++;
+    }
+}
+
+// Segment 5: Read input from standard input and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

@@ -1,0 +1,52 @@
+// Segment 1: Function to split input string into array of arrays
+// Precondition: `input` is a non-empty string with rows separated by '\n' and columns separated by spaces.
+// Postcondition: Returns a 2D array where each sub-array represents a row split by spaces.
+function spilitInput(input) {
+    var splited = [];
+    var rows = input.split('\n');
+    for (var i = 0; i < rows.length; i += 1) {
+        splited.push(rows[i].split(' '));
+    }
+    return splited;
+}
+
+// Segment 2: Main function to process input and calculate total sum
+// Precondition: `input` is a string formatted with the first line containing three numbers separated by spaces, followed by lines of integers.
+// Postcondition: Logs the sum of all integers from 1 to `n` (inclusive) that have a digit sum between `a` and `b` (inclusive).
+function Main(input) {
+    var splited = spilitInput(input);
+
+    // Precondition: `splited` is a 2D array with the first row containing at least three elements.
+    // Postcondition: `n`, `a`, and `b` are assigned integer values from the first row of `splited`.
+    var n = parseInt(splited[0][0], 10);
+    var a = parseInt(splited[0][1], 10);
+    var b = parseInt(splited[0][2], 10);
+
+    var s_total = 0;
+
+    // Precondition: `n`, `a`, and `b` are integers.
+    // Postcondition: `s_total` is the sum of all integers from 1 to `n` whose digit sum is between `a` and `b`.
+    for (var i = 1; i <= n; i += 1) {
+        var sum = 0;
+        
+        // Precondition: `i` is an integer from 1 to `n`.
+        // Postcondition: `sum` is the sum of the digits of `i`.
+        String(i).split('').forEach(function(i_n) {
+            sum += parseInt(i_n, 10);
+        });
+
+        // Precondition: `sum` is the sum of the digits of `i`.
+        // Postcondition: If `sum` is between `a` and `b` (inclusive), `i` is added to `s_total`.
+        if (a <= sum && sum <= b) {
+            s_total += i;
+        }
+    }
+
+    // Precondition: `s_total` is the calculated sum.
+    // Postcondition: Outputs the value of `s_total`.
+    console.log(s_total);
+}
+
+// Input format: A single string read from stdin, where the first line contains three integers separated by spaces (n, a, b).
+// Output format: A single integer representing the sum of all integers from 1 to `n` whose digit sum is between `a` and `b`.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

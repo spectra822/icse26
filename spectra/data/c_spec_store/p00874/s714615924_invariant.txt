@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: Each test case consists of two integers `w` and `d` followed by `w` integers and `d` integers.
+    // The input ends with a pair of zeros `0 0`.
+    // Output format: For each test case, print a single integer on a new line.
+    // Precondition: The variables `w` and `d` are non-negative integers, and the subsequent integers are non-negative and less than or equal to 20.
+    // Postcondition: For each test case, the program calculates and prints the sum of the maximum counts of each number from 1 to 20 in the two arrays multiplied by their respective values.
+```

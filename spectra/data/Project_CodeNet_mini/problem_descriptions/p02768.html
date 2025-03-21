@@ -1,0 +1,65 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Akari has <var>n</var> kinds of flowers, one of each kind.</p>
+<p>She is going to choose one or more of these flowers to make a bouquet.</p>
+<p>However, she hates two numbers <var>a</var> and <var>b</var>, so the number of flowers in the bouquet cannot be <var>a</var> or <var>b</var>.</p>
+<p>How many different bouquets are there that Akari can make?</p>
+<p>Find the count modulo <var>(10^9 + 7)</var>.</p>
+<p>Here, two bouquets are considered different when there is a flower that is used in one of the bouquets but not in the other bouquet.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>2 \leq n \leq 10^9</var></li>
+<li><var>1 \leq a &lt; b \leq \textrm{min}(n, 2 \times 10^5)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>n</var> <var>a</var> <var>b</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of bouquets that Akari can make, modulo <var>(10^9 + 7)</var>. (If there are no such bouquets, print <code>0</code>.)</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 1 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>7
+</pre>
+<p>In this case, Akari can choose <var>2</var> or <var>4</var> flowers to make the bouquet.</p>
+<p>There are <var>6</var> ways to choose <var>2</var> out of the <var>4</var> flowers, and <var>1</var> way to choose <var>4</var>, so there are a total of <var>7</var> different bouquets that Akari can make.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1000000000 141421 173205
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>34076506
+</pre>
+<p>Print the count modulo <var>(10^9 + 7)</var>.</p></section>
+</div>
+</span>

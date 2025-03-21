@@ -1,0 +1,8 @@
+Input:
+3 2005
+2010 alice
+2003 bob
+2005 charlie
+
+Output:
+charlie

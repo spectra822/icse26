@@ -1,0 +1,17 @@
+```
+int in()
+    // Precondition: The input is available from the standard input stream.
+    // Postcondition: An integer value is read from the input and returned. If the input starts with a '-', the returned integer is negative.
+
+int cmp(T *a, T *b)
+    // Precondition: The pointers `a` and `b` point to valid `T` structures.
+    // Postcondition: Returns 0 if the ratio `r` of both structures is approximately equal (within a small epsilon), 1 if `b->r` is greater than `a->r`, and -1 otherwise.
+
+int main()
+    // Input format: 
+    //   The first line contains two integers `N` and `W`.
+    //   The next `N` lines each contain two integers `w` and `v`.
+    // Output format: A single floating-point number with up to 6 decimal places.
+    // Precondition: The global array `tbl` has been declared and the function `in` is available to read integers from input.
+    // Postcondition: The maximum value that can be obtained with the given constraints is printed.
+```

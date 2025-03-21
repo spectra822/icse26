@@ -1,0 +1,66 @@
+
+
+
+<h1>String Compression</h1>
+
+<h2>Problem</h2>
+<p>
+アルファベットの小文字と数字からなる文字列 <var>S</var> が与えられる。次の手順で文字列 <var>S</var> の長さを圧縮する。
+</p>
+
+<ol>
+<li>文字列内の文字の順番を任意の順番に入れ替える。<br>
+例: "0ig3he12fz99" &rarr; "efghiz012399"</li>
+<li>次の操作を任意の回数行う。</li>
+</ol>
+
+<ul style="margin: 0 0 0 2em">
+<li>文字列内にある、"abcdefghijklmnopqrstuvwxyz"の連続した部分文字列を選び、(先頭の文字)'-'(末尾の文字)に置き換える。<br>
+例: "efghiz012399" &rarr; "e-iz012399"</li>
+<li>文字列内にある、公差が1であるような数字列("0123456789"の連続した部分文字列)を選び、(先頭の数字)'-'(末尾の数字)に置き換える。<br>
+例: "e-iz012399" &rarr; "e-iz0-399"</li>
+</ul>
+
+<br>
+
+<p>
+文字列 <var>S</var> を圧縮して得られる文字列の長さの最小値を求めよ。
+</p>
+
+<h2>Input</h2>
+<p>
+文字列 <var>S</var> が１行で与えられる。
+</p>
+
+<h2>Constraints</h2>
+
+<ul>
+<li>1 &le; |<var>S</var>| &le; 100</li>
+<li>文字列<var>S</var>はアルファベットの小文字と数字のみを含む
+</li>
+</ul>
+
+<h2>Output</h2>
+<p>
+文字列 <var>S</var> を圧縮して得られる文字列の長さの最小値を1行に出力せよ。圧縮できない場合は元の文字列 <var>S</var> の長さを出力せよ。
+</p>
+
+<h2>Sample Input 1</h2>
+<pre>
+0ig3he12fz99
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+9
+</pre>
+
+<h2>Sample Input 2</h2>
+<pre>
+1122334455
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+6
+</pre>

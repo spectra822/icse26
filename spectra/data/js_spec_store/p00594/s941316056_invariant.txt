@@ -1,0 +1,38 @@
+// Segment 1: Reading input and initializing variables
+// Precondition: The input is provided as a string through the standard input.
+// Postcondition: `arr` contains the input split into an array of strings, and `input` contains the entire input string.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Segment 2: Processing each test case
+// Precondition: `arr` contains the input lines split into an array of strings.
+// Postcondition: For each test case, the majority element is printed if it exists, otherwise "NO COLOR" is printed.
+// Input format: Each test case starts with an integer n, followed by a line with n integers. The sequence ends with a 0.
+while (true) {
+    var n = arr.shift() - 0;
+    if (n === 0) break;
+    
+    // Segment 3: Processing the array and counting frequencies
+    // Precondition: `n` is a positive integer and `arr` contains the next line of integers.
+    // Postcondition: `obj` contains the frequency count of each integer in the current array.
+    var ary = arr.shift().split(" ").map(Number);
+    var obj = {};
+    ary.forEach(function(v) {
+        if (obj.hasOwnProperty(v) == false) obj[v] = 1;
+        else obj[v]++;
+    });
+
+    // Segment 4: Determining the majority element
+    // Precondition: `obj` contains the frequency count of each integer in the array.
+    // Postcondition: The majority element is determined and stored in `ans`, or "NO COLOR" if no majority element exists.
+    var ans = "NO COLOR";
+    for (var k in obj) {
+        if (obj[k] > n / 2) ans = k;
+    }
+
+    // Segment 5: Output the result
+    // Precondition: `ans` contains the result for the current test case.
+    // Postcondition: The result is printed to the standard output.
+    // Output format: The result for each test case is printed on a new line.
+    console.log(ans);
+}

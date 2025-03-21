@@ -1,0 +1,85 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given an undirected connected weighted graph with <var>N</var> vertices and <var>M</var> edges that contains neither self-loops nor double edges.<br/>
+The <var>i</var>-th <var>(1≤i≤M)</var> edge connects vertex <var>a_i</var> and vertex <var>b_i</var> with a distance of <var>c_i</var>.<br/>
+Here, a <em>self-loop</em> is an edge where <var>a_i = b_i (1≤i≤M)</var>, and <em>double edges</em> are two edges where <var>(a_i,b_i)=(a_j,b_j)</var> or <var>(a_i,b_i)=(b_j,a_j) (1≤i&lt;j≤M)</var>.<br/>
+A <em>connected graph</em> is a graph where there is a path between every pair of different vertices.<br/>
+Find the number of the edges that are not contained in any shortest path between any pair of different vertices.  </p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2≤N≤100</var> </li>
+<li><var>N-1≤M≤min(N(N-1)/2,1000)</var> </li>
+<li><var>1≤a_i,b_i≤N</var> </li>
+<li><var>1≤c_i≤1000</var></li>
+<li><var>c_i</var> is an integer.</li>
+<li>The given graph contains neither self-loops nor double edges.</li>
+<li>The given graph is connected.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>  
+<var>a_1</var> <var>b_1</var> <var>c_1</var>  
+<var>a_2</var> <var>b_2</var> <var>c_2</var>
+<var>:</var>  
+<var>a_M</var> <var>b_M</var> <var>c_M</var>  
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of the edges in the graph that are not contained in any shortest path between any pair of different vertices.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3
+1 2 1
+1 3 1
+2 3 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>In the given graph, the shortest paths between all pairs of different vertices are as follows:</p>
+<ul>
+<li>The shortest path from vertex <var>1</var> to vertex <var>2</var> is: vertex <var>1</var> → vertex <var>2</var>, with the length of <var>1</var>.</li>
+<li>The shortest path from vertex <var>1</var> to vertex <var>3</var> is: vertex <var>1</var> → vertex <var>3</var>, with the length of <var>1</var>.</li>
+<li>The shortest path from vertex <var>2</var> to vertex <var>1</var> is: vertex <var>2</var> → vertex <var>1</var>, with the length of <var>1</var>.</li>
+<li>The shortest path from vertex <var>2</var> to vertex <var>3</var> is: vertex <var>2</var> → vertex <var>1</var> → vertex <var>3</var>, with the length of <var>2</var>.</li>
+<li>The shortest path from vertex <var>3</var> to vertex <var>1</var> is: vertex <var>3</var> → vertex <var>1</var>, with the length of <var>1</var>.</li>
+<li>The shortest path from vertex <var>3</var> to vertex <var>2</var> is: vertex <var>3</var> → vertex <var>1</var> → vertex <var>2</var>, with the length of <var>2</var>.</li>
+</ul>
+<p>Thus, the only edge that is not contained in any shortest path, is the edge of length <var>3</var> connecting vertex <var>2</var> and vertex <var>3</var>, hence the output should be <var>1</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+1 2 1
+2 3 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>Every edge is contained in some shortest path between some pair of different vertices.</p></section>
+</div>
+</span>

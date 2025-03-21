@@ -1,0 +1,7 @@
+// Read input from standard input, split by newlines, and convert each line into a number paired with its index
+const arr = require('fs').readFileSync('/dev/stdin', 'utf8').split('\n').map((n, i) => [Number(n), i]);
+
+// Process each element in the array until a zero is encountered
+while (([n, i] = arr.shift())[0] !== 0)
+    // Print the case number and the associated number
+    console.log(`Case ${i+1}: ${n}`);

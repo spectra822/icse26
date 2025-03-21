@@ -1,0 +1,27 @@
+// Load input data from standard input and parse it
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Extract the first line which contains n and m
+var nm = arr.shift().split(" ").map(Number);
+var n = nm[0];
+
+// Initialize the maximum value to 0
+var max = 0;
+
+// Process each subsequent line, calculate the difference from `n`, and update the maximum value
+arr = arr.map(function(v) {
+    var ab = v.split(" ").map(Number);
+    // Calculate the difference between `n` and the first value of the pair
+    max = Math.max(max, n - ab[0]);
+    // Return the maximum of 0 and the difference calculated
+    return Math.max(0, n - ab[0]);
+});
+
+// Calculate the sum of all differences
+var sum = arr.reduce(function(a, b) {
+    return a + b;
+});
+
+// Output the result after subtracting the maximum value from the sum
+console.log(sum - max);

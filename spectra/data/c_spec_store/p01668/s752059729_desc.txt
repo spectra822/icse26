@@ -1,0 +1,31 @@
+```c
+// Global variables
+int N, M;
+int existPos;
+char A[10240];
+char B[10240];
+char C[512];
+int memo[10002][502][2][2];
+int numberOfNumber[10002][2][2];
+
+// Given two integers `a` and `b`, return their sum modulo MOD_BY.
+// If the sum exceeds MOD_BY, subtract MOD_BY from the result.
+int add(int a, int b)
+    // No calls to other functions
+
+// Given a position `pos`, flags `ueFlag` and `sitaFlag`,
+// return the number of valid numbers that can be formed from the given position
+// to the end of the sequence.
+int getNumberOfNumber(int pos, int ueFlag, int sitaFlag)
+    Calls add(...), getNumberOfNumber(...)
+
+// Given a position `pos`, a sequence position `seqPos`, flags `ueFlag` and `sitaFlag`,
+// search for the number of valid sequences that match the given criteria.
+int search(int pos, int seqPos, int ueFlag, int sitaFlag)
+    Calls add(...), getNumberOfNumber(...), search(...)
+
+// The main function reads the input strings A, B, and C,
+// processes them, and then prints the result of the search function.
+int main(void)
+    Calls search(...)
+```

@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: The input consists of two integers `a` and `p`, separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The program expects two integers to be provided via standard input.
+    // Postcondition: The program prints the integer result of the expression `((a*3)+p)/2`.
+```

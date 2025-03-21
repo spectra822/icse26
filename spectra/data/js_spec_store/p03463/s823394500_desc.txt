@@ -1,0 +1,26 @@
+// Import the 'fs' module and read input from standard input (stdin)
+const input = require("fs").readFileSync("/dev/stdin", "utf8")
+
+// Main function to process the input and determine the winner
+;
+(input => {
+
+    // Split the input into lines and extract the values of N, A, and B
+    const lines = input.split('\n')
+    const [N, A, B] = lines[0].split(' ').map(Number)
+
+    // Calculate the absolute difference between A and B
+    const diff = Math.abs(A - B)
+
+    // Determine the winner based on whether the difference is odd or even
+    console.log(diff % 2 ? 'Borys' : 'Alice')
+
+})(input)
+   const input = require("fs").readFileSync("/dev/stdin", "utf8")
+   ;
+   (input => {
+   const lines = input.split('\n')
+   const [N, A, B] = lines[0].split(' ').map(Number)
+   const diff = Math.abs(A - B)
+   console.log(diff % 2 ? 'Borys' : 'Alice')
+   })(input)

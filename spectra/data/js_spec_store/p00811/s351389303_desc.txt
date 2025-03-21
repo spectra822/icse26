@@ -1,0 +1,52 @@
+// Function to generate all prime numbers up to a given maximum using the Sieve of Eratosthenes
+function prime(max) {
+    var arr = [];
+    for (var i = 0; i <= max; i++) arr[i] = i;
+    arr[0] = false;
+    arr[1] = false;
+    var sqrt = Math.floor(Math.sqrt(max));
+    for (var i = 2; i <= sqrt; i++) {
+        if (arr[i] == false) continue;
+        for (var j = i + i; j <= max; j += i) {
+            arr[j] = false;
+        }
+    }
+    var result = [];
+    for (var i = 0; i <= max; i++) {
+        if (arr[i] !== false) result.push(arr[i]);
+    }
+    return result;
+}
+
+// Generate prime numbers up to 100000 and store them in the PRIME array
+var PRIME = prime(100000);
+
+// Read input from standard input, split by lines, and process each line
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Process each line of input until "0 0 0" is encountered
+arr.some(function(v) {
+    if (v == "0 0 0") return true;
+    
+    // Parse the input values m, a, and b
+    var mab = v.split(" ").map(Number);
+    var m = mab[0];
+    var a = mab[1];
+    var b = mab[2];
+    
+    // Initialize the answer as an array of three zeros
+    var ans = [0, 0, 0];
+    
+    // Find the primes p and q such that p * q <= m and a * q <= b * p, maximizing p * q
+    for (var p = 0; p < PRIME.length; p++) {
+        for (var q = p; q < PRIME.length; q++) {
+            var pq = PRIME[p] * PRIME[q];
+            if (pq > m) break;
+            if (PRIME[q] * a <= PRIME[p] * b && ans[2] < pq) ans = [PRIME[p], PRIME[q], pq]
+        }
+    }
+    
+    // Print the result primes p and q
+    console.log(ans[0] + " " + ans[1]);
+});

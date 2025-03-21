@@ -1,0 +1,12 @@
+```
+// Global variables
+#define MAX 100
+
+// The main function reads strings from standard input until EOF is encountered.
+// For each string, it processes the string to expand any '@' followed by a digit and a character
+// into the character repeated digit times. The result is printed to standard output.
+int main(void)
+    Calls strlen(...)
+    Calls scanf(...)
+    Calls printf(...)
+```

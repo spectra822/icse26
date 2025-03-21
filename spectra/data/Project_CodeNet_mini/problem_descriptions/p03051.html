@@ -1,0 +1,99 @@
+<span class="lang-en">
+<p>Score : <var>800</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>The <em>beauty</em> of a sequence <var>a</var> of length <var>n</var> is defined as <var>a_1 \oplus \cdots \oplus a_n</var>, where <var>\oplus</var> denotes the bitwise exclusive or (XOR).</p>
+<p>You are given a sequence <var>A</var> of length <var>N</var>.
+Snuke will insert zero or more partitions in <var>A</var> to divide it into some number of non-empty contiguous subsequences.</p>
+<p>There are <var>2^{N-1}</var> possible ways to insert partitions.
+How many of them divide <var>A</var> into sequences whose beauties are all equal? Find this count modulo <var>10^{9}+7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 5 \times 10^5</var></li>
+<li><var>0 \leq A_i &lt; 2^{20}</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>\ldots</var> <var>A_{N}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the answer.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1 2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>3
+</pre>
+<p>Four ways of dividing <var>A</var> shown below satisfy the condition. The condition is not satisfied only if <var>A</var> is divided into <var>(1),(2),(3)</var>.</p>
+<ul>
+<li><var>(1,2,3)</var></li>
+<li><var>(1),(2,3)</var></li>
+<li><var>(1,2),(3)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+1 2 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>32
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>147483634
+</pre>
+<p>Find the count modulo <var>10^{9}+7</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>24
+1 2 5 3 3 6 1 1 8 8 0 3 3 4 6 6 4 0 7 2 5 4 6 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>292
+</pre></section>
+</div>
+</span>

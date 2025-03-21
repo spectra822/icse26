@@ -1,0 +1,59 @@
+// Segment 1: Function Definition and Input Reading
+
+// Precondition: The program is executed in an environment where 'fs' module is available.
+// Postcondition: The 'main' function is defined and the input is read from '/dev/stdin'.
+
+function main(input) {
+    // Segment 2: Input Processing
+
+    // Precondition: 'input' is a string representing the input read from '/dev/stdin'.
+    // Postcondition: 'S' is an array of individual characters from the input string.
+    
+    const S = input.toString().split('');
+    
+    // Segment 3: Initialization of Result Array
+
+    // Precondition: 'S' is an array of characters.
+    // Postcondition: 'result' is initialized as an empty array.
+    
+    let result = [];
+    
+    // Segment 4: Processing Each Character in the Input Array
+
+    // Precondition: 'result' is an empty array and 'S' is an array of characters.
+    // Postcondition: 'result' contains the processed characters based on the rules defined in the switch case.
+
+    for (let i = 0; i < S.length; i++) {
+        switch (S[i]) {
+            case '0':
+                result.push('0');
+                break;
+            case '1':
+                result.push('1');
+                break;
+            case 'B':
+                if (result.length > 0) {
+                    result.pop();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    
+    // Segment 5: Output the Result
+
+    // Precondition: 'result' is an array of characters after processing the input.
+    // Postcondition: The joined string of 'result' is printed to the console.
+    // Input format: The input is a single string containing characters '0', '1', and 'B' without spaces.
+    // Output format: A single string containing the processed characters is printed.
+
+    console.log(result.join(''));
+}
+
+// Segment 6: Invocation of Main Function
+
+// Precondition: The 'main' function is defined.
+// Postcondition: The 'main' function is executed with the input read from '/dev/stdin'.
+
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

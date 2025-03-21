@@ -1,0 +1,16 @@
+// Main function that processes the input and determines if the number contains a '9' in the first two characters
+const main = stdin => {
+    // Read and parse the input
+    const input = stdin.trim().split('\n')
+    const N = input[0]
+
+    // Check if the first or second character of the string is '9'
+    if (N[0] === '9' || N[1] === '9') {
+        console.log('Yes')
+    } else {
+        console.log('No')
+    }
+}
+
+// Read the input from standard input and pass it to the main function
+main(require("fs").readFileSync("/dev/stdin", "utf8"))

@@ -1,0 +1,43 @@
+// Segment 1: Main Function Declaration
+// Precondition: The Main function is defined and expects a single string input which represents the content of a text file or standard input.
+// Postcondition: The Main function is defined and ready to be invoked with an appropriate input string.
+
+function Main(input) {
+    // Segment 2: Input Processing
+    // Precondition: The input is a single string with lines separated by newline characters.
+    // Postcondition: The input string is split into an array of strings, with each element representing a line from the input.
+    input = input.split("\n");
+    
+    // Segment 3: Extracting and Analyzing Last Character
+    // Precondition: The input array is not empty. The first element of the input array (input[0]) is a string representation of a number.
+    // Postcondition: The last character of the first element of the input array is extracted and stored in 'n'.
+    const N = input[0];
+    const n = N[N.length - 1];
+
+    // Segment 4: Conditional Output Based on Last Character
+    // Precondition: The variable 'n' contains a single character string which is a digit ('0'-'9').
+    // Postcondition: Depending on the value of 'n', one of the following strings is logged to the console: 'bon', 'pon', or 'hon'.
+    if (n === '3') {
+        console.log('bon');
+    } else if (n === '0' || n === '1' || n === '6' || n === '8') {
+        console.log('pon');
+    } else {
+        console.log('hon');
+    }
+}
+
+// Segment 5: Debug Function Declaration
+// Precondition: The debug function is defined and expects no arguments. It is intended to be called in a browser environment where an HTML element with id 'input' exists.
+// Postcondition: The debug function is defined and ready to be invoked to test the Main function with user-provided input from an HTML element.
+function debug() {
+    // Segment 6: Debug Function Input Handling
+    // Precondition: The HTML document contains an element with the id 'input' and its value is a string representing the input.
+    // Postcondition: The value of the 'input' element is passed to the Main function.
+    var input = document.getElementById("input").value;
+    Main(input);
+}
+
+// Segment 7: Main Function Invocation
+// Precondition: The script is executed in an environment where the 'fs' module is available, and an appropriate input file or standard input is provided.
+// Postcondition: The Main function is invoked with the content read from '/dev/stdin' as its argument.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

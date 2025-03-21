@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Two integers `a` and `b`, separated by a space.
+    // Output format: A single integer, representing the result of the expression `a - 2 * b` if positive, otherwise 0.
+    // Precondition: `a` and `b` are integers.
+    // Postcondition: The output is the result of the expression `a - 2 * b` if it is greater than 0, otherwise 0.
+```

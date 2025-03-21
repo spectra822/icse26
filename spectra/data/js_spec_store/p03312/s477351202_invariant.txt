@@ -1,0 +1,72 @@
+// Segment 1: Initial Setup and Parsing Input
+// Precondition: The input string `s` is provided in a specific format.
+//               The first line contains an integer `n` (number of elements).
+//               The second line contains `n` space-separated integers.
+// Postcondition: The input string is split into lines and parsed into integers.
+//                `n` holds the number of elements, and `a` is an array of integers parsed from the second line.
+
+function Main(s) {
+    s = s.split("\n");
+    var n = +s[0];
+    var a = s[1].split(" ").map(a => +a);
+
+    // Segment 2: Initialize Array `b` and Compute Prefix Sums
+    // Precondition: `n` is the number of elements, and `a` is an array of `n` integers.
+    // Postcondition: `b` is an array where `b[i]` is the sum of the first `i+1` elements of `a`.
+    //                The last element of `b` is the total sum of the array `a`.
+    var b = [];
+    b[n - 1] = a.reduce((a, z, i) => {
+        b[i - 1] = a;
+        return a + z;
+    });
+
+    // Segment 3: Initialize the `ans` Variable for Storing the Minimum Difference
+    // Precondition: `b` is an array of prefix sums.
+    // Postcondition: `ans` is initialized to a very large number (9e9) to find the minimum difference.
+    var ans = 9e9;
+
+    // Segment 4: Iterate Over Possible Partition Points
+    // Precondition: `b` is an array of prefix sums, `ans` is a large number.
+    // Postcondition: The minimum difference between the maximum and minimum sums of the four partitions is computed.
+    for (var i = 2; i < n - 1; i++) {
+        var sl = b[i - 1] / 2,
+            sr = (b[n - 1] + b[i - 1]) / 2;
+        var l = lower_bound(b, 1, i - 1, sl);
+        var r = lower_bound(b, i + 1, n - 1, sr);
+        var m = [b[l - 1], b[i - 1] - b[l - 1], b[r - 1] - b[i - 1], b[n - 1] - b[r - 1]];
+        ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+        if (i - l > 1) {
+            m = [b[l], b[i - 1] - b[l], b[r - 1] - b[i - 1], b[n - 1] - b[r - 1]];
+            ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+            if (n - r > 1) {
+                m = [b[l], b[i - 1] - b[l], b[r] - b[i - 1], b[n - 1] - b[r]];
+                ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+            }
+        }
+        if (n - r > 1) {
+            m = [b[l - 1], b[i - 1] - b[l - 1], b[r] - b[i - 1], b[n - 1] - b[r]];
+            ans = Math.min(ans, Math.max(...m) - Math.min(...m));
+        }
+    }
+
+    // Segment 5: Output the Result
+    // Precondition: `ans` holds the minimum difference between the maximum and minimum sums of the four partitions.
+    // Postcondition: The minimum difference is printed to the console.
+    // Output format: A single integer representing the minimum difference.
+    console.log(ans);
+}
+
+// Segment 6: Helper Function for Binary Search
+// Precondition: `d` is an array of numbers, `a` and `b` are integer indices, and `e` is a number to find the lower bound for.
+// Postcondition: Returns the index of the smallest number in `d` that is not less than `e`.
+// This function is used to find the partition points.
+function lower_bound(d, a, b, e) {
+    for (var c; 1 < b - a;) d[c = 0 | (a + b) / 2] < e ? a = c : b = c;
+    return d[a] < e ? b : a;
+}
+
+// Read input from stdin and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+5
+3 2 4 1 2
+2

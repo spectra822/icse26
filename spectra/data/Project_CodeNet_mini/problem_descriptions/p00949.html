@@ -1,0 +1,98 @@
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], processEscapes: true }});
+</script>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</script>
+
+
+<h2>Problem D
+Hidden Anagrams
+</h2>
+
+<p>
+An <i>anagram</i> is a word or a phrase that is formed by rearranging the letters of another. For instance, by rearranging the letters of "William Shakespeare," we can have its anagrams "I am a weakish speller," "I'll make a wise phrase," and so on. Note that when $A$ is an anagram of $B$, $B$ is an anagram of $A$.
+</p>
+
+<p>
+In the above examples, differences in letter cases are ignored, and word spaces and punctuation symbols are freely inserted and/or removed. These rules are common but not applied here; only exact matching of the letters is considered.
+</p>
+
+<p>
+For two strings $s_1$ and $s_2$ of letters, if a substring $s'_1$ of $s_1$ is an anagram of a substring $s'_2$ of $s_2$, we call $s'_1$ a <i>hidden anagram</i> of the two strings, $s_1$ and $s_2$. Of course, $s'_2$ is also a <i>hidden anagram</i> of them.
+</p>
+
+<p>
+Your task is to write a program that, for given two strings, computes the length of the longest hidden anagrams of them.
+</p>
+
+<p>
+Suppose, for instance, that "anagram" and "grandmother" are given. Their substrings "nagr" and "gran" are hidden anagrams since by moving letters you can have one from the other. They are the longest since any substrings of "grandmother" of lengths five or more must contain "d" or "o" that "anagram" does not. In this case, therefore, the length of the longest hidden anagrams is four. Note that a substring must be a sequence of letters occurring <i>consecutively</i> in the original string and so "nagrm" and "granm" are not hidden anagrams.
+</p>
+
+
+<h3>Input</h3>
+
+<p>
+The input consists of a single test case in two lines.<br/>
+<br/>
+$s_1$<br/>
+$s_2$<br/>
+</p>
+
+<p>
+$s_1$ and $s_2$ are strings consisting of lowercase letters (a through z) and their lengths are between 1 and 4000, inclusive.
+</p>
+
+
+<h3>Output</h3>
+
+<p>
+Output the length of the longest hidden anagrams of $s_1$ and $s_2$. If there are no hidden anagrams, print a zero.
+</p>
+
+
+<h3>Sample Input 1</h3>
+
+<pre>anagram
+grandmother</pre>
+
+<h3>Sample Output 1</h3>
+
+<pre>4</pre>
+
+<br/>
+
+<h3>Sample Input 2</h3>
+
+<pre>williamshakespeare
+iamaweakishspeller</pre>
+
+<h3>Sample Output 2</h3>
+
+<pre>18</pre>
+
+<br/>
+
+<h3>Sample Input 3</h3>
+
+<pre>aaaaaaaabbbbbbbb
+xxxxxabababxxxxxabab</pre>
+
+<h3>Sample Output 3</h3>
+
+<pre>6</pre>
+
+<br/>
+
+<h3>Sample Input 4</h3>
+
+<pre>abababacdcdcd
+efefefghghghghgh</pre>
+
+<h3>Sample Output 4</h3>
+
+<pre>0</pre>
+
+
+

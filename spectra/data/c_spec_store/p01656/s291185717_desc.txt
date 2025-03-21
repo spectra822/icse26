@@ -1,0 +1,14 @@
+```c
+// Global variables
+char names[50][32] = {"kogakubu10gokan"};
+char* answer = names[0];
+
+// Main function that reads input, processes the data, and prints the result.
+// It reads the number of names `N` and a threshold year `Q`.
+// Then, for each name, it reads the associated year and the name itself.
+// If the year is less than or equal to `Q`, it updates the answer to the name read.
+// Finally, it prints the selected name.
+int main(void)
+  Calls puts(...)
+  Calls scanf(...)
+```

@@ -1,0 +1,23 @@
+```c
+// Global variables
+int H, W;
+char S[512][512];
+int group[512][512];
+int count[512 * 512][2];
+
+// Perform a depth-first search (DFS) to group connected components in a grid.
+// Given the current position (y, x) and a group identifier `mikisinn`,
+// mark all connected cells with the same group identifier.
+// Only move to adjacent cells that have different characters.
+void dfs(int y, int x, int mikisinn)
+    Calls dfs(...)
+
+// This function reads the dimensions of the grid `H` and `W`,
+// and then reads the grid itself from the input.
+// It uses DFS to find connected components of different characters
+// and assigns a unique group identifier to each component.
+// It then counts the number of '.' and '#' in each group and calculates a result based on these counts.
+// Finally, it prints the result.
+int main(void)
+    Calls dfs(...)
+```

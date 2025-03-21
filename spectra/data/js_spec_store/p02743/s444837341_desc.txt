@@ -1,0 +1,20 @@
+// Function definition for the main logic
+function Main(input) {
+    // Split the input into lines
+    input = input.split("\n");
+
+    // Parse the first line into three BigInt variables a, b, and c
+    let a = BigInt(input[0].split(" ")[0]);
+    let b = BigInt(input[0].split(" ")[1]);
+    let c = BigInt(input[0].split(" ")[2]);
+
+    // Calculate the value of the expression: a^2 + b^2 + c^2 - 2ab - 2bc - 2ca
+    let num = a ** 2n + b ** 2n + c ** 2n - (2n * a * b) - (2n * b * c) - (2n * c * a);
+
+    // Check the conditions and print "Yes" or "No" based on the result
+    if ((c - a - b) > 0 && num > 0) console.log("Yes");
+    else console.log("No");
+}
+
+// Read input from standard input and call the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

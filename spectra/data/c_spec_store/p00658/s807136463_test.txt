@@ -1,0 +1,17 @@
+Input:
+5 5
+#####
+#S..#
+#...#
+#..G#
+#####
+5
+MOVETO 3
+PUSH L
+MOVETO 4
+GETDOWN R
+CLIMB R
+0 0
+
+Output:
+Game Over : Gave Up

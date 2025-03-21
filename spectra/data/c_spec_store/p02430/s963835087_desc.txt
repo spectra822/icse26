@@ -1,0 +1,26 @@
+```c
+// Global variables
+#define BUF_SIZE 20
+#define DIVISOR 1000000007
+
+// Reads a string from standard input into the provided buffer `str` of size `size`.
+// Returns 0 on success, -1 on failure.
+int get_str(char *str, int size)
+
+// Reads an integer from standard input and returns it.
+// Uses a buffer of size BUF_SIZE to read the input.
+int get_int(void)
+
+// Reads two integers from standard input into the provided pointers `a1` and `a2`.
+// Uses a buffer of size BUF_SIZE to read the input.
+// Returns 0 on success, -1 on failure.
+int get_int2(int *a1, int *a2)
+
+
+// This function reads two integers `n` and `k` from standard input.
+// It then iterates through all integers `pat` from 0 to (1<<n) - 1,
+// and for each `pat` that has exactly `k` bits set, it prints `pat` followed
+// by the positions of the set bits.
+int main(void)
+  Calls get_int2(...)
+```

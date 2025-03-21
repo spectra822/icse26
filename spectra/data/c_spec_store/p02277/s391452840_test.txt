@@ -1,0 +1,17 @@
+Input:
+6
+H 4
+C 9
+S 4
+D 2
+C 3
+H 9
+
+Output:
+Not stable
+D 2
+C 3
+S 4
+H 4
+C 9
+H 9

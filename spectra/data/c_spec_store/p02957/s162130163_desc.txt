@@ -1,0 +1,10 @@
+```c
+// Global variables
+// No global variables
+
+// This is the main function that reads two long integers `a` and `b` from the input. 
+// It checks if the sum of `a` and `b` is odd. If the sum is odd, it prints "IMPOSSIBLE" and exits.
+// If the sum is even, it prints the integer division of (a + b) by 2.
+int main()
+    Calls no other functions
+```

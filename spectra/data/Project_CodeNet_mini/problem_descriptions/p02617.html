@@ -1,0 +1,102 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a tree with <var>N</var> vertices and <var>N-1</var> edges, respectively numbered <var>1, 2,\cdots, N</var> and <var>1, 2, \cdots, N-1</var>. Edge <var>i</var> connects Vertex <var>u_i</var> and <var>v_i</var>.</p>
+<p>For integers <var>L, R</var> (<var>1 \leq L \leq R \leq N</var>), let us define a function <var>f(L, R)</var> as follows:</p>
+<ul>
+<li>Let <var>S</var> be the set of the vertices numbered <var>L</var> through <var>R</var>. <var>f(L, R)</var> represents the number of connected components in the subgraph formed only from the vertex set <var>S</var> and the edges whose endpoints both belong to <var>S</var>.</li>
+</ul>
+<p>Compute <var>\sum_{L=1}^{N} \sum_{R=L}^{N} f(L, R)</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li><var>1 \leq u_i, v_i \leq N</var></li>
+<li>The given graph is a tree.</li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>u_1</var> <var>v_1</var>
+<var>u_2</var> <var>v_2</var>
+<var>:</var>
+<var>u_{N-1}</var> <var>v_{N-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <var>\sum_{L=1}^{N} \sum_{R=L}^{N} f(L, R)</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1 3
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>7
+</pre>
+<p>We have six possible pairs <var>(L, R)</var> as follows:</p>
+<ul>
+<li>For <var>L = 1, R = 1</var>, <var>S = \{1\}</var> and we have <var>1</var> connected component.</li>
+<li>For <var>L = 1, R = 2</var>, <var>S = \{1, 2\}</var> and we have <var>2</var> connected components.</li>
+<li>For <var>L = 1, R = 3</var>, <var>S = \{1, 2, 3\}</var> and we have <var>1</var> connected component, since <var>S</var> contains both endpoints of each of the edges <var>1, 2</var>.</li>
+<li>For <var>L = 2, R = 2</var>, <var>S = \{2\}</var> and we have <var>1</var> connected component.</li>
+<li>For <var>L = 2, R = 3</var>, <var>S = \{2, 3\}</var> and we have <var>1</var> connected component, since <var>S</var> contains both endpoints of Edge <var>2</var>.</li>
+<li>For <var>L = 3, R = 3</var>, <var>S = \{3\}</var> and we have <var>1</var> connected component.</li>
+</ul>
+<p>The sum of these is <var>7</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>2
+1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10
+5 3
+5 7
+8 9
+1 9
+9 10
+8 4
+7 4
+6 10
+7 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>113
+</pre></section>
+</div>
+</span>

@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A string `S` of up to 10 characters is provided as input.
+    // Output format: A string `ans` is printed.
+    // Precondition: The input string `S` is a sequence of characters including 'B' and other printable characters, and its length is at most 10.
+    // Postcondition: The output string `ans` is printed, which is derived from `S` by interpreting 'B' as a backspace character, removing the character before it if there is one.
+```

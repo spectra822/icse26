@@ -1,0 +1,79 @@
+<h1>Problem A: AOJ50M</h1>
+
+<h2>Problem</h2>
+<p>
+  AliceとBobが50m走で勝負しています。<br>
+  しかし、この世界においてはAOJのレートが高い方が偉いので、AOJのレートが高い方が勝ちます。<br>
+  どちらか一方でもAOJのレートが無い場合は比べようが無いので、仕方なく50m走のタイムで勝負します。この場合はタイムが短い方を勝ちとします。<br>
+  AOJのレートが同じ場合は引き分け、50m走のタイムで勝負しなければならない場合はタイムが同じなら引き分けです。<br>
+
+</p>
+
+<h2>Input</h2>
+<p>入力は以下の形式で与えられる。</p>
+<pre>
+$T_1$ $T_2$ $R_1$ $R_2$
+</pre>
+<p>
+  各要素が空白区切りで与えられる。<br>
+  $T_1,T_2$ はそれぞれAlice、Bobの50m走のタイムを、$R_1,R_2$ はそれぞれAlice、BobのAOJのレートを表す。<br>
+  ただし、$R_1=-1$ のときはAliceのレートがないことを、$R_2=-1$ のときはBobのレートがないことを示す。
+</p>
+
+<h2>Constraints</h2>
+<p>入力は以下の条件を満たす。</p>
+<ul>
+  <li>$1 \leq T_1,T_2 \lt 100 $</li>
+  <li>$-1 \leq R_1,R_2 \lt 2850 $</li>
+  <li>入力は全て整数である</li>
+</ul>
+
+
+
+<h2>Output</h2>
+<p>
+  Aliceが勝つならなら"Alice"を、Bobが勝つならなら"Bob"を、引き分けであれば"Draw"を$1$行に出力せよ。<br>
+</p>
+
+<h2>Sample Input 1</h2>
+<pre>
+9 8 1000 999
+</pre>
+
+<h2>Sample Output 1</h2>
+<pre>
+Alice
+</pre>
+
+<p>
+  Aliceの方がAOJのレートが高いため、Aliceの勝ちです。
+</p>
+
+
+<h2>Sample Input 2</h2>
+<pre>
+9 8 1000 1000
+</pre>
+
+<h2>Sample Output 2</h2>
+<pre>
+Draw
+</pre>
+<p>
+  AliceとBobのAOJのレートが同じため、引き分けです。この場合50m走の結果は関係がないことに注意してください。
+</p>
+
+
+<h2>Sample Input 3</h2>
+<pre>
+9 8 2849 -1
+</pre>
+
+<h2>Sample Output 3</h2>
+<pre>
+Bob
+</pre>
+
+<p>
+  Aliceのレートは高いですが、Bobのレートが無いため50m走のタイムが短いBobの勝ちです。
+</p>

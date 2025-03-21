@@ -1,0 +1,77 @@
+// Segment 1: Input Parsing and Initialization
+// Precondition: The input is a string of two integers separated by a space, followed by a newline.
+// Postcondition: The variables X and Y are initialized with integer values from the input. Constants C and C2 are also initialized.
+
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    var C = 1e+9 + 7;
+    var C2 = 1e+5;
+    var X = parseInt(input[0][0], 10);
+    var Y = parseInt(input[0][1], 10);
+    var ans = 0;
+
+    // Segment 2: Mathematical Calculation
+    // Precondition: X and Y are non-negative integers.
+    // Postcondition: The values of n, r, and r2 are calculated. If r and r2 are valid (non-negative integers), ans is updated.
+    
+    var n = (X + Y) / 3;
+    var r = (4 * X - 2 * Y) / 6;
+    var r2 = (4 * Y - 2 * X) / 6
+    if (r >= 0 && r2 >= 0 && Number.isInteger(r)) {
+        var tmp = nCr_amari(n, r, 1, C, C2);
+        ans = tmp[0];
+    }
+
+    // Segment 3: Output Result
+    // Precondition: ans has been calculated and is an integer.
+    // Postcondition: The value of ans is printed to the console.
+    // Output format: A single integer followed by a newline.
+
+    console.log(ans);
+}
+
+// Segment 4: Multiplication with Modulo
+// Precondition: a and b are integers, C and C2 are constants for modulo operations.
+// Postcondition: The result of (a * b) % C is returned, calculated using intermediate steps to avoid overflow.
+
+function kakeruR(a, b, C, C2) {
+    var tmpQ, tmpR, ans;
+    tmpQ = (b / C2 | 0);
+    tmpR = b - (tmpQ * C2);
+    ans = (a * tmpQ % C) * C2 % C + (a * tmpR);
+    ans %= C;
+    return ans;
+}
+
+// Segment 5: Combination Calculation with Modulo
+// Precondition: n and k are non-negative integers, MAX, MOD, and C2 are constants.
+// Postcondition: Returns an array of combination values calculated with modulo operations.
+
+function nCr_amari(n, k, MAX, MOD, C2) {  
+    var v_ans = [];
+    var fac, finv, inv;
+    fac = [1, 1];
+    finv = [1, 1];
+    inv = [0, 1];
+    for (var i = 2; i < MAX + n; i++) {
+        fac.push(fac[i - 1] * i % MOD);
+        inv.push(MOD - kakeruR(inv[MOD % i], (MOD / i | 0), MOD, C2) % MOD);
+        finv.push(kakeruR(finv[i - 1], inv[i], MOD, C2));
+    }
+     
+    if (n < k) return 0;
+    if (n < 0 || k < 0) return 0;
+    for (var i = 0; i < MAX; i++) {
+        v_ans.push(kakeruR(kakeruR(fac[n + i], finv[k + i], MOD, C2), finv[n - k], MOD, C2));
+    }
+    return v_ans;
+}
+
+// Segment 6: Program Entry Point
+// Precondition: The program reads input from stdin.
+// Postcondition: The input is passed to the Main function.
+// Input format: A single line with two integers separated by a space, followed by a newline.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

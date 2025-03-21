@@ -1,0 +1,13 @@
+```c
+// Global variables
+// None
+
+// This function reads input values for N and M, and then processes M constraints on an N-digit number.
+// It initializes an array `digit` to track the digits of the number, and then processes each constraint.
+// It finally calculates the number based on the constraints and handles special cases (like invalid constraints).
+// It prints the resulting number or -1 if the constraints are invalid.
+int main()
+    Calls scanf(...)
+    Calls printf(...)
+    Calls puts(...)
+```

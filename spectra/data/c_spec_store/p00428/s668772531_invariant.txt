@@ -1,0 +1,9 @@
+```c
+int main(void)
+    // Input format: Each test case consists of two integers `n` and `m` on the first line.
+    // Followed by `n` lines each containing `m` integers.
+    // The input terminates when both `n` and `m` are zero.
+    // Output format: For each test case, a single line containing `m` integers separated by spaces.
+    // Precondition: `n` and `m` are non-negative integers, and the integers provided in the input are valid.
+    // Postcondition: For each test case, the program prints the column indices (1-based) in descending order of their sums.
+```

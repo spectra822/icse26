@@ -1,0 +1,86 @@
+<h1>Map: Delete</h1>
+
+
+<p>
+    For a dictionary $M$ that stores elements formed by a pair of a string key and an integer value, perform a sequence of the following operations. Note that <u>each key in $M$ must be unique</u>.
+</p>
+
+<ul>
+  <li>insert($key$, $x$): Insert an element formed by a pair of $key$ and $x$ to $M$.</li>
+  <li>get($key$): Print the value with the specified $key$. <u>Print 0 if there is no such element</u>.</li>
+  <li>delete($key$): Delete the element with the specified $key$.</li>
+</ul>
+
+<h2>Input</h2>
+
+<p>
+  The input is given in the following format.
+</p>
+
+<pre>
+$q$
+$query_1$
+$query_2$
+:
+$query_q$
+</pre>
+
+<p>
+Each query $query_i$ is given by
+</p>
+
+<pre>
+0 $key$ $x$
+</pre>
+
+<p>or</p>
+
+<pre>
+1 $key$
+</pre>
+
+<p>or</p>
+
+<pre>
+2 $key$
+</pre>
+
+<p>
+  where the first digits <span>0</span>, <span>1</span> and <span>2</span> represent insert, get and delete operations respectively.
+</p>
+
+<h2>Output</h2>
+<p>
+  For each get operation, print an integer in a line.
+</p>
+
+<h2>Constraints</h2>
+<ul>
+  <li>$1 \leq q \leq 200,000$</li>
+  <li>$1 \leq x \leq 1,000,000,000$</li>
+  <li>$1 \leq $ length of $key$ $ \leq 20$ </li>
+  <li>$key$ consits of lower case letters</li>
+</ul>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+8
+0 blue 4
+0 red 1
+0 white 5
+1 red
+1 blue
+2 red
+1 black
+1 red
+</pre>
+
+<h2>Sample Output 1</h2>
+
+<pre>
+1
+4
+0
+0
+</pre>

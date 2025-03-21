@@ -1,0 +1,79 @@
+
+
+
+<h1 id="c-shopping-買い物">C : Shopping / 買い物</h1>
+<h2 id="問題文">問題文</h2>
+<p>料理が得意な2D君は昼ごはんを作ろうとしている。料理には <var>N</var> 個の材料 <var>a_{0}, a_{1}, … , a_{N&minus;1}</var> が全てが必要である。</p>
+<p>さて、今2D君の家の冷蔵庫には一つも材料が入っていないので、スーパーに買いに行かなければならない。スーパーでは材料 <var>a_{i}</var> を値段 <var>x_{i}</var> 円で買うことができる。</p>
+<p>2D君は魔法使いでもあり、 <var>M</var> 種類の魔法が使える。 <var>i</var> 番目の魔法を材料 <var>s_{i}</var> にかければ材料 <var>t_{i}</var> に、また逆に <var>t_{i}</var> にかければ <var>s_{i}</var> に変えることができる。さらに、一つの材料に対して複数の魔法を繰り返して使うことができる。例えば、 <var>p</var> から <var>q</var> に変える魔法と、 <var>q</var> から <var>r</var> に変える魔法の2つを使って、 <var>p</var> から <var>r</var> を得ることができる。</p>
+<p>2D君は魔法の力を借りてなるべく安く材料を揃えることにした。料理を完成させるために2D君が買う必要のある材料の、値段の総和の最小値を求めよ。</p>
+<h2 id="入力">入力</h2>
+<p>入力は以下の形式で与えられる。</p>
+<pre><var>N</var>
+<var>a_{0}</var> <var>x_{0}</var>
+<var>…</var>
+<var>a_{N&minus;1}</var> <var>x_{N&minus;1}</var>
+<var>M</var>
+<var>s_{0}</var> <var>t_{0}</var>
+<var>…</var>
+<var>s_{M&minus;1}</var> <var>t_{M&minus;1}</var>
+</pre>
+
+<h2 id="制約">制約</h2>
+<ul>
+<li>数値はすべて整数である</li>
+<li>材料の名前はすべて <var>1</var> 文字以上 <var>10</var> 文字以下のアルファベット小文字からなる</li>
+<li><var>i ≠ j</var> なら <var>a_{i} ≠ a_{j}</var></li>
+<li><var>1 \&le; x_{i} \&le; 1,000</var></li>
+<li><var>1 \&le; N \&le; 5,000</var></li>
+<li><var>0 \&le; M \&le; {\rm min}(N(N&minus;1)</var>/<var>2, 1000)</var></li>
+<li><var>s_{i} ≠ t_{i}</var></li>
+<li><var>s_{i},t_{i}</var> の組に重複はない</li>
+<li><var>s_{i},t_{i}</var> は <var>a_{0},…,a_{N&minus;1}</var> に含まれる</li>
+</ul>
+<h2 id="出力">出力</h2>
+<p>答えを1行で出力せよ。</p>
+<h2 id="サンプル">サンプル</h2>
+<h3 id="サンプル入力1">サンプル入力1</h3>
+<pre>2
+tako 2
+yaki 1
+1
+tako yaki
+</pre>
+
+<p>魔法によって安い yaki を tako に変えることができるので、 yaki を <var>2</var> 個買えばよい。</p>
+<h3 id="サンプル出力1">サンプル出力1</h3>
+<pre>2
+</pre>
+
+<h3 id="サンプル入力2">サンプル入力2</h3>
+<pre>5
+a 1
+b 2
+c 2
+d 4
+e 3
+5
+b a
+a c
+c d
+e b
+c b
+</pre>
+
+<h3 id="サンプル出力2">サンプル出力2</h3>
+<pre>5
+</pre>
+
+<p>下に示すように、全ての材料を a から変えてそろえることができる。</p>
+<ul>
+<li>a : a そのまま</li>
+<li>b : a -&gt; c -&gt; b</li>
+<li>c : a -&gt; c</li>
+<li>d : a -&gt; c -&gt; d</li>
+<li>e : a -&gt; b -&gt; e</li>
+</ul>
+<div class="figure">
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE2_RUPC2015_C1" />
+</div>

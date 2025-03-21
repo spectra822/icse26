@@ -1,0 +1,12 @@
+```c
+// Global variables
+int N;
+int ans = 0;
+
+// This is the main function that reads input for two strings `S` and `T` of length `N`.
+// It then calculates the minimum length of a string that can be obtained by
+// appending `S` to `T` such that `T` is a suffix of `S`.
+// Finally, it prints the result.
+int main()
+  // No function calls
+```

@@ -1,0 +1,13 @@
+```c
+// Global variables
+int a[101] = {0};
+int b[101] = {0};
+int c[100] = {0};
+
+// The main function reads four integers A, B, C, and D representing two intervals [A, B] and [C, D].
+// It then marks the intervals in two arrays `a` and `b`, calculates the overlap in a third array `c`,
+// and prints the length of the overlapping interval minus one if there is an overlap.
+int main()
+    // Calls scanf(...)
+    // Calls printf(...)
+```

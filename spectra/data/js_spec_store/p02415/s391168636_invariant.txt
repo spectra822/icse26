@@ -1,0 +1,24 @@
+// Segment 1: Reading and trimming input
+// Precondition: There is a file at '/dev/stdin' containing the input string.
+// Postcondition: The input string is read, trimmed of leading/trailing whitespace, and stored in the 'input' variable.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+// Remove leading and trailing whitespace
+input = input.trim();
+
+// Segment 2: Replacing characters with case inversion
+// Precondition: 'input' is a non-empty string with trimmed leading/trailing whitespace.
+// Postcondition: All lowercase letters in 'input' are converted to uppercase, and all uppercase letters are converted to lowercase.
+input = input.replace(/([a-z])|([A-Z])/g, function(s, s1, s2) {
+    // If the character is lowercase, convert to uppercase
+    if (s1) s = s1.toUpperCase();
+    // If the character is uppercase, convert to lowercase
+    if (s2) s = s2.toLowerCase();
+    return s;
+});
+
+// Segment 3: Output the processed string
+// Precondition: 'input' contains the processed string with inverted case for each letter.
+// Postcondition: The processed string is printed to the standard output.
+// Input format: A single line of text from '/dev/stdin'.
+// Output format: A single line of text with case-inverted letters printed to the console.
+console.log(input);

@@ -1,0 +1,91 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a chocolate bar partitioned into <var>H</var> horizontal rows and <var>W</var> vertical columns of squares.</p>
+<p>The square <var>(i, j)</var> at the <var>i</var>-th row from the top and the <var>j</var>-th column from the left is dark if <var>S_{i,j}</var> is <code>0</code>, and white if <var>S_{i,j}</var> is <code>1</code>.</p>
+<p>We will cut the bar some number of times to divide it into some number of blocks. In each cut, we cut the whole bar by a line running along some boundaries of squares from end to end of the bar.</p>
+<p>How many times do we need to cut the bar so that every block after the cuts has <var>K</var> or less white squares?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq H \leq 10</var></li>
+<li><var>1 \leq W \leq 1000</var></li>
+<li><var>1 \leq K \leq H \times W</var></li>
+<li><var>S_{i,j}</var> is <code>0</code> or <code>1</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var> <var>K</var>
+<var>S_{1,1}S_{1,2}...S_{1,W}</var>
+<var>:</var>
+<var>S_{H,1}S_{H,2}...S_{H,W}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of minimum times the bar needs to be cut so that every block after the cuts has <var>K</var> or less white squares.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 5 4
+11100
+10001
+00111
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>For example, cutting between the <var>1</var>-st and <var>2</var>-nd rows and between the <var>3</var>-rd and <var>4</var>-th columns - as shown in the figure to the left - works.</p>
+<p>Note that we cannot cut the bar in the ways shown in the two figures to the right.</p>
+<p><img alt="Figure" src="https://img.atcoder.jp/ghi/ac90dd542639c04402125403b1c319d7.png"/></p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 5 8
+11100
+10001
+00111
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>No cut is needed.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>4 10 4
+1110010010
+1000101110
+0011101001
+1101000111
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>3
+</pre></section>
+</div>
+</span>

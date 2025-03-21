@@ -1,0 +1,129 @@
+<span class="lang-en">
+<p>Score : <var>1700</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke got a grid from his mother, as a birthday present. The grid has <var>H</var> rows and <var>W</var> columns. Each cell is painted black or white. All black cells are <em>4-connected</em>, that is, it is possible to traverse from any black cell to any other black cell by just visiting black cells, where it is only allowed to move horizontally or vertically.</p>
+<p>The color of the cell at the <var>i</var>-th row and <var>j</var>-th column <var>(1 ≦ i ≦ H, 1 ≦ j ≦ W)</var> is represented by a character <var>s_{ij}</var>. If <var>s_{ij}</var> is <code>#</code>, the cell is painted black. If <var>s_{ij}</var> is <code>.</code>, the cell is painted white. At least one cell is painted black.</p>
+<p>We will define <em>fractals</em> as follows.
+The fractal of <em>level</em> <var>0</var> is a <var>1 × 1</var> grid with a black cell.
+The fractal of level <var>k+1</var> is obtained by arranging smaller grids in <var>H</var> rows and <var>W</var> columns, following the pattern of the Snuke's grid.
+At a position that corresponds to a black cell in the Snuke's grid, a copy of the fractal of level <var>k</var> is placed.
+At a position that corresponds to a white cell in the Snuke's grid, a grid whose cells are all white, with the same dimensions as the fractal of level <var>k</var>, is placed.</p>
+<p>You are given the description of the Snuke's grid, and an integer <var>K</var>. Find the number of connected components of black cells in the fractal of level <var>K</var>, modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≦ H,W ≦ 1000</var></li>
+<li><var>0 ≦ K ≦ 10^{18}</var></li>
+<li>Each <var>s_{ij}</var> is either <code>#</code> or <code>.</code>.</li>
+<li>All black cells in the given grid are 4-connected.</li>
+<li>There is at least one black cell in the given grid.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var> <var>K</var>
+<var>s_{11} .. s_{1W}</var>
+:
+<var>s_{H1} .. s_{HW}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of connected components of black cells in the fractal of level <var>K</var>, modulo <var>10^9+7</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 3 3
+.#.
+###
+#.#
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>20
+</pre>
+<p>The fractal of level <var>K=3</var> in this case is shown below. There are <var>20</var> connected components of black cells.</p>
+<pre>
+.............#.............
+............###............
+............#.#............
+..........#..#..#..........
+.........#########.........
+.........#.##.##.#.........
+..........#.....#..........
+.........###...###.........
+.........#.#...#.#.........
+....#........#........#....
+...###......###......###...
+...#.#......#.#......#.#...
+.#..#..#..#..#..#..#..#..#.
+###########################
+#.##.##.##.##.##.##.##.##.#
+.#.....#..#.....#..#.....#.
+###...######...######...###
+#.#...#.##.#...#.##.#...#.#
+....#.................#....
+...###...............###...
+...#.#...............#.#...
+.#..#..#...........#..#..#.
+#########.........#########
+#.##.##.#.........#.##.##.#
+.#.....#...........#.....#.
+###...###.........###...###
+#.#...#.#.........#.#...#.#
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 3 3
+###
+#.#
+###
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>11 15 1000000000000000000
+.....#.........
+....###........
+....####.......
+...######......
+...#######.....
+..##.###.##....
+..##########...
+.###.....####..
+.####...######.
+###############
+#.##..##..##..#
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>301811921
+</pre></section>
+</div>
+</span>

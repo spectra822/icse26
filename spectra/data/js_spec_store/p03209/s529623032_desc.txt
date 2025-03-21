@@ -1,0 +1,39 @@
+"use strict";
+
+// Main function that reads input, processes it, and outputs the result
+const main = arg => {
+    // Read and parse input
+    arg = arg.trim().split("\n");
+    const N = parseInt(arg[0].split(" ")[0]);
+    const X = parseInt(arg[0].split(" ")[1]);
+
+    // Initialize arrays to store the number of layers and patties at each level
+    let a = [1];
+    let p = [1];
+
+    // Populate arrays a and p for all levels up to N
+    for (let i = 1; i < N; i++) {
+        a.push((a[i - 1] * 2) + 3);
+        p.push((p[i - 1] * 2) + 1);
+    }
+
+    // Recursive function to calculate the number of patties up to layer X
+    const rec = (N, X) => {
+        if (N === 0) {
+            return X <= 0 ? 0 : 1;
+        } else if (X <= 1 + a[N - 1]) {
+            return rec(N - 1, X - 1);
+        } else {
+            return p[N - 1] + 1 + rec(N - 1, X - 2 - a[N - 1]);
+        }
+    }
+
+    // Calculate the answer by invoking the recursive function
+    let answer = rec(N, X);
+
+    // Output the result
+    console.log(answer);
+}
+
+// Read input from standard input and invoke the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

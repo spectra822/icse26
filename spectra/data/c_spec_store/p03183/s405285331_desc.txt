@@ -1,0 +1,24 @@
+```c
+// Global variables
+// None
+
+// Structure representing an item with weight `w`, strength `s`, and value `v`.
+typedef struct item {
+  int w, s, v;
+} node;
+
+// Comparison function for sorting items based on their (strength + weight).
+// Returns a negative value if the first element should appear before the second,
+// zero if they are equivalent, and a positive value otherwise.
+int cmp(const void *a, const void *b)
+
+// Reads input, sorts items based on their (strength + weight),
+// and calculates the maximum value that can be obtained without exceeding strength.
+// Uses dynamic programming to solve the problem and prints the result.
+void run(void)
+  Calls cmp(...)
+
+// Entry point of the program. Calls the `run` function.
+int main(void)
+  Calls run(...)
+```

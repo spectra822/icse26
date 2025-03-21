@@ -1,0 +1,46 @@
+"use strict";
+
+// Main function that processes the input and executes the logic
+const main = arg => {
+    // Parse input
+    const inputList = arg.trim().split("\n");
+    const N = parseInt(inputList[0].split(" ")[0]);
+    const K = parseInt(inputList[0].split(" ")[1]);
+    let ALightList = inputList[1].split(" ").map(ele => parseInt(ele));
+
+    // Iterate K times to update the light array
+    for (let i = 0; i < K; i++) {
+        // Initialize the imos array
+        const imos = Array(ALightList.length).fill(0);
+
+        // Apply the imos approach to calculate the spread of light
+        for (let j = 0; j < ALightList.length; j++) {
+            let minus = j - ALightList[j];
+            let plus = j + ALightList[j] + 1;
+            if (minus < 0) {
+                minus = 0;
+            }
+            imos[minus]++;
+            imos[plus]--;
+        }
+        imos.length = ALightList.length;
+
+        // Accumulate the imos array to get the new light array
+        for (let k = 1; k < imos.length; k++) {
+            imos[k] += imos[k - 1];
+        }
+
+        // Check if the light array has stabilized
+        if (ALightList.every((ele, idx) => ele == imos[idx])) {
+            break;
+        }
+
+        // Update the light array for the next iteration
+        ALightList = imos;
+    }
+    // Output the final light array
+    console.log(ALightList.join(" "));
+}
+
+// Read input from standard input and execute the main function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

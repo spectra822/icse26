@@ -1,0 +1,42 @@
+// Read input from standard input and split it into an array of strings
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Main loop to process each test case
+while (true) {
+    // Read the number of elements in the current test case
+    var n = Arr.shift();
+    // Break the loop if the input is "0"
+    if (n == "0") break;
+
+    // Read the array of integers for the current test case
+    var arr = (Arr.shift()).split(" ").map(Number);
+
+    // Initialize variables for the transformation process
+    var k = 0;
+    var S = [];
+
+    // Loop until the array stabilizes (S becomes equal to arr)
+    while (true) {
+        // Calculate the frequency of each element in the array
+        for (var i = 0; i < arr.length; i++) {
+            var cnt = 0;
+            for (var j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) cnt++;
+            }
+            S.push(cnt);
+        }
+
+        // Check if the transformed array is equal to the original array
+        if (S.join(" ") == arr.join(" ")) break;
+
+        // Update arr to the transformed array and reset S for the next iteration
+        arr = S.slice();
+        S = [];
+        k++;
+    }
+
+    // Output the number of transformations and the final array
+    console.log(k);
+    console.log(S.join(" "));
+}

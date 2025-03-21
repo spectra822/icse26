@@ -1,0 +1,13 @@
+```c
+// Global variables
+int a[1000];
+int tmp[1000];
+
+// This is the main function that reads input, processes queries to rotate subarrays, and prints the result.
+// It reads the number of elements `n` and populates the array `a`.
+// It then reads the number of queries `q`, and for each query, it reads three integers `b`, `m`, and `e`.
+// For each query, it rotates the subarray `a[b]` to `a[e-1]` such that the element at index `m` moves to index `b`.
+// Finally, it prints the modified array.
+int main(void)
+    // No calls to other functions
+```

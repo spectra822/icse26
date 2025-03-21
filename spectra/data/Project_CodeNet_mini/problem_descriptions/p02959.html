@@ -1,0 +1,86 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N+1</var> towns. The <var>i</var>-th town is being attacked by <var>A_i</var> monsters.</p>
+<p>We have <var>N</var> heroes. The <var>i</var>-th hero can defeat monsters attacking the <var>i</var>-th or <var>(i+1)</var>-th town, for a total of at most <var>B_i</var> monsters.</p>
+<p>What is the maximum total number of monsters the heroes can cooperate to defeat?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 10^5</var></li>
+<li><var>1 \leq A_i \leq 10^9</var></li>
+<li><var>1 \leq B_i \leq 10^9</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_{N+1}</var>
+<var>B_1</var> <var>B_2</var> <var>...</var> <var>B_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum total number of monsters the heroes can defeat.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+3 5 2
+4 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>9
+</pre>
+<p>If the heroes choose the monsters to defeat as follows, they can defeat nine monsters in total, which is the maximum result.</p>
+<ul>
+<li>The first hero defeats two monsters attacking the first town and two monsters attacking the second town.</li>
+<li>The second hero defeats three monsters attacking the second town and two monsters attacking the third town.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+5 6 3 8
+5 100 8
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>22
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2
+100 1 1
+1 100
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>3
+</pre></section>
+</div>
+</span>

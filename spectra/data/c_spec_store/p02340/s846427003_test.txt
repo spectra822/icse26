@@ -1,0 +1,5 @@
+Input:
+5 2
+
+Output:
+3

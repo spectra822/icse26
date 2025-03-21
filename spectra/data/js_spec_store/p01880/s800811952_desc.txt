@@ -1,0 +1,30 @@
+// Read input from standard input, trim any extra whitespace, and split it into an array of strings
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Parse the second line of input into an array of numbers
+var a = arr[1].split(" ").map(Number);
+
+// Initialize the answer to -1, which will store the maximum valid product found
+var ans = -1;
+
+// Iterate through each pair of numbers in the array
+for (var i = 0; i < a.length; i++) {
+    for (var j = i + 1; j < a.length; j++) {
+        // Calculate the product of the two numbers and convert it to a string
+        var v = (a[i] * a[j]) + "";
+        var flag = true;
+
+        // Check if the digits of the product form a sequence of consecutive numbers
+        v.split("").map(Number).reduce(function(a, b) {
+            if (a + 1 != b) flag = false;
+            return b;
+        });
+
+        // If the product is valid and greater than the current maximum, update the answer
+        if (flag) ans = Math.max(ans, v - 0);
+    }
+}
+
+// Output the final answer
+console.log(ans);

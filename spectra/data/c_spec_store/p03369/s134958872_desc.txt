@@ -1,0 +1,10 @@
+```c
+// Global variables
+// No global variables
+
+// This is the main function which reads a string `S` of length 3,
+// counts the number of 'o' characters in the string,
+// and prints the result of 700 plus 100 times the count of 'o' characters.
+int main()
+  // No calls to other functions
+```

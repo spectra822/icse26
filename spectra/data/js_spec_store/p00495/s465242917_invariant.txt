@@ -1,0 +1,43 @@
+// Segment 1: Read input and initial parsing
+// Precondition: The input is provided through standard input in the format:
+//               Line 1: Two integers separated by space (a and b)
+//               Line 2: Sequence of a integers separated by space (A array)
+//               Line 3: Sequence of b integers separated by space (B array)
+// Postcondition: The variables `a`, `b`, `A`, and `B` are assigned correctly with the values from the input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+var ab = arr.shift().split(" ").map(Number);
+var a = ab[0];
+var b = ab[1];
+if (b == undefined) b = arr.shift() - 0;  // Handling edge case where b might not be provided
+var A = arr.shift().split(" ").map(Number);
+var B = arr.shift().split(" ").map(Number);
+
+// Segment 2: Initialize max counter and iterate over B array
+// Precondition: `a`, `b`, `A`, and `B` are correctly initialized
+// Postcondition: The variable `max` holds the maximum number of elements from B that can be found in A in order
+var max = 0;
+for (var i = 0; i < b; i++) {
+    var j = 0;
+    var k = i;
+    var cnt = 0;
+    // Segment 3: Find the longest subsequence starting from B[i] in A
+    // Precondition: `i` is a valid index in B, and `j`, `k`, `cnt` are initialized to 0, `i`, and 0 respectively
+    // Postcondition: `cnt` holds the count of matching elements starting from B[i] in A
+    while (true) {
+        if (a <= j || b <= k) break;  // Break if indices are out of bounds
+        if (B[k] == A[j]) {
+            k++;
+            cnt++;
+        }
+        j++;
+    }
+    // Update max with the highest count found so far
+    max = Math.max(max, cnt);
+}
+
+// Segment 4: Output the result
+// Precondition: The variable `max` contains the maximum count of matching subsequences
+// Postcondition: The value of `max` is printed to the standard output
+// Output format: A single integer printed on a new line
+console.log(max);

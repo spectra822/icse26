@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// The main function reads four integers A, B, C, and X from the input,
+// and then counts the number of ways to use i 500-yen coins, j 100-yen coins,
+// and k 50-yen coins to sum up to X yen, where 0 <= i <= A, 0 <= j <= B, and 0 <= k <= C.
+// It then prints the count.
+int main(void)
+    // No function calls
+```

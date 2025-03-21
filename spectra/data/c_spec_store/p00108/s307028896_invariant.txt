@@ -1,0 +1,11 @@
+```c
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain integers separated by whitespace.
+    // The input ends with a line containing the integer `0`.
+    // Output format: The first line contains an integer representing the number of transformations.
+    // The next line contains `n` integers separated by spaces.
+    // Precondition: The input integers are within the range 0 to 100.
+    // Postcondition: The program outputs the number of transformations required to reach a stable state
+    // where each integer in the list matches the frequency of its occurrence, followed by the stabilized list.
+```

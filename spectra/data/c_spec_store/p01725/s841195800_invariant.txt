@@ -1,0 +1,19 @@
+```c
+long long getInt(void)
+    // Precondition: The global pointer `p` points to a character in a null-terminated string.
+    // Postcondition: `p` has advanced past the digits in the string, and the function returns the integer value represented by those digits.
+
+int token(char c)
+    // Precondition: The character `c` is one of '+', '-', or '*'.
+    // Postcondition: The function returns an integer constant representing the operator: PLUS for '+', MINUS for '-', and MUL for '*'.
+
+int rank(int op)
+    // Precondition: The integer `op` is one of the defined operator constants, or LEFT.
+    // Postcondition: The function returns an integer representing the precedence rank of the operator, based on the global array `tbl` and the global variable `rid`.
+
+int main()
+    // Input format: A single line containing a mathematical expression as a string.
+    // Output format: A single integer on a new line.
+    // Precondition: The global variables `str`, `tbl`, `stack`, and `buf` have been declared.
+    // Postcondition: The maximum possible value of the expression, evaluated with different operator precedences based on `tbl`, is printed.
+```

@@ -1,0 +1,33 @@
+// Precondition: The program expects input via standard input, formatted as:
+// - The first line contains an integer `n`.
+// - The next `n` lines each contain six floating-point numbers separated by spaces.
+// Postcondition: The input is read and split into an array of strings, with `n` being assigned the number of test cases.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var n = Arr.shift() - 0;
+
+// Precondition: `Arr` is an array of strings, each representing a line of input for a test case.
+// Postcondition: For each test case, the function to calculate the relationship between two circles is called with the corresponding parameters.
+for (var i = 0; i < n; i++) {
+    var arr = Arr[i].split(" ").map(Number);
+    
+    // Precondition: `arr` contains exactly six numbers representing the coordinates and radii of two circles.
+    // Postcondition: The relationship between the two circles is calculated and printed.
+    (function(xa, ya, ra, xb, yb, rb) {
+        // Precondition: `xa`, `ya`, `ra`, `xb`, `yb`, `rb` are the coordinates and radii of two circles.
+        // Postcondition: The relationship between the two circles is determined and printed as:
+        // - `2` if one circle is completely inside the other without touching.
+        // - `-2` if the other circle is completely inside the one without touching.
+        // - `1` if they intersect or touch.
+        // - `0` if they are completely separate.
+        var ans;
+        var d = Math.sqrt(Math.pow(xa - xb, 2) + Math.pow(ya - yb, 2));
+        if (d > ra + rb) ans = 0;
+        if (d <= ra + rb) {
+            ans = 1;
+            if (d < ra - rb) ans = 2;
+            if (d < rb - ra) ans = -2;
+        }
+        console.log(ans);
+    }).apply(null, arr);
+}

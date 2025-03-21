@@ -1,0 +1,24 @@
+// Read the input from the standard input (usually from a file in a competitive programming environment)
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Process the input into an array of strings, each representing a line of input
+var Arr = (input.trim()).split("\n");
+
+// Loop through the first 7 lines of the input
+for (var i = 0; i < 7; i++) {
+    // Split each line into an array of numbers and calculate the difference between the first and second numbers
+    var arr = Arr[i].split(" ").map(Number);
+    // Output the difference between the two numbers
+    console.log(arr[0] - arr[1]);
+}
+   // Read the input from the standard input (usually from a file in a competitive programming environment)
+   var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+   // Process the input into an array of strings, each representing a line of input
+   var Arr = (input.trim()).split("\n");
+   // Loop through the first 7 lines of the input
+   for (var i = 0; i < 7; i++) {
+       // Split each line into an array of numbers and calculate the difference between the first and second numbers
+       var arr = Arr[i].split(" ").map(Number);
+       // Output the difference between the two numbers
+       console.log(arr[0] - arr[1]);
+   }

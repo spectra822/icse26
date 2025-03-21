@@ -1,0 +1,21 @@
+```c
+// Global variables
+char isprime[100000];
+int pr[100000];
+int primenum;
+
+// This function initializes the `isprime` array to mark prime numbers up to 100000
+// and populates the `pr` array with the prime numbers found.
+// It uses the Sieve of Eratosthenes algorithm to find primes.
+void mpl(void)
+  // No calls to other functions
+
+// The main function reads input values `m`, `a`, and `b` in a loop until it encounters `0 0 0`.
+// For each set of input values, it finds two prime numbers `p` and `q` such that:
+// - `p * q <= m`
+// - `a * q <= p * b`
+// - `p * q` is maximized
+// It then prints these two prime numbers.
+int main(void)
+  Calls mpl()
+```

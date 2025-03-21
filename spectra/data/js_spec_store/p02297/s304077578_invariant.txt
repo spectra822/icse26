@@ -1,0 +1,79 @@
+// Precondition: The console object is available, and the log method is defined.
+// Postcondition: The log method is assigned to the variable `log`.
+var log = console.log;
+
+// Precondition: This segment runs in a Node.js environment where `process` and `process.stdin` are defined.
+// Postcondition: The program is set up to read input from stdin, accumulate it into the `input` variable, and call the `main` function with the input split into lines when input ends.
+// Input format: The program expects input from stdin, terminated by the end of the input stream.
+if (typeof process != "undefined") {
+    var input = "";
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', function(chunk) {
+        input += chunk;
+    });
+    process.stdin.on('end', function() {
+        var lines = input.split("\n");
+        main(lines);
+    });
+}
+
+// Precondition: `lines` is an array of strings, each representing a line of input.
+// Postcondition: The function processes the `lines` array, converting it into a 2D array of points, calculates the signed area of the polygon, and logs the area to the console.
+// Input format: The first line is the number of points (integer). Each subsequent line contains two integers separated by a space, representing the coordinates of a point.
+// Output format: A single floating-point number representing the area of the polygon, rounded to one decimal place.
+function main(lines) {
+    // Precondition: `lines` is an array of strings.
+    // Postcondition: Each line is split into an array of numbers or cleaned strings, and the last line is checked for validity.
+    lines = lines.map(function(line) {
+        return line.split(" ").filter(function(e) {
+            return e != "";
+        }).map(function(e) {
+            var n = Number(e);
+            if (n.toString() == "NaN") {
+                return e.replace(/(\r)|(\n)/g, "");
+            }
+            return n;
+        });
+    });
+    var last = lines.pop();
+    if (last.length == 2) {
+        lines.push(last);
+    }
+    lines.shift();  
+    var points = lines;
+    
+    // Precondition: `points` is a 2D array where each sub-array represents a point with two numerical coordinates.
+    // Postcondition: The signed area of the polygon formed by these points is calculated and logged to the console.
+    var p0 = points[0];
+    var ps, pe;
+    var S = 0;
+    var length = points.length;
+    for (var i = 1; i < length - 1; i++) {
+        ps = points[i];
+        pe = points[i + 1];
+        S += sign_s(p0, ps, pe);
+    }
+    var r_S = "" + (S / 2);
+    var idx = r_S.indexOf(".");
+    if (idx == -1) {
+        r_S += ".0";
+    } else {
+        r_S = r_S.slice(0, idx + 2);
+    }
+    log(r_S);
+}
+
+// Precondition: `p1`, `p2`, and `p3` are arrays representing points with two numerical coordinates each.
+// Postcondition: The signed area contribution of the triangle formed by these three points is calculated and returned.
+function sign_s(p1, p2, p3) {
+    var pa = [p2[0] - p1[0], p2[1] - p1[1]];
+    var pb = [p3[0] - p1[0], p3[1] - p1[1]];
+    return sign_s_main(pa, pb);
+}
+
+// Precondition: `pa` and `pb` are arrays of two numerical values each, representing vectors.
+// Postcondition: The signed area of the parallelogram formed by these vectors is calculated and returned.
+function sign_s_main(pa, pb) {
+    return (pa[0] * pb[1] - pa[1] * pb[0]);
+}

@@ -1,0 +1,50 @@
+// Segment 1: Immediately Invoked Function Expression (IIFE) to encapsulate the logic
+// Precondition: The input is provided as a string through standard input (stdin).
+// Postcondition: The function reads the input and processes it within the encapsulated scope.
+(function(input) {
+    
+    // Segment 2: Input processing and variable initialization
+    // Precondition: The input is a string with multiple lines, where the first line is an integer n,
+    //               followed by n lines of six floating-point numbers each (x1 y1 x2 y2 x3 y3).
+    // Postcondition: The input string is split into an array of strings, and the first value is parsed as an integer n.
+    // Input format: 
+    //  n\n
+    //  x1 y1 x2 y2 x3 y3\n
+    // Output format: None
+    var p = input.replace(/\n$/, '').split('\n');
+    var n = Number(p.shift());
+
+    // Segment 3: Loop to process each set of points
+    // Precondition: The array p contains n lines, each with six floating-point numbers representing three points.
+    // Postcondition: For each set of points, the coordinates of the circumcenter and radius are calculated and logged.
+    for (var i = 0; i < n; i++) {
+        // Segment 4: Parse the coordinates of the points
+        // Precondition: p[i] is a string with six floating-point numbers separated by spaces.
+        // Postcondition: The coordinates (x1, y1), (x2, y2), and (x3, y3) are extracted and converted to numbers.
+        var args = p[i].split(' ').map(Number);
+         
+        var x1 = args.shift();
+        var y1 = args.shift();
+        var x2 = args.shift();
+        var y2 = args.shift();
+        var x3 = args.shift();
+        var y3 = args.shift();
+
+        // Segment 5: Calculate the circumcenter coordinates (x, y)
+        // Precondition: The coordinates (x1, y1), (x2, y2), and (x3, y3) are defined.
+        // Postcondition: The coordinates (x, y) of the circumcenter are calculated using the given formula.
+        var x = ((Math.pow(x3, 2) - Math.pow(x2, 2) + Math.pow(y3, 2) - Math.pow(y2, 2)) * (y2 - y1) -
+                (Math.pow(x2, 2) - Math.pow(x1, 2) + Math.pow(y2, 2) - Math.pow(y1, 2)) * (y3 - y2)) /
+            2 / ((y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2));
+        var y = ((Math.pow(y3, 2) - Math.pow(y2, 2) + Math.pow(x3, 2) - Math.pow(x2, 2)) * (x2 - x1) -
+                (Math.pow(y2, 2) - Math.pow(y1, 2) + Math.pow(x2, 2) - Math.pow(x1, 2)) * (x3 - x2)) /
+            2 / ((x2 - x1) * (y3 - y2) - (y2 - y1) * (x3 - x2));
+
+        // Segment 6: Output the result
+        // Precondition: The coordinates (x, y) of the circumcenter and the coordinates (x1, y1) are defined.
+        // Postcondition: The circumcenter coordinates (x, y) and the radius are logged to the console, formatted to three decimal places.
+        // Input format: None
+        // Output format: x.toFixed(3) y.toFixed(3) radius.toFixed(3)\n
+        console.log(x.toFixed(3), y.toFixed(3), Math.sqrt(Math.pow(x1 - x, 2) + Math.pow(y1 - y, 2)).toFixed(3));
+    }
+})(require('fs').readFileSync('/dev/stdin', 'utf8'));

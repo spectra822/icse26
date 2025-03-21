@@ -1,0 +1,76 @@
+<span class="lang-en">
+<p>Score : <var>800</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Given is a string <var>S</var>, where each character is <code>0</code>, <code>1</code>, or <code>?</code>.</p>
+<p>Consider making a string <var>S'</var> by replacing each occurrence of <code>?</code> with <code>0</code> or <code>1</code> (we can choose the character for each <code>?</code> independently).
+Let us define the unbalancedness of <var>S'</var> as follows:</p>
+<ul>
+<li>(The unbalancedness of <var>S'</var>) <var>= \max \{</var> The absolute difference between the number of occurrences of <code>0</code> and <code>1</code> between the <var>l</var>-th and <var>r</var>-th character of <var>S</var> (inclusive) <var>:\ 1 \leq l \leq r \leq |S|\}</var></li>
+</ul>
+<p>Find the minimum possible unbalancedness of <var>S'</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq |S| \leq 10^6</var></li>
+<li>Each character of <var>S</var> is <code>0</code>, <code>1</code>, or <code>?</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum possible unbalancedness of <var>S'</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>0??
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>We can make <var>S'=</var> <code>010</code> and achieve the minimum possible unbalancedness of <var>1</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>0??0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>??00????0??0????0?0??00??1???11?1?1???1?11?111???1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>4
+</pre></section>
+</div>
+</span>

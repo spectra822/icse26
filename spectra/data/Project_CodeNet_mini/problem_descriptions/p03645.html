@@ -1,0 +1,108 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>In Takahashi Kingdom, there is an archipelago of <var>N</var> islands, called Takahashi Islands.
+For convenience, we will call them Island <var>1</var>, Island <var>2</var>, ..., Island <var>N</var>.</p>
+<p>There are <var>M</var> kinds of regular boat services between these islands.
+Each service connects two islands. The <var>i</var>-th service connects Island <var>a_i</var> and Island <var>b_i</var>.</p>
+<p>Cat Snuke is on Island <var>1</var> now, and wants to go to Island <var>N</var>.
+However, it turned out that there is no boat service from Island <var>1</var> to Island <var>N</var>, so he wants to know whether it is possible to go to Island <var>N</var> by using two boat services.</p>
+<p>Help him.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>3 ≤ N ≤ 200</var> <var>000</var></li>
+<li><var>1 ≤ M ≤ 200</var> <var>000</var></li>
+<li><var>1 ≤ a_i &lt; b_i ≤ N</var></li>
+<li><var>(a_i, b_i) \neq (1, N)</var></li>
+<li>If <var>i \neq j</var>, <var>(a_i, b_i) \neq (a_j, b_j)</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>a_1</var> <var>b_1</var>
+<var>a_2</var> <var>b_2</var>
+:
+<var>a_M</var> <var>b_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>If it is possible to go to Island <var>N</var> by using two boat services, print <code>POSSIBLE</code>; otherwise, print <code>IMPOSSIBLE</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 2
+1 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>POSSIBLE
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 3
+1 2
+2 3
+3 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>IMPOSSIBLE
+</pre>
+<p>You have to use three boat services to get to Island <var>4</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>100000 1
+1 99999
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>IMPOSSIBLE
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>5 5
+1 3
+4 5
+2 3
+2 4
+1 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>POSSIBLE
+</pre>
+<p>You can get to Island <var>5</var> by using two boat services: Island <var>1</var> -&gt; Island <var>4</var> -&gt; Island <var>5</var>.</p></section>
+</div>
+</span>

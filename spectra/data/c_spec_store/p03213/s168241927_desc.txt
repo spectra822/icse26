@@ -1,0 +1,17 @@
+```c
+// Global variables
+int n;
+int yaku[101] = {0};
+
+// Given an integer `a`, this function returns the count of integers `i` (2 <= i <= n)
+// such that yaku[i] is greater than or equal to `a-1`.
+int num(int a)
+    // No calls to other functions
+
+// This function takes an integer `n` as input and calculates the number of ways to express `n!`
+// as a product of exactly 75 divisors. It does this by factorizing all numbers from 2 to `n`
+// and storing the count of each prime factor in the array `yaku`.
+// It then calculates the number of ways to achieve the desired factorization using a formula.
+int main(void)
+    Calls num(...)
+```

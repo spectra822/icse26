@@ -1,0 +1,29 @@
+```c
+// Global variables
+typedef long long int int64;
+
+// Initialize the BIT (Binary Indexed Tree) array to zero.
+void initBit(int *bit)
+
+// Increment the BIT array at position `x`.
+void inc(int *bit, int x)
+
+// Get the sum of the BIT array from the start to position `x`.
+int getSum(int *bit, int x)
+
+// Count the number of subarrays where the median is at least `m`.
+// This function uses a BIT array to keep track of prefix sums.
+int64 count(int m, int *a, int n)
+    Calls initBit(...)
+    Calls inc(...)
+    Calls getSum(...)
+
+// Main function to read input, process the data, and print the result.
+// It finds the maximum median of any subarray of the given array.
+void run(void)
+    Calls count(...)
+
+// Entry point of the program. It calls the `run` function.
+int main(void)
+    Calls run(...)
+```

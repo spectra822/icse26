@@ -1,0 +1,14 @@
+```c
+// Global variables
+int go[100000];
+
+// This function processes multiple test cases. For each test case, it reads an integer `n` 
+// (the number of elements in the array `go`), then reads `n` integers into the array `go`.
+// It then modifies the array `go` according to a specific rule:
+// For each odd index `i`, if `go[i-1]` is not equal to `go[i]`, it sets all previous elements
+// to the value of `go[i]` until it finds an element equal to `go[i]`.
+// Finally, it counts the number of zeros in the array `go` and prints this count.
+// The loop continues until `n` is zero.
+int main(void)
+  // No calls to other functions
+```

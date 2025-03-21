@@ -1,0 +1,100 @@
+// Precondition: The 'gets' function is defined to initialize an instance with a multiline string.
+// Postcondition: The instance will have a property '_s' which is an array of lines split by "\n" and a property '_y' initialized to 0.
+function gets(str) {
+    this._s = str.split("\n");
+    this._y = 0;
+}
+
+// Precondition: The 'gets.prototype' object is defined with methods 'a', 'l', and 'm'.
+// Postcondition: The methods 'a', 'l', and 'm' are added to the 'gets.prototype' object for further use.
+gets.prototype = {
+    // Precondition: Method 'a' is called with a boolean flag 'f'.
+    // Postcondition: Returns the next element from the current line in the '_s' array, optionally as a string.
+    a: function(f) {
+        var s = this._s,
+            y = this._y,
+            r;
+        if (typeof s[y] === "string") s[y] = s[y].split(" ").reverse();
+        r = s[y].pop();
+        if (!s[y].length) this._y++;
+        return f ? r : +r;
+    },
+    // Precondition: Method 'l' is called with a boolean flag 'f'.
+    // Postcondition: Returns the current line split into an array, optionally as strings.
+    l: function(f) {
+        var s = this._s[this._y++].split(" ");
+        return f ? s : s.map(a => +a);
+    },
+    // Precondition: Method 'm' is called with an integer 'n' and a boolean flag 'f'.
+    // Postcondition: Returns the next 'n' lines, split into arrays, optionally as strings.
+    m: function(n, f) {
+        var s = this._s,
+            y = this._y,
+            r = [],
+            i = 0;
+        if (f)
+            for (; i < n; i++) r[i] = s[y + i].split(" ");
+        else
+            for (; i < n; i++) r[i] = s[y + i].split(" ").map(a => +a);
+        this._y += n;
+        return r;
+    },
+};
+
+// Precondition: The 'gets' instance 'o' is created by reading from '/dev/stdin'.
+// Postcondition: The instance 'o' is initialized with the content read from '/dev/stdin'.
+var o = new gets(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Precondition: The 'inv' function is defined to initialize an instance with an array of size 'a' filled with zeros.
+// Postcondition: The instance will have a property '_a' which is an array of size 'a' filled with zeros.
+function inv(a) {
+    this._a = Array(a).fill(0);
+}
+
+// Precondition: The 'inv.prototype' object is defined with methods 'u' and 'q'.
+// Postcondition: The methods 'u' and 'q' are added to the 'inv.prototype' object for further use.
+inv.prototype = {
+    // Precondition: Method 'u' is called with an index 'x' and a weight 'w'.
+    // Postcondition: Updates the internal array '_a' by adding 'w' at index 'x' and propagating the update.
+    u: function(x, w) {
+        for (; x < this._a.length; x += x & -x) this._a[x] += w;
+    },
+    // Precondition: Method 'q' is called with an index 'x'.
+    // Postcondition: Returns the prefix sum up to index 'x' from the internal array '_a'.
+    q: function(x) {
+        for (var r = 0; x; x -= x & -x) r += this._a[x];
+        return r;
+    },
+}
+
+// Precondition: The 'main' function is defined.
+// Postcondition: The 'main' function is executed and its return value is logged to the console.
+console.log(main());
+
+// Precondition: The 'main' function is called.
+// Input: The input format is expected to be multiple lines, where the first line is an integer 'n', and the second line contains 'n' space-separated integers.
+// Postcondition: The function calculates and returns the maximum median of any subarray of length greater than or equal to 2.
+// Output: The output is a single integer which is the maximum median.
+function main() {
+    var n = o.a();
+    var a = o.l();
+    if (n <= 2) return Math.max(...a);
+    var p = Math.floor(n * (n + 1) / 4 + 1);
+    var l = 2,
+        r = 1e9 + 1;
+    while (l < r) {
+        var m = l + r >> 1;
+        var b = n + 1,
+            k = 0,
+            z = new inv(b * 2);
+        z.u(b, 1);
+        for (var i = 0; i < n; i++) {
+            k += z.q(a[i] < m ? --b : ++b);
+            z.u(b, 1);
+        }
+        k = n * (n + 1) / 2 - k;
+        if (k < p) l = m + 1;
+        else r = m;
+    }
+    return l - 1;
+}

@@ -1,0 +1,97 @@
+
+
+
+<h2>A - 旧総合研究７号館</h2>
+  
+<p>
+時は平成50年春休み．情報学研究科に所属する京子さんは，京都にある某研究パークからの研究室の引越しがやっと終わり，ホッと一息ついていた．
+今回の引越しは，古くなった校舎の改修工事によるもので，新年度から工事に伴い校舎の名前が変更されることになっている．
+</p>
+<p>
+ホッとしていたのもつかの間，京子さんは先生から大学の資料に載っている校舎名を新しい名前に変更するお仕事を頼まれてしまった．
+しかし編集しなければならない資料には，今までの担当者が仕事を怠っていたせいか，ひとつ古い名前よりもっと古い名前が使われているものもあった．
+</p>
+<p>
+なんとか京子さんは，平成の間に校舎が改名が行われた年度とその名前のリストを見つけることができた．平成元年度の校舎名は "kogakubu10gokan" であった．<br>
+だが引越し作業にとても疲れたので，その資料が作られた年度にこの校舎がどんな名前だったのかを自分の手で調べるのには我慢ならなかった．
+</p>
+<p>
+そこで京子さんは，プログラミングが得意なあなたに手伝ってとお願いすることにした．<br>
+改名の歴史と資料が作られた年度が与えられるのでその年度の校舎の名前を出力するプログラミングを書いてあげよう．
+</p>
+
+<h2>入力形式</h2>
+<p>
+入力は以下の形式で与えられる．
+</p><pre><var>N</var> <var>Q</var>
+<var>year<sub>1</sub></var> <var>name<sub>1</sub></var>
+<var>year<sub>2</sub></var> <var>name<sub>2</sub></var>
+<var>…</var>
+<var>year<sub>N</sub></var> <var>name<sub>N</sub></var>
+</pre>
+<p>
+<var>N</var> は平成2年度から平成50年度までに行われた改名と改名された年度の組の個数であり，<var>Q</var> は資料が作られた年度を表す．<br>
+<var>year<sub>i</sub></var> は改名が行われた年度であり，<var>name<sub>i</sub></var> は改名された名前をあらわす．
+
+</p>
+
+<h2>出力形式</h2>
+<p>平成<var>Q</var>年度の校舎の名前を出力せよ．
+</p>
+
+<h2>制約</h2>
+<ul>
+<li><var>1 &le; N &lt; 50</var></li>
+<li><var>1 &le; Q &lt; 50</var></li>
+<li><var>2 &le; year<sub>1</sub> &lt; year<sub>2</sub> &lt; … &lt; year<sub>n</sub> &le; 50 </var></li>
+<li>すべての <var>i</var> に対して，<var>name<sub>i</sub></var> は長さ1以上30以下で含まれる文字は英数字('a'-'z', 'A'-'Z', '0'-'9') である．</li> 
+<!-- <li><var>∀i </var>， <var>Q</var> ≠ <var>year_i</var> </li> -->
+<li>平成元年度の校舎の名前は，"kogakubu10gokan" である．
+</li></ul>
+
+<h2>入出力例</h2>
+<h3>入力例 1</h3>
+<pre>3 12
+5 sogo5gokan
+10 sogo10gokan
+15 sogo15gokan
+</pre>
+
+<h3>出力例 1</h3>
+<pre>sogo10gokan
+</pre>
+<p>
+平成12年度の校舎名を出力すればよい．<br>
+校舎は，平成元年度の kogakubu10gokan から始まり，平成5年度に sogo5gokan， 平成10年度に sogo10gokan および平成15年度に sogo15gokan に改名されている．
+</p>
+
+<h3>入力例 2</h3>
+<pre>3 10
+5 kogakubu11gokan
+10 sogo10gokan
+15 KyotoUniversityResearchPark
+</pre>
+
+<h3>出力例 2</h3>
+<pre>sogo10gokan
+</pre>
+
+<p>
+平成10年度の校舎名を出力すればよい．<br>
+校舎は，平成10年度に sogo10gokan に改名されている．
+</p>
+
+<h3>入力例 3</h3>
+<pre>3 3
+5 kogakubu11gokan
+10 sogo10gokan
+15 KyotoUniversityResearchPark
+</pre>
+
+<h3>出力例 3</h3>
+<pre>kogakubu10gokan
+</pre>
+<p>
+平成3年度の校舎名を出力すればよい．<br>
+平成元年度から平成4年度までの校舎の名前は "kogakubu10gokan" である．
+</p>

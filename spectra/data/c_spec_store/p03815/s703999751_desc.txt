@@ -1,0 +1,12 @@
+```c
+// Global variables
+// (None)
+
+// This function is the main entry point of the program.
+// It reads an integer `x` from the standard input and performs the following:
+// - If `x` is divisible by 11, it prints `2 * (x / 11)`.
+// - If the remainder of `x` divided by 11 is greater than 6, it prints `2 * (x / 11) + 2`.
+// - Otherwise, it prints `2 * (x / 11) + 1`.
+int main(void)
+  No calls to other functions
+```

@@ -1,0 +1,14 @@
+Input:
+010
+011
+100
+101
+111
+#
+
+Output:
+No
+Yes
+No
+No
+No

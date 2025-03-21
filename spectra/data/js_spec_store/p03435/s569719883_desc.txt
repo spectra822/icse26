@@ -1,0 +1,33 @@
+// Import the 'fs' module to read the input from the standard input
+const input = require("fs").readFileSync("/dev/stdin", "utf8");
+
+// Main function to process the input and determine the output
+(input => {
+
+    // Split the input into lines
+    const lines = input.split('\n')
+
+    // Initialize a 2D array 'map' to store the input numbers
+    const map = []
+    for (let i = 0; i < 3; i++) {
+        map[i] = lines[i].split(' ').map(Number)
+    }
+
+    // Initialize variables to store the differences between the elements
+    let diff1 = 0
+    let diff2 = 0
+
+    // Calculate the initial differences for the first row
+    diff1 = map[0][0] - map[0][1]
+    diff2 = map[0][1] - map[0][2]
+
+    // Check if the differences are consistent across all rows
+    for (var i = 1; i < 3; i++) {
+        if (diff1 !== map[i][0] - map[i][1]) break
+        if (diff2 !== map[i][1] - map[i][2]) break
+    }
+
+    // Print 'Yes' if the differences are consistent, otherwise print 'No'
+    console.log(i === 3 ? 'Yes' : 'No')
+
+})(input)

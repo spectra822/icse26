@@ -1,0 +1,8 @@
+Input:
+hellohellohello
+hello
+
+Output:
+0
+5
+10

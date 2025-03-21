@@ -1,0 +1,11 @@
+```c
+int main()
+    // Input format: A single integer `k` on the first line.
+    // Output format: An integer `n` on one line, followed by `n` space-separated integers on the next line.
+    // Precondition: The variable `k` is a non-negative integer.
+    // Postcondition: Depending on the value of `k`, the program prints the number of elements `n` and an array of `n` integers such that:
+    // - If `k >= 50`, `n` is 50 and the array is constructed based on the given logic.
+    // - If `2 <= k < 50`, `n` is `k` and the array consists of `k` elements, all equal to `k`.
+    // - If `k == 1`, `n` is 3 and the array is `1 0 3`.
+    // - If `k == 0`, `n` is 4 and the array is `3 3 3 3`.
+```

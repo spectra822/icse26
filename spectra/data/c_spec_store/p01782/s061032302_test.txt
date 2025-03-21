@@ -1,0 +1,9 @@
+Input:
+4
+ABcd
+aBCd
+abCD
+ABcd
+
+Output:
+ABCD

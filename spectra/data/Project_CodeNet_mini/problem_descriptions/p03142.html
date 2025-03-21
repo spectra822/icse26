@@ -1,0 +1,99 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a rooted tree (see Notes) with <var>N</var> vertices numbered <var>1</var> to <var>N</var>.
+Each of the vertices, except the root, has a directed edge coming from its parent.
+Note that the root may not be Vertex <var>1</var>.</p>
+<p>Takahashi has added <var>M</var> new directed edges to this graph.
+Each of these <var>M</var> edges, <var>u \rightarrow v</var>, extends from some vertex <var>u</var> to its descendant <var>v</var>.</p>
+<p>You are given the directed graph with <var>N</var> vertices and <var>N-1+M</var> edges after Takahashi added edges.
+More specifically, you are given <var>N-1+M</var> pairs of integers, <var>(A_1, B_1), ..., (A_{N-1+M}, B_{N-1+M})</var>, which represent that the <var>i</var>-th edge extends from Vertex <var>A_i</var> to Vertex <var>B_i</var>.</p>
+<p>Restore the original rooted tree.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Notes</h3><p>For "tree" and other related terms in graph theory, see <a href="https://ja.wikipedia.org/wiki/%E6%9C%A8_(%E6%95%B0%E5%AD%A6)" target="_blank">the article in Wikipedia</a>, for example.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>3 \leq N</var></li>
+<li><var>1 \leq M</var></li>
+<li><var>N + M \leq 10^5</var></li>
+<li><var>1 \leq A_i, B_i \leq N</var></li>
+<li><var>A_i \neq B_i</var></li>
+<li>If <var>i \neq j</var>, <var>(A_i, B_i) \neq (A_j, B_j)</var>.</li>
+<li>The graph in input can be obtained by adding <var>M</var> edges satisfying the condition in the problem statement to a rooted tree with <var>N</var> vertices.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>A_1</var> <var>B_1</var>
+<var>:</var>
+<var>A_{N-1+M}</var> <var>B_{N-1+M}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print <var>N</var> lines.
+In the <var>i</var>-th line, print <code>0</code> if Vertex <var>i</var> is the root of the original tree, and otherwise print the integer representing the parent of Vertex <var>i</var> in the original tree.</p>
+<p>Note that it can be shown that the original tree is uniquely determined.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 1
+1 2
+1 3
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>0
+1
+2
+</pre>
+<p>The graph in this input is shown below:</p>
+<p><img alt="" src="https://img.atcoder.jp/nikkei2019-qual/ee05880ceecf703f656dd50bf22c573f.png"/></p>
+<p>It can be seen that this graph is obtained by adding the edge <var>1 \rightarrow 3</var> to the rooted tree <var>1 \rightarrow 2 \rightarrow 3</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>6 3
+2 1
+2 3
+4 1
+4 2
+6 1
+2 6
+4 6
+6 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>6
+4
+2
+0
+6
+2
+</pre></section>
+</div>
+</span>

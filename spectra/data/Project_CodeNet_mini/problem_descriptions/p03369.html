@@ -1,0 +1,74 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>In "Takahashi-ya", a ramen restaurant, a bowl of ramen costs <var>700</var> yen (the currency of Japan), plus <var>100</var> yen for each kind of topping (boiled egg, sliced pork, green onions).</p>
+<p>A customer ordered a bowl of ramen and told which toppings to put on his ramen to a clerk. The clerk took a memo of the order as a string <var>S</var>. <var>S</var> is three characters long, and if the first character in <var>S</var> is <code>o</code>, it means the ramen should be topped with boiled egg; if that character is <code>x</code>, it means the ramen should not be topped with boiled egg. Similarly, the second and third characters in <var>S</var> mean the presence or absence of sliced pork and green onions on top of the ramen.</p>
+<p>Write a program that, when <var>S</var> is given, prints the price of the corresponding bowl of ramen.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>S</var> is a string of length <var>3</var>.</li>
+<li>Each character in <var>S</var> is <code>o</code> or <code>x</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>S</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the price of the bowl of ramen corresponding to <var>S</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>oxo
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>900
+</pre>
+<p>The price of a ramen topped with two kinds of toppings, boiled egg and green onions, is <var>700 + 100 \times 2 = 900</var> yen.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>ooo
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1000
+</pre>
+<p>The price of a ramen topped with all three kinds of toppings is <var>700 + 100 \times 3 = 1000</var> yen.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>xxx
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>700
+</pre>
+<p>The price of a ramen without any toppings is <var>700</var> yen.</p></section>
+</div>
+</span>

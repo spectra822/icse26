@@ -1,0 +1,40 @@
+// Function definition for Main which processes the input and computes the result
+function Main(input) {
+    // Parsing the input and converting it into a 2D array of integers
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    
+    // Extracting time intervals and initial values for A and B
+    let T1 = parseInt(input[0][0], 10);
+    let T2 = parseInt(input[0][1], 10);
+    let A1 = parseInt(input[1][0], 10);
+    let A2 = parseInt(input[1][1], 10);
+    let B1 = parseInt(input[2][0], 10);
+    let B2 = parseInt(input[2][1], 10);
+
+    // Calculating the distance difference after the first and second intervals
+    let d1 = BigInt(A1 - B1) * BigInt(T1);
+    let d2 = BigInt(A2 - B2) * BigInt(T2) + d1;
+
+    // Variable to store the answer
+    let ans = 0n;
+    let tmp;
+
+    // Determine the result based on the values of d1 and d2
+    if (d2 === 0n) {
+        ans = 'infinity';
+    } else if (d1 * d2 < 0n) {
+        d2 = d2 * -1n;
+        tmp = (d1 / d2);
+        ans = (tmp * d2 === d1) ? tmp * 2n : tmp * 2n + 1n;
+    } else {
+        ans = 0;
+    }
+    
+    // Output the result
+    console.log(ans.toString());
+}
+
+// Reading input from standard input and invoking the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

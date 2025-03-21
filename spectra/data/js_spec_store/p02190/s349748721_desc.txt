@@ -1,0 +1,14 @@
+// Read input from standard input and split it into lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+
+// Extract the number of elements (n) and the array of numbers (a)
+var n = arr.shift() - 0;
+var a = arr.shift().split(" ").map(Number);
+
+// Use a Set to store unique numbers from the array
+var s = new Set();
+a.forEach(v => s.add(v));
+
+// Output the size of the Set, which represents the number of unique elements
+console.log(s.size);

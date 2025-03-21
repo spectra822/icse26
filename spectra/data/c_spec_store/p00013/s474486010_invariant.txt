@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: A sequence of integers, each on a new line. The sequence ends with EOF.
+    // Output format: A sequence of integers, each printed on a new line.
+    // Precondition: The input consists of integers. If an integer is zero, it indicates a car leaving the railroad.
+    // Postcondition: The program simulates cars entering and leaving a railroad. For each zero in the input, it prints the last car that entered and has not yet left. The program terminates when EOF is encountered.
+```

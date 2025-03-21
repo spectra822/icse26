@@ -1,0 +1,38 @@
+// Segment 1: Input Handling and Initial Setup
+// Precondition: The program is executed with a single string input representing two integers separated by a space.
+// Postcondition: Variables `K` and `S` are initialized as integers parsed from the input string, and `count` is initialized to 0.
+
+function main(input) {
+    const args = input.split(' ');
+    const K = parseInt(args[0], 10);
+    const S = parseInt(args[1], 10);
+
+    let count = 0;
+
+    // Segment 2: Counting Valid (x, y, z) Combinations
+    // Precondition: Variables `K`, `S`, and `count` are initialized. `K` and `S` are integers.
+    // Postcondition: `count` contains the number of valid (x, y, z) combinations such that 0 <= x, y, z <= K and x + y + z = S.
+
+    for (let x = 0; x <= K; x++) {
+        for (let y = 0; y <= K; y++) {
+            z = S - x - y;
+            if (0 <= z && z <= K) {
+                count++;
+            }
+        }
+    }
+
+    // Segment 3: Output the Result
+    // Precondition: `count` contains the number of valid (x, y, z) combinations.
+    // Postcondition: The value of `count` is printed to the console.
+    // Output format: A single integer representing the count is printed on a new line.
+
+    console.log(count);
+}
+
+// Segment 4: Reading Input and Invoking Main Function
+// Precondition: The program is executed in an environment where input can be read from '/dev/stdin'.
+// Postcondition: The `main` function is called with the input read from '/dev/stdin'.
+// Input format: A single line containing two integers separated by a space (e.g., "2 2\n").
+
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

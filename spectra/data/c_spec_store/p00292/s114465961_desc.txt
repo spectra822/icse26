@@ -1,0 +1,9 @@
+```c
+// Global variables
+int n, x;
+
+// Main function that reads an integer n and then processes n pairs of integers (x, y).
+// For each pair, it prints the result of (x-1)%y + 1.
+int main(int y)
+    // Calls: scanf(...), printf(...), exit(...)
+```

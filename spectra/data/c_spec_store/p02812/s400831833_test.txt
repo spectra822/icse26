@@ -1,0 +1,6 @@
+Input:
+15
+ABABABCABCABCAB
+
+Output:
+3

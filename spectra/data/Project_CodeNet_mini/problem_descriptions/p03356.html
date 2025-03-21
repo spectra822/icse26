@@ -1,0 +1,119 @@
+<span class="lang-en">
+<p>Score : <var>400</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a permutation of the integers from <var>1</var> through <var>N</var>, <var>p_1</var>, <var>p_2</var>, .., <var>p_N</var>.
+We also have <var>M</var> pairs of two integers between <var>1</var> and <var>N</var> (inclusive), represented as <var>(x_1,y_1)</var>, <var>(x_2,y_2)</var>, .., <var>(x_M,y_M)</var>.
+AtCoDeer the deer is going to perform the following operation on <var>p</var> as many times as desired so that the number of <var>i</var> (<var>1</var> <var>≤</var> <var>i</var> <var>≤</var> <var>N</var>) such that <var>p_i = i</var> is maximized:</p>
+<ul>
+<li>Choose <var>j</var> such that <var>1</var> <var>≤</var> <var>j</var> <var>≤</var> <var>M</var>, and swap <var>p_{x_j}</var> and <var>p_{y_j}</var>.</li>
+</ul>
+<p>Find the maximum possible number of <var>i</var> such that <var>p_i = i</var> after operations.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2</var> <var>≤</var> <var>N</var> <var>≤</var> <var>10^5</var></li>
+<li><var>1</var> <var>≤</var> <var>M</var> <var>≤</var> <var>10^5</var></li>
+<li><var>p</var> is a permutation of integers from <var>1</var> through <var>N</var>.</li>
+<li><var>1</var> <var>≤</var> <var>x_j,y_j</var> <var>≤</var> <var>N</var></li>
+<li><var>x_j</var> <var>≠</var> <var>y_j</var></li>
+<li>If <var>i</var> <var>≠</var> <var>j</var>, <var>\{x_i,y_i\}</var> <var>≠</var> <var>\{x_j,y_j\}</var>.</li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>p_1</var> <var>p_2</var> <var>..</var> <var>p_N</var>
+<var>x_1</var> <var>y_1</var>
+<var>x_2</var> <var>y_2</var>
+<var>:</var>
+<var>x_M</var> <var>y_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible number of <var>i</var> such that <var>p_i = i</var> after operations.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2
+5 3 1 4 2
+1 3
+5 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>If we perform the operation by choosing <var>j=1</var>, <var>p</var> becomes <code>1 3 5 4 2</code>, which is optimal, so the answer is <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+3 2 1
+1 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>3
+</pre>
+<p>If we perform the operation by, for example, choosing <var>j=1</var>, <var>j=2</var>, <var>j=1</var> in this order, <var>p</var> becomes <code>1 2 3</code>, which is obviously optimal.
+Note that we may choose the same <var>j</var> any number of times.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 8
+5 3 6 8 7 10 9 1 2 4
+3 1
+4 1
+5 9
+2 5
+6 5
+3 5
+8 9
+7 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>8
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>5 1
+1 2 3 4 5
+1 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>5
+</pre>
+<p>We do not have to perform the operation. </p></section>
+</div>
+</span>

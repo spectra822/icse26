@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: The first line contains three integers separated by spaces.
+    // Output format: Three integers separated by spaces in ascending order.
+    // Precondition: The variables `a`, `b`, and `c` are declared.
+    // Postcondition: The variables `d`, `e`, and `f` are assigned the values of `a`, `b`, and `c` in ascending order.
+```

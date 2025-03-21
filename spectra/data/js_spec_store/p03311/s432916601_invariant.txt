@@ -1,0 +1,76 @@
+// Segment 1: Input Reading and Preprocessing
+//
+// Precondition:
+// - The input is a string where the first line contains an integer N. The second line contains N space-separated integers.
+// - The input is read from the standard input.
+//
+// Postcondition:
+// - `input` is an array where each element corresponds to a line from the input string.
+// - The last element of `input` is removed if it is an empty string.
+function Main(input) {
+    input = input.split("\n");
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Segment 2: Parsing and Array Transformation
+    //
+    // Precondition:
+    // - `input` is an array where the first element is a string containing an integer N, 
+    //   and the second element is a string containing N space-separated integers.
+    //
+    // Postcondition:
+    // - `N` is an integer representing the number of elements in the array.
+    // - `array` is a sorted array of integers where each element is derived by subtracting its index and 1 from the original element.
+    const N = input[0].split(' ')[0] - 0;
+    var array = input[1].split(' ').map((e, i) => {
+        return e - i - 1;
+    }).sort((a, b) => {
+        return a - b;
+    });
+
+    // Segment 3: Calculating the Minimum Sum of Absolute Differences
+    //
+    // Precondition:
+    // - `array` is a sorted array of integers.
+    //
+    // Postcondition:
+    // - Outputs the minimum sum of absolute differences between each element and the median of the array.
+    console.log(array.reduce((acc, cur) => {
+        return acc + Math.abs(cur - array[Math.floor(array.length / 2)]);
+    }, 0));
+}
+
+// Input Format:
+// - The input is read from the standard input "/dev/stdin".
+// - Input is a string with two lines. The first line contains an integer N. The second line contains N space-separated integers.
+// Example:
+// 5
+// 2 2 3 5 5
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+
+// Segment 4: Permutation Function
+//
+// Precondition:
+// - `n` and `k` are integers where 1 <= k <= n.
+//
+// Postcondition:
+// - Returns an array of all possible permutations of length `k` from numbers 1 to `n`.
+function permutation(n, k) {
+    var ret = [
+        []
+    ];
+    var next;
+    for (var i = 0; i < k; i++) {
+        next = [];
+        ret.forEach(e => {
+            for (var k = 1; k <= n; k++) {
+                if (!e.includes(k)) {
+                    next.push(e.concat([k]));
+                }
+            }
+        });
+        ret = next.concat([]);
+    }
+    return ret;
+}

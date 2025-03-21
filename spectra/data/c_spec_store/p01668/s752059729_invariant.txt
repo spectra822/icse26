@@ -1,0 +1,34 @@
+```
+int add(int a, int b)
+    // Precondition: `a` and `b` are non-negative integers.
+    // Postcondition: The result of `(a + b) % MOD_BY` is returned.
+
+int getNumberOfNumber(int pos, int ueFlag, int sitaFlag)
+    // Precondition: `pos` is a non-negative integer less than or equal to `N`.
+    // `ueFlag` and `sitaFlag` are boolean-like integers (0 or 1).
+    // The global arrays `A`, `B`, `numberOfNumber` have been initialized.
+    // The global integer `N` is set to the length of `B`.
+    // The function `add` is correctly defined.
+    // Postcondition: The number of valid numbers from position `pos` to the end of the array,
+    // considering the constraints `ueFlag` and `sitaFlag`, is returned.
+    // The result is memoized in `numberOfNumber[pos][ueFlag][sitaFlag]`.
+
+int search(int pos, int seqPos, int ueFlag, int sitaFlag)
+    // Precondition: `pos` and `seqPos` are non-negative integers.
+    // `ueFlag` and `sitaFlag` are boolean-like integers (0 or 1).
+    // The global arrays `A`, `B`, `C`, `memo` have been initialized.
+    // The global integers `N` and `M` are set to the lengths of `B` and `C`, respectively.
+    // The global integer `existPos` is set correctly based on the lengths of `A` and `B`.
+    // The function `add` and `getNumberOfNumber` are correctly defined.
+    // Postcondition: The total number of valid numbers matching the constraints and the sequence `C`
+    // from position `pos` to the end of the array is returned.
+    // The result is memoized in `memo[pos][seqPos][ueFlag][sitaFlag]`.
+
+int main(void)
+    // Input format: Three strings `A`, `B`, and `C` are read from standard input.
+    // Output format: A single integer is printed to standard output.
+    // Precondition: The input strings `A`, `B`, and `C` are non-negative integers in string format.
+    // The global arrays `A`, `B`, `C`, `memo`, and `numberOfNumber` have been declared.
+    // Postcondition: The number of valid numbers that match the constraints and the sequence `C`
+    // is printed to standard output.
+```

@@ -1,0 +1,12 @@
+```c
+// Global variables
+// There are no global variables in this program.
+
+// The main function reads input values, processes them, and prints the result.
+// It takes two integers `n` and `m` representing the sizes of two arrays.
+// It reads the elements of two arrays `x` and `y`.
+// It calculates two values `t` and `k` based on the elements of the arrays
+// and prints the product of `t` and `k` modulo 1000000007.
+int main(void)
+    // No calls to other functions
+```

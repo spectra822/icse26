@@ -1,0 +1,21 @@
+```c
+// Global variables
+T tbl[100002];
+int sz;
+
+// Read an integer from standard input using optimized IO operations.
+// Returns the integer read.
+int in()
+
+// Compare two elements of type T based on their ratio `r`.
+// Used for sorting elements in descending order of their ratio.
+int cmp(T *a, T *b)
+
+// This function solves the fractional knapsack problem.
+// It first reads the input values for the number of items and the maximum weight of the knapsack.
+// Then, it processes each item, calculates the total maximum value achievable, and prints the result.
+int main()
+  Calls in(...)
+  Calls qsort(...)
+  Calls cmp(...)
+```

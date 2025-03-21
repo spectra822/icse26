@@ -1,0 +1,14 @@
+```c
+// Global variables
+int min(int a, int b);
+
+// Given two integers `a` and `b`, return the smaller of the two.
+int min(int a, int b)
+
+// This function initializes the distance matrix `dist` for `N` nodes,
+// then reads `M` edges, updates the distance matrix with the given edges,
+// and computes the shortest paths between all pairs of nodes using the Floyd-Warshall algorithm.
+// Finally, it counts and prints the number of edges that are necessary for the shortest paths.
+int main(void)
+  Calls min(...)
+```

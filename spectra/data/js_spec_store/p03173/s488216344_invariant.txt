@@ -1,0 +1,58 @@
+// Segment 1: Variable Initialization and Input Parsing
+// Precondition: The input string should be a non-empty string representing the number of elements followed by the elements themselves, separated by spaces and newlines.
+// Postcondition: The input is parsed into a 2D array `input`, `N` is the number of elements, and `a` is an array of integers.
+
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    let N = parseInt(input[0][0], 10);
+    a = input[1].map(e => parseInt(e, 10));
+
+    // Segment 2: DP Array Initialization and Prefix Sum Calculation
+    // Precondition: `N` is a positive integer and `a` is an array of `N` integers.
+    // Postcondition: `DP` is initialized as a 2D array of size NxN with empty arrays, and `ruisekiwa` is an array of prefix sums of `a`.
+
+    DP = Array.from({ length: N }, () => []);
+    ruisekiwa = [0];
+    for (let i = 0; i < N; i++) ruisekiwa.push(ruisekiwa[i] + a[i]);
+
+    // Segment 3: Calculate Minimum Cost using Dynamic Programming
+    // Precondition: `DP` is a 2D array initialized to store subproblem solutions, and `ruisekiwa` contains prefix sums of `a`.
+    // Postcondition: The minimum cost to merge all elements in `a` is calculated and printed to the console.
+    // Input format: A single integer `N` followed by a newline, then `N` integers separated by spaces.
+    // Output format: A single integer representing the minimum cost.
+
+    console.log(kukanDP(0, N - 1))
+}
+
+// Segment 4: Recursive Dynamic Programming Function
+// Precondition: `l` and `r` are valid indices within the bounds of the array `a`.
+// Postcondition: Returns the minimum cost to merge the subarray from `l` to `r` and stores the result in `DP[l][r]`.
+
+function kukanDP(l, r) {
+    if (DP[l][r] != null) return DP[l][r];
+    if (l === r) {
+        DP[l][r] = 0;
+        return 0;
+    }
+    if (r === l + 1) {
+        DP[l][r] = a[l] + a[r];
+        return DP[l][r];
+    }
+    let tmp = Infinity;
+    for (let i = l; i < r; i++) {
+        tmp = Math.min(tmp, kukanDP(l, i) + kukanDP(i + 1, r) - ruisekiwa[l] + ruisekiwa[r + 1]);
+    }
+    DP[l][r] = tmp;
+    return tmp;
+}
+
+// Segment 5: Program Execution
+// Precondition: The program is executed in an environment where it can read from "/dev/stdin".
+// Postcondition: The main function is called with the input from "/dev/stdin".
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+4
+10 20 30 40
+190

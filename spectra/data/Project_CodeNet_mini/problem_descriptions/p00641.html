@@ -1,0 +1,84 @@
+
+<H1><font color="#000000">Problem E:</font> Huge Family</H1>
+
+<p>
+Mr. Dango's family has extremely huge number of members. Once it had about 100 members, and now it has as many as population of a city. It is jokingly guessed that the member might fill this planet in near future. They all have warm and gracious personality and are close each other.
+</p>
+
+<p>
+They usually communicate by a phone. Of course, They are all taking a family plan. This family plan is such a thing: when <i>a</i> choose <i>b</i>, and <i>b</i> choose <i>a</i> as a partner, a family plan can be applied between them and then the calling fee per unit time between them discounted to <i>f</i>(<i>a</i>, <i>b</i>), which is cheaper than a default fee. Each person can apply a family plan at most 2 times, but no same pair of persons can apply twice. Now, choosing their partner appropriately, all members of Mr. Dango's family applied twice.
+</p>
+<p>
+Since there are huge number of people, it is very difficult to send a message to all family members by a phone call. Mr. Dang have decided to make a phone calling network that is named '<i>clan</i>' using the family plan. Let us present a definition of <i>clan</i>.
+</p>
+
+<p>
+Let <i>S</i> be an any subset of all phone calls that family plan is applied. <i>Clan</i> is <i>S</i> such that:
+<ol>
+<li> For any two persons (let them be <i>i</i> and <i>j</i>), if <i>i</i> can send a message to <i>j</i> through phone calls that family plan is applied (directly or indirectly), then <i>i</i> can send a message to <i>j</i> through only phone calls in <i>S</i> (directly or indirectly).</li>
+<li> Meets condition 1 and a sum of the calling fee per unit time in <i>S</i> is minimized.</li>
+</ol>
+</p>
+
+<p>
+<i>Clan</i> allows to send a message efficiently. For example, we suppose that one have sent a message through all calls related to him in the clan. Additionaly we suppose that every people follow a rule, "when he/she receives a message through a call in clan, he/she relays the message all other neibors in respect to clan." Then, we can prove that this message will surely be derivered to every people that is connected by all discounted calls, and that the message will never be derivered two or more times to same person.
+</p>
+
+<p>
+By the way, you are given information about application of family plan of Mr. Dango's family. Please write a program that calculates that in how many ways a different clan can be constructed. You should output the answer modulo 10007 because it may be very big.
+</p>
+
+
+<H2>Input</H2>
+
+<p>
+The input consists of several datasets.
+</p>
+
+<p>
+The first line of each dataset contains an integer <i>n</i>, which indicates the number of members in the family.
+</p>
+
+<p>
+Next <i>n</i> lines represents information of the <i>i</i>-th member with four integers. The first two integers respectively represent <i>b</i>[0] (the partner of <i>i</i>) and f(<i>i</i>, <i>b</i>[0]) (the calling fee per unit time between <i>i</i> and <i>b</i>[0]). The following two integers represent <i>b</i>[1] and <i>f</i>(<i>i</i>, <i>b</i>[1]) in the same manner.
+</p>
+
+<p>
+Input terminates with a dataset where n = 0.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each dataset, output the number of <i>clan</i> modulo 10007.
+</p>
+
+<H2>Constraints</H2>
+
+<ul>
+<li>3 &le; <i>n</i> &le; 100,000</li>
+</ul>
+
+<H2>Sample Input</H2>
+<pre>
+3
+1 1 2 3
+0 1 2 2
+1 2 0 3
+7
+1 2 2 1
+0 2 3 2
+0 1 3 1
+2 1 1 2
+5 3 6 2
+4 3 6 1
+4 2 5 1
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+<pre>
+1
+2
+</pre>
+

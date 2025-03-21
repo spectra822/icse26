@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: Two integers `x` and `y`, separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variables `x` and `y` are integers taken as input from STDIN.
+    // Postcondition: The variable `ans` is calculated based on the logic of the if-else conditions and printed to STDOUT.
+```

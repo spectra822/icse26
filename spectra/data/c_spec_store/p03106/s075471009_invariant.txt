@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: Three integers `a`, `b`, and `c` separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variables `a`, `b`, and `c` are positive integers.
+    // Postcondition: The `c`-th common divisor of `a` and `b` is printed to the standard output.
+```

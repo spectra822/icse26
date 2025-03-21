@@ -1,0 +1,47 @@
+const {
+    reverse
+} = require("dns");
+
+// Precondition: The 'dns' module has a method 'reverse' defined.
+// Postcondition: The 'reverse' method from the 'dns' module is imported.
+
+const main = stdin => {
+    // Precondition: 'stdin' is a string containing multiple lines of input.
+    // Postcondition: 'input' is an array of strings, each representing a line from 'stdin'.
+    const input = stdin.trim().split('\n');
+     
+    // Precondition: The first element of 'input' is a string containing three space-separated numbers.
+    // Postcondition: 'A', 'B', and 'K' are integers parsed from the first element of 'input'.
+    const A = parseInt(input[0].split(" ")[0]);
+    const B = parseInt(input[0].split(" ")[1]);
+    const K = parseInt(input[0].split(" ")[2]);
+
+    // Precondition: 'A' is an integer.
+    // Postcondition: 'Aresults' is an array containing all divisors of 'A'.
+    let Aresults = [];
+    for (let i = 1; i <= A; i++) {
+        if (A % i == 0) {
+            Aresults.push(i);
+        }
+    }
+
+    // Precondition: 'Aresults' is an array of divisors of 'A'.
+    // Postcondition: 'ABresults' is an array containing elements from 'Aresults' that are also divisors of 'B'.
+    let ABresults = [];
+    for (let i = 0; i < Aresults.length; i++) {
+        if (B % Aresults[i] == 0) {
+            ABresults.push(Aresults[i]);
+        }
+    }
+
+    // Precondition: 'ABresults' is an array of common divisors of 'A' and 'B'.
+    // Postcondition: 'ABresults2' is 'ABresults' reversed and the (K-1)th element is printed to the console.
+    const ABresults2 = ABresults.reverse();
+    console.log(ABresults2[K - 1]);
+    // Input format: A string from stdin containing multiple lines (e.g., "8 12 2\n").
+    // Output format: A single integer printed to the console (e.g., "2\n").
+}
+
+// Precondition: The 'main' function is called with the content of a file read from "/dev/stdin".
+// Postcondition: The (K-1)th largest common divisor of A and B is printed to the console.
+main(require("fs").readFileSync("/dev/stdin", "utf8"));

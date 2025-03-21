@@ -1,0 +1,213 @@
+// Segment 1: Variable Declarations and Initialization
+// Precondition: None
+// Postcondition: Readline interface is created, and necessary variables are declared.
+var read = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+var obj;
+var inLine = [];
+read.on('line', function(input) {
+    inLine.push(input);
+});
+read.on('close', function() {
+    obj = init(inLine);
+    myerr("-----start-----");
+    var start = new Date();
+    Main();
+    var end = new Date() - start;
+    myerr("----- end -----");
+    myerr("time : " + (end) + "ms");
+});
+
+// Segment 2: Utility Functions
+// Precondition: None
+// Postcondition: Utility functions for input parsing and logging are defined.
+function nextInt() {
+    return myconv(next(), 1);
+}
+
+function nextStrArray() {
+    return myconv(next(), 2);
+}
+
+function nextIntArray() {
+    return myconv(next(), 4);
+}
+
+function nextCharArray() {
+    return myconv(next(), 6);
+}
+
+function next() {
+    return obj.next();
+}
+
+function hasNext() {
+    return obj.hasNext();
+}
+
+function init(input) {
+    // Precondition: `input` is an array of strings representing the input lines.
+    // Postcondition: Returns an object with helper methods for input management.
+    var returnObj = {
+        list: input,
+        index: 0,
+        max: input.length,
+        hasNext: function() {
+            return (this.index < this.max);
+        },
+        next: function() {
+            if (!this.hasNext()) {
+                throw "ArrayIndexOutOfBoundsException これ以上ないよ";
+            } else {
+                var returnInput = this.list[this.index];
+                this.index++;
+                return returnInput;
+            }
+        }
+    };
+    return returnObj;
+}
+
+function myout(s) {
+    // Precondition: `s` is a string to be printed.
+    // Postcondition: Prints the string `s` to standard output.
+    console.log(s);
+}
+
+function myerr(s) {
+    // Precondition: `s` is a string to be logged as debug information.
+    // Postcondition: Logs the string `s` to standard error output.
+    console.error("debug:" + require("util").inspect(s, false, null));
+}
+
+function myconv(i, no) {
+    // Precondition: `i` is a string or array to be converted, `no` is an integer indicating the conversion type.
+    // Postcondition: Returns the converted value based on the conversion type `no`.
+    try {
+        switch (no) {
+            case 1:
+                return parseInt(i);
+            case 2:
+                return i.split(" ");
+            case 4:
+                return i.split(" ").map(Number);
+            case 6:
+                return i.split("");
+            case 7:
+                return i.split("").map(Number);
+            case 8:
+                return i.join(" ");
+            case 9:
+                return i.join("\n");
+            case 0:
+                return i.join("");
+            default:
+                return i;
+        }
+    } catch (e) {
+        return i;
+    }
+}
+
+// Segment 3: Main Function
+// Precondition: Input has been read and initialized using `init` function.
+// Postcondition: Determines the winner between "Fennec" and "Snuke" and prints the result.
+// Input: The first line is an integer N (number of nodes), followed by N-1 lines of two integers indicating the edges.
+// Output: A single line containing either "Fennec" or "Snuke".
+function Main() {
+    var N = nextInt();
+    var list = new Array(N);
+    for (var i = 0; i < N; i++) {
+        list[i] = {
+            child: new Set(),
+            from: null,
+            access: false,
+            color: null,
+            count: 0
+        };
+    }
+    for (var i = 0; i < N - 1; i++) {
+        var tmp = nextIntArray();
+        list[tmp[0] - 1].child.add(tmp[1] - 1);
+        list[tmp[1] - 1].child.add(tmp[0] - 1);
+    }
+
+    // Segment 3.1: BFS Initialization
+    // Precondition: Graph has been built with nodes and edges.
+    // Postcondition: Initializes BFS to find the shortest path from node 0 to node N-1.
+    var queue = new Array(100007);
+    queue[0] = 0;
+    list[0].access = true;
+    var mae = 0;
+    var ato = 1;
+    while (mae != ato) {
+        var parent = queue[mae];
+        mae++;
+        if (parent == N - 1) {
+            break;
+        }
+        var child = Array.from(list[parent].child);
+        for (var i = 0; i < child.length; i++) {
+            if (!list[child[i]].access) {
+                list[child[i]].access = true;
+                list[child[i]].from = parent;
+                queue[ato] = child[i];
+                list[child[i]].count = list[parent].count + 1;
+                ato++;
+            }
+        }
+    }
+
+    // Segment 3.2: Determine Midpoint and Color Nodes
+    // Precondition: BFS has found the shortest path from node 0 to node N-1.
+    // Postcondition: Colors the nodes to determine the territories of "Fennec" and "Snuke".
+    var cut = Math.ceil(list[N - 1].count / 2);
+    var now = N - 1;
+    while (cut != 0) {
+        now = list[now].from;
+        cut--;
+    }
+    list[0].color = "BLACK";
+    list[N - 1].color = "WHITE";
+    list[now].color = "BLACK";
+    bfs(0, "BLACK");
+    bfs(N - 1, "WHITE");
+    var w = 0;
+    var b = 0;
+    for (var i = 0; i < N; i++) {
+        if (list[i].color == "WHITE") {
+            w++;
+        } else {
+            b++;
+        }
+    }
+    if (b > w) {
+        myout("Fennec");
+    } else {
+        myout("Snuke");
+    }
+
+    // Segment 3.3: BFS Coloring Function
+    // Precondition: Node `index` and its color `color` are provided.
+    // Postcondition: Colors all reachable nodes from `index` with `color`.
+    function bfs(index, color) {
+        var queue = new Array(100007);
+        var mae = 0;
+        var ato = 1;
+        queue[mae] = index;
+        while (mae != ato) {
+            var parent = queue[mae];
+            mae++;
+            var child = Array.from(list[parent].child);
+            for (var i = 0; i < child.length; i++) {
+                if (list[child[i]].color == null) {
+                    queue[ato] = child[i];
+                    ato++;
+                    list[child[i]].color = color;
+                }
+            }
+        }
+    }
+}

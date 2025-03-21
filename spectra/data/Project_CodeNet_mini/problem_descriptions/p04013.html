@@ -1,0 +1,111 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Tak has <var>N</var> cards. On the <var>i</var>-th <var>(1 \leq i \leq N)</var> card is written an integer <var>x_i</var>.
+He is selecting one or more cards from these <var>N</var> cards, so that the average of the integers written on the selected cards is exactly <var>A</var>.
+In how many ways can he make his selection?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 50</var></li>
+<li><var>1 \leq A \leq 50</var></li>
+<li><var>1 \leq x_i \leq 50</var></li>
+<li><var>N,\,A,\,x_i</var> are integers.</li>
+</ul>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Partial Score</h3><ul>
+<li><var>200</var> points will be awarded for passing the test set satisfying <var>1 \leq N \leq 16</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>A</var>
+<var>x_1</var> <var>x_2</var> <var>...</var> <var>x_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the number of ways to select cards such that the average of the written integers is exactly <var>A</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 8
+7 9 8 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>5
+</pre>
+<ul>
+<li>The following are the <var>5</var> ways to select cards such that the average is <var>8</var>:<ul>
+<li>Select the <var>3</var>-rd card.</li>
+<li>Select the <var>1</var>-st and <var>2</var>-nd cards.</li>
+<li>Select the <var>1</var>-st and <var>4</var>-th cards.</li>
+<li>Select the <var>1</var>-st, <var>2</var>-nd and <var>3</var>-rd cards.</li>
+<li>Select the <var>1</var>-st, <var>3</var>-rd and <var>4</var>-th cards.</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 8
+6 6 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>8 5
+3 6 2 8 7 6 5 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>19
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>33 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>8589934591
+</pre>
+<ul>
+<li>The answer may not fit into a <var>32</var>-bit integer.</li>
+</ul></section>
+</div>
+</span>

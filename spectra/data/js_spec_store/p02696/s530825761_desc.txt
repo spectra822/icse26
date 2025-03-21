@@ -1,0 +1,15 @@
+// Segment 1: Import the 'fs' module and read input from standard input
+const input = require("fs").readFileSync("/dev/stdin", "utf8")
+
+// Segment 2: Split the input into lines and extract the first line
+const lines = input.split('\n')
+
+// Segment 3: Parse the first line into three numbers: A, B, and N
+const [A, B, N] = lines[0].split(' ').map(Number)
+
+// Segment 4: Compute the minimum value between N and B-1, and calculate the result
+const x = Math.min(N, B - 1)
+const res = Math.floor(A * x / B) - A * Math.floor(x / B)
+
+// Segment 5: Output the result
+console.log(res)

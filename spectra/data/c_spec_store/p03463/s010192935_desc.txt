@@ -1,0 +1,11 @@
+```c
+// Global variables
+// No global variables
+
+// Main function to determine the winner based on given conditions
+// Reads three integers N, A, and B from input
+// If the difference between B and A is even, it prints "Alice"
+// Otherwise, it prints "Borys"
+int main()
+    // No calls to other functions
+```

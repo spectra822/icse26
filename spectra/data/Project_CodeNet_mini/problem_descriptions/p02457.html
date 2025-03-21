@@ -1,0 +1,100 @@
+<h1>Set: Range Search</h1>
+
+<p>
+  For a set $S$ of integers, perform a sequence of the following operations. Note that <u>each value in $S$ must be unique</u>.
+</p>
+
+<ul>
+  <li>insert($x$): Insert $x$ to $S$ and report the number of elements in $S$ after the operation.</li>
+  <li>find($x$): Report the number of $x$ in $S$ (0 or 1).</li>
+  <li>delete($x$): Delete $x$ from $S$.</li>
+  <li>dump($L$, $R$): Print elements $x$ in $S$ such that $L \leq x \leq R$.</li>
+</ul>
+
+
+<h2>Input</h2>
+
+<p>
+  The input is given in the following format.
+</p>
+
+<pre>
+$q$
+$query_1$
+$query_2$
+:
+$query_q$
+</pre>
+
+<p>
+Each query $query_i$ is given by
+</p>
+
+<pre>
+0 $x$
+</pre>
+
+<p>or</p>
+
+<pre>
+1 $x$
+</pre>
+
+<p>or</p>
+
+<pre>
+2 $x$
+</pre>
+
+<p>or</p>
+
+<pre>
+3 $L$ $R$
+</pre>
+
+<p>
+where the first digits <span>0</span>, <span>1</span>, <span>2</span> and <span>3</span> represent insert, find, delete and dump operations respectively.
+</p>
+
+<h2>Output</h2>
+<p>
+For each insert operation, print the number of elements in $S$.<br>
+For each find operation, print the number of specified elements in $S$.<br>
+For each dump operation, print the corresponding elements in ascending order. Print an element in a line.
+</p>
+
+<h2>Constraints</h2>
+<ul>
+  <li>$1 \leq q \leq 200,000$</li>
+  <li>$0 \leq x \leq 1,000,000,000$</li>
+<li>The total number of elements printed by dump operations does not exceed $1,000,000$</li>
+</ul>
+
+<h2>Sample Input 1</h2>
+
+<pre>
+9
+0 1
+0 2
+0 3
+2 2
+1 1
+1 2
+1 3
+0 4
+3 2 4
+</pre>
+
+<h2>Sample Output 1</h2>
+
+<pre>
+1
+2
+3
+1
+0
+1
+3
+3
+4
+</pre>

@@ -1,0 +1,113 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> people numbered <var>1</var> to <var>N</var>. Each of them is either an <em>honest</em> person whose testimonies are always correct or an <em>unkind</em> person whose testimonies may be correct or not.</p>
+<p>Person <var>i</var> gives <var>A_i</var> testimonies. The <var>j</var>-th testimony by Person <var>i</var> is represented by two integers <var>x_{ij}</var> and <var>y_{ij}</var>. If <var>y_{ij} = 1</var>, the testimony says Person <var>x_{ij}</var> is honest; if <var>y_{ij} = 0</var>, it says Person <var>x_{ij}</var> is unkind.</p>
+<p>How many honest persons can be among those <var>N</var> people at most?</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li>All values in input are integers.</li>
+<li><var>1 \leq N \leq 15</var></li>
+<li><var>0 \leq A_i \leq N - 1</var></li>
+<li><var>1 \leq x_{ij} \leq N</var></li>
+<li><var>x_{ij} \neq i</var></li>
+<li><var>x_{ij_1} \neq x_{ij_2} (j_1 \neq j_2)</var></li>
+<li><var>y_{ij} = 0, 1</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var>
+<var>x_{11}</var> <var>y_{11}</var>
+<var>x_{12}</var> <var>y_{12}</var>
+<var>:</var>
+<var>x_{1A_1}</var> <var>y_{1A_1}</var>
+<var>A_2</var>
+<var>x_{21}</var> <var>y_{21}</var>
+<var>x_{22}</var> <var>y_{22}</var>
+<var>:</var>
+<var>x_{2A_2}</var> <var>y_{2A_2}</var>
+<var>:</var>
+<var>A_N</var>
+<var>x_{N1}</var> <var>y_{N1}</var>
+<var>x_{N2}</var> <var>y_{N2}</var>
+<var>:</var>
+<var>x_{NA_N}</var> <var>y_{NA_N}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible number of honest persons among the <var>N</var> people.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1
+2 1
+1
+1 1
+1
+2 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>If Person <var>1</var> and Person <var>2</var> are honest and Person <var>3</var> is unkind, we have two honest persons without inconsistencies, which is the maximum possible number of honest persons.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+2
+2 1
+3 0
+2
+3 1
+1 0
+2
+1 1
+2 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>Assuming that one or more of them are honest immediately leads to a contradiction.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>2
+1
+2 0
+1
+1 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1
+</pre></section>
+</div>
+</span>

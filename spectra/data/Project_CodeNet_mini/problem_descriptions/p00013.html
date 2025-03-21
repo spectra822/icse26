@@ -1,0 +1,90 @@
+
+<H1>Switching Railroad Cars</H1>
+
+<center>
+<img src="https://judgeapi.u-aizu.ac.jp/resources/images/IMAGE1_switchingRailroadCars">
+</center>
+<br>
+
+<p>
+This figure shows railway tracks for reshuffling cars. The rail tracks end in the bottom and the top-left rail track is used for the entrace and the top-right rail track is used for the exit. Ten cars, which have numbers from 1 to 10 respectively, use the rail tracks.
+</p>
+
+<p>
+We can simulate the movement (comings and goings) of the cars as follow: 
+</p>
+
+<ul>
+<li>An entry of a car is represented by its number.</li>
+<li>An exit of a car is represented by 0</li>
+</ul>
+
+
+<p>
+For example, a sequence
+</p>
+
+<pre>
+1
+6
+0
+8
+10
+</pre>
+
+<p>
+demonstrates that car 1 and car 6 enter to the rail tracks in this order, car 6 exits from the rail tracks, and then car 8 and car 10 enter.
+</p>
+
+<p>
+Write a program which simulates comings and goings of the cars which are represented by the sequence of car numbers. The program should read the sequence of car numbers and 0, and print numbers of cars which exit from the rail tracks in order. At the first, there are no cars on the rail tracks. You can assume that 0 will not be given when there is no car on the rail tracks.
+</p>
+
+
+
+
+<H2>Input</H2>
+
+<pre>
+car number
+car number or 0
+car number or 0
+  .
+  .
+  .
+car number or 0
+</pre>
+
+<p>
+The number of input lines is less than or equal to 100.
+</p>
+
+<H2>Output</H2>
+
+<p>
+For each 0, print the car number.
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+1
+6
+0
+8
+10
+0
+0
+0
+</pre>
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+6
+10
+8
+1
+</pre>
+
+

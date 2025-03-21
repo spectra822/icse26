@@ -1,0 +1,16 @@
+```
+int cmp(const void *a, const void *b)
+    // Precondition: `a` and `b` are pointers to valid `node` structures.
+    // Postcondition: Returns a negative value if the sum of `s` and `w` of the first node is less than that of the second node, zero if they are equal, and a positive value otherwise.
+
+void run(void)
+    // Precondition: The input format is correct and contains an integer `n` followed by `n` lines, each containing three integers `w`, `s`, and `v`.
+    // Postcondition: The maximum value that can be obtained from the given items without exceeding the strength constraints is computed and printed.
+
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain three integers `w`, `s`, and `v`, separated by whitespaces.
+    // Output format: A single integer value.
+    // Precondition: None.
+    // Postcondition: Executes the `run` function and returns 0.
+```

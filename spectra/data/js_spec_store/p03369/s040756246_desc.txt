@@ -1,0 +1,30 @@
+// Function definition for `main` that processes input to calculate the final value of `ndl`
+function main(input) {
+    // Split the input string into an array of characters
+    input = input.split('');
+
+    // Assign the first three characters of the input to `egg`, `meat`, and `veg` respectively
+    var egg = input[0];
+    var meat = input[1];
+    var veg = input[2];
+
+    // Initialize `ndl` with a base value of 700
+    var ndl = 700;
+
+    // Increase `ndl` by 100 for each ingredient that is marked with 'o'
+    if (egg === 'o') {
+        ndl += 100;
+    }
+    if (meat === 'o') {
+        ndl += 100;
+    }
+    if (veg === 'o') {
+        ndl += 100;
+    }
+
+    // Output the final value of `ndl`
+    console.log(ndl);
+}
+
+// Read input from standard input and pass it to the `main` function
+main(require('fs').readFileSync('/dev/stdin', 'utf8'));

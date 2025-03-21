@@ -1,0 +1,15 @@
+```c
+ll pom(ll a,ll n,int m)
+    // Precondition: a, n, and m are non-negative integers.
+    // Postcondition: The function returns (a^n) % m using modular exponentiation.
+
+ll choose(ll n,ll r)
+    // Precondition: n and r are non-negative integers, and fact and invfact arrays are initialized.
+    // Postcondition: The function returns the binomial coefficient C(n, r) % MOD using precomputed factorials and their modular inverses.
+
+int main()
+    // Input format: The first line contains a single integer `n`.
+    // Output format: A single number.
+    // Precondition: The global arrays fact, invfact, and temp have been declared.
+    // Postcondition: The total sum computed based on the given formula is printed.
+```

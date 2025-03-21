@@ -1,0 +1,11 @@
+```c
+// Global variables
+long long a[1001][1001];
+char t[1001], b[1001];
+
+// Main function that reads two strings `t` and `b`,
+// computes the number of times the string `b` appears as a subsequence in `t` using dynamic programming,
+// and prints the result.
+int main()
+  // No function calls
+```

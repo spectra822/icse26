@@ -1,0 +1,9 @@
+```c
+int main ()
+    // Input format: Two integers `a` and `b` separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The integer `b` should not be zero.
+    // Postcondition: The integer division of `a` by `b` is computed and stored in `c`.
+    // If `a` is not perfectly divisible by `b`, `c` is incremented by 1.
+    // The final value of `c` is printed.
+```

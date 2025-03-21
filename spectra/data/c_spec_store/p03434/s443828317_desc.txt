@@ -1,0 +1,18 @@
+```c
+// Global variables
+#define SENTINEL 1000000000000000000
+
+// Merges two subarrays of A[].
+// First subarray is A[left..mid]
+// Second subarray is A[mid..right]
+void merge(long long A[], long long left, long long mid, long long right)
+    // Calls to: malloc, free
+
+// Sorts the array A[left..right) using merge sort.
+void mergeSort(long long A[], long long left, long long right)
+    // Calls to: mergeSort, merge
+
+// Main function to read input, sort the array, and calculate the difference between sums.
+int main(void)
+    // Calls to: mergeSort
+```

@@ -1,0 +1,39 @@
+"use strict";
+
+// Main function to process the input and execute the logic
+function Main(input) {
+    // Parse the input
+    const params = input.trim().split("\n");
+    const [N, K] = params[0].trim().split(" ").map(Number);
+    const A = params[1].trim().split(" ").map(Number);
+    
+    // Initialize count array to keep track of occurrences of each number
+    const counts = Array(N + 1).fill(0);
+
+    // Count occurrences of each number in the array A
+    for (let i = 0; i < N; i++) {
+        counts[A[i]] = counts[A[i]] + 1;
+    }
+
+    // Sort the counts array and filter out zeroes
+    const filterdCounts = counts.sort((a, b) => a - b).filter((a) => a);
+
+    // If the number of unique elements is less than or equal to K, no changes are needed
+    if (filterdCounts.length <= K) {
+        console.log(0);
+        return;
+    }
+
+    // Calculate the minimum number of changes needed
+    let rewriteCount = 0;
+    let change = filterdCounts.length - K;
+    for (let i = 0; i < change; i++) {
+        rewriteCount += filterdCounts[i];
+    }
+
+    // Output the result
+    console.log(rewriteCount);
+}
+ 
+// Read input from standard input and pass it to the main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

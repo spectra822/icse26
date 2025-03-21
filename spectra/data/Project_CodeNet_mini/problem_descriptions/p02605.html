@@ -1,0 +1,109 @@
+<span class="lang-en">
+<p>Score: <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>M-kun is a brilliant air traffic controller.</p>
+<p>On the display of his radar, there are <var>N</var> airplanes numbered <var>1, 2, ..., N</var>, all flying at the same altitude.<br/>
+Each of the airplanes flies at a constant speed of <var>0.1</var> per second in a constant direction. The current coordinates of the airplane numbered <var>i</var> are <var>(X_i, Y_i)</var>, and the direction of the airplane is as follows:</p>
+<ul>
+<li>if <var>U_i</var> is <code>U</code>, it flies in the positive <var>y</var> direction;</li>
+<li>if <var>U_i</var> is <code>R</code>, it flies in the positive <var>x</var> direction;</li>
+<li>if <var>U_i</var> is <code>D</code>, it flies in the negative <var>y</var> direction;</li>
+<li>if <var>U_i</var> is <code>L</code>, it flies in the negative <var>x</var> direction.</li>
+</ul>
+<p>To help M-kun in his work, determine whether there is a pair of airplanes that will collide with each other if they keep flying as they are now.<br/>
+If there is such a pair, find the number of seconds after which the first collision will happen.<br/>
+We assume that the airplanes are negligibly small so that two airplanes only collide when they reach the same coordinates simultaneously.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>1 \leq N \leq 200000</var></li>
+<li><var>0 \leq X_i, Y_i \leq 200000</var></li>
+<li><var>U_i</var> is <code>U</code>, <code>R</code>, <code>D</code>, or <code>L</code>.</li>
+<li>The current positions of the <var>N</var> airplanes, <var>(X_i, Y_i)</var>, are all distinct.</li>
+<li><var>N</var>, <var>X_i</var>, and <var>Y_i</var> are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>X_1</var> <var>Y_1</var> <var>U_1</var>
+<var>X_2</var> <var>Y_2</var> <var>U_2</var>
+<var>X_3</var> <var>Y_3</var> <var>U_3</var>
+<var>:</var>
+<var>X_N</var> <var>Y_N</var> <var>U_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>If there is a pair of airplanes that will collide with each other if they keep flying as they are now, print an integer representing the number of seconds after which the first collision will happen.<br/>
+If there is no such pair, print <code>SAFE</code>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+11 1 U
+11 47 D
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>230
+</pre>
+<p>If the airplanes keep flying as they are now, two airplanes numbered <var>1</var> and <var>2</var> will reach the coordinates <var>(11, 24)</var> simultaneously and collide.  </p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+20 30 U
+30 20 R
+20 10 D
+10 20 L
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>SAFE
+</pre>
+<p>No pair of airplanes will collide.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>8
+168 224 U
+130 175 R
+111 198 D
+121 188 L
+201 116 U
+112 121 R
+145 239 D
+185 107 L
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>100
+</pre></section>
+</div>
+</span>

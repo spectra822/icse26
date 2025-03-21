@@ -1,0 +1,38 @@
+// Segment 1: Reading input from stdin and preparing the array of strings
+
+// Precondition: The program is executed in an environment where '/dev/stdin' is available
+// and contains the input data in the specified format (multiple lines of strings).
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Postcondition: `input` contains the entire content read from '/dev/stdin' as a single string.
+var Arr = (input.trim()).split("\n");
+
+// Postcondition: `Arr` is an array of strings, each element representing a line from the input.
+
+// Segment 2: Counting palindromic strings
+
+// Precondition: `Arr` is an array of strings, each representing a line from the input.
+var cnt = 0;
+
+// Postcondition: `cnt` is initialized to 0.
+Arr.forEach(function(v) {
+    // Precondition: `v` is a string from the `Arr` array.
+    var str = v.split("").reverse().join("");
+    // Postcondition: `str` is the reverse of the string `v`.
+    if (str == v) cnt++;
+    // Postcondition: `cnt` is incremented by 1 if `v` is a palindrome.
+});
+
+// Postcondition: `cnt` contains the number of palindromic strings in the `Arr` array.
+
+// Segment 3: Output the result
+
+// Precondition: `cnt` is the number of palindromic strings found in the `Arr` array.
+// Output format: A single integer printed to the console.
+console.log(cnt);
+// Postcondition: `cnt` is printed to the console.
+abcba
+sx
+abcddcba
+rttrd
+2

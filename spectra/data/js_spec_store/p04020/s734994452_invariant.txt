@@ -1,0 +1,70 @@
+// Segment 1: Function Definitions
+
+// Precondition: None
+// Postcondition: Two functions, `myout` and `Main`, are defined in the scope.
+
+// Function to print output
+function myout(text) {
+    console.log(text);
+}
+
+// Main function to process input and generate output
+function Main(input) {
+    // Segment 2: Input Parsing and Initialization
+
+    // Precondition: `input` is a string containing multiple lines of numerical input.
+    // Postcondition: `input` is an array of numbers, and `len` is set to the first number in `input`.
+
+    // Parse input into an array of numbers
+    input = input.trim().split("\n").map((a) => Number(a));
+    var len = input[0];
+    var output = 0;
+    input.shift();
+
+    // Segment 3: Main Logic Loop
+
+    // Precondition: `input` is an array of numbers with the first element removed, and `len` is the original first element.
+    // Postcondition: `output` contains the calculated result based on the logic provided.
+
+    for (var i = 0; i < len; i++) {
+        if (i == 0) {
+            // Calculate half of the first element
+            output += Math.floor(input[i] / 2);
+            input[i] = input[i] % 2;
+        } else {
+            if (input[i] != 0) {
+                if (input[i - 1] != 0) {
+                    // Calculate minimum of current and previous element
+                    var tmp = Math.min(input[i], input[i - 1]);
+                    output += tmp;
+                    input[i] -= tmp;
+                    input[i - 1] -= tmp;
+                    if (input[i] >= 2) {
+                        output += Math.floor(input[i] / 2);
+                        input[i] = input[i] % 2;
+                    }
+                } else {
+                    output += Math.floor(input[i] / 2);
+                    input[i] = input[i] % 2;
+                }
+            }
+        }
+    }
+
+    // Segment 4: Output the Result
+
+    // Precondition: `output` contains the final computed result.
+    // Postcondition: The result is printed to the console.
+
+    myout(output);
+}
+
+// Segment 5: Input Handling and Function Call
+
+// Precondition: The program is executed in an environment where input is provided via `/dev/stdin`.
+// Postcondition: The `Main` function is called with the input read from the file.
+
+// Input: The input is a string read from a file ("/dev/stdin"), which contains multiple lines of numerical values.
+// Output: The output is a single numerical value printed to the console.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

@@ -1,0 +1,29 @@
+// Segment 1: Reading input from the file and splitting it into an array
+// Preconditions: The file '/dev/stdin' exists and contains the input data in the expected format.
+// Postconditions: The variable 'Arr' is an array of strings, each representing a line of input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Removing the first element of the array
+// Preconditions: 'Arr' is a non-empty array where the first element is the number of subsequent lines.
+// Postconditions: The first element of 'Arr' has been removed, and 'Arr' only contains the subsequent lines.
+Arr.shift();
+
+// Segment 3: Iterating over each element in the array and processing it
+// Preconditions: 'Arr' is an array of strings where each string represents a pair of integers separated by a space.
+// Postconditions: For each pair of integers in 'Arr', the program has calculated and printed the required result.
+// Input format: Each line of input contains two integers separated by a space.
+// Output format: For each pair of integers, the output is a single integer printed on a new line.
+Arr.forEach(function(v, i) {
+    // Segment 3.1: Splitting each line into an array of numbers and calculating the result
+    // Preconditions: 'v' is a string representing two integers separated by a space.
+    // Postconditions: 'a' is the remainder of the division of the first integer by the second integer, or the second integer if the remainder is zero.
+    var arr = Arr[i].split(" ").map(Number);
+    var a = arr[0] % arr[1];
+    if (a == 0) a = arr[1];
+    
+    // Segment 3.2: Printing the result
+    // Preconditions: 'a' is the calculated result for the current pair of integers.
+    // Postconditions: The result 'a' has been printed to the console.
+    console.log(a);
+});

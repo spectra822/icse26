@@ -1,0 +1,14 @@
+```c
+// Global variables
+int N, i, j, k, c, a, A[10000000], R[3] = {9999999999, 9999999999, 9999999999};
+
+// Comparison function for sorting integers
+int cmp(int *a, int *b)
+    // No calls to other functions
+
+// Main function that reads an integer N and an array of N integers
+// It calculates the smallest 3 concatenated integers formed by any two distinct elements in the array
+// and prints the third smallest concatenated integer
+int main()
+    // Calls to no other functions
+```

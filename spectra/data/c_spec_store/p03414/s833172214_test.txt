@@ -1,0 +1,16 @@
+Input:
+5 6
+1 2
+2 3
+3 4
+4 2
+4 5
+5 3
+
+Output:
+same
+diff
+diff
+diff
+diff
+diff

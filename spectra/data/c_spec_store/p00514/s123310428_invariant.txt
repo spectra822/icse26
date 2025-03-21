@@ -1,0 +1,23 @@
+```c
+void tabaicho_set(int num)
+    // Precondition: `num` is a non-negative integer.
+    // Postcondition: The global array `tabaicho_main` is initialized such that the first element is `num` and all subsequent elements are set to 0.
+
+void tabaicho_mul(int num)
+    // Precondition: `num` is a non-negative integer.
+    // Postcondition: The global array `tabaicho_main` is updated to represent the product of its current value and `num`. Any overflow beyond the block size `TABAICHO_BLOCK` is carried over to the next block.
+
+void tabaicho_div(int num)
+    // Precondition: `num` is a positive integer.
+    // Postcondition: The global array `tabaicho_main` is updated to represent the division of its current value by `num`. Any remainder is carried over to the next block.
+
+void tabaicho_print(void)
+    // Precondition: The global array `tabaicho_main` has been initialized and contains a valid large integer.
+    // Postcondition: The value represented by the global array `tabaicho_main` is printed to the standard output in the correct format, with blocks of up to 9 digits.
+
+int main(void)
+    // Input format: Three integers `n`, `m`, and `r` separated by spaces.
+    // Output format: A single integer printed on a new line.
+    // Precondition: The variables `n`, `m`, and `r` are provided as input.
+    // Postcondition: The number of ways to distribute `r` items into `n` groups with `m` minimum items per group is printed. If the distribution is not possible, `0` is printed.
+```

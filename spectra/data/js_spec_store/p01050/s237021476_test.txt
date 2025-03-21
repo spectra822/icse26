@@ -1,0 +1,5 @@
+Input:
+a1b2c3
+
+Output:
+6

@@ -1,0 +1,54 @@
+// Segment 1: Reading input and initializing variables
+
+// Precondition: The input is provided via standard input and follows the format:
+// <number of elements in array a>
+// <elements of array a separated by spaces>
+// <number of elements in array b>
+// <elements of array b separated by spaces>
+
+// Postcondition: The input is read from standard input and parsed into two arrays `a` and `b`.
+// `a` contains the elements from the second line of input, and `b` contains the elements from the fourth line of input.
+// Variable `cnt` is initialized to 0, and `len` is set to the length of array `a`.
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var a = Arr[1].split(" ").map(Number);
+var b = Arr[3].split(" ").map(Number);
+var cnt = 0;
+var len = a.length;
+
+// Segment 2: Counting occurrences of elements of array `b` in array `a`
+
+// Precondition: Arrays `a` and `b` are initialized. `cnt` is initialized to 0.
+// Function `linearSearch` is defined and can be used to search for elements in array `a`.
+
+// Postcondition: The variable `cnt` contains the count of elements from array `b` that are found in array `a`.
+// The result is printed to the standard output.
+
+for (var i = 0; i < b.length; i++) {
+    if (linearSearch(b[i])) cnt++;
+}
+console.log(cnt);
+
+// Segment 3: Linear search function
+
+// Precondition: The function is called with a `key` to search for in array `a`.
+// Array `a` is already initialized and `len` is set to the length of array `a`.
+
+// Postcondition: The function returns `true` if the `key` is found in array `a`, otherwise it returns `false`.
+// The search is conducted linearly, and if the `key` is not found within the first `len` elements, it returns `false`.
+
+function linearSearch(key) {
+    var i = 0;
+    a[len] = key;
+    while (a[i] != key) {
+        i++;
+        if (i >= len) return false;
+    }
+    return true;
+}
+<number of elements in array a>
+<elements of array a separated by spaces>
+<number of elements in array b>
+<elements of array b separated by spaces>
+<number of elements from array b that are found in array a>

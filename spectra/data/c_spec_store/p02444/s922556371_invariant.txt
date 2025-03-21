@@ -1,0 +1,14 @@
+```c
+void rotate(int b, int m, int e)
+    // Precondition: The global arrays `a` and `tmp` have been declared and initialized. `b`, `m`, and `e` are valid indices such that 0 <= b < m < e <= 1000.
+    // Postcondition: The elements in the subarray `a[b:e]` have been cyclically shifted such that the element at position `m` moves to position `b`.
+
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain integers representing the elements of array `a`.
+    // The next line contains an integer `q`.
+    // The next `q` lines contain three integers `b`, `m`, and `e`, separated by a whitespace.
+    // Output format: A single line containing `n` integers, separated by a space, representing the modified array `a`.
+    // Precondition: The global arrays `a` and `tmp` have been declared. The variables `n` and `q` are non-negative integers such that 1 <= n <= 1000 and 0 <= q <= 1000.
+    // Postcondition: The array `a` has been modified according to the rotations specified in the input, and the modified array has been printed to the standard output.
+```

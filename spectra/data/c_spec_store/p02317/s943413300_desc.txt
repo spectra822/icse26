@@ -1,0 +1,16 @@
+```c
+// Global variables
+None
+
+// Given a sorted array `D` of length `n` and an integer `c`, 
+// perform a binary search to find the position where `c` should be inserted to maintain the sort order.
+// Returns the index where `c` can be inserted.
+int bs (int D[], int n, int c)
+    // Calls none
+
+// This function reads an integer `n` and an array `a` of length `n` from the input.
+// It then computes the length of the longest increasing subsequence (LIS) in the array `a`.
+// The result is printed to the standard output.
+int main(void)
+    // Calls bs(...)
+```

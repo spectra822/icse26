@@ -1,0 +1,33 @@
+```
+int fOutLine(char *pcpLine)
+    // Precondition: The input `pcpLine` is a valid string.
+    // Postcondition: The string `pcpLine` is printed to the standard output. In test mode, it is compared with the expected output and the test result is updated accordingly.
+
+int fGetMax(int piVal1, int piVal2)
+    // Precondition: The inputs `piVal1` and `piVal2` are integers.
+    // Postcondition: The function returns the maximum value between `piVal1` and `piVal2`.
+
+int fMove(int *pipRow, int *pipCol)
+    // Precondition: The inputs `pipRow` and `pipCol` are valid pointers to integers representing a position in the grid.
+    // Postcondition: The position pointed to by `pipRow` and `pipCol` is updated to the new position after moving right and up. If the new position is outside the grid, -1 is returned; otherwise, 0 is returned.
+
+int fGetAdd(int piRow, int piCol, int piRow2, int piCol2)
+    // Precondition: The inputs `piRow`, `piCol`, `piRow2`, and `piCol2` are valid integers representing positions in the grid.
+    // Postcondition: The function returns the sum of the values in `si2Mass` at the positions (`piRow`, `piCol`) and (`piRow2`, `piCol2`). If the positions are the same, the value is not doubled.
+
+int fMain()
+    // Precondition: The global variables `szpFpI`, `siW`, `siH`, and `si2Mass` are properly initialized.
+    // Postcondition: The function calculates the maximum sum of values collected by two people moving from the top-left to the bottom-right of the grid and returns this value.
+
+int fOne()
+    // Precondition: The global variable `szpFpI` is set to the input file or standard input. In test mode, `szpFpA` is set to the expected output file.
+    // Postcondition: The main execution function `fMain` is called, and the result is printed. In test mode, the result is compared with the expected output and the test result is printed.
+
+int main()
+    // Input format: 
+    // First line: two integers separated by space, representing the height `siH` and width `siW` of the grid.
+    // Next `siH` lines: each line contains `siW` integers separated by space, representing the grid values.
+    // Output format: A single integer representing the maximum sum of values collected by two people moving from the top-left to the bottom-right of the grid.
+    // Precondition: The global variables and test mode settings are properly initialized.
+    // Postcondition: The function `fOne` is called, and the result is printed. If in test mode, multiple test cases are executed and results are printed.
+```

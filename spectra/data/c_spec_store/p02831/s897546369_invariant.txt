@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Two integers `a` and `b` separated by a space.
+    // Output format: A single integer followed by a newline.
+    // Precondition: `a` and `b` are positive integers.
+    // Postcondition: The smallest integer `x` such that `x` is a multiple of `a` and `x` is divisible by `b` is printed.
+```

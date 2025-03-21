@@ -1,0 +1,26 @@
+// Import the 'fs' module and read the input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of strings, each representing a line
+var Arr = (input.trim()).split("\n");
+
+// Infinite loop to process each line of input
+while (true) {
+    // Get the first element from the array, convert it to a number, and store it in Q
+    var Q = Arr.shift() - 0;
+
+    // Break the loop if the input is -1
+    if (Q == -1) break;
+
+    // Initial guess for the cube root
+    var x = Q / 2;
+
+    // Newton-Raphson method to find the cube root of Q
+    while (Math.abs(Math.pow(x, 3) - Q) >= 0.00001 * Q) {
+        // Update the guess using the Newton-Raphson formula
+        x = x - (Math.pow(x, 3) - Q) / (3 * Math.pow(x, 2));
+    }
+
+    // Print the result with 6 decimal places
+    console.log(x.toFixed(6));
+}

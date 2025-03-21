@@ -1,0 +1,12 @@
+```c
+int min(int a, int b)
+    // Precondition: The integers `a` and `b` have been initialized.
+    // Postcondition: The function returns the smaller of the two integers `a` and `b`.
+
+int main(void)
+    // Input format: The first line contains two integers `N` and `M`.
+    // The next `M` lines each contain three integers `a`, `b`, and `c`, separated by whitespace.
+    // Output format: A single integer.
+    // Precondition: The variables `N` and `M` have been declared.
+    // Postcondition: The program prints the number of edges that are not part of the shortest paths in an undirected graph with `N` nodes and `M` edges.
+```

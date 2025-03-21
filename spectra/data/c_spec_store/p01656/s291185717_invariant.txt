@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains two integers `N` and `Q`.
+    // The next `N` lines each contain an integer `year` and a string `name`, separated by a whitespace.
+    // Output format: A single string followed by a newline.
+    // Precondition: The variables `N` and `Q` are non-negative integers.
+    // Postcondition: The program prints the name with the largest year that is less than or equal to `Q`. If no such year exists, it prints the default name "kogakubu10gokan".
+```

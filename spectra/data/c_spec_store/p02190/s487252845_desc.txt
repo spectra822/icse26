@@ -1,0 +1,18 @@
+```c
+// Global variables
+int n;
+int k;
+int a[100001];
+
+// Comparison function for qsort.
+// Given two pointers `a` and `b`, compare the integers they point to.
+// Returns 1 if *a > *b, 0 if *a == *b, and -1 otherwise.
+int comp(const void *a, const void *b)
+
+// Main function to read an array of integers, sort it, and count the number of unique elements.
+// Reads the input size `n`, followed by `n` integers into array `a`.
+// Sorts the array using `qsort` and counts the number of unique elements in the sorted array.
+// Prints the count of unique elements.
+int main()
+  Calls qsort(...)
+```

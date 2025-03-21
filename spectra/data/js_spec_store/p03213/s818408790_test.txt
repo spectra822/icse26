@@ -1,0 +1,5 @@
+Input:
+75
+
+Output:
+250

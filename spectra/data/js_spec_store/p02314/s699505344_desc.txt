@@ -1,0 +1,35 @@
+// Function to determine the minimum number of coins needed to make change for amount `n`
+function gerTheNumberOfCoin() {
+    var T = [];
+    // Initialize the table with positive infinity values
+    for (var i = 0; i <= n; i++) {
+        T[i] = Number.POSITIVE_INFINITY;
+    }
+    T[0] = 0; // Base case: 0 coins needed to make change for 0
+
+    // Fill the table using the available coin denominations
+    for (var i = 0; i < m; i++) {
+        for (var j = C[i]; j <= n; j++) {
+            T[j] = Math.min(T[j], T[j - C[i]] + 1);
+        }
+    }
+    return T[n]; // Return the minimum number of coins needed for amount `n`
+}
+
+// Read the input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Parse the input into an array of strings
+var Arr = (input.trim()).split("\n");
+
+// Extract the values of `n` (amount) and `m` (number of coin denominations)
+var nm = Arr[0].split(" ").map(Number);
+var n = nm[0];
+var m = nm[1];
+
+// Extract the coin denominations into an array `C`
+var C = Arr[1].split(" ").map(Number);
+
+// Call the function to get the minimum number of coins and print the result
+var min = gerTheNumberOfCoin();
+console.log(min);

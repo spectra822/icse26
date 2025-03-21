@@ -1,0 +1,44 @@
+// Segment 1: Function Definition and Input Handling
+// Precondition: The input is provided as a single string with three space-separated integers.
+// Postcondition: The input string is split into an array of strings and parsed into integers X, K, and D.
+function Main(input) {
+    const row = input.split(" ");
+    let X = parseInt(row[0], 10);
+    let K = parseInt(row[1], 10);
+    const D = parseInt(row[2], 10);
+
+    // Segment 2: Initial Calculations and Absolute Value
+    // Precondition: X, K, and D are integers where K and D are non-negative.
+    // Postcondition: absX contains the absolute value of X, and a contains the integer division of absX by D.
+    let absX = Math.abs(X);
+    let a = Math.floor(absX / D);  
+    let ans;
+
+    // Segment 3: Check if absX / D is greater than or equal to K
+    // Precondition: absX and D are non-negative integers, and K is a non-negative integer.
+    // Postcondition: ans is calculated based on whether absX / D is greater than or equal to K.
+    if ((absX / D) >= K) {
+        ans = absX - D * K;
+
+    // Segment 4: Handling the case where absX / D is less than K
+    // Precondition: absX / D is less than K.
+    // Postcondition: ans is calculated based on the parity of K2.
+    } else {
+        let K2 = K - a;
+        absX = absX % D;  
+        if (K2 % 2 === 0) {
+            ans = absX;
+        } else {
+            ans = absX - D;
+        }
+    }
+
+    // Segment 5: Output the result
+    // Precondition: ans is calculated correctly based on the above logic.
+    // Postcondition: The absolute value of ans is printed to the console.
+    console.log(Math.abs(ans));
+}
+
+// Input format: A single string containing three space-separated integers.
+// Output format: A single integer printed to the console.
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

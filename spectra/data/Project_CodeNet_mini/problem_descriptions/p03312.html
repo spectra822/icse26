@@ -1,0 +1,82 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Snuke has an integer sequence <var>A</var> of length <var>N</var>.</p>
+<p>He will make three cuts in <var>A</var> and divide it into four (non-empty) contiguous subsequences <var>B, C, D</var> and <var>E</var>.
+The positions of the cuts can be freely chosen.</p>
+<p>Let <var>P,Q,R,S</var> be the sums of the elements in <var>B,C,D,E</var>, respectively.
+Snuke is happier when the absolute difference of the maximum and the minimum among <var>P,Q,R,S</var> is smaller.
+Find the minimum possible absolute difference of the maximum and the minimum among <var>P,Q,R,S</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>4 \leq N \leq 2 \times 10^5</var></li>
+<li><var>1 \leq A_i \leq 10^9</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Find the minimum possible absolute difference of the maximum and the minimum among <var>P,Q,R,S</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5
+3 2 4 1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>If we divide <var>A</var> as <var>B,C,D,E=(3),(2),(4),(1,2)</var>, then <var>P=3,Q=2,R=4,S=1+2=3</var>.
+Here, the maximum and the minimum among <var>P,Q,R,S</var> are <var>4</var> and <var>2</var>, with the absolute difference of <var>2</var>.
+We cannot make the absolute difference of the maximum and the minimum less than <var>2</var>, so the answer is <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>10
+10 71 84 33 6 47 23 25 52 64
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>36
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>7
+1 2 3 1000000000 4 5 6
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>999999994
+</pre></section>
+</div>
+</span>

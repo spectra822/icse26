@@ -1,0 +1,81 @@
+// Segment 1: Parse the input and initialize variables
+
+// Preconditions:
+// - The input should be a string containing multiple lines.
+// - The first line should be a single integer N (1 <= N <= 100), representing the number of elements in the array.
+// - The second line should contain N integers separated by spaces, representing the elements of the array.
+
+// Postconditions:
+// - The input string is trimmed and split into an array of strings.
+// - The first element of the array is parsed as an integer N.
+// - The second element of the array is parsed as an array of N integers.
+// - The array `kukanDP` is initialized as a 2D array of null values with dimensions NxN.
+
+function Main(input) {
+    input = input.trim().split("\n").map(function(x) {
+        return x.split(" ")
+    });
+    let N = parseInt(input[0][0], 10);
+    a = input[1].map(e => parseInt(e, 10));
+    kukanDP = Array.from({
+        length: N
+    }, () => []);
+
+    // Input format:
+    // - A single integer N on the first line.
+    // - N integers separated by spaces on the second line.
+    //
+    // Example:
+    // Input:
+    // 4
+    // 10 80 90 30
+
+    console.log(DP(0, N - 1));
+
+    // Output format:
+    // - A single integer representing the maximum difference the first player can achieve.
+    // Example:
+    // Output:
+    // 10
+}
+
+// Segment 2: Recursive DP function to compute the maximum difference
+
+// Preconditions:
+// - The function DP should be called with two integers l and r such that 0 <= l <= r < N.
+// - The array `a` should be initialized with N integers.
+// - The array `kukanDP` should be initialized as a 2D array of null values with dimensions NxN.
+
+// Postconditions:
+// - The function returns the maximum difference the first player can achieve for the subarray from index l to index r.
+// - The computed value is stored in `kukanDP[l][r]` to avoid recomputation.
+
+function DP(l, r) {
+    if (kukanDP[l][r] != null) return kukanDP[l][r];
+    if (r === l + 1) {
+        kukanDP[l][r] = Math.abs(a[l] - a[r]);
+        return kukanDP[l][r];
+    }
+    if (r === l) {
+        kukanDP[l][r] = a[l];
+        return kukanDP[l][r];
+    }
+    let tmp1 = a[l] - DP(l + 1, r);
+    let tmp2 = a[r] - DP(l, r - 1);
+    kukanDP[l][r] = Math.max(tmp1, tmp2);
+    return kukanDP[l][r];
+}
+
+// Segment 3: Execution of the main function with input
+
+// Preconditions:
+// - The input is read as a UTF-8 string from the standard input ("/dev/stdin").
+
+// Postconditions:
+// - The main function is executed with the input read from the standard input.
+// - The output is printed to the console.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
+4
+10 80 90 30
+10

@@ -1,0 +1,48 @@
+// Read input from standard input and split it into lines
+const input = require("fs").readFileSync("/dev/stdin", "utf8")
+const lines = input.split('\n')
+
+// Parse the first line to get the values of N (number of nodes) and M (number of edges)
+const [N, M] = lines[0].split(' ').map(Number)
+
+// Initialize the adjacency list to represent the graph
+const map = Array(N + 1).fill().map(_ => [])
+
+// Populate the adjacency list with edges from the input
+for (let i = 1; i <= M; i++) {
+    const [A, B] = lines[i].split(' ').map(Number)
+    map[A].push(B)
+    map[B].push(A)
+}
+
+// Initialize the answer array to store the predecessor of each node
+const ans = Array(N + 1).fill(0)
+
+// Perform BFS to find the shortest path from node 1 to all other nodes
+let next = [1]
+let i = 0
+while (i = next.shift()) {
+    for (let j = 0; j < map[i].length; j++) {
+        if (!ans[map[i][j]]) {
+            ans[map[i][j]] = i
+            next.push(map[i][j])
+        }
+    }
+}
+
+// Check if all nodes are reachable from node 1
+ans[1] = 'Yes'
+for (let i = 2; i <= N; i++) {
+    if (!ans[i]) {
+        ans[1] = 'No'
+        break
+    }
+}
+
+// Output the result
+if (ans[1] === 'No') {
+    console.log('No')
+} else {
+    ans.shift()
+    console.log(ans.join("\n"))
+}

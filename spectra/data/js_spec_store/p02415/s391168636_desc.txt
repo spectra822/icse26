@@ -1,0 +1,14 @@
+// Segment 1: Import the 'fs' module and read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Trim the input string and replace each letter with its opposite case (lowercase to uppercase and vice versa)
+input = (input.trim()).replace(/([a-z])|([A-Z])/g, function(s, s1, s2) {
+    // If the character is lowercase, convert it to uppercase
+    if (s1) s = s1.toUpperCase();
+    // If the character is uppercase, convert it to lowercase
+    if (s2) s = s2.toLowerCase();
+    return s;
+});
+
+// Segment 3: Output the transformed string to the console
+console.log(input);

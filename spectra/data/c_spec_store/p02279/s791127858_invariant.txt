@@ -1,0 +1,16 @@
+```c
+void getdip(int r, int d)
+    // Precondition: `r` is a valid index within the tree array, and `d` is the current depth.
+    // Postcondition: The depth of node `r` is stored in `dipth[r]`. The function is recursively called for the right and left children of node `r`.
+
+void printtree(int i)
+    // Precondition: `i` is a valid index within the tree array, and `dipth[i]` has been computed.
+    // Postcondition: The details of node `i` (parent, depth, type, and children) are printed in the specified format.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain an integer `id` and an integer `num`, followed by `num` integers representing the children of node `id`.
+    // Output format: For each node from 0 to `n-1`, print the node's details in the format: "node id: parent = parent_id, depth = depth_value, type, [children_list]"
+    // Precondition: The global variables `tree` and `dipth` have been declared. `n` is a non-negative integer.
+    // Postcondition: The tree structure is built, depths are calculated for each node, and the details of each node are printed.
+```

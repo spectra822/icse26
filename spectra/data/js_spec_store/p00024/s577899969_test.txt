@@ -1,0 +1,5 @@
+Input:
+98
+
+Output:
+99

@@ -1,0 +1,12 @@
+```c
+// Global variables
+long long dp[2010][2010];
+#define mod 1000000007
+
+// This function reads two sequences s and t of lengths n and m respectively.
+// It then calculates the number of ways to interleave s and t such that the resulting sequence is lexicographically sorted.
+// The result is printed as output.
+int main()
+  // Uses the global variable `dp` to store intermediate results.
+  // No function calls within main.
+```

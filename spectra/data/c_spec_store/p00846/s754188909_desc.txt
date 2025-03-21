@@ -1,0 +1,28 @@
+```c
+// Global variables
+PP p[51];
+PP a[5] = {{0,0},{10000,0},{10000,10000},{0,10000},{0,0}};
+
+// Compares a double `x` to zero within a small epsilon to determine if it is zero, positive, or negative.
+// Returns 0 if `x` is close to zero, -1 if `x` is negative, and 1 if `x` is positive.
+int dcmp(double x)
+
+// Computes the cross product of two vectors (ax, ay) and (bx, by).
+// Returns the scalar value of the cross product.
+double cross(double ax, double ay, double bx, double by)
+
+// Calculates the intersection point `p` of a line segment `a` and a vector from `vs` to `ve`.
+// Modifies the `p` to store the intersection point.
+void lineIntersection(PP *p, LINE *a, PP *vs, PP *ve)
+
+// Cuts the convex polygon `p` with the line `u` and stores the resulting polygon in `po`.
+// Returns the number of vertices in the resulting polygon.
+int convex_cut(LINE *u, int n, PP *p, PP *po)
+    Calls lineIntersection(...)
+
+// Main function that reads input, processes the polygons, and determines if the final polygon exists.
+// Uses a loop to read multiple test cases until a zero is encountered.
+// Prints "1" if the final polygon exists, otherwise "0".
+int main()
+    Calls convex_cut(...)
+```

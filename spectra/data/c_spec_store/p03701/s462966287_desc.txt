@@ -1,0 +1,13 @@
+```c
+// Global variables
+// None
+
+// This function reads an integer `n`, then reads `n` integers into an array `s`.
+// It calculates the sum `k` of the elements in `s` and finds the minimum element `min`
+// among the elements that are not multiples of 10. If the sum `k` is a multiple of 10,
+// it adjusts the sum by subtracting the smallest element that is not a multiple of 10.
+// If no such element exists, it sets the answer to 0.
+// Finally, it prints the result `ans`.
+int main(void)
+    // No calls to other functions
+```

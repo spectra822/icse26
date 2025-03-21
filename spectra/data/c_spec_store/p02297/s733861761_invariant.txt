@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines contain two integers, each representing the coordinates of a point, separated by a whitespace.
+    // Output format: A single floating-point number representing the area, printed to one decimal place.
+    // Precondition: The input points form a simple polygon with `n` vertices.
+    // Postcondition: The area of the polygon is calculated using the Shoelace formula and printed to one decimal place.
+```

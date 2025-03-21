@@ -1,0 +1,11 @@
+```c
+int main()
+    // Input format: The first line contains an integer `N`.
+    //               The second line contains `N` integers separated by spaces.
+    // Output format: A single integer.
+    // Precondition: The variable `N` is declared and read from input.
+    //               The array `a` is declared with size `N`.
+    //               The array `a` is filled with `N` integers read from input.
+    // Postcondition: The variable `ans` is set to the sum of each element in `a` minus 1.
+    //                The value of `ans` is printed to the standard output.
+```

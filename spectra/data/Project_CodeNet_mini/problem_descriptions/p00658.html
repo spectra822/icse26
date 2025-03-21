@@ -1,0 +1,224 @@
+
+<H1>Problem L: The Tower</H1>
+<p>
+Your task is to write a program that reads some lines of command for the following game and simulates operations until the player reaches the game over. We call following 2-dimensional grid of <i>m</i> by <i>n</i> characters Tower. The objective of this game is to move blocks in the tower to climb to a goal block. In the following grid, the bottom line is the first row and the top one is the <i>n</i>-th row. The leftmost column is the first column and the rightmost one is the <i>m</i>-th column.
+</p>
+
+<pre>
+.................... (<i>n</i>=13 th row)
+.....#.....G........
+....##.....##.....##
+...####...IIII...###
+..####.....##.....##
+...####B..####....##
+....###....#33##..##
+.....####...#33#3.##
+.##CCCC#####2##.####
+..#####..###.#...###
+...###....###.....#1
+....####..##.......#
+S..###..#.####.....# (1st row)
+</pre>
+
+<p><strong>Explanation of cell marks:</strong></p>
+<ul>
+<li>'#' : Normal block<br>Normal block.</li>
+<li>'I' : Ice block<br>Block made of the ice.  This has different features from the normal one.</li>
+<li>'G' : Goal block<br>If the player climbs to this, game is over and clear.</li>
+<li>'C' : Fixed block<br>The player can not move this directly.</li>
+<li>'B' : Different dimensional block<br>If the player climbs to this, game is over and lose.</li>
+<li>'.' : Space<br>Empty place.</li>
+<li>'3' : Fragile block(3)<br>A fragile block of count 3.</li>
+<li>'2' : Fragile block(2)<br>A fragile block of count 2.</li>
+<li>'1' : Fragile block(1)<br>A fragile block of count 1.  If the count is zero, this block will be broken and become a space.</li>
+<li>'S' : Player<br>The player.</li>
+</ul>
+
+<p><strong>Explanation of relative positions:</strong></p>
+<pre>
+123
+4S5
+678
+</pre>
+<p>
+In the following description, assume that left up is the position of 1, up(over S) is 2, right up is 3, left is 4, right is 5, left down is 6, down(under S) is 7, right down is 8 for S.
+</p>
+
+<p><strong>Movements of the player</strong><br>
+The player must not go out of the tower.  The outside of the tower is considered as space cells.
+</p>
+<ul>
+<li>Move<br>The player can move everywhere in the current row as long as some of the following conditions are satisfied.
+<ul>
+<li>The player is in the first row and the target cell is a space.</li>
+<li>There are blocks under the route connecting the current cell and the target cell (horizontal segment) and the target cell is a space.  It is OK that some blocks in the horizontal segment.  And the case that some of blocks under the segment are different dimensional ones, it is also OK.</li>
+</ul>
+</li>
+<li>Climb<br>
+If the player at the row below the n-th row (from 1st to n-1 th row) and there is a block in the right(left) and both of a cell over the player (up cell) and a right up(left up) cell are space, the player can move to the right up(left up) cell.</li>
+<li>Get down<br>
+If the player at the row above the 1st row (from 2nd to n-th row), he can get down to right(left) down.  If the direction for getting down is right(left) and if there is no blocks in the right down (left down) cell and the right (left) cell, the player can move to the right down (left down) cell.</li>
+<li>Push<br>
+If there is a block or continuous blocks in the right or left of the player, he can push the blocks to the direction one cell.  Here, blocks are "continuous" if there are two or more blocks and no space exist between them.  However, if there is a fixed block in pushing blocks, the player can not push them.  Pushed blocks will not stop the end of the row of the tower (1st and mth column). If the pushed blocks go out of the tower, this will be vanished.<br>In the result of pushing, a block moved over the ice block continues to move to the pushed direction as long as there is a space in the progress direction, there is an ice block under the block and the pushed block is not vanished.<br>
+If the pushed block is an ice block, this continues to move to the pushed direction as long as there is a block under the ice block, there is a space in the progress direction and the pushed ice block is not vanished. However, for an ice block in the first row, the below the block do not have to be a space. And here, if the player pushes continuous blocks, pushing movements begin from the most distant block to a nearest block.  Here, the distance is manhattan distance at the gird.</li>
+<li>Pull<br>
+If there is a block in the right(left) of the player and the left(right) cell is space, the player can pull the block.  However, if the pulling block is fixed one, he can not pull this.  If the player pulls block, the player will move one cell to the direction of pulling.</li>
+</ul>
+
+<p>
+<strong>Automated operations after the player operation:</strong><br>
+Automated operations occur in the following order.  This repeats in this order as long as the cells of the tower are changed by this operations.  After this operations, the player can do the next operation.
+</p>
+<ul>
+<li>Countdown of fragile blocks<br>
+If the player over a fragile block moved to somewhere else, that fragile block's count will decrease by one.  However, this count does not change if the player over the fragile block is moved to somewhere else by the automated operations.</li>
+<li>Erasing blocks<br>A block over an different dimensional block will be vanished.</li>
+<li>Falling of the player<br>If there is no block under the player, the player continues to fall as long as satisfying this condition or come to 1st row.</li>
+<li>Falling of blocks<br>If there is no block under a block and left down and right down of a certain block, the block in the row over the 1st row (from 2nd to n-th row) continues to fall as long as satisfying this condition.  Falling of blocks begins from lower blocks of the tower and then lefter blocks.</li>
+</ul>
+
+<p><strong>Conditions for game over:</strong><br>
+After the movement of the player or the automated operations, the game is over when the one of next conditions is satisfied.  These conditions are judged in the following order. Note that, the condition (E) should not be judged after the movement of the player.
+</p>
+<ul>
+<li>(A) The player is over the goal block.</li>
+<li>(B) The player is over the different dimensional block.</li>
+<li>(C) The player and a block is in the same cell.</li>
+<li>(D) The goal block is moved from its initial position.</li>
+<li>(E) There is no next commands.</li>
+</ul>
+
+<p>Finally, show some examples.<br>
+Documents of commands will be give in the description of Input.</p>
+
+<table class="withborder" border=1 style='font-family:monospace;'>
+<caption>Example table</caption>
+<tr><th>Movement or<br>Automated operation</th><th>Before</th><th>After</th><th>Command</th></tr>
+<tr><td>Move</td><td>.#S<br>###</td><td>S#.<br>###</td><td>MOVETO 1</td>
+<tr><td>Climb</td><td>...<br>3S#</td><td>S..<br>3.#</td><td>CLIMB LEFT</td>
+<tr><td>Get down</td><td>S..<br>3.#</td><td>...<br>2S#</td><td>GETDOWN RIGHT</td>
+<tr><td>Push</td><td>.#S#####..<br>###II.I.I.</td><td>.#S.####.#<br>###II.I.I.</td><td>PUSH RIGHT</td>
+<tr><td>Push</td><td>.#SI...<br>###.###</td><td>.#S....<br>###.###</td><td>PUSH RIGHT</td>
+<tr><td>Push</td><td>.#...S#<br>###.###</td><td>.....S.<br>###.###</td><td>PUSH RIGHT</td>
+<tr><td>Pull</td><td>..S#####..<br>###.#.#.#.</td><td>.S#.####..<br>###.#.#.#.</td><td>PULL LEFT</td>
+<tr><td>Falling of the player</td><td>.#S#<br>.#.#<br>.#.#<br>.#.#</td><td>.#.#<br>.#.#<br>.#.#<br>.#S#<td>-</td>
+<tr><td>Falling of blocks</td><td>.###.<br>#...#<br>#...#<br>#...#<br>.#.#</td><td>.#.#.<br>#...#<br>#...#<br>#.#.#<br>.#.#<td>-</td>
+</table>
+
+<h2>Input</h2>
+<p>
+Input consists of multiple datasets.<br>
+A dataset is given in the following format.
+</p>
+<pre>
+<i>n</i> <i>m</i>
+<i>D<sub>n,1</sub></i> <i>D<sub>n,2</sub></i> ... <i>D<sub>n,m</sub></i>
+<i>D<sub>n-1,1</sub></i> <i>D<sub>n-1,2</sub></i> ... <i>D<sub>n-1,m</sub></i>
+...
+<i>D<sub>1,1</sub></i> <i>D<sub>1,2</sub></i> ... <i>D<sub>1,m</sub></i>
+<i>T</i>
+<i>Command<sub>1</sub></i>
+<i>Command<sub>2</sub></i>
+...
+<i>Command<sub>T</sub></i>
+</pre>
+<p>
+Here, <i>m</i>, <i>n</i> is the width and height of the tower.  <i>D<sub>i,j</sub></i>(1&le;<i>i</i>&le;<i>n</i> and 1&le;<i>j</i>&le;<i>m</i>) is a mark of the cell.  The explanation of marks described above.  <i>Command<sub>k</sub></i>(1&le;<i>k</i>&le;<i>T</i>) is the <i>k</i>-th player operation (movement). This is a string and one of following strings.
+</p>
+
+<pre>
+"MOVETO s"  means move to <i>s</i>-th column cell in the same row.
+"PUSH RIGHT" means push right block(s).
+"PUSH LEFT" means push left block(s).
+"PULL RIGHT" means pull the left block to right.
+"PULL LEFT" means pull the right block to left.
+"GETDOWN RIGHT" means get down to right down.
+"GETDOWN LEFT" means get down to left down.
+"CLIMB RIGHT" means climb to the right block.
+"CLIMB LEFT" means climb to the left block.
+</pre>
+
+<p>
+Some of commands are invalid.  You must ignore these commands.  And after game is over, the command input may continue in case.  In this case, you must also ignore following commands.  <i>m</i>=<i>n</i>=0 shows the end of input.
+</p>
+
+<h2>Constraints</h2>
+<p>
+3&le;<i>m</i>&le;50<br>
+3&le;<i>n</i>&le;50<br>
+Characters 'S' and 'G' will appear exactly once in the tower description.
+</p>
+<h2>Output</h2>
+<p>
+Each dataset, output a string that represents the result of the game in the following format.
+</p>
+<pre>
+<i>Result</i>
+</pre>
+<p>Here, <i>Result</i> is a string and one of the following strings (quotes for clarity).</p>
+<ul>
+<li>"Game Over : Cleared" (A)</li>
+<li>"Game Over : Death by Hole" (B)</li>
+<li>"Game Over : Death by Block" (C)</li>
+<li>"Game Over : Death by Walking Goal" (D)</li>
+<li>"Game Over : Gave Up" (E)</li>
+</ul>
+<h2>Sample Input</h2>
+<pre>
+8 8
+........
+........
+....###.
+...#.#.G
+S#B...##
+#ICII.I#
+#..#.#.#
+.#..#.#.
+7
+PUSH RIGHT
+MOVETO 2
+CLIMB RIGHT
+CLIMB RIGHT
+GETDOWN RIGHT
+CLIMB RIGHT
+GETDOWN RIGHT
+8 8
+........
+........
+........
+...G....
+S#B.....
+#ICIIIII
+#..#.#.#
+.#..#.#.
+4
+PUSH RIGHT
+MOVETO 2
+CLIMB RIGHT
+CLIMB RIGHT
+8 8
+........
+....#.#.
+.....#.G
+...#..#.
+S#B....#
+#ICIII.#
+#..#.#.#
+.#..#.#.
+8
+PUSH RIGHT
+MOVETO 2
+CLIMB RIGHT
+CLIMB RIGHT
+CLIMB RIGHT
+GETDOWN RIGHT
+CLIMB RIGHT
+GETDOWN RIGHT
+0 0
+</pre>
+<h2>Sample Output</h2>
+<pre>
+Game Over : Death by Hole
+Game Over : Cleared
+Game Over : Death by Walking Goal
+</pre>

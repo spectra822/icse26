@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A single line containing a string of exactly 3 characters, each either 'o' or 'x'.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The variable `S` is a character array of size 3.
+    // Postcondition: The value `700 + (100 * m)` is printed, where `m` is the number of 'o' characters in the input string `S`.
+```

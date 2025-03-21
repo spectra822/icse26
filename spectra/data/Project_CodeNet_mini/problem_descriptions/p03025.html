@@ -1,0 +1,94 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi and Aoki will play a game. They will repeatedly play it until one of them have <var>N</var> wins in total.</p>
+<p>When they play the game once, Takahashi wins with probability <var>A</var> %, Aoki wins with probability <var>B</var> %, and the game ends in a draw (that is, nobody wins) with probability <var>C</var> %.
+Find the expected number of games that will be played, and print it as follows.</p>
+<p>We can represent the expected value as <var>P/Q</var> with coprime integers <var>P</var> and <var>Q</var>.
+Print the integer <var>R</var> between <var>0</var> and <var>10^9+6</var> (inclusive) such that <var>R \times Q \equiv P\pmod {10^9+7}</var>.
+(Such an integer <var>R</var> always uniquely exists under the constraints of this problem.)</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 100000</var></li>
+<li><var>0 \leq A,B,C \leq 100</var></li>
+<li><var>1 \leq A+B</var></li>
+<li><var>A+B+C=100</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>A</var> <var>B</var> <var>C</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the expected number of games that will be played, in the manner specified in the statement.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>1 25 25 50
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>Since <var>N=1</var>, they will repeat the game until one of them wins.
+The expected number of games played is <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 50 50 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>312500008
+</pre>
+<p><var>C</var> may be <var>0</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>1 100 0 0
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>1
+</pre>
+<p><var>B</var> may also be <var>0</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 4</h3><pre>100000 31 41 28
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 4</h3><pre>104136146
+</pre></section>
+</div>
+</span>

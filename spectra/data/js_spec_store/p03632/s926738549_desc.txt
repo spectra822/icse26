@@ -1,0 +1,15 @@
+// Function to process the input and compute the required output
+function Main(input) {
+    // Split the input into lines and extract the first line
+    const lines = input.split('\n');
+    
+    // Parse the first line to extract four integers a, b, c, and d
+    const [a, b, c, d] = lines[0].split(' ').map(s => parseInt(s));
+    
+    // Calculate the overlapping length of the intervals [a, b] and [c, d]
+    // If there is no overlap, the result will be 0
+    console.log(Math.max(Math.min(b, d) - Math.max(a, c), 0));
+}
+
+// Read input from standard input (used in competitive programming environments)
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

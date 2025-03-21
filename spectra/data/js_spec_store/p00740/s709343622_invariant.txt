@@ -1,0 +1,62 @@
+// Segment 1: Variable Declarations and Input Reading
+// Precondition: The program is executed in an environment where '/dev/stdin' is available and contains the input data.
+// Postcondition: The 'input' variable contains the entire content of the input file as a string, and 'Arr' is an array of strings split by newline characters.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Main Loop Initialization
+// Precondition: 'Arr' is a non-empty array of strings, each representing a line of input.
+// Postcondition: The program starts processing each line until it encounters "0 0".
+while (true) {
+    var np = Arr.shift();
+    if (np == "0 0") break; // Input: Each line in the format "n p" until "0 0" is encountered.
+    np = np.split(" ").map(Number); // Input: A single line in the format "n p"
+    var n = np[0];
+    var p = np[1];
+    
+    // Segment 3: Array Initialization
+    // Precondition: 'n' and 'p' are positive integers.
+    // Postcondition: 'arr' is an array of length 'n', initialized with zeros.
+    var arr = [];
+    for (var i = 0; i < n; i++) arr.push(0);
+    
+    // Segment 4: Main Simulation Loop
+    // Precondition: 'arr' is an array of length 'n' initialized with zeros, 'p' is a positive integer.
+    // Postcondition: The program simulates the distribution process and prints the index 'j' where the condition is met.
+    var j = 0;
+    for (var i = 0; i < 1000000; i++) {
+        if (j == arr.length) j = 0;
+        if (p > 0) {
+            p--;
+            arr[j]++;
+            if (p == 0) {
+                var sum = arr.reduce(function(a, b) {
+                    return a + b;
+                });
+                if (sum - arr[j] == 0) {
+                    console.log(j); // Output: A single integer 'j' followed by a newline character.
+                    break;
+                }
+            }
+        } else {
+            p = arr[j];
+            arr[j] = 0;
+        }
+        j++;
+    }
+}
+  3 2
+  3 3
+  3 50
+  10 29
+  31 32
+  50 2
+  50 50
+  0 0
+  1
+  0
+  1
+  5
+  30
+  1
+  13

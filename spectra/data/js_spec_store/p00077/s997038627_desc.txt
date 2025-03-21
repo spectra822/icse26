@@ -1,0 +1,16 @@
+// Segment 1: Import the 'fs' module and read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Split the input into an array of strings, each representing a line of input
+var Arr = (input.trim()).split("\n");
+
+// Segment 3: Iterate over each line in the array
+Arr.forEach(function(v) {
+    // Segment 4: Replace occurrences of the pattern @<digit><character> in the line
+    v = v.replace(/@(\d)(.)/g, function(s, s1, s2) {
+        // Segment 5: Create a string by repeating the character <digit> times
+        return Array((s1 - 0) + 1).join(s2);
+    });
+    // Segment 6: Output the modified line
+    console.log(v);
+});

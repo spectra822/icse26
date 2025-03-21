@@ -1,0 +1,107 @@
+Here is a C program
+```c
+#include <stdio.h>
+#include <limits.h>
+
+int n;
+int mins[270000];
+
+void update(int ul, int ur, int val, int k, int nl, int nr) {
+  if (ur < nl || ul > nr)
+    return;
+  else if (ul <= nl && ur >= nr)
+    mins[k] = val;
+  else {
+    if (mins[k] >= 0) {
+      update(nl, nr, mins[k], 2 * k + 1, nl, (nl + nr) / 2);
+      update(nl, nr, mins[k], 2 * k + 2, (nl + nr) / 2 + 1, nr);
+      mins[k] = -1;
+    }
+    update(ul, ur, val, 2 * k + 1, nl, (nl + nr) / 2);
+    update(ul, ur, val, 2 * k + 2, (nl + nr) / 2 + 1, nr);
+  }
+}
+
+int min(int n1, int n2) {
+  return n1 < n2 ? n1 : n2;
+}
+
+int find(int sl, int sr, int nodeID, int nl, int nr) {
+  if (sr < nl || sl > nr)
+    return INT_MAX;
+  else {
+    if (mins[nodeID] != -1)
+      return mins[nodeID];
+    else {
+      int left = find(sl, sr, 2 * nodeID + 1, nl, (nl + nr) / 2);
+      int right = find(sl, sr, 2 * nodeID + 2, (nl + nr) / 2 + 1, nr);
+      return min(left, right);
+    }
+  }
+}
+
+int main() {
+  int q, i, j, query, counter, cur, leaves, k, val;
+
+  scanf("%d %d", &n, &q);
+
+  for (leaves = 1; leaves < n; leaves *= 2);
+
+  for (counter = 0; counter < leaves * 2; counter++)
+    mins[counter] = INT_MAX;
+
+  for (counter = 0; counter < q; counter++) {
+    scanf("%d", &query);
+
+    if (query) {
+      scanf("%d %d", &i, &j);
+      printf("%d\n", find(i, j, 0, 0, leaves - 1));
+    } else {
+      scanf("%d %d %d", &i, &j, &val);
+      update(i, j, val, 0, 0, leaves - 1);
+    }
+  }
+}
+```
+
+We can convert this to a sketch of the program, where each function has its signature and a brief description of what it does.
+We also include global variables.
+
+```
+
+// Global variables
+int n;
+int mins[270000];
+
+
+// Given a segment tree represented by a global array `mins`,
+// an update range `ul, ur`, a value `val`,
+// a segment represented by a node ID `nodeID` and a segment range `nl, nr`,
+// update the segment tree with the given range and value.
+// If the update range is outside the segment range, return.
+void update(int ul, int ur, int val, int k, int nl, int nr)
+  Calls update(...)
+
+// Given two integers `n1`, `n2`, return the smaller of the two.
+int min(int n1, int n2)
+
+// Given a segment tree represented by a global array `mins`, a query range `sl, sr`,
+// and a segment represented by a node ID `nodeID` and a segment range `nl, nr`
+// return the minimum value in the query range.
+// If the query range is outside the segment range, return INT_MAX.
+int find(int sl, int sr, int nodeID, int nl, int nr)
+  Calls find(...) and min(...)
+
+
+// This function manipulates a sequence [a_0, a_1, ..., a_{n-1}] using a segment tree.
+// The initial values of the sequence are all 2^31 - 1.
+// It takes `n` and `q` as input, representing the length of the sequence and the number of queries.
+// Then take `q` queries, each of which is either a find query or an update.
+// A find query is represented by 1 followed by two integers `i`, `j` representing the query range.
+// The function prints the minimum element in a_{i}, a_{i+1}, ..., a_{j}.
+// An update is represented by 0 followed by three integers `i`, `j`, `val` representing the update range and value.
+// The function updates [a_i, a_{i+1}, ..., a_j] to `val`.
+int main()
+  Calls find(...) and update(...)
+
+```

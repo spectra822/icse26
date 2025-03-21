@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: Four integers A, B, C, and X, each on a new line.
+    // Output format: A single integer count.
+    // Precondition: Four integers A, B, C, and X are provided as input.
+    // Postcondition: The number of ways to combine 500-yen, 100-yen, and 50-yen coins to sum up to X is printed.
+
+```

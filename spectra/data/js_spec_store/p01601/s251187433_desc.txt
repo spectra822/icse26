@@ -1,0 +1,22 @@
+// Read input from the standard input and parse it to a number
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var n = input.trim() - 0;
+
+// Initialize a counter i to 0
+var i = 0;
+
+// Start an infinite loop to find the nearest palindrome
+while (true) {
+    // Check for palindrome by decrementing n by i
+    var a = (n - i) + "";
+    var A = a.split("").reverse().join("");
+    if (a == A) return console.log(a);
+
+    // Check for palindrome by incrementing n by i
+    var a = (n + i) + "";
+    var A = a.split("").reverse().join("");
+    if (a == A) return console.log(a);
+
+    // Increment the counter i
+    i++;
+}

@@ -1,0 +1,33 @@
+// Segment 1: Reading input and initializing variables
+
+// Precondition: The program is being executed in an environment where `/dev/stdin` is available and contains valid input data.
+// Postcondition: `input` contains the entire input as a string, `Arr` contains the input split into an array of strings, 
+//                `NQ` contains the first line split into two numbers N and Q, N and Q are defined, and `str` is initialized with a default value.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+var NQ = (Arr.shift()).split(" ").map(Number);
+var N = NQ[0];
+var Q = NQ[1];
+var str = "kogakubu10gokan";
+
+// Segment 2: Processing each line of the input and updating the `str` variable
+
+// Precondition: `Arr` contains N lines of input where each line is in the format "<integer> <string>", N and Q are defined.
+// Postcondition: `str` contains the value of the string associated with the largest integer less than or equal to Q from the input lines.
+for (var i = 0; i < N; i++) {
+    var arr = Arr[i].split(" ");
+    var a = arr[0] - 0;
+    if (a <= Q) str = arr[1];
+}
+
+// Segment 3: Output the final value of `str`
+
+// Precondition: `str` contains the final value to be output.
+// Postcondition: The final value of `str` is printed to the console.
+// Output format: A single string followed by a newline.
+console.log(str);
+3 12
+5 sogo5gokan
+10 sogo10gokan
+15 sogo15gokan
+sogo10gokan

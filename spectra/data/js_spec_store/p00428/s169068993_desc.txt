@@ -1,0 +1,43 @@
+// Import the 'fs' module to read input from stdin
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Read and split the input into an array of strings, each representing a line
+var Arr = (input.trim()).split("\n");
+
+// Start an infinite loop to process each test case
+while (true) {
+    // Read the first line of the current test case and split into two numbers [n, m]
+    var nm = (Arr.shift()).split(" ").map(Number);
+    
+    // If both n and m are 0, break the loop and end the program
+    if (nm[0] == 0 && nm[1] == 0) break;
+
+    // Initialize an array to store the sum of each column
+    var arr = [];
+    for (var i = 0; i < nm[1]; i++) arr[i] = [i + 1, 0];
+
+    // Process each of the n rows of the current test case
+    for (var i = 0; i < nm[0]; i++) {
+        var v = (Arr.shift()).split(" ").map(Number);
+        
+        // Add the values of the current row to the corresponding columns
+        v.forEach(function(val, i) {
+            arr[i][1] += val;
+        });
+    }
+
+    // Sort the columns first by sum in descending order, then by column index in ascending order
+    arr.sort(function(a, b) {
+        if (a[1] == b[1]) return a[0] - b[0];
+        else return b[1] - a[1];
+    });
+
+    // Extract the column indices into an answer array
+    var ans = [];
+    arr.forEach(function(val, i) {
+        ans.push(arr[i][0]);
+    });
+
+    // Print the sorted column indices as the result for the current test case
+    console.log(ans.join(" "));
+}

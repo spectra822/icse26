@@ -1,0 +1,36 @@
+// Segment 1: Import and read input
+// Precondition: The program is executed in an environment where '/dev/stdin' can be read.
+// Postcondition: The variable `input` contains the input data as a string and `n` contains the trimmed numeric value of the input.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var n = input.trim() - 0;
+
+// Segment 2: Initialize loop control variable
+// Precondition: `n` is a valid number.
+// Postcondition: The variable `i` is initialized to 0.
+var i = 0;
+
+// Segment 3: Loop to find the closest palindromic number
+// Precondition: `n` is a valid number, and `i` is initialized to 0.
+// Postcondition: The program finds and prints the closest palindromic number less than or equal to `n`.
+// Input: Single integer value from the user (e.g., 13)
+// Output: Single integer value which is the closest palindromic number (e.g., 11)
+while (true) {
+    // Check if (n - i) is a palindrome
+    var a = (n - i) + "";
+    var A = a.split("").reverse().join("");
+    if (a == A) {
+        console.log(a);
+        return;
+    }
+    
+    // Check if (n + i) is a palindrome
+    var a = (n + i) + "";
+    var A = a.split("").reverse().join("");
+    if (a == A) {
+        console.log(a);
+        return;
+    }
+    
+    // Increment i for the next iteration
+    i++;
+}

@@ -1,0 +1,18 @@
+```c
+// Global variables
+int p[MAX];
+int sp[MAX], top;
+int *q[MAX], hi[MAX];
+int ans[MAX];
+
+// Function to read an integer from input
+int in()
+    // No function calls
+
+// Main function to process the chairs problem
+// Reads input count `n` and a sequence of integers representing chair preferences.
+// Processes the sequence to find the first unoccupied chair for each person in two rounds.
+// Prints the result for each person.
+int main()
+    Calls in(...)
+```

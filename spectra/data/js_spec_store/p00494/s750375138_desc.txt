@@ -1,0 +1,23 @@
+// Segment 1: Import the 'fs' module and read the input from '/dev/stdin'
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Segment 2: Trim any whitespace from the input string
+var str = input.trim();
+
+// Segment 3: Initialize an array with a single element 0
+var arr = [0];
+
+// Segment 4: Check if the string contains 'J', 'O', and 'I' characters; if not, set the string to an empty string
+if (/J/.test(str) == false) str = "";
+if (/O/.test(str) == false) str = "";
+if (/I/.test(str) == false) str = "";
+
+// Segment 5: Use a regular expression to find sequences of 'J', 'O', and 'I'
+// If the length of 'O' is less than or equal to the lengths of 'J' and 'I', add the length of 'O' to the array
+str.replace(/(J+)(O+)(I+)/g, function(s, s1, s2, s3) {
+    if (s1.length >= s2.length && s3.length >= s2.length) arr.push(s2.length);
+    return "";
+});
+
+// Segment 6: Find the maximum value in the array and print it
+console.log(Math.max.apply(null, arr));

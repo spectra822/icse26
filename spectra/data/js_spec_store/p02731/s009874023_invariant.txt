@@ -1,0 +1,21 @@
+// Segment 1: Import and Read Input
+// Precondition: The program is running in an environment where the 'fs' module is available and the input is provided through '/dev/stdin'.
+// Postcondition: The 'inputs' variable is an array of strings, where each string is a line of input.
+const main = (inputs) => {
+    // Segment 2: Parse Input
+    // Precondition: 'inputs' is an array of strings, and the first element represents a number in string format.
+    // Postcondition: 'length' is a number parsed from the first element of the 'inputs' array.
+    const length = Number(inputs[0]);
+
+    // Segment 3: Calculate and Print Result
+    // Precondition: 'length' is a number.
+    // Postcondition: The cube of one-third of 'length' is calculated and printed to the console with 12 decimal places.
+    // Input: A single integer value representing the length.
+    // Output: A single floating-point number printed to the console with 12 decimal places.
+    console.log((length / 3 * length / 3 * length / 3).toFixed(12));
+}
+
+// Segment 4: Execute Main Function
+// Precondition: 'fs' module is available and '/dev/stdin' contains input.
+// Postcondition: The 'main' function is called with the input read from '/dev/stdin'.
+main(require('fs').readFileSync('/dev/stdin', 'UTF-8').trim().split("\n"));

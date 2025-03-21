@@ -1,0 +1,11 @@
+```c
+// Global variables
+// None
+
+// This function reads an integer N, then reads N strings into an array `s`.
+// It then reads an integer M, followed by M strings into an array `t`.
+// It calculates the maximum value of the difference between the number of occurrences of any string in `s` and its occurrences in `t`.
+// It finally prints this maximum value.
+int main(void)
+  // Calls: scanf, strcmp, printf
+```

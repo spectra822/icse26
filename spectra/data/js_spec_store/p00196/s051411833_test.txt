@@ -1,0 +1,11 @@
+Input:
+3
+TeamA 0 1
+TeamB 1 0
+TeamC 0 0
+0
+
+Output:
+TeamC
+TeamA
+TeamB

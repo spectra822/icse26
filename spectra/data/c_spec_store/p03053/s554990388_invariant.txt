@@ -1,0 +1,8 @@
+```c
+int main()
+    // Input format: The first line contains two integers `h` and `w`.
+    // The next `h` lines contain a string of length `w` consisting of characters '.' and '#'.
+    // Output format: A single integer.
+    // Precondition: The global variables `h`, `w`, `a`, `b`, `que`, `l`, `r`, `dx`, `dy`, and `ans` have been declared.
+    // Postcondition: The maximum distance from any '#' character to the farthest '.' character in the grid is printed.
+```

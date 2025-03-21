@@ -1,0 +1,32 @@
+// Import the 'fs' module and read input from standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input by new lines, trim any extra spaces, and convert each line to a number
+var arr = input.trim().split("\n").map(Number);
+
+// Start an infinite loop that will process each number in the array until a zero is encountered
+while (true) {
+    // Remove the first element from the array and assign it to 'n'
+    var n = arr.shift();
+    
+    // If 'n' is zero, break out of the loop
+    if (n == 0) break;
+
+    // Initialize 'max' to zero to keep track of the maximum sum found
+    var max = 0;
+
+    // Iterate through possible values of 'i' from 0 to 54
+    for (var i = 0; i <= 54; i++) {
+        // Iterate through possible values of 'j' from 0 to 96
+        for (var j = 0; j <= 96; j++) {
+            // Calculate the sum of the cube of 'i' and the tetrahedral number of 'j'
+            var sum = i * i * i + (j * (j + 1) * (j + 2)) / 6;
+            
+            // If 'n' is greater than or equal to 'sum', update 'max' if 'sum' is greater than the current 'max'
+            if (n >= sum) max = Math.max(max, sum);
+        }
+    }
+
+    // Print the maximum sum found for the current 'n'
+    console.log(max);
+}

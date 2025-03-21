@@ -1,0 +1,109 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>We have a set <var>S</var> of <var>N</var> points in a two-dimensional plane. The coordinates of the <var>i</var>-th point are <var>(x_i, y_i)</var>. The <var>N</var> points have distinct <var>x</var>-coordinates and distinct <var>y</var>-coordinates.</p>
+<p>For a non-empty subset <var>T</var> of <var>S</var>, let <var>f(T)</var> be the number of points contained in the smallest rectangle, whose sides are parallel to the coordinate axes, that contains all the points in <var>T</var>. More formally, we define <var>f(T)</var> as follows:</p>
+<ul>
+<li><var>f(T) := </var> (the number of integers <var>i</var> <var>(1 \leq i \leq N)</var> such that <var>a \leq x_i \leq b</var> and <var>c \leq y_i \leq d</var>, where <var>a</var>, <var>b</var>, <var>c</var>, and <var>d</var> are the minimum <var>x</var>-coordinate, the maximum <var>x</var>-coordinate, the minimum <var>y</var>-coordinate, and the maximum <var>y</var>-coordinate of the points in <var>T</var>)</li>
+</ul>
+<p>Find the sum of <var>f(T)</var> over all non-empty subset <var>T</var> of <var>S</var>. Since it can be enormous, print the sum modulo <var>998244353</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 2 \times 10^5</var></li>
+<li><var>-10^9 \leq x_i, y_i \leq 10^9</var></li>
+<li><var>x_i \neq x_j (i \neq j)</var></li>
+<li><var>y_i \neq y_j (i \neq j)</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>x_1</var> <var>y_1</var>
+<var>:</var>
+<var>x_N</var> <var>y_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the sum of <var>f(T)</var> over all non-empty subset <var>T</var> of <var>S</var>, modulo <var>998244353</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+-1 3
+2 1
+3 -2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>13
+</pre>
+<p>Let the first, second, and third points be <var>P_1</var>, <var>P_2</var>, and <var>P_3</var>, respectively. <var>S = \{P_1, P_2, P_3\}</var> has seven non-empty subsets, and <var>f</var> has the following values for each of them:</p>
+<ul>
+<li><var>f(\{P_1\}) = 1</var></li>
+<li><var>f(\{P_2\}) = 1</var></li>
+<li><var>f(\{P_3\}) = 1</var></li>
+<li><var>f(\{P_1, P_2\}) = 2</var></li>
+<li><var>f(\{P_2, P_3\}) = 2</var></li>
+<li><var>f(\{P_3, P_1\}) = 3</var></li>
+<li><var>f(\{P_1, P_2, P_3\}) = 3</var></li>
+</ul>
+<p>The sum of these is <var>13</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4
+1 4
+2 1
+3 3
+4 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>34
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10
+19 -11
+-3 -12
+5 3
+3 -15
+8 -14
+-9 -20
+10 -9
+0 2
+-7 17
+6 -6
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>7222
+</pre>
+<p>Be sure to print the sum modulo <var>998244353</var>.</p></section>
+</div>
+</span>

@@ -1,0 +1,34 @@
+// Read the input from the standard input (typically used for competitive programming)
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Split the input into an array of lines
+var Arr = (input.trim()).split("\n");
+
+// Loop through each line of the input array
+for (var i = 0; i < Arr.length; i++) {
+    // Break the loop if the line is "0 0"
+    if (Arr[i] == "0 0") break;
+
+    // Split the current line into two parts (x and y)
+    var arr = Arr[i].split(" ");
+    var x = (arr[0]).split("");
+    var y = (arr[1]).split("");
+
+    // Initialize counters for 'h' (correct position) and 'b' (wrong position)
+    var h = 0;
+    var b = 0;
+
+    // Compare each digit of x and y
+    for (var j = 0; j < 4; j++) {
+        // Increment 'h' if the digits are the same and in the correct position
+        if (x[j] == y[j]) {
+            h++;
+        } else if (y.indexOf(x[j]) != -1) {
+            // Increment 'b' if the digit of x is present in y but in the wrong position
+            b++;
+        }
+    }
+
+    // Output the results for the current pair
+    console.log(h + " " + b);
+}

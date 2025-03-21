@@ -1,0 +1,22 @@
+```c
+// Global variables
+int X[] = {1, 0, -1, 0};
+int Y[] = {0, 1, 0, -1};
+
+// Main function that reads a grid of size n x n, and finds the number of contiguous regions of 'o' characters.
+// Uses a flood fill algorithm to mark connected components and counts the number of such components.
+// Outputs the number of these components divided by 3 (rounded down).
+int main()
+    // No calls to other functions
+```
+```c
+// Global variables
+int X[] = {1, 0, -1, 0};  // Array to help navigate in the x-direction (right, left)
+int Y[] = {0, 1, 0, -1};  // Array to help navigate in the y-direction (down, up)
+
+// The main function reads a grid of size n x n, and finds the number of contiguous regions of 'o' characters.
+// It uses a flood fill algorithm to mark connected components and counts the number of such components.
+// Outputs the number of these components divided by 3 (rounded down).
+int main()
+    // No calls to other functions
+```

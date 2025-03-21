@@ -1,0 +1,46 @@
+// Segment 1: Read and parse input
+
+// Precondition: The input is provided as a string in the format "n\nsequence",
+// where n is an integer representing the length of the sequence, and sequence
+// is a space-separated string of integers.
+// Input format:
+// n
+// a1 a2 a3 ... an
+
+const main = input => {
+    const inputs = input.trim().split('\n')
+    
+    // Precondition: The first element of inputs array is a string that can be parsed into an integer.
+    const n = parseInt(inputs[0])
+    
+    // Precondition: The second element of inputs array is a string of space-separated integers.
+    const sequence = inputs[1].split(' ').map(a => parseInt(a))
+
+
+    // Segment 2: Initialize and iterate through the sequence to find peaks
+
+    // Precondition: n is a positive integer and sequence is an array of integers of length n.
+    let count = 0
+    
+    // Precondition: The iteration starts from the second element and goes up to the second last element of the sequence.
+    for (let i = 1; i < n - 1; i++) {
+        // Precondition: sequence[i] is compared with the minimum of its adjacent elements and the maximum of its adjacent elements.
+        if (sequence[i] > Math.min(sequence[i - 1], sequence[i + 1]) && sequence[i] < Math.max(sequence[i - 1], sequence[i + 1])) {
+            count++
+        }
+    }
+
+    // Postcondition: count represents the number of elements in the sequence that are greater than the minimum of their adjacent elements and less than the maximum of their adjacent elements.
+
+
+    // Segment 3: Output the result
+
+    // Precondition: count is an integer representing the number of peaks found in the sequence.
+    console.log(count)
+    // Output format: A single integer representing the number of peaks in the sequence.
+}
+
+// Precondition: The input is read from "/dev/stdin" and passed as a string to the main function.
+main(require("fs").readFileSync("/dev/stdin", "utf8"))
+  n
+  a1 a2 a3 ... an

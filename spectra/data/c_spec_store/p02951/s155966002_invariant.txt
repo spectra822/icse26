@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: The input consists of a single line containing three integers `a`, `b`, and `c`, separated by spaces.
+    // Output format: A single integer followed by a newline character.
+    // Precondition: The variables `a`, `b`, and `c` are declared as integers.
+    // Postcondition: The value of `c` is decremented by the number of times the loop executes until either `a` becomes zero or `c` becomes zero. The final value of `c` is printed.
+```

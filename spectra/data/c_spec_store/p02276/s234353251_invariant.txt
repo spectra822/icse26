@@ -1,0 +1,12 @@
+```c
+int Partition(int p, int r)
+    // Precondition: The global array `A` has been declared and initialized with at least `r` elements.
+    // Postcondition: The array `A` is partitioned such that all elements less than or equal to `A[r]` are to the left of the pivot, and all elements greater than `A[r]` are to the right. The pivot's final position is returned in `return_val`.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n` integers are provided in a single line, separated by spaces.
+    // Output format: The array elements are printed in a single line, separated by spaces, with the pivot element enclosed in square brackets.
+    // Precondition: The global array `A` has been declared.
+    // Postcondition: The array `A` is partitioned around the pivot, and the elements are printed with the pivot in square brackets.
+```

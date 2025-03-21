@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A single line containing a string `B` of characters 'o' and 'x', with a maximum length of 199 characters.
+    // Output format: A single character, either 'o' or 'x', followed by a newline.
+    // Precondition: The global variables `B`, `c`, and `i` have been declared.
+    // Postcondition: The program counts the occurrences of 'o' and 'x' in the string `B` and prints the character with the highest count. If the counts are equal, it prints 'o'.
+```

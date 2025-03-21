@@ -1,0 +1,83 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a grid with <var>H</var> rows and <var>W</var> columns.</p>
+<p>The square at the <var>i</var>-th row and <var>j</var>-th column contains a string <var>S_{i,j}</var> of length <var>5</var>.</p>
+<p>The rows are labeled with the numbers from <var>1</var> through <var>H</var>, and the columns are labeled with the uppercase English letters from <code>A</code> through the <var>W</var>-th letter of the alphabet.</p>
+<p><img alt="" src="https://atcoder.jp/img/code-festival-2016-final/90cfa9fb5e04213219ccbc8d08286b4d.png"/></p>
+<p>Exactly one of the squares in the grid contains the string <code>snuke</code>. Find this square and report its location.</p>
+<p>For example, the square at the <var>6</var>-th row and <var>8</var>-th column should be reported as <code>H6</code>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1≦H, W≦26</var></li>
+<li>The length of <var>S_{i,j}</var> is <var>5</var>.</li>
+<li><var>S_{i,j}</var> consists of lowercase English letters (<code>a</code>-<code>z</code>).</li>
+<li>Exactly one of the given strings is equal to <code>snuke</code>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>The input is given from Standard Input in the following format:</p>
+<pre><var>H</var> <var>W</var>
+<var>S_{1,1}</var> <var>S_{1,2}</var> <var>...</var> <var>S_{1,W}</var>
+<var>S_{2,1}</var> <var>S_{2,2}</var> <var>...</var> <var>S_{2,W}</var>
+<var>:</var>
+<var>S_{H,1}</var> <var>S_{H,2}</var> <var>...</var> <var>S_{H,W}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the labels of the row and the column of the square containing the string <code>snuke</code>, with no space inbetween.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>15 10
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snuke snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+snake snake snake snake snake snake snake snake snake snake
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>H6
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>1 1
+snuke
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>A1
+</pre></section>
+</div>
+</span>

@@ -1,0 +1,35 @@
+// Segment 1: Function declaration and input handling
+// Precondition: The script is executed, and input is provided in the format of a single line containing three space-separated integers.
+// Postcondition: The input string is split into an array of three integers and stored in the `input` variable.
+
+function Main(input) {
+    var flag = false;
+    input = input.split(" ").map(Number);
+    
+    // Segment 2: Nested loops to check the condition
+    // Precondition: The `input` array contains exactly three integers: input[0], input[1], and input[2].
+    // Postcondition: The `flag` variable is set to true if there exist non-negative integers `i` and `j` such that the equation `i * input[1] + j * input[0] - i * j * 2 == input[2]` holds; otherwise, `flag` remains false.
+    
+    for (var i = 0; i <= input[0]; i++) {
+        for (var j = 0; j <= input[1]; j++) {
+            if (i * input[1] + j * input[0] - i * j * 2 == input[2]) {
+                flag = true;
+                break;
+            }
+        }
+    }
+    
+    // Segment 3: Output the result
+    // Precondition: The `flag` variable has been evaluated based on the nested loop conditions.
+    // Postcondition: The result "Yes" is printed if `flag` is true; otherwise, "No" is printed.
+    // Input format: The input is read from standard input as a single line containing three space-separated integers.
+    // Output format: The output is a single line containing either "Yes" or "No".
+    
+    console.log(flag ? "Yes" : "No");
+}
+
+// Segment 4: Reading input from standard input and invoking the main function
+// Precondition: The script is executed in an environment where the `fs` module is available and the input is provided via standard input.
+// Postcondition: The `Main` function is called with the input read from standard input, trimmed of any leading/trailing whitespace.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim());

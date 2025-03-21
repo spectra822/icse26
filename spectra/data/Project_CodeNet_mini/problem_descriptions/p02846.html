@@ -1,0 +1,95 @@
+<span class="lang-en">
+<p>Score: <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>Takahashi and Aoki are training for long-distance races in an infinitely long straight course running from west to east.</p>
+<p>They start simultaneously at the same point and moves as follows <strong>towards the east</strong>:</p>
+<ul>
+<li>Takahashi runs <var>A_1</var> meters per minute for the first <var>T_1</var> minutes,  then runs at <var>A_2</var> meters per minute for the subsequent <var>T_2</var> minutes, and alternates between these two modes forever.</li>
+<li>Aoki runs <var>B_1</var> meters per minute for the first <var>T_1</var> minutes,  then runs at <var>B_2</var> meters per minute for the subsequent <var>T_2</var> minutes, and alternates between these two modes forever.</li>
+</ul>
+<p>How many times will Takahashi and Aoki meet each other, that is, come to the same point? We do not count the start of the run. If they meet infinitely many times, report that fact.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>1 \leq T_i \leq 100000</var></li>
+<li><var>1 \leq A_i \leq 10^{10}</var></li>
+<li><var>1 \leq B_i \leq 10^{10}</var></li>
+<li><var>A_1 \neq B_1</var></li>
+<li><var>A_2 \neq B_2</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:</p>
+<pre><var>T_1</var> <var>T_2</var>
+<var>A_1</var> <var>A_2</var>
+<var>B_1</var> <var>B_2</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Print the number of times Takahashi and Aoki will meet each other.<br/>
+If they meet infinitely many times, print <code>infinity</code> instead.  </p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>1 2
+10 10
+12 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>They will meet just once, <var>\frac{4}{3}</var> minutes after they start, at <var>\frac{40}{3}</var> meters from where they start.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>100 1
+101 101
+102 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>infinity
+</pre>
+<p>They will meet <var>101, 202, 303, 404, 505, 606, ...</var> minutes after they start, that is, they will meet infinitely many times.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>12000 15700
+3390000000 3810000000
+5550000000 2130000000
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>113
+</pre>
+<p>The values in input may not fit into a <var>32</var>-bit integer type.</p></section>
+</div>
+</span>

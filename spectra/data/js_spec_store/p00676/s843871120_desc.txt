@@ -1,0 +1,31 @@
+// Function to calculate the area of a triangle using Heron's formula
+function heron(a, b, c) {
+    var s = (a + b + c) / 2;
+    var S = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    return S;
+}
+
+// Reading input from standard input (usually for competitive programming)
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Loop through each line of the input
+for (var i = 0; i < Arr.length; i++) {
+    // Parsing the input line into three numbers A, L, and X
+    var ALX = Arr[i].split(" ").map(Number);
+    var A = ALX[0];
+    var L = ALX[1];
+    var X = ALX[2];
+
+    // Initialize sum to accumulate areas of triangles
+    var sum = 0;
+
+    // Calculate the area of the triangle with sides A, L, L and add to sum
+    sum += heron(A, L, L);
+
+    // Calculate the area of two triangles with sides L, (L + X) / 2, (L + X) / 2 and add to sum
+    sum += (heron(L, (L + X) / 2, (L + X) / 2) * 2);
+
+    // Output the computed sum of areas, formatted to 10 decimal places
+    console.log(sum.toFixed(10));
+}

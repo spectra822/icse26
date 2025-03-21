@@ -1,0 +1,12 @@
+```
+void dfs(int n)
+    // Precondition: The global array `a` has been initialized.
+    // Postcondition: All elements in the sequence starting from `a[n]` and following the indices until an element with value `-1` is encountered are set to `-1`.
+
+int main()
+    // Input format: The first line contains two integers `n` and `k`.
+    // The next line contains `n` integers separated by spaces.
+    // Output format: A single word "Yes" or "No".
+    // Precondition: The global array `a` has been declared.
+    // Postcondition: The program prints "Yes" if the given conditions are met; otherwise, it prints "No".
+```

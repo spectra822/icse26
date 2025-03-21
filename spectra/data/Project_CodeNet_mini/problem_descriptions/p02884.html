@@ -1,0 +1,123 @@
+<span class="lang-en">
+<p>Score : <var>600</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There is a cave consisting of <var>N</var> rooms and <var>M</var> one-directional passages. The rooms are numbered <var>1</var> through <var>N</var>.</p>
+<p>Takahashi is now in Room <var>1</var>, and Room <var>N</var> has the exit. The <var>i</var>-th passage connects Room <var>s_i</var> and Room <var>t_i</var> (<var>s_i</var> &lt; <var>t_i</var>) and can only be traversed in the direction from Room <var>s_i</var> to Room <var>t_i</var>. It is known that, for each room except Room <var>N</var>, there is at least one passage going from that room.</p>
+<p>Takahashi will escape from the cave. Each time he reaches a room (assume that he has reached Room <var>1</var> at the beginning), he will choose a passage uniformly at random from the ones going from that room and take that passage.</p>
+<p>Aoki, a friend of Takahashi's, can block one of the passages (or do nothing) before Takahashi leaves Room <var>1</var>. However, it is not allowed to block a passage so that Takahashi is potentially unable to reach Room <var>N</var>.</p>
+<p>Let <var>E</var> be the expected number of passages Takahashi takes before he reaches Room <var>N</var>. Find the value of <var>E</var> when Aoki makes a choice that minimizes <var>E</var>.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 600</var></li>
+<li><var>N-1 \leq M \leq \frac{N(N-1)}{2}</var></li>
+<li><var>s_i &lt; t_i</var></li>
+<li>If <var>i != j</var>, <var>(s_i, t_i) \neq (s_j, t_j)</var>. <strong>(Added 21:23 JST)</strong></li>
+<li>For every <var>v = 1, 2, ..., N-1</var>, there exists <var>i</var> such that <var>v = s_i</var>.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>M</var>
+<var>s_1</var> <var>t_1</var>
+<var>:</var>
+<var>s_M</var> <var>t_M</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the value of <var>E</var> when Aoki makes a choice that minimizes <var>E</var>.
+Your output will be judged as correct when the absolute or relative error from the judge's output is at most <var>10^{-6}</var>.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>4 6
+1 4
+2 3
+1 3
+1 2
+3 4
+2 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1.5000000000
+</pre>
+<p>If Aoki blocks the passage from Room <var>1</var> to Room <var>2</var>, Takahashi will go along the path <code>1</code> → <code>3</code> → <code>4</code> with probability <var>\frac{1}{2}</var> and <code>1</code> → <code>4</code> with probability <var>\frac{1}{2}</var>. <var>E = 1.5</var> here, and this is the minimum possible value of <var>E</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+1 2
+2 3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>2.0000000000
+</pre>
+<p>Blocking any one passage makes Takahashi unable to reach Room <var>N</var>, so Aoki cannot block a passage.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 33
+3 7
+5 10
+8 9
+1 10
+4 6
+2 5
+1 7
+6 10
+1 4
+1 3
+8 10
+1 5
+2 6
+6 9
+5 6
+5 8
+3 6
+4 8
+2 7
+2 9
+6 7
+1 2
+5 9
+6 8
+9 10
+3 9
+7 8
+4 5
+2 10
+5 7
+3 5
+4 7
+4 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>3.0133333333
+</pre></section>
+</div>
+</span>

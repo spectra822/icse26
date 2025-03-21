@@ -1,0 +1,15 @@
+Input:
+5 3
+apple
+banana
+grape
+kiwi
+orange
+a?ple
+gr*
+*iwi
+
+Output:
+1
+1
+1

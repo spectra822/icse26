@@ -1,0 +1,12 @@
+```
+int in()
+    // Precondition: The input stream is ready to provide characters.
+    // Postcondition: An integer value read from the input stream is returned.
+
+int main()
+    // Input format: The first line contains an integer `n`. The second line contains two integers `x` and `y`.
+    // The next `n` lines each contain four integers `a`, `b`, `c`, and `d`, separated by whitespace.
+    // Output format: A single integer.
+    // Precondition: The input values `n`, `x`, `y`, `a`, `b`, `c`, and `d` are non-negative integers.
+    // Postcondition: The maximum possible value of the sum of `d` values, subject to constraints, is printed.
+```

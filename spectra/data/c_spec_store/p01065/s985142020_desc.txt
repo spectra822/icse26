@@ -1,0 +1,16 @@
+```c
+// Global variables
+int dp[101][BASE+2][DBASE+2];
+
+// Read an integer from input using efficient input method.
+int in()
+    Calls getchar_unlocked()
+
+// This function solves a barter problem with given constraints.
+// It reads the number of items `n`, and constraints `x`, `y`.
+// It then processes `n` items, each having 4 parameters `a`, `b`, `c`, `d`.
+// It calculates the maximum value that can be obtained under the given constraints using dynamic programming.
+// Finally, it prints the result.
+int main()
+    Calls in()
+```

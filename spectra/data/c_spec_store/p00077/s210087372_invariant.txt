@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: One or more lines, each containing a string without spaces.
+    // Output format: For each input string, an output string is printed on a new line.
+    // Precondition: The input strings contain only valid characters and the `@` character followed by a digit and another character.
+    // Postcondition: Each `@` followed by a digit `n` and a character `c` in the input string is replaced by the character `c` repeated `n` times. The transformed string is printed for each input string.
+```

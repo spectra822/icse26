@@ -1,0 +1,39 @@
+// Main function to process the input and calculate the required value
+function Main(input) {
+    // Split the input into an array of strings, each representing a line
+    input = input.split("\n");
+    
+    // Remove the last empty line if present
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+
+    // Read the first line as the number of elements N
+    const N = input[0] - 0;
+
+    // Read the second line as an array of integers X
+    const X = input[1].split(' ').map(e => {
+        return e - 0;
+    });
+
+    // Calculate the sum of elements in X
+    var sum = 0;
+    X.forEach(e => {
+        sum += e;
+    });
+
+    // Calculate the rounded average p
+    var p = Math.round(sum / N);
+
+    // Calculate the sum of squared differences from the average
+    sum = 0;
+    X.forEach(e => {
+        sum += (e - p) ** 2;
+    });
+
+    // Output the final result
+    console.log(sum);
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

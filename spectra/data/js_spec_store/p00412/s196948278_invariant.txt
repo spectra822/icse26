@@ -1,0 +1,60 @@
+// Segment 1: Reading and parsing input
+
+// Precondition: The input is provided via standard input in the format:
+// First line: two integers n and m separated by a space (1 <= n, m <= 100).
+// Next m lines: each line contains two integers a and b separated by a space (0 <= a <= 1, 1 <= b <= 1000).
+
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var arr = input.trim().split("\n");
+var [n, m] = arr.shift().split(" ").map(Number);
+
+// Postcondition: 
+// - `n` and `m` are integers representing the number of lanes and the number of operations respectively.
+// - `arr` is an array of `m` strings, each representing an operation in the format "a b".
+
+// Segment 2: Initialize lanes
+
+// Precondition: `n` is defined and is an integer representing the number of lanes.
+
+var lane = [];
+for (var i = 0; i < n; i++) lane[i] = [];
+
+// Postcondition: 
+// - `lane` is an array of `n` empty arrays, each representing a lane.
+
+// Segment 3: Process operations
+
+// Precondition: `arr` is an array of `m` strings, each representing an operation in the format "a b".
+// The operations are to be processed in the order they appear in `arr`.
+
+arr.forEach(v => {
+    var [a, b] = v.split(" ").map(Number);
+
+    // Postcondition: 
+    // If `a == 0`, the value at the front of lane `b-1` is printed and removed.
+    // If `a == 1`, the value `b` is added to the lane with the smallest current length.
+
+    if (a == 0) {
+        console.log(lane[b - 1].shift());
+    } else if (a == 1) {
+        var m = lane.map(v => v.length);
+        var s = m.indexOf(Math.min(...m));
+        lane[s].push(b);
+    }
+});
+
+// Postcondition: 
+// - All operations are processed.
+// - For each operation "0 b", the value at the front of lane `b-1` was printed and removed.
+// - For each operation "1 b", the value `b` was added to the lane with the smallest current length.
+2 7
+1 999
+1 1000
+0 2
+1 1001
+1 1002
+0 1
+0 1
+1000
+999
+1002

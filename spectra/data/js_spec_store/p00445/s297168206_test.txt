@@ -1,0 +1,6 @@
+Input:
+JOIXXXJOIIOIJOI
+
+Output:
+3
+1

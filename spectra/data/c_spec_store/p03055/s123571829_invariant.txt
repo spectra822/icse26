@@ -1,0 +1,24 @@
+```
+int comp_h(int x, int y)
+    // Precondition: The global arrays `a` and `h` have been initialized and contain valid indices for comparison.
+    // Postcondition: Returns 1 if `a[h[x]]` is greater than `a[h[y]]`, otherwise returns -1.
+
+void swap_h(int x, int y)
+    // Precondition: The global array `h` has been initialized and contains valid indices.
+    // Postcondition: The elements at indices `x` and `y` in the global array `h` are swapped.
+
+void push(int ne)
+    // Precondition: The global array `h` has been initialized, and the integer `ne` is a valid index.
+    // Postcondition: The element `ne` is added to the global array `h` maintaining the heap property, and the global variable `l` is incremented.
+
+int pop()
+    // Precondition: The global array `h` has been initialized and contains at least one element.
+    // Postcondition: The root element of the heap is removed and returned, the heap property is maintained, and the global variable `l` is decremented.
+
+int main()
+    // Input format: The first line contains an integer `n`.
+    // The next `n-1` lines contain two integers `a[i]` and `b[i]`, each separated by a whitespace.
+    // Output format: A single word, either "First" or "Second", followed by a newline.
+    // Precondition: The global arrays `a`, `b`, `h`, and `depth` have been declared.
+    // Postcondition: Based on the computed depths of the nodes, "First" or "Second" is printed to indicate the result.
+```

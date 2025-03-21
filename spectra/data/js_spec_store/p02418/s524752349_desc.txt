@@ -1,0 +1,12 @@
+// Read input from standard input and split it into an array of lines
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Create a new string 'a' which is three concatenations of the first line of input
+var a = Arr[0] + Arr[0] + Arr[0];
+
+// Assign the second line of input to variable 'b'
+var b = Arr[1];
+
+// Check if 'b' is a substring of 'a' and print "Yes" if it is, otherwise print "No"
+console.log((a.indexOf(b) !== -1) ? "Yes" : "No");

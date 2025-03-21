@@ -1,0 +1,8 @@
+```c
+int main(void)
+    // Input format: The first line contains an integer `N`.
+    // The next line contains a string `s` of length at least `N`.
+    // Output format: A single word, either "Yes" or "No".
+    // Precondition: The variable `N` and the array `s` have been declared. The length of `s` is at least `N`.
+    // Postcondition: The output is "Yes" if the number of 'R' characters in the first `N` characters of `s` is greater than the number of non-'R' characters. Otherwise, the output is "No". The program returns 0 on successful execution and 1 on input failure.
+```

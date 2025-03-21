@@ -1,0 +1,31 @@
+// Read the input and process it into a structured format
+const input = require('fs').readFileSync('/dev/stdin', 'utf8');
+const args = input.trim().split`\n`.map(r => r.split` `.map(v => v | 0));
+
+// Extract the first line as [N, M] and the rest as edges
+const [
+    [N, M], ...tmp
+] = args;
+
+// Initialize the adjacency list for the graph
+const G = Array.from({ length: N + 1 }, _ => []);
+
+// Populate the adjacency list with edges
+for (let i = 0; i < M; i++) {
+    const [a, b] = tmp[i];
+    G[a].push(b);
+    G[b].push(a);
+}
+
+// Check for a path from node 1 to node N through any intermediate node
+for (const x of G[1]) {
+    for (const t of G[x]) {
+        if (t === N) {
+            console.log('POSSIBLE');
+            return;
+        }
+    }
+}
+
+// If no such path is found, print 'IMPOSSIBLE'
+console.log('IMPOSSIBLE');

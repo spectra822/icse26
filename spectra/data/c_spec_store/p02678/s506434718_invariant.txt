@@ -1,0 +1,13 @@
+```
+void push(int i, int j)
+    // Precondition: The global array `G` has been initialized, and `i` and `j` are valid node indices.
+    // Postcondition: An edge from node `i` to node `j` has been added to the adjacency list `G`.
+
+int main()
+    // Input format: The first line contains two integers `N` and `M`.
+    // The next `M` lines each contain two integers `a` and `b`, separated by a whitespace.
+    // Output format: First, the string "Yes" is printed.
+    // Then, `N-1` lines each containing a single integer.
+    // Precondition: The global variables `N`, `M`, `d`, `que`, and `G` have been declared.
+    // Postcondition: The parent node of each node from 2 to N is printed in order, representing a breadth-first search tree rooted at node 1.
+```

@@ -1,0 +1,27 @@
+```
+void initBit(int *bit)
+    // Precondition: The input array `bit` has been allocated with size at least `bit[0] + 1`.
+    // Postcondition: All elements of the array `bit` from index 1 to `bit[0]` are set to zero.
+
+void inc(int *bit, int x)
+    // Precondition: The input array `bit` has been initialized and `1 <= x <= bit[0]`.
+    // Postcondition: The value at index `x` in the array `bit` and all relevant subsequent indices are incremented by 1.
+
+int getSum(int *bit, int x)
+    // Precondition: The input array `bit` has been initialized and `1 <= x <= bit[0]`.
+    // Postcondition: The sum of elements in the array `bit` from index 1 to `x` is calculated and stored in `return_val`.
+
+int64 count(int m, int *a, int n)
+    // Precondition: The input array `a` has been allocated with size at least `n` and `bit` is either NULL or has been previously allocated.
+    // Postcondition: The number of subarrays where the median is greater than or equal to `m` is calculated and stored in `return_val`.
+
+void run(void)
+    // Precondition: The function reads an integer `n` from the input and an array `a` of `n` integers.
+    // Postcondition: The maximum integer `m` is found such that the number of subarrays with median greater than or equal to `m` is at least half of all subarrays, and `m` is printed to the output.
+
+int main(void)
+    // Input format: The first line contains an integer `n`. The second line contains `n` integers separated by spaces.
+    // Output format: A single integer followed by a newline.
+    // Precondition: The function reads the input from STDIN.
+    // Postcondition: The function outputs the maximum integer `m` such that the number of subarrays with median greater than or equal to `m` is at least half of all subarrays.
+```

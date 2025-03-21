@@ -1,0 +1,17 @@
+Input:
+3
+TeamA 5 2 1
+TeamB 4 3 2
+TeamC 6 1 2
+2
+TeamX 3 4 1
+TeamY 2 2 6
+0
+
+Output:
+TeamC,20
+TeamA,16
+TeamB,14
+
+TeamY,12
+TeamX,10

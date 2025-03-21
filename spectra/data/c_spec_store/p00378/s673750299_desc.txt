@@ -1,0 +1,13 @@
+```c
+// Global variables
+int A, B, X;
+int c, ans;
+
+// This is the main function that reads three integers A, B, and X.
+// It calculates and prints the minimum cost of buying X milliliters of water,
+// where the cost of 1000 milliliters is A and the cost of 500 milliliters is B.
+// If A is more than or equal to twice B, it uses only 500 milliliters packs.
+// Otherwise, it uses a combination of 1000 milliliters and 500 milliliters packs.
+int main()
+    Calls: None
+```

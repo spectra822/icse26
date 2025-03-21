@@ -1,0 +1,13 @@
+Input:
+```
+Hello @3x World
+This is a @2y test
+@4z
+```
+
+Output:
+```
+Hello xxx World
+This is a yy test
+zzzz
+```

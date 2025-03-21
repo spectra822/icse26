@@ -1,0 +1,39 @@
+// Main function that processes the input and determines if the sequence meets the criteria
+function Main(input) {
+    // Split the input into an array of lines
+    input = input.split("\n");
+    
+    // Remove the last element if it is an empty string
+    if (input[input.length - 1] === '') {
+        input.pop();
+    }
+    
+    // Extract the number of elements, N, from the first line of input
+    const N = input[0].split(' ')[0] - 0;
+    
+    // Convert the second line of input into an array of integers, H
+    const H = input[1].split(' ').map(e => {
+        return e - 0;
+    });
+    
+    // Initialize max to positive infinity
+    var max = Infinity;
+    
+    // Loop through the array H from the end to the beginning
+    for (var i = N - 1; i >= 0; i--) {
+        // If the current element is less than or equal to max, update max
+        if (H[i] <= max) {
+            max = H[i];
+        // If the current element is greater than max + 1, print 'No' and return
+        } else if (H[i] > max + 1) {
+            console.log('No');
+            return;
+        }
+    }
+    
+    // If the loop completes without printing 'No', print 'Yes'
+    console.log('Yes');
+}
+
+// Read the input from the standard input and pass it to the Main function
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));

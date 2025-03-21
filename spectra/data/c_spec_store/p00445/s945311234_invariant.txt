@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: Multiple lines of strings. Each line contains a single string without spaces. Input ends at EOF.
+    // Output format: For each input string, two integers are printed on separate lines. The first integer represents the count of the substring "JOI" in the input string, and the second integer represents the count of the substring "IOI" in the input string.
+    // Precondition: The global array `str` has been declared.
+    // Postcondition: For each input string, the counts of substrings "JOI" and "IOI" are printed on separate lines.
+```

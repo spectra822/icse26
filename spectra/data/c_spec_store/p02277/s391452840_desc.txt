@@ -1,0 +1,23 @@
+```c
+// Global variables
+// None
+
+// A structure to represent a card with a character `c`, an integer value `val`, and an index `num`.
+typedef struct card {
+  char c;
+  int val;
+  int num;
+} card;
+
+// This function sorts an array of cards `A` from indices `p` to `r` using the quicksort algorithm.
+void quicksort(card* A, int p, int r)
+  Calls partition(...), quicksort(...)
+
+// This function partitions the array `A` around a pivot element, and returns the index of the pivot after partitioning.
+int partition(card* A, int p, int r)
+
+// This is the main function that takes an integer `n`, reads `n` cards, sorts them using quicksort,
+// checks if the sort is stable, and prints the result along with the sorted cards.
+int main()
+  Calls quicksort(...), partition(...)
+```

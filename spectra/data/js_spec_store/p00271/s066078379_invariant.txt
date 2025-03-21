@@ -1,0 +1,44 @@
+// Segment 1: Variable Declarations and File Reading
+// Precondition: The program is executed in an environment where '/dev/stdin' contains the input data.
+// Postcondition: The variable `input` holds the content of the file as a string, and `Arr` is an array of strings where each element is a line from the input file.
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var Arr = (input.trim()).split("\n");
+
+// Segment 2: Loop to Process Each Line of Input
+// Precondition: `Arr` is an array of strings where each string is a line of input containing two space-separated integers.
+// Postcondition: For each line in `Arr`, the program logs the difference between the two integers to the console.
+for (var i = 0; i < 7; i++) {
+    // Segment 2.1: Splitting and Mapping Line to Numbers
+    // Precondition: `Arr[i]` is a string containing two space-separated integers.
+    // Postcondition: `arr` is an array of two integers parsed from `Arr[i]`.
+    var arr = Arr[i].split(" ").map(Number);
+
+    // Segment 2.2: Calculating and Logging the Difference
+    // Precondition: `arr` is an array of two integers.
+    // Postcondition: The difference `arr[0] - arr[1]` is logged to the console.
+    console.log(arr[0] - arr[1]);
+}
+
+/*
+Input Format:
+- Seven lines of input, each containing two space-separated integers.
+Example:
+30 19
+39 20
+19 18
+25 20
+22 21
+23 10
+10 -10
+
+Output Format:
+- Seven lines of output, each containing a single integer, which is the difference between the two integers from the corresponding line of input.
+Example:
+11
+19
+1
+5
+1
+13
+20
+*/

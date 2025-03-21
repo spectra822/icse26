@@ -1,0 +1,7 @@
+```c
+int main(void)
+    // Input format: The input consists of 7 lines. Each line contains two integers `a` and `b`, separated by a space.
+    // Output format: The output consists of 7 lines. Each line contains one integer, which is the result of `a - b`.
+    // Precondition: None
+    // Postcondition: For each pair of integers `a` and `b` read from the input, the difference `a - b` is printed on a new line.
+```

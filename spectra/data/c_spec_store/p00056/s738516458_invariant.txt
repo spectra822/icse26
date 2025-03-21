@@ -1,0 +1,12 @@
+```c
+int makePrimeTable(int *table)
+    // Precondition: The pointer `table` points to an array of at least `MAX` integers.
+    // Postcondition: The array `table` is updated such that `table[i]` is 0 if `i` is a prime number and 1 if it is not a prime number.
+
+int main()
+    // Input format: The input consists of multiple lines. Each line contains a single integer `n`.
+    // The input ends when a line with the integer `0` is encountered.
+    // Output format: For each integer `n`, the output is a single integer representing the number of ways `n` can be expressed as a sum of two prime numbers. Each output should be printed on a new line.
+    // Precondition: The global constant `MAX` has been defined.
+    // Postcondition: The program reads integers `n` from the input until `0` is encountered. For each `n`, it prints the number of ways `n` can be expressed as the sum of two prime numbers. The program then terminates.
+```

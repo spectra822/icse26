@@ -1,0 +1,79 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>There are <var>N</var> integers, <var>A_1, A_2, ..., A_N</var>, written on a blackboard.</p>
+<p>We will repeat the following operation <var>N-1</var> times so that we have only one integer on the blackboard.</p>
+<ul>
+<li>Choose two integers <var>x</var> and <var>y</var> on the blackboard and erase these two integers. Then, write a new integer <var>x-y</var>.</li>
+</ul>
+<p>Find the maximum possible value of the final integer on the blackboard and a sequence of operations that maximizes the final integer.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>2 \leq N \leq 10^5</var></li>
+<li><var>-10^4 \leq A_i \leq 10^4</var></li>
+<li>All values in input are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>...</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the maximum possible value <var>M</var> of the final integer on the blackboard, and a sequence of operations <var>x_i, y_i</var> that maximizes the final integer, in the format below.</p>
+<p>Here <var>x_i</var> and <var>y_i</var> represent the integers <var>x</var> and <var>y</var> chosen in the <var>i</var>-th operation, respectively.</p>
+<p>If there are multiple sequences of operations that maximize the final integer, any of them will be accepted.</p>
+<pre><var>M</var>
+<var>x_1</var> <var>y_1</var>
+<var>:</var>
+<var>x_{N-1}</var> <var>y_{N-1}</var>
+</pre>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3
+1 -1 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>4
+-1 1
+2 -2
+</pre>
+<p>If we choose <var>x = -1</var> and <var>y = 1</var> in the first operation, the set of integers written on the blackboard becomes <var>(-2, 2)</var>.</p>
+<p>Then, if we choose <var>x = 2</var> and <var>y = -2</var> in the second operation, the set of integers written on the blackboard becomes <var>(4)</var>.</p>
+<p>In this case, we have <var>4</var> as the final integer. We cannot end with a greater integer, so the answer is <var>4</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+1 1 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>1
+1 1
+1 0
+</pre></section>
+</div>
+</span>

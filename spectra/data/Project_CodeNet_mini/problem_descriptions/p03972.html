@@ -1,0 +1,90 @@
+<span class="lang-en">
+<p>Score : <var>500</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>On an <var>xy</var> plane, in an area satisfying <var>0 ≤ x ≤ W, 0 ≤ y ≤ H</var>, there is one house at each and every point where both <var>x</var> and <var>y</var> are integers.</p>
+<p>There are unpaved roads between every pair of points for which either the <var>x</var> coordinates are equal and the difference between the <var>y</var> coordinates is <var>1</var>, or the <var>y</var> coordinates are equal and the difference between the <var>x</var> coordinates is <var>1</var>.</p>
+<p>The cost of paving a road between houses on coordinates <var>(i,j)</var> and <var>(i+1,j)</var> is <var>p_i</var> for any value of <var>j</var>, while the cost of paving a road between houses on coordinates <var>(i,j)</var> and <var>(i,j+1)</var> is <var>q_j</var> for any value of <var>i</var>.</p>
+<p>Mr. Takahashi wants to pave some of these roads and be able to travel between any two houses on paved roads only. Find the solution with the minimum total cost.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 ≦ W,H ≦ 10^5</var></li>
+<li><var>1 ≦ p_i ≦ 10^8(0 ≦ i ≦ W-1)</var></li>
+<li><var>1 ≦ q_j ≦ 10^8(0 ≦ j ≦ H-1)</var></li>
+<li><var>p_i (0 ≦ i ≦ W−1)</var> is an integer.</li>
+<li><var>q_j (0 ≦ j ≦ H−1)</var> is an integer.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Inputs are provided from Standard Input in the following form.</p>
+<pre><var>W</var> <var>H</var>
+<var>p_0</var>
+:
+<var>p_{W-1}</var>
+<var>q_0</var>
+:
+<var>q_{H-1}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Output an integer representing the minimum total cost.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2 2
+3
+5
+2
+7
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>29
+</pre>
+<p>It is enough to pave the following eight roads.</p>
+<ul>
+<li>Road connecting houses at <var>(0,0)</var> and <var>(0,1)</var></li>
+<li>Road connecting houses at <var>(0,1)</var> and <var>(1,1)</var></li>
+<li>Road connecting houses at <var>(0,2)</var> and <var>(1,2)</var></li>
+<li>Road connecting houses at <var>(1,0)</var> and <var>(1,1)</var></li>
+<li>Road connecting houses at <var>(1,0)</var> and <var>(2,0)</var></li>
+<li>Road connecting houses at <var>(1,1)</var> and <var>(1,2)</var></li>
+<li>Road connecting houses at <var>(1,2)</var> and <var>(2,2)</var></li>
+<li>Road connecting houses at <var>(2,0)</var> and <var>(2,1)</var></li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 3
+2
+4
+8
+1
+2
+9
+3
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>60
+</pre></section>
+</div>
+</span>

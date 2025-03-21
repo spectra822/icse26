@@ -1,0 +1,18 @@
+```c
+// Global variables
+// No global variables in this program
+
+// Compare two numbers for qsort
+// Given two pointers to long integers `n1` and `n2`,
+// return 1 if `*n1` is greater than `*n2`, -1 if `*n1` is less than `*n2`, and 0 if they are equal.
+int cmpnum(const void * n1, const void * n2)
+
+// Main function
+// This function reads an integer `n` and an array of `n` long integers from input.
+// It then adjusts each element of the array by subtracting its index + 1.
+// The array is sorted using qsort.
+// The function calculates the minimum "sadness" value based on the sorted array and prints it.
+int main(void)
+  Calls cmpnum(...)
+  Calls qsort(...)
+```

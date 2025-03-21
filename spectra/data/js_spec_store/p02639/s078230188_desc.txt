@@ -1,0 +1,18 @@
+// Main function that takes the input string and processes it
+function Main(input) {
+    // Split the input string by spaces to get an array of numbers
+    const numbers = input.split(' ');
+
+    // Loop through the array to find the index of the first occurrence of 0
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] == 0) {
+            // Calculate the 1-based index position and print it
+            const ans = i + 1;
+            console.log(ans.toString());
+            break; // Exit the loop once 0 is found
+        }
+    }
+}
+
+// Read input from standard input and pass it to the Main function
+Main(require('fs').readFileSync('/dev/stdin', 'utf8'));

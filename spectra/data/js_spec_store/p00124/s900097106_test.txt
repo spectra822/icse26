@@ -1,0 +1,13 @@
+Input:
+```
+3
+Alice 10 5 20
+Bob 15 3 10
+Charlie 12 2 30
+0
+```
+
+Output:
+Charlie,66
+Bob,55
+Alice,50

@@ -1,0 +1,222 @@
+
+
+
+<H1>博士が愛した符号</H1>
+
+<p>
+博士 : ピーター君、ついにやったよ。<br/>
+ピーター : どうしました、デビッド博士？またくだらない発明ですか？<br/>
+博士 : この表だよ、この表。<br/>
+</p>
+
+<center>
+<table width="700"><tr>
+<td width="140">
+
+<table style="border: 1px #aaa solid; padding:4px">
+<tr><td width="60">文字</td><td>符号</td></tr>
+<tr><td >（空白）</td><td>101</td></tr>
+<tr><td >'</td><td>000000</td></tr>
+<tr><td >,</td><td>000011</td></tr>
+<tr><td >-</td><td>10010001</td></tr>
+<tr><td >.</td><td>010001</td></tr>
+<tr><td >?</td><td>000001</td></tr>
+<tr><td >A</td><td>100101</td></tr>
+<tr><td >B</td><td>10011010</td></tr>
+</table>
+
+</td>
+<td width="140">
+
+<table style="border: 1px #aaa solid; padding:4px">
+<tr><td width="60">文字</td><td>符号</td></tr>
+<tr><td > C</td><td> 0101</td></tr>
+<tr><td > D</td><td> 0001</td></tr>
+<tr><td > E</td><td> 110</td></tr>
+<tr><td > F</td><td> 01001</td></tr>
+<tr><td > G</td><td> 10011011</td></tr>
+<tr><td > H</td><td> 010000</td></tr>
+<tr><td > I</td><td> 0111</td></tr>
+<tr><td > J</td><td> 10011000</td></tr>
+</table>
+</td>
+
+<td width="140">
+<table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="60">文字</td><td>符号</td></tr>
+<tr><td > K</td><td> 0110</td></tr>
+<tr><td > L</td><td> 00100</td></tr>
+<tr><td > M</td><td> 10011001</td></tr>
+<tr><td > N</td><td> 10011110</td></tr>
+<tr><td > O</td><td> 00101</td></tr>
+<tr><td > P</td><td> 111</td></tr>
+<tr><td > Q</td><td> 10011111</td></tr>
+<tr><td > R</td><td> 1000</td></tr>
+</table>
+</td>
+
+<td width="140">
+<table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="60">文字</td><td>符号</td></tr>
+<tr><td > S</td><td> 00110</td></tr>
+<tr><td > T</td><td> 00111</td></tr>
+<tr><td > U</td><td> 10011100</td></tr>
+<tr><td > V</td><td> 10011101</td></tr>
+<tr><td > W</td><td> 000010</td></tr>
+<tr><td > X</td><td> 10010010</td></tr>
+<tr><td > Y</td><td> 10010011</td></tr>
+<tr><td > Z</td><td> 10010000</td></tr>
+</table>
+</td>
+
+</tr></table>
+</center>
+
+<br/>
+
+<p>
+ピーター : なんですか? この表は。<br/>
+博士 : いいから、言う通りにしてみなさい。まず、お前の名前を紙に書いてごらん。<br/>
+ピーター : はい"PETER POTTER" っと。<br/>
+博士 : そうしたら、１文字ずつ、この表の「符号」に置き換えるのだよ。<br/>
+ピーター : えーと"P" を「111」にして"E" を「110」して…結構面倒ですね。
+</p>
+<pre>
+111 110 00111 110 1000 101 111 00101 00111 00111 110 1000
+</pre>
+<p>
+           になりました。なんだか、バーコードみたいですね。<br/>
+博士 : よろしい。そうしたら、置き換えた文字列を全部つなげて、５文字ごとに区切ってみなさい。<br/>
+ピーター : はいはい、つなげて区切ると。
+</p>
+<pre>
+11111 00011 11101 00010 11110 01010 01110 01111 10100 0
+</pre>
+<p>
+           こんな感じになりました。けど、最後の「0」だけのやつはどうしますか?<br/>
+博士 : ０を付け加えて５文字にしておいてくれ。<br/>
+ピーター : えーと最後が０が1個だけだから０をあと４つ加えてやればいいんですね。できました。<br/>
+</p>
+<pre>
+11111 00011 11101 00010 11110 01010 01110 01111 10100 00000
+</pre>
+<p>
+博士 : 次はこの表を使うのだ。<br/>
+</p>
+
+<center>
+<table width="700"><tr>
+
+<td width="140"><table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="80" >符号</td><td>文字</td></tr>
+<tr><td> 00000</td><td > A</td></tr>
+<tr><td> 00001</td><td > B</td></tr>
+<tr><td> 00010</td><td > C</td></tr>
+<tr><td> 00011</td><td > D</td></tr>
+<tr><td> 00100</td><td > E</td></tr>
+<tr><td> 00101</td><td > F</td></tr>
+<tr><td> 00110</td><td > G</td></tr>
+<tr><td> 00111</td><td > H</td></tr>
+</table></td>
+
+<td width="140"><table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="80">符号</td><td>文字</td></tr>
+<tr><td> 01000</td><td > I</td></tr>
+<tr><td> 01001</td><td > J</td></tr>
+<tr><td> 01010</td><td > K</td></tr>
+<tr><td> 01011</td><td > L</td></tr>
+<tr><td> 01100</td><td > M</td></tr>
+<tr><td> 01101</td><td > N</td></tr>
+<tr><td> 01110</td><td > O</td></tr>
+<tr><td> 01111</td><td > P</td></tr>
+</table></td>
+
+<td width="140"><table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="80">符号</td><td>文字</td></tr>
+<tr><td> 10000</td><td > Q</td></tr>
+<tr><td> 10001</td><td > R</td></tr>
+<tr><td> 10010</td><td > S</td></tr>
+<tr><td> 10011</td><td > T</td></tr>
+<tr><td> 10100</td><td > U</td></tr>
+<tr><td> 10101</td><td > V</td></tr>
+<tr><td> 10110</td><td > W</td></tr>
+<tr><td> 10111</td><td > X</td></tr>
+</table></td>
+
+<td width="140"><table  style="border: 1px #aaa solid; padding:4px">
+<tr><td width="80">符号</td><td>文字</td></tr>
+<tr><td> 11000</td><td > Y</td></tr>
+<tr><td> 11001</td><td > Z</td></tr>
+<tr><td> 11010</td><td > （空白）</td></tr>
+<tr><td> 11011</td><td > .</td></tr>
+<tr><td> 11100</td><td > ,</td></tr>
+<tr><td> 11101</td><td > -</td></tr>
+<tr><td> 11110</td><td > '</td></tr>
+<tr><td> 11111</td><td > ?</td></tr>
+</table></td>
+
+
+</tr></table>
+</center>
+<br/>
+
+<p>
+ピーター : これをどう使うんですか…そうか!今度は符号から文字に置き換えるのか!<br/>
+博士 : そうそう。「11111」だったら「?」に、「00011」だったら「D」にとやってゆけばいいんだよ。<br/>
+ピーター : これは単純ですね……えーと「?D-C'KOPUA」になりました。でも意味不明ですよ。<br/>
+博士 : 文字数を数えてごらん。<br/>
+ピーター : １０文字ですよ。あっ、「PETER POTTER」は１２文字だったのに２文字減っています。<br/>
+博士 : そう、この表を使えば文字を減らすことができるのだよ。じゃあ今度はこの文章で同じことをやっ
+       てごらん。<br/>
+</p>
+
+<pre>
+PETER PIPER PICKED A PECK OF PICKLED PEPPERS. A PECK OF PICKLED PEPPERS
+PETER PIPER PICKED. IF PETER PIPER PICKED A PECK OF PICKLED PEPPERS, WHERE'S
+THE PECK OF PICKLED PEPPERS PETER PIPER PICKED?
+</pre>
+<p>
+ピーター : ぎょぎょ、行が分かれていますが、どうするんですか?<br/>
+博士 : 紙の都合で３行になってしまったが、改行文字のかわりに空白がある長い１行だと思っておくれ。<br/>
+ピーター : はいはい。行と行の間にあるのは空白だと。しかし面倒だな……。<br/>
+博士 : だったらプログラムにやらせればいいではないか。<br/>
+</p>
+
+
+<p>
+ということで、ピーターの代わりに、読み込んだ文字列を符号に変換し出力するプログラムを作成してください。
+</p>
+
+
+<H2>入力</H2>
+
+<p>複数のデータセットが与えられます。各データセットに文字列１行（表に含まれる文字からなる）が与えられます。文字列に含まれる文字の数は 1 文字以上 100 文字以下です。
+</p>
+
+<p>
+データセットの数は 200 を超えません。
+</p>
+
+
+
+<H2>出力</H2>
+
+<p>各データセットごとに、変換後の文字列を１行に出力してください。
+</p>
+
+<H2>Sample Input</H2>
+
+<pre>
+PETER POTTER
+</pre>
+
+
+
+<H2>Output for the Sample Input</H2>
+
+<pre>
+?D-C'KOPUA
+</pre>
+
+
+

@@ -1,0 +1,5 @@
+Input:
+Hello World
+
+Output:
+hELLO wORLD

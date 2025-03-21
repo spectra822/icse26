@@ -1,0 +1,15 @@
+```
+void insert(short *f)
+    // Precondition: The global hash table `hash` has been declared and initialized. The input array `f` represents a frequency count of characters and has a length of 26.
+    // Postcondition: The frequency count `f` is inserted into the hash table `hash`. If a matching frequency count already exists, the hash table remains unchanged.
+
+int lookup(short *f)
+    // Precondition: The global hash table `hash` has been declared and initialized. The input array `f` represents a frequency count of characters and has a length of 26.
+    // Postcondition: If the frequency count `f` exists in the hash table `hash`, the function returns 1. Otherwise, it returns 0.
+
+int main()
+    // Input format: Two lines of lowercase alphabetic strings `sa` and `sb`, each up to 4003 characters long.
+    // Output format: A single integer representing the length of the longest common anagram substring.
+    // Precondition: The global arrays `sa` and `sb` have been declared. The global array `f` has been declared and has a length of 26.
+    // Postcondition: The length of the longest common anagram substring between `sa` and `sb` is printed.
+```

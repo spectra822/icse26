@@ -1,0 +1,7 @@
+```c
+int main()
+    // Input format: A single line containing three space-separated long integers.
+    // Output format: A single number followed by a newline.
+    // Precondition: The program reads three long integers from standard input.
+    // Postcondition: If any of the three numbers is even, the program outputs "0\n". Otherwise, the program outputs the product of the two smallest numbers followed by a newline.
+```

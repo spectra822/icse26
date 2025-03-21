@@ -1,0 +1,81 @@
+<span class="lang-en">
+<p>Score : <var>100</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given a grid of <var>N</var> rows and <var>M</var> columns. The square at the <var>i</var>-th row and <var>j</var>-th column will be denoted as <var>(i,j)</var>.
+A nonnegative integer <var>A_{i,j}</var> is written for each square <var>(i,j)</var>.</p>
+<p>You choose some of the squares so that each row and column contains at most <var>K</var> chosen squares.
+Under this constraint, calculate the maximum value of the sum of the integers written on the chosen squares.
+Additionally, calculate a way to choose squares that acheives the maximum.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq N \leq 50</var></li>
+<li><var>1 \leq K \leq N</var></li>
+<li><var>0 \leq A_{i,j} \leq 10^9</var></li>
+<li>All values in Input are integer.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>A_{1,1}</var> <var>A_{1,2}</var> <var>\cdots</var> <var>A_{1,N}</var>
+<var>A_{2,1}</var> <var>A_{2,2}</var> <var>\cdots</var> <var>A_{2,N}</var>
+<var>\vdots</var>
+<var>A_{N,1}</var> <var>A_{N,2}</var> <var>\cdots</var> <var>A_{N,N}</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>On the first line, print the maximum value of the sum of the integers written on the chosen squares.</p>
+<p>On the next <var>N</var> lines, print a way that achieves the maximum.</p>
+<p>Precisely, output the strings <var>t_1,t_2,\cdots,t_N</var>, that satisfies <var>t_{i,j}=</var><code>X</code> if you choose <var>(i,j)</var> and <var>t_{i,j}=</var><code>.</code> otherwise.</p>
+<p>You may print any way to choose squares that maximizes the sum.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>3 1
+5 3 2
+1 4 8
+7 6 9
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>19
+X..
+..X
+.X.
+</pre>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3 2
+10 10 1
+10 10 1
+1 1 10
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>50
+XX.
+XX.
+..X
+</pre></section>
+</div>
+</span>

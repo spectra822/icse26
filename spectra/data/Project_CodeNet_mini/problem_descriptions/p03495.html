@@ -1,0 +1,79 @@
+<span class="lang-en">
+<p>Score : <var>300</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>Takahashi has <var>N</var> balls. Initially, an integer <var>A_i</var> is written on the <var>i</var>-th ball.</p>
+<p>He would like to rewrite the integer on some balls so that there are at most <var>K</var> different integers written on the <var>N</var> balls.</p>
+<p>Find the minimum number of balls that Takahashi needs to rewrite the integers on them.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \leq K \leq N \leq 200000</var></li>
+<li><var>1 \leq A_i \leq N</var></li>
+<li>All input values are integers.</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3><p>Input is given from Standard Input in the following format:</p>
+<pre><var>N</var> <var>K</var>
+<var>A_1</var> <var>A_2</var> ... <var>A_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3><p>Print the minimum number of balls that Takahashi needs to rewrite the integers on them.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>5 2
+1 1 2 2 5
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>1
+</pre>
+<p>For example, if we rewrite the integer on the fifth ball to <var>2</var>, there are two different integers written on the balls: <var>1</var> and <var>2</var>.
+On the other hand, it is not possible to rewrite the integers on zero balls so that there are at most two different integers written on the balls, so we should print <var>1</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>4 4
+1 1 2 2
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>0
+</pre>
+<p>Already in the beginning, there are two different integers written on the balls, so we do not need to rewrite anything.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>10 3
+5 1 3 2 4 1 1 2 3 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>3
+</pre></section>
+</div>
+</span>

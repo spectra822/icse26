@@ -1,0 +1,39 @@
+// Import the 'fs' module to read input from the standard input
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+
+// Read and split the input into an array of lines, removing any trailing newline
+var Arr = (input.replace(/\n$/, "")).split("\n");
+
+// Loop to process each set of 3x3 matrices until a "0" is encountered
+while (true) {
+    // Read the first line of the current 3x3 matrix and split it into characters
+    var x = Arr.shift().split("");
+    
+    // Break the loop if the first character of the line is "0"
+    if (x[0] == "0") break;
+    
+    // Read the next two lines of the current 3x3 matrix and split them into characters
+    var y = Arr.shift().split("");
+    var z = Arr.shift().split("");
+    
+    // Initialize the answer as "NA" (Not Available)
+    var ans = "NA";
+    
+    // Loop to check for winning conditions for both "b" and "w"
+    for (var i = 0; i < 2; i++) {
+        var s = (["b", "w"])[i];
+        
+        // Check all possible winning conditions: rows, columns, and diagonals
+        if (x[0] + x[1] + x[2] == s + s + s) ans = s;
+        if (y[0] + y[1] + y[2] == s + s + s) ans = s;
+        if (z[0] + z[1] + z[2] == s + s + s) ans = s;
+        if (x[0] + y[0] + z[0] == s + s + s) ans = s;
+        if (x[1] + y[1] + z[1] == s + s + s) ans = s;
+        if (x[2] + y[2] + z[2] == s + s + s) ans = s;
+        if (x[0] + y[1] + z[2] == s + s + s) ans = s;
+        if (x[2] + y[1] + z[0] == s + s + s) ans = s;
+    }
+    
+    // Print the result for the current 3x3 matrix
+    console.log(ans);
+}

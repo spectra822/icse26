@@ -1,0 +1,82 @@
+<span class="lang-en">
+<p>Score: <var>200</var> points</p>
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>We have <var>N</var> cards. A number <var>a_i</var> is written on the <var>i</var>-th card.<br/>
+Alice and Bob will play a game using these cards. In this game, Alice and Bob alternately take one card. Alice goes first.<br/>
+The game ends when all the cards are taken by the two players, and the score of each player is the sum of the numbers written on the cards he/she has taken. When both players take the optimal strategy to maximize their scores, find Alice's score minus Bob's score.</p>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li><var>N</var> is an integer between <var>1</var> and <var>100</var> (inclusive).</li>
+<li><var>a_i \ (1 \leq i \leq N)</var> is an integer between <var>1</var> and <var>100</var> (inclusive).</li>
+</ul>
+</section>
+</div>
+<hr/>
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Input is given from Standard Input in the following format:  </p>
+<pre><var>N</var>
+<var>a_1</var> <var>a_2</var> <var>a_3</var> <var>...</var> <var>a_N</var>
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Print Alice's score minus Bob's score when both players take the optimal strategy to maximize their scores.</p>
+</section>
+</div>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 1</h3><pre>2
+3 1
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 1</h3><pre>2
+</pre>
+<p>First, Alice will take the card with <var>3</var>. Then, Bob will take the card with <var>1</var>.
+The difference of their scores will be <var>3</var> - <var>1</var> = <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 2</h3><pre>3
+2 7 4
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 2</h3><pre>5
+</pre>
+<p>First, Alice will take the card with <var>7</var>. Then, Bob will take the card with <var>4</var>. Lastly, Alice will take the card with <var>2</var>. The difference of their scores will be <var>7</var> - <var>4</var> + <var>2</var> = <var>5</var>. The difference of their scores will be <var>3</var> - <var>1</var> = <var>2</var>.</p>
+</section>
+</div>
+<hr/>
+<div class="part">
+<section>
+<h3>Sample Input 3</h3><pre>4
+20 18 2 18
+</pre>
+</section>
+</div>
+<div class="part">
+<section>
+<h3>Sample Output 3</h3><pre>18
+</pre></section>
+</div>
+</span>

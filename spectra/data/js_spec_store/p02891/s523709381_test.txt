@@ -1,0 +1,6 @@
+Input:
+aabbaa
+3
+
+Output:
+9

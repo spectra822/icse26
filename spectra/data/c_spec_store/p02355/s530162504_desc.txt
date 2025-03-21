@@ -1,0 +1,17 @@
+```c
+// Global variables
+int a[MAX_N];
+int f[MAX_N];
+
+// Convert input to an integer.
+// Reads characters until a non-digit character is encountered.
+int in()
+  Calls gc()
+
+// This function finds the length of the smallest contiguous subarray that contains all integers from 1 to K at least once.
+// If no such subarray exists, it prints "0".
+// It takes N (length of the array) and K (the number to be present in the subarray) as input.
+// Then it takes N integers as the array elements.
+int main()
+  Calls in()
+```

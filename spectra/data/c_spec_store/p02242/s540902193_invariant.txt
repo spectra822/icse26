@@ -1,0 +1,23 @@
+```c
+int get_uint()
+    // Precondition: The input is a sequence of characters, where the first character is a digit (0-9) or a non-digit.
+    // Postcondition: If the first character is a digit, the function returns the integer formed by the consecutive digit characters. Otherwise, it returns the first character as an integer.
+
+void put_uint(int n)
+    // Precondition: The input integer `n` is non-negative.
+    // Postcondition: The integer `n` is printed to the standard output as a sequence of characters. If `n` is zero, the character '0' is printed.
+
+void dijkstra_noheap(Node *node, const int n)
+    // Precondition: The array `node` of length `n` contains valid `Node` structures with initialized `edge_to`, `edge_cost`, and `edge_size` fields.
+    // Postcondition: The `cost` field of each node in the array `node` is updated to represent the minimum cost to reach that node from the node at index 0, using Dijkstra's algorithm without a heap.
+
+int main(int argc, char **argv)
+    // Input format: The first line contains an integer `n`.
+    // The next `n` lines each contain the following:
+    //   - An integer `u`
+    //   - An integer `k`
+    //   - Followed by `k` pairs of integers representing `to` and `cost`
+    // Output format: `n` lines, each containing two integers separated by a space. The first integer is the node index, and the second integer is the minimum cost to reach that node from node 0.
+    // Precondition: The input format is strictly adhered to as described above, and there are no more than 100 edges per node.
+    // Postcondition: The minimum cost to reach each node from the starting node (node 0) is printed to the standard output, one per line.
+```

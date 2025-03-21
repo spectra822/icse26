@@ -1,0 +1,53 @@
+// Segment 1: Input Handling and Initial Setup
+
+// Precondition: The program is executed and input is provided in the format specified below.
+// Input format: The first line contains a single integer `n` (1 <= n <= 100), the number of elements. 
+// The second line contains `n` space-separated integers representing the elements of the array.
+
+// Postcondition: The input is split into lines, and the second line is further split into individual elements.
+
+function Main(input) {
+    input = input.split("\n");
+    tmp = input[1].split(" ");
+
+    // Segment 2: Variable Declarations and Initializations
+
+    // Precondition: The input has been split into `input` array and `tmp` array containing the elements as strings.
+    // Postcondition: Variables `Arrays`, `min`, `max`, and `totalNum` are declared and `totalNum` is initialized with the number of elements.
+
+    var Arrays = [];
+    var min;
+    var max;
+    var totalNum = parseInt(input[0], 10);
+
+    // Segment 3: Array Parsing and Population
+
+    // Precondition: `tmp` contains the string representation of the array elements.
+    // Postcondition: `Arrays` contains the integer representation of the array elements.
+
+    for (i = 0; i <= totalNum - 1; i++) {
+        Arrays[i] = parseInt(tmp[i], 10);
+    }
+
+    // Segment 4: Finding Min and Max
+
+    // Precondition: `Arrays` contains the integer representation of the array elements.
+    // Postcondition: `min` and `max` hold the minimum and maximum values from the `Arrays`.
+
+    min = Math.min(...Arrays);
+    max = Math.max(...Arrays);
+
+    // Segment 5: Output the Result
+
+    // Precondition: `min` and `max` hold the minimum and maximum values from the `Arrays`.
+    // Output format: A single integer representing the difference between the maximum and minimum values.
+
+    // Postcondition: The difference between `max` and `min` is printed to the console.
+
+    console.log(max - min);
+}
+
+// Precondition: The program is executed and input is provided in the format specified above.
+// Postcondition: The main function is called with the provided input.
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8"));
