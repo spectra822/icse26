@@ -72,7 +72,6 @@ Here are results for some experimental settings that we didn't include in our pa
 | Explain-then-Translate (exp) | 185 (+5%)  | 202 (+5%)  | 207 (+2%)  |
 | UniTrans (no repair)         | 193 (+10%) | 205 (+7%)  | 212 (+5%)  |
 | UniTrans                     | 217 (+23%) | 227 (+18%) | 236 (+17%) |
-|------------------------------|------------|------------|------------|
 | SpecTra                      | 196 (+11%) | 219 (+14%) | 220 (+9%)  |
 
 ### gpt-3.5-turbo results (C to Go):
