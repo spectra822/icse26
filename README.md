@@ -73,6 +73,7 @@ Here are results for some experimental settings that we didn't include in our pa
 | UniTrans (no repair)         | 193 (+10%) | 205 (+7%)  | 212 (+5%)  |
 | UniTrans                     | 217 (+23%) | 227 (+18%) | 236 (+17%) |
 | SpecTra                      | 196 (+11%) | 219 (+14%) | 220 (+9%)  |
+| SpecTra (with repair)        | 213 (+21%) | 238 (+24%) | 240 (+19%) |
 
 ### gpt-3.5-turbo results (C to Go):
 | gpt-3.5-turbo | k = 1      | k = 2      | k = 3      |
