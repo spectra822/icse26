@@ -66,7 +66,6 @@ Here are results for some experimental settings that we didn't include in our pa
 
 ### Comparison with Explain-Then-Translate and UniTrans:
 
-|------------------------------|------------|------------|------------|
 | gpt-4o                       | k = 1      | k = 2      | k = 3      |
 |------------------------------|------------|------------|------------|
 | Baseline                     | 176        | 192        | 202        |
@@ -75,7 +74,6 @@ Here are results for some experimental settings that we didn't include in our pa
 | UniTrans                     | 217 (+23%) | 227 (+18%) | 236 (+17%) |
 |------------------------------|------------|------------|------------|
 | SpecTra                      | 196 (+11%) | 219 (+14%) | 220 (+9%)  |
-|------------------------------|------------|------------|------------|
 
 ### gpt-3.5-turbo results (C to Go):
 | gpt-3.5-turbo | k = 1      | k = 2      | k = 3      |
